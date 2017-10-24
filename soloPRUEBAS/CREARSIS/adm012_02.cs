@@ -21,6 +21,7 @@ namespace CREARSIS
         #region VARIABLES
 
         public dynamic vg_frm_pad;
+        DataTable tab_adm012;        
 
         #endregion
 
@@ -61,6 +62,14 @@ namespace CREARSIS
                     tb_nom_act.Focus();
                     MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Económica", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
+                }
+                
+                tab_adm012 = o_adm012._05(tb_cod_act.Text);
+                if (tab_adm012.Rows.Count != 0)
+                {
+                    MessageBoxEx.Show("El codigo de la Actividad Económica ya se encuentra registrado", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tb_cod_act.Focus();
+                    return ;
                 }
 
                 DialogResult res_msg = default(DialogResult);
