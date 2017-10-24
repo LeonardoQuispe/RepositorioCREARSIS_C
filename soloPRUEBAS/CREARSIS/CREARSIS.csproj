@@ -479,6 +479,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="prueba.resx">
+      <DependentUpon>prueba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="seg001_01.resx">
       <DependentUpon>seg001_01.cs</DependentUpon>
     </EmbeddedResource>
