@@ -166,6 +166,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 182;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // adm012_05
             // 
@@ -182,6 +183,7 @@
             this.Name = "adm012_05";
             this.Text = "Consulta Actividad Económica";
             this.TitleText = "Consulta Actividad Económica";
+            this.Load += new System.EventHandler(this.adm012_05_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
