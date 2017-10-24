@@ -431,6 +431,9 @@
     <EmbeddedResource Include="adm007_05.resx">
       <DependentUpon>adm007_05.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adm007_06.resx">
+      <DependentUpon>adm007_06.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adm012_01.resx">
       <DependentUpon>adm012_01.cs</DependentUpon>
     </EmbeddedResource>
