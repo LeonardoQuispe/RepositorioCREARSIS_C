@@ -286,6 +286,48 @@
     <Compile Include="adm000.Designer.cs">
       <DependentUpon>adm000.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctb007_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_01.Designer.cs">
+      <DependentUpon>ctb007_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_02.Designer.cs">
+      <DependentUpon>ctb007_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_03.Designer.cs">
+      <DependentUpon>ctb007_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_03a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_03a.Designer.cs">
+      <DependentUpon>ctb007_03a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_04.Designer.cs">
+      <DependentUpon>ctb007_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_05.Designer.cs">
+      <DependentUpon>ctb007_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_06.Designer.cs">
+      <DependentUpon>ctb007_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="GLOBAL\md_cod_ctr.cs" />
     <Compile Include="GLOBAL\mg_glo_bal.cs" />
     <Compile Include="Program.cs" />
@@ -469,6 +511,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adm000.resx">
       <DependentUpon>adm000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_01.resx">
+      <DependentUpon>ctb007_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_02.resx">
+      <DependentUpon>ctb007_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_03.resx">
+      <DependentUpon>ctb007_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_03a.resx">
+      <DependentUpon>ctb007_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_04.resx">
+      <DependentUpon>ctb007_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_05.resx">
+      <DependentUpon>ctb007_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_06.resx">
+      <DependentUpon>ctb007_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
