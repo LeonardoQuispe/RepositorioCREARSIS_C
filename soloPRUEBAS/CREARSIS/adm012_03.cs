@@ -55,33 +55,33 @@ namespace CREARSIS
 
                 if (vv_err_msg != null)
                 {
-                    MessageBoxEx.Show(vv_err_msg, "Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show(vv_err_msg, "error Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (tb_cod_act.Text.Trim() == "")
                 {
                     tb_cod_act.Focus();
-                    MessageBoxEx.Show("Debes proporcionar el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Debes proporcionar el codigo", "error Actualizar Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (int.TryParse(tb_cod_act.Text, out tmp) == false)
                 {
                     tb_cod_act.Focus();
-                    MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Actualizar Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (tb_nom_act.Text.Trim() == "")
                 {
                     tb_nom_act.Focus();
-                    MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Economica", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Económica", "error Actualizar Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
 
                 DialogResult res_msg = default(DialogResult);
-                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nueva Actividad Economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Actualizar Actividad Económica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -100,7 +100,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Actualizar Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,7 +143,7 @@ namespace CREARSIS
             tab_adm012 = o_adm012._05(tb_cod_act.Text);
             if (tab_adm012.Rows.Count == 0)
             {
-                return "La Actividad Economica no se encuentra registrada";
+                return "La Actividad Económica no se encuentra registrada";
             }
 
             return null;

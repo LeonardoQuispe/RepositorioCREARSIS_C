@@ -113,7 +113,7 @@
             this.tb_nom_act.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_act.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_act.Location = new System.Drawing.Point(79, 42);
-            this.tb_nom_act.MaxLength = 120;
+            this.tb_nom_act.MaxLength = 500;
             this.tb_nom_act.Multiline = true;
             this.tb_nom_act.Name = "tb_nom_act";
             this.tb_nom_act.PreventEnterBeep = true;

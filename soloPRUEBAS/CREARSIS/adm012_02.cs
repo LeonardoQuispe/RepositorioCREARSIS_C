@@ -46,25 +46,25 @@ namespace CREARSIS
                 if (tb_cod_act.Text.Trim() == "")
                 {
                     tb_cod_act.Focus();
-                    MessageBoxEx.Show("Debes proporcionar el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Debes proporcionar el codigo", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (int.TryParse(tb_cod_act.Text, out tmp) == false)
                 {
                     tb_cod_act.Focus();
-                    MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (tb_nom_act.Text.Trim() == "")
                 {
                     tb_nom_act.Focus();
-                    MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Economica", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Económica", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 DialogResult res_msg = default(DialogResult);
-                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nueva Actividad Economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nueva Actividad Económica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {

@@ -50,6 +50,32 @@ namespace CREARSIS
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_est_bus.SelectedIndex.ToString());
         }
 
+        private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down)
+            {
+                if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                {
+                    int fila = dg_res_ult.CurrentRow.Index + 1;
+                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                    fu_fil_act();
+
+                }
+            }
+
+            //al presionar tecla para ARRIBA
+            if (e.KeyData == Keys.Up)
+            {
+                if (dg_res_ult.CurrentRow.Index != 0)
+                {
+                    int fila = dg_res_ult.CurrentRow.Index - 1;
+                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                    fu_fil_act();
+
+                }
+            }
+        }
+
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fu_fil_act();
@@ -348,5 +374,6 @@ namespace CREARSIS
 
         #endregion
 
+        
     }
 }

@@ -53,18 +53,18 @@ namespace CREARSIS
                 vv_err_msg = fu_ver_dat();
                 if (vv_err_msg != null)
                 {
-                    MessageBoxEx.Show(vv_err_msg, "Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show(vv_err_msg, "Error Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 DialogResult res_msg = default(DialogResult);
                 if (tb_est_ado.Text == "Habilitado")
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la Actividad Economica ?", "Deshabilita Actividad Economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la Actividad Económica ?", "Deshabilita Actividad Económica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Actividad Economica ?", "Habilita Actividad Economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Actividad Económica ?", "Habilita Actividad Económica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (res_msg == DialogResult.Cancel)
@@ -91,7 +91,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Habilita/Deshabilita Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Habilita/Deshabilita Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -135,7 +135,7 @@ namespace CREARSIS
             tab_adm012 = o_adm012._05(tb_cod_act.Text);
             if (tab_adm012.Rows.Count == 0)
             {
-                return "La Actividad Economica no se encuentra registrada";
+                return "La Actividad Económica no se encuentra registrada";
             }
 
             return null;

@@ -53,14 +53,14 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Elimina actividad economica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Elimina actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
 
                 DialogResult res_msg = default(DialogResult);
-                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar a la actividad economica ?", "Elimina actividad economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar a la actividad Económica ?", "Elimina actividad Económica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -79,7 +79,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Elimina actividad economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Elimina actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -101,12 +101,12 @@ namespace CREARSIS
             tab_adm012 = o_adm012._05(tb_cod_act.Text);
             if (tab_adm012.Rows.Count == 0)
             {
-                return "El codigo de la actividad economica ya NO se encuentra registrado";
+                return "El codigo de la actividad Económica ya NO se encuentra registrado";
             }
 
             if (tb_est_ado.Text == "Habilitado")
             {
-                return "la actividad economica se encuentra habilitada NO puede eliminarla";
+                return "la actividad Económica se encuentra habilitada NO puede eliminarla";
             }
 
             return null;
