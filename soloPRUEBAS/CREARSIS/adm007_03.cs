@@ -31,11 +31,10 @@ namespace CREARSIS
 
         #endregion
 
-        #region "Metodos"
+        #region METODOS
 
         public void fu_ini_frm()
         {
-            int cod_tpr = 0;
             //Obtiene parametros y muestra en pantalla
             if (vg_str_ucc.Rows.Count == 0)
             {
@@ -114,6 +113,9 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
         public adm007_03()
         {
             InitializeComponent();
@@ -161,5 +163,7 @@ namespace CREARSIS
         {
             Close();
         }
+
+        #endregion
     }
 }

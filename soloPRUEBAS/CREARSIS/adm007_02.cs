@@ -31,7 +31,8 @@ namespace CREARSIS
 
         #endregion
 
-        #region "Metodos"
+        #region METODOS
+
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
@@ -85,6 +86,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public adm007_02()
         {
             InitializeComponent();
@@ -92,7 +95,6 @@ namespace CREARSIS
 
         private void tb_cod_suc_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
@@ -105,9 +107,6 @@ namespace CREARSIS
             {
                 e.Handled = true;
             }
-
-            
-
         }
 
         private void tb_tel_suc_KeyPress(object sender, KeyPressEventArgs e)
@@ -199,5 +198,7 @@ namespace CREARSIS
         {
             Close();
         }
+
+        #endregion
     }
 }

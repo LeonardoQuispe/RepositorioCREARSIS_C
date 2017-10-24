@@ -244,6 +244,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 100;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -259,6 +260,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 90;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // tb_res_suc
             // 
@@ -445,6 +447,7 @@
             this.Name = "adm007_04";
             this.Text = "Habilita/Deshabilita Sucursal";
             this.TitleText = "Habilita/Deshabilita Sucursal";
+            this.Load += new System.EventHandler(this.adm007_04_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

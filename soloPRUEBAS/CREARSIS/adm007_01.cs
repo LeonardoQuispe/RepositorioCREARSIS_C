@@ -319,8 +319,8 @@ namespace CREARSIS
                 MessageBoxEx.Show(vv_err_msg, "Sucursal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //adm007_04 obj = new adm007_04();
-            //o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
+            adm007_04 obj = new adm007_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
 
         private void m_adm003_06_Click(object sender, EventArgs e)
@@ -334,8 +334,8 @@ namespace CREARSIS
                 return;
             }
 
-            //adm007_06 obj = new adm007_06();
-            //o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
+            adm007_06 obj = new adm007_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
 
         private void m_adm003_05_Click(object sender, EventArgs e)
@@ -348,8 +348,8 @@ namespace CREARSIS
                 return;
             }
 
-            //adm007_05 obj = new adm007_05();
-            //o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
+            adm007_05 obj = new adm007_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
 
         private void m_atr_ass_Click(object sender, EventArgs e)
