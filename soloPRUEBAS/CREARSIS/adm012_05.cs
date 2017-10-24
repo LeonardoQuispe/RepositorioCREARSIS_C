@@ -16,12 +16,22 @@ namespace CREARSIS
 {
     public partial class adm012_05 : DevComponents.DotNetBar.Metro.MetroForm
     {
-        c_adm012 o_adm012 = new c_adm012();
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
-        public DataTable vg_str_ucc = new DataTable();
-        DataTable tab_adm012 = new DataTable();
+        public DataTable vg_str_ucc;
+        DataTable tab_adm012;
         string err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
+
+        c_adm012 o_adm012 = new c_adm012();
+
+        #endregion
+
+        #region EVENTOS
 
         public adm012_05()
         {
@@ -38,7 +48,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
+        #region METODOS
 
         public void fu_ini_frm()
         {
@@ -61,5 +73,8 @@ namespace CREARSIS
             }
 
         }
+
+        #endregion
+
     }
 }

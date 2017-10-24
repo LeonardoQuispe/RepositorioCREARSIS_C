@@ -17,12 +17,22 @@ namespace CREARSIS
 {
     public partial class adm012_06 : DevComponents.DotNetBar.Metro.MetroForm
     {
-        c_adm012 o_adm012 = new c_adm012();
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_adm012;
         string err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
+
+        c_adm012 o_adm012 = new c_adm012();
+
+        #endregion
+
+        #region EVENTOS
 
         public adm012_06()
         {
@@ -60,7 +70,7 @@ namespace CREARSIS
                 //Graba datos
                 o_adm012._06(tb_cod_act.Text);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_act.Text, tb_nom_act.Text);
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex.ToString());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -78,7 +88,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
+        #region METODOS
 
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
@@ -121,5 +133,6 @@ namespace CREARSIS
 
         }
 
+        #endregion
     }
 }

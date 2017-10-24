@@ -17,9 +17,20 @@ namespace CREARSIS
 {
     public partial class adm012_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
+
+        #endregion
+
+        #region INSTANCIAS
+
         c_adm012 o_adm012 = new c_adm012();
 
+        #endregion
+
+        #region EVENTOS
 
         public adm012_02()
         {
@@ -32,20 +43,20 @@ namespace CREARSIS
 
             try
             {
-                if (tb_cod_act.Text.Trim()=="")
+                if (tb_cod_act.Text.Trim() == "")
                 {
                     tb_cod_act.Focus();
                     MessageBoxEx.Show("Debes proporcionar el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (int.TryParse(tb_cod_act.Text ,out tmp)== false)
+                if (int.TryParse(tb_cod_act.Text, out tmp) == false)
                 {
                     tb_cod_act.Focus();
                     MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (tb_nom_act.Text.Trim()=="")
+                if (tb_nom_act.Text.Trim() == "")
                 {
                     tb_nom_act.Focus();
                     MessageBoxEx.Show("Debes proporcionar el nombre de la Actividad Economica", "error Nueva Actividad Economica", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,5 +91,8 @@ namespace CREARSIS
         {
             Close();
         }
+
+        #endregion
+
     }
 }

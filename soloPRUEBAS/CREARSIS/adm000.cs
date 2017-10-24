@@ -210,6 +210,14 @@ namespace CREARSIS
             adm007_01 obj = new adm007_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        //[Menu ACTIVIDADES ECONOMICAS]
+        private void mn_act_ivi_Click(object sender, EventArgs e)
+        {
+            adm012_01 obj = new adm012_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
+
         #endregion
 
         #region MÉTODOS
@@ -244,6 +252,7 @@ namespace CREARSIS
                 MenuStrip1 = o_mg_glo_bal.fg_ver_mnu(ide_usr, frm_act.Name, MenuStrip1);
             }
         }
+
 
 
 

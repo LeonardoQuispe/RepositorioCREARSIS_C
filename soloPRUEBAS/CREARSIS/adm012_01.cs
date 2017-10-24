@@ -18,12 +18,22 @@ namespace CREARSIS
 {
     public partial class adm012_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
-        c_adm012 o_adm012 = new c_adm012();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
         DataTable tab_adm012;
         DataTable tabla;
 
+        #endregion
+
+        #region INSTANCIAS
+
+        c_adm012 o_adm012 = new c_adm012();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+
+        #endregion
+
+        #region EVENTOS
 
         public adm012_01()
         {
@@ -37,7 +47,7 @@ namespace CREARSIS
 
         private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex.ToString());
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_est_bus.SelectedIndex.ToString());
         }
 
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -68,10 +78,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
-
-
-
+        #region METODOS
 
         /// <summary>
         /// -> Metodo que inicializa el formulario
@@ -84,7 +93,7 @@ namespace CREARSIS
             fu_bus_car("", 1, "T");
 
         }
-       
+
         /// <summary>
         /// -> Metodo buscar
         /// </summary>
@@ -139,10 +148,11 @@ namespace CREARSIS
         /// </summary>
         public void fu_fil_act()
         {
-            int fila = dg_res_ult.CurrentCellAddress.Y;
-
-            tb_sel_ecc.Text = dg_res_ult.Rows[fila].Cells["va_cod_act"].Value.ToString();
-            lb_sel_ecc.Text = dg_res_ult.Rows[fila].Cells["va_nom_act"].Value.ToString();
+            if (dg_res_ult.SelectedRows.Count != 0)
+            {
+                tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_cod_act"].Value.ToString();
+                lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nom_act"].Value.ToString();
+            }
 
         }
         /// <summary>
@@ -154,7 +164,7 @@ namespace CREARSIS
             tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
             if (tab_adm012.Rows.Count == 0)
             {
-                return "La Actividad Economica no se encuentra registrada";
+                return "La Actividad Económica no se encuentra registrada";
             }
 
             return null;
@@ -168,13 +178,13 @@ namespace CREARSIS
             tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
             if (tab_adm012.Rows.Count == 0)
             {
-                return "La Actividad Economica no se encuentra registrada";
+                return "La Actividad Económica no se encuentra registrada";
             }
 
             //Verifica estado del dato
-            if (tab_adm012.Rows[0]["va_est_ado"].ToString()== "N")
+            if (tab_adm012.Rows[0]["va_est_ado"].ToString() == "N")
             {
-                return "La Actividad Economica se encuentra Deshabilitada";
+                return "La Actividad Económica se encuentra Deshabilitada";
             }
 
             return null;
@@ -188,13 +198,13 @@ namespace CREARSIS
             int tmp;
 
             //Verifica que los datos en pantallas sean correctos
-            if (tb_sel_ecc.Text.Trim()=="")
+            if (tb_sel_ecc.Text.Trim() == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            if (int.TryParse(tb_sel_ecc.Text,out tmp) == false)
+            if (int.TryParse(tb_sel_ecc.Text, out tmp) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
@@ -210,6 +220,11 @@ namespace CREARSIS
 
             tb_sel_ecc.Text = tabla.Rows[0]["va_cod_act"].ToString();
             lb_sel_ecc.Text = tabla.Rows[0]["va_nom_act"].ToString();
+
+            if (lb_sel_ecc.Text != "** NO existe")
+            {
+                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+            }
 
         }
 
@@ -249,6 +264,9 @@ namespace CREARSIS
             }
         }
 
+        #endregion
+
+        #region OPCIONES DEL MENU
 
         //NUEVO
         private void m_adm003_02_Click(object sender, EventArgs e)
@@ -327,5 +345,8 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+
+        #endregion
+
     }
 }

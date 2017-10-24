@@ -86,7 +86,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Talonario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Actualiza la grilla de busqueda en la ventana padre
-                vg_frm_pad.fu_bus_car("", 1, "0");
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex, vg_frm_pad.cb_est_bus.SelectedIndex.ToString());
                 Close();
 
             }

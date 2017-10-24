@@ -74,7 +74,7 @@ namespace CREARSIS
                 o_adm005._06(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(tb_cod_ges.Text));
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Numeración", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                vg_frm_pad.fu_bus_car("", 1, Convert.ToInt32(tb_cod_ges.Text));
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, Convert.ToInt32(vg_frm_pad.cb_ges_tio.SelectedValue));
                 Close();
             }
             catch (Exception ex)
