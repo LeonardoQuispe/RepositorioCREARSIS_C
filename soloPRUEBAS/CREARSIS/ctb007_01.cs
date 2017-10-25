@@ -7,13 +7,277 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
+//REFERENCIAS
+using DATOS.ADM;
+using CREARSIS.GLOBAL;
+using DevComponents.DotNetBar;
+
+
+
 namespace CREARSIS
 {
-    public partial class ctb007_01 : Form
+    public partial class ctb007_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        public dynamic vg_frm_pad;
+        c_ctb007 o_ctb007 = new c_ctb007();
+        DataTable tab_ctb007;
+        DataTable tabla;
+
         public ctb007_01()
         {
             InitializeComponent();
         }
+
+        private void ctb007_01_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
+        {
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
+        }
+
+        private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down)
+            {
+                if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                {
+                    int fila = dg_res_ult.CurrentRow.Index + 1;
+                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                    fu_fil_act();
+
+                }
+            }
+
+            //al presionar tecla para ARRIBA
+            if (e.KeyData == Keys.Up)
+            {
+                if (dg_res_ult.CurrentRow.Index != 0)
+                {
+                    int fila = dg_res_ult.CurrentRow.Index - 1;
+                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                    fu_fil_act();
+
+                }
+            }
+        }
+
+        private void tb_sel_ecc_Validating(object sender, CancelEventArgs e)
+        {
+            fu_con_sel();
+        }
+
+        private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+
+
+
+        /// <summary>
+        /// -> Metodo que inicializa el formulario
+        /// </summary>
+
+        public void fu_ini_frm(int va_tip_frm = 0)
+        {
+            cb_prm_bus.SelectedIndex = 0;
+            cb_est_bus.SelectedIndex = 0;
+
+            tb_fec_fin.Value = DateTime.Today;
+            tb_fec_ini.Value = tb_fec_fin.Value.AddDays(180);
+
+            fu_bus_car("", 1, tb_fec_ini.Value, tb_fec_fin.Value, "T");
+
+        }
+        /// <summary>
+        /// -> Metodo buscar
+        /// </summary>
+        /// <param name="val_bus">Valor a ser buscado</param>
+        /// <param name="prm_bus">parametro por el cual se buscará (1=codigo;2=nombre)</param>
+        /// <param name="est_bus">Estado por el cual se buscará</param>
+        public void fu_bus_car(string val_bus, int prm_bus, System.DateTime fec_ini, System.DateTime fec_fin, string est_bus)
+        {
+
+            try
+            {
+                int va_ind_ice = 0;
+                string va_tip_usr = "";
+                string va_est_ado = "";
+                dynamic cod_tpr = 0;
+
+                dg_res_ult.Rows.Clear();
+
+                tab_ctb007 = o_ctb007._01(val_bus, prm_bus, fec_ini, fec_fin, est_bus);
+                foreach (DataRow row in tab_ctb007.Rows)
+                {
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitada";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitada";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
+                }
+
+                if (va_ind_ice == 0)
+                {
+                    tb_sel_ecc.Text = "";
+                }
+
+                if (va_ind_ice > 0)
+                {
+                    tb_sel_ecc.Text = tab_ctb007.Rows[0]["va_nro_dos"].ToString();
+                }
+
+                tb_val_bus.Focus();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
+        /// </summary>
+        public string fu_ver_dat()
+        {
+            //Si aun existe
+            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+            if (tab_ctb007.Rows.Count == 0)
+            {
+                return "La Dosificación no se encuentra registrada";
+            }
+
+            return null;
+        }
+        /// <summary>
+        ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
+        /// </summary>
+        public string fu_ver_dat2()
+        {
+            //Si aun existe
+            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+            if (tab_ctb007.Rows.Count == 0)
+            {
+                return "La Dosificación  no se encuentra registrada";
+            }
+
+            //Verifica estado del dato
+            if (tab_ctb007.Rows[0]["va_est_ado"].ToString()== "N")
+            {
+                return "La Dosificación se encuentra Deshabilitada";
+            }
+
+            return null;
+        }
+        /// <summary>
+        /// -> Consulta seleccion en pantalla
+        /// </summary>
+        public void fu_con_sel()
+        {
+            int tmp;
+
+            //Verifica que los datos en pantallas sean correctos
+            if (tb_sel_ecc.Text.Trim() == "")
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
+            if (int.TryParse(tb_sel_ecc.Text,out tmp) == false)
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
+
+            tabla = o_ctb007._05(tb_sel_ecc.Text);
+            if (tabla.Rows.Count == 0)
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
+            tb_sel_ecc.Text = tabla.Rows[0]["va_nro_dos"].ToString();
+
+            if (lb_sel_ecc.Text!= "** NO existe")
+            {
+                fu_sel_fila(tb_sel_ecc.Text);
+            }
+
+        }
+        /// <summary>
+        ///-> Metodo para capturar la fila seleccionada
+        /// </summary>
+        public void fu_fil_act()
+        {
+            if (dg_res_ult.SelectedRows.Count!=0)
+            {
+                tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nro_dos"].Value.ToString();
+            }
+
+        }
+
+        /// <summary>
+        /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
+        /// </summary>
+        public void fu_sel_fila(string cod_dos)
+        {
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
+
+            tb_sel_ecc.Text = cod_dos;
+            
+
+            if (cod_dos != null)
+            {
+                try
+                {
+                    for (int i = 0; i < dg_res_ult.Rows.Count; i++)
+                    {
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_dos)
+                        {
+                            dg_res_ult.Rows[i].Selected = true;
+                            dg_res_ult.FirstDisplayedScrollingRowIndex = i;
+
+                            return;
+                        }
+                    }
+                }
+
+                catch (Exception ex)
+                {
+
+                    MessageBoxEx.Show(ex.Message, "Error");
+                }
+            }
+
+        }
+
+
+
     }
 }

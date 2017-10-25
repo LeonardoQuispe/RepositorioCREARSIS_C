@@ -39,15 +39,18 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * FROM vi_ctb007  ");
 
-                if (prm_bus == 1)
+                switch (prm_bus)
                 {
-                    vv_str_sql.AppendLine(" WHERE va_nro_dos like '" + val_bus + "%' ");
+                    case 1 : vv_str_sql.AppendLine(" WHERE va_nro_dos like '" + val_bus + "%' "); break;
                 }
+                
                 vv_str_sql.AppendLine(" AND va_fec_ini BETWEEN '" + va_fec_ini + "' AND '" + va_fec_fin + "'");
 
-                if (est_bus != "T")
-                {
-                    vv_str_sql.AppendLine(" AND va_est_ado ='" + est_bus + "'");
+                switch (est_bus)
+                {  
+                    case "1": vv_str_sql.AppendLine(" AND va_est_ado ='H'"); break;
+
+                    case "2": vv_str_sql.AppendLine(" AND va_est_ado ='N'"); break; break;
                 }
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS
 {
-    public partial class ctb007_02 : Form
+    public partial class ctb007_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public ctb007_02()
         {
