@@ -290,6 +290,7 @@
             this.mn_dos_ifi.Name = "mn_dos_ifi";
             this.mn_dos_ifi.Size = new System.Drawing.Size(152, 22);
             this.mn_dos_ifi.Text = "&Dosificación";
+            this.mn_dos_ifi.Click += new System.EventHandler(this.mn_dos_ifi_Click);
             // 
             // mn_suc_urs
             // 
@@ -310,6 +311,7 @@
             this.mn_ley_end.Name = "mn_ley_end";
             this.mn_ley_end.Size = new System.Drawing.Size(152, 22);
             this.mn_ley_end.Text = "&Leyendas";
+            this.mn_ley_end.Click += new System.EventHandler(this.mn_ley_end_Click);
             // 
             // m_tes_ore
             // 

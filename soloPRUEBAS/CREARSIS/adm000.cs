@@ -218,6 +218,20 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu ACTIVIDADES DOSIFICACIONES]
+        private void mn_dos_ifi_Click(object sender, EventArgs e)
+        {
+            ctb007_01 obj = new ctb007_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
+
+        //[Menu ACTIVIDADES LEYENDAS]
+        private void mn_ley_end_Click(object sender, EventArgs e)
+        {
+            ctb006_01 obj = new ctb006_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
+
         #endregion
 
         #region MÉTODOS
@@ -252,6 +266,8 @@ namespace CREARSIS
                 MenuStrip1 = o_mg_glo_bal.fg_ver_mnu(ide_usr, frm_act.Name, MenuStrip1);
             }
         }
+
+
 
 
 

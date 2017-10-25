@@ -21,6 +21,7 @@ namespace CREARSIS
     {
         public dynamic vg_frm_pad;
         c_ctb007 o_ctb007 = new c_ctb007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
         DataTable tab_ctb007;
         DataTable tabla;
 
@@ -84,6 +85,89 @@ namespace CREARSIS
         {
             Close();
         }
+
+
+
+
+
+
+
+        //NUEVO
+        private void m_adm003_02_Click(object sender, EventArgs e)
+        {
+            ctb007_02 obj = new ctb007_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //ACTUALIZA
+        private void m_adm003_03_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_03 obj = new ctb007_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //HABILITA/DESHABILITA
+        private void m_adm003_04_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_04 obj = new ctb007_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //ELIMINA
+        private void m_adm003_06_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_06 obj = new ctb007_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //CONSULTA
+        private void m_adm003_05_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_05 obj = new ctb007_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+
+
+
 
 
 
@@ -277,7 +361,6 @@ namespace CREARSIS
 
         }
 
-
-
+        
     }
 }

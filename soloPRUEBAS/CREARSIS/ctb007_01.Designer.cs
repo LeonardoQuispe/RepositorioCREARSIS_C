@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.LabelX8 = new DevComponents.DotNetBar.LabelX();
             this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.LabelX7 = new DevComponents.DotNetBar.LabelX();
@@ -67,7 +68,6 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
@@ -96,6 +96,19 @@
             this.GroupBox1.Size = new System.Drawing.Size(555, 110);
             this.GroupBox1.TabIndex = 71;
             this.GroupBox1.TabStop = false;
+            // 
+            // lb_sel_ecc
+            // 
+            this.lb_sel_ecc.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lb_sel_ecc.Location = new System.Drawing.Point(260, 19);
+            this.lb_sel_ecc.Name = "lb_sel_ecc";
+            this.lb_sel_ecc.Size = new System.Drawing.Size(126, 23);
+            this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lb_sel_ecc.TabIndex = 157;
             // 
             // LabelX8
             // 
@@ -373,7 +386,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(393, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -383,6 +396,7 @@
             this.m_adm003_02.Name = "m_adm003_02";
             this.m_adm003_02.Size = new System.Drawing.Size(54, 20);
             this.m_adm003_02.Text = "&Nuevo";
+            this.m_adm003_02.Click += new System.EventHandler(this.m_adm003_02_Click);
             // 
             // mr_mod_ifi
             // 
@@ -399,24 +413,28 @@
             this.m_adm003_03.Name = "m_adm003_03";
             this.m_adm003_03.Size = new System.Drawing.Size(178, 22);
             this.m_adm003_03.Text = "&Actualiza";
+            this.m_adm003_03.Click += new System.EventHandler(this.m_adm003_03_Click);
             // 
             // m_adm003_04
             // 
             this.m_adm003_04.Name = "m_adm003_04";
             this.m_adm003_04.Size = new System.Drawing.Size(178, 22);
             this.m_adm003_04.Text = "&Habilita/Deshabiltia";
+            this.m_adm003_04.Click += new System.EventHandler(this.m_adm003_04_Click);
             // 
             // m_adm003_06
             // 
             this.m_adm003_06.Name = "m_adm003_06";
             this.m_adm003_06.Size = new System.Drawing.Size(178, 22);
             this.m_adm003_06.Text = "&Elimina";
+            this.m_adm003_06.Click += new System.EventHandler(this.m_adm003_06_Click);
             // 
             // m_adm003_05
             // 
             this.m_adm003_05.Name = "m_adm003_05";
             this.m_adm003_05.Size = new System.Drawing.Size(66, 20);
             this.m_adm003_05.Text = "&Consulta";
+            this.m_adm003_05.Click += new System.EventHandler(this.m_adm003_05_Click);
             // 
             // m_adm003_p00
             // 
@@ -429,6 +447,7 @@
             this.m_atr_ass.Name = "m_atr_ass";
             this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // dg_res_ult
             // 
@@ -437,14 +456,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_nro_dos,
@@ -452,14 +471,14 @@
             this.va_fec_ini,
             this.va_fec_fin,
             this.va_est_ado});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle29;
             this.dg_res_ult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
@@ -467,14 +486,14 @@
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(549, 191);
@@ -499,9 +518,9 @@
             // 
             // va_fec_ini
             // 
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.va_fec_ini.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Format = "d";
+            dataGridViewCellStyle27.NullValue = null;
+            this.va_fec_ini.DefaultCellStyle = dataGridViewCellStyle27;
             this.va_fec_ini.HeaderText = "Fecha Inicial";
             this.va_fec_ini.Name = "va_fec_ini";
             this.va_fec_ini.ReadOnly = true;
@@ -509,9 +528,9 @@
             // 
             // va_fec_fin
             // 
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.va_fec_fin.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Format = "d";
+            dataGridViewCellStyle28.NullValue = null;
+            this.va_fec_fin.DefaultCellStyle = dataGridViewCellStyle28;
             this.va_fec_fin.HeaderText = "Fecha Final";
             this.va_fec_fin.Name = "va_fec_fin";
             this.va_fec_fin.ReadOnly = true;
@@ -567,19 +586,6 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
-            // 
-            // lb_sel_ecc
-            // 
-            this.lb_sel_ecc.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(260, 19);
-            this.lb_sel_ecc.Name = "lb_sel_ecc";
-            this.lb_sel_ecc.Size = new System.Drawing.Size(126, 23);
-            this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lb_sel_ecc.TabIndex = 157;
             // 
             // ctb007_01
             // 
