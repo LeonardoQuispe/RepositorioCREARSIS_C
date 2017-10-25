@@ -444,6 +444,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -459,6 +460,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // ctb007_03a
             // 
@@ -476,6 +478,7 @@
             this.Name = "ctb007_03a";
             this.Text = "Actualiza Dosificación";
             this.TitleText = "Actualiza Dosificación";
+            this.Load += new System.EventHandler(this.ctb007_03a_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox3.PerformLayout();

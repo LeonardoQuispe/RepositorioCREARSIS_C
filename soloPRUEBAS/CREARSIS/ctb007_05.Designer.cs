@@ -89,6 +89,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // GroupBox1
             // 
@@ -658,6 +659,7 @@
             this.Name = "ctb007_05";
             this.Text = "Consulta Dosificación";
             this.TitleText = "Consulta Dosificación";
+            this.Load += new System.EventHandler(this.ctb007_05_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

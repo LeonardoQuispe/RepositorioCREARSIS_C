@@ -44,13 +44,13 @@ namespace DATOS.ADM
                     case 1 : vv_str_sql.AppendLine(" WHERE va_nro_dos like '" + val_bus + "%' "); break;
                 }
                 
-                vv_str_sql.AppendLine(" AND va_fec_ini BETWEEN '" + va_fec_ini + "' AND '" + va_fec_fin + "'");
+                vv_str_sql.AppendLine(" AND va_fec_ini BETWEEN '" + va_fec_ini.ToShortDateString() + "' AND '" + va_fec_fin.ToShortDateString() + "'");
 
                 switch (est_bus)
                 {  
                     case "1": vv_str_sql.AppendLine(" AND va_est_ado ='H'"); break;
 
-                    case "2": vv_str_sql.AppendLine(" AND va_est_ado ='N'"); break; break;
+                    case "2": vv_str_sql.AppendLine(" AND va_est_ado ='N'"); break;
                 }
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -79,7 +79,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb007 VALUES ");
-                vv_str_sql.AppendLine(" (" + nro_dos + ", " + tip_fac + ",'" + fec_ini + "','" + fec_fin + "'," + nro_ini);
+                vv_str_sql.AppendLine(" (" + nro_dos + ", " + tip_fac + ",'" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "'," + nro_ini);
                 vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());

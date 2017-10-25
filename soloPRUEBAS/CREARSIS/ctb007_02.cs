@@ -19,7 +19,24 @@ namespace CREARSIS
     public partial class ctb007_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
 
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
+
+        //** tabla Dosificacion
+        DataTable tab_ctb007;
+        //** tabla Leyendas
+        DataTable tab_ctb006;
+        //** tabla Sucursal
+        DataTable tab_adm007;
+        //** tabla Actividad economica
+        DataTable tab_adm012;
+        DataTable tabla;
+        string err_msg = "";
+
+        #endregion
+
+        #region INSTANCIAS
 
         //** Clase Dosificacion
         c_ctb007 o_ctb007 = new c_ctb007();
@@ -32,17 +49,9 @@ namespace CREARSIS
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
-        //** tabla Dosificacion
-        DataTable tab_ctb007;
-        //** tabla Leyendas
-        DataTable tab_ctb006;
-        //** tabla Sucursal
-        DataTable tab_adm007;
-        //** tabla Actividad economica
-        DataTable tab_adm012;
-        DataTable tabla = new DataTable();
-        string err_msg = "";
+        #endregion
 
+        #region EVENTOS
 
         public ctb007_02()
         {
@@ -58,65 +67,152 @@ namespace CREARSIS
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+
+                DialogResult res_msg = default(DialogResult);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos?", "Nueva Dosificación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                //grabar datos
+                o_ctb007._02(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()));
+
+                vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                tb_nro_dos.Clear();
+                tb_cod_sucu.Clear();
+                tb_nom_sucu.Clear();
+                tb_cod_act.Clear();
+                tb_nom_act.Clear();
+                tb_nro_ini.Text = "1";
+                tb_nro_fin.Text = "9999";
+                tb_cod_ley.Clear();
+                tb_nom_ley.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void tb_nro_dos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void tb_nro_ini_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void tb_nro_fin_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void tb_cod_sucu_ButtonCustomClick(object sender, EventArgs e)
         {
-
+            fu_bus_suc();
         }
 
         private void tb_cod_act_ButtonCustomClick(object sender, EventArgs e)
         {
-
+            fu_bus_ace();
         }
 
         private void tb_cod_ley_ButtonCustomClick(object sender, EventArgs e)
         {
-
+            fu_bus_ley();
         }
 
         private void tb_cod_sucu_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Up)
+            {
+                fu_bus_suc();
+            }
         }
 
         private void tb_cod_act_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Up)
+            {
+                fu_bus_ace();
+            }
         }
 
         private void tb_cod_ley_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Up)
+            {
+                fu_bus_ley();
+            }
         }
 
 
+        #endregion
 
-
-
+        #region METODOS
 
         public void fu_rec_act(string cod_act)
         {
             try
             {
                 tb_cod_act.Text = cod_act;
-                if (cod_act.Trim()=="")
+                if (cod_act.Trim() == "")
                 {
                     tb_nom_act.Text = "** NO existe";
                     return;
@@ -172,7 +268,7 @@ namespace CREARSIS
         {
             try
             {
-                if (cod_suc.Trim()=="")
+                if (cod_suc.Trim() == "")
                 {
                     tb_nom_sucu.Text = "** NO existe";
                     return;
@@ -205,12 +301,12 @@ namespace CREARSIS
             try
             {
                 //** Verifica nro de dosificacion
-                if (tb_nro_dos.Text.Trim()=="")
+                if (tb_nro_dos.Text.Trim() == "")
                 {
                     tb_nro_dos.Focus();
                     return "Debes proporcionar el número de Dosificación";
                 }
-                if (int.TryParse(tb_nro_dos.Text,out tmp) == false)
+                if (int.TryParse(tb_nro_dos.Text, out tmp) == false)
                 {
                     tb_nro_dos.Focus();
                     return "Dato no valido, debe ser numerico el número de Dosificación";
@@ -223,12 +319,12 @@ namespace CREARSIS
                 }
 
                 //** Verifica Sucursal
-                if (tb_cod_sucu.Text.Trim()=="")
+                if (tb_cod_sucu.Text.Trim() == "")
                 {
                     tb_cod_sucu.Focus();
                     return "Debes seleccionar una Sucursal";
                 }
-                if (int.TryParse(tb_cod_sucu.Text,out tmp) == false)
+                if (int.TryParse(tb_cod_sucu.Text, out tmp) == false)
                 {
                     tb_cod_sucu.Focus();
                     return "Dato no valido, el codigo sucursal debe ser numerico ";
@@ -240,7 +336,7 @@ namespace CREARSIS
                     return "La sucursal no se encuentra registrada";
                 }
 
-                if (tab_adm007.Rows[0]["va_est_ado"].ToString()== "N")
+                if (tab_adm007.Rows[0]["va_est_ado"].ToString() == "N")
                 {
                     tb_cod_sucu.Focus();
                     return "La sucursal se encuentra Deshabilitada";
@@ -248,13 +344,13 @@ namespace CREARSIS
 
 
                 //** Verifica Actividad economica
-                if (tb_cod_act.Text.Trim()=="")
+                if (tb_cod_act.Text.Trim() == "")
                 {
                     tb_cod_act.Focus();
                     return "Debes proporcionar la Actividad economica";
                 }
 
-                if (int.TryParse(tb_cod_act.Text,out tmp) == false)
+                if (int.TryParse(tb_cod_act.Text, out tmp) == false)
                 {
                     tb_cod_act.Focus();
                     return "Dato no valido, el codigo de la actividad debe ser numerico";
@@ -275,12 +371,12 @@ namespace CREARSIS
 
 
                 //** Verifica nro inicial y final 
-                if (int.TryParse(tb_nro_ini.Text,out tmp) == false)
+                if (int.TryParse(tb_nro_ini.Text, out tmp) == false)
                 {
                     tb_nro_ini.Focus();
                     return "Dato no valido, el número inicial debe ser numerico ";
                 }
-                if (int.TryParse(tb_nro_fin.Text,out tmp) == false)
+                if (int.TryParse(tb_nro_fin.Text, out tmp) == false)
                 {
                     tb_nro_fin.Focus();
                     return "Dato no valido, el número final debe ser numerico ";
@@ -312,9 +408,6 @@ namespace CREARSIS
         }
 
 
-
-
-
         void fu_bus_suc()
         {
 
@@ -333,8 +426,7 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
 
-
-
+        #endregion
 
     }
 }

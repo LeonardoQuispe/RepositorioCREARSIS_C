@@ -542,6 +542,7 @@
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
             this.tb_nro_dos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_nro_dos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nro_dos_KeyPress);
             // 
             // LabelX1
             // 

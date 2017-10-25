@@ -171,6 +171,9 @@
             this.tb_cod_ley.ReadOnly = true;
             this.tb_cod_ley.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_ley.TabIndex = 155;
+            this.tb_cod_ley.ButtonCustomClick += new System.EventHandler(this.tb_cod_ley_ButtonCustomClick);
+            this.tb_cod_ley.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_ley_KeyDown);
+            this.tb_cod_ley.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cod_ley_KeyPress);
             // 
             // LabelX8
             // 
@@ -435,6 +438,9 @@
             this.tb_cod_act.ReadOnly = true;
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_act.TabIndex = 45;
+            this.tb_cod_act.ButtonCustomClick += new System.EventHandler(this.tb_cod_act_ButtonCustomClick);
+            this.tb_cod_act.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_act_KeyDown);
+            this.tb_cod_act.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cod_act_KeyPress);
             // 
             // tb_nom_sucu
             // 
@@ -510,6 +516,9 @@
             this.tb_cod_sucu.ReadOnly = true;
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_sucu.TabIndex = 41;
+            this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
+            this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
+            this.tb_cod_sucu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cod_sucu_KeyPress);
             // 
             // cb_tip_fac
             // 
@@ -605,6 +614,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -620,6 +630,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // ctb007_03
             // 
@@ -637,6 +648,7 @@
             this.Name = "ctb007_03";
             this.Text = "Actualiza Dosificación";
             this.TitleText = "Actualiza Dosificación";
+            this.Load += new System.EventHandler(this.ctb007_03_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();

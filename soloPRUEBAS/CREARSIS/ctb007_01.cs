@@ -19,11 +19,23 @@ namespace CREARSIS
 {
     public partial class ctb007_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
-        c_ctb007 o_ctb007 = new c_ctb007();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+
         DataTable tab_ctb007;
         DataTable tabla;
+
+        #endregion
+
+        #region INSTANCIAS
+
+        c_ctb007 o_ctb007 = new c_ctb007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+
+        #endregion
+
+        #region EVENTOS
 
         public ctb007_01()
         {
@@ -37,7 +49,7 @@ namespace CREARSIS
 
         private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
         }
 
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
@@ -86,92 +98,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-        //NUEVO
-        private void m_adm003_02_Click(object sender, EventArgs e)
-        {
-            ctb007_02 obj = new ctb007_02();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
-        }
-
-        //ACTUALIZA
-        private void m_adm003_03_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ctb007_03 obj = new ctb007_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
-        }
-
-        //HABILITA/DESHABILITA
-        private void m_adm003_04_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ctb007_04 obj = new ctb007_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
-        }
-
-        //ELIMINA
-        private void m_adm003_06_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ctb007_06 obj = new ctb007_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
-        }
-
-        //CONSULTA
-        private void m_adm003_05_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ctb007_05 obj = new ctb007_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
-        }
-
-        //ATRAS
-        private void m_atr_ass_Click(object sender, EventArgs e)
-        {
-            o_mg_glo_bal.mg_ads000_04(this, 1);
-        }
-
-
-
-
-
-
-
-
+        #region METODOS
 
         /// <summary>
         /// -> Metodo que inicializa el formulario
@@ -185,7 +114,7 @@ namespace CREARSIS
             tb_fec_fin.Value = DateTime.Today;
             tb_fec_ini.Value = tb_fec_fin.Value.AddDays(180);
 
-            fu_bus_car("", 1, tb_fec_ini.Value, tb_fec_fin.Value, "T");
+            fu_bus_car("", 1, tb_fec_ini.Value, tb_fec_fin.Value, "");
 
         }
         /// <summary>
@@ -194,7 +123,7 @@ namespace CREARSIS
         /// <param name="val_bus">Valor a ser buscado</param>
         /// <param name="prm_bus">parametro por el cual se buscará (1=codigo;2=nombre)</param>
         /// <param name="est_bus">Estado por el cual se buscará</param>
-        public void fu_bus_car(string val_bus, int prm_bus, System.DateTime fec_ini, System.DateTime fec_fin, string est_bus)
+        public void fu_bus_car(string val_bus, int prm_bus, DateTime fec_ini, DateTime fec_fin, string est_bus)
         {
 
             try
@@ -240,7 +169,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Dosificacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -271,7 +200,7 @@ namespace CREARSIS
             }
 
             //Verifica estado del dato
-            if (tab_ctb007.Rows[0]["va_est_ado"].ToString()== "N")
+            if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
             {
                 return "La Dosificación se encuentra Deshabilitada";
             }
@@ -292,7 +221,7 @@ namespace CREARSIS
                 return;
             }
 
-            if (int.TryParse(tb_sel_ecc.Text,out tmp) == false)
+            if (int.TryParse(tb_sel_ecc.Text, out tmp) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
@@ -308,7 +237,7 @@ namespace CREARSIS
 
             tb_sel_ecc.Text = tabla.Rows[0]["va_nro_dos"].ToString();
 
-            if (lb_sel_ecc.Text!= "** NO existe")
+            if (lb_sel_ecc.Text != "** NO existe")
             {
                 fu_sel_fila(tb_sel_ecc.Text);
             }
@@ -319,7 +248,7 @@ namespace CREARSIS
         /// </summary>
         public void fu_fil_act()
         {
-            if (dg_res_ult.SelectedRows.Count!=0)
+            if (dg_res_ult.SelectedRows.Count != 0)
             {
                 tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nro_dos"].Value.ToString();
             }
@@ -334,7 +263,7 @@ namespace CREARSIS
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
 
             tb_sel_ecc.Text = cod_dos;
-            
+
 
             if (cod_dos != null)
             {
@@ -361,6 +290,84 @@ namespace CREARSIS
 
         }
 
-        
+        #endregion
+
+        #region OPCIONES DE MENU
+
+        //NUEVO
+        private void m_adm003_02_Click(object sender, EventArgs e)
+        {
+            ctb007_02 obj = new ctb007_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //ACTUALIZA
+        private void m_adm003_03_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_03 obj = new ctb007_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //HABILITA/DESHABILITA
+        private void m_adm003_04_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_04 obj = new ctb007_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //ELIMINA
+        private void m_adm003_06_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_06 obj = new ctb007_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //CONSULTA
+        private void m_adm003_05_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_05 obj = new ctb007_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        #endregion
+
     }
 }
