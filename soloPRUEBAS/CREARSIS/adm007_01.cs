@@ -223,7 +223,6 @@ namespace CREARSIS
 
         private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
         {
-
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_est_bus.SelectedIndex.ToString());
         }
 

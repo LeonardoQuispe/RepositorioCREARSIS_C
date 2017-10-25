@@ -155,8 +155,27 @@ namespace DATOS.ADM
                 throw ex;
             }
         }
+        /// <summary>
+        /// Funcion "Consulta Leyenda"
+        /// </summary>
+        /// <param name="nro_dos">Codigo de la dosificacion</param>
+        /// <returns></returns>
+        public DataTable _05(string cod_ley)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" SELECT * FROM ctb006 ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_ley = " + cod_ley);
 
-        
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }
