@@ -186,9 +186,7 @@ namespace CREARSIS
 
             if (vv_res_dlg == DialogResult.OK)
             {
-                //Elimina Leyenda
-                o_ctb006._06();
-                //Inserta Leyenda
+                //Elimina e Insertar Leyenda
                 o_ctb006._02();
 
                 fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1);
