@@ -80,7 +80,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb007 VALUES ");
                 vv_str_sql.AppendLine(" (" + nro_dos + ", " + tip_fac + ",'" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "'," + nro_ini);
-                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'H')");
+                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'','H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

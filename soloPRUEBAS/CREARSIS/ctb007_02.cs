@@ -226,7 +226,7 @@ namespace CREARSIS
                 }
 
                 tb_cod_act.Text = cod_act;
-                tb_nom_act.Text = tab_adm012.Rows[0]["va_nom_act0"].ToString();
+                tb_nom_act.Text = tab_adm012.Rows[0]["va_nom_act"].ToString();
 
 
             }
@@ -387,7 +387,7 @@ namespace CREARSIS
                     return "Dato no valido,el campo número final debe ser mayor que el número inicial";
                 }
 
-                TimeSpan ts = tb_fec_ini.Value - tb_fec_fin.Value;
+                TimeSpan ts = tb_fec_fin.Value - tb_fec_ini.Value;
 
                 //** Verifica Fechas
                 if (ts.Days <= 0)
@@ -396,7 +396,7 @@ namespace CREARSIS
                     return "Dato no valido,el campo fecha final debe ser mayor que fecha inicial";
                 }
 
-                return "";
+                return null;
 
             }
             catch (Exception ex)
@@ -410,8 +410,8 @@ namespace CREARSIS
 
         void fu_bus_suc()
         {
-
-            //o_mg_glo_bal.mg_ads000_03(obj);
+            adm007_01 obj = new adm007_01();            
+            o_mg_glo_bal.mg_ads000_03(obj,this);
         }
 
         void fu_bus_ace()

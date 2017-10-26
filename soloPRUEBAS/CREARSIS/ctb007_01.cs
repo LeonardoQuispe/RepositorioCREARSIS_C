@@ -111,8 +111,8 @@ namespace CREARSIS
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            tb_fec_fin.Value = DateTime.Today;
-            tb_fec_ini.Value = tb_fec_fin.Value.AddDays(180);
+            tb_fec_ini.Value = DateTime.Today;
+            tb_fec_fin.Value = tb_fec_fin.Value.AddDays(180);
 
             fu_bus_car("", 1, tb_fec_ini.Value, tb_fec_fin.Value, "");
 
