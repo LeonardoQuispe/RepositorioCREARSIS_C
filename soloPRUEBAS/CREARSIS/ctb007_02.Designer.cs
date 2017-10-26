@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_ley = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_ley = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -55,6 +57,8 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.tb_lla_ve1 = new System.Windows.Forms.TextBox();
+            this.tb_lla_ve2 = new System.Windows.Forms.TextBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
@@ -64,6 +68,10 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_lla_ve2);
+            this.GroupBox1.Controls.Add(this.tb_lla_ve1);
+            this.GroupBox1.Controls.Add(this.labelX10);
+            this.GroupBox1.Controls.Add(this.labelX11);
             this.GroupBox1.Controls.Add(this.tb_nom_ley);
             this.GroupBox1.Controls.Add(this.LabelX9);
             this.GroupBox1.Controls.Add(this.tb_cod_ley);
@@ -88,9 +96,41 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(2, -2);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(479, 267);
+            this.GroupBox1.Size = new System.Drawing.Size(479, 456);
             this.GroupBox1.TabIndex = 72;
             this.GroupBox1.TabStop = false;
+            // 
+            // labelX10
+            // 
+            this.labelX10.AutoSize = true;
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
+            this.labelX10.ForeColor = System.Drawing.Color.Black;
+            this.labelX10.Location = new System.Drawing.Point(60, 355);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(47, 17);
+            this.labelX10.TabIndex = 160;
+            this.labelX10.Text = "Confirme";
+            // 
+            // labelX11
+            // 
+            this.labelX11.AutoSize = true;
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
+            this.labelX11.ForeColor = System.Drawing.Color.Black;
+            this.labelX11.Location = new System.Drawing.Point(80, 266);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(27, 17);
+            this.labelX11.TabIndex = 161;
+            this.labelX11.Text = "Llave";
             // 
             // tb_nom_ley
             // 
@@ -512,6 +552,7 @@
             this.cb_tip_fac.Size = new System.Drawing.Size(343, 22);
             this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_fac.TabIndex = 40;
+            this.cb_tip_fac.SelectedIndexChanged += new System.EventHandler(this.cb_tip_fac_SelectedIndexChanged);
             // 
             // FC
             // 
@@ -566,7 +607,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 262);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 452);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(479, 48);
             this.gb_ctr_frm.TabIndex = 73;
@@ -605,13 +646,31 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // tb_lla_ve1
+            // 
+            this.tb_lla_ve1.BackColor = System.Drawing.Color.White;
+            this.tb_lla_ve1.Location = new System.Drawing.Point(112, 265);
+            this.tb_lla_ve1.Multiline = true;
+            this.tb_lla_ve1.Name = "tb_lla_ve1";
+            this.tb_lla_ve1.Size = new System.Drawing.Size(343, 76);
+            this.tb_lla_ve1.TabIndex = 162;
+            // 
+            // tb_lla_ve2
+            // 
+            this.tb_lla_ve2.BackColor = System.Drawing.Color.White;
+            this.tb_lla_ve2.Location = new System.Drawing.Point(112, 354);
+            this.tb_lla_ve2.Multiline = true;
+            this.tb_lla_ve2.Name = "tb_lla_ve2";
+            this.tb_lla_ve2.Size = new System.Drawing.Size(343, 76);
+            this.tb_lla_ve2.TabIndex = 163;
+            // 
             // ctb007_02
             // 
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(483, 309);
+            this.ClientSize = new System.Drawing.Size(483, 506);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.gb_ctr_frm);
@@ -660,5 +719,9 @@
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
+        internal DevComponents.DotNetBar.LabelX labelX10;
+        internal DevComponents.DotNetBar.LabelX labelX11;
+        private System.Windows.Forms.TextBox tb_lla_ve1;
+        private System.Windows.Forms.TextBox tb_lla_ve2;
     }
 }

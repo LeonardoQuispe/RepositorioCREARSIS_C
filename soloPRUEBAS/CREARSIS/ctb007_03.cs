@@ -340,6 +340,26 @@ namespace CREARSIS
                     return "Dato no valido,el campo fecha final debe ser mayor que fecha inicial";
                 }
 
+                //** Verifica LEYENDA
+                if (tb_cod_ley.Text.Trim() == "")
+                {
+                    tb_cod_ley.Focus();
+                    return "Debes proporcionar la Leyenda";
+                }
+
+                if (int.TryParse(tb_cod_ley.Text, out tmp) == false)
+                {
+                    tb_cod_ley.Focus();
+                    return "Dato no valido, el codigo de la Leyenda debe ser numerico";
+                }
+
+                tab_adm012 = o_ctb006._05(tb_cod_ley.Text);
+                if (tab_adm012.Rows.Count == 0)
+                {
+                    tb_cod_ley.Focus();
+                    return "La Leyenda no se encuentra registrada";
+                }
+
                 return null;
 
             }

@@ -73,14 +73,14 @@ namespace DATOS.ADM
         /// <param name="fec_fin">Fecha final dosificacion</param>
         /// <param name="cod_ley">Codigo de leyenda</param>
         /// <returns></returns>
-        public DataTable _02(int nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
+        public DataTable _02(int nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_vee)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb007 VALUES ");
                 vv_str_sql.AppendLine(" (" + nro_dos + ", " + tip_fac + ",'" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "'," + nro_ini);
-                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'','H')");
+                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'"+lla_vee+"','H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

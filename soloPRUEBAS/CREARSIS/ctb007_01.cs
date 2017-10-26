@@ -271,7 +271,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_dos)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().Trim() == cod_dos)
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -327,7 +327,7 @@ namespace CREARSIS
                 return;
             }
 
-            ctb007_10 obj = new ctb007_10();
+            ctb007_03a obj = new ctb007_03a();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
         }
 

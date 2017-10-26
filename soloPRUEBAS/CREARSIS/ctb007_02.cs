@@ -86,7 +86,7 @@ namespace CREARSIS
                 }
 
                 //grabar datos
-                o_ctb007._02(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()));
+                o_ctb007._02(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()),tb_lla_ve1.Text.Trim());
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
 
@@ -102,6 +102,8 @@ namespace CREARSIS
                 tb_nro_fin.Text = "9999";
                 tb_cod_ley.Clear();
                 tb_nom_ley.Clear();
+                tb_lla_ve1.Clear();
+                tb_lla_ve2.Clear();
 
             }
             catch (Exception ex)
@@ -113,6 +115,25 @@ namespace CREARSIS
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cb_tip_fac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_tip_fac.SelectedIndex==0)
+            {
+                tb_lla_ve1.Enabled = true;                
+                tb_lla_ve2.Enabled = true;
+                tb_lla_ve1.BackColor = Color.White;
+                tb_lla_ve2.BackColor = Color.White;
+            }
+            else if(cb_tip_fac.SelectedIndex==1)
+            {
+                tb_lla_ve1.Enabled = false;                
+                tb_lla_ve2.Enabled = false;
+                tb_lla_ve1.BackColor = Color.FromArgb(233, 237, 239);
+                tb_lla_ve2.BackColor = Color.FromArgb(233, 237, 239);
+            }
+
         }
 
         private void tb_nro_dos_KeyPress(object sender, KeyPressEventArgs e)
@@ -401,6 +422,53 @@ namespace CREARSIS
                     return "Dato no valido,el campo fecha final debe ser mayor que fecha inicial";
                 }
 
+
+                //** Verifica LEYENDA
+                if (tb_cod_ley.Text.Trim() == "")
+                {
+                    tb_cod_ley.Focus();
+                    return "Debes proporcionar la Leyenda";
+                }
+
+                if (int.TryParse(tb_cod_ley.Text, out tmp) == false)
+                {
+                    tb_cod_ley.Focus();
+                    return "Dato no valido, el codigo de la Leyenda debe ser numerico";
+                }
+
+                tab_adm012 = o_ctb006._05(tb_cod_ley.Text);
+                if (tab_adm012.Rows.Count == 0)
+                {
+                    tb_cod_ley.Focus();
+                    return "La Leyenda no se encuentra registrada";
+                }
+
+
+
+                //** Verifica Llaves
+
+                if (cb_tip_fac.SelectedIndex==0)
+                {
+                    if (tb_lla_ve1.Text.Trim() == "")
+                    {
+                        tb_lla_ve1.Focus();
+                        return "Debe proporcionar la llave de la Dosificación";
+                    }
+
+
+                    if (tb_lla_ve2.Text.Trim() == "")
+                    {
+                        tb_lla_ve2.Focus();
+                        return "Debe proporcionar la llave de la Dosificacion para verificación";
+                    }
+
+                    if (tb_lla_ve1.Text.Trim() != tb_lla_ve2.Text.Trim())
+                    {
+                        tb_lla_ve2.Focus();
+                        return "Las llaves no son iguales, verifique por favor.";
+                    }
+                }                
+
                 return null;
 
             }
@@ -433,5 +501,6 @@ namespace CREARSIS
 
         #endregion
 
+        
     }
 }
