@@ -77,7 +77,7 @@ namespace CREARSIS
                 }
 
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos?", "Nueva Dosificación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
@@ -305,6 +305,11 @@ namespace CREARSIS
                 {
                     tb_nro_dos.Focus();
                     return "Debes proporcionar el número de Dosificación";
+                }
+                if (tb_nro_dos.Text == "0")
+                {
+                    tb_nro_dos.Focus();
+                    return "El Nro de Dosificación NO es valido";
                 }
                 if (int.TryParse(tb_nro_dos.Text, out tmp) == false)
                 {

@@ -56,7 +56,7 @@ namespace CREARSIS
                     return;
                 }
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Acatualiza Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)

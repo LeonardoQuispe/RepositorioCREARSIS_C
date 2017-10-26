@@ -60,7 +60,7 @@ namespace CREARSIS
                     return;
                 }
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 if (tb_est_ado.Text == "Habilitado")
                 {
                     res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la  Dosificación?", "Deshabilita  Dosificación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

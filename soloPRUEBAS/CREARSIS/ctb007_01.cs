@@ -316,6 +316,21 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
         }
 
+        //ACTUALIZA LLAVE
+        private void mn_act_lla_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_10 obj = new ctb007_10();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
+
         //HABILITA/DESHABILITA
         private void m_adm003_04_Click(object sender, EventArgs e)
         {
@@ -360,6 +375,21 @@ namespace CREARSIS
             ctb007_05 obj = new ctb007_05();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
         }
+        
+        //VERIFICA CODIGO CONTROL
+        private void mn_ver_ccf_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ctb007_05 obj = new ctb007_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        }
 
         //ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
@@ -369,5 +399,6 @@ namespace CREARSIS
 
         #endregion
 
+        
     }
 }

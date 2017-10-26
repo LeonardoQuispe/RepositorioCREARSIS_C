@@ -180,7 +180,7 @@ namespace CREARSIS
 
         private void m_adm003_02_Click(object sender, EventArgs e)
         {
-            DialogResult vv_res_dlg = default(DialogResult);
+            DialogResult vv_res_dlg = new DialogResult();
 
             vv_res_dlg = MessageBoxEx.Show("Esta operacion inicializara todas las leyendas por ley de acuerdo a la ley N° 453; Esta seguro de continuar ?", "Inicializa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 

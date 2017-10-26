@@ -101,7 +101,7 @@ namespace CREARSIS
                     return;
                 }
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 if (tb_est_ado.Text == "Habilitado")
                 {
                     res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la Sucursal ?", "Deshabilita  Sucursal", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

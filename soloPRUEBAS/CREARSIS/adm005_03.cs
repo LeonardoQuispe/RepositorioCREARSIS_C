@@ -40,6 +40,60 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
+        public adm005_03()
+        {
+            InitializeComponent();
+        }
+
+        private void adm005_03_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Actualiza numeración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza numeración", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                //Graba datos NUMERACION
+                o_adm005._03(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(tb_cod_ges.Text), Convert.ToInt32(tb_nro_ini.Text), Convert.ToInt32(tb_nro_fin.Text), tb_fec_ini.Value, tb_fec_fin.Value, Convert.ToInt32(tb_con_tad.Text));
+                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, tb_cod_ges.Text);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Numeración", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, tb_cod_ges.Text);
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Actualiza numeración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
         #region METODOS
 
         public void fu_ini_frm()
@@ -292,58 +346,5 @@ namespace CREARSIS
             tb_nom_tal.Text = tab_adm004.Rows[0]["va_nom_tal"].ToString();
         }
         #endregion
-
-        #region EVENTOS
-
-        public adm005_03()
-        {
-            InitializeComponent();
-        }
-
-        private void adm005_03_Load(object sender, EventArgs e)
-        {
-            fu_ini_frm();
-        }
-
-        private void bt_ace_pta_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                err_msg = fu_ver_dat();
-                if (err_msg != null)
-                {
-                    MessageBoxEx.Show(err_msg, "Error Actualiza numeración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-
-                DialogResult res_msg = default(DialogResult);
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza numeración", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (res_msg == DialogResult.Cancel)
-                {
-                    return;
-                }
-
-                //Graba datos NUMERACION
-                o_adm005._03(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(tb_cod_ges.Text), Convert.ToInt32(tb_nro_ini.Text), Convert.ToInt32(tb_nro_fin.Text), tb_fec_ini.Value, tb_fec_fin.Value,Convert.ToInt32( tb_con_tad.Text));
-                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, tb_cod_ges.Text);
-
-                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Numeración", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, tb_cod_ges.Text);
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBoxEx.Show(ex.Message, "Error Actualiza numeración", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        #endregion
-
     }
 }

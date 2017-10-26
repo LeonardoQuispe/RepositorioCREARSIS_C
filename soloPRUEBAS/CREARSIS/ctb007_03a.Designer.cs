@@ -195,7 +195,6 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(202, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // LabelX1
             // 

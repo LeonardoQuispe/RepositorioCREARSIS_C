@@ -49,7 +49,7 @@ namespace CREARSIS
         {
             try
             {
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 string edo_msg = "";
                 //Variable estado para mostrar en el mensaje de confirmacion
                 string est_ado = "";

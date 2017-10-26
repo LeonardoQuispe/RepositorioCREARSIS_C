@@ -179,7 +179,6 @@
             this.tb_lla_ve.ReadOnly = true;
             this.tb_lla_ve.Size = new System.Drawing.Size(343, 22);
             this.tb_lla_ve.TabIndex = 158;
-            this.tb_lla_ve.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tb_nom_ley
             // 
@@ -264,6 +263,7 @@
             this.tb_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_fec_fin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.tb_fec_fin.ButtonDropDown.Visible = true;
+            this.tb_fec_fin.Enabled = false;
             this.tb_fec_fin.IsPopupCalendarOpen = false;
             this.tb_fec_fin.Location = new System.Drawing.Point(358, 183);
             // 
@@ -330,6 +330,7 @@
             this.tb_fec_ini.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_fec_ini.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.tb_fec_ini.ButtonDropDown.Visible = true;
+            this.tb_fec_ini.Enabled = false;
             this.tb_fec_ini.IsPopupCalendarOpen = false;
             this.tb_fec_ini.Location = new System.Drawing.Point(112, 183);
             // 
@@ -582,6 +583,7 @@
             this.cb_tip_fac.DisplayMember = "Text";
             this.cb_tip_fac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_tip_fac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_fac.Enabled = false;
             this.cb_tip_fac.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
@@ -625,7 +627,6 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(202, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // LabelX1
             // 

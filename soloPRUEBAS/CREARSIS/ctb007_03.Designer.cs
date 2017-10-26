@@ -393,7 +393,7 @@
             this.tb_nom_act.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_act.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_act.Location = new System.Drawing.Point(181, 143);
-            this.tb_nom_act.MaxLength = 15;
+            this.tb_nom_act.MaxLength = 100;
             this.tb_nom_act.Name = "tb_nom_act";
             this.tb_nom_act.PreventEnterBeep = true;
             this.tb_nom_act.ReadOnly = true;
@@ -454,7 +454,7 @@
             this.tb_nom_sucu.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_sucu.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_sucu.Location = new System.Drawing.Point(181, 110);
-            this.tb_nom_sucu.MaxLength = 15;
+            this.tb_nom_sucu.MaxLength = 100;
             this.tb_nom_sucu.Name = "tb_nom_sucu";
             this.tb_nom_sucu.PreventEnterBeep = true;
             this.tb_nom_sucu.ReadOnly = true;
@@ -568,7 +568,6 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // LabelX1
             // 

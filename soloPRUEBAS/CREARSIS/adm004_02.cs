@@ -66,7 +66,7 @@ namespace CREARSIS
                 }
 
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo talonario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
@@ -197,6 +197,12 @@ namespace CREARSIS
 
             //**Verifica Talonario-----------------------------------
             if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            {
+                tb_nro_tal.Focus();
+                return "El Nro de talonario NO es valido";
+            }
+
+            if (tb_nro_tal.Text=="0")
             {
                 tb_nro_tal.Focus();
                 return "El Nro de talonario NO es valido";

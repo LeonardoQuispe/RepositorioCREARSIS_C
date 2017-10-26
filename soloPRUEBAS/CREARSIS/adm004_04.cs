@@ -76,7 +76,7 @@ namespace CREARSIS
                 }
 
 
-                DialogResult res_msg = default(DialogResult);
+                DialogResult res_msg = new DialogResult();
                 res_msg = MessageBoxEx.Show("Estas seguro de " + edo_msg + " el talonario ?", "Habilita/Deshabilita talonario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
