@@ -340,21 +340,20 @@ namespace CREARSIS
                     return "Dato no valido,el campo fecha final debe ser mayor que fecha inicial";
                 }
 
-                return "";
+                return null;
 
             }
             catch (Exception ex)
             {
                 return ex.Message;
-
             }
         }
 
 
         void fu_bus_suc()
         {
-
-            //o_mg_glo_bal.mg_ads000_03(obj);
+            adm007_01 obj = new adm007_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
         }
 
         void fu_bus_ace()

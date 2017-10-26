@@ -143,7 +143,7 @@ namespace CREARSIS
                 return "Las llaves no coinciden, verifique por favor";
             }
 
-            return "";
+            return null;
         }
 
         #endregion
