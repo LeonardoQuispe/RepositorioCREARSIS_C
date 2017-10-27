@@ -1,6 +1,6 @@
 ﻿namespace CREARSIS
 {
-    partial class ctb007_11
+    partial class ctb007_20
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // ctb007_11
+            // ctb007_20
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Name = "ctb007_11";
-            this.Text = "ctb007_11";
+            this.Name = "ctb007_20";
+            this.Text = "asdasdsa";
             this.ResumeLayout(false);
 
         }
