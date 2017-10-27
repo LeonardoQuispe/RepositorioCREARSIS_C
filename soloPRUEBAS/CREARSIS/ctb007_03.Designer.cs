@@ -662,6 +662,7 @@
             this.bt_lla_vee.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.bt_lla_vee.Symbol = "";
             this.bt_lla_vee.TabIndex = 163;
+            this.bt_lla_vee.Click += new System.EventHandler(this.bt_lla_vee_Click);
             // 
             // ctb007_03
             // 

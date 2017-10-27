@@ -203,6 +203,13 @@ namespace CREARSIS
             }
         }
 
+        private void bt_lla_vee_Click(object sender, EventArgs e)
+        {
+            ctb007_05a obj = new ctb007_05a();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this, vg_str_ucc);
+        }
+
         #endregion
 
         #region METODOS
@@ -476,5 +483,7 @@ namespace CREARSIS
         }
 
         #endregion
+
+        
     }
 }

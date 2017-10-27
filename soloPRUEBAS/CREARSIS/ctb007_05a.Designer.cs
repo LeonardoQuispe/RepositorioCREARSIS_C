@@ -50,7 +50,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(12, 3);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(355, 163);
-            this.GroupBox1.TabIndex = 81;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // LabelX5
@@ -66,7 +66,7 @@
             this.LabelX5.Location = new System.Drawing.Point(79, 63);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(27, 17);
-            this.LabelX5.TabIndex = 48;
+            this.LabelX5.TabIndex = 2;
             this.LabelX5.Text = "Llave";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -87,7 +87,7 @@
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
             this.tb_nro_dos.Size = new System.Drawing.Size(219, 22);
-            this.tb_nro_dos.TabIndex = 10;
+            this.tb_nro_dos.TabIndex = 1;
             this.tb_nro_dos.Text = "0";
             // 
             // LabelX1
@@ -103,7 +103,7 @@
             this.LabelX1.Location = new System.Drawing.Point(22, 21);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(85, 17);
-            this.LabelX1.TabIndex = 1;
+            this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -115,7 +115,7 @@
             this.gb_ctr_frm.Location = new System.Drawing.Point(12, 172);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(355, 48);
-            this.gb_ctr_frm.TabIndex = 82;
+            this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel
@@ -131,8 +131,9 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 0;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // tb_lla_ve
             // 
@@ -156,7 +157,7 @@
             this.tb_lla_ve.PreventEnterBeep = true;
             this.tb_lla_ve.ReadOnly = true;
             this.tb_lla_ve.Size = new System.Drawing.Size(219, 76);
-            this.tb_lla_ve.TabIndex = 49;
+            this.tb_lla_ve.TabIndex = 0;
             // 
             // ctb007_05a
             // 
@@ -171,9 +172,9 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ctb007_05a";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Llave";
             this.TitleText = "Llave";
+            this.Load += new System.EventHandler(this.ctb007_05a_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);
