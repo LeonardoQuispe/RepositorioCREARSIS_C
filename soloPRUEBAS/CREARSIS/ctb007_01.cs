@@ -271,7 +271,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().Trim() == cod_dos)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().Trim() == cod_dos.Trim())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -378,17 +378,9 @@ namespace CREARSIS
         
         //VERIFICA CODIGO CONTROL
         private void mn_ver_ccf_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ctb007_05 obj = new ctb007_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+        {   
+            ctb007_20 obj = new ctb007_20();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
         //ATRAS

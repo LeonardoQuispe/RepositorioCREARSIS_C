@@ -86,12 +86,16 @@ namespace CREARSIS
                 }
 
                 //grabar datos
-                o_ctb007._02(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()),tb_lla_ve1.Text.Trim());
+                o_ctb007._02(Int64.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()));
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                if(cb_tip_fac.SelectedIndex == 0)
+                {
+                    MessageBoxEx.Show("Ha Registrado una Dosificación con Facturas emitidas por computadora, \r\n  no olvide Actualizar Llave, de lo contrario NO podrá registrar Facturas", "Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 tb_nro_dos.Clear();
                 tb_cod_sucu.Clear();
@@ -101,9 +105,7 @@ namespace CREARSIS
                 tb_nro_ini.Text = "1";
                 tb_nro_fin.Text = "9999";
                 tb_cod_ley.Clear();
-                tb_nom_ley.Clear();
-                tb_lla_ve1.Clear();
-                tb_lla_ve2.Clear();
+                tb_nom_ley.Clear();                
 
             }
             catch (Exception ex)
@@ -115,26 +117,7 @@ namespace CREARSIS
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void cb_tip_fac_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_tip_fac.SelectedIndex==0)
-            {
-                tb_lla_ve1.Enabled = true;                
-                tb_lla_ve2.Enabled = true;
-                tb_lla_ve1.BackColor = Color.White;
-                tb_lla_ve2.BackColor = Color.White;
-            }
-            else if(cb_tip_fac.SelectedIndex==1)
-            {
-                tb_lla_ve1.Enabled = false;                
-                tb_lla_ve2.Enabled = false;
-                tb_lla_ve1.BackColor = Color.FromArgb(233, 237, 239);
-                tb_lla_ve2.BackColor = Color.FromArgb(233, 237, 239);
-            }
-
-        }
+        }        
 
         private void tb_nro_dos_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -309,6 +292,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
+                MessageBoxEx.Show(ex.Message);
             }
 
         }
@@ -318,6 +302,7 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
             int tmp;
+            Int64 tmp2;
 
             try
             {
@@ -332,7 +317,7 @@ namespace CREARSIS
                     tb_nro_dos.Focus();
                     return "El Nro de Dosificación NO es valido";
                 }
-                if (int.TryParse(tb_nro_dos.Text, out tmp) == false)
+                if (Int64.TryParse(tb_nro_dos.Text, out tmp2) == false)
                 {
                     tb_nro_dos.Focus();
                     return "Dato no valido, debe ser numerico el número de Dosificación";
@@ -441,32 +426,6 @@ namespace CREARSIS
                 {
                     tb_cod_ley.Focus();
                     return "La Leyenda no se encuentra registrada";
-                }
-
-
-
-                //** Verifica Llaves
-
-                if (cb_tip_fac.SelectedIndex==0)
-                {
-                    if (tb_lla_ve1.Text.Trim() == "")
-                    {
-                        tb_lla_ve1.Focus();
-                        return "Debe proporcionar la llave de la Dosificación";
-                    }
-
-
-                    if (tb_lla_ve2.Text.Trim() == "")
-                    {
-                        tb_lla_ve2.Focus();
-                        return "Debe proporcionar la llave de la Dosificacion para verificación";
-                    }
-
-                    if (tb_lla_ve1.Text.Trim() != tb_lla_ve2.Text.Trim())
-                    {
-                        tb_lla_ve2.Focus();
-                        return "Las llaves no son iguales, verifique por favor.";
-                    }
                 }                
 
                 return null;

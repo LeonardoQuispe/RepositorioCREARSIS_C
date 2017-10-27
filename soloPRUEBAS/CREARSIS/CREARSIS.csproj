@@ -322,6 +322,12 @@
     <Compile Include="ctb007_05.Designer.cs">
       <DependentUpon>ctb007_05.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctb007_05a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_05a.Designer.cs">
+      <DependentUpon>ctb007_05a.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctb007_06.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -541,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctb007_05.resx">
       <DependentUpon>ctb007_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_05a.resx">
+      <DependentUpon>ctb007_05a.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctb007_06.resx">
       <DependentUpon>ctb007_06.cs</DependentUpon>

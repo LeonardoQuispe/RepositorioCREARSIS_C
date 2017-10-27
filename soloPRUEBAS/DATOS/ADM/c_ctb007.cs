@@ -73,14 +73,14 @@ namespace DATOS.ADM
         /// <param name="fec_fin">Fecha final dosificacion</param>
         /// <param name="cod_ley">Codigo de leyenda</param>
         /// <returns></returns>
-        public DataTable _02(int nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_vee)
+        public DataTable _02(Int64 nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb007 VALUES ");
                 vv_str_sql.AppendLine(" (" + nro_dos + ", " + tip_fac + ",'" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "'," + nro_ini);
-                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'"+lla_vee+"','H')");
+                vv_str_sql.AppendLine("," + nro_fin + "," + cod_sucu + "," + cod_act + "," + cod_ley + ",'','H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -107,9 +107,25 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" va_tip_fac=" + tip_fac + ",va_fec_ini='" + fec_ini + "',va_fec_fin='" + fec_fin + "',va_nro_ini=" + nro_ini);
-                vv_str_sql.AppendLine(",va_nro_fin=" + nro_fin + ",va_cod_suc=" + cod_sucu + ",va_cod_act=" + cod_act + ",va_cod_ley=" + cod_ley + "");
-                vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos);
+                vv_str_sql.AppendLine(" UPDATE ctb007 SET ");
+
+
+                switch (tip_fac)
+                {
+                    case 0:
+
+                        vv_str_sql.AppendLine(" va_tip_fac=" + tip_fac + ",va_fec_ini='" + fec_ini.ToShortDateString() + "',va_fec_fin='" + fec_fin.ToShortDateString() + "',va_nro_ini=" + nro_ini);
+                        vv_str_sql.AppendLine(",va_nro_fin=" + nro_fin + ",va_cod_suc=" + cod_sucu + ",va_cod_act=" + cod_act + ",va_cod_ley=" + cod_ley + "");
+                        vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos); break;
+
+                    case 1:
+
+                        vv_str_sql.AppendLine(" va_tip_fac=" + tip_fac + ",va_fec_ini='" + fec_ini.ToShortDateString() + "',va_fec_fin='" + fec_fin.ToShortDateString() + "',va_nro_ini=" + nro_ini);
+                        vv_str_sql.AppendLine(",va_nro_fin=" + nro_fin + ",va_cod_suc=" + cod_sucu + ",va_cod_act=" + cod_act + ",va_cod_ley=" + cod_ley + ",va_lla_vee=''");
+                        vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos); break;
+                }
+                
+                
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

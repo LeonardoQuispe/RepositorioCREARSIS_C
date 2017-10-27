@@ -87,6 +87,7 @@ namespace CREARSIS
                 {
                     return;
                 }
+                
 
                 //grabar datos
                 o_ctb007._03(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()));
@@ -95,6 +96,10 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                if (cb_tip_fac.SelectedIndex == 0)
+                {
+                    MessageBoxEx.Show("Ha Actualizado una Dosificación con Facturas emitidas por computadora, \r\n  no olvide Actualizar Llave, de lo contrario NO podrá registrar Facturas", "Actualiza Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 Close();
 
@@ -233,6 +238,16 @@ namespace CREARSIS
                 tb_est_ado.Text = "Dehabilitado";
             }
 
+
+            if (vg_str_ucc.Rows[0]["va_lla_vee"].ToString()=="")
+            {
+                bt_lla_vee.Enabled = false;
+            }
+            else
+            {
+                bt_lla_vee.Enabled = true;
+            }
+
         }
 
         /// <summary>
@@ -240,27 +255,11 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
+            int tmp;            
 
             try
             {
-                //** Verifica nro de dosificacion
-                if (tb_nro_dos.Text.Trim() == "")
-                {
-                    tb_nro_dos.Focus();
-                    return "Debes proporcionar el número de Dosificación";
-                }
-                if (int.TryParse(tb_nro_dos.Text, out tmp) == false)
-                {
-                    tb_nro_dos.Focus();
-                    return "Dato no valido, debe ser numerico el número de Dosificación";
-                }
-
-                tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
-                if (tab_ctb007.Rows.Count > 0)
-                {
-                    return "La dosificación ya se encuentra registrada";
-                }
+                
 
                 //** Verifica Sucursal
                 if (tb_cod_sucu.Text.Trim() == "")
@@ -332,7 +331,7 @@ namespace CREARSIS
                 }
 
 
-                TimeSpan ts = tb_fec_ini.Value - tb_fec_fin.Value;
+                TimeSpan ts = tb_fec_fin.Value - tb_fec_ini.Value;
                 //** Verifica Fechas
                 if (ts.Days <= 0)
                 {
@@ -386,6 +385,94 @@ namespace CREARSIS
         {
             ctb006_01 obj = new ctb006_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+
+
+        public void fu_rec_act(string cod_act)
+        {
+            try
+            {
+                tb_cod_act.Text = cod_act;
+                if (cod_act.Trim() == "")
+                {
+                    tb_nom_act.Text = "** NO existe";
+                    return;
+                }
+
+                tab_adm012 = o_adm012._05(cod_act);
+                if (tab_adm012.Rows.Count == 0)
+                {
+                    tb_nom_act.Text = "** NO existe";
+                    return;
+                }
+
+                tb_cod_act.Text = cod_act;
+                tb_nom_act.Text = tab_adm012.Rows[0]["va_nom_act"].ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+
+        }
+        public void fu_rec_ley(string cod_ley)
+        {
+            try
+            {
+                if (cod_ley.Trim() == "")
+                {
+                    tb_nom_ley.Text = "";
+                    return;
+                }
+
+                tab_ctb006 = o_ctb006._01(cod_ley, 1);
+                if (tab_ctb006.Rows.Count == 0)
+                {
+                    tb_nom_ley.Text = "";
+                    return;
+                }
+
+                tb_cod_ley.Text = cod_ley;
+                tb_nom_ley.Text = tab_ctb006.Rows[0]["va_nom_ley"].ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+
+        }
+        public void fu_rec_suc(string cod_suc)
+        {
+            try
+            {
+                if (cod_suc.Trim() == "")
+                {
+                    tb_nom_sucu.Text = "** NO existe";
+                    return;
+                }
+
+                tab_adm007 = o_adm007._05(cod_suc);
+                if (tab_adm007.Rows.Count == 0)
+                {
+                    tb_nom_ley.Text = "** NO existe";
+                    return;
+                }
+
+                tb_cod_sucu.Text = cod_suc;
+                tb_nom_sucu.Text = tab_adm007.Rows[0]["va_nom_suc"].ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
+
         }
 
         #endregion
