@@ -300,28 +300,33 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            //Si aun existe Numeración
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text, Convert.ToInt32( tb_nro_tal.Text));
-            if (tab_adm004.Rows.Count == 0)
+            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "" && tb_cod_ges.Text.Trim() != "")
             {
-                return "El Numeración no se encuentra registrado";
-            }
+                //Si aun existe Numeración
+                tab_adm004 = o_adm004._05(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text));
+                if (tab_adm004.Rows.Count == 0)
+                {
+                    return "El Numeración no se encuentra registrado";
+                }
 
-            //Verifica estado del dato
-            if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
+                //Verifica estado del dato
+                if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "El Numeración se encuentra Deshabilitado";
+                }
+                //Si aun existe  Numeracion
+                tab_adm005 = o_adm005._05(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(tb_cod_ges.Text));
+                if (tab_adm005.Rows.Count == 0)
+                {
+                    return "El Numerador para el Numeración (" + tb_cod_doc.Text + "/" + tb_nro_tal.Text + ") no se encuentra registrado en la gestión " + tb_cod_ges.Text + "";
+                }
+
+                return null;
+            }
+            else
             {
-                return "El Numeración se encuentra Deshabilitado";
+                return "Ningún dato Seleccionado";
             }
-
-
-            //Si aun existe  Numeracion
-            tab_adm005 = o_adm005._05(tb_cod_doc.Text,Convert.ToInt32( tb_nro_tal.Text),Convert.ToInt32( tb_cod_ges.Text));
-            if (tab_adm005.Rows.Count == 0)
-            {
-                return "El Numerador para el Numeración (" + tb_cod_doc.Text + "/" + tb_nro_tal.Text + ") no se encuentra registrado en la gestión " + tb_cod_ges.Text + "";
-            }
-
-            return null;
         }
 
 

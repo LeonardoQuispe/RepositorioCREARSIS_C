@@ -200,6 +200,7 @@
             this.tb_sel_ecc.PreventEnterBeep = true;
             this.tb_sel_ecc.Size = new System.Drawing.Size(62, 26);
             this.tb_sel_ecc.TabIndex = 10;
+            this.tb_sel_ecc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_sel_ecc_KeyPress);
             this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating);
             // 
             // LabelX1

@@ -186,34 +186,50 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            //Si aun existe
-            tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
-            if (tab_adm012.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim() != "")
             {
-                return "La Actividad Económica no se encuentra registrada";
+                //Si aun existe
+                tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
+                if (tab_adm012.Rows.Count == 0)
+                {
+                    return "La Actividad Económica no se encuentra registrada";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
             }
 
-            return null;
+
         }
         /// <summary>
         ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
         /// </summary>
         public string fu_ver_dat2()
         {
-            //Si aun existe
-            tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
-            if (tab_adm012.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim() != "")
             {
-                return "La Actividad Económica no se encuentra registrada";
-            }
+                //Si aun existe
+                tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
+                if (tab_adm012.Rows.Count == 0)
+                {
+                    return "La Actividad Económica no se encuentra registrada";
+                }
 
-            //Verifica estado del dato
-            if (tab_adm012.Rows[0]["va_est_ado"].ToString() == "N")
+                //Verifica estado del dato
+                if (tab_adm012.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Actividad Económica se encuentra Deshabilitada";
+                }
+
+                return null;
+            }
+            else
             {
-                return "La Actividad Económica se encuentra Deshabilitada";
+                return "Ningún dato Seleccionado";
             }
-
-            return null;
         }
 
         /// <summary>
@@ -372,8 +388,23 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+
         #endregion
 
-        
+        private void tb_sel_ecc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

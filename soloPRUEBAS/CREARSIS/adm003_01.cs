@@ -233,14 +233,21 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            //Si aun existe
-            tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-            if (tab_adm003.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim() != "")
             {
-                return "El Documento no se encuentra registrado";
+                //Si aun existe
+                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
+                if (tab_adm003.Rows.Count == 0)
+                {
+                    return "El Documento no se encuentra registrado";
+                }
+                
+                return null;
             }
-
-            return null;
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
         }
 
         /// <summary>

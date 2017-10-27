@@ -262,14 +262,23 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            //Si aun existe
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text,int.Parse(tb_nro_tal.Text));
-            if (tab_adm004.Rows.Count == 0)
+            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "")
             {
-                return "El Talonario no se encuentra registrado";
+                //Si aun existe
+                tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
+                if (tab_adm004.Rows.Count == 0)
+                {
+                    return "El Talonario no se encuentra registrado";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
             }
 
-            return null;
+
         }
 
         /// <summary>
@@ -277,20 +286,28 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat2()
         {
-            //Si aun existe
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text,int.Parse( tb_nro_tal.Text));
-            if (tab_adm004.Rows.Count == 0)
+            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "")
             {
-                return "El Talonario no se encuentra registrado";
-            }
+                //Si aun existe
+                tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
+                if (tab_adm004.Rows.Count == 0)
+                {
+                    return "El Talonario no se encuentra registrado";
+                }
 
-            //Verifica estado del dato
-            if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
+                //Verifica estado del dato
+                if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "El Talonario se encuentra Deshabilitado";
+                }
+
+                return null;
+            }
+            else
             {
-                return "El Talonario se encuentra Deshabilitado";
+                return "Ningún dato Seleccionado";
             }
-
-            return null;
+            
         }
 
         /// <summary>
@@ -299,21 +316,30 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat3()
         {
-            //Si aun existe
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text,int.Parse( tb_nro_tal.Text));
-            if (tab_adm004.Rows.Count == 0)
+            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "")
             {
-                return "El Talonario no se encuentra registrado";
+                //Si aun existe
+                tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
+                if (tab_adm004.Rows.Count == 0)
+                {
+                    return "El Talonario no se encuentra registrado";
+                }
+
+                //Verifica estado del dato
+                if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "H")
+                {
+                    return "El Talonario se encuentra Habilitado";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
             }
 
-            //Verifica estado del dato
-            if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "H")
-            {
-                return "El Talonario se encuentra Habilitado";
-            }
-
-            return null;
         }
+
 
         /// <summary>
         /// -> Metodo buscar
