@@ -123,7 +123,6 @@ namespace CREARSIS
         //[MENU: Actualiza]
         private void m_adm003_03_Click(object sender, EventArgs e)
         {
-
             string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
@@ -249,20 +248,27 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat2()
         {
-            //Si aun existe
-            tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-            if (tab_adm003.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim()!="")
             {
-                return "El Documento no se encuentra registrado";
-            }
+                //Si aun existe
+                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
+                if (tab_adm003.Rows.Count == 0)
+                {
+                    return "El Documento no se encuentra registrado";
+                }
 
-            //Verifica estado del dato
-            if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
+                //Verifica estado del dato
+                if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "El Documento se encuentra Deshabilitado";
+                }
+
+                return null;
+            }
+            else
             {
-                return "El Documento se encuentra Deshabilitado";
+                return "Ningún dato Seleccionado";
             }
-
-            return null;
         }
 
         /// <summary>
@@ -271,20 +277,29 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat3()
         {
-            //Si aun existe
-            tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-            if (tab_adm003.Rows.Count == 0)
-            {
-                return "El Documento no se encuentra registrado";
-            }
 
-            //Verifica estado del dato
-            if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "H")
+            if (tb_sel_ecc.Text.Trim() != "")
             {
-                return "El Documento se encuentra Habilitado";
-            }
+                //Si aun existe
+                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
+                if (tab_adm003.Rows.Count == 0)
+                {
+                    return "El Documento no se encuentra registrado";
+                }
 
-            return null;
+                //Verifica estado del dato
+                if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "H")
+                {
+                    return "El Documento se encuentra Habilitado";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+                
         }
         /// <summary>
         /// -> Metodo buscar
