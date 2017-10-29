@@ -17,13 +17,23 @@ namespace CREARSIS
 {
     public partial class ctb007_03a : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_ctb007;
         string va_msg_err = "";
 
+        #endregion
+
+        #region INSTANCIAS
+
         c_ctb007 o_ctb007 = new c_ctb007();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb007_03a()
         {
@@ -76,11 +86,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
-
-
-        
-
+        #region METODOS
 
         public void fu_ini_frm()
         {
@@ -121,7 +129,7 @@ namespace CREARSIS
             }
 
 
-            if (tb_lla_ve1.Text.Trim()=="")
+            if (tb_lla_ve1.Text.Trim() == "")
             {
                 va_msg_err = "Debe proporcionar la llave de la Dosificación";
                 tb_lla_ve1.Focus();
@@ -129,7 +137,7 @@ namespace CREARSIS
             }
 
 
-            if (tb_lla_ve2.Text.Trim()=="")
+            if (tb_lla_ve2.Text.Trim() == "")
             {
                 va_msg_err = "Debe proporcionar la llave de la Dosificacion para verificación";
                 tb_lla_ve2.Focus();
@@ -146,8 +154,7 @@ namespace CREARSIS
             return va_msg_err;
         }
 
-
-
+        #endregion
 
     }
 }

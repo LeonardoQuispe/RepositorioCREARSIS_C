@@ -93,6 +93,11 @@ namespace CREARSIS
             fu_fil_act();
         }
 
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
@@ -148,7 +153,14 @@ namespace CREARSIS
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+                    if (row["va_lla_vee"].ToString()!="")
+                    {
+                        dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado,va_lla_vee.Checked=true);
+                    }
+                    else
+                    {
+                        dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+                    }                    
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -388,6 +400,7 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+
 
         #endregion
 

@@ -19,17 +19,20 @@ namespace CREARSIS
     public partial class ctb007_20 : DevComponents.DotNetBar.Metro.MetroForm
     {
 
-        #region MyRegion
-
-
-
-        #endregion
+        #region VARIABLES
 
         public dynamic vg_frm_pad;
         string va_msg_err = "";
 
+        #endregion
+
+        #region INSTANCIAS
+
         md_cod_ctr o_md_cod_ctr = new md_cod_ctr();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb007_20()
         {
@@ -41,22 +44,22 @@ namespace CREARSIS
             int tmp;
 
             if (tb_mto_fac.Text.Contains(","))
-            {                
-                tb_mto_fac.Text= tb_mto_fac.Text.Replace(",", ".");
+            {
+                tb_mto_fac.Text = tb_mto_fac.Text.Replace(",", ".");
 
                 //System.Media.SystemSounds.Beep.Play();
 
                 //posiciona el cursor al final del texto
-                tb_mto_fac.Select(tb_mto_fac.Text.Length, 0);                
+                tb_mto_fac.Select(tb_mto_fac.Text.Length, 0);
             }
-            else if (int.TryParse(tb_mto_fac.Text,out tmp)== false)
+            else if (int.TryParse(tb_mto_fac.Text, out tmp) == false)
             {
                 //tb_mto_fac.Text=tb_mto_fac.Text.Replace()
             }
 
-            
-            
-        }        
+
+
+        }
 
         private void bt_obt_cod_Click(object sender, EventArgs e)
         {
@@ -77,16 +80,14 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
-
-
-
-
+        #region METODOS
 
         public string fu_ver_dat()
         {
             va_msg_err = null;
-            int tmp;            
+            int tmp;
             DateTime tmp2;
             decimal tmp3;
 
@@ -118,14 +119,14 @@ namespace CREARSIS
                 return va_msg_err;
             }
 
-            if (decimal.TryParse(tb_mto_fac.Text.Trim(), out tmp3)== false)
+            if (decimal.TryParse(tb_mto_fac.Text.Trim(), out tmp3) == false)
             {
                 va_msg_err = "Debe proporcionar un monto valido, solo numerico";
                 tb_mto_fac.Focus();
                 return va_msg_err;
             }
 
-            if (tb_lla_vee.Text.Trim()=="")
+            if (tb_lla_vee.Text.Trim() == "")
             {
                 va_msg_err = "Debe proporcionar la llave";
 
@@ -133,26 +134,27 @@ namespace CREARSIS
                 return va_msg_err;
             }
             tmp = 0;
-            for (int i = 0; i <tb_mto_fac.Text.Count() ; i++)
+            for (int i = 0; i < tb_mto_fac.Text.Count(); i++)
             {
-                if (tb_mto_fac.Text[i]=='.')
+                if (tb_mto_fac.Text[i] == '.')
                 {
                     tmp++;
                 }
-                if (tmp>=2)
+                if (tmp >= 2)
                 {
-                    va_msg_err = "No puede poner mas de 2 puntos en el Monto";
+                    va_msg_err = "No puede poner mas de 1 punto en el Monto";
 
-                    tb_lla_vee.Focus();
+                    tb_mto_fac.Focus();
                     return va_msg_err;
                 }
-                
+
             }
-            
+
 
             return va_msg_err;
         }
 
+        #endregion
         
     }
 }

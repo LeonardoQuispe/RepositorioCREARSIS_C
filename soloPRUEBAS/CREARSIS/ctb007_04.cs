@@ -11,6 +11,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using DATOS.ADM;
 using DevComponents.DotNetBar;
+using CREARSIS.GLOBAL;
 
 
 namespace CREARSIS
@@ -31,6 +32,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_ctb007 o_ctb007 = new c_ctb007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -98,10 +100,21 @@ namespace CREARSIS
             }
         }
 
+
+        private void bt_lla_vee_Click(object sender, EventArgs e)
+        {
+            ctb007_05a obj = new ctb007_05a();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this, vg_str_ucc);
+        }
+
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
+        
 
         #endregion
 
@@ -138,6 +151,15 @@ namespace CREARSIS
                 tb_est_ado.Text = "Dehabilitado";
             }
 
+            if (vg_str_ucc.Rows[0]["va_lla_vee"].ToString() == "")
+            {
+                bt_lla_vee.Enabled = false;
+            }
+            else
+            {
+                bt_lla_vee.Enabled = true;
+            }
+
         }
 
 
@@ -158,5 +180,6 @@ namespace CREARSIS
 
         #endregion
 
+        
     }
 }

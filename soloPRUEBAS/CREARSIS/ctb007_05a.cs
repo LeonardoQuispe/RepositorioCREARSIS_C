@@ -11,8 +11,15 @@ namespace CREARSIS
 {
     public partial class ctb007_05a : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+
+        #endregion        
+
+        #region EVENTOS
 
         public ctb007_05a()
         {
@@ -29,8 +36,9 @@ namespace CREARSIS
             Close();
         }
 
+        #endregion
 
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -40,6 +48,8 @@ namespace CREARSIS
             tb_lla_ve.Focus();
             tb_lla_ve.SelectAll();
         }
+
+        #endregion
 
     }
 }

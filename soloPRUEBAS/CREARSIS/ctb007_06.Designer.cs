@@ -32,6 +32,8 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_lla_vee = new DevComponents.DotNetBar.ButtonX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_ley = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
@@ -56,8 +58,6 @@
             this.FM = new DevComponents.Editors.ComboItem();
             this.tb_nro_dos = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.bt_lla_vee = new DevComponents.DotNetBar.ButtonX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
@@ -143,6 +143,35 @@
             this.GroupBox1.Size = new System.Drawing.Size(479, 340);
             this.GroupBox1.TabIndex = 78;
             this.GroupBox1.TabStop = false;
+            // 
+            // bt_lla_vee
+            // 
+            this.bt_lla_vee.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_lla_vee.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_lla_vee.Location = new System.Drawing.Point(113, 289);
+            this.bt_lla_vee.Name = "bt_lla_vee";
+            this.bt_lla_vee.Size = new System.Drawing.Size(70, 28);
+            this.bt_lla_vee.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_lla_vee.Symbol = "";
+            this.bt_lla_vee.TabIndex = 167;
+            this.bt_lla_vee.Click += new System.EventHandler(this.bt_lla_vee_Click);
+            // 
+            // labelX10
+            // 
+            this.labelX10.AutoSize = true;
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.ForeColor = System.Drawing.Color.Black;
+            this.labelX10.Location = new System.Drawing.Point(78, 293);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(29, 17);
+            this.labelX10.TabIndex = 166;
+            this.labelX10.Text = "Llave:";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // tb_est_ado
             // 
@@ -627,34 +656,6 @@
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // bt_lla_vee
-            // 
-            this.bt_lla_vee.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_lla_vee.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_lla_vee.Location = new System.Drawing.Point(113, 289);
-            this.bt_lla_vee.Name = "bt_lla_vee";
-            this.bt_lla_vee.Size = new System.Drawing.Size(70, 28);
-            this.bt_lla_vee.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_lla_vee.Symbol = "";
-            this.bt_lla_vee.TabIndex = 167;
-            // 
-            // labelX10
-            // 
-            this.labelX10.AutoSize = true;
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(78, 293);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(29, 17);
-            this.labelX10.TabIndex = 166;
-            this.labelX10.Text = "Llave:";
-            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // ctb007_06
             // 
