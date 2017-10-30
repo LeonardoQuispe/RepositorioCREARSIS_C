@@ -262,23 +262,23 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "")
-            {
+                long tmp;
+
+                if (tb_nro_tal.Text.Trim() != "" || tb_cod_doc.Text.Trim() != "")
+                {
+                    return "Ningún dato Seleccionado";
+                }
+                if (long.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
                 if (tab_adm004.Rows.Count == 0)
                 {
                     return "El Talonario no se encuentra registrado";
                 }
-
                 return null;
-            }
-            else
-            {
-                return "Ningún dato Seleccionado";
-            }
-
-
         }
 
         /// <summary>
@@ -302,7 +302,6 @@ namespace CREARSIS
                 {
                     return "El Talonario no se encuentra registrado";
                 }
-
                 //Verifica estado del dato
                 if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
                 {
@@ -310,8 +309,6 @@ namespace CREARSIS
                 }
 
                 return null;
-            
-            
         }
 
         /// <summary>
@@ -320,8 +317,16 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat3()
         {
-            if (tb_nro_tal.Text.Trim() != "" && tb_cod_doc.Text.Trim() != "")
+            long tmp;
+
+            if (tb_nro_tal.Text.Trim() != "" || tb_cod_doc.Text.Trim() != "")
             {
+                return "Ningún dato Seleccionado";
+            }
+            if (long.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            {
+                return "Datos Incorrectos";
+            }
                 //Si aun existe
                 tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
                 if (tab_adm004.Rows.Count == 0)
@@ -334,14 +339,7 @@ namespace CREARSIS
                 {
                     return "El Talonario se encuentra Habilitado";
                 }
-
                 return null;
-            }
-            else
-            {
-                return "Ningún dato Seleccionado";
-            }
-
         }
 
 
