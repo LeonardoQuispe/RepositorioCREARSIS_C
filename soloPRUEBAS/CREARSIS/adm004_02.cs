@@ -280,8 +280,7 @@ namespace CREARSIS
                 tb_cod_doc.Focus();
                 return "Debes proporcionar el codigo de Dosificación";
             }
-
-            //Verifica existetncia del Nro de autorizacion
+            
             tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
             if (tab_ctb007.Rows.Count == 0)
             {

@@ -219,7 +219,7 @@ namespace CREARSIS
                 return "El Número final debe ser numerico";
             }
 
-            if (Convert.ToInt32(tb_nro_ini.Text.Trim()) < 0)
+            if (tb_nro_ini.Text.Trim()=="0")
             {
                 tb_nro_ini.Focus();
                 return "El Número inicial debe ser Mayor a cero";
