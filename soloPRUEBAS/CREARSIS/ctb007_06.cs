@@ -113,7 +113,7 @@ namespace CREARSIS
             {
                 return;
             }
-            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_dos"].ToString();
+            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_aut"].ToString();
             cb_tip_fac.SelectedIndex = int.Parse(vg_str_ucc.Rows[0]["va_tip_fac"].ToString());
 
             tb_cod_sucu.Text = vg_str_ucc.Rows[0]["va_cod_suc"].ToString();

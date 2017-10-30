@@ -42,7 +42,7 @@ namespace CREARSIS
 
         void fu_ini_frm()
         {
-            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_dos"].ToString();
+            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_aut"].ToString();
             tb_lla_ve.Text = vg_str_ucc.Rows[0]["va_lla_vee"].ToString();
 
             tb_lla_ve.Focus();

@@ -37,11 +37,11 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT * FROM vi_ctb007  ");
+                vv_str_sql.AppendLine(" SELECT * FROM ctb007  ");
 
                 switch (prm_bus)
                 {
-                    case 1 : vv_str_sql.AppendLine(" WHERE va_nro_dos like '" + val_bus + "%' "); break;
+                    case 1 : vv_str_sql.AppendLine(" WHERE va_nro_aut like '" + val_bus + "%' "); break;
                 }
                 
                 vv_str_sql.AppendLine(" AND va_fec_ini BETWEEN '" + va_fec_ini.ToShortDateString() + "' AND '" + va_fec_fin.ToShortDateString() + "'");
@@ -116,13 +116,13 @@ namespace DATOS.ADM
 
                         vv_str_sql.AppendLine(" va_tip_fac=" + tip_fac + ",va_fec_ini='" + fec_ini.ToShortDateString() + "',va_fec_fin='" + fec_fin.ToShortDateString() + "',va_nro_ini=" + nro_ini);
                         vv_str_sql.AppendLine(",va_nro_fin=" + nro_fin + ",va_cod_suc=" + cod_sucu + ",va_cod_act=" + cod_act + ",va_cod_ley=" + cod_ley + "");
-                        vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos); break;
+                        vv_str_sql.AppendLine(" WHERE va_nro_aut =" + nro_dos); break;
 
                     case 1:
 
                         vv_str_sql.AppendLine(" va_tip_fac=" + tip_fac + ",va_fec_ini='" + fec_ini.ToShortDateString() + "',va_fec_fin='" + fec_fin.ToShortDateString() + "',va_nro_ini=" + nro_ini);
                         vv_str_sql.AppendLine(",va_nro_fin=" + nro_fin + ",va_cod_suc=" + cod_sucu + ",va_cod_act=" + cod_act + ",va_cod_ley=" + cod_ley + ",va_lla_vee=''");
-                        vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos); break;
+                        vv_str_sql.AppendLine(" WHERE va_nro_aut =" + nro_dos); break;
                 }
                 
                 
@@ -147,7 +147,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE ctb007 SET ");
                 vv_str_sql.AppendLine(" va_lla_vee= '" + lla_vee + "'");
-                vv_str_sql.AppendLine(" WHERE va_nro_dos =" + nro_dos);
+                vv_str_sql.AppendLine(" WHERE va_nro_aut =" + nro_dos);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -169,7 +169,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE ctb007 SET ");
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
-                vv_str_sql.AppendLine(" WHERE  va_nro_dos = '" + nro_dos + "'");
+                vv_str_sql.AppendLine(" WHERE  va_nro_aut = '" + nro_dos + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -188,8 +188,8 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT * FROM vi_ctb007 ");
-                vv_str_sql.AppendLine(" WHERE  va_nro_dos =" + nro_dos);
+                vv_str_sql.AppendLine(" SELECT * FROM ctb007 ");
+                vv_str_sql.AppendLine(" WHERE  va_nro_aut ='" + nro_dos+"'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -209,7 +209,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" DELETE ctb007 ");
-                vv_str_sql.AppendLine(" WHERE  va_nro_dos = '" + nro_dos + "'");
+                vv_str_sql.AppendLine(" WHERE  va_nro_aut = '" + nro_dos + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

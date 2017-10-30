@@ -298,7 +298,7 @@ namespace CREARSIS
             }
 
             //Verifica estado del dato
-            if (((string)(tab_seg001.Rows[0]["va_est_ado"])) == "H")
+            if (tab_seg001.Rows[0]["va_est_ado"].ToString() == "H")
             {
                 return "El Usuario se encuentra Habilitado";
             }
@@ -324,20 +324,20 @@ namespace CREARSIS
             tab_seg001 = o_seg001._01(val_bus, prm_bus, est_bus);
             foreach (DataRow row in tab_seg001.Rows)
             {
-                switch (row["va_tip_usr"])
+                switch (row["va_tip_usr"].ToString())
                 {
-                    case 1:
+                    case "1":
                         va_tip_usr = "Administrador";
                         break;
-                    case 2:
+                    case "2":
                         va_tip_usr = "Supervisor";
                         break;
-                    case 3:
+                    case "3":
                         va_tip_usr = "Normal";
                         break;
                 }
 
-                switch (row["va_est_ado"])
+                switch (row["va_est_ado"].ToString())
                 {
                     case "H":
                         va_est_ado = "Habilitado";
@@ -362,8 +362,8 @@ namespace CREARSIS
             if (va_ind_ice > 0)
             {                
                 
-                    tb_sel_ecc.Text = Convert.ToString(tab_seg001.Rows[0]["va_cod_usr"]);
-                    lb_sel_ecc.Text = Convert.ToString(tab_seg001.Rows[0]["va_nom_usr"]);
+                    tb_sel_ecc.Text = tab_seg001.Rows[0]["va_cod_usr"].ToString();
+                    lb_sel_ecc.Text = tab_seg001.Rows[0]["va_nom_usr"].ToString();
                               
             }
             

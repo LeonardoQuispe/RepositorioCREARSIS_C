@@ -95,7 +95,10 @@ namespace CREARSIS
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            vg_frm_pad.fu_rec_dos(tb_sel_ecc.Text);
 
+            vg_frm_pad.Enabled = true;
+            Close();
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -116,8 +119,8 @@ namespace CREARSIS
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            tb_fec_ini.Value = DateTime.Today;
-            tb_fec_fin.Value = tb_fec_fin.Value.AddDays(180);
+            tb_fec_fin.Value = DateTime.Today;
+            tb_fec_ini.Value = tb_fec_fin.Value.AddDays(-180);
 
             fu_bus_car("", 1, tb_fec_ini.Value, tb_fec_fin.Value, "");
 
@@ -155,11 +158,11 @@ namespace CREARSIS
 
                     if (row["va_lla_vee"].ToString()!="")
                     {
-                        dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado,va_lla_vee.Checked=true);
+                        dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado,va_lla_vee.Checked=true);
                     }
                     else
                     {
-                        dg_res_ult.Rows.Add(row["va_nro_dos"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+                        dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
                     }                    
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
@@ -169,11 +172,13 @@ namespace CREARSIS
                 if (va_ind_ice == 0)
                 {
                     tb_sel_ecc.Text = "";
+                    lb_sel_ecc.Text = "** NO existe";
                 }
 
                 if (va_ind_ice > 0)
                 {
-                    tb_sel_ecc.Text = tab_ctb007.Rows[0]["va_nro_dos"].ToString();
+                    tb_sel_ecc.Text = tab_ctb007.Rows[0]["va_nro_aut"].ToString();
+                    lb_sel_ecc.Text = "";
                 }
 
                 tb_val_bus.Focus();
@@ -190,41 +195,58 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            //Si aun existe
-            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
-            if (tab_ctb007.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim() != "")
             {
-                return "La Dosificación no se encuentra registrada";
-            }
+                //Si aun existe
+                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+                if (tab_ctb007.Rows.Count == 0)
+                {
+                    return "La Dosificación no se encuentra registrada";
+                }
 
-            return null;
+                return null;
+
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+                
         }
         /// <summary>
         ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
         /// </summary>
         public string fu_ver_dat2()
         {
-            //Si aun existe
-            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
-            if (tab_ctb007.Rows.Count == 0)
+            if (tb_sel_ecc.Text.Trim()!="")
             {
-                return "La Dosificación  no se encuentra registrada";
-            }
+                //Si aun existe
+                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+                if (tab_ctb007.Rows.Count == 0)
+                {
+                    return "La Dosificación  no se encuentra registrada";
+                }
 
-            //Verifica estado del dato
-            if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+                //Verifica estado del dato
+                if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Dosificación se encuentra Deshabilitada";
+                }
+
+                return null;
+            }
+            else
             {
-                return "La Dosificación se encuentra Deshabilitada";
+                return "Ningún dato Seleccionado";
             }
-
-            return null;
+           
         }
         /// <summary>
         /// -> Consulta seleccion en pantalla
         /// </summary>
         public void fu_con_sel()
         {
-            int tmp;
+            Int64 tmp;
 
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
@@ -233,7 +255,7 @@ namespace CREARSIS
                 return;
             }
 
-            if (int.TryParse(tb_sel_ecc.Text, out tmp) == false)
+            if (Int64.TryParse(tb_sel_ecc.Text, out tmp) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
@@ -247,7 +269,8 @@ namespace CREARSIS
                 return;
             }
 
-            tb_sel_ecc.Text = tabla.Rows[0]["va_nro_dos"].ToString();
+            tb_sel_ecc.Text = tabla.Rows[0]["va_nro_aut"].ToString();
+            lb_sel_ecc.Text = "";
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
@@ -262,7 +285,8 @@ namespace CREARSIS
         {
             if (dg_res_ult.SelectedRows.Count != 0)
             {
-                tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nro_dos"].Value.ToString();
+                tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nro_aut"].Value.ToString();
+                lb_sel_ecc.Text = "";
             }
 
         }

@@ -134,7 +134,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -150,7 +150,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -166,7 +166,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -182,7 +182,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

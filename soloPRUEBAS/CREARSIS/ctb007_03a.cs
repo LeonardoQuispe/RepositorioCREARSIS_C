@@ -95,7 +95,7 @@ namespace CREARSIS
             tb_lla_ve1.Text = "";
             tb_lla_ve2.Text = "";
 
-            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_dos"].ToString();
+            tb_nro_dos.Text = vg_str_ucc.Rows[0]["va_nro_aut"].ToString();
             cb_tip_fac.SelectedIndex = int.Parse(vg_str_ucc.Rows[0]["va_tip_fac"].ToString());
             tb_fec_ini.Value = Convert.ToDateTime(vg_str_ucc.Rows[0]["va_fec_ini"].ToString());
             tb_fec_fin.Value = Convert.ToDateTime(vg_str_ucc.Rows[0]["va_fec_fin"].ToString());

@@ -39,7 +39,7 @@
             this.tb_cod_ges = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX12 = new DevComponents.DotNetBar.LabelX();
             this.LabelX7 = new DevComponents.DotNetBar.LabelX();
-            this.tb_nro_aut = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nro_dos = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cb_nro_cop = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cero = new DevComponents.Editors.ComboItem();
             this.uno = new DevComponents.Editors.ComboItem();
@@ -65,13 +65,13 @@
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fir_ma4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line4 = new DevComponents.DotNetBar.Controls.Line();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -206,7 +206,7 @@
             this.GroupBox3.Controls.Add(this.tb_cod_ges);
             this.GroupBox3.Controls.Add(this.LabelX12);
             this.GroupBox3.Controls.Add(this.LabelX7);
-            this.GroupBox3.Controls.Add(this.tb_nro_aut);
+            this.GroupBox3.Controls.Add(this.tb_nro_dos);
             this.GroupBox3.Controls.Add(this.cb_nro_cop);
             this.GroupBox3.Controls.Add(this.LabelX5);
             this.GroupBox3.Controls.Add(this.tb_for_mat);
@@ -264,30 +264,33 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(287, 62);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(63, 17);
+            this.LabelX7.Size = new System.Drawing.Size(61, 17);
             this.LabelX7.TabIndex = 72;
-            this.LabelX7.Text = "Autorización";
+            this.LabelX7.Text = "Dosificación";
             // 
-            // tb_nro_aut
+            // tb_nro_dos
             // 
-            this.tb_nro_aut.AutoSelectAll = true;
-            this.tb_nro_aut.BackColor = System.Drawing.Color.White;
+            this.tb_nro_dos.AutoSelectAll = true;
+            this.tb_nro_dos.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_nro_aut.Border.Class = "TextBoxBorder";
-            this.tb_nro_aut.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nro_aut.ButtonCustom.Symbol = "";
-            this.tb_nro_aut.ButtonCustom.Visible = true;
-            this.tb_nro_aut.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_aut.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_aut.Location = new System.Drawing.Point(356, 59);
-            this.tb_nro_aut.MaxLength = 15;
-            this.tb_nro_aut.Name = "tb_nro_aut";
-            this.tb_nro_aut.PreventEnterBeep = true;
-            this.tb_nro_aut.Size = new System.Drawing.Size(144, 22);
-            this.tb_nro_aut.TabIndex = 70;
-            this.tb_nro_aut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_nro_dos.Border.Class = "TextBoxBorder";
+            this.tb_nro_dos.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nro_dos.ButtonCustom.Symbol = "";
+            this.tb_nro_dos.ButtonCustom.Visible = true;
+            this.tb_nro_dos.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_dos.ForeColor = System.Drawing.Color.Black;
+            this.tb_nro_dos.Location = new System.Drawing.Point(356, 59);
+            this.tb_nro_dos.MaxLength = 15;
+            this.tb_nro_dos.Name = "tb_nro_dos";
+            this.tb_nro_dos.PreventEnterBeep = true;
+            this.tb_nro_dos.Size = new System.Drawing.Size(144, 22);
+            this.tb_nro_dos.TabIndex = 70;
+            this.tb_nro_dos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_nro_dos.ButtonCustomClick += new System.EventHandler(this.tb_nro_dos_ButtonCustomClick);
+            this.tb_nro_dos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_dos_KeyDown);
+            this.tb_nro_dos.Validated += new System.EventHandler(this.tb_nro_dos_Validated);
             // 
             // cb_nro_cop
             // 
@@ -621,6 +624,38 @@
             this.tb_fir_ma4.TabIndex = 120;
             this.tb_fir_ma4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // line1
+            // 
+            this.line1.Location = new System.Drawing.Point(386, 65);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(118, 23);
+            this.line1.TabIndex = 121;
+            this.line1.Text = "line1";
+            // 
+            // line2
+            // 
+            this.line2.Location = new System.Drawing.Point(257, 65);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(118, 23);
+            this.line2.TabIndex = 122;
+            this.line2.Text = "line2";
+            // 
+            // line3
+            // 
+            this.line3.Location = new System.Drawing.Point(131, 65);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(118, 23);
+            this.line3.TabIndex = 123;
+            this.line3.Text = "line3";
+            // 
+            // line4
+            // 
+            this.line4.Location = new System.Drawing.Point(5, 65);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(118, 23);
+            this.line4.TabIndex = 124;
+            this.line4.Text = "line4";
+            // 
             // GroupBox2
             // 
             this.GroupBox2.BackColor = System.Drawing.Color.White;
@@ -667,38 +702,6 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // line1
-            // 
-            this.line1.Location = new System.Drawing.Point(386, 65);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(118, 23);
-            this.line1.TabIndex = 121;
-            this.line1.Text = "line1";
-            // 
-            // line2
-            // 
-            this.line2.Location = new System.Drawing.Point(257, 65);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(118, 23);
-            this.line2.TabIndex = 122;
-            this.line2.Text = "line2";
-            // 
-            // line3
-            // 
-            this.line3.Location = new System.Drawing.Point(131, 65);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(118, 23);
-            this.line3.TabIndex = 123;
-            this.line3.Text = "line3";
-            // 
-            // line4
-            // 
-            this.line4.Location = new System.Drawing.Point(5, 65);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(118, 23);
-            this.line4.TabIndex = 124;
-            this.line4.Text = "line4";
-            // 
             // adm004_02
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -742,7 +745,7 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_ges;
         internal DevComponents.DotNetBar.LabelX LabelX12;
         internal DevComponents.DotNetBar.LabelX LabelX7;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nro_aut;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nro_dos;
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_nro_cop;
         internal DevComponents.Editors.ComboItem cero;
         internal DevComponents.Editors.ComboItem uno;

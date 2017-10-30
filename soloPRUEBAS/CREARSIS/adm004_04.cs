@@ -214,7 +214,7 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
+            long tmp;
 
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
@@ -237,7 +237,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            if (long.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
             {
                 tb_nro_tal.Focus();
                 return "El Nro de talonario NO es valido";
@@ -252,7 +252,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica formato-------------------------------------
-            if (int.TryParse(tb_for_mat.Text.Trim(), out tmp) == false)
+            if (long.TryParse(tb_for_mat.Text.Trim(), out tmp) == false)
             {
                 tb_for_mat.Focus();
                 return "El formato debe ser numerico";
@@ -260,7 +260,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Nro de Autorizacion-------------------------
-            if (int.TryParse(tb_nro_aut.Text.Trim(), out tmp) == false)
+            if (long.TryParse(tb_nro_aut.Text.Trim(), out tmp) == false)
             {
                 tb_nro_aut.Focus();
                 return "El Nro de autorización debe ser numerico";

@@ -68,8 +68,8 @@ namespace DATOS.ADM
         /// <param name="cod_doc">Codigo del documento<</param>
         /// <param name="nro_tal">Nro de talonario</param>
         /// <param name="nom_tal">Nombre del Talonario</param>
-        /// <param name="tip_num">ipo de numeracion (1=manual ; 2=aurtomatic</param>
-        /// <param name="nro_aut">Numero de autorizacion (dosificacion)</param>
+        /// <param name="tip_num">Tipo de numeracion (1=manual ; 2=aurtomatic</param>
+        /// <param name="nro_dos">Numero de Dosificacion</param>
         /// <param name="for_mat">Formato de impresion</param>
         /// <param name="nro_cop">Numero de copias que imprimira el documento</param>
         /// <param name="fir_ma1">Firma 1 del documento</param>
@@ -79,7 +79,7 @@ namespace DATOS.ADM
         /// <param name="for_log">Forma de imprimir el logo en el documento (0=Nombre de la empresa ; 1=Logotipo 1)</param>
         /// <returns></returns>
         public DataTable _02(string cod_doc, string nro_tal, string nom_tal,
-            int tip_num, string nro_aut, int for_mat, int nro_cop, string fir_ma1,
+            int tip_num, string nro_dos, int for_mat, int nro_cop, string fir_ma1,
             string fir_ma2, string fir_ma3, string fir_ma4, int for_log)
         {
             try
@@ -87,7 +87,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO adm004 VALUES ");
                 vv_str_sql.AppendLine(" ('" + cod_doc + "', " + nro_tal + ",'" + nom_tal + "', " + tip_num + " , ");
-                vv_str_sql.AppendLine(" '" + nro_aut + "', " + for_mat + "," + nro_cop + ",'" + fir_ma1 + "', ");
+                vv_str_sql.AppendLine(" '" + nro_dos + "', " + for_mat + "," + nro_cop + ",'" + fir_ma1 + "', ");
                 vv_str_sql.AppendLine(" '" + fir_ma2 + "', '" + fir_ma3 + "', '" + fir_ma4 + "'," + for_log + ",0,'H' )");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -105,7 +105,7 @@ namespace DATOS.ADM
         /// <param name="nro_tal">Nro de talonario</param>
         /// <param name="nom_tal">Nombre del Talonario</param>
         /// <param name="tip_num">ipo de numeracion (1=manual ; 2=aurtomatic</param>
-        /// <param name="nro_aut">Numero de autorizacion (dosificacion)</param>
+        /// <param name="nro_dos">Numero de dosificacion</param>
         /// <param name="for_mat">Formato de impresion</param>
         /// <param name="nro_cop">Numero de copias que imprimira el documento</param>
         /// <param name="fir_ma1">Firma 1 del documento</param>
@@ -115,14 +115,14 @@ namespace DATOS.ADM
         /// <param name="for_log">Forma de imprimir el logo en el documento (0=Nombre de la empresa ; 1=Logotipo 1)</param>
         /// <returns></returns>
         public DataTable _03(string cod_doc, string nro_tal, string nom_tal,
-            int tip_num, string nro_aut, int for_mat, int nro_cop, string fir_ma1,
+            int tip_num, string nro_dos, int for_mat, int nro_cop, string fir_ma1,
             string fir_ma2, string fir_ma3, string fir_ma4, int for_log)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE adm004 SET ");
-                vv_str_sql.AppendLine(" va_nom_tal='" + nom_tal + "' , va_tip_num= " + tip_num + ", va_nro_aut='" + nro_aut + "', ");
+                vv_str_sql.AppendLine(" va_nom_tal='" + nom_tal + "' , va_tip_num= " + tip_num + ", va_nro_aut='" + nro_dos + "', ");
                 vv_str_sql.AppendLine(" va_for_mat=" + for_mat + ", va_nro_cop=" + nro_cop + ", va_fir_ma1='" + fir_ma1 + "', ");
                 vv_str_sql.AppendLine(" va_fir_ma2='" + fir_ma2 + "', va_fir_ma3='" + fir_ma3 + "', va_fir_ma4='" + fir_ma4 + "', ");
                 vv_str_sql.AppendLine(" va_for_log=" + for_log);

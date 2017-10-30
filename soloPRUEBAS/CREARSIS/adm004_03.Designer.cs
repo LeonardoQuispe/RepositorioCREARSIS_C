@@ -55,21 +55,21 @@
             this.LabelX8 = new DevComponents.DotNetBar.LabelX();
             this.LabelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cb_for_log = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.nom_emp = new DevComponents.Editors.ComboItem();
-            this.log_emp = new DevComponents.Editors.ComboItem();
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fir_ma4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.LabelX6 = new DevComponents.DotNetBar.LabelX();
+            this.cb_for_log = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.nom_emp = new DevComponents.Editors.ComboItem();
+            this.log_emp = new DevComponents.Editors.ComboItem();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line4 = new DevComponents.DotNetBar.Controls.Line();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -106,6 +106,7 @@
             this.tb_nom_tal.MaxLength = 120;
             this.tb_nom_tal.Name = "tb_nom_tal";
             this.tb_nom_tal.PreventEnterBeep = true;
+            this.tb_nom_tal.ReadOnly = true;
             this.tb_nom_tal.Size = new System.Drawing.Size(379, 22);
             this.tb_nom_tal.TabIndex = 30;
             // 
@@ -227,9 +228,9 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(287, 62);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(63, 17);
+            this.LabelX7.Size = new System.Drawing.Size(61, 17);
             this.LabelX7.TabIndex = 72;
-            this.LabelX7.Text = "Autorización";
+            this.LabelX7.Text = "Dosificación";
             // 
             // tb_nro_aut
             // 
@@ -248,9 +249,13 @@
             this.tb_nro_aut.MaxLength = 15;
             this.tb_nro_aut.Name = "tb_nro_aut";
             this.tb_nro_aut.PreventEnterBeep = true;
+            this.tb_nro_aut.ReadOnly = true;
             this.tb_nro_aut.Size = new System.Drawing.Size(144, 22);
             this.tb_nro_aut.TabIndex = 70;
             this.tb_nro_aut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_nro_aut.ButtonCustomClick += new System.EventHandler(this.tb_nro_aut_ButtonCustomClick);
+            this.tb_nro_aut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_aut_KeyDown);
+            this.tb_nro_aut.Validated += new System.EventHandler(this.tb_nro_aut_Validated);
             // 
             // cb_nro_cop
             // 
@@ -471,22 +476,6 @@
             this.tb_fir_ma2.TabIndex = 100;
             this.tb_fir_ma2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // LabelX6
-            // 
-            this.LabelX6.AutoSize = true;
-            this.LabelX6.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX6.ForeColor = System.Drawing.Color.Black;
-            this.LabelX6.Location = new System.Drawing.Point(13, 21);
-            this.LabelX6.Name = "LabelX6";
-            this.LabelX6.Size = new System.Drawing.Size(48, 17);
-            this.LabelX6.TabIndex = 70;
-            this.LabelX6.Text = "Visualizar";
-            // 
             // tb_fir_ma1
             // 
             this.tb_fir_ma1.BackColor = System.Drawing.Color.White;
@@ -504,33 +493,6 @@
             this.tb_fir_ma1.Size = new System.Drawing.Size(112, 22);
             this.tb_fir_ma1.TabIndex = 90;
             this.tb_fir_ma1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cb_for_log
-            // 
-            this.cb_for_log.DisplayMember = "Text";
-            this.cb_for_log.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_for_log.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_for_log.ForeColor = System.Drawing.Color.Black;
-            this.cb_for_log.FormattingEnabled = true;
-            this.cb_for_log.ItemHeight = 16;
-            this.cb_for_log.Items.AddRange(new object[] {
-            this.nom_emp,
-            this.log_emp});
-            this.cb_for_log.Location = new System.Drawing.Point(75, 18);
-            this.cb_for_log.Name = "cb_for_log";
-            this.cb_for_log.Size = new System.Drawing.Size(158, 22);
-            this.cb_for_log.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_for_log.TabIndex = 80;
-            // 
-            // nom_emp
-            // 
-            this.nom_emp.Text = "Nombre de empresa";
-            this.nom_emp.Value = "0";
-            // 
-            // log_emp
-            // 
-            this.log_emp.Text = "Logotipo";
-            this.log_emp.Value = "1";
             // 
             // LabelX9
             // 
@@ -584,6 +546,81 @@
             this.tb_fir_ma4.TabIndex = 120;
             this.tb_fir_ma4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // LabelX6
+            // 
+            this.LabelX6.AutoSize = true;
+            this.LabelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX6.ForeColor = System.Drawing.Color.Black;
+            this.LabelX6.Location = new System.Drawing.Point(13, 21);
+            this.LabelX6.Name = "LabelX6";
+            this.LabelX6.Size = new System.Drawing.Size(48, 17);
+            this.LabelX6.TabIndex = 70;
+            this.LabelX6.Text = "Visualizar";
+            // 
+            // cb_for_log
+            // 
+            this.cb_for_log.DisplayMember = "Text";
+            this.cb_for_log.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_for_log.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_for_log.ForeColor = System.Drawing.Color.Black;
+            this.cb_for_log.FormattingEnabled = true;
+            this.cb_for_log.ItemHeight = 16;
+            this.cb_for_log.Items.AddRange(new object[] {
+            this.nom_emp,
+            this.log_emp});
+            this.cb_for_log.Location = new System.Drawing.Point(75, 18);
+            this.cb_for_log.Name = "cb_for_log";
+            this.cb_for_log.Size = new System.Drawing.Size(158, 22);
+            this.cb_for_log.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_for_log.TabIndex = 80;
+            // 
+            // nom_emp
+            // 
+            this.nom_emp.Text = "Nombre de empresa";
+            this.nom_emp.Value = "0";
+            // 
+            // log_emp
+            // 
+            this.log_emp.Text = "Logotipo";
+            this.log_emp.Value = "1";
+            // 
+            // line1
+            // 
+            this.line1.Location = new System.Drawing.Point(386, 65);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(118, 23);
+            this.line1.TabIndex = 125;
+            this.line1.Text = "line1";
+            // 
+            // line2
+            // 
+            this.line2.Location = new System.Drawing.Point(257, 65);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(118, 23);
+            this.line2.TabIndex = 126;
+            this.line2.Text = "line2";
+            // 
+            // line3
+            // 
+            this.line3.Location = new System.Drawing.Point(131, 65);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(118, 23);
+            this.line3.TabIndex = 127;
+            this.line3.Text = "line3";
+            // 
+            // line4
+            // 
+            this.line4.Location = new System.Drawing.Point(5, 65);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(118, 23);
+            this.line4.TabIndex = 128;
+            this.line4.Text = "line4";
+            // 
             // GroupBox2
             // 
             this.GroupBox2.BackColor = System.Drawing.Color.White;
@@ -629,38 +666,6 @@
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // line1
-            // 
-            this.line1.Location = new System.Drawing.Point(386, 65);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(118, 23);
-            this.line1.TabIndex = 125;
-            this.line1.Text = "line1";
-            // 
-            // line2
-            // 
-            this.line2.Location = new System.Drawing.Point(257, 65);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(118, 23);
-            this.line2.TabIndex = 126;
-            this.line2.Text = "line2";
-            // 
-            // line3
-            // 
-            this.line3.Location = new System.Drawing.Point(131, 65);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(118, 23);
-            this.line3.TabIndex = 127;
-            this.line3.Text = "line3";
-            // 
-            // line4
-            // 
-            this.line4.Location = new System.Drawing.Point(5, 65);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(118, 23);
-            this.line4.TabIndex = 128;
-            this.line4.Text = "line4";
             // 
             // adm004_03
             // 

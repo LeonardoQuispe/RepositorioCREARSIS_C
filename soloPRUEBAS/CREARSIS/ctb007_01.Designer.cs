@@ -63,7 +63,7 @@
             this.mn_ver_ccf = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_nro_dos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nro_aut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_cod_suc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_fec_ini = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_fec_fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -494,7 +494,7 @@
             this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.va_nro_dos,
+            this.va_nro_aut,
             this.va_cod_suc,
             this.va_fec_ini,
             this.va_fec_fin,
@@ -531,12 +531,12 @@
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             // 
-            // va_nro_dos
+            // va_nro_aut
             // 
-            this.va_nro_dos.HeaderText = "Nro. Autorización";
-            this.va_nro_dos.Name = "va_nro_dos";
-            this.va_nro_dos.ReadOnly = true;
-            this.va_nro_dos.Width = 140;
+            this.va_nro_aut.HeaderText = "Nro. Autorización";
+            this.va_nro_aut.Name = "va_nro_aut";
+            this.va_nro_aut.ReadOnly = true;
+            this.va_nro_aut.Width = 140;
             // 
             // va_cod_suc
             // 
@@ -695,7 +695,7 @@
         internal System.Windows.Forms.ToolStripMenuItem mn_act_lla;
         internal System.Windows.Forms.ToolStripMenuItem mr_otr_oss;
         internal System.Windows.Forms.ToolStripMenuItem mn_ver_ccf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_nro_dos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_nro_aut;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_suc;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_ini;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_fin;

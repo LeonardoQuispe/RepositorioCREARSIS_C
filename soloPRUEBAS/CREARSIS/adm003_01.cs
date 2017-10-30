@@ -326,7 +326,7 @@ namespace CREARSIS
 
             foreach (DataRow row in tab_adm003.Rows)
             {
-                switch (row["va_est_ado"])
+                switch (row["va_est_ado"].ToString())
                 {
                     case "H":
                         va_est_ado = "Habilitado";

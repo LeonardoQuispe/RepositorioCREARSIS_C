@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using DATOS.ADM;
 using System.Transactions;
 using DevComponents.DotNetBar;
+using CREARSIS.GLOBAL;
+
 
 namespace CREARSIS
 {
@@ -25,6 +27,7 @@ namespace CREARSIS
         public DataTable vg_str_ucc;
         DataTable tab_adm003;
         DataTable tab_adm004;
+        DataTable tab_ctb007;
         string err_msg = "";
 
         #endregion
@@ -34,6 +37,8 @@ namespace CREARSIS
         c_adm002 o_adm002 = new c_adm002();
         c_adm003 o_adm003 = new c_adm003();
         c_adm004 o_adm004 = new c_adm004();
+        c_ctb007 o_ctb007 = new c_ctb007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -47,6 +52,28 @@ namespace CREARSIS
         private void adm004_03_Load(object sender, EventArgs e)
         {
             fu_ini_frm();
+        }
+
+        private void tb_nro_aut_ButtonCustomClick(object sender, EventArgs e)
+        {
+            ctb007_01 obj = new ctb007_01();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_nro_aut_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                ctb007_01 obj = new ctb007_01();
+
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_nro_aut_Validated(object sender, EventArgs e)
+        {
+            fu_rec_dos(tb_nro_aut.Text);
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -190,12 +217,32 @@ namespace CREARSIS
 
         }
 
+        public void fu_rec_dos(string cod_dos)
+        {
+            if (cod_dos.Trim() == "")
+            {
+                tb_nro_aut.Text = "** NO existe";
+                return;
+            }
+
+            tab_ctb007 = o_ctb007._05(cod_dos);
+            if (tab_ctb007.Rows.Count == 0)
+            {
+                tb_nro_aut.Text = "** NO existe";
+                return;
+            }
+
+            tb_nro_aut.Text = cod_dos;
+
+        }
+
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
         public string fu_ver_dat()
-        {
+        {            
             int tmp;
+            long tmp2;
 
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
@@ -241,22 +288,23 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Nro de Autorizacion-------------------------
-            if (int.TryParse(tb_nro_aut.Text.Trim(), out tmp) == false)
+            if (long.TryParse(tb_nro_aut.Text.Trim(), out tmp2) == false)
             {
                 tb_nro_aut.Focus();
                 return "El Nro de autorización debe ser numerico";
             }
 
-            if (tb_nro_aut.Text.Trim() != "")
-            {
-                //Verifica existetncia del Nro de autorizacion
+            //if (tb_nro_aut.Text.Trim() != "")
+            //{
+            //    //Verifica existetncia del Nro de autorizacion
 
-            }
-            //**-----------------------------------------------------
+            //}
+            ////**-----------------------------------------------------
 
             return null;
         }
 
-        #endregion        
+        #endregion
+        
     }
 }

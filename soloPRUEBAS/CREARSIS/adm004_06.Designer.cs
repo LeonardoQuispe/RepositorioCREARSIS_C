@@ -64,13 +64,13 @@
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fir_ma4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line4 = new DevComponents.DotNetBar.Controls.Line();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -252,9 +252,9 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(287, 62);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(63, 17);
+            this.LabelX7.Size = new System.Drawing.Size(61, 17);
             this.LabelX7.TabIndex = 72;
-            this.LabelX7.Text = "Autorización";
+            this.LabelX7.Text = "Dosificación";
             // 
             // tb_nro_aut
             // 
@@ -627,6 +627,38 @@
             this.tb_fir_ma4.TabStop = false;
             this.tb_fir_ma4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // line1
+            // 
+            this.line1.Location = new System.Drawing.Point(386, 65);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(118, 23);
+            this.line1.TabIndex = 129;
+            this.line1.Text = "line1";
+            // 
+            // line2
+            // 
+            this.line2.Location = new System.Drawing.Point(257, 65);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(118, 23);
+            this.line2.TabIndex = 130;
+            this.line2.Text = "line2";
+            // 
+            // line3
+            // 
+            this.line3.Location = new System.Drawing.Point(131, 65);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(118, 23);
+            this.line3.TabIndex = 131;
+            this.line3.Text = "line3";
+            // 
+            // line4
+            // 
+            this.line4.Location = new System.Drawing.Point(5, 65);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(118, 23);
+            this.line4.TabIndex = 132;
+            this.line4.Text = "line4";
+            // 
             // GroupBox2
             // 
             this.GroupBox2.BackColor = System.Drawing.Color.White;
@@ -672,38 +704,6 @@
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // line1
-            // 
-            this.line1.Location = new System.Drawing.Point(386, 65);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(118, 23);
-            this.line1.TabIndex = 129;
-            this.line1.Text = "line1";
-            // 
-            // line2
-            // 
-            this.line2.Location = new System.Drawing.Point(257, 65);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(118, 23);
-            this.line2.TabIndex = 130;
-            this.line2.Text = "line2";
-            // 
-            // line3
-            // 
-            this.line3.Location = new System.Drawing.Point(131, 65);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(118, 23);
-            this.line3.TabIndex = 131;
-            this.line3.Text = "line3";
-            // 
-            // line4
-            // 
-            this.line4.Location = new System.Drawing.Point(5, 65);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(118, 23);
-            this.line4.TabIndex = 132;
-            this.line4.Text = "line4";
             // 
             // adm004_06
             // 

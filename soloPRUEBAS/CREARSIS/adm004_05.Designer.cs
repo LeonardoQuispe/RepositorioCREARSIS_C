@@ -64,12 +64,12 @@
             this.LabelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_fir_ma3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fir_ma4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line4 = new DevComponents.DotNetBar.Controls.Line();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -251,9 +251,9 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(287, 62);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(63, 17);
+            this.LabelX7.Size = new System.Drawing.Size(61, 17);
             this.LabelX7.TabIndex = 72;
-            this.LabelX7.Text = "Autorización";
+            this.LabelX7.Text = "Dosificación";
             // 
             // tb_nro_aut
             // 
@@ -626,34 +626,6 @@
             this.tb_fir_ma4.TabStop = false;
             this.tb_fir_ma4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
-            this.GroupBox2.Controls.Add(this.bt_can_cel);
-            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(7, 298);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(516, 44);
-            this.GroupBox2.TabIndex = 8;
-            this.GroupBox2.TabStop = false;
-            // 
-            // bt_can_cel
-            // 
-            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(393, 15);
-            this.bt_can_cel.Name = "bt_can_cel";
-            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
-            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_can_cel.Symbol = "";
-            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
-            this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
-            this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
             // line1
             // 
             this.line1.Location = new System.Drawing.Point(386, 65);
@@ -685,6 +657,34 @@
             this.line4.Size = new System.Drawing.Size(118, 23);
             this.line4.TabIndex = 132;
             this.line4.Text = "line4";
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.Controls.Add(this.bt_can_cel);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(7, 298);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(516, 44);
+            this.GroupBox2.TabIndex = 8;
+            this.GroupBox2.TabStop = false;
+            // 
+            // bt_can_cel
+            // 
+            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_can_cel.Location = new System.Drawing.Point(393, 15);
+            this.bt_can_cel.Name = "bt_can_cel";
+            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
+            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_can_cel.Symbol = "";
+            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
+            this.bt_can_cel.SymbolSize = 15F;
+            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // adm004_05
             // 

@@ -27,6 +27,7 @@ namespace CREARSIS
         DataTable tab_adm002;
         DataTable tab_adm003;
         DataTable tab_adm004;
+        DataTable tab_ctb007;
 
         string err_msg = "";
 
@@ -38,6 +39,7 @@ namespace CREARSIS
         c_adm003 o_adm003 = new c_adm003();
         c_adm004 o_adm004 = new c_adm004();
         c_adm005 o_adm005 = new c_adm005();
+        c_ctb007 o_ctb007 = new c_ctb007();
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
@@ -77,7 +79,7 @@ namespace CREARSIS
                 using (TransactionScope tra_nsa = new TransactionScope())
                 {
                     //Graba datos TALONARIO
-                    o_adm004._02(tb_cod_doc.Text, tb_nro_tal.Text, tb_nom_tal.Text, cb_tip_num.SelectedIndex, tb_nro_aut.Text,int.Parse(tb_for_mat.Text), cb_nro_cop.SelectedIndex, tb_fir_ma1.Text, tb_fir_ma2.Text, tb_fir_ma3.Text,
+                    o_adm004._02(tb_cod_doc.Text, tb_nro_tal.Text, tb_nom_tal.Text, cb_tip_num.SelectedIndex, tb_nro_dos.Text,int.Parse(tb_for_mat.Text), cb_nro_cop.SelectedIndex, tb_fir_ma1.Text, tb_fir_ma2.Text, tb_fir_ma3.Text,
                     tb_fir_ma4.Text, cb_for_log.SelectedIndex);
 
 
@@ -139,6 +141,30 @@ namespace CREARSIS
             fu_rec_doc(tb_cod_doc.Text);
         }
 
+        private void tb_nro_dos_ButtonCustomClick(object sender, EventArgs e)
+        {
+            ctb007_01 obj = new ctb007_01();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_nro_dos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                ctb007_01 obj = new ctb007_01();
+
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_nro_dos_Validated(object sender, EventArgs e)
+        {
+            fu_rec_dos(tb_nro_dos.Text);
+        }
+
+
+
         #endregion
 
         #region MÉTODOS
@@ -148,7 +174,7 @@ namespace CREARSIS
             cb_tip_num.SelectedIndex = 0;
             tb_for_mat.Text = "0";
             cb_nro_cop.SelectedIndex = 0;
-            tb_nro_aut.Text = "0";
+            //tb_nro_dos.Text = "0";
             cb_for_log.SelectedIndex = 0;
 
             tb_cod_doc.Focus();
@@ -160,9 +186,17 @@ namespace CREARSIS
         /// </summary>
         public void fu_lim_frm()
         {
+            tb_cod_doc.Clear();
+            tb_nom_doc.Clear();
             tb_nro_tal.Clear();
             tb_nom_tal.Clear();
-            tb_nro_aut.Text = "0";
+            tb_cod_ges.Clear();
+            tb_for_mat.Text = "0";
+            tb_nro_dos.Clear();
+            tb_fir_ma1.Clear();
+            tb_fir_ma2.Clear();
+            tb_fir_ma3.Clear();
+            tb_fir_ma4.Clear();
 
             tb_nro_tal.Focus();
 
@@ -174,6 +208,7 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
             int tmp;
+            Int64 tmp2;
 
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
@@ -199,13 +234,13 @@ namespace CREARSIS
             if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
             {
                 tb_nro_tal.Focus();
-                return "El Nro de talonario NO es valido";
+                return "El Nro de Talonario debe ser numérico";
             }
 
             if (tb_nro_tal.Text=="0")
             {
                 tb_nro_tal.Focus();
-                return "El Nro de talonario NO es valido";
+                return "El Nro de Talonario debe ser diferente de 0";
             }
 
             tab_adm004 = o_adm004._05(tb_cod_doc.Text,int.Parse( tb_nro_tal.Text));
@@ -239,21 +274,40 @@ namespace CREARSIS
             }
             //**-----------------------------------------------------
 
-            //**Verifica Nro de Autorizacion-------------------------
-            if (int.TryParse(tb_nro_aut.Text.Trim(), out tmp) == false)
+            //**Verifica Nro de Dosificacion-------------------------
+            if (tb_cod_doc.Text.Trim() == "")
             {
-                tb_nro_aut.Focus();
-                return "El Nro de autorización debe ser numerico";
+                tb_cod_doc.Focus();
+                return "Debes proporcionar el codigo de Dosificación";
             }
 
-            if (tb_nro_aut.Text.Trim() != "")
+            //Verifica existetncia del Nro de autorizacion
+            tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
+            if (tab_ctb007.Rows.Count == 0)
             {
-                //Verifica existetncia del Nro de autorizacion                
+                tb_nro_dos.Focus();
+                return "La Dosificación NO se encuentra registrada";
             }
-            //**-----------------------------------------------------
+            if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_nro_dos.Focus();
+                return "La Dosificación se encuentra Deshabilitada";
+            }
+            if (Int64.TryParse(tb_nro_dos.Text.Trim(), out tmp2) == false)
+            {
+                tb_nro_dos.Focus();
+                return "El Nro de Dosificación debe ser numérico";
+            }
+
+            if (tb_nro_dos.Text.Trim() == "0")
+            {
+                tb_nro_dos.Focus();
+                return "El Nro de Dosificación debe ser diferente de 0";
+            }           
 
             return null;
         }
+
 
         public void fu_rec_doc(string cod_doc)
         {
@@ -275,7 +329,27 @@ namespace CREARSIS
 
         }
 
+        public void fu_rec_dos(string cod_dos)
+        {
+            if (cod_dos.Trim() == "")
+            {
+                tb_nro_dos.Text = "** NO existe";
+                return;
+            }
+
+            tab_ctb007 = o_ctb007._05(cod_dos);
+            if (tab_ctb007.Rows.Count == 0)
+            {
+                tb_nro_dos.Text = "** NO existe";
+                return;
+            }
+
+            tb_nro_dos.Text = cod_dos;
+
+        }
+
         #endregion
+
 
     }
 }

@@ -20,13 +20,12 @@ namespace DATOS
         /// </summary>
         public string va_nom_bdo = "";
         /// <summary>
-        /// codigo de usuario
+        /// codigo de usuario de la base de datos
         /// </summary>
         public string va_cod_usr = "chlsql";
         /// <summary>
-        /// contraseña de usuario
+        /// contraseña de la base de datos
         /// </summary>
-        //public string va_pws_usr = "leo";
         public string va_pws_usr = "Crearsis123.";
 
 

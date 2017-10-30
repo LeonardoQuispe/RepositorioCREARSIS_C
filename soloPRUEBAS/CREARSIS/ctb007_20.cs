@@ -40,8 +40,7 @@ namespace CREARSIS
         }
 
         private void tb_mto_fac_TextChanged(object sender, EventArgs e)
-        {
-            int tmp;
+        {           
 
             if (tb_mto_fac.Text.Contains(","))
             {
@@ -52,13 +51,6 @@ namespace CREARSIS
                 //posiciona el cursor al final del texto
                 tb_mto_fac.Select(tb_mto_fac.Text.Length, 0);
             }
-            else if (int.TryParse(tb_mto_fac.Text, out tmp) == false)
-            {
-                //tb_mto_fac.Text=tb_mto_fac.Text.Replace()
-            }
-
-
-
         }
 
         private void bt_obt_cod_Click(object sender, EventArgs e)

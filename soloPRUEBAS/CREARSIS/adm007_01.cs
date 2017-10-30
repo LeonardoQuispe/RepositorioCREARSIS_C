@@ -393,5 +393,10 @@ namespace CREARSIS
                 e.Handled = true;
             }
         }
+
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
