@@ -233,6 +233,7 @@
             this.tb_tel_suc.PreventEnterBeep = true;
             this.tb_tel_suc.Size = new System.Drawing.Size(92, 26);
             this.tb_tel_suc.TabIndex = 50;
+            this.tb_tel_suc.TextChanged += new System.EventHandler(this.tb_tel_suc_TextChanged);
             // 
             // tb_ubi_suc
             // 
@@ -358,6 +359,7 @@
             this.tb_cod_suc.ReadOnly = true;
             this.tb_cod_suc.Size = new System.Drawing.Size(58, 26);
             this.tb_cod_suc.TabIndex = 10;
+            this.tb_cod_suc.TextChanged += new System.EventHandler(this.tb_cod_suc_TextChanged);
             // 
             // LabelX1
             // 

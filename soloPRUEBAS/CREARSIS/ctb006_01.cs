@@ -244,5 +244,10 @@ namespace CREARSIS
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
         }
+
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
+        {
+            tb_sel_ecc.Text = o_mg_glo_bal.Valida_numeros(tb_sel_ecc.Text);
+        }
     }
 }

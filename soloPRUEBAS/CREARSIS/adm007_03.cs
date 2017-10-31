@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CREARSIS.GLOBAL;
 
 //REFERENCIAS
 using DATOS.ADM;
@@ -28,6 +29,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm007 o_adm007 = new c_adm007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -165,5 +167,15 @@ namespace CREARSIS
         }
 
         #endregion
+
+        private void tb_cod_suc_TextChanged(object sender, EventArgs e)
+        {
+            tb_cod_suc.Text = o_mg_glo_bal.Valida_numeros(tb_cod_suc.Text);
+        }
+
+        private void tb_tel_suc_TextChanged(object sender, EventArgs e)
+        {
+            tb_tel_suc.Text = o_mg_glo_bal.Valida_numeros(tb_tel_suc.Text);
+        }
     }
 }

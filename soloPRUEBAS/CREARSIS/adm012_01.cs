@@ -391,20 +391,11 @@ namespace CREARSIS
 
         #endregion
 
-        private void tb_sel_ecc_KeyPress(object sender, KeyPressEventArgs e)
+
+
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            tb_sel_ecc.Text = o_mg_glo_bal.Valida_numeros(tb_sel_ecc.Text);
         }
     }
 }

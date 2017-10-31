@@ -168,7 +168,7 @@
             this.tb_tel_suc.PreventEnterBeep = true;
             this.tb_tel_suc.Size = new System.Drawing.Size(92, 26);
             this.tb_tel_suc.TabIndex = 50;
-            this.tb_tel_suc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tel_suc_KeyPress);
+            this.tb_tel_suc.TextChanged += new System.EventHandler(this.tb_tel_suc_TextChanged);
             // 
             // tb_ubi_suc
             // 
@@ -205,7 +205,6 @@
             this.tb_res_suc.PreventEnterBeep = true;
             this.tb_res_suc.Size = new System.Drawing.Size(343, 26);
             this.tb_res_suc.TabIndex = 30;
-            this.tb_res_suc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_res_suc_KeyPress);
             // 
             // tb_nom_suc
             // 
@@ -259,7 +258,7 @@
             this.tb_cod_suc.PreventEnterBeep = true;
             this.tb_cod_suc.Size = new System.Drawing.Size(58, 26);
             this.tb_cod_suc.TabIndex = 10;
-            this.tb_cod_suc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cod_suc_KeyPress);
+            this.tb_cod_suc.TextChanged += new System.EventHandler(this.tb_cod_suc_TextChanged);
             // 
             // LabelX1
             // 

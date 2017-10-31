@@ -277,15 +277,9 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-                long tmp;
-
-                if (tb_nro_tal.Text.Trim() != "" || tb_cod_doc.Text.Trim() != "")
+                if (tb_nro_tal.Text.Trim() == "" || tb_cod_doc.Text.Trim() == "")
                 {
                     return "Ningún dato Seleccionado";
-                }
-                if (long.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
-                {
-                    return "Datos Incorrectos";
                 }
                 //Si aun existe
                 tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
@@ -332,15 +326,10 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat3()
         {
-            long tmp;
 
-            if (tb_nro_tal.Text.Trim() != "" || tb_cod_doc.Text.Trim() != "")
+            if (tb_nro_tal.Text.Trim() == "" || tb_cod_doc.Text.Trim() == "")
             {
                 return "Ningún dato Seleccionado";
-            }
-            if (long.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
-            {
-                return "Datos Incorrectos";
             }
                 //Si aun existe
                 tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));

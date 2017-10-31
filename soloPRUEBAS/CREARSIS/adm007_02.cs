@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DATOS.ADM;
 using DevComponents.DotNetBar;
 using System.Text.RegularExpressions;
+using CREARSIS.GLOBAL;
 
 namespace CREARSIS
 {
@@ -28,6 +29,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm007 o_adm007 = new c_adm007();
+        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -44,12 +46,6 @@ namespace CREARSIS
                 return "Debes proporcionar el codigo";
             }
 
-            int tmp;
-            if (int.TryParse(tb_cod_suc.Text, out tmp) == false)
-            {
-                tb_cod_suc.Focus();
-                return "Dato no valido, debe ser numerico el codigo";
-            }
             if (tb_nom_suc.Text== "")
             {
                 tb_nom_suc.Focus();
@@ -91,66 +87,6 @@ namespace CREARSIS
         public adm007_02()
         {
             InitializeComponent();
-        }
-
-        private void tb_cod_suc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void tb_tel_suc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if ((e.KeyChar) == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void tb_res_suc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -200,5 +136,15 @@ namespace CREARSIS
         }
 
         #endregion
+
+        private void tb_cod_suc_TextChanged(object sender, EventArgs e)
+        {
+            tb_cod_suc.Text = o_mg_glo_bal.Valida_numeros(tb_cod_suc.Text);
+        }
+
+        private void tb_tel_suc_TextChanged(object sender, EventArgs e)
+        {
+            tb_tel_suc.Text = o_mg_glo_bal.Valida_numeros(tb_tel_suc.Text);
+        }
     }
 }
