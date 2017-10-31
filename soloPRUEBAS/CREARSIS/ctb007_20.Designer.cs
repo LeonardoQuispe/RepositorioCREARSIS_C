@@ -163,7 +163,7 @@
             // 
             // 
             this.LabelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
+            this.LabelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(10, 280);
             this.LabelX7.Name = "LabelX7";

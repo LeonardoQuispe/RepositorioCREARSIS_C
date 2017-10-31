@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_lla_ve = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX5 = new DevComponents.DotNetBar.LabelX();
             this.tb_nro_dos = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_lla_ve = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,30 @@
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
+            // tb_lla_ve
+            // 
+            this.tb_lla_ve.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_lla_ve.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_lla_ve.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_lla_ve.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_lla_ve.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_lla_ve.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_lla_ve.Border.Class = "TextBoxBorder";
+            this.tb_lla_ve.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_lla_ve.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_lla_ve.ForeColor = System.Drawing.Color.Black;
+            this.tb_lla_ve.Location = new System.Drawing.Point(112, 63);
+            this.tb_lla_ve.MaxLength = 360;
+            this.tb_lla_ve.Multiline = true;
+            this.tb_lla_ve.Name = "tb_lla_ve";
+            this.tb_lla_ve.PreventEnterBeep = true;
+            this.tb_lla_ve.ReadOnly = true;
+            this.tb_lla_ve.Size = new System.Drawing.Size(219, 76);
+            this.tb_lla_ve.TabIndex = 0;
+            // 
             // LabelX5
             // 
             this.LabelX5.AutoSize = true;
@@ -61,11 +85,11 @@
             // 
             // 
             this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
+            this.LabelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
             this.LabelX5.Location = new System.Drawing.Point(79, 63);
             this.LabelX5.Name = "LabelX5";
-            this.LabelX5.Size = new System.Drawing.Size(27, 17);
+            this.LabelX5.Size = new System.Drawing.Size(29, 15);
             this.LabelX5.TabIndex = 2;
             this.LabelX5.Text = "Llave";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -98,11 +122,11 @@
             // 
             // 
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(22, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(85, 17);
+            this.LabelX1.Size = new System.Drawing.Size(86, 15);
             this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -134,30 +158,6 @@
             this.bt_can_cel.TabIndex = 0;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
-            // tb_lla_ve
-            // 
-            this.tb_lla_ve.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_lla_ve.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_lla_ve.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve.Border.Class = "TextBoxBorder";
-            this.tb_lla_ve.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_lla_ve.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_lla_ve.ForeColor = System.Drawing.Color.Black;
-            this.tb_lla_ve.Location = new System.Drawing.Point(112, 63);
-            this.tb_lla_ve.MaxLength = 360;
-            this.tb_lla_ve.Multiline = true;
-            this.tb_lla_ve.Name = "tb_lla_ve";
-            this.tb_lla_ve.PreventEnterBeep = true;
-            this.tb_lla_ve.ReadOnly = true;
-            this.tb_lla_ve.Size = new System.Drawing.Size(219, 76);
-            this.tb_lla_ve.TabIndex = 0;
             // 
             // ctb007_05a
             // 

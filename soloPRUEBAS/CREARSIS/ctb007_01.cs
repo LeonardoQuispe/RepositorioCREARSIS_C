@@ -79,8 +79,13 @@ namespace CREARSIS
         }
 
         private void tb_sel_ecc_Validating(object sender, CancelEventArgs e)
-        {
+        {            
             fu_con_sel();
+        }
+
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
+        {
+            tb_sel_ecc.Text = o_mg_glo_bal.Valida_numeros(tb_sel_ecc.Text);
         }
 
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -195,10 +200,18 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            if (tb_sel_ecc.Text.Trim() != "")
+            long tmp;
+            if (tb_sel_ecc.Text.Trim()=="")
             {
-                //Si aun existe
-                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+                return "Ningún dato Seleccionado";
+            }
+            if (long.TryParse(tb_sel_ecc.Text.Trim(),out tmp) == false)
+            {
+                tb_sel_ecc.Focus();
+                return "Datos Incorrectos";                
+            }
+            //Si aun existe
+            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
                 if (tab_ctb007.Rows.Count == 0)
                 {
                     return "La Dosificación no se encuentra registrada";
@@ -206,11 +219,7 @@ namespace CREARSIS
 
                 return null;
 
-            }
-            else
-            {
-                return "Ningún dato Seleccionado";
-            }
+            
                 
         }
         /// <summary>
@@ -240,6 +249,34 @@ namespace CREARSIS
                 return "Ningún dato Seleccionado";
             }
            
+        }
+        /// <summary>
+        ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
+        /// </summary>
+        public string fu_ver_dat3()
+        {
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                //Si aun existe
+                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+                if (tab_ctb007.Rows.Count == 0)
+                {
+                    return "La Dosificación  no se encuentra registrada";
+                }
+
+                //Verifica estado del dato
+                if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Dosificación se encuentra Deshabilitada";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+
         }
         /// <summary>
         /// -> Consulta seleccion en pantalla
@@ -424,6 +461,7 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+
 
 
         #endregion

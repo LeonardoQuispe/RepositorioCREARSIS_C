@@ -109,7 +109,8 @@ namespace CREARSIS
         }
 
         private void tb_cod_doc_Validating(object sender, CancelEventArgs e)
-        {
+        {           
+
             fu_con_sel();
         }
 
@@ -203,6 +204,12 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+        private void tb_nro_tal_TextChanged(object sender, EventArgs e)
+        {
+            tb_nro_tal.Text = o_mg_glo_bal.Valida_numeros(tb_nro_tal.Text);
+            tb_nro_tal.Select(tb_nro_tal.Text.Length, 0);
+        }
+
         #endregion
 
         #region MÉTODOS
@@ -225,34 +232,42 @@ namespace CREARSIS
         /// </summary>
         public void fu_con_sel()
         {
-            //Verifica que los datos en pantallas sean correctos
-            if (tb_cod_doc.Text=="")
-            {
-                lb_sel_ecc.Text = "** NO existe";
-                return;
-            }
-            if (tb_nro_tal.Text=="")
-            {
-                lb_sel_ecc.Text = "** NO existe";
-                return;
-            }
+            //if (fu_ver_dat() != null)
+            //{
+            //    MessageBoxEx.Show(fu_ver_dat(), "Error Talonario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else
+            //{
+                //Verifica que los datos en pantallas sean correctos
+                if (tb_cod_doc.Text == "")
+                {
+                    lb_sel_ecc.Text = "** NO existe";
+                    return;
+                }
+                if (tb_nro_tal.Text == "")
+                {
+                    lb_sel_ecc.Text = "** NO existe";
+                    return;
+                }
 
 
-            tabla = o_adm004._05(tb_cod_doc.Text,int.Parse(tb_nro_tal.Text));
-            if (tabla.Rows.Count == 0)
-            {
-                lb_sel_ecc.Text = "** NO existe";
-                return;
-            }
-            tb_nro_tal.Text= tabla.Rows[0]["va_nro_tal"].ToString();
-            tb_cod_doc.Text = tabla.Rows[0]["va_cod_doc"].ToString();
-            lb_sel_ecc.Text = tabla.Rows[0]["va_nom_tal"].ToString();
+                tabla = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
+                if (tabla.Rows.Count == 0)
+                {
+                    lb_sel_ecc.Text = "** NO existe";
+                    return;
+                }
+                tb_nro_tal.Text = tabla.Rows[0]["va_nro_tal"].ToString();
+                tb_cod_doc.Text = tabla.Rows[0]["va_cod_doc"].ToString();
+                lb_sel_ecc.Text = tabla.Rows[0]["va_nom_tal"].ToString();
 
 
-            if (lb_sel_ecc.Text!= "** NO existe")
-            {
-                fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, lb_sel_ecc.Text);
-            }
+                if (lb_sel_ecc.Text != "** NO existe")
+                {
+                    fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, lb_sel_ecc.Text);
+                }
+            //}
 
 
         }
@@ -288,7 +303,7 @@ namespace CREARSIS
         {
                 long tmp;
 
-                if (tb_nro_tal.Text.Trim()!="" || tb_cod_doc.Text.Trim()!="")
+                if (tb_nro_tal.Text.Trim()=="" || tb_cod_doc.Text.Trim()=="")
                 {
                     return "Ningún dato Seleccionado";
                 }
@@ -458,6 +473,7 @@ namespace CREARSIS
 
 
         #endregion
+
         
     }
 }
