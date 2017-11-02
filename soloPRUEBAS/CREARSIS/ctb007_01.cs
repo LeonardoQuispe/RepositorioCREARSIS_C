@@ -86,6 +86,7 @@ namespace CREARSIS
         private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
         {
             tb_sel_ecc.Text = o_mg_glo_bal.Valida_numeros(tb_sel_ecc.Text);
+            tb_sel_ecc.Select(tb_sel_ecc.Text.Length, 0);
         }
 
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)

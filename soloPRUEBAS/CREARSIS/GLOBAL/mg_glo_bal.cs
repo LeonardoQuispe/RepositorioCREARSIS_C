@@ -909,23 +909,19 @@ namespace CREARSIS.GLOBAL
 
             return res_ult;
         }
-        
+         
         public string Valida_numeros(string dato)
         {
             string nuevo=null;
             bool bandera = false;
             long tmp;
 
-            for (int i = 0; i < dato.Length; i++)
+            for (int i = 0; i < dato.Trim().Length; i++)
             {
                 if (long.TryParse(dato[i].ToString(), out tmp) == true)
                 {
                     nuevo += dato[i];
-                }
-                else if (dato[i].ToString()==" ")
-                {
-                    nuevo += dato[i];
-                }
+                }                
                 else if (long.TryParse(dato[i].ToString(), out tmp) == false)
                 {
                     bandera = true;
