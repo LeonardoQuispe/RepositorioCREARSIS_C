@@ -272,8 +272,14 @@ namespace CREARSIS
 
 
 
+
         #endregion
 
-        
+        private void mn_bs_ufv_Click(object sender, EventArgs e)
+        {
+            adm014_01 obj = new adm014_01();
+
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
