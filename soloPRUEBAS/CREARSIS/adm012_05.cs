@@ -69,7 +69,7 @@ namespace CREARSIS
             }
             else
             {
-                tb_est_ado.Text = "Dehabilitado";
+                tb_est_ado.Text = "Deshabilitado";
             }
 
         }
