@@ -167,9 +167,11 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" UPDATE ctb007 SET ");
-                vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
-                vv_str_sql.AppendLine(" WHERE  va_nro_aut = '" + nro_dos + "'");
+                //vv_str_sql.AppendLine(" UPDATE ctb007 SET ");
+                //vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
+                //vv_str_sql.AppendLine(" WHERE  va_nro_aut = '" + nro_dos + "'");
+
+                vv_str_sql.AppendLine(" EXECUTE ctb007_04p " +"'" + nro_dos + "' '"+est_ado+"'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -183,13 +185,28 @@ namespace DATOS.ADM
         /// </summary>
         /// <param name="nro_dos">Codigo de la dosificacion</param>
         /// <returns></returns>
+        public DataTable _055(string proc,string nro_dos)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" EXECUTE "+ proc +" '"+ nro_dos + "'");
+               
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataTable _05(string nro_dos)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * FROM ctb007 ");
-                vv_str_sql.AppendLine(" WHERE  va_nro_aut ='" + nro_dos+"'");
+                vv_str_sql.AppendLine(" WHERE  va_nro_aut ='" + nro_dos + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

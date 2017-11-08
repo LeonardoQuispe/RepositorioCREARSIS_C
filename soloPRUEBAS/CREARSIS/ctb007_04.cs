@@ -51,9 +51,7 @@ namespace CREARSIS
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             try
-            {
-                string va_est_ado = "";
-
+            {          
                 string vv_err_msg = null;
                 vv_err_msg = fu_ver_dat();
                 if (vv_err_msg != null)
@@ -148,7 +146,7 @@ namespace CREARSIS
             }
             else
             {
-                tb_est_ado.Text = "Dehabilitado";
+                tb_est_ado.Text = "Deshabilitado";
             }
 
             if (vg_str_ucc.Rows[0]["va_lla_vee"].ToString() == "")

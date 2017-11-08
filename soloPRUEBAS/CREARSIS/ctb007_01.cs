@@ -23,8 +23,7 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
 
-        DataTable tab_ctb007;
-        DataTable tabla;
+        DataTable tab_ctb007;        
 
         #endregion
 
@@ -196,95 +195,83 @@ namespace CREARSIS
             }
         }
 
+        
         /// <summary>
-        /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
+        ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
         /// </summary>
-        public string fu_ver_dat()
+        public string fu_ver_dat(string acc_ion)
         {
-            long tmp;
-            if (tb_sel_ecc.Text.Trim()=="")
+            try
             {
-                return "Ningún dato Seleccionado";
-            }
-            if (long.TryParse(tb_sel_ecc.Text.Trim(),out tmp) == false)
-            {
+                if (tb_sel_ecc.Text.Trim() == "")
+                {
+                    tb_sel_ecc.Focus();
+                    return "Ningún dato Seleccionado";
+                    
+                }
+                else if (tb_sel_ecc.Text.Trim() == "0")
+                {
+                    tb_sel_ecc.Focus();
+                    return "Debe ser diferente de cero";
+                }
+
+
+                switch (acc_ion)
+                {
+                    case "03": acc_ion = "ctb007_01p3"; break;
+                    case "03a": acc_ion = "ctb007_01p3a"; break;
+                    case "04": acc_ion = "ctb007_01p4"; break;
+                    case "05": acc_ion = "ctb007_01p5"; break;
+                    case "06": acc_ion = "ctb007_01p6"; break;
+                }
+
                 tb_sel_ecc.Focus();
-                return "Datos Incorrectos";                
-            }
-            //Si aun existe
-            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
-                if (tab_ctb007.Rows.Count == 0)
-                {
-                    return "La Dosificación no se encuentra registrada";
-                }
+                tab_ctb007 = o_ctb007._055(acc_ion,tb_sel_ecc.Text);                               
 
                 return null;
 
-            
-                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
         /// <summary>
         ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
         /// </summary>
-        public string fu_ver_dat2()
-        {
-            if (tb_sel_ecc.Text.Trim()!="")
-            {
-                //Si aun existe
-                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
-                if (tab_ctb007.Rows.Count == 0)
-                {
-                    return "La Dosificación  no se encuentra registrada";
-                }
+        //public string fu_ver_dat3()
+        //{
+        //    if (tb_sel_ecc.Text.Trim() != "")
+        //    {
+        //        //Si aun existe
+        //        tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+        //        if (tab_ctb007.Rows.Count == 0)
+        //        {
+        //            return "La Dosificación  no se encuentra registrada";
+        //        }
 
-                //Verifica estado del dato
-                if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    return "La Dosificación se encuentra Deshabilitada";
-                }
+        //        //Verifica estado del dato
+        //        if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+        //        {
+        //            return "La Dosificación se encuentra Deshabilitada";
+        //        }
 
-                return null;
-            }
-            else
-            {
-                return "Ningún dato Seleccionado";
-            }
-           
-        }
-        /// <summary>
-        ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
-        /// </summary>
-        public string fu_ver_dat3()
-        {
-            if (tb_sel_ecc.Text.Trim() != "")
-            {
-                //Si aun existe
-                tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
-                if (tab_ctb007.Rows.Count == 0)
-                {
-                    return "La Dosificación  no se encuentra registrada";
-                }
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        return "Ningún dato Seleccionado";
+        //    }
 
-                //Verifica estado del dato
-                if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    return "La Dosificación se encuentra Deshabilitada";
-                }
-
-                return null;
-            }
-            else
-            {
-                return "Ningún dato Seleccionado";
-            }
-
-        }
+        //}
         /// <summary>
         /// -> Consulta seleccion en pantalla
         /// </summary>
         public void fu_con_sel()
         {
-            Int64 tmp;
+            //Int64 tmp;
 
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
@@ -292,22 +279,27 @@ namespace CREARSIS
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
-
-            if (Int64.TryParse(tb_sel_ecc.Text, out tmp) == false)
+            else if (tb_sel_ecc.Text.Trim()== "0")
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
+            //if (Int64.TryParse(tb_sel_ecc.Text, out tmp) == false)
+            //{
+            //    lb_sel_ecc.Text = "** NO existe";
+            //    return;
+            //}
 
-            tabla = o_ctb007._05(tb_sel_ecc.Text);
-            if (tabla.Rows.Count == 0)
+
+            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+            if (tab_ctb007.Rows.Count==0)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            tb_sel_ecc.Text = tabla.Rows[0]["va_nro_aut"].ToString();
+            tb_sel_ecc.Text = tab_ctb007.Rows[0]["va_nro_aut"].ToString();
             lb_sel_ecc.Text = "";
 
             if (lb_sel_ecc.Text != "** NO existe")
@@ -337,7 +329,7 @@ namespace CREARSIS
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, tb_fec_ini.Value, tb_fec_fin.Value, cb_est_bus.SelectedIndex.ToString());
 
             tb_sel_ecc.Text = cod_dos;
-
+            lb_sel_ecc.Text = "";
 
             if (cod_dos != null)
             {
@@ -378,13 +370,22 @@ namespace CREARSIS
         //ACTUALIZA
         private void m_adm003_03_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
+            try
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                string vv_err_msg = null;
+                vv_err_msg = fu_ver_dat("03");
+
+                if (vv_err_msg != null)
+                {
+                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }            
 
             ctb007_03 obj = new ctb007_03();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
@@ -393,61 +394,93 @@ namespace CREARSIS
         //ACTUALIZA LLAVE
         private void mn_act_lla_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
+            try
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string vv_err_msg = null;
+                vv_err_msg = fu_ver_dat("03a");
+                if (vv_err_msg != null)
+                {
+                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            ctb007_03a obj = new ctb007_03a();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+                ctb007_03a obj = new ctb007_03a();
+                o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }            
         }
 
         //HABILITA/DESHABILITA
         private void m_adm003_04_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
+            try
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string vv_err_msg = null;
+                vv_err_msg = fu_ver_dat("04");
+                if (vv_err_msg != null)
+                {
+                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            ctb007_04 obj = new ctb007_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+                ctb007_04 obj = new ctb007_04();
+                o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }            
         }
 
         //ELIMINA
         private void m_adm003_06_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
+            try
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string vv_err_msg = null;
+                vv_err_msg = fu_ver_dat("06");
+                if (vv_err_msg != null)
+                {
+                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ctb007_06 obj = new ctb007_06();
+                o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            ctb007_06 obj = new ctb007_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
         }
 
         //CONSULTA
         private void m_adm003_05_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
+            try
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string vv_err_msg = null;
+                vv_err_msg = fu_ver_dat("05");
+                if (vv_err_msg != null)
+                {
+                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            ctb007_05 obj = new ctb007_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+                ctb007_05 obj = new ctb007_05();
+                o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb007);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }            
         }
         
         //VERIFICA CODIGO CONTROL
@@ -462,8 +495,6 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
-
-
 
         #endregion
 

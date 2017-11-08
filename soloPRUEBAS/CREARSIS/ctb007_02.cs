@@ -30,8 +30,7 @@ namespace CREARSIS
         //** tabla Sucursal
         DataTable tab_adm007;
         //** tabla Actividad economica
-        DataTable tab_adm012;
-        DataTable tabla;
+        DataTable tab_adm012;        
         string err_msg = "";
 
         #endregion
