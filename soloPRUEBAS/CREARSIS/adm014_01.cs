@@ -203,7 +203,7 @@ namespace CREARSIS
                         _with3.Cursor = Cursors.Hand;
 
                         //--** Los dias domingos son mintados casi rojos
-                        if (Weekday(fec_aux, DayOfWeek.Sunday) == 1)
+                        if (fec_aux.DayOfWeek == DayOfWeek.Sunday)
                         {
                             _with3.BackColor = Color.Wheat;
                         }
@@ -290,13 +290,13 @@ namespace CREARSIS
             vg_str_ucc = new DataTable();
 
             Button bot_fec = (Button)sender;
-            string vv_fec_tcd = bot_fec.Name;
+            DateTime vv_fec_tcd =Convert.ToDateTime( bot_fec.Name);
 
             vg_str_ucc.Columns.Add("va_fec_tcm");
             vg_str_ucc.Columns.Add("va_val_tcm");
 
             vg_str_ucc.Rows.Add();
-            vg_str_ucc.Rows[0]["va_fec_tcm"] = vv_fec_tcd;
+            vg_str_ucc.Rows[0]["va_fec_tcm"] = vv_fec_tcd.ToShortDateString();
             vg_str_ucc.Rows[0]["va_val_tcm"]= 0.0;
 
             //--** Si es abierta desde el ABM abre la ventana nuevo con el click
@@ -409,8 +409,8 @@ namespace CREARSIS
 
         private void m_adm014_02a_Click(object sender, EventArgs e)
         {
-            //adm014_02a obj = new adm014_02a();
-            //o_mg_glo_bal.mg_ads000_02(obj, this);
+            adm014_02a obj = new adm014_02a();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
         private void m_adm014_05_Click(object sender, EventArgs e)
@@ -428,7 +428,6 @@ namespace CREARSIS
 
         private void cb_prm_bus_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (ban_aux == 1)
             {
                 fu_bus_car((cb_prm_bus.SelectedIndex+1).ToString(),Convert.ToInt32( tb_val_año.Value));
