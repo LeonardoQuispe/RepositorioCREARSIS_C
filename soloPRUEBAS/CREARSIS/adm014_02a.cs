@@ -108,8 +108,13 @@ namespace CREARSIS
                 o_adm014._06(tb_fec_ini.Value, tb_fec_fin.Value);
                 o_adm014._02(tb_fec_ini.Value, tb_fec_fin.Value, tb_val_tcm.Text);
 
-                DateTime aux = Convert.ToDateTime(tb_fec_ini.Text);
-                vg_frm_pad.fu_bus_car(aux.Month.ToString(), Convert.ToInt32(aux.Year));
+                DateTime aux;
+                aux = Convert.ToDateTime(tb_fec_ini.Text);
+                vg_frm_pad.fu_bus_car(aux.Month.ToString(), aux.Year);
+
+                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                vg_frm_pad.tb_val_año.Text = aux.Year.ToString();
+                vg_frm_pad.cb_prm_bus.SelectedIndex = aux.Month - 1;
 
 
                 Close();

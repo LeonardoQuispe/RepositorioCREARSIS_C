@@ -33,14 +33,14 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.tb_fec_ini = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tb_val_tcm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_fec_ini = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_ace_pta
@@ -100,7 +100,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(32, 47);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(38, 21);
+            this.LabelX1.Size = new System.Drawing.Size(31, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Fecha";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -120,56 +120,42 @@
             this.GroupBox1.TabIndex = 74;
             this.GroupBox1.TabStop = false;
             // 
-            // tb_fec_fin
+            // tb_val_tcm
+            // 
+            this.tb_val_tcm.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+            this.tb_val_tcm.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_val_tcm.Border.Class = "TextBoxBorder";
+            this.tb_val_tcm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_val_tcm.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_val_tcm.ForeColor = System.Drawing.Color.Black;
+            this.tb_val_tcm.Location = new System.Drawing.Point(69, 17);
+            this.tb_val_tcm.MaxLength = 4;
+            this.tb_val_tcm.Name = "tb_val_tcm";
+            this.tb_val_tcm.PreventEnterBeep = true;
+            this.tb_val_tcm.Size = new System.Drawing.Size(66, 22);
+            this.tb_val_tcm.TabIndex = 10;
+            this.tb_val_tcm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_val_tcm.TextChanged += new System.EventHandler(this.tb_val_tcm_TextChanged);
             // 
-            this.tb_fec_fin.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.tb_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.tb_fec_fin.ButtonDropDown.Visible = true;
-            this.tb_fec_fin.CustomFormat = "dd/mm/aaaa";
-            this.tb_fec_fin.IsPopupCalendarOpen = false;
-            this.tb_fec_fin.Location = new System.Drawing.Point(69, 75);
-            this.tb_fec_fin.MaxDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.tb_fec_fin.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            // LabelX2
             // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.tb_fec_fin.MonthCalendar.ClearButtonVisible = true;
+            this.LabelX2.AutoSize = true;
+            this.LabelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.DisplayMonth = new System.DateTime(2017, 9, 1, 0, 0, 0, 0);
-            this.tb_fec_fin.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.tb_fec_fin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
-            this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(83, 26);
-            this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_fin.TabIndex = 75;
+            this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX2.ForeColor = System.Drawing.Color.Black;
+            this.LabelX2.Location = new System.Drawing.Point(43, 17);
+            this.LabelX2.Name = "LabelX2";
+            this.LabelX2.Size = new System.Drawing.Size(20, 17);
+            this.LabelX2.TabIndex = 1;
+            this.LabelX2.Text = "T.C.";
+            this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // tb_fec_ini
             // 
@@ -180,11 +166,8 @@
             this.tb_fec_ini.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_fec_ini.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.tb_fec_ini.ButtonDropDown.Visible = true;
-            this.tb_fec_ini.CustomFormat = "dd/mm/aaaa";
             this.tb_fec_ini.IsPopupCalendarOpen = false;
-            this.tb_fec_ini.Location = new System.Drawing.Point(69, 47);
-            this.tb_fec_ini.MaxDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.tb_fec_ini.MinDate = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.tb_fec_ini.Location = new System.Drawing.Point(68, 47);
             // 
             // 
             // 
@@ -205,7 +188,7 @@
             this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
             this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_ini.MonthCalendar.DisplayMonth = new System.DateTime(2017, 9, 1, 0, 0, 0, 0);
+            this.tb_fec_ini.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
             this.tb_fec_ini.MonthCalendar.MarkedDates = new System.DateTime[0];
             this.tb_fec_ini.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
@@ -218,51 +201,64 @@
             this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(83, 26);
+            this.tb_fec_ini.Size = new System.Drawing.Size(84, 22);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_ini.TabIndex = 74;
+            this.tb_fec_ini.TabIndex = 154;
+            this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
             // 
-            // tb_val_tcm
-            // 
-            this.tb_val_tcm.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_val_tcm.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_val_tcm.Border.Class = "TextBoxBorder";
-            this.tb_val_tcm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_val_tcm.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_val_tcm.ForeColor = System.Drawing.Color.Black;
-            this.tb_val_tcm.Location = new System.Drawing.Point(69, 17);
-            this.tb_val_tcm.MaxLength = 4;
-            this.tb_val_tcm.Name = "tb_val_tcm";
-            this.tb_val_tcm.PreventEnterBeep = true;
-            this.tb_val_tcm.Size = new System.Drawing.Size(66, 26);
-            this.tb_val_tcm.TabIndex = 10;
-            this.tb_val_tcm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tb_val_tcm.TextChanged += new System.EventHandler(this.tb_val_tcm_TextChanged);
-            // 
-            // LabelX2
-            // 
-            this.LabelX2.AutoSize = true;
-            this.LabelX2.BackColor = System.Drawing.Color.Transparent;
+            // tb_fec_fin
             // 
             // 
             // 
-            this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(43, 17);
-            this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(24, 21);
-            this.LabelX2.TabIndex = 1;
-            this.LabelX2.Text = "T.C.";
-            this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            this.tb_fec_fin.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.tb_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.tb_fec_fin.ButtonDropDown.Visible = true;
+            this.tb_fec_fin.IsPopupCalendarOpen = false;
+            this.tb_fec_fin.Location = new System.Drawing.Point(68, 75);
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.tb_fec_fin.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
+            this.tb_fec_fin.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.tb_fec_fin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
+            this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.tb_fec_fin.Name = "tb_fec_fin";
+            this.tb_fec_fin.Size = new System.Drawing.Size(84, 22);
+            this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.tb_fec_fin.TabIndex = 155;
+            this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
             // 
             // adm013_02a
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(229, 150);
@@ -280,8 +276,8 @@
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,9 +289,9 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox1;
-        internal DevComponents.Editors.DateTimeAdv.DateTimeInput tb_fec_fin;
-        internal DevComponents.Editors.DateTimeAdv.DateTimeInput tb_fec_ini;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_tcm;
         internal DevComponents.DotNetBar.LabelX LabelX2;
+        internal DevComponents.Editors.DateTimeAdv.DateTimeInput tb_fec_fin;
+        internal DevComponents.Editors.DateTimeAdv.DateTimeInput tb_fec_ini;
     }
 }

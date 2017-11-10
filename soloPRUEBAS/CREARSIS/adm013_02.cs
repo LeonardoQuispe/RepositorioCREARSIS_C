@@ -124,8 +124,10 @@ namespace CREARSIS
                 }
                 DateTime aux;
                 aux = Convert.ToDateTime(tb_fec_tcm.Text);
+
                 vg_frm_pad.fu_bus_car(aux.Month.ToString(), Convert.ToInt32(aux.Year));
 
+                
                 tb_fec_tcm.Clear();
                 tb_val_tcm.Clear();
                 Close();

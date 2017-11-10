@@ -41,7 +41,7 @@ namespace DATOS.ADM
 
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" select * from adm014  ");
-                vv_str_sql.AppendLine(" where va_fec_buf BETWEEN '" + fec_ini + "' AND '" + fec_fin + "'");
+                vv_str_sql.AppendLine(" where va_fec_buf BETWEEN '" + fec_ini.ToShortDateString() + "' AND '" + fec_fin.ToShortDateString() + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -61,7 +61,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" select * from adm014  ");
-                vv_str_sql.AppendLine(" where va_fec_buf= '" + val_fec + "'");
+                vv_str_sql.AppendLine(" where va_fec_buf= '" + val_fec.ToShortDateString() + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -82,7 +82,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO adm014 VALUES ");
-                vv_str_sql.AppendLine(" ('" + fec_buf + "', '" + val_buf + "')");
+                vv_str_sql.AppendLine(" ('" + fec_buf.ToShortDateString() + "', '" + val_buf + "')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -113,7 +113,7 @@ namespace DATOS.ADM
                 {
                     vv_str_sql.AppendLine(" INSERT INTO adm014 VALUES");
                     fec_aux = fec_ini.AddDays(i);
-                    vv_str_sql.AppendLine(" ('" + fec_aux + "', '" + val_buf + "')");
+                    vv_str_sql.AppendLine(" ('" + fec_aux.ToShortDateString() + "', '" + val_buf + "')");
 
                 }
 
@@ -135,8 +135,8 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" va_val_buf='" + val_buf + "'");
-                vv_str_sql.AppendLine(" WHERE va_fec_buf ='" + fec_buf + "'");
+                vv_str_sql.AppendLine(" va_val_buf='" + val_buf.ToShortDateString() + "'");
+                vv_str_sql.AppendLine(" WHERE va_fec_buf ='" + fec_buf.ToShortDateString() + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -198,7 +198,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" DELETE adm014 ");
-                vv_str_sql.AppendLine(" WHERE  va_fec_buf BETWEEN '" + fec_ini + "' AND '" + fec_fin + "'");
+                vv_str_sql.AppendLine(" WHERE  va_fec_buf BETWEEN '" + fec_ini.ToShortDateString() + "' AND '" + fec_fin.ToShortDateString() + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
