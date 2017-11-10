@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 //REFERENCIAS
 using DATOS.ADM;
 using CREARSIS.GLOBAL;
@@ -77,7 +78,6 @@ namespace CREARSIS
         {
             try
             {
-
                 DateTime fec_ini;
                 //** Fecha Inicial
                 DateTime fec_fin;
@@ -173,12 +173,9 @@ namespace CREARSIS
                             //--** Los dias domingos son mintados casi rojos
                             //string dia = "";
                             //dia = Weekday(Weekday(fec_aux, DayOfWeek.Sunday), false, DayOfWeek.Sunday);
-
-                            int nro_dia = 0;
-                            nro_dia = Weekday(fec_aux, DayOfWeek.Sunday);
-
-
-
+                            
+                            int nro_dia = Weekday(fec_aux, DayOfWeek.Sunday);
+                            
                             if (fec_aux.DayOfWeek==DayOfWeek.Sunday)
                             {
                                 _with2.BackColor = Color.Wheat;
@@ -432,7 +429,6 @@ namespace CREARSIS
             {
                 fu_bus_car((cb_prm_bus.SelectedIndex+1).ToString(),Convert.ToInt32( tb_val_año.Value));
             }
-
         }
 
         private void tb_val_año_ValueChanged(object sender, EventArgs e)

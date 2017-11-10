@@ -109,7 +109,7 @@ namespace DATOS.ADM
 
                 vv_str_sql = new StringBuilder();
 
-                for (int i = 1; i <= nro_dia; i++)
+                for (int i = 0; i <= nro_dia; i++)
                 {
                     vv_str_sql.AppendLine(" INSERT INTO adm014 VALUES");
                     fec_aux = fec_ini.AddDays(i);

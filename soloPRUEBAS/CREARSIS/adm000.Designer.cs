@@ -383,6 +383,7 @@
             this.mn_bs_us.Name = "mn_bs_us";
             this.mn_bs_us.Size = new System.Drawing.Size(181, 26);
             this.mn_bs_us.Text = "T.C. Bs/U&s";
+            this.mn_bs_us.Click += new System.EventHandler(this.mn_bs_us_Click);
             // 
             // mn_bs_ufv
             // 

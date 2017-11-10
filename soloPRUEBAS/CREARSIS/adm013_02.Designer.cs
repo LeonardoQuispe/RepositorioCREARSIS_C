@@ -54,6 +54,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 90;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // gb_ctr_frm
             // 
@@ -82,6 +83,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 100;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // tb_fec_tcm
             // 
@@ -146,12 +148,13 @@
             this.tb_val_tcm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_val_tcm.ForeColor = System.Drawing.Color.Black;
             this.tb_val_tcm.Location = new System.Drawing.Point(69, 17);
-            this.tb_val_tcm.MaxLength = 7;
+            this.tb_val_tcm.MaxLength = 4;
             this.tb_val_tcm.Name = "tb_val_tcm";
             this.tb_val_tcm.PreventEnterBeep = true;
             this.tb_val_tcm.Size = new System.Drawing.Size(66, 26);
             this.tb_val_tcm.TabIndex = 10;
             this.tb_val_tcm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_val_tcm.TextChanged += new System.EventHandler(this.tb_val_tcm_TextChanged);
             // 
             // LabelX2
             // 
@@ -187,6 +190,7 @@
             this.Name = "adm013_02";
             this.Text = "Nuevo T.C - Bs/Us";
             this.TitleText = "Nuevo T.C - Bs/Us";
+            this.Load += new System.EventHandler(this.adm013_02_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

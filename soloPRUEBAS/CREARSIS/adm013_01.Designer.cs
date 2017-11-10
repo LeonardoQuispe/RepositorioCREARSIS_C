@@ -145,6 +145,7 @@
             this.tb_val_año.Name = "tb_val_año";
             this.tb_val_año.Size = new System.Drawing.Size(69, 26);
             this.tb_val_año.TabIndex = 10;
+            this.tb_val_año.ValueChanged += new System.EventHandler(this.tb_val_año_ValueChanged);
             // 
             // cb_prm_bus
             // 
@@ -172,6 +173,7 @@
             this.cb_prm_bus.Size = new System.Drawing.Size(116, 26);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 20;
+            this.cb_prm_bus.SelectedIndexChanged += new System.EventHandler(this.cb_prm_bus_SelectedIndexChanged);
             // 
             // Ene
             // 
@@ -350,6 +352,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -371,6 +374,7 @@
             this.m_atr_ass.Name = "m_atr_ass";
             this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_adm013_p00
             // 
@@ -383,6 +387,7 @@
             this.m_adm013_05.Name = "m_adm013_05";
             this.m_adm013_05.Size = new System.Drawing.Size(78, 24);
             this.m_adm013_05.Text = "&Consulta";
+            this.m_adm013_05.Click += new System.EventHandler(this.m_adm013_05_Click);
             // 
             // m_adm013_02
             // 
@@ -397,6 +402,7 @@
             this.m_adm013_02a.Name = "m_adm013_02a";
             this.m_adm013_02a.Size = new System.Drawing.Size(230, 26);
             this.m_adm013_02a.Text = "&T.C. por rago de fecha";
+            this.m_adm013_02a.Click += new System.EventHandler(this.m_adm013_02a_Click);
             // 
             // mn_pri_nci
             // 
@@ -411,7 +417,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(278, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(393, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -456,6 +462,7 @@
             this.Name = "adm013_01";
             this.Text = "Busca T.C. Bs/Us";
             this.TitleText = "Busca T.C. Bs/Us";
+            this.Load += new System.EventHandler(this.adm013_01_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tb_val_año)).EndInit();
             this.GroupBox3.ResumeLayout(false);

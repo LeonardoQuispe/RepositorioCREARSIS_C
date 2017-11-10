@@ -50,6 +50,10 @@ namespace CREARSIS
             {
                 return "Dato no valido, el T.C. debe ser mayor a cero";
             }
+            if (Convert.ToDecimal(tb_val_tcm.Text.Replace('.', ',')) > 10)
+            {
+                return "Dato no valido, el T.C. debe ser menor que 10";
+            }
 
             DateTime Dtemp;
             if (DateTime.TryParse(tb_fec_ini.Text, out Dtemp) == false)
@@ -63,7 +67,7 @@ namespace CREARSIS
                 return "La fecha es invalida";
             }            
 
-            if ((tb_fec_fin.Value - tb_fec_ini.Value).Days < 0)
+            if ((tb_fec_fin.Value - tb_fec_ini.Value).Days <= 0)
             {
                 tb_fec_ini.Focus();
                 return "La fecha inicial debe ser menor a la fecha final";
@@ -104,6 +108,10 @@ namespace CREARSIS
                 o_adm014._06(tb_fec_ini.Value, tb_fec_fin.Value);
                 o_adm014._02(tb_fec_ini.Value, tb_fec_fin.Value, tb_val_tcm.Text);
 
+                DateTime aux = Convert.ToDateTime(tb_fec_ini.Text);
+                vg_frm_pad.fu_bus_car(aux.Month.ToString(), Convert.ToInt32(aux.Year));
+
+
                 Close();
 
             }
@@ -129,6 +137,12 @@ namespace CREARSIS
                 //posiciona el cursor al final del texto
                 tb_val_tcm.Select(tb_val_tcm.Text.Length, 0);
             }
+        }
+
+        private void adm014_02a_Load(object sender, EventArgs e)
+        {
+            tb_fec_fin.Value = DateTime.Today;
+            tb_fec_ini.Value = DateTime.Today;
         }
     }
 }

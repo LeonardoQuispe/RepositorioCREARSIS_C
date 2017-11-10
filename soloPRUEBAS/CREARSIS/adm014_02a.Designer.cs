@@ -276,6 +276,7 @@
             this.Name = "adm014_02a";
             this.Text = "Nuevo T.C - Bs/Ufv";
             this.TitleText = "Nuevo T.C - Bs/Ufv";
+            this.Load += new System.EventHandler(this.adm014_02a_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();

@@ -57,7 +57,7 @@ namespace DATOS.ADM
         /// <param name="fec_bus">Fecha de T.C. Bs</param>
         /// <param name="val_bus">Valor de T.C. Bs</param>
         /// <returns></returns>
-        public DataTable _02(DateTime fec_bus, decimal val_bus)
+        public DataTable _02(DateTime fec_bus, string val_bus)
         {
             try
             {
@@ -79,23 +79,22 @@ namespace DATOS.ADM
         /// <param name="fec_fin"></param>
         /// <param name="val_bus"></param>
         /// <returns></returns>
-        public DataTable _02(DateTime fec_ini, DateTime fec_fin, decimal val_bus)
+        public DataTable _02(DateTime fec_ini, DateTime fec_fin, string val_bus)
         {
-
             try
             {
                 int nro_dia = 0;
                 DateTime fec_aux;
-                //intervalo de dias/
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                nro_dia = Convert.ToInt16(fec_ini.Subtract(fec_fin));
+
+                //intervalo de dias
+                nro_dia = (fec_fin - fec_ini).Days;
 
                 vv_str_sql = new StringBuilder();
 
-                for (int i = 1; i <= nro_dia; i++)
+                for (int i = 0; i <= nro_dia; i++)
                 {
                     vv_str_sql.AppendLine(" INSERT INTO adm013 VALUES ");
-
+                    
                     fec_aux = fec_ini.AddDays(i);
                     vv_str_sql.AppendLine(" ('" + fec_aux + "', '" + val_bus + "')");
                 }

@@ -281,5 +281,11 @@ namespace CREARSIS
 
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        private void mn_bs_us_Click(object sender, EventArgs e)
+        {
+            adm013_01 obj = new adm013_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
