@@ -355,7 +355,14 @@ namespace CREARSIS
                             dg_res_ult[j, i].Value = xlsRange[i + 7, j + 1].Value ?? "";
                         }
                     }
-                }            
+
+
+                    libro_xls.Close();
+                    obj_xls.Quit();
+
+
+                }    
+
             }
             catch (Exception ex)
             {
