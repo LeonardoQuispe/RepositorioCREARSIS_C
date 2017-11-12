@@ -13,6 +13,9 @@ using CREARSIS.GLOBAL;
 using System.Runtime.InteropServices;
 using DevComponents.DotNetBar;
 
+
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace CREARSIS
 {
     /// <summary>
@@ -287,5 +290,80 @@ namespace CREARSIS
             adm013_01 obj = new adm013_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+
+
+
+
+
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            fu_imp_xls();
+        }
+
+        void fu_imp_xls()
+        {
+
+            try
+            {
+                string ruta = "";
+                OpenFileDialog openfile1 = new OpenFileDialog();
+                openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
+                openfile1.Title = "Seleccione el Libro de Excel";
+                openfile1.ShowDialog();
+                ruta = openfile1.FileName;
+
+
+
+
+
+                //create a instance for the Excel object  
+                Excel.Application oExcel = new Excel.Application();               
+
+                //pass that to workbook object  
+                Excel.Workbook libro_xls = oExcel.Workbooks.Open(ruta);
+
+                Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
+
+                Excel.Range xlsRange = hoja_xls.UsedRange;
+
+                lbl_libro_xls.Text = libro_xls.Name;
+                lbl_hoja_xls.Text = hoja_xls.Name;
+
+                string tmp = xlsRange[2, 1].Value.ToString();
+
+                lbl_año.Text = tmp.Substring(4, 4);
+
+
+
+                dg_res_ult.Rows.Clear();
+
+                int filas = 30;
+                int columnas = 12;
+
+                for (int i = 0; i <= filas; i++)
+                {
+                    dg_res_ult.Rows.Add();
+
+                    for (int j = 0; j <= columnas; j++)
+                    {
+                        dg_res_ult[j,i].Value = xlsRange[i+7, j+1].Value ?? "";
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBoxEx.Show(ex.Message);
+            }       
+
+        }
+
+
+
+
+
     }
 }
