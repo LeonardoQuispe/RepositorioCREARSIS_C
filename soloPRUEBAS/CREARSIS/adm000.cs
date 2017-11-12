@@ -315,46 +315,47 @@ namespace CREARSIS
                 OpenFileDialog openfile1 = new OpenFileDialog();
                 openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
                 openfile1.Title = "Seleccione el Libro de Excel";
-                openfile1.ShowDialog();
-                ruta = openfile1.FileName;
-
-
-                //creando una instancia para el objeto de excel 
-                Excel.Application obj_xls = new Excel.Application();               
-
-                //pasando el objeto a un libro de excel
-                Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
-
-                //Elijiendo la hoja del libro de excel elegido
-                Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
-
-                //asignando el rango de filas y columnas usadas en la hoja de excel
-                Excel.Range xlsRange = hoja_xls.UsedRange;
-
-                //recuperando el nombre del libro, de la hoja, y el año seleccionado
-                lbl_libro_xls.Text = libro_xls.Name;
-                lbl_hoja_xls.Text = hoja_xls.Name;
-                string tmp = xlsRange[2, 1].Value.ToString();
-                lbl_año.Text = tmp.Substring(4, 4);
-
-
-
-                dg_res_ult.Rows.Clear();
-
-                //cargando el contenido 
-                int filas = 30;
-                int columnas = 12;
-
-                for (int i = 0; i <= filas; i++)
+                if (openfile1.ShowDialog()==DialogResult.OK)
                 {
-                    dg_res_ult.Rows.Add();
+                    ruta = openfile1.FileName;
 
-                    for (int j = 0; j <= columnas; j++)
+
+                    //creando una instancia para el objeto de excel 
+                    Excel.Application obj_xls = new Excel.Application();
+
+                    //pasando el objeto a un libro de excel
+                    Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
+
+                    //Elijiendo la hoja del libro de excel elegido
+                    Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
+
+                    //asignando el rango de filas y columnas usadas en la hoja de excel
+                    Excel.Range xlsRange = hoja_xls.UsedRange;
+
+                    //recuperando el nombre del libro, de la hoja, y el año seleccionado
+                    lbl_libro_xls.Text = libro_xls.Name;
+                    lbl_hoja_xls.Text = hoja_xls.Name;
+                    string tmp = xlsRange[2, 1].Value.ToString();
+                    lbl_año.Text = tmp.Substring(4, 4);
+
+
+
+                    dg_res_ult.Rows.Clear();
+
+                    //cargando el contenido 
+                    int filas = 30;
+                    int columnas = 12;
+
+                    for (int i = 0; i <= filas; i++)
                     {
-                        dg_res_ult[j,i].Value = xlsRange[i+7, j+1].Value ?? "";
-                    }
-                }
+                        dg_res_ult.Rows.Add();
 
+                        for (int j = 0; j <= columnas; j++)
+                        {
+                            dg_res_ult[j, i].Value = xlsRange[i + 7, j + 1].Value ?? "";
+                        }
+                    }
+                }            
             }
             catch (Exception ex)
             {
