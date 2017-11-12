@@ -302,12 +302,16 @@ namespace CREARSIS
             fu_imp_xls();
         }
 
+
+
         void fu_imp_xls()
         {
 
             try
             {
                 string ruta = "";
+
+
                 OpenFileDialog openfile1 = new OpenFileDialog();
                 openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
                 openfile1.Title = "Seleccione el Libro de Excel";
@@ -315,30 +319,29 @@ namespace CREARSIS
                 ruta = openfile1.FileName;
 
 
+                //creando una instancia para el objeto de excel 
+                Excel.Application obj_xls = new Excel.Application();               
 
+                //pasando el objeto a un libro de excel
+                Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
 
-
-                //create a instance for the Excel object  
-                Excel.Application oExcel = new Excel.Application();               
-
-                //pass that to workbook object  
-                Excel.Workbook libro_xls = oExcel.Workbooks.Open(ruta);
-
+                //Elijiendo la hoja del libro de excel elegido
                 Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
 
+                //asignando el rango de filas y columnas usadas en la hoja de excel
                 Excel.Range xlsRange = hoja_xls.UsedRange;
 
+                //recuperando el nombre del libro, de la hoja, y el año seleccionado
                 lbl_libro_xls.Text = libro_xls.Name;
                 lbl_hoja_xls.Text = hoja_xls.Name;
-
                 string tmp = xlsRange[2, 1].Value.ToString();
-
                 lbl_año.Text = tmp.Substring(4, 4);
 
 
 
                 dg_res_ult.Rows.Clear();
 
+                //cargando el contenido 
                 int filas = 30;
                 int columnas = 12;
 
