@@ -55,15 +55,17 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.fl_cal_end = new System.Windows.Forms.FlowLayoutPanel();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm014_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm014_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm014_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm014_02a = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
+            this.m_adm014_08 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_adm014_08a = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_val_año)).BeginInit();
             this.GroupBox3.SuspendLayout();
@@ -346,39 +348,6 @@
             this.gb_ctr_frm.TabIndex = 71;
             this.gb_ctr_frm.TabStop = false;
             // 
-            // bt_can_cel
-            // 
-            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(393, 16);
-            this.bt_can_cel.Name = "bt_can_cel";
-            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
-            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_can_cel.Symbol = "";
-            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
-            this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
-            this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
-            // bt_ace_pta
-            // 
-            this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(281, 16);
-            this.bt_ace_pta.Name = "bt_ace_pta";
-            this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
-            this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_ace_pta.Symbol = "";
-            this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
-            this.bt_ace_pta.Text = "Aceptar";
-            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
@@ -424,13 +393,29 @@
             this.m_adm014_02,
             this.m_adm014_05,
             this.m_adm014_p00,
+            this.m_adm014_08,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(278, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(395, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
+            // 
+            // m_adm014_08
+            // 
+            this.m_adm014_08.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_adm014_08a});
+            this.m_adm014_08.Name = "m_adm014_08";
+            this.m_adm014_08.Size = new System.Drawing.Size(117, 24);
+            this.m_adm014_08.Text = "&Importar Excel";
+            // 
+            // m_adm014_08a
+            // 
+            this.m_adm014_08a.Name = "m_adm014_08a";
+            this.m_adm014_08a.Size = new System.Drawing.Size(181, 26);
+            this.m_adm014_08a.Text = "&T.C. por Año";
+            this.m_adm014_08a.Click += new System.EventHandler(this.m_adm014_08a_Click);
             // 
             // GroupBox2
             // 
@@ -444,12 +429,41 @@
             this.GroupBox2.TabIndex = 70;
             this.GroupBox2.TabStop = false;
             // 
+            // bt_can_cel
+            // 
+            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_can_cel.Location = new System.Drawing.Point(413, 14);
+            this.bt_can_cel.Name = "bt_can_cel";
+            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
+            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_can_cel.Symbol = "";
+            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
+            this.bt_can_cel.SymbolSize = 15F;
+            this.bt_can_cel.TabIndex = 102;
+            this.bt_can_cel.Text = "Cancelar";
+            // 
+            // bt_ace_pta
+            // 
+            this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ace_pta.Location = new System.Drawing.Point(301, 14);
+            this.bt_ace_pta.Name = "bt_ace_pta";
+            this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
+            this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_ace_pta.Symbol = "";
+            this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bt_ace_pta.SymbolSize = 15F;
+            this.bt_ace_pta.TabIndex = 101;
+            this.bt_ace_pta.Text = "Aceptar";
+            // 
             // adm014_01
             // 
-            this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(513, 554);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
@@ -505,8 +519,6 @@
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.FlowLayoutPanel fl_cal_end;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
-        internal DevComponents.DotNetBar.ButtonX bt_can_cel;
-        internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
         internal System.Windows.Forms.ToolStripMenuItem m_adm014_p00;
         internal System.Windows.Forms.ToolStripMenuItem m_adm014_05;
@@ -514,5 +526,9 @@
         internal System.Windows.Forms.ToolStripMenuItem m_adm014_02a;
         internal System.Windows.Forms.MenuStrip mn_pri_nci;
         internal System.Windows.Forms.GroupBox GroupBox2;
+        private System.Windows.Forms.ToolStripMenuItem m_adm014_08;
+        private System.Windows.Forms.ToolStripMenuItem m_adm014_08a;
+        internal DevComponents.DotNetBar.ButtonX bt_can_cel;
+        internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
     }
 }

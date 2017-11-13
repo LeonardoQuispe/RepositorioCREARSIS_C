@@ -438,5 +438,11 @@ namespace CREARSIS
                 fu_bus_car((cb_prm_bus.SelectedIndex + 1).ToString(), Convert.ToInt32(tb_val_año.Value));
             }
         }
+
+        private void m_adm014_08a_Click(object sender, EventArgs e)
+        {
+            adm014_08 obj = new adm014_08();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
     }
 }
