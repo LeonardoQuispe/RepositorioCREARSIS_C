@@ -20,8 +20,7 @@ namespace CREARSIS
     {
         #region VARIABLES
 
-        public dynamic vg_frm_pad;
-        DataTable tabla;
+        public dynamic vg_frm_pad;        
         DataTable vg_str_ucc;
         DataTable tab_adm014;
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,14 +48,14 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.lbl_año = new DevComponents.DotNetBar.LabelX();
-            this.lbl_hoja_xls = new DevComponents.DotNetBar.LabelX();
-            this.lbl_libro_xls = new DevComponents.DotNetBar.LabelX();
             this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_hoja_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_año_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -68,14 +68,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DIA,
             this.Enero,
@@ -90,32 +90,32 @@
             this.Octubre,
             this.Noviembre,
             this.Diciembre});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
-            this.dg_res_ult.Location = new System.Drawing.Point(5, 137);
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.Location = new System.Drawing.Point(10, 81);
             this.dg_res_ult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(761, 354);
+            this.dg_res_ult.Size = new System.Drawing.Size(761, 271);
             this.dg_res_ult.TabIndex = 29;
             this.dg_res_ult.TabStop = false;
             // 
@@ -218,10 +218,10 @@
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(324, 27);
+            this.labelX6.Location = new System.Drawing.Point(627, 33);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(85, 27);
+            this.labelX6.Size = new System.Drawing.Size(38, 27);
             this.labelX6.TabIndex = 36;
             this.labelX6.Text = "Año:";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -234,10 +234,10 @@
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(233, 27);
+            this.labelX5.Location = new System.Drawing.Point(316, 33);
             this.labelX5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(85, 27);
+            this.labelX5.Size = new System.Drawing.Size(42, 27);
             this.labelX5.TabIndex = 35;
             this.labelX5.Text = "Hoja:";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -250,7 +250,7 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(142, 27);
+            this.labelX4.Location = new System.Drawing.Point(6, 33);
             this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(85, 27);
@@ -258,56 +258,11 @@
             this.labelX4.Text = "Libro de Excel:";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // lbl_año
-            // 
-            this.lbl_año.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.lbl_año.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_año.ForeColor = System.Drawing.Color.Black;
-            this.lbl_año.Location = new System.Drawing.Point(324, 62);
-            this.lbl_año.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbl_año.Name = "lbl_año";
-            this.lbl_año.Size = new System.Drawing.Size(85, 27);
-            this.lbl_año.TabIndex = 33;
-            this.lbl_año.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // lbl_hoja_xls
-            // 
-            this.lbl_hoja_xls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.lbl_hoja_xls.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_hoja_xls.ForeColor = System.Drawing.Color.Black;
-            this.lbl_hoja_xls.Location = new System.Drawing.Point(233, 62);
-            this.lbl_hoja_xls.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbl_hoja_xls.Name = "lbl_hoja_xls";
-            this.lbl_hoja_xls.Size = new System.Drawing.Size(85, 27);
-            this.lbl_hoja_xls.TabIndex = 32;
-            this.lbl_hoja_xls.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // lbl_libro_xls
-            // 
-            this.lbl_libro_xls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.lbl_libro_xls.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.lbl_libro_xls.Location = new System.Drawing.Point(142, 61);
-            this.lbl_libro_xls.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbl_libro_xls.Name = "lbl_libro_xls";
-            this.lbl_libro_xls.Size = new System.Drawing.Size(85, 27);
-            this.lbl_libro_xls.TabIndex = 31;
-            this.lbl_libro_xls.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // bt_imp_xls
             // 
             this.bt_imp_xls.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_imp_xls.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_imp_xls.Location = new System.Drawing.Point(27, 47);
+            this.bt_imp_xls.Location = new System.Drawing.Point(376, 4);
             this.bt_imp_xls.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bt_imp_xls.Name = "bt_imp_xls";
             this.bt_imp_xls.Size = new System.Drawing.Size(75, 27);
@@ -319,20 +274,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.groupBox1.Controls.Add(this.tb_año_xls);
+            this.groupBox1.Controls.Add(this.tb_hoja_xls);
+            this.groupBox1.Controls.Add(this.tb_libro_xls);
             this.groupBox1.Controls.Add(this.bt_imp_xls);
             this.groupBox1.Controls.Add(this.dg_res_ult);
-            this.groupBox1.Controls.Add(this.lbl_libro_xls);
             this.groupBox1.Controls.Add(this.labelX6);
-            this.groupBox1.Controls.Add(this.lbl_hoja_xls);
             this.groupBox1.Controls.Add(this.labelX5);
-            this.groupBox1.Controls.Add(this.lbl_año);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(2, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(770, 498);
+            this.groupBox1.Size = new System.Drawing.Size(781, 364);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             // 
@@ -342,11 +297,11 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 498);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 363);
             this.gb_ctr_frm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_ctr_frm.Size = new System.Drawing.Size(770, 57);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(781, 57);
             this.gb_ctr_frm.TabIndex = 78;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -356,7 +311,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(676, 24);
+            this.bt_can_cel.Location = new System.Drawing.Point(682, 20);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -372,7 +327,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(571, 24);
+            this.bt_ace_pta.Location = new System.Drawing.Point(577, 20);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -383,13 +338,64 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // tb_libro_xls
+            // 
+            this.tb_libro_xls.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_libro_xls.Border.Class = "TextBoxBorder";
+            this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
+            this.tb_libro_xls.Location = new System.Drawing.Point(97, 38);
+            this.tb_libro_xls.Name = "tb_libro_xls";
+            this.tb_libro_xls.PreventEnterBeep = true;
+            this.tb_libro_xls.ReadOnly = true;
+            this.tb_libro_xls.Size = new System.Drawing.Size(100, 22);
+            this.tb_libro_xls.TabIndex = 37;
+            // 
+            // tb_hoja_xls
+            // 
+            this.tb_hoja_xls.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_hoja_xls.Border.Class = "TextBoxBorder";
+            this.tb_hoja_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_hoja_xls.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_hoja_xls.ForeColor = System.Drawing.Color.Black;
+            this.tb_hoja_xls.Location = new System.Drawing.Point(364, 38);
+            this.tb_hoja_xls.Name = "tb_hoja_xls";
+            this.tb_hoja_xls.PreventEnterBeep = true;
+            this.tb_hoja_xls.ReadOnly = true;
+            this.tb_hoja_xls.Size = new System.Drawing.Size(100, 22);
+            this.tb_hoja_xls.TabIndex = 38;
+            // 
+            // tb_año_xls
+            // 
+            this.tb_año_xls.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_año_xls.Border.Class = "TextBoxBorder";
+            this.tb_año_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_año_xls.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_año_xls.ForeColor = System.Drawing.Color.Black;
+            this.tb_año_xls.Location = new System.Drawing.Point(671, 38);
+            this.tb_año_xls.Name = "tb_año_xls";
+            this.tb_año_xls.PreventEnterBeep = true;
+            this.tb_año_xls.ReadOnly = true;
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
+            this.tb_año_xls.TabIndex = 39;
+            // 
             // adm014_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(774, 557);
+            this.ClientSize = new System.Drawing.Size(783, 425);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.groupBox1);
@@ -398,8 +404,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "adm014_08";
-            this.Text = "Importar Excel  T.C. por Año";
-            this.TitleText = "Importar Excel  T.C. por Año";
+            this.Text = "T.C. Bs/Ufv por Año";
+            this.TitleText = "T.C. Bs/Ufv por Año";
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.gb_ctr_frm.ResumeLayout(false);
@@ -426,13 +432,13 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.DotNetBar.LabelX lbl_año;
-        private DevComponents.DotNetBar.LabelX lbl_hoja_xls;
-        private DevComponents.DotNetBar.LabelX lbl_libro_xls;
         private DevComponents.DotNetBar.ButtonX bt_imp_xls;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_año_xls;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_hoja_xls;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
     }
 }

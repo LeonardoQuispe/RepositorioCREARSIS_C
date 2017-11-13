@@ -62,10 +62,10 @@ namespace CREARSIS
                     Excel.Range xlsRange = hoja_xls.UsedRange;
 
                     //recuperando el nombre del libro, de la hoja, y el año seleccionado
-                    lbl_libro_xls.Text = libro_xls.Name;
-                    lbl_hoja_xls.Text = hoja_xls.Name;
+                    tb_libro_xls.Text = libro_xls.Name;
+                    tb_hoja_xls.Text = hoja_xls.Name;
                     string tmp = xlsRange[2, 1].Value.ToString();
-                    lbl_año.Text = tmp.Substring(4, 4);
+                    tb_año_xls.Text = tmp.Substring(4, 4);
 
 
 
