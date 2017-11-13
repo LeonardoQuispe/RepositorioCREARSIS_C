@@ -171,7 +171,13 @@ namespace DATOS.ADM
                 //vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 //vv_str_sql.AppendLine(" WHERE  va_nro_aut = '" + nro_dos + "'");
 
-                vv_str_sql.AppendLine(" EXECUTE ctb007_04p " +"'" + nro_dos + "','"+est_ado+"'");
+
+                switch (est_ado)
+                {
+                    case "H": vv_str_sql.AppendLine(" EXECUTE ctb007_04p1 " + "'" + nro_dos + "'"); break;
+
+                    case "N": vv_str_sql.AppendLine(" EXECUTE ctb007_04p2 " + "'" + nro_dos + "'"); break;
+                }                
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

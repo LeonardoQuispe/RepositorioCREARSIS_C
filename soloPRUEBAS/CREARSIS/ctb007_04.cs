@@ -52,13 +52,13 @@ namespace CREARSIS
         {
             try
             {          
-                string vv_err_msg = null;
-                vv_err_msg = fu_ver_dat();
-                if (vv_err_msg != null)
-                {
-                    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //string vv_err_msg = null;
+                //vv_err_msg = fu_ver_dat();
+                //if (vv_err_msg != null)
+                //{
+                //    MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
                 DialogResult res_msg = new DialogResult();
                 if (tb_est_ado.Text == "Habilitado")
@@ -87,14 +87,14 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Dehabilita Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Close();
 
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Habilita/Deshabilita Dosifiación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Habilita/Deshabilita Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,17 +164,17 @@ namespace CREARSIS
         /// <summary>
         /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
         /// </summary>
-        public string fu_ver_dat()
-        {
-            //Si aun existe
-            tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
-            if (tab_ctb007.Rows.Count == 0)
-            {
-                return "La Dosificación no se encuentra registrada";
-            }
+        //public string fu_ver_dat()
+        //{
+        //    //Si aun existe
+        //    tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
+        //    if (tab_ctb007.Rows.Count == 0)
+        //    {
+        //        return "La Dosificación no se encuentra registrada";
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         #endregion
 
