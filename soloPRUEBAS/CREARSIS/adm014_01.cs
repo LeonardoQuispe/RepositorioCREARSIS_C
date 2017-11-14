@@ -445,5 +445,11 @@ namespace CREARSIS
             adm014_08 obj = new adm014_08();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
+
+        private void m_adm014_09a_Click(object sender, EventArgs e)
+        {
+            adm014_09 obj = new adm014_09();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
     }
 }

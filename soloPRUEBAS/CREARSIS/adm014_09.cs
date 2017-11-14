@@ -26,6 +26,8 @@ namespace CREARSIS
         #region INSTANCIAS
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        c_adm014 o_adm014 = new c_adm014();
+
 
         #endregion
 
@@ -41,7 +43,7 @@ namespace CREARSIS
 
 
                 OpenFileDialog openfile1 = new OpenFileDialog();
-                openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
+                openfile1.Filter = "Libro de Excel|*.xlsx|Libro de Excel 97-2003|*.xls";
                 openfile1.Title = "Seleccione el Libro de Excel";
                 if (openfile1.ShowDialog() == DialogResult.OK)
                 {
@@ -61,26 +63,30 @@ namespace CREARSIS
                     Excel.Range xlsRange = hoja_xls.UsedRange;
 
                     ////recuperando el nombre del libro, de la hoja, y el año seleccionado
-                    //lbl_libro_xls.Text = libro_xls.Name;
-                    //lbl_hoja_xls.Text = hoja_xls.Name;
-                    //string tmp = xlsRange[2, 1].Value.ToString();
-                    //lbl_año.Text = tmp.Substring(4, 4);
-
-
+                    tb_libro_xls.Text = libro_xls.Name;
+                    tb_hoja_xls.Text = hoja_xls.Name;
 
                     dg_res_ult.Rows.Clear();
 
                     //cargando el contenido 
-                    int filas = 30;
-                    int columnas = 12;
+                    int columnas = xlsRange.Columns.Count;
+                    int filas = xlsRange.Rows.Count;
 
-                    for (int i = 0; i <= filas; i++)
+                    for (int i = 0; i < filas; i++)
                     {
                         dg_res_ult.Rows.Add();
 
-                        for (int j = 0; j <= columnas; j++)
+                        for (int j = 0; j < columnas; j++)
                         {
-                            dg_res_ult[j, i].Value = xlsRange[i + 7, j + 1].Value ?? "";
+                            if (j==0)
+                            {
+                                dg_res_ult[j, i].Value = Convert.ToDateTime(xlsRange[i + 1, j + 1].Value ?? "").ToShortDateString();
+                            }
+                            else
+                            {
+                                dg_res_ult[j, i].Value = xlsRange[i + 1, j + 1].Value ?? "";
+                            }
+                            
                         }
                     }
 
@@ -115,6 +121,52 @@ namespace CREARSIS
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            DialogResult res_msg = new DialogResult();
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)" , "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (res_msg == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            try
+            {
+                DateTime fec_aux=new DateTime();
+                string val_aux = "";
+
+                for (int i = 0; i < dg_res_ult.Rows.Count; i++)
+                {                  
+
+                    fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
+                    val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
+
+                    //Borra datos de la fecha
+                    o_adm014._06(fec_aux.ToShortDateString());
+
+                    //Registra ufv uno por uno
+                    o_adm014._02(fec_aux, val_aux);                                    
+                }
+
+                
+
+                vg_frm_pad.fu_bus_car(fec_aux.Month.ToString(), fec_aux.Year);
+
+                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
+                vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBoxEx.Show(Ex.Message);
+            }
         }
     }
 }

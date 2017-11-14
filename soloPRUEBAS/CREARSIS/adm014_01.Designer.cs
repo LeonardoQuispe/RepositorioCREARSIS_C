@@ -66,6 +66,7 @@
             this.m_adm014_08 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm014_08a = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_adm014_09a = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_val_año)).BeginInit();
             this.GroupBox3.SuspendLayout();
@@ -436,7 +437,8 @@
             // m_adm014_08
             // 
             this.m_adm014_08.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_adm014_08a});
+            this.m_adm014_08a,
+            this.m_adm014_09a});
             this.m_adm014_08.Name = "m_adm014_08";
             this.m_adm014_08.Size = new System.Drawing.Size(94, 20);
             this.m_adm014_08.Text = "&Importar Excel";
@@ -444,7 +446,7 @@
             // m_adm014_08a
             // 
             this.m_adm014_08a.Name = "m_adm014_08a";
-            this.m_adm014_08a.Size = new System.Drawing.Size(141, 22);
+            this.m_adm014_08a.Size = new System.Drawing.Size(155, 22);
             this.m_adm014_08a.Text = "&T.C. por Año";
             this.m_adm014_08a.Click += new System.EventHandler(this.m_adm014_08a_Click);
             // 
@@ -459,6 +461,13 @@
             this.GroupBox2.Size = new System.Drawing.Size(512, 443);
             this.GroupBox2.TabIndex = 70;
             this.GroupBox2.TabStop = false;
+            // 
+            // m_adm014_09a
+            // 
+            this.m_adm014_09a.Name = "m_adm014_09a";
+            this.m_adm014_09a.Size = new System.Drawing.Size(155, 22);
+            this.m_adm014_09a.Text = "&T.C. por Fechas";
+            this.m_adm014_09a.Click += new System.EventHandler(this.m_adm014_09a_Click);
             // 
             // adm014_01
             // 
@@ -530,5 +539,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_adm014_08a;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
+        private System.Windows.Forms.ToolStripMenuItem m_adm014_09a;
     }
 }

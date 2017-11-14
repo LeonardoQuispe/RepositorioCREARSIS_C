@@ -13,6 +13,7 @@ using DATOS.ADM;
 using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Transactions;
 
 
 namespace CREARSIS
@@ -28,6 +29,7 @@ namespace CREARSIS
         #region INSTANCIAS
         
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        c_adm014 o_adm014 = new c_adm014();
 
         #endregion
 
@@ -121,13 +123,56 @@ namespace CREARSIS
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            DialogResult res_msg = new DialogResult();
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Año?  \r\n (Se Actualizarán TODOS los datos de la gestión " + tb_año_xls.Text+")", "Nuevo T.C. Bs/Ufv por Año", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (res_msg == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            
+
             try
             {
+                DateTime fec_ini_aux;
+                DateTime fec_fin_aux;
+                DateTime fec_aux;
+                string val_aux = "";
 
+                fec_ini_aux = Convert.ToDateTime("01/01/" + tb_año_xls.Text);
+                fec_fin_aux = Convert.ToDateTime("31/12/" + tb_año_xls.Text);
+
+                //Borra datos del año
+                o_adm014._06(fec_ini_aux, fec_fin_aux);
+
+                //Registra ufv uno por uno
+                for (int i = 1; i < 13; i++)
+                {
+                    for (int j = 1; j < 32; j++)
+                    {
+                        if (dg_res_ult[i, j - 1].Value.ToString().Trim()!="")
+                        {
+                            fec_aux = Convert.ToDateTime(j.ToString() + "/" + i.ToString() + "/" + tb_año_xls.Text);
+                            val_aux = dg_res_ult[i, j - 1].Value.ToString().Replace(",", ".");
+                            o_adm014._02(fec_aux, val_aux);
+                        }     
+                    }
+                }
+
+                vg_frm_pad.fu_bus_car(fec_ini_aux.Month.ToString(), fec_ini_aux.Year);
+
+                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                vg_frm_pad.tb_val_año.Text = fec_ini_aux.Year.ToString();
+                vg_frm_pad.cb_prm_bus.SelectedIndex = fec_ini_aux.Month - 1;
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Close();
             }
             catch(Exception Ex)
             {
-                throw Ex;
+                MessageBoxEx.Show(Ex.Message);
             }
         }
     }
