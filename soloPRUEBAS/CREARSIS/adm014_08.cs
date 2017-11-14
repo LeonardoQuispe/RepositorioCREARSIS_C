@@ -14,6 +14,7 @@ using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
 
+
 namespace CREARSIS
 {
     public partial class adm014_08 : DevComponents.DotNetBar.Metro.MetroForm
@@ -53,7 +54,7 @@ namespace CREARSIS
                     Excel.Application obj_xls = new Excel.Application();
 
                     //pasando el objeto a un libro de excel
-                    Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
+                    Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
                     //Elijiendo la hoja del libro de excel elegido
                     Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
@@ -86,7 +87,7 @@ namespace CREARSIS
                     }
 
 
-                    libro_xls.Close();
+                    libro_xls.Close(false, ruta, Type.Missing);
                     obj_xls.Quit();
 
 

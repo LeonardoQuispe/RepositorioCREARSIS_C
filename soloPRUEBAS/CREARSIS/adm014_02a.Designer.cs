@@ -105,7 +105,7 @@
             this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(83, 26);
+            this.tb_fec_fin.Size = new System.Drawing.Size(83, 22);
             this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_fin.TabIndex = 75;
             // 
@@ -156,7 +156,7 @@
             this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(83, 26);
+            this.tb_fec_ini.Size = new System.Drawing.Size(83, 22);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_ini.TabIndex = 74;
             // 
@@ -175,7 +175,7 @@
             this.tb_val_tcm.MaxLength = 7;
             this.tb_val_tcm.Name = "tb_val_tcm";
             this.tb_val_tcm.PreventEnterBeep = true;
-            this.tb_val_tcm.Size = new System.Drawing.Size(66, 26);
+            this.tb_val_tcm.Size = new System.Drawing.Size(66, 22);
             this.tb_val_tcm.TabIndex = 10;
             this.tb_val_tcm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tb_val_tcm.TextChanged += new System.EventHandler(this.tb_val_tcm_TextChanged);
@@ -192,7 +192,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(43, 17);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(24, 21);
+            this.LabelX2.Size = new System.Drawing.Size(20, 17);
             this.LabelX2.TabIndex = 1;
             this.LabelX2.Text = "T.C.";
             this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -209,7 +209,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(32, 47);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(38, 21);
+            this.LabelX1.Size = new System.Drawing.Size(31, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Fecha";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -262,7 +262,7 @@
             // adm014_02a
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(229, 150);
@@ -274,8 +274,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "adm014_02a";
-            this.Text = "Nuevo T.C - Bs/Ufv";
-            this.TitleText = "Nuevo T.C - Bs/Ufv";
+            this.Text = "Nuevo T.C - Bs/Ufv p/rango";
+            this.TitleText = "Nuevo T.C - Bs/Ufv p/rango";
             this.Load += new System.EventHandler(this.adm014_02a_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

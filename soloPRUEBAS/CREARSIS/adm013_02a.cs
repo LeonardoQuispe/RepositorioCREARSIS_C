@@ -89,13 +89,13 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Nuevo T.C. Bs./Us.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Nuevo T.C. Bs./Us. p/rango", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 DialogResult res_msg;
 
-                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nuevo T.C. Bs./Us. p/rango", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
 
                 if (res_msg == DialogResult.Cancel)
@@ -114,6 +114,8 @@ namespace CREARSIS
                 //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
                 vg_frm_pad.tb_val_año.Text = aux.Year.ToString();
                 vg_frm_pad.cb_prm_bus.SelectedIndex = aux.Month - 1;
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs./Us. p/rango", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 Close();

@@ -37,9 +37,10 @@ namespace CREARSIS
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
-        DateTime Dtemp;
+        
         public string fu_ver_dat()
         {
+            DateTime Dtemp;
             if (DateTime.TryParse(tb_fec_tcm.Text,out Dtemp) == false)
             {
                 tb_fec_tcm.Focus();
@@ -126,6 +127,8 @@ namespace CREARSIS
                 DateTime aux;
                 aux = Convert.ToDateTime(tb_fec_tcm.Text);
                 vg_frm_pad.fu_bus_car(aux.Month.ToString(),Convert.ToInt32( aux.Year));
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 tb_fec_tcm.Clear();
                 tb_val_tcm.Clear();

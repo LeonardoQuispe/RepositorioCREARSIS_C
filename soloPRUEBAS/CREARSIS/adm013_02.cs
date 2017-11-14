@@ -127,7 +127,8 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_bus_car(aux.Month.ToString(), Convert.ToInt32(aux.Year));
 
-                
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 tb_fec_tcm.Clear();
                 tb_val_tcm.Clear();
                 Close();

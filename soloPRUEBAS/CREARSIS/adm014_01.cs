@@ -64,10 +64,12 @@ namespace CREARSIS
             }
 
         }
-        public static int Weekday(DateTime dt, DayOfWeek startOfWeek)
-        {
-            return (dt.DayOfWeek - startOfWeek + 7) % 7;
-        }
+
+
+        //public static int Weekday(DateTime dt, DayOfWeek startOfWeek)
+        //{
+        //    return (dt.DayOfWeek - startOfWeek + 7) % 7;
+        //}
 
         /// <summary>
         /// -> Metodo buscar
@@ -173,7 +175,7 @@ namespace CREARSIS
                             //string dia = "";
                             //dia = Weekday(Weekday(fec_aux, DayOfWeek.Sunday), false, DayOfWeek.Sunday);
                             
-                            int nro_dia = Weekday(fec_aux, DayOfWeek.Sunday);
+                            /*int nro_dia = Weekday(fec_aux, DayOfWeek.Sunday);*/ //PARAQUESI NO SE USA>??????????????
                             
                             if (fec_aux.DayOfWeek==DayOfWeek.Sunday)
                             {
