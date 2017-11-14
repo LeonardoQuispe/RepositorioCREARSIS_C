@@ -64,7 +64,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(2, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(311, 310);
+            this.groupBox1.Size = new System.Drawing.Size(311, 362);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             // 
@@ -111,7 +111,7 @@
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(208, 179);
+            this.dg_res_ult.Size = new System.Drawing.Size(208, 250);
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
             // 
@@ -134,7 +134,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 318);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 361);
             this.gb_ctr_frm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 397);
+            this.ClientSize = new System.Drawing.Size(330, 419);
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
