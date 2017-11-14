@@ -295,6 +295,12 @@
     <Compile Include="adm014_08.Designer.cs">
       <DependentUpon>adm014_08.cs</DependentUpon>
     </Compile>
+    <Compile Include="adm014_09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_09.Designer.cs">
+      <DependentUpon>adm014_09.cs</DependentUpon>
+    </Compile>
     <Compile Include="cnx000.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adm014_08.resx">
       <DependentUpon>adm014_08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_09.resx">
+      <DependentUpon>adm014_09.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cnx000.resx">
       <DependentUpon>cnx000.cs</DependentUpon>
