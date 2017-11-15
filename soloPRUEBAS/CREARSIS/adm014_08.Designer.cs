@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +46,10 @@
             this.Noviembre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diciembre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_año_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_hoja_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
@@ -68,14 +66,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DIA,
             this.Enero,
@@ -90,29 +88,29 @@
             this.Octubre,
             this.Noviembre,
             this.Diciembre});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle5;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 80);
             this.dg_res_ult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(761, 266);
@@ -218,29 +216,13 @@
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(627, 354);
+            this.labelX6.Location = new System.Drawing.Point(516, 354);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 27);
             this.labelX6.TabIndex = 36;
             this.labelX6.Text = "Año:";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(316, 354);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(42, 27);
-            this.labelX5.TabIndex = 35;
-            this.labelX5.Text = "Hoja:";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // labelX4
             // 
@@ -250,7 +232,7 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(6, 354);
+            this.labelX4.Location = new System.Drawing.Point(110, 354);
             this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(85, 27);
@@ -275,12 +257,10 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.groupBox1.Controls.Add(this.tb_año_xls);
-            this.groupBox1.Controls.Add(this.tb_hoja_xls);
             this.groupBox1.Controls.Add(this.tb_libro_xls);
             this.groupBox1.Controls.Add(this.bt_imp_xls);
             this.groupBox1.Controls.Add(this.dg_res_ult);
             this.groupBox1.Controls.Add(this.labelX6);
-            this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(2, 0);
@@ -301,29 +281,12 @@
             this.tb_año_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_año_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_año_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_año_xls.Location = new System.Drawing.Point(671, 359);
+            this.tb_año_xls.Location = new System.Drawing.Point(560, 359);
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
-            this.tb_año_xls.Size = new System.Drawing.Size(100, 26);
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
             this.tb_año_xls.TabIndex = 39;
-            // 
-            // tb_hoja_xls
-            // 
-            this.tb_hoja_xls.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_hoja_xls.Border.Class = "TextBoxBorder";
-            this.tb_hoja_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_hoja_xls.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_hoja_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_hoja_xls.Location = new System.Drawing.Point(364, 359);
-            this.tb_hoja_xls.Name = "tb_hoja_xls";
-            this.tb_hoja_xls.PreventEnterBeep = true;
-            this.tb_hoja_xls.ReadOnly = true;
-            this.tb_hoja_xls.Size = new System.Drawing.Size(100, 26);
-            this.tb_hoja_xls.TabIndex = 38;
             // 
             // tb_libro_xls
             // 
@@ -335,11 +298,11 @@
             this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(97, 359);
+            this.tb_libro_xls.Location = new System.Drawing.Point(201, 359);
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(100, 26);
+            this.tb_libro_xls.Size = new System.Drawing.Size(200, 22);
             this.tb_libro_xls.TabIndex = 37;
             // 
             // gb_ctr_frm
@@ -392,7 +355,7 @@
             // adm014_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(783, 471);
@@ -430,7 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Noviembre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diciembre;
         private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.ButtonX bt_imp_xls;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -438,7 +400,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_año_xls;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_hoja_xls;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
     }
 }

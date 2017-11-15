@@ -33,13 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_hoja_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
@@ -63,12 +61,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tb_hoja_xls);
             this.groupBox1.Controls.Add(this.tb_libro_xls);
             this.groupBox1.Controls.Add(this.dg_res_ult);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.bt_imp_xls);
-            this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(2, 1);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -77,23 +73,6 @@
             this.groupBox1.Size = new System.Drawing.Size(274, 345);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
-            // 
-            // tb_hoja_xls
-            // 
-            this.tb_hoja_xls.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_hoja_xls.Border.Class = "TextBoxBorder";
-            this.tb_hoja_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_hoja_xls.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_hoja_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_hoja_xls.Location = new System.Drawing.Point(143, 310);
-            this.tb_hoja_xls.Name = "tb_hoja_xls";
-            this.tb_hoja_xls.PreventEnterBeep = true;
-            this.tb_hoja_xls.ReadOnly = true;
-            this.tb_hoja_xls.Size = new System.Drawing.Size(100, 22);
-            this.tb_hoja_xls.TabIndex = 83;
             // 
             // tb_libro_xls
             // 
@@ -105,11 +84,11 @@
             this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(27, 310);
+            this.tb_libro_xls.Location = new System.Drawing.Point(52, 308);
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(100, 22);
+            this.tb_libro_xls.Size = new System.Drawing.Size(169, 22);
             this.tb_libro_xls.TabIndex = 82;
             // 
             // dg_res_ult
@@ -179,29 +158,13 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(34, 281);
+            this.labelX4.Location = new System.Drawing.Point(98, 278);
             this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(85, 27);
             this.labelX4.TabIndex = 80;
             this.labelX4.Text = "Libro de Excel:";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(171, 280);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(42, 27);
-            this.labelX5.TabIndex = 81;
-            this.labelX5.Text = "Hoja:";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // gb_ctr_frm
             // 
@@ -280,12 +243,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
-        private DevComponents.DotNetBar.Controls.TextBoxX tb_hoja_xls;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enero;
         private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.DotNetBar.LabelX labelX5;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
     }

@@ -12,6 +12,7 @@ using DATOS.ADM;
 using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Transactions;
 
 namespace CREARSIS
 {
@@ -47,54 +48,58 @@ namespace CREARSIS
                 openfile1.Title = "Seleccione el Libro de Excel";
                 if (openfile1.ShowDialog() == DialogResult.OK)
                 {
-                    ruta = openfile1.FileName;
-
-
-                    //creando una instancia para el objeto de excel 
-                    Excel.Application obj_xls = new Excel.Application();
-
-                    //pasando el objeto a un libro de excel
-                    Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
-
-                    //Elijiendo la hoja del libro de excel elegido
-                    Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
-
-                    //asignando el rango de filas y columnas usadas en la hoja de excel
-                    Excel.Range xlsRange = hoja_xls.UsedRange;
-
-                    ////recuperando el nombre del libro, de la hoja, y el año seleccionado
-                    tb_libro_xls.Text = libro_xls.Name;
-                    tb_hoja_xls.Text = hoja_xls.Name;
-
-                    dg_res_ult.Rows.Clear();
-
-                    //cargando el contenido 
-                    int columnas = xlsRange.Columns.Count;
-                    int filas = xlsRange.Rows.Count;
-
-                    for (int i = 0; i < filas; i++)
+                    using (TransactionScope tra_nsa = new TransactionScope())
                     {
-                        dg_res_ult.Rows.Add();
 
-                        for (int j = 0; j < columnas; j++)
+                        ruta = openfile1.FileName;
+
+
+                        //creando una instancia para el objeto de excel 
+                        Excel.Application obj_xls = new Excel.Application();
+
+                        //pasando el objeto a un libro de excel
+                        Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
+
+                        //Elijiendo la hoja del libro de excel elegido
+                        Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
+
+                        //asignando el rango de filas y columnas usadas en la hoja de excel
+                        Excel.Range xlsRange = hoja_xls.UsedRange;
+
+                        ////recuperando el nombre del libro/ruta del excel
+                        tb_libro_xls.Text = ruta;
+                        dg_res_ult.Rows.Clear();
+
+                        //cargando el contenido 
+                        int columnas = xlsRange.Columns.Count;
+                        int filas = xlsRange.Rows.Count;
+
+                        for (int i = 0; i < filas; i++)
                         {
-                            if (j==0)
+                            dg_res_ult.Rows.Add();
+
+                            for (int j = 0; j < columnas; j++)
                             {
-                                dg_res_ult[j, i].Value = Convert.ToDateTime(xlsRange[i + 1, j + 1].Value ?? "").ToShortDateString();
+                                if (j == 0)
+                                {
+                                    dg_res_ult[j, i].Value = Convert.ToDateTime(xlsRange[i + 1, j + 1].Value ?? "").ToShortDateString();
+                                }
+                                else
+                                {
+                                    dg_res_ult[j, i].Value = xlsRange[i + 1, j + 1].Value ?? "";
+                                }
+
                             }
-                            else
-                            {
-                                dg_res_ult[j, i].Value = xlsRange[i + 1, j + 1].Value ?? "";
-                            }
-                            
                         }
+
+
+                        libro_xls.Close();
+                        obj_xls.Quit();
+
+                        tra_nsa.Complete();
+                        tra_nsa.Dispose();
+
                     }
-
-
-                    libro_xls.Close();
-                    obj_xls.Quit();
-
-
                 }
 
             }
@@ -135,33 +140,39 @@ namespace CREARSIS
 
             try
             {
-                DateTime fec_aux=new DateTime();
-                string val_aux = "";
+                using (TransactionScope tra_nsa = new TransactionScope())
+                {
 
-                for (int i = 0; i < dg_res_ult.Rows.Count; i++)
-                {                  
+                    DateTime fec_aux = new DateTime();
+                    string val_aux = "";
 
-                    fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
-                    val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
+                    for (int i = 0; i < dg_res_ult.Rows.Count; i++)
+                    {
 
-                    //Borra datos de la fecha
-                    o_adm014._06(fec_aux.ToShortDateString());
+                        fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
+                        val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
 
-                    //Registra ufv uno por uno
-                    o_adm014._02(fec_aux, val_aux);                                    
+                        //Borra datos de la fecha
+                        o_adm014._06(fec_aux.ToShortDateString());
+
+                        //Registra ufv uno por uno
+                        o_adm014._02(fec_aux, val_aux);
+                    }
+
+                    vg_frm_pad.fu_bus_car(fec_aux.Month.ToString(), fec_aux.Year);
+
+                    //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                    vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
+                    vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
+
+                    MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Close();
+
+                    tra_nsa.Complete();
+                    tra_nsa.Dispose();
+
                 }
-
-                
-
-                vg_frm_pad.fu_bus_car(fec_aux.Month.ToString(), fec_aux.Year);
-
-                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
-                vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
-                vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
-
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Close();
             }
             catch (Exception Ex)
             {
