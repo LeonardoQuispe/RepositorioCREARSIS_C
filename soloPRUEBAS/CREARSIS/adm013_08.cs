@@ -194,6 +194,7 @@ namespace CREARSIS
         #endregion
 
         #region EVENTOS
+
         public adm013_08()
         {
             InitializeComponent();
@@ -202,9 +203,9 @@ namespace CREARSIS
 
         private void bt_imp_xls_Click(object sender, EventArgs e)
         {
-            if(cb_tip_cam.ToString()=="")
+            if(cb_tip_cam.Text=="")
             {
-                MessageBoxEx.Show(err_msg, "Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                MessageBoxEx.Show("Seleccione un T.C. ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

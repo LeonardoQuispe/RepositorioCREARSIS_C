@@ -109,16 +109,38 @@ namespace CREARSIS
 
                         //cargando el contenido 
                         int filas = 30;
-                        int columnas = 12;
+                        int columnas = 11;
+
+                        decimal tmp2=0;
+                        string tmp3="";
+                        int contador=0;                       
+                       
 
                         for (int i = 0; i <= filas; i++)
                         {
                             dg_res_ult.Rows.Add();
+                            dg_res_ult[0, i].Value = i + 1;
 
                             for (int j = 0; j <= columnas; j++)
                             {
-                                dg_res_ult[j, i].Value = xlsRange[i + 7, j + 1].Value ?? "";
+                                //Reemplaza la coma por el punto
+                                tmp3 = Convert.ToString(xlsRange[i+7, j+2].Value ?? "").Replace(',','.');
+
+                                //Valida que sea decimal y el tamaño menor a 7 caracteres
+                                if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3!="")
+                                {
+                                    contador++;
+                                }
+                                else
+                                {
+                                    dg_res_ult[j+1, i].Value = tmp3;
+                                }
                             }
+                        }
+
+                        if (contador!=0)
+                        {
+                            MessageBoxEx.Show("Se omitieron "+contador+" datos por Formato Incorrecto", "Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
 
 

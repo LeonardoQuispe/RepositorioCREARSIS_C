@@ -124,7 +124,7 @@
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
-            this.tb_año_xls.Size = new System.Drawing.Size(100, 26);
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
             this.tb_año_xls.TabIndex = 39;
             // 
             // tb_libro_xls
@@ -141,7 +141,7 @@
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(200, 26);
+            this.tb_libro_xls.Size = new System.Drawing.Size(200, 22);
             this.tb_libro_xls.TabIndex = 37;
             // 
             // groupBox1
@@ -180,13 +180,13 @@
             this.cb_tip_cam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_tip_cam.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_cam.FormattingEnabled = true;
-            this.cb_tip_cam.ItemHeight = 20;
+            this.cb_tip_cam.ItemHeight = 16;
             this.cb_tip_cam.Items.AddRange(new object[] {
             this.Venta,
             this.Compra});
             this.cb_tip_cam.Location = new System.Drawing.Point(391, 54);
             this.cb_tip_cam.Name = "cb_tip_cam";
-            this.cb_tip_cam.Size = new System.Drawing.Size(100, 26);
+            this.cb_tip_cam.Size = new System.Drawing.Size(100, 22);
             this.cb_tip_cam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_cam.TabIndex = 40;
             // 
@@ -397,7 +397,7 @@
             // adm013_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(782, 490);
