@@ -144,14 +144,15 @@
             this.tb_cod_ley.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_ley.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_ley.Location = new System.Drawing.Point(112, 192);
-            this.tb_cod_ley.MaxLength = 2;
+            this.tb_cod_ley.MaxLength = 15;
             this.tb_cod_ley.Name = "tb_cod_ley";
             this.tb_cod_ley.PreventEnterBeep = true;
-            this.tb_cod_ley.ReadOnly = true;
             this.tb_cod_ley.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_ley.TabIndex = 155;
             this.tb_cod_ley.ButtonCustomClick += new System.EventHandler(this.tb_cod_ley_ButtonCustomClick);
+            this.tb_cod_ley.TextChanged += new System.EventHandler(this.tb_cod_ley_TextChanged);
             this.tb_cod_ley.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_ley_KeyDown);
+            this.tb_cod_ley.Validated += new System.EventHandler(this.tb_cod_ley_Validated);
             // 
             // LabelX8
             // 
@@ -408,14 +409,15 @@
             this.tb_cod_act.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_act.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_act.Location = new System.Drawing.Point(112, 118);
-            this.tb_cod_act.MaxLength = 2;
+            this.tb_cod_act.MaxLength = 15;
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
-            this.tb_cod_act.ReadOnly = true;
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_act.TabIndex = 45;
             this.tb_cod_act.ButtonCustomClick += new System.EventHandler(this.tb_cod_act_ButtonCustomClick);
+            this.tb_cod_act.TextChanged += new System.EventHandler(this.tb_cod_act_TextChanged);
             this.tb_cod_act.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_act_KeyDown);
+            this.tb_cod_act.Validated += new System.EventHandler(this.tb_cod_act_Validated);
             // 
             // tb_nom_sucu
             // 
@@ -485,14 +487,15 @@
             this.tb_cod_sucu.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_sucu.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_sucu.Location = new System.Drawing.Point(112, 85);
-            this.tb_cod_sucu.MaxLength = 2;
+            this.tb_cod_sucu.MaxLength = 15;
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
-            this.tb_cod_sucu.ReadOnly = true;
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_sucu.TabIndex = 41;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
+            this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
             this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
+            this.tb_cod_sucu.Validated += new System.EventHandler(this.tb_cod_sucu_Validated);
             // 
             // cb_tip_fac
             // 
@@ -541,7 +544,7 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nro_dos_KeyPress);
+            this.tb_nro_dos.TextChanged += new System.EventHandler(this.tb_nro_dos_TextChanged);
             // 
             // LabelX1
             // 

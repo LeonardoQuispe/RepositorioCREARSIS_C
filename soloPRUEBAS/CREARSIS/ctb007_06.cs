@@ -53,14 +53,12 @@ namespace CREARSIS
         {
             try
             {
-                string va_est_ado = "";
-
-                err_msg = fu_ver_dat();
-                if (err_msg != null)
-                {
-                    MessageBoxEx.Show(err_msg, "Error Elimina Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //err_msg = fu_ver_dat();
+                //if (err_msg != null)
+                //{
+                //    MessageBoxEx.Show(err_msg, "Error Elimina Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
 
 
@@ -73,7 +71,7 @@ namespace CREARSIS
                 }
 
                 //Graba datos
-                o_ctb007._06(tb_cod_act.Text);
+                o_ctb007._06(Int64.Parse(tb_nro_dos.Text));
 
 
                 vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.tb_fec_ini.Value, vg_frm_pad.tb_fec_fin.Value, vg_frm_pad.cb_est_bus.SelectedIndex.ToString());
@@ -151,17 +149,17 @@ namespace CREARSIS
         /// <summary>
         /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
         /// </summary>
-        public string fu_ver_dat()
-        {
-            //Si aun existe
-            tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
-            if (tab_ctb007.Rows.Count == 0)
-            {
-                return "La Dosificación no se encuentra registrada";
-            }
+        //public string fu_ver_dat()
+        //{
+        //    //Si aun existe
+        //    tab_ctb007 = o_ctb007._05(Int64.Parse(tb_nro_dos.Text));
+        //    if (tab_ctb007.Rows.Count == 0)
+        //    {
+        //        return "La Dosificación no se encuentra registrada";
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         #endregion
 

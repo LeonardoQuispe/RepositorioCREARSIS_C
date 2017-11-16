@@ -64,7 +64,7 @@ namespace CREARSIS
                 }
 
 
-                o_ctb007._03(int.Parse(tb_nro_dos.Text), tb_lla_ve1.Text.Trim());
+                o_ctb007._03(Int64.Parse(tb_nro_dos.Text), tb_lla_ve1.Text.Trim());
 
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Llave de Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,7 +77,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message);
+                MessageBoxEx.Show(ex.Message, "Error Actualiza Llave de Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -119,15 +119,6 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
             va_msg_err = null;
-
-            tab_ctb007 = o_ctb007._05(tb_nro_dos.Text);
-            if (tab_ctb007.Rows.Count == 0)
-            {
-                va_msg_err = "Los datos han cambiado desde su ultima lectura; la Dosificación ya NO se encuentra registrada";
-                tb_nro_dos.Focus();
-                return va_msg_err;
-            }
-
 
             if (tb_lla_ve1.Text.Trim() == "")
             {

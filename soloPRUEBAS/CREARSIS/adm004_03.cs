@@ -225,7 +225,7 @@ namespace CREARSIS
                 return;
             }
 
-            tab_ctb007 = o_ctb007._05(cod_dos);
+            tab_ctb007 = o_ctb007._05(Int64.Parse(cod_dos));
             if (tab_ctb007.Rows.Count == 0)
             {
                 tb_nro_aut.Text = "** NO existe";

@@ -78,11 +78,11 @@ namespace CREARSIS
                 //Graba datos
                 if (tb_est_ado.Text == "Habilitado")
                 {
-                    o_ctb007._04(tb_nro_dos.Text, "N");
+                    o_ctb007._04(Int64.Parse(tb_nro_dos.Text), "N");
                 }
                 else
                 {
-                    o_ctb007._04(tb_nro_dos.Text, "H");
+                    o_ctb007._04(Int64.Parse(tb_nro_dos.Text), "H");
                 }
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);

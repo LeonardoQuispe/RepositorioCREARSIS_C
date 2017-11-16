@@ -226,7 +226,7 @@ namespace CREARSIS
                 }
 
                 tb_sel_ecc.Focus();
-                tab_ctb007 = o_ctb007._055(acc_ion,tb_sel_ecc.Text);                               
+                tab_ctb007 = o_ctb007._055(acc_ion, Int64.Parse(tb_sel_ecc.Text));                               
 
                 return null;
 
@@ -292,7 +292,7 @@ namespace CREARSIS
             //}
 
 
-            tab_ctb007 = o_ctb007._05(tb_sel_ecc.Text);
+            tab_ctb007 = o_ctb007._05(Int64.Parse(tb_sel_ecc.Text));
             if (tab_ctb007.Rows.Count==0)
             {
                 lb_sel_ecc.Text = "** NO existe";

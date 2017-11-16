@@ -90,11 +90,11 @@ namespace CREARSIS
                 
 
                 //grabar datos
-                o_ctb007._03(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()));
+                o_ctb007._03(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()),vg_str_ucc.Rows[0]["va_lla_vee"].ToString());
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nueva Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (cb_tip_fac.SelectedIndex == 0)
                 {
@@ -106,7 +106,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message);
+                MessageBoxEx.Show(ex.Message, "Error Actualiza Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -262,11 +262,22 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;            
+            int tmp;
 
             try
             {
-                
+                //** Verifica nro de dosificacion
+                if (tb_nro_dos.Text.Trim() == "")
+                {
+                    tb_nro_dos.Focus();
+                    return "Debes proporcionar el número de Dosificación";
+                }
+                if (tb_nro_dos.Text == "0")
+                {
+                    tb_nro_dos.Focus();
+                    return "El Nro de Dosificación NO es valido";
+                }
+
 
                 //** Verifica Sucursal
                 if (tb_cod_sucu.Text.Trim() == "")
@@ -274,23 +285,13 @@ namespace CREARSIS
                     tb_cod_sucu.Focus();
                     return "Debes seleccionar una Sucursal";
                 }
-                if (int.TryParse(tb_cod_sucu.Text, out tmp) == false)
+
+                if (tb_nom_sucu.Text == "** NO existe")
                 {
                     tb_cod_sucu.Focus();
-                    return "Dato no valido, el codigo sucursal debe ser numerico ";
-                }
-                tab_adm007 = o_adm007._05(tb_cod_sucu.Text);
-                if (tab_adm007.Rows.Count == 0)
-                {
-                    tb_cod_sucu.Focus();
-                    return "La sucursal no se encuentra registrada";
+                    return "La Sucursal no Existe";
                 }
 
-                if (tab_adm007.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    tb_cod_sucu.Focus();
-                    return "La sucursal se encuentra Deshabilitada";
-                }
 
 
                 //** Verifica Actividad economica
@@ -300,23 +301,10 @@ namespace CREARSIS
                     return "Debes proporcionar la Actividad economica";
                 }
 
-                if (int.TryParse(tb_cod_act.Text, out tmp) == false)
+                if (tb_nom_act.Text.Trim() == "** NO existe")
                 {
                     tb_cod_act.Focus();
-                    return "Dato no valido, el codigo de la actividad debe ser numerico";
-                }
-
-                tab_adm012 = o_adm012._05(tb_cod_act.Text);
-                if (tab_adm012.Rows.Count == 0)
-                {
-                    tb_cod_act.Focus();
-                    return "La Actividad no se encuentra registrada";
-                }
-
-                if (tab_adm012.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    tb_cod_act.Focus();
-                    return "La Actividad se encuentra Deshabilitada";
+                    return "La Actividad Económica no Existe";
                 }
 
 
@@ -337,10 +325,8 @@ namespace CREARSIS
                     return "Dato no valido,el campo número final debe ser mayor que el número inicial";
                 }
 
-
-                TimeSpan ts = tb_fec_fin.Value - tb_fec_ini.Value;
                 //** Verifica Fechas
-                if (ts.Days <= 0)
+                if ((tb_fec_fin.Value - tb_fec_ini.Value).Days <= 0)
                 {
                     tb_fec_fin.Focus();
                     return "Dato no valido,el campo fecha final debe ser mayor que fecha inicial";
@@ -353,17 +339,10 @@ namespace CREARSIS
                     return "Debes proporcionar la Leyenda";
                 }
 
-                if (int.TryParse(tb_cod_ley.Text, out tmp) == false)
+                if (tb_nom_ley.Text.Trim() == "** NO existe")
                 {
                     tb_cod_ley.Focus();
-                    return "Dato no valido, el codigo de la Leyenda debe ser numerico";
-                }
-
-                tab_adm012 = o_ctb006._05(tb_cod_ley.Text);
-                if (tab_adm012.Rows.Count == 0)
-                {
-                    tb_cod_ley.Focus();
-                    return "La Leyenda no se encuentra registrada";
+                    return "La Leyenda no Existe";
                 }
 
                 return null;
@@ -372,6 +351,7 @@ namespace CREARSIS
             catch (Exception ex)
             {
                 return ex.Message;
+
             }
         }
 
@@ -431,14 +411,14 @@ namespace CREARSIS
             {
                 if (cod_ley.Trim() == "")
                 {
-                    tb_nom_ley.Text = "";
+                    tb_nom_ley.Text = "** NO existe";
                     return;
                 }
 
                 tab_ctb006 = o_ctb006._01(cod_ley, 1);
                 if (tab_ctb006.Rows.Count == 0)
                 {
-                    tb_nom_ley.Text = "";
+                    tb_nom_ley.Text = "** NO existe";
                     return;
                 }
 
@@ -466,7 +446,7 @@ namespace CREARSIS
                 tab_adm007 = o_adm007._05(cod_suc);
                 if (tab_adm007.Rows.Count == 0)
                 {
-                    tb_nom_ley.Text = "** NO existe";
+                    tb_nom_sucu.Text = "** NO existe";
                     return;
                 }
 
@@ -482,8 +462,31 @@ namespace CREARSIS
 
         }
 
+
         #endregion
 
-        
+        private void tb_nro_dos_TextChanged(object sender, EventArgs e)
+        {
+            tb_nro_dos.Text = o_mg_glo_bal.Valida_numeros(tb_nro_dos.Text);
+            tb_nro_dos.Select(tb_nro_dos.Text.Length, 0);
+        }
+
+        private void tb_cod_sucu_TextChanged(object sender, EventArgs e)
+        {
+            tb_cod_sucu.Text = o_mg_glo_bal.Valida_numeros(tb_cod_sucu.Text);
+            tb_cod_sucu.Select(tb_cod_sucu.Text.Length, 0);
+        }
+
+        private void tb_cod_act_TextChanged(object sender, EventArgs e)
+        {
+            tb_cod_act.Text = o_mg_glo_bal.Valida_numeros(tb_cod_act.Text);
+            tb_cod_act.Select(tb_cod_act.Text.Length, 0);
+        }
+
+        private void tb_cod_ley_TextChanged(object sender, EventArgs e)
+        {
+            tb_cod_ley.Text = o_mg_glo_bal.Valida_numeros(tb_cod_ley.Text);
+            tb_cod_ley.Select(tb_cod_ley.Text.Length, 0);
+        }
     }
 }
