@@ -14,7 +14,7 @@ using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Transactions;
-
+using System.Runtime.InteropServices;
 
 namespace CREARSIS
 {
@@ -91,25 +91,11 @@ namespace CREARSIS
                             MessageBoxEx.Show("El formato del Libro de Excel es Inválido ","Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             Limpiar();
 
-
-                            //libro_xls.Close(false, ruta, Type.Missing);   
-                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(libro_xls);
-                            //obj_xls.Quit();
-
-                            //fu_cer_rar_xls(hoja_xls);
-                            //libro_xls.Close(false);
-                            //fu_cer_rar_xls(libro_xls);
-                            //obj_xls.Quit();
-                            //fu_cer_rar_xls(obj_xls);
-
-
+                            //Cierra libro, aplicacion y proceso de excel creado
+                            libro_xls.Close(false);
+                            obj_xls.Quit();
                             fu_cer_rar_xls(obj_xls);
-
-                            //libro_xls.Save();
-                            //libro_xls.Close(true);
-                            //obj_xls.Quit();
-                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(obj_xls);
-
+                            
                             return;
                         }
 
@@ -136,23 +122,10 @@ namespace CREARSIS
                         }
 
 
-                        //libro_xls.Close(false, ruta, Type.Missing);
-                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(libro_xls);
-                        //obj_xls.Quit();
-
-
-                        //fu_cer_rar_xls(hoja_xls);
-                        //libro_xls.Close(false);
-                        //fu_cer_rar_xls(libro_xls);
-                        //obj_xls.Quit();
-                        //fu_cer_rar_xls(obj_xls);
-
-
+                        //Cierra libro, aplicacion y proceso de excel creado
+                        libro_xls.Close(false);
+                        obj_xls.Quit();
                         fu_cer_rar_xls(obj_xls);
-                        
-                        //libro_xls.Close(false);
-                        //obj_xls.Quit();
-                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(obj_xls);
 
                         tra_nsa.Complete();
                         tra_nsa.Dispose();
@@ -175,24 +148,30 @@ namespace CREARSIS
         }
 
 
-        void fu_cer_rar_xls(Excel.Application app)
-        {
-            IntPtr xAsIntPtr = new IntPtr(app.Application.Hwnd);
-            app.ActiveWorkbook.Close();
 
-            System.Diagnostics.Process[] process = System.Diagnostics.Process.GetProcessesByName("EXCEL");
-            foreach (System.Diagnostics.Process p in process)
+
+        //Obtiene el identificador de proceso de subproceso de ventana
+        [DllImport("user32.dll")]
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
+        void fu_cer_rar_xls(Excel.Application app)
+        {           
+            uint iProcessId = 0;
+
+            //Get the process ID of excel so we can kill it later.
+            GetWindowThreadProcessId((IntPtr) app.Hwnd, out iProcessId);
+
+            try
             {
-                if (p.MainWindowHandle == xAsIntPtr)
-                {
-                    try
-                    {
-                        p.Kill();
-                    }
-                    catch { }
-                }
+                System.Diagnostics.Process pProcess = System.Diagnostics.Process.GetProcessById((int)iProcessId);
+                pProcess.Kill();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
             }
         }
+
 
         #endregion
 
