@@ -435,5 +435,17 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+
+        private void tCPorAñoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adm013_08 obj = new adm013_08();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        private void tCPorFechasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adm013_09 obj = new adm013_09();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
     }
 }

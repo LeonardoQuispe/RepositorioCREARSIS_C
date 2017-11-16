@@ -16,8 +16,9 @@ using System.Transactions;
 
 namespace CREARSIS
 {
-    public partial class adm014_09 : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class adm013_09 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
         #region VARIABLES
 
         public dynamic vg_frm_pad;
@@ -27,7 +28,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
-        c_adm014 o_adm014 = new c_adm014();
+        c_adm013 o_adm013 = new c_adm013();
 
 
         #endregion
@@ -112,8 +113,7 @@ namespace CREARSIS
         }
 
         #endregion
-
-        public adm014_09()
+        public adm013_09()
         {
             InitializeComponent();
         }
@@ -123,15 +123,10 @@ namespace CREARSIS
             fu_imp_xls();
         }
 
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             DialogResult res_msg = new DialogResult();
-            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)" , "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Usd por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)", "Nuevo T.C. Bs/Usd por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (res_msg == DialogResult.Cancel)
             {
@@ -152,11 +147,12 @@ namespace CREARSIS
                         val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
 
                         //Borra datos de la fecha
-                        o_adm014._06(fec_aux.ToShortDateString());
+                        o_adm013._06(fec_aux.ToShortDateString());
 
                         //Registra ufv uno por uno
-                        o_adm014._02(fec_aux, val_aux);
+                        o_adm013._02(fec_aux, val_aux);
                     }
+
 
                     tra_nsa.Complete();
                     tra_nsa.Dispose();
@@ -165,20 +161,23 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_bus_car(fec_aux.Month.ToString(), fec_aux.Year);
 
-                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
-                vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
-                vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
+                    //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                    vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
+                    vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Usd por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Close();
-
-                    
+                    Close();
             }
             catch (Exception Ex)
             {
                 MessageBoxEx.Show(Ex.Message);
             }
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

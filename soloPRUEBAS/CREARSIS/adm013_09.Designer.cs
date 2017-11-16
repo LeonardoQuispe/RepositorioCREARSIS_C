@@ -1,6 +1,6 @@
 ﻿namespace CREARSIS
 {
-    partial class adm014_09
+    partial class adm013_09
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
@@ -67,12 +67,12 @@
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.bt_imp_xls);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.groupBox1.Location = new System.Drawing.Point(2, 1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(367, 342);
-            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             // 
             // tb_libro_xls
@@ -140,6 +140,24 @@
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
             // 
+            // DIA
+            // 
+            this.DIA.HeaderText = "Fecha";
+            this.DIA.Name = "DIA";
+            this.DIA.ReadOnly = true;
+            // 
+            // Enero
+            // 
+            this.Enero.HeaderText = "T.C - Bs/Ufv";
+            this.Enero.Name = "Enero";
+            this.Enero.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            // 
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
@@ -162,12 +180,12 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 348);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(3, 347);
             this.gb_ctr_frm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gb_ctr_frm.Size = new System.Drawing.Size(367, 45);
-            this.gb_ctr_frm.TabIndex = 79;
+            this.gb_ctr_frm.TabIndex = 81;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel
@@ -203,25 +221,7 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            // 
-            // Enero
-            // 
-            this.Enero.HeaderText = "T.C - Bs/Ufv";
-            this.Enero.Name = "Enero";
-            this.Enero.ReadOnly = true;
-            // 
-            // DIA
-            // 
-            this.DIA.HeaderText = "Fecha";
-            this.DIA.Name = "DIA";
-            this.DIA.ReadOnly = true;
-            // 
-            // adm014_09
+            // adm013_09
             // 
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -229,15 +229,15 @@
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(373, 392);
             this.ControlBox = false;
-            this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_ctr_frm);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "adm014_09";
-            this.Text = "T.C. Bs/Ufv por Fechas";
-            this.TitleText = "T.C. Bs/Ufv por Fechas";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "adm013_09";
+            this.Text = "T.C. Bs/Usd por Fechas";
+            this.TitleText = "T.C. Bs/Usd por Fechas";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).EndInit();
             this.gb_ctr_frm.ResumeLayout(false);
@@ -249,14 +249,14 @@
 
         private DevComponents.DotNetBar.ButtonX bt_imp_xls;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.GroupBox gb_ctr_frm;
-        internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        internal DevComponents.DotNetBar.ButtonX bt_can_cel;
-        internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
+        internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        public System.Windows.Forms.GroupBox gb_ctr_frm;
+        internal DevComponents.DotNetBar.ButtonX bt_can_cel;
+        internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
     }
 }

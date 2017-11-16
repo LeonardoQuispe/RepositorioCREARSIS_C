@@ -62,6 +62,9 @@
             this.m_adm013_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm013_02a = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
+            this.importarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tCPorAñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tCPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.fl_cal_end = new System.Windows.Forms.FlowLayoutPanel();
             this.GroupBox1.SuspendLayout();
@@ -143,7 +146,7 @@
             // 
             this.tb_val_año.Location = new System.Drawing.Point(48, 15);
             this.tb_val_año.Name = "tb_val_año";
-            this.tb_val_año.Size = new System.Drawing.Size(69, 22);
+            this.tb_val_año.Size = new System.Drawing.Size(69, 26);
             this.tb_val_año.TabIndex = 10;
             this.tb_val_año.ValueChanged += new System.EventHandler(this.tb_val_año_ValueChanged);
             // 
@@ -154,7 +157,7 @@
             this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 16;
+            this.cb_prm_bus.ItemHeight = 20;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.Ene,
             this.feb,
@@ -170,7 +173,7 @@
             this.dic});
             this.cb_prm_bus.Location = new System.Drawing.Point(173, 15);
             this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(116, 22);
+            this.cb_prm_bus.Size = new System.Drawing.Size(116, 26);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 20;
             this.cb_prm_bus.SelectedIndexChanged += new System.EventHandler(this.cb_prm_bus_SelectedIndexChanged);
@@ -372,20 +375,20 @@
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_adm013_p00
             // 
             this.m_adm013_p00.Name = "m_adm013_p00";
-            this.m_adm013_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_adm013_p00.Size = new System.Drawing.Size(73, 24);
             this.m_adm013_p00.Text = "&Informe";
             // 
             // m_adm013_05
             // 
             this.m_adm013_05.Name = "m_adm013_05";
-            this.m_adm013_05.Size = new System.Drawing.Size(66, 20);
+            this.m_adm013_05.Size = new System.Drawing.Size(78, 24);
             this.m_adm013_05.Text = "&Consulta";
             this.m_adm013_05.Click += new System.EventHandler(this.m_adm013_05_Click);
             // 
@@ -394,13 +397,13 @@
             this.m_adm013_02.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_adm013_02a});
             this.m_adm013_02.Name = "m_adm013_02";
-            this.m_adm013_02.Size = new System.Drawing.Size(54, 20);
+            this.m_adm013_02.Size = new System.Drawing.Size(64, 24);
             this.m_adm013_02.Text = "&Nuevo";
             // 
             // m_adm013_02a
             // 
             this.m_adm013_02a.Name = "m_adm013_02a";
-            this.m_adm013_02a.Size = new System.Drawing.Size(198, 22);
+            this.m_adm013_02a.Size = new System.Drawing.Size(238, 26);
             this.m_adm013_02a.Text = "&T.C. por rango de fecha";
             this.m_adm013_02a.Click += new System.EventHandler(this.m_adm013_02a_Click);
             // 
@@ -414,13 +417,37 @@
             this.m_adm013_02,
             this.m_adm013_05,
             this.m_adm013_p00,
+            this.importarExcelToolStripMenuItem,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(327, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(395, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
+            // 
+            // importarExcelToolStripMenuItem
+            // 
+            this.importarExcelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tCPorAñoToolStripMenuItem,
+            this.tCPorFechasToolStripMenuItem});
+            this.importarExcelToolStripMenuItem.Name = "importarExcelToolStripMenuItem";
+            this.importarExcelToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.importarExcelToolStripMenuItem.Text = "&Importar Excel";
+            // 
+            // tCPorAñoToolStripMenuItem
+            // 
+            this.tCPorAñoToolStripMenuItem.Name = "tCPorAñoToolStripMenuItem";
+            this.tCPorAñoToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.tCPorAñoToolStripMenuItem.Text = "&T.C. por Año";
+            this.tCPorAñoToolStripMenuItem.Click += new System.EventHandler(this.tCPorAñoToolStripMenuItem_Click);
+            // 
+            // tCPorFechasToolStripMenuItem
+            // 
+            this.tCPorFechasToolStripMenuItem.Name = "tCPorFechasToolStripMenuItem";
+            this.tCPorFechasToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.tCPorFechasToolStripMenuItem.Text = "&T.C. por Fechas";
+            this.tCPorFechasToolStripMenuItem.Click += new System.EventHandler(this.tCPorFechasToolStripMenuItem_Click);
             // 
             // GroupBox2
             // 
@@ -437,16 +464,16 @@
             // fl_cal_end
             // 
             this.fl_cal_end.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fl_cal_end.Location = new System.Drawing.Point(3, 18);
+            this.fl_cal_end.Location = new System.Drawing.Point(3, 22);
             this.fl_cal_end.Margin = new System.Windows.Forms.Padding(0);
             this.fl_cal_end.Name = "fl_cal_end";
-            this.fl_cal_end.Size = new System.Drawing.Size(506, 422);
+            this.fl_cal_end.Size = new System.Drawing.Size(506, 418);
             this.fl_cal_end.TabIndex = 6;
             // 
             // adm013_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(513, 554);
@@ -513,5 +540,8 @@
         internal System.Windows.Forms.MenuStrip mn_pri_nci;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.FlowLayoutPanel fl_cal_end;
+        private System.Windows.Forms.ToolStripMenuItem importarExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tCPorAñoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tCPorFechasToolStripMenuItem;
     }
 }

@@ -271,6 +271,18 @@
     <Compile Include="adm013_02a.Designer.cs">
       <DependentUpon>adm013_02a.cs</DependentUpon>
     </Compile>
+    <Compile Include="adm013_08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_08.Designer.cs">
+      <DependentUpon>adm013_08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_09.Designer.cs">
+      <DependentUpon>adm013_09.cs</DependentUpon>
+    </Compile>
     <Compile Include="adm014_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +583,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adm013_02a.resx">
       <DependentUpon>adm013_02a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_08.resx">
+      <DependentUpon>adm013_08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_09.resx">
+      <DependentUpon>adm013_09.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adm014_01.resx">
       <DependentUpon>adm014_01.cs</DependentUpon>
