@@ -118,7 +118,7 @@ namespace CREARSIS
 
                         //recuperando el nombre del libro/ruta y el año seleccionado
                         tb_libro_xls.Text = ruta;                        
-                        string tmp = xlsRange[2, 1].Value.ToString();
+                        string tmp = xlsRange[2, "A"].Value.ToString();
                         tb_año_xls.Text = tmp.Substring(4, 4);
 
                         //cargando el contenido 
