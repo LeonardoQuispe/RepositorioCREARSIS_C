@@ -32,7 +32,7 @@ namespace CREARSIS
 
         #endregion
 
-        #region "Metodos"
+        #region METODOS
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
@@ -75,6 +75,8 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
         public adm013_02()
         {
             InitializeComponent();
@@ -137,7 +139,7 @@ namespace CREARSIS
             {
                 MessageBoxEx.Show(ex.Message);
             }
-}
+        }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
@@ -156,5 +158,6 @@ namespace CREARSIS
                 tb_val_tcm.Select(tb_val_tcm.Text.Length, 0);
             }
         }
+        #endregion
     }
 }

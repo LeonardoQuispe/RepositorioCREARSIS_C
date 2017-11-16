@@ -32,8 +32,7 @@ namespace CREARSIS
 
         #endregion
 
-
-        #region "Metodos"
+        #region METODOS
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
@@ -77,6 +76,8 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
 
         public adm014_02a()
         {
@@ -150,5 +151,6 @@ namespace CREARSIS
             tb_fec_fin.Value = DateTime.Today;
             tb_fec_ini.Value = DateTime.Today;
         }
+        #endregion
     }
 }

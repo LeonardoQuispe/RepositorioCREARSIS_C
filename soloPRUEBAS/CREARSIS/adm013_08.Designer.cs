@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.tb_año_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_tip_cam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.Venta = new DevComponents.Editors.ComboItem();
+            this.Compra = new DevComponents.Editors.ComboItem();
             this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +58,6 @@
             this.Diciembre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.cbxTipodeCambio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.Venta = new DevComponents.Editors.ComboItem();
-            this.Compra = new DevComponents.Editors.ComboItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.gb_ctr_frm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -77,6 +77,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 101;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // gb_ctr_frm
             // 
@@ -107,6 +108,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 102;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // tb_año_xls
             // 
@@ -146,7 +148,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbxTipodeCambio);
+            this.groupBox1.Controls.Add(this.cb_tip_cam);
             this.groupBox1.Controls.Add(this.tb_año_xls);
             this.groupBox1.Controls.Add(this.tb_libro_xls);
             this.groupBox1.Controls.Add(this.bt_imp_xls);
@@ -161,6 +163,42 @@
             this.groupBox1.Size = new System.Drawing.Size(781, 431);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(290, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 22);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Seleccion T.C.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cb_tip_cam
+            // 
+            this.cb_tip_cam.DisplayMember = "Text";
+            this.cb_tip_cam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_cam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_cam.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_cam.FormattingEnabled = true;
+            this.cb_tip_cam.ItemHeight = 20;
+            this.cb_tip_cam.Items.AddRange(new object[] {
+            this.Venta,
+            this.Compra});
+            this.cb_tip_cam.Location = new System.Drawing.Point(391, 54);
+            this.cb_tip_cam.Name = "cb_tip_cam";
+            this.cb_tip_cam.Size = new System.Drawing.Size(100, 26);
+            this.cb_tip_cam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_cam.TabIndex = 40;
+            // 
+            // Venta
+            // 
+            this.Venta.Text = "Venta";
+            this.Venta.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // Compra
+            // 
+            this.Compra.Text = "Compra";
+            this.Compra.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // bt_imp_xls
             // 
@@ -182,14 +220,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DIA,
             this.Enero,
@@ -204,14 +242,14 @@
             this.Octubre,
             this.Noviembre,
             this.Diciembre});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle5;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 96);
@@ -219,14 +257,14 @@
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(761, 266);
@@ -356,42 +394,6 @@
             this.labelX4.Text = "Libro de Excel:";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // cbxTipodeCambio
-            // 
-            this.cbxTipodeCambio.DisplayMember = "Text";
-            this.cbxTipodeCambio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTipodeCambio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipodeCambio.ForeColor = System.Drawing.Color.Black;
-            this.cbxTipodeCambio.FormattingEnabled = true;
-            this.cbxTipodeCambio.ItemHeight = 20;
-            this.cbxTipodeCambio.Items.AddRange(new object[] {
-            this.Venta,
-            this.Compra});
-            this.cbxTipodeCambio.Location = new System.Drawing.Point(391, 54);
-            this.cbxTipodeCambio.Name = "cbxTipodeCambio";
-            this.cbxTipodeCambio.Size = new System.Drawing.Size(100, 26);
-            this.cbxTipodeCambio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxTipodeCambio.TabIndex = 40;
-            // 
-            // Venta
-            // 
-            this.Venta.Text = "Venta";
-            this.Venta.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // Compra
-            // 
-            this.Compra.Text = "Compra";
-            this.Compra.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(290, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 22);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Seleccion T.C.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // adm013_08
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -424,7 +426,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tb_año_xls;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxTipodeCambio;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_cam;
         private DevComponents.Editors.ComboItem Venta;
         private DevComponents.Editors.ComboItem Compra;
         private DevComponents.DotNetBar.ButtonX bt_imp_xls;

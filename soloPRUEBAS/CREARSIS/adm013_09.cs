@@ -113,6 +113,8 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
         public adm013_09()
         {
             InitializeComponent();
@@ -179,5 +181,7 @@ namespace CREARSIS
         {
             Close();
         }
+        #endregion
     }
+
 }

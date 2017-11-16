@@ -32,7 +32,6 @@ namespace CREARSIS
 
         #endregion
 
-
         #region METODOS
 
         void fu_imp_xls()
@@ -113,6 +112,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public adm014_09()
         {
             InitializeComponent();
@@ -180,5 +181,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(Ex.Message);
             }
         }
+        #endregion
     }
 }

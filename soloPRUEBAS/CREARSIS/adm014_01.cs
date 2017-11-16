@@ -375,7 +375,7 @@ namespace CREARSIS
         }
         #endregion
 
-
+        #region EVENTOS
         public adm014_01()
         {
             InitializeComponent();
@@ -393,23 +393,14 @@ namespace CREARSIS
         {
             Close();
         }
-
-        private void m_atr_ass_Click(object sender, EventArgs e)
-        {
-            o_mg_glo_bal.mg_ads000_04(this, 1);
-        }
+        
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             vg_frm_pad.Enabled = true;
             Close();
         }
-
-        private void m_adm014_02a_Click(object sender, EventArgs e)
-        {
-            adm014_02a obj = new adm014_02a();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
-        }
+        
 
         private void m_adm014_05_Click(object sender, EventArgs e)
         {
@@ -439,18 +430,36 @@ namespace CREARSIS
                 fu_bus_car((cb_prm_bus.SelectedIndex + 1).ToString(), Convert.ToInt32(tb_val_año.Value));
             }
         }
+        #endregion
 
+        #region OPCIONES DEL MENU
+
+        //T.C. por Año
         private void m_adm014_08a_Click(object sender, EventArgs e)
         {
 
             adm014_08 obj = new adm014_08();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
-
+        //T.C. por Fechas
         private void m_adm014_09a_Click(object sender, EventArgs e)
         {
             adm014_09 obj = new adm014_09();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
+        //T.C. por rango de fecha
+        private void m_adm014_02a_Click(object sender, EventArgs e)
+        {
+            adm014_02a obj = new adm014_02a();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+        //Atras
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        #endregion
+
     }
 }
