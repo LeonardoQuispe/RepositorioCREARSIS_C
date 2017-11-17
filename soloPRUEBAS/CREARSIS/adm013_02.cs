@@ -96,7 +96,7 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Nuevo T.C. Bs./Us.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Nuevo T.C. Bs./UsD", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -104,11 +104,11 @@ namespace CREARSIS
 
                 if (vv_ban_tcm == 0)
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos ?", "Nuevo T.C. Bs./UsD", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    res_msg = MessageBoxEx.Show("¿La fecha ya tiene tipo de cambio asignada, esta seguro de continuar ?", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿La fecha ya tiene tipo de cambio asignada, esta seguro de continuar ?", "Nuevo T.C. Bs./UsD", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
 
@@ -129,7 +129,7 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_bus_car(aux.Month.ToString(), Convert.ToInt32(aux.Year));
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs./Us.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs./UsD", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 tb_fec_tcm.Clear();
                 tb_val_tcm.Clear();

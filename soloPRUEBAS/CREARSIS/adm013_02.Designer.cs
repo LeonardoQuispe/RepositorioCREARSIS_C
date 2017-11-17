@@ -188,8 +188,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "adm013_02";
-            this.Text = "Nuevo T.C - Bs/Us";
-            this.TitleText = "Nuevo T.C - Bs/Us";
+            this.Text = "Nuevo T.C - Bs/USD";
+            this.TitleText = "Nuevo T.C - Bs/USD";
             this.Load += new System.EventHandler(this.adm013_02_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);

@@ -487,8 +487,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "adm013_01";
-            this.Text = "Busca T.C. Bs/Us";
-            this.TitleText = "Busca T.C. Bs/Us";
+            this.Text = "Busca T.C. Bs/USD";
+            this.TitleText = "Busca T.C. Bs/USD";
             this.Load += new System.EventHandler(this.adm013_01_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tb_val_año)).EndInit();

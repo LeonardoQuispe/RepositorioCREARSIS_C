@@ -83,9 +83,9 @@ namespace CREARSIS
                         Excel.Range xlsRange = hoja_xls.UsedRange;
 
 
-                        if (xlsRange[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (UFV)")
+                        if (xlsRange[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (USD)")
                         {
-                            MessageBoxEx.Show("El formato del Libro de Excel es Inválido ", "Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBoxEx.Show("El formato del Libro de Excel es Inválido ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             Limpiar();
 
 
@@ -225,12 +225,12 @@ namespace CREARSIS
             err_msg = fu_ver_dat();
             if (err_msg != null)
             {
-                MessageBoxEx.Show(err_msg, "Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBoxEx.Show(err_msg, "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DialogResult res_msg = new DialogResult();
-            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Año?  \r\n (Se Actualizarán TODOS los datos de la gestión " + tb_año_xls.Text + ")", "Nuevo T.C. Bs/Ufv por Año", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/USD por Año?  \r\n (Se Actualizarán TODOS los datos de la gestión " + tb_año_xls.Text + ")", "Nuevo T.C. Bs/USD por Año", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (res_msg == DialogResult.Cancel)
             {
@@ -253,7 +253,7 @@ namespace CREARSIS
                     //Borra datos del año
                     o_adm013._06(fec_ini_aux, fec_fin_aux);
 
-                    //Registra ufv uno por uno
+                    //Registra USD uno por uno
                     for (int i = 1; i < 13; i++)
                     {
                         for (int j = 1; j < 32; j++)
@@ -278,7 +278,7 @@ namespace CREARSIS
                 vg_frm_pad.tb_val_año.Text = fec_ini_aux.Year.ToString();
                 vg_frm_pad.cb_prm_bus.SelectedIndex = fec_ini_aux.Month - 1;
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Close();
 
