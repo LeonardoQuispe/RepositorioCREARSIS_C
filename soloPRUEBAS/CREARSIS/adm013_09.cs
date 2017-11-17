@@ -13,6 +13,7 @@ using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Transactions;
+using System.Runtime.InteropServices;
 
 namespace CREARSIS
 {
@@ -51,7 +52,6 @@ namespace CREARSIS
                 {
                     using (TransactionScope tra_nsa = new TransactionScope())
                     {
-
                         ruta = openfile1.FileName;
 
 
@@ -59,50 +59,74 @@ namespace CREARSIS
                         Excel.Application obj_xls = new Excel.Application();
 
                         //pasando el objeto a un libro de excel
-                        Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta);
+                        Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
                         //Elijiendo la hoja del libro de excel elegido
-                        Excel.Worksheet hoja_xls = (Excel.Worksheet)libro_xls.Worksheets[1];
+                        Excel.Worksheet hoja_xls = libro_xls.ActiveSheet;
 
                         //asignando el rango de filas y columnas usadas en la hoja de excel
                         Excel.Range xlsRange = hoja_xls.UsedRange;
 
-                        ////recuperando el nombre del libro/ruta del excel
+
+                        Limpiar();
+
+
+                        //recuperando el nombre del libro/ruta y el año seleccionado
                         tb_libro_xls.Text = ruta;
-                        dg_res_ult.Rows.Clear();
+
 
                         //cargando el contenido 
-                        int columnas = xlsRange.Columns.Count;
                         int filas = xlsRange.Rows.Count;
+
+                        DateTime tmp1;
+                        decimal tmp2;
+                        string fecha;
+                        string tc;
+                        string mensaje;
 
                         for (int i = 0; i < filas; i++)
                         {
                             dg_res_ult.Rows.Add();
+                            mensaje = "";
 
-                            for (int j = 0; j < columnas; j++)
+                            //recupera fecha
+                            fecha = Convert.ToString(xlsRange[i + 1, "A"].Value ?? "");
+                            //Recupera TC
+                            tc = Convert.ToString(xlsRange[i + 1, "B"].Value ?? "").Replace(',', '.');
+
+
+                            //valida fecha
+                            if (DateTime.TryParse(fecha, out tmp1) == false)
                             {
-                                if (j == 0)
-                                {
-                                    dg_res_ult[j, i].Value = Convert.ToDateTime(xlsRange[i + 1, j + 1].Value ?? "").ToShortDateString();
-                                }
-                                else
-                                {
-                                    dg_res_ult[j, i].Value = xlsRange[i + 1, j + 1].Value ?? "";
-                                }
+                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                mensaje = "Fecha Inválida";
 
+                                dg_res_ult[0, i].Value = fecha;
+                                dg_res_ult[1, i].Value = tc;
+                                dg_res_ult[2, i].Value = mensaje;
+                                continue;
                             }
+                            //Valida que sea decimal y el tamaño menor a 7 caracteres 
+                            else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 4)
+                            {
+                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                mensaje = "T.C. Inválido";
+                            }
+
+                            dg_res_ult[0, i].Value = tmp1.ToShortDateString();
+                            dg_res_ult[1, i].Value = tc;
+                            dg_res_ult[2, i].Value = mensaje;
                         }
 
-
-                        libro_xls.Close();
+                        //Cierra libro, aplicacion y proceso de excel creado
+                        libro_xls.Close(false);
                         obj_xls.Quit();
+                        fu_cer_rar_xls(obj_xls);
 
                         tra_nsa.Complete();
                         tra_nsa.Dispose();
-
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -110,6 +134,36 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message);
             }
 
+        }
+
+
+        void Limpiar()
+        {
+            dg_res_ult.Rows.Clear();
+            tb_libro_xls.Clear();
+        }
+
+
+        //Obtiene el identificador de proceso de subproceso de ventana
+        [DllImport("user32.dll")]
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
+        void fu_cer_rar_xls(Excel.Application app)
+        {
+            uint iProcessId = 0;
+
+            //Get the process ID of excel so we can kill it later.
+            GetWindowThreadProcessId((IntPtr)app.Hwnd, out iProcessId);
+
+            try
+            {
+                System.Diagnostics.Process pProcess = System.Diagnostics.Process.GetProcessById((int)iProcessId);
+                pProcess.Kill();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
         }
 
         #endregion
@@ -144,15 +198,17 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
+                        if (dg_res_ult[2, i].Value.ToString() == "")
+                        {
+                            fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
+                            val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
 
-                        fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
-                        val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
+                            //Borra datos de la fecha
+                            o_adm013._06(fec_aux.ToShortDateString());
 
-                        //Borra datos de la fecha
-                        o_adm013._06(fec_aux.ToShortDateString());
-
-                        //Registra ufv uno por uno
-                        o_adm013._02(fec_aux, val_aux);
+                            //Registra USD uno por uno
+                            o_adm013._02(fec_aux, val_aux);
+                        }
                     }
 
 

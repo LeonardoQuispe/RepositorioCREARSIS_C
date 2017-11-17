@@ -13,6 +13,8 @@ using DevComponents.DotNetBar;
 using CREARSIS.GLOBAL;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Transactions;
+using System.Runtime.InteropServices;
+
 
 namespace CREARSIS
 {
@@ -83,29 +85,15 @@ namespace CREARSIS
                         Excel.Range xlsRange = hoja_xls.UsedRange;
 
 
-                        if (xlsRange[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (USD)")
+                        if (xlsRange[3, 1].Value != "COTIZACIONES OFICIALES DEL BOLIVIANO CON RELACIÓN AL DÓLAR ESTADOUNIDENSE")
                         {
                             MessageBoxEx.Show("El formato del Libro de Excel es Inválido ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             Limpiar();
 
-
-                            //libro_xls.Close(false, ruta, Type.Missing);   
-                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(libro_xls);
-                            //obj_xls.Quit();
-
-                            //fu_cer_rar_xls(hoja_xls);
-                            //libro_xls.Close(false);
-                            //fu_cer_rar_xls(libro_xls);
-                            //obj_xls.Quit();
-                            //fu_cer_rar_xls(obj_xls);
-
-
+                            //Cierra libro, aplicacion y proceso de excel creado
+                            libro_xls.Close(false);
+                            obj_xls.Quit();
                             fu_cer_rar_xls(obj_xls);
-
-                            //libro_xls.Save();
-                            //libro_xls.Close(true);
-                            //obj_xls.Quit();
-                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(obj_xls);
 
                             return;
                         }
@@ -120,36 +108,56 @@ namespace CREARSIS
 
                         //cargando el contenido 
                         int filas = 30;
-                        int columnas = 12;
+                        int columnas = 11;
+
+                        decimal tmp2 = 0;
+                        string tmp3 = "";
+                        int contador = 0;
+                        int dg_col_aux = 0;
+                        int TC = 0;
+
+                        if (cb_tip_cam.SelectedIndex == 0)
+                        {
+                            TC = 2;
+                        }
+                        else
+                        {
+                            TC = 3;
+                        }
 
                         for (int i = 0; i <= filas; i++)
                         {
                             dg_res_ult.Rows.Add();
+                            dg_res_ult[0, i].Value = i + 1;
+                            dg_col_aux = 0;
 
-                            for (int j = 0; j <= columnas; j++)
+                            for (int j = 0; j <= columnas * 2; j += 2)
                             {
-                                dg_res_ult[j, i].Value = xlsRange[i + 7, j + 1].Value ?? "";
+                                //Reemplaza la coma por el punto
+                                tmp3 = Convert.ToString(xlsRange[i + 7, j + TC].Value ?? "").Replace(',', '.');
+
+                                //Valida que sea decimal y el tamaño menor a 7 caracteres
+                                if ((decimal.TryParse(tmp3, out tmp2) == false || tmp3.Length > 4) && tmp3.Trim() != "")
+                                {
+                                    dg_res_ult[dg_col_aux + 1, i].Style.BackColor = Color.Red;
+                                    contador++;
+                                }
+
+                                dg_res_ult[dg_col_aux + 1, i].Value = tmp3;
+                                dg_col_aux++;
                             }
                         }
 
-
-                        //libro_xls.Close(false, ruta, Type.Missing);
-                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(libro_xls);
-                        //obj_xls.Quit();
-
-
-                        //fu_cer_rar_xls(hoja_xls);
-                        //libro_xls.Close(false);
-                        //fu_cer_rar_xls(libro_xls);
-                        //obj_xls.Quit();
-                        //fu_cer_rar_xls(obj_xls);
+                        if (contador != 0)
+                        {
+                            MessageBoxEx.Show("Se encontraron " + contador + " datos con Formato Incorrecto", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
 
 
+                        //Cierra libro, aplicacion y proceso de excel creado
+                        libro_xls.Close(false);
+                        obj_xls.Quit();
                         fu_cer_rar_xls(obj_xls);
-
-                        //libro_xls.Close(false);
-                        //obj_xls.Quit();
-                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(obj_xls);
 
                         tra_nsa.Complete();
                         tra_nsa.Dispose();
@@ -172,22 +180,25 @@ namespace CREARSIS
         }
 
 
+        //Obtiene el identificador de proceso de subproceso de ventana
+        [DllImport("user32.dll")]
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
         void fu_cer_rar_xls(Excel.Application app)
         {
-            IntPtr xAsIntPtr = new IntPtr(app.Application.Hwnd);
-            app.ActiveWorkbook.Close();
+            uint iProcessId = 0;
 
-            System.Diagnostics.Process[] process = System.Diagnostics.Process.GetProcessesByName("EXCEL");
-            foreach (System.Diagnostics.Process p in process)
+            //Get the process ID of excel so we can kill it later.
+            GetWindowThreadProcessId((IntPtr)app.Hwnd, out iProcessId);
+
+            try
             {
-                if (p.MainWindowHandle == xAsIntPtr)
-                {
-                    try
-                    {
-                        p.Kill();
-                    }
-                    catch { }
-                }
+                System.Diagnostics.Process pProcess = System.Diagnostics.Process.GetProcessById((int)iProcessId);
+                pProcess.Kill();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
             }
         }
 
@@ -258,10 +269,12 @@ namespace CREARSIS
                     {
                         for (int j = 1; j < 32; j++)
                         {
-                            if (dg_res_ult[i, j - 1].Value.ToString().Trim() != "")
+                            if (dg_res_ult[i, j - 1].Value.ToString().Trim() != "" && dg_res_ult[i, j - 1].Style.BackColor != Color.Red)
                             {
                                 fec_aux = Convert.ToDateTime(j.ToString() + "/" + i.ToString() + "/" + tb_año_xls.Text);
                                 val_aux = dg_res_ult[i, j - 1].Value.ToString().Replace(",", ".");
+
+                                //Inserta Datos
                                 o_adm013._02(fec_aux, val_aux);
                             }
                         }

@@ -126,20 +126,21 @@ namespace CREARSIS
                                 tmp3 = Convert.ToString(xlsRange[i+7, j+2].Value ?? "").Replace(',','.');
 
                                 //Valida que sea decimal y el tamaño menor a 7 caracteres
-                                if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3!="")
+                                if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3.Trim()!="")
                                 {
+                                    dg_res_ult[j + 1, i].Style.BackColor = Color.Red;
                                     contador++;
                                 }
-                                else
-                                {
-                                    dg_res_ult[j+1, i].Value = tmp3;
-                                }
+                                
+                                dg_res_ult[j + 1, i].Value = tmp3;
+
+
                             }
                         }
 
                         if (contador!=0)
                         {
-                            MessageBoxEx.Show("Se omitieron "+contador+" datos por Formato Incorrecto", "Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBoxEx.Show("Se encontraron " + contador + " datos con Formato Incorrecto", "Error T.C. Bs/Ufvx por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
 
 
@@ -252,7 +253,7 @@ namespace CREARSIS
                     {
                         for (int j = 1; j < 32; j++)
                         {
-                            if (dg_res_ult[i, j - 1].Value.ToString().Trim() != "")
+                            if (dg_res_ult[i, j - 1].Value.ToString().Trim() != "" && dg_res_ult[i, j - 1].Style.BackColor!=Color.Red)
                             {
                                 fec_aux = Convert.ToDateTime(j.ToString() + "/" + i.ToString() + "/" + tb_año_xls.Text);
                                 val_aux = dg_res_ult[i, j - 1].Value.ToString();
