@@ -44,7 +44,7 @@ namespace CREARSIS
 
 
                 OpenFileDialog openfile1 = new OpenFileDialog();
-                openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
+                openfile1.Filter = "Libro de Excel|*.xlsx|Libro de Excel 97-2003|*.xls";
                 openfile1.Title = "Seleccione el Libro de Excel";
                 if (openfile1.ShowDialog() == DialogResult.OK)
                 {
@@ -80,50 +80,41 @@ namespace CREARSIS
                         decimal tmp2;
                         string fecha;
                         string tc;
+                        string mensaje;
 
-
-                        for (int i = 0; i <= filas; i++)
+                        for (int i = 0; i < filas; i++)
                         {
                             dg_res_ult.Rows.Add();
+                            mensaje = "";
 
                             //recupera fecha
                             fecha =Convert.ToString(xlsRange[i + 1, "A"].Value ?? "");
+                            //Recupera TC
+                            tc = Convert.ToString(xlsRange[i + 1, "B"].Value ?? "");
+
 
                             //valida fecha
-                            if (DateTime.TryParse(fecha,out tmp1)==true)
+                            if (DateTime.TryParse(fecha,out tmp1)==false)
                             {
+                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                mensaje = "Fecha Inválida";
 
-                            }
-                            else
+                                dg_res_ult[0, i].Value = fecha;
+                                dg_res_ult[1, i].Value = tc;
+                                dg_res_ult[2, i].Value = mensaje;
+                                continue;
+                            }    
+                            //Valida que sea decimal y el tamaño menor a 7 caracteres 
+                            else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 7)
                             {
-                                //dg_res_ult[0, i].Value = tmp1;
+                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                mensaje = "T.C. Inválido";
                             }
-
-
-
-                            //Recupera TC
-                            tc= Convert.ToString(xlsRange[i + 1, "B"].Value ?? "");
-
-                            //Valida que sea decimal y el tamaño menor a 7 caracteres                            
-                            if (decimal.TryParse(tc, out tmp2) == true)
-                            {
-                                
-                            }
-                            else if(tc.Length>7)
-                            {
-
-                            }
-                            else
-                            {
-
-                            }
-
-                            
-
-                            
-                        }
-
                         
+                            dg_res_ult[0, i].Value = tmp1.ToShortDateString();
+                            dg_res_ult[1, i].Value = tc;
+                            dg_res_ult[2, i].Value = mensaje;
+                        }                        
 
                         //Cierra libro, aplicacion y proceso de excel creado
                         libro_xls.Close(false);
