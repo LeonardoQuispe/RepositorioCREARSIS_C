@@ -90,7 +90,7 @@ namespace CREARSIS
                             //recupera fecha
                             fecha =Convert.ToString(xlsRange[i + 1, "A"].Value ?? "");
                             //Recupera TC
-                            tc = Convert.ToString(xlsRange[i + 1, "B"].Value ?? "");
+                            tc = Convert.ToString(xlsRange[i + 1, "B"].Value ?? "").Replace(',','.') ;
 
 
                             //valida fecha
@@ -202,15 +202,17 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
+                        if (dg_res_ult[2,i].Value.ToString()=="")
+                        {
+                            fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
+                            val_aux = dg_res_ult[1, i].Value.ToString();
 
-                        fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
-                        val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
+                            //Borra datos de la fecha
+                            o_adm014._06(fec_aux.ToShortDateString());
 
-                        //Borra datos de la fecha
-                        o_adm014._06(fec_aux.ToShortDateString());
-
-                        //Registra ufv uno por uno
-                        o_adm014._02(fec_aux, val_aux);
+                            //Registra ufv uno por uno
+                            o_adm014._02(fec_aux, val_aux);
+                        }                        
                     }
 
                     tra_nsa.Complete();

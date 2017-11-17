@@ -254,7 +254,7 @@ namespace CREARSIS
                             if (dg_res_ult[i, j - 1].Value.ToString().Trim() != "")
                             {
                                 fec_aux = Convert.ToDateTime(j.ToString() + "/" + i.ToString() + "/" + tb_año_xls.Text);
-                                val_aux = dg_res_ult[i, j - 1].Value.ToString().Replace(",", ".");
+                                val_aux = dg_res_ult[i, j - 1].Value.ToString();
                                 o_adm014._02(fec_aux, val_aux);
                             }
                         }

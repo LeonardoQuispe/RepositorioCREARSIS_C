@@ -365,12 +365,6 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat2()
         {
-            //'Si aun existe
-            //tab_adm014 = o_adm014._05(tb_sel_ecc.Text)
-            //If tab_adm014.Rows.Count = 0 Then
-            //    Return "La Regional no se encuentra registrada"
-            //End If
-
             return null;
         }
         #endregion
