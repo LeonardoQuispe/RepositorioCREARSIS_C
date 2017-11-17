@@ -174,7 +174,7 @@ namespace CREARSIS
                             _with2.TabIndex = i;
                             _with2.Text = "T.C" + (Char)13 +
                               tab_adm013.Rows[j]["va_val_bus"].ToString().Trim() + (Char)13 + (Char)13 +
-                              tab_adm013.Rows[j]["va_fec_bus"].ToString().Trim();
+                              Convert.ToDateTime(tab_adm013.Rows[j]["va_fec_bus"]).ToShortDateString();
                             _with2.Name = fec_aux.ToString();
                             _with2.BackColor = Color.Azure;
                             _with2.ForeColor = Color.DarkBlue;
@@ -191,6 +191,12 @@ namespace CREARSIS
                                 _with2.BackColor = Color.Wheat;
                                 //.FlatAppearance.BorderColor = Color.Blue
                                 //.FlatAppearance.BorderSize = 1
+                            }
+
+                            decimal valor = Convert.ToDecimal(tab_adm013.Rows[j]["va_val_bus"].ToString());
+                            if (valor == 0)
+                            {
+                                _with2.FlatStyle = FlatStyle.System;
                             }
 
                             bot_val.Click += mt_bot_tcd;
