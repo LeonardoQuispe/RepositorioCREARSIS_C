@@ -34,7 +34,6 @@ namespace CREARSIS
 
         #endregion
 
-
         #region METODOS
 
 
@@ -197,6 +196,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public adm014_08()
         {
             InitializeComponent();
@@ -283,5 +284,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(Ex.Message);
             }
         }
+        #endregion
     }
 }

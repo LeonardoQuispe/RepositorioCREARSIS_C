@@ -36,7 +36,6 @@ namespace CREARSIS
 
         #endregion
 
-
         #region METODOS
         /// <summary>
         /// -> Metodo que inicializa el formulario
