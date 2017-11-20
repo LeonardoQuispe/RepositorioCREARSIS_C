@@ -135,7 +135,6 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
-            this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(321, 200);
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;

@@ -117,7 +117,7 @@ namespace CREARSIS
                     string tmp3="";
                     int contador=0;         
                         
-                       
+                    
                     //Cargando el contenido de Excel
                     for (int i = 0; i <= filas; i++)
                     {
@@ -139,8 +139,7 @@ namespace CREARSIS
                             //carga datos recuperados a datagrid
                             dg_res_ult[j + 1, i].Value = tmp3;
                         }
-                    }
-
+                    }                    
 
                     //Envia mensaje del numero de datos no validos
                     if (contador!=0)

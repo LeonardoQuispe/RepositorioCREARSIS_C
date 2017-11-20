@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,6 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
@@ -74,6 +74,23 @@
             this.groupBox1.Size = new System.Drawing.Size(367, 342);
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
+            // 
+            // tb_libro_xls
+            // 
+            this.tb_libro_xls.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_libro_xls.Border.Class = "TextBoxBorder";
+            this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
+            this.tb_libro_xls.Location = new System.Drawing.Point(55, 310);
+            this.tb_libro_xls.Name = "tb_libro_xls";
+            this.tb_libro_xls.PreventEnterBeep = true;
+            this.tb_libro_xls.ReadOnly = true;
+            this.tb_libro_xls.Size = new System.Drawing.Size(262, 22);
+            this.tb_libro_xls.TabIndex = 83;
             // 
             // dg_res_ult
             // 
@@ -118,7 +135,6 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
-            this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(321, 200);
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
@@ -203,23 +219,6 @@
             this.bt_ace_pta.TabIndex = 103;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // tb_libro_xls
-            // 
-            this.tb_libro_xls.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_libro_xls.Border.Class = "TextBoxBorder";
-            this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(55, 310);
-            this.tb_libro_xls.Name = "tb_libro_xls";
-            this.tb_libro_xls.PreventEnterBeep = true;
-            this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(262, 22);
-            this.tb_libro_xls.TabIndex = 83;
             // 
             // adm013_09
             // 
