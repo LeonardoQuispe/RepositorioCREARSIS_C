@@ -216,7 +216,7 @@
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(516, 354);
+            this.labelX6.Location = new System.Drawing.Point(514, 354);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 27);
@@ -232,7 +232,7 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(110, 354);
+            this.labelX4.Location = new System.Drawing.Point(108, 354);
             this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(85, 27);
@@ -281,7 +281,7 @@
             this.tb_año_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_año_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_año_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_año_xls.Location = new System.Drawing.Point(560, 359);
+            this.tb_año_xls.Location = new System.Drawing.Point(558, 359);
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
@@ -298,11 +298,11 @@
             this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(201, 359);
+            this.tb_libro_xls.Location = new System.Drawing.Point(199, 359);
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(200, 22);
+            this.tb_libro_xls.Size = new System.Drawing.Size(241, 22);
             this.tb_libro_xls.TabIndex = 37;
             // 
             // gb_ctr_frm

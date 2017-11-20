@@ -23,6 +23,13 @@ namespace CREARSIS
         #region VARIABLES
 
         public dynamic vg_frm_pad;
+        string err_msg = "";
+
+        //Variables de Importacion EXCEL
+        Excel.Application app_xls;                              //Objeto de la aplicacion de Excel        
+        Excel.Workbook libro_xls;                               //Libro de Excel        
+        Excel.Worksheet hoja_xls;                               //Hoja de un libro de Excel
+        Excel.Range rango_xls;                                  //Rango de celdas de Excel(se maneja como una tabla, filas y columnas)
 
         #endregion
 
@@ -37,6 +44,22 @@ namespace CREARSIS
 
         #region METODOS
 
+        string fu_ver_dat()
+        {
+
+            if (tb_libro_xls.Text.Trim() == "")
+            {
+                return "Ningún libro de Excel importado";
+            }
+
+            if (dg_res_ult.Rows.Count == 0)
+            {
+                return "Ningún libro de Excel importado";
+            }
+
+            return null;
+        }
+
         void fu_imp_xls()
         {
 
@@ -45,86 +68,76 @@ namespace CREARSIS
                 string ruta = "";
 
 
-                OpenFileDialog openfile1 = new OpenFileDialog();
-                openfile1.Filter = "Libro de Excel|*.xlsx|Libro de Excel 97-2003|*.xls";
-                openfile1.Title = "Seleccione el Libro de Excel";
-                if (openfile1.ShowDialog() == DialogResult.OK)
+                OpenFileDialog abrir_archivo = new OpenFileDialog();
+                abrir_archivo.Filter = "Libro de Excel|*.xlsx|Libro de Excel 97-2003|*.xls";
+                abrir_archivo.Title = "Seleccione el Libro de Excel";
+                if (abrir_archivo.ShowDialog() == DialogResult.OK)
                 {
-                    using (TransactionScope tra_nsa = new TransactionScope())
+                    //Obtiene la Ruta del Libro de Excel Seleccionado
+                    ruta = abrir_archivo.FileName;
+
+                    //Instanciando la Aplicacion de Excel
+                    app_xls = new Excel.Application();
+
+                    //Abre el libro de excel con la ruta del Excel seleccionado
+                    libro_xls = app_xls.Workbooks.Open(ruta);
+
+                    //Seleccionando la primera hoja del libro de Excel elejido
+                    hoja_xls = libro_xls.ActiveSheet;
+
+                    //asignando el rango de filas y columnas usadas en la hoja de excel
+                    rango_xls = hoja_xls.UsedRange;
+
+
+                    Limpiar();
+
+
+                    //recuperando el nombre del libro/ruta de Excel Seleccionado
+                    tb_libro_xls.Text = ruta;
+
+                    //Recuperando el numero de fulas usadas en el libro de Excel
+                    int filas = rango_xls.Rows.Count;
+
+                    //Declarando varibles temporales y de validacion
+                    DateTime tmp1;
+                    decimal tmp2;
+                    string fecha;
+                    string tc;
+                    string mensaje;
+
+                    //Cargando COntenido
+                    for (int i = 0; i < filas; i++)
                     {
-                        ruta = openfile1.FileName;
+                        dg_res_ult.Rows.Add();
+                        mensaje = "";
+
+                        //recupera fecha
+                        fecha = Convert.ToString(rango_xls[i + 1, "A"].Value ?? "");
+                        //Recupera TC
+                        tc = Convert.ToString(rango_xls[i + 1, "B"].Value ?? "").Replace(',', '.');
 
 
-                        //creando una instancia para el objeto de excel 
-                        Excel.Application obj_xls = new Excel.Application();
-
-                        //pasando el objeto a un libro de excel
-                        Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-
-                        //Elijiendo la hoja del libro de excel elegido
-                        Excel.Worksheet hoja_xls = libro_xls.ActiveSheet;
-
-                        //asignando el rango de filas y columnas usadas en la hoja de excel
-                        Excel.Range xlsRange = hoja_xls.UsedRange;
-
-
-                        Limpiar();
-
-
-                        //recuperando el nombre del libro/ruta y el año seleccionado
-                        tb_libro_xls.Text = ruta;
-
-
-                        //cargando el contenido 
-                        int filas = xlsRange.Rows.Count;
-
-                        DateTime tmp1;
-                        decimal tmp2;
-                        string fecha;
-                        string tc;
-                        string mensaje;
-
-                        for (int i = 0; i < filas; i++)
+                        //valida fecha
+                        if (DateTime.TryParse(fecha, out tmp1) == false)
                         {
-                            dg_res_ult.Rows.Add();
-                            mensaje = "";
+                            dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            mensaje = "Fecha Inválida";
 
-                            //recupera fecha
-                            fecha = Convert.ToString(xlsRange[i + 1, "A"].Value ?? "");
-                            //Recupera TC
-                            tc = Convert.ToString(xlsRange[i + 1, "B"].Value ?? "").Replace(',', '.');
-
-
-                            //valida fecha
-                            if (DateTime.TryParse(fecha, out tmp1) == false)
-                            {
-                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                                mensaje = "Fecha Inválida";
-
-                                dg_res_ult[0, i].Value = fecha;
-                                dg_res_ult[1, i].Value = tc;
-                                dg_res_ult[2, i].Value = mensaje;
-                                continue;
-                            }
-                            //Valida que sea decimal y el tamaño menor a 7 caracteres 
-                            else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 4)
-                            {
-                                dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                                mensaje = "T.C. Inválido";
-                            }
-
-                            dg_res_ult[0, i].Value = tmp1.ToShortDateString();
+                            dg_res_ult[0, i].Value = fecha;
                             dg_res_ult[1, i].Value = tc;
                             dg_res_ult[2, i].Value = mensaje;
+                            continue;
+                        }
+                        //Valida que sea decimal y el tamaño menor a 7 caracteres 
+                        else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 4)
+                        {
+                            dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            mensaje = "T.C. Inválido";
                         }
 
-                        //Cierra libro, aplicacion y proceso de excel creado
-                        libro_xls.Close(false);
-                        obj_xls.Quit();
-                        fu_cer_rar_xls(obj_xls);
-
-                        tra_nsa.Complete();
-                        tra_nsa.Dispose();
+                        dg_res_ult[0, i].Value = tmp1.ToShortDateString();
+                        dg_res_ult[1, i].Value = tc;
+                        dg_res_ult[2, i].Value = mensaje;
                     }
                 }
             }
@@ -146,24 +159,36 @@ namespace CREARSIS
 
         //Obtiene el identificador de proceso de subproceso de ventana
         [DllImport("user32.dll")]
-        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
-
-        void fu_cer_rar_xls(Excel.Application app)
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwID_proceso);
+        /// <summary>
+        /// METODO para Cerrar la conexion con la Aplicacion de Excel y Matar Proceso
+        /// </summary>
+        void fu_cer_rar_xls()
         {
-            uint iProcessId = 0;
+            libro_xls.Close(false);
+            app_xls.Quit();
 
-            //Get the process ID of excel so we can kill it later.
-            GetWindowThreadProcessId((IntPtr)app.Hwnd, out iProcessId);
+            uint ID_proceso = 0;
+
+            //Obtiene el ID del proceso de Excel a cerrar Despues 
+            GetWindowThreadProcessId((IntPtr)app_xls.Hwnd, out ID_proceso);
 
             try
             {
-                System.Diagnostics.Process pProcess = System.Diagnostics.Process.GetProcessById((int)iProcessId);
-                pProcess.Kill();
+                //Mata el proceso de Excel que se obtuvo por ID
+                System.Diagnostics.Process proceso_xls = System.Diagnostics.Process.GetProcessById((int)ID_proceso);
+                proceso_xls.Kill();
             }
             catch (Exception ex)
             {
                 MessageBoxEx.Show(ex.Message);
             }
+
+            //Limpiando las variables de Excel
+            app_xls = null;
+            libro_xls = null;
+            hoja_xls = null;
+            rango_xls = null;
         }
 
         #endregion
@@ -177,12 +202,24 @@ namespace CREARSIS
         private void bt_imp_xls_Click(object sender, EventArgs e)
         {
             fu_imp_xls();
+
+            if (app_xls != null)
+            {
+                fu_cer_rar_xls();
+            }
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            err_msg = fu_ver_dat();
+            if (err_msg != null)
+            {
+                MessageBoxEx.Show(err_msg, "Error T.C. Bs/USD por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult res_msg = new DialogResult();
-            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Usd por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)", "Nuevo T.C. Bs/Usd por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/USD por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)", "Nuevo T.C. Bs/USD por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (res_msg == DialogResult.Cancel)
             {
@@ -219,13 +256,13 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_bus_car(fec_aux.Month.ToString(), fec_aux.Year);
 
-                    //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
-                    vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
-                    vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
+                //Selecciona el mes y el año de la fecha aux que va ser la fecha inicial
+                vg_frm_pad.tb_val_año.Text = fec_aux.Year.ToString();
+                vg_frm_pad.cb_prm_bus.SelectedIndex = fec_aux.Month - 1;
 
-                    MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/Usd por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo T.C. Bs/USD por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Close();
+                Close();
             }
             catch (Exception Ex)
             {

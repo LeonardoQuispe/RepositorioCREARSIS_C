@@ -25,6 +25,12 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         string err_msg = "";
 
+        //Variables de Importacion EXCEL
+        Excel.Application app_xls;                              //Objeto de la aplicacion de Excel        
+        Excel.Workbook libro_xls;                               //Libro de Excel        
+        Excel.Worksheet hoja_xls;                               //Hoja de un libro de Excel
+        Excel.Range rango_xls;                                  //Rango de celdas de Excel(se maneja como una tabla, filas y columnas)
+
         #endregion
 
         #region INSTANCIAS
@@ -53,7 +59,9 @@ namespace CREARSIS
             return null;
         }
 
-
+        /// <summary>
+        /// Metodo que Importa Libro de Excel
+        /// </summary>
         void fu_imp_xls()
         {
 
@@ -62,101 +70,87 @@ namespace CREARSIS
                 string ruta = "";
 
 
-                OpenFileDialog openfile1 = new OpenFileDialog();
-                openfile1.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
-                openfile1.Title = "Seleccione el Libro de Excel";
-                if (openfile1.ShowDialog() == DialogResult.OK)
+                OpenFileDialog abrir_archivo = new OpenFileDialog();
+                abrir_archivo.Filter = "Libro de Excel 97-2003|*.xls|Libro de Excel|*.xlsx";
+                abrir_archivo.Title = "Seleccione el Libro de Excel";
+
+                if (abrir_archivo.ShowDialog() == DialogResult.OK)
                 {
-                    using (TransactionScope tra_nsa = new TransactionScope())
+                    //Obtiene la Ruta del Libro de Excel Seleccionado
+                    ruta = abrir_archivo.FileName;
+
+                    //Instanciando la Aplicacion de Excel
+                    app_xls = new Excel.Application();
+
+                    //Abre el libro de excel con la ruta del Excel seleccionado
+                    libro_xls = app_xls.Workbooks.Open(ruta);
+
+                    //Seleccionando la primera hoja del libro de Excel elejido
+                    hoja_xls = libro_xls.ActiveSheet;
+
+                    //asignando el rango de filas y columnas usadas en la hoja de excel
+                    rango_xls = hoja_xls.UsedRange;
+
+
+
+                    //Valida que sea un excel Válido
+                    if (rango_xls[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (UFV)")
                     {
-                        ruta = openfile1.FileName;
-
-
-                        //creando una instancia para el objeto de excel 
-                        Excel.Application obj_xls = new Excel.Application();
-
-                        //pasando el objeto a un libro de excel
-                        Excel.Workbook libro_xls = obj_xls.Workbooks.Open(ruta, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-
-                        //Elijiendo la hoja del libro de excel elegido
-                        Excel.Worksheet hoja_xls = libro_xls.ActiveSheet;
-
-                        //asignando el rango de filas y columnas usadas en la hoja de excel
-                        Excel.Range xlsRange = hoja_xls.UsedRange;
-
-                        
-                        if (xlsRange[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (UFV)")
-                        {
-                            MessageBoxEx.Show("El formato del Libro de Excel es Inválido ","Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            Limpiar();
-
-                            //Cierra libro, aplicacion y proceso de excel creado
-                            libro_xls.Close(false);
-                            obj_xls.Quit();
-                            fu_cer_rar_xls(obj_xls);
-                            
-                            return;
-                        }
-
-                        Limpiar();
-
-
-                        //recuperando el nombre del libro/ruta y el año seleccionado
-                        tb_libro_xls.Text = ruta;                        
-                        string tmp = xlsRange[2, "A"].Value.ToString();
-                        tb_año_xls.Text = tmp.Substring(4, 4);
-
-                        //cargando el contenido 
-                        int filas = 30;
-                        int columnas = 11;
-
-                        decimal tmp2=0;
-                        string tmp3="";
-                        int contador=0;                       
-                       
-
-                        for (int i = 0; i <= filas; i++)
-                        {
-                            dg_res_ult.Rows.Add();
-                            dg_res_ult[0, i].Value = i + 1;
-
-                            for (int j = 0; j <= columnas; j++)
-                            {
-                                //Reemplaza la coma por el punto
-                                tmp3 = Convert.ToString(xlsRange[i+7, j+2].Value ?? "").Replace(',','.');
-
-                                //Valida que sea decimal y el tamaño menor a 7 caracteres
-                                if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3.Trim()!="")
-                                {
-                                    dg_res_ult[j + 1, i].Style.BackColor = Color.Red;
-                                    contador++;
-                                }
-                                
-                                dg_res_ult[j + 1, i].Value = tmp3;
-
-
-                            }
-                        }
-
-                        if (contador!=0)
-                        {
-                            MessageBoxEx.Show("Se encontraron " + contador + " datos con Formato Incorrecto", "Error T.C. Bs/Ufvx por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-
-
-                        //Cierra libro, aplicacion y proceso de excel creado
-                        libro_xls.Close(false);
-                        obj_xls.Quit();
-                        fu_cer_rar_xls(obj_xls);
-
-                        tra_nsa.Complete();
-                        tra_nsa.Dispose();
+                        MessageBoxEx.Show("El formato del Libro de Excel es Inválido ","Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Limpiar();          
+                        return;
                     }
+
+                    Limpiar();
+
+                    //recuperando el nombre del libro/ruta y el año seleccionado
+                    tb_libro_xls.Text = ruta;                        
+                    string tmp = rango_xls[2, "A"].Value.ToString();
+                    tb_año_xls.Text = tmp.Substring(4, 4);
+
+                    //declarando numeros de filas y columnas a cargar
+                    int filas = 30;
+                    int columnas = 11;
+
+                    //Declarando Variables temporales y de validacion
+                    decimal tmp2 =0;
+                    string tmp3="";
+                    int contador=0;         
+                        
+                       
+                    //Cargando el contenido de Excel
+                    for (int i = 0; i <= filas; i++)
+                    {
+                        dg_res_ult.Rows.Add();
+                        dg_res_ult[0, i].Value = i + 1;
+
+                        for (int j = 0; j <= columnas; j++)
+                        {
+                            //Recupera dato de celda y reemplaza coma por punto
+                            tmp3 = Convert.ToString(rango_xls[i+7, j+2].Value ?? "").Replace(',','.');
+                                
+                            //Valida que sea decimal y el tamaño menor a 7 caracteres
+                            if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3.Trim()!="")
+                            {
+                                dg_res_ult[j + 1, i].Style.BackColor = Color.Red;
+                                contador++;
+                            }
+                                
+                            //carga datos recuperados a datagrid
+                            dg_res_ult[j + 1, i].Value = tmp3;
+                        }
+                    }
+
+
+                    //Envia mensaje del numero de datos no validos
+                    if (contador!=0)
+                    {
+                        MessageBoxEx.Show("Se encontraron " + contador + " datos con Formato Incorrecto", "Error T.C. Bs/Ufvx por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }   
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBoxEx.Show(ex.Message);
             }
 
@@ -174,24 +168,36 @@ namespace CREARSIS
 
         //Obtiene el identificador de proceso de subproceso de ventana
         [DllImport("user32.dll")]
-        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwID_proceso);
+        /// <summary>
+        /// METODO para Cerrar la conexion con la Aplicacion de Excel y Matar Proceso
+        /// </summary>
+        void fu_cer_rar_xls()
+        {
+            libro_xls.Close(false);
+            app_xls.Quit();            
 
-        void fu_cer_rar_xls(Excel.Application app)
-        {           
-            uint iProcessId = 0;
+            uint ID_proceso = 0;
 
-            //Get the process ID of excel so we can kill it later.
-            GetWindowThreadProcessId((IntPtr) app.Hwnd, out iProcessId);
+            //Obtiene el ID del proceso de Excel a cerrar Despues 
+            GetWindowThreadProcessId((IntPtr)app_xls.Hwnd, out ID_proceso);
 
             try
             {
-                System.Diagnostics.Process pProcess = System.Diagnostics.Process.GetProcessById((int)iProcessId);
-                pProcess.Kill();
+                //Mata el proceso de Excel que se obtuvo por ID
+                System.Diagnostics.Process proceso_xls = System.Diagnostics.Process.GetProcessById((int)ID_proceso);
+                proceso_xls.Kill();
             }
             catch (Exception ex)
             {
                 MessageBoxEx.Show(ex.Message);
             }
+
+            //Limpiando las variables de Excel
+            app_xls = null;
+            libro_xls = null;
+            hoja_xls = null;
+            rango_xls = null;
         }
 
 
@@ -207,6 +213,11 @@ namespace CREARSIS
         private void bt_imp_xls_Click(object sender, EventArgs e)
         {            
             fu_imp_xls();
+
+            if (app_xls!=null)
+            {
+                fu_cer_rar_xls();
+            }            
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -244,7 +255,7 @@ namespace CREARSIS
                 {
                     fec_ini_aux = Convert.ToDateTime("01/01/" + tb_año_xls.Text);
                     fec_fin_aux = Convert.ToDateTime("31/12/" + tb_año_xls.Text);
-
+                    
                     //Borra datos del año
                     o_adm014._06(fec_ini_aux, fec_fin_aux);
 
@@ -264,7 +275,7 @@ namespace CREARSIS
 
                     tra_nsa.Complete();
                     tra_nsa.Dispose();
-
+                    
                 }
 
                 vg_frm_pad.fu_bus_car(fec_ini_aux.Month.ToString(), fec_ini_aux.Year);

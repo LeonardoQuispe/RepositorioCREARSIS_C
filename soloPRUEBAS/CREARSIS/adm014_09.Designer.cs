@@ -35,13 +35,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
@@ -85,11 +85,11 @@
             this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(92, 306);
+            this.tb_libro_xls.Location = new System.Drawing.Point(52, 306);
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(169, 22);
+            this.tb_libro_xls.Size = new System.Drawing.Size(262, 22);
             this.tb_libro_xls.TabIndex = 82;
             // 
             // dg_res_ult
@@ -140,6 +140,24 @@
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
             // 
+            // DIA
+            // 
+            this.DIA.HeaderText = "Fecha";
+            this.DIA.Name = "DIA";
+            this.DIA.ReadOnly = true;
+            // 
+            // Enero
+            // 
+            this.Enero.HeaderText = "T.C - Bs/Ufv";
+            this.Enero.Name = "Enero";
+            this.Enero.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            // 
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
@@ -176,7 +194,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(202, 14);
+            this.bt_can_cel.Location = new System.Drawing.Point(207, 14);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -192,7 +210,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(71, 14);
+            this.bt_ace_pta.Location = new System.Drawing.Point(76, 14);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -202,24 +220,6 @@
             this.bt_ace_pta.TabIndex = 103;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // DIA
-            // 
-            this.DIA.HeaderText = "Fecha";
-            this.DIA.Name = "DIA";
-            this.DIA.ReadOnly = true;
-            // 
-            // Enero
-            // 
-            this.Enero.HeaderText = "T.C - Bs/Ufv";
-            this.Enero.Name = "Enero";
-            this.Enero.ReadOnly = true;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
             // 
             // adm014_09
             // 
