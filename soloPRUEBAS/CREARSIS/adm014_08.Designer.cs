@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +46,13 @@
             this.Noviembre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diciembre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.bt_imp_xls = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_año_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -66,14 +65,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DIA,
             this.Enero,
@@ -88,14 +87,14 @@
             this.Octubre,
             this.Noviembre,
             this.Diciembre});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle8;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 80);
@@ -103,14 +102,14 @@
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.Size = new System.Drawing.Size(761, 266);
             this.dg_res_ult.TabIndex = 29;
@@ -215,7 +214,7 @@
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(514, 354);
+            this.labelX6.Location = new System.Drawing.Point(600, 24);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 27);
@@ -223,50 +222,20 @@
             this.labelX6.Text = "Año:";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(108, 354);
-            this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(85, 27);
-            this.labelX4.TabIndex = 34;
-            this.labelX4.Text = "Libro de Excel:";
-            this.labelX4.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // bt_imp_xls
-            // 
-            this.bt_imp_xls.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_imp_xls.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_imp_xls.Location = new System.Drawing.Point(342, 27);
-            this.bt_imp_xls.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bt_imp_xls.Name = "bt_imp_xls";
-            this.bt_imp_xls.Size = new System.Drawing.Size(100, 30);
-            this.bt_imp_xls.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_imp_xls.TabIndex = 30;
-            this.bt_imp_xls.Text = "Importar";
-            this.bt_imp_xls.Click += new System.EventHandler(this.bt_imp_xls_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.groupBox1.Controls.Add(this.tb_año_xls);
             this.groupBox1.Controls.Add(this.tb_libro_xls);
-            this.groupBox1.Controls.Add(this.bt_imp_xls);
+            this.groupBox1.Controls.Add(this.labelX1);
+            this.groupBox1.Controls.Add(this.tb_año_xls);
             this.groupBox1.Controls.Add(this.dg_res_ult);
             this.groupBox1.Controls.Add(this.labelX6);
-            this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(2, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(781, 398);
+            this.groupBox1.Size = new System.Drawing.Size(781, 358);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             // 
@@ -280,29 +249,12 @@
             this.tb_año_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_año_xls.DisabledBackColor = System.Drawing.Color.White;
             this.tb_año_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_año_xls.Location = new System.Drawing.Point(558, 359);
+            this.tb_año_xls.Location = new System.Drawing.Point(644, 25);
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
-            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 26);
             this.tb_año_xls.TabIndex = 39;
-            // 
-            // tb_libro_xls
-            // 
-            this.tb_libro_xls.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_libro_xls.Border.Class = "TextBoxBorder";
-            this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
-            this.tb_libro_xls.Location = new System.Drawing.Point(199, 359);
-            this.tb_libro_xls.Name = "tb_libro_xls";
-            this.tb_libro_xls.PreventEnterBeep = true;
-            this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(241, 22);
-            this.tb_libro_xls.TabIndex = 37;
             // 
             // gb_ctr_frm
             // 
@@ -310,7 +262,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 406);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(2, 366);
             this.gb_ctr_frm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -351,13 +303,50 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // tb_libro_xls
+            // 
+            this.tb_libro_xls.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_libro_xls.Border.Class = "TextBoxBorder";
+            this.tb_libro_xls.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_libro_xls.ButtonCustom.Symbol = "";
+            this.tb_libro_xls.ButtonCustom.Visible = true;
+            this.tb_libro_xls.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_libro_xls.ForeColor = System.Drawing.Color.Black;
+            this.tb_libro_xls.Location = new System.Drawing.Point(121, 27);
+            this.tb_libro_xls.Name = "tb_libro_xls";
+            this.tb_libro_xls.PreventEnterBeep = true;
+            this.tb_libro_xls.ReadOnly = true;
+            this.tb_libro_xls.Size = new System.Drawing.Size(346, 26);
+            this.tb_libro_xls.TabIndex = 41;
+            this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.tb_libro_xls_ButtonCustomClick);
+            // 
+            // labelX1
+            // 
+            this.labelX1.AutoSize = true;
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(24, 27);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(89, 21);
+            this.labelX1.TabIndex = 40;
+            this.labelX1.Text = "Libro de Excel:";
+            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // adm014_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(783, 471);
+            this.ClientSize = new System.Drawing.Size(783, 421);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.groupBox1);
@@ -370,6 +359,7 @@
             this.TitleText = "T.C. Bs/Ufv por Año";
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -392,13 +382,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Noviembre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diciembre;
         private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.DotNetBar.ButtonX bt_imp_xls;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_año_xls;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }

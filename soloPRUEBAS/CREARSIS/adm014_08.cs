@@ -130,7 +130,7 @@ namespace CREARSIS
                             tmp3 = Convert.ToString(rango_xls[i+7, j+2].Value ?? "").Replace(',','.');
                                 
                             //Valida que sea decimal y el tamaño menor a 7 caracteres
-                            if ((decimal.TryParse(tmp3,out tmp2)==false || tmp3.Length>7) && tmp3.Trim()!="")
+                            if ((decimal.TryParse(tmp3,out tmp2)==false || Convert.ToDecimal(tmp3.Replace('.', ','))<3 || tmp3.Length>7) && tmp3.Trim()!="")
                             {
                                 dg_res_ult[j + 1, i].Style.BackColor = Color.Red;
                                 contador++;
@@ -211,12 +211,7 @@ namespace CREARSIS
 
         private void bt_imp_xls_Click(object sender, EventArgs e)
         {            
-            fu_imp_xls();
-
-            if (app_xls!=null)
-            {
-                fu_cer_rar_xls();
-            }            
+                   
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -296,5 +291,15 @@ namespace CREARSIS
             }
         }
         #endregion
+
+        private void tb_libro_xls_ButtonCustomClick(object sender, EventArgs e)
+        {
+            fu_imp_xls();
+
+            if (app_xls != null)
+            {
+                fu_cer_rar_xls();
+            }
+        }
     }
 }

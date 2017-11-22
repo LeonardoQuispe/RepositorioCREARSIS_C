@@ -201,12 +201,7 @@ namespace CREARSIS
 
         private void bt_imp_xls_Click(object sender, EventArgs e)
         {
-            fu_imp_xls();
-
-            if (app_xls != null)
-            {
-                fu_cer_rar_xls();
-            }
+          
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -275,6 +270,16 @@ namespace CREARSIS
             Close();
         }
         #endregion
+
+        private void fu_imp_exc(object sender, EventArgs e)
+        {
+            fu_imp_xls();
+
+            if (app_xls != null)
+            {
+                fu_cer_rar_xls();
+            }
+        }
     }
 
 }

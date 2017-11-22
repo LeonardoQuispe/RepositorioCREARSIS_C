@@ -215,24 +215,7 @@ namespace CREARSIS
 
         }
 
-        private void bt_imp_xls_Click(object sender, EventArgs e)
-        {
-            if(cb_tip_cam.Text=="")
-            {
-                MessageBoxEx.Show("Seleccione un T.C. ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                fu_imp_xls();
-
-                if (app_xls != null)
-                {
-                    fu_cer_rar_xls();
-                }                
-            }
-
-           
-        }
+      
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
@@ -312,5 +295,23 @@ namespace CREARSIS
             }
         }
         #endregion
+
+        private void fu_imp_exc(object sender, EventArgs e)
+        {
+
+            if (cb_tip_cam.Text == "")
+            {
+                MessageBoxEx.Show("Seleccione un T.C. ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                fu_imp_xls();
+
+                if (app_xls != null)
+                {
+                    fu_cer_rar_xls();
+                }
+            }
+        }
     }
 }

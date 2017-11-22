@@ -276,5 +276,15 @@ namespace CREARSIS
             }
         }
         #endregion
+
+        private void tb_libro_xls_ButtonCustomClick(object sender, EventArgs e)
+        {
+            fu_imp_xls();
+
+            if (app_xls != null)
+            {
+                fu_cer_rar_xls();
+            }
+        }
     }
 }

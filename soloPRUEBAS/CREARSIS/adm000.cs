@@ -289,20 +289,10 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
+        private void mn_mar_pro_Click(object sender, EventArgs e)
+        {
+            inv004_01 obj = new inv004_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
