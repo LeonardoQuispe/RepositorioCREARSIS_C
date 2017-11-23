@@ -62,9 +62,9 @@
             this.m_adm013_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm013_02a = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
-            this.importarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tCPorAñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tCPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_adm013_08 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_adm013_08a = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_adm013_08b = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.fl_cal_end = new System.Windows.Forms.FlowLayoutPanel();
             this.GroupBox1.SuspendLayout();
@@ -417,37 +417,37 @@
             this.m_adm013_02,
             this.m_adm013_05,
             this.m_adm013_p00,
-            this.importarExcelToolStripMenuItem,
+            this.m_adm013_08,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(395, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(510, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
             // 
-            // importarExcelToolStripMenuItem
+            // m_adm013_08
             // 
-            this.importarExcelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tCPorAñoToolStripMenuItem,
-            this.tCPorFechasToolStripMenuItem});
-            this.importarExcelToolStripMenuItem.Name = "importarExcelToolStripMenuItem";
-            this.importarExcelToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
-            this.importarExcelToolStripMenuItem.Text = "&Importar Excel";
+            this.m_adm013_08.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_adm013_08a,
+            this.m_adm013_08b});
+            this.m_adm013_08.Name = "m_adm013_08";
+            this.m_adm013_08.Size = new System.Drawing.Size(117, 24);
+            this.m_adm013_08.Text = "&Importar Excel";
             // 
-            // tCPorAñoToolStripMenuItem
+            // m_adm013_08a
             // 
-            this.tCPorAñoToolStripMenuItem.Name = "tCPorAñoToolStripMenuItem";
-            this.tCPorAñoToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
-            this.tCPorAñoToolStripMenuItem.Text = "&T.C. por Año";
-            this.tCPorAñoToolStripMenuItem.Click += new System.EventHandler(this.tCPorAñoToolStripMenuItem_Click);
+            this.m_adm013_08a.Name = "m_adm013_08a";
+            this.m_adm013_08a.Size = new System.Drawing.Size(182, 26);
+            this.m_adm013_08a.Text = "&T.C. por Año";
+            this.m_adm013_08a.Click += new System.EventHandler(this.tCPorAñoToolStripMenuItem_Click);
             // 
-            // tCPorFechasToolStripMenuItem
+            // m_adm013_08b
             // 
-            this.tCPorFechasToolStripMenuItem.Name = "tCPorFechasToolStripMenuItem";
-            this.tCPorFechasToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
-            this.tCPorFechasToolStripMenuItem.Text = "&T.C. por Fechas";
-            this.tCPorFechasToolStripMenuItem.Click += new System.EventHandler(this.tCPorFechasToolStripMenuItem_Click);
+            this.m_adm013_08b.Name = "m_adm013_08b";
+            this.m_adm013_08b.Size = new System.Drawing.Size(182, 26);
+            this.m_adm013_08b.Text = "&T.C. por Fechas";
+            this.m_adm013_08b.Click += new System.EventHandler(this.tCPorFechasToolStripMenuItem_Click);
             // 
             // GroupBox2
             // 
@@ -540,8 +540,8 @@
         internal System.Windows.Forms.MenuStrip mn_pri_nci;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.FlowLayoutPanel fl_cal_end;
-        private System.Windows.Forms.ToolStripMenuItem importarExcelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tCPorAñoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tCPorFechasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_adm013_08;
+        private System.Windows.Forms.ToolStripMenuItem m_adm013_08a;
+        private System.Windows.Forms.ToolStripMenuItem m_adm013_08b;
     }
 }

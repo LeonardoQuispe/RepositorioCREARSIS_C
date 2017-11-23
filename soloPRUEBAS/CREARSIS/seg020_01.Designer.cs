@@ -71,7 +71,7 @@
             this.lb_nom_ven.Location = new System.Drawing.Point(77, 56);
             this.lb_nom_ven.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_nom_ven.Name = "lb_nom_ven";
-            this.lb_nom_ven.Size = new System.Drawing.Size(10, 17);
+            this.lb_nom_ven.Size = new System.Drawing.Size(11, 21);
             this.lb_nom_ven.TabIndex = 53;
             this.lb_nom_ven.Text = "...";
             // 
@@ -87,7 +87,7 @@
             this.LabelX2.Location = new System.Drawing.Point(13, 56);
             this.LabelX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(57, 17);
+            this.LabelX2.Size = new System.Drawing.Size(71, 21);
             this.LabelX2.TabIndex = 53;
             this.LabelX2.Text = "Formulario:";
             // 
@@ -121,7 +121,7 @@
             this.tb_sel_usr.Name = "tb_sel_usr";
             this.tb_sel_usr.PreventEnterBeep = true;
             this.tb_sel_usr.ReadOnly = true;
-            this.tb_sel_usr.Size = new System.Drawing.Size(92, 22);
+            this.tb_sel_usr.Size = new System.Drawing.Size(92, 26);
             this.tb_sel_usr.TabIndex = 10;
             this.tb_sel_usr.TabStop = false;
             // 
@@ -137,7 +137,7 @@
             this.LabelX1.Location = new System.Drawing.Point(31, 25);
             this.LabelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(39, 17);
+            this.LabelX1.Size = new System.Drawing.Size(49, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Usuario";
             // 
@@ -215,9 +215,11 @@
             // 
             // seg020_01
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.bt_ace_pta;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(374, 418);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
