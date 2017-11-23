@@ -53,7 +53,7 @@ namespace CREARSIS
                 return "Dato no valido, el T.C. debe ser numerico";
             }
 
-            if (Convert.ToDecimal(tb_val_tcm.Text.Replace('.', ',')) > 10)
+            if (Convert.ToDecimal(tb_val_tcm.Text) > 10)
             {
                 return "Dato no valido, el T.C. debe ser menor que 10";
             }

@@ -45,11 +45,11 @@ namespace CREARSIS
                 tb_val_tcm.Focus();
                 return "Dato no valido, el T.C. debe ser numerico";
             }
-            if (Convert.ToDecimal(tb_val_tcm.Text.Replace('.', ',')) < 0)
+            if (Convert.ToDecimal(tb_val_tcm.Text) < 0)
             {
                 return "Dato no valido, el T.C. debe ser mayor a cero";
             }
-            if (Convert.ToDecimal(tb_val_tcm.Text.Replace('.', ',')) > 10)
+            if (Convert.ToDecimal(tb_val_tcm.Text) > 10)
             {
                 return "Dato no valido, el T.C. debe ser menor que 10";
             }
