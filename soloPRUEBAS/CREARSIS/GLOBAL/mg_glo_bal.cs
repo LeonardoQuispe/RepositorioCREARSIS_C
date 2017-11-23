@@ -910,7 +910,7 @@ namespace CREARSIS.GLOBAL
             return res_ult;
         }
          
-        public string Valida_numeros(string dato)
+        public string valida_numeros(string dato)
         {
             string nuevo=null;
             bool bandera = false;
@@ -934,7 +934,7 @@ namespace CREARSIS.GLOBAL
             }           
 
             return nuevo;
-        }
+        }        
 
     }
 }

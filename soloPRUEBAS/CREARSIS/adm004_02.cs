@@ -352,17 +352,17 @@ namespace CREARSIS
 
         private void tb_cod_ges_TextChanged(object sender, EventArgs e)
         {
-            tb_cod_ges.Text = o_mg_glo_bal.Valida_numeros(tb_cod_ges.Text);
+            tb_cod_ges.Text = o_mg_glo_bal.valida_numeros(tb_cod_ges.Text);
         }
 
         private void tb_nro_tal_TextChanged(object sender, EventArgs e)
         {
-            tb_nro_tal.Text = o_mg_glo_bal.Valida_numeros(tb_nro_tal.Text);
+            tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
         }
 
         private void tb_nro_aut_TextChanged(object sender, EventArgs e)
         {
-            tb_nro_aut.Text = o_mg_glo_bal.Valida_numeros(tb_nro_aut.Text);
+            tb_nro_aut.Text = o_mg_glo_bal.valida_numeros(tb_nro_aut.Text);
         }
     }
 }

@@ -170,12 +170,12 @@ namespace CREARSIS
 
         private void tb_cod_suc_TextChanged(object sender, EventArgs e)
         {
-            tb_cod_suc.Text = o_mg_glo_bal.Valida_numeros(tb_cod_suc.Text);
+            tb_cod_suc.Text = o_mg_glo_bal.valida_numeros(tb_cod_suc.Text);
         }
 
         private void tb_tel_suc_TextChanged(object sender, EventArgs e)
         {
-            tb_tel_suc.Text = o_mg_glo_bal.Valida_numeros(tb_tel_suc.Text);
+            tb_tel_suc.Text = o_mg_glo_bal.valida_numeros(tb_tel_suc.Text);
         }
     }
 }
