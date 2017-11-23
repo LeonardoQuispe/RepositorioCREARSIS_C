@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -41,12 +41,12 @@
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
@@ -123,8 +123,7 @@
             this.tb_col_fin.PreventEnterBeep = true;
             this.tb_col_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_col_fin.TabIndex = 95;
-            this.tb_col_fin.Text = "B";
-            this.tb_col_fin.WatermarkText = "Col.";
+            this.tb_col_fin.WatermarkText = "Col. Fin.";
             // 
             // tb_fila_fin
             // 
@@ -142,8 +141,8 @@
             this.tb_fila_fin.PreventEnterBeep = true;
             this.tb_fila_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_fin.TabIndex = 94;
-            this.tb_fila_fin.Text = "20";
-            this.tb_fila_fin.WatermarkText = "Fil.";
+            this.tb_fila_fin.WatermarkText = "Fil. Fin.";
+            this.tb_fila_fin.TextChanged += new System.EventHandler(this.tb_fila_fin_TextChanged);
             // 
             // tb_col_ini
             // 
@@ -162,8 +161,7 @@
             this.tb_col_ini.PreventEnterBeep = true;
             this.tb_col_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_col_ini.TabIndex = 93;
-            this.tb_col_ini.Text = "A";
-            this.tb_col_ini.WatermarkText = "Col.";
+            this.tb_col_ini.WatermarkText = "Col. Ini.";
             // 
             // tb_fila_ini
             // 
@@ -181,8 +179,8 @@
             this.tb_fila_ini.PreventEnterBeep = true;
             this.tb_fila_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_ini.TabIndex = 92;
-            this.tb_fila_ini.Text = "2";
-            this.tb_fila_ini.WatermarkText = "Fil.";
+            this.tb_fila_ini.WatermarkText = "Fil. Ini.";
+            this.tb_fila_ini.TextChanged += new System.EventHandler(this.tb_fila_ini_TextChanged);
             // 
             // tb_libro_xls
             // 
@@ -228,28 +226,28 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dg_res_ult.ColumnHeadersHeight = 40;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DIA,
             this.Enero,
             this.Observaciones});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle8;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(12, 89);
@@ -257,18 +255,38 @@
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.Size = new System.Drawing.Size(377, 289);
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
+            // 
+            // DIA
+            // 
+            this.DIA.HeaderText = "         Fecha                   (A)";
+            this.DIA.Name = "DIA";
+            this.DIA.ReadOnly = true;
+            this.DIA.Width = 110;
+            // 
+            // Enero
+            // 
+            this.Enero.HeaderText = "    T.C - Bs/Ufv                  (B)";
+            this.Enero.Name = "Enero";
+            this.Enero.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "          Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            this.Observaciones.Width = 147;
             // 
             // gb_ctr_frm
             // 
@@ -316,26 +334,6 @@
             this.bt_ace_pta.TabIndex = 103;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // DIA
-            // 
-            this.DIA.HeaderText = "         Fecha                   (A)";
-            this.DIA.Name = "DIA";
-            this.DIA.ReadOnly = true;
-            this.DIA.Width = 110;
-            // 
-            // Enero
-            // 
-            this.Enero.HeaderText = "    T.C - Bs/Ufv                  (B)";
-            this.Enero.Name = "Enero";
-            this.Enero.ReadOnly = true;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "          Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            this.Observaciones.Width = 147;
             // 
             // adm014_09
             // 

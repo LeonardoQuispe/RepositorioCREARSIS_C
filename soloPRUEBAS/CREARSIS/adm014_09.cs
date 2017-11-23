@@ -58,6 +58,57 @@ namespace CREARSIS
             return null;
         }
 
+        string fu_ver_dat_imp()
+        {
+            char tmp1, tmp2;
+
+            if (tb_fila_ini.Text.Trim() == "")
+            {
+                tb_fila_ini.Focus();
+                return "Fila inicial vacía";
+            }
+
+            if (tb_fila_fin.Text.Trim() == "")
+            {
+                tb_fila_fin.Focus();
+                return "Fila final vacía";
+            }
+
+            if (tb_col_ini.Text.Trim() == "")
+            {
+                tb_col_ini.Focus();
+                return "Columna inicial vacía";
+            }
+
+            if (tb_col_fin.Text.Trim() == "")
+            {
+                tb_col_fin.Focus();
+                return "Columna final vacía";
+            }
+
+            if (char.IsLetter(tb_col_ini.Text,0)==false)
+            {
+                tb_col_ini.Focus();
+                return "Columna inicial inválida";
+            }
+
+            if (char.IsLetter(tb_col_fin.Text, 0) == false)
+            {
+                tb_col_fin.Focus();
+                return "Columna final inválida";
+            }
+
+            tmp1 = tb_col_ini.Text[0];
+            tmp2 = tb_col_fin.Text[0];
+            if (Convert.ToInt32(tmp1)>Convert.ToInt32(tmp2))
+            {
+                tb_col_fin.Focus();
+                return "La columna final debe ser menor a la inicial";
+            }
+
+            return null;
+        }
+
         void fu_imp_xls()
         {
 
@@ -229,30 +280,22 @@ namespace CREARSIS
         {
             InitializeComponent();
         }
-
-        private void bt_imp_xls_Click(object sender, EventArgs e)
-        {
-            fu_imp_xls();
-
-            if (app_xls != null)
-            {
-                fu_cer_rar_xls();
-            }
-        }
-
+        
         private void tb_libro_xls_ButtonCustomClick(object sender, EventArgs e)
         {
+            err_msg = fu_ver_dat_imp();
+            if (err_msg != null)
+            {
+                MessageBoxEx.Show(err_msg, "Error T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             fu_imp_xls();
 
             if (app_xls != null)
             {
                 fu_cer_rar_xls();
             }
-        }
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -265,7 +308,7 @@ namespace CREARSIS
             }
 
             DialogResult res_msg = new DialogResult();
-            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)" , "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Registrar T.C. Bs/Ufv por Fechas?   \r\n (Se Actualizarán TODOS los datos de las fechas ingresadas)", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (res_msg == DialogResult.Cancel)
             {
@@ -281,7 +324,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult[2,i].Value.ToString()=="")
+                        if (dg_res_ult[2, i].Value.ToString() == "")
                         {
                             fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
                             val_aux = dg_res_ult[1, i].Value.ToString();
@@ -291,7 +334,7 @@ namespace CREARSIS
 
                             //Registra ufv uno por uno
                             o_adm014._02(fec_aux, val_aux);
-                        }                        
+                        }
                     }
 
                     tra_nsa.Complete();
@@ -309,13 +352,31 @@ namespace CREARSIS
 
                 Close();
 
-                    
+
             }
             catch (Exception Ex)
             {
                 MessageBoxEx.Show(Ex.Message);
             }
         }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void tb_fila_ini_TextChanged(object sender, EventArgs e)
+        {
+            tb_fila_ini.Text = o_mg_glo_bal.valida_numeros(tb_fila_ini.Text);
+            tb_fila_ini.Select(tb_fila_ini.Text.Length, 0);
+        }
+
+        private void tb_fila_fin_TextChanged(object sender, EventArgs e)
+        {
+            tb_fila_fin.Text = o_mg_glo_bal.valida_numeros(tb_fila_fin.Text);
+            tb_fila_fin.Select(tb_fila_fin.Text.Length, 0);
+        }
+
         #endregion
 
         
