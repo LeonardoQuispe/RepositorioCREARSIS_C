@@ -43,6 +43,7 @@ namespace CREARSIS
 
 
         #region METODOS
+
         string fu_ver_dat_imp()
         {
             char tmp1, tmp2;
@@ -85,10 +86,16 @@ namespace CREARSIS
 
             tmp1 = tb_col_ini.Text[0];
             tmp2 = tb_col_fin.Text[0];
-            if (Convert.ToInt32(tmp1) > Convert.ToInt32(tmp2))
+            if (Convert.ToInt32(tmp1) >= Convert.ToInt32(tmp2))
             {
                 tb_col_fin.Focus();
-                return "La columna final debe ser menor a la inicial";
+                return "La columna final debe ser mayor a la inicial";
+            }
+
+            if (int.Parse(tb_fila_ini.Text.Trim()) >= int.Parse(tb_fila_fin.Text.Trim()))
+            {
+                tb_fila_fin.Focus();
+                return "La fila final debe ser mayor a la inicial";
             }
 
             return null;
@@ -363,8 +370,6 @@ namespace CREARSIS
         }
 
 
-        #endregion
-
         private void tb_fila_ini_TextChanged(object sender, EventArgs e)
         {
             tb_fila_ini.Text = o_mg_glo_bal.valida_numeros(tb_fila_ini.Text);
@@ -395,6 +400,10 @@ namespace CREARSIS
                 }
             }
         }
+
+        #endregion
+
+
     }
 
 }

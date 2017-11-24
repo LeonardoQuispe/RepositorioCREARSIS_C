@@ -86,7 +86,7 @@ namespace CREARSIS
                 return "Columna final vacía";
             }
 
-            if (char.IsLetter(tb_col_ini.Text,0)==false)
+            if (char.IsLetter(tb_col_ini.Text, 0) == false)
             {
                 tb_col_ini.Focus();
                 return "Columna inicial inválida";
@@ -100,10 +100,16 @@ namespace CREARSIS
 
             tmp1 = tb_col_ini.Text[0];
             tmp2 = tb_col_fin.Text[0];
-            if (Convert.ToInt32(tmp1)>Convert.ToInt32(tmp2))
+            if (Convert.ToInt32(tmp1) >= Convert.ToInt32(tmp2))
             {
                 tb_col_fin.Focus();
-                return "La columna final debe ser menor a la inicial";
+                return "La columna final debe ser mayor a la inicial";
+            }
+
+            if (int.Parse(tb_fila_ini.Text.Trim()) >= int.Parse(tb_fila_fin.Text.Trim()))
+            {
+                tb_fila_fin.Focus();
+                return "La fila final debe ser mayor a la inicial";
             }
 
             return null;
@@ -377,9 +383,6 @@ namespace CREARSIS
             tb_fila_fin.Select(tb_fila_fin.Text.Length, 0);
         }
 
-
-        #endregion
-
         private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
@@ -399,5 +402,9 @@ namespace CREARSIS
                 }
             }
         }
+
+        #endregion
+
+
     }
 }
