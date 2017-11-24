@@ -377,8 +377,27 @@ namespace CREARSIS
             tb_fila_fin.Select(tb_fila_fin.Text.Length, 0);
         }
 
+
         #endregion
 
-        
+        private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                err_msg = fu_ver_dat_imp();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                fu_imp_xls();
+
+                if (app_xls != null)
+                {
+                    fu_cer_rar_xls();
+                }
+            }
+        }
     }
 }

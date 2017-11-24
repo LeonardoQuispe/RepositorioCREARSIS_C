@@ -34,19 +34,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_col_fin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_fila_fin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_col_ini = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_fila_ini = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_libro_xls = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.DIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
@@ -56,10 +56,10 @@
             // 
             this.groupBox1.Controls.Add(this.labelX2);
             this.groupBox1.Controls.Add(this.labelX1);
-            this.groupBox1.Controls.Add(this.textBoxX3);
-            this.groupBox1.Controls.Add(this.textBoxX4);
-            this.groupBox1.Controls.Add(this.textBoxX2);
-            this.groupBox1.Controls.Add(this.textBoxX1);
+            this.groupBox1.Controls.Add(this.tb_col_fin);
+            this.groupBox1.Controls.Add(this.tb_fila_fin);
+            this.groupBox1.Controls.Add(this.tb_col_ini);
+            this.groupBox1.Controls.Add(this.tb_fila_ini);
             this.groupBox1.Controls.Add(this.tb_libro_xls);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.dg_res_ult);
@@ -81,11 +81,11 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(232, 55);
+            this.labelX2.Location = new System.Drawing.Point(236, 55);
             this.labelX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(32, 17);
-            this.labelX2.TabIndex = 97;
+            this.labelX2.Size = new System.Drawing.Size(40, 21);
+            this.labelX2.TabIndex = 103;
             this.labelX2.Text = "Hasta:";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -98,81 +98,89 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(42, 55);
+            this.labelX1.Location = new System.Drawing.Point(45, 55);
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(35, 17);
-            this.labelX1.TabIndex = 96;
+            this.labelX1.Size = new System.Drawing.Size(43, 21);
+            this.labelX1.TabIndex = 102;
             this.labelX1.Text = "Desde:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // textBoxX3
+            // tb_col_fin
             // 
-            this.textBoxX3.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX3.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX3.Location = new System.Drawing.Point(331, 52);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(50, 22);
-            this.textBoxX3.TabIndex = 95;
-            this.textBoxX3.Text = "B";
-            // 
-            // textBoxX4
-            // 
-            this.textBoxX4.BackColor = System.Drawing.Color.White;
+            this.tb_col_fin.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX4.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX4.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX4.Location = new System.Drawing.Point(272, 52);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(53, 22);
-            this.textBoxX4.TabIndex = 94;
-            this.textBoxX4.Text = "30";
+            this.tb_col_fin.Border.Class = "TextBoxBorder";
+            this.tb_col_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_col_fin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tb_col_fin.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_col_fin.ForeColor = System.Drawing.Color.Black;
+            this.tb_col_fin.Location = new System.Drawing.Point(333, 53);
+            this.tb_col_fin.MaxLength = 1;
+            this.tb_col_fin.Name = "tb_col_fin";
+            this.tb_col_fin.PreventEnterBeep = true;
+            this.tb_col_fin.Size = new System.Drawing.Size(50, 26);
+            this.tb_col_fin.TabIndex = 101;
+            this.tb_col_fin.WatermarkText = "Col. Fin.";
             // 
-            // textBoxX2
+            // tb_fila_fin
             // 
-            this.textBoxX2.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX2.Location = new System.Drawing.Point(136, 52);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(50, 22);
-            this.textBoxX2.TabIndex = 93;
-            this.textBoxX2.Text = "A";
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.tb_fila_fin.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(88, 52);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(42, 22);
-            this.textBoxX1.TabIndex = 92;
-            this.textBoxX1.Text = "1";
+            this.tb_fila_fin.Border.Class = "TextBoxBorder";
+            this.tb_fila_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fila_fin.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_fila_fin.ForeColor = System.Drawing.Color.Black;
+            this.tb_fila_fin.Location = new System.Drawing.Point(274, 53);
+            this.tb_fila_fin.MaxLength = 5;
+            this.tb_fila_fin.Name = "tb_fila_fin";
+            this.tb_fila_fin.PreventEnterBeep = true;
+            this.tb_fila_fin.Size = new System.Drawing.Size(50, 26);
+            this.tb_fila_fin.TabIndex = 100;
+            this.tb_fila_fin.WatermarkText = "Fil. Fin.";
+            this.tb_fila_fin.TextChanged += new System.EventHandler(this.tb_fila_fin_TextChanged);
+            // 
+            // tb_col_ini
+            // 
+            this.tb_col_ini.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_col_ini.Border.Class = "TextBoxBorder";
+            this.tb_col_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_col_ini.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tb_col_ini.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_col_ini.ForeColor = System.Drawing.Color.Black;
+            this.tb_col_ini.Location = new System.Drawing.Point(142, 53);
+            this.tb_col_ini.MaxLength = 1;
+            this.tb_col_ini.Name = "tb_col_ini";
+            this.tb_col_ini.PreventEnterBeep = true;
+            this.tb_col_ini.Size = new System.Drawing.Size(50, 26);
+            this.tb_col_ini.TabIndex = 99;
+            this.tb_col_ini.WatermarkText = "Col. Ini.";
+            // 
+            // tb_fila_ini
+            // 
+            this.tb_fila_ini.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_fila_ini.Border.Class = "TextBoxBorder";
+            this.tb_fila_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fila_ini.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_fila_ini.ForeColor = System.Drawing.Color.Black;
+            this.tb_fila_ini.Location = new System.Drawing.Point(88, 53);
+            this.tb_fila_ini.MaxLength = 5;
+            this.tb_fila_ini.Name = "tb_fila_ini";
+            this.tb_fila_ini.PreventEnterBeep = true;
+            this.tb_fila_ini.Size = new System.Drawing.Size(50, 26);
+            this.tb_fila_ini.TabIndex = 98;
+            this.tb_fila_ini.WatermarkText = "Fil. Ini.";
+            this.tb_fila_ini.TextChanged += new System.EventHandler(this.tb_fila_ini_TextChanged);
             // 
             // tb_libro_xls
             // 
@@ -190,9 +198,10 @@
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(293, 22);
+            this.tb_libro_xls.Size = new System.Drawing.Size(293, 26);
             this.tb_libro_xls.TabIndex = 91;
             this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.tb_libro_xls_ButtonCustomClick);
+            this.tb_libro_xls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_libro_xls_KeyDown);
             // 
             // labelX3
             // 
@@ -206,7 +215,7 @@
             this.labelX3.Location = new System.Drawing.Point(5, 18);
             this.labelX3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(72, 17);
+            this.labelX3.Size = new System.Drawing.Size(89, 21);
             this.labelX3.TabIndex = 90;
             this.labelX3.Text = "Libro de Excel:";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -260,6 +269,26 @@
             this.dg_res_ult.TabIndex = 44;
             this.dg_res_ult.TabStop = false;
             // 
+            // DIA
+            // 
+            this.DIA.HeaderText = "         Fecha                   (A)";
+            this.DIA.Name = "DIA";
+            this.DIA.ReadOnly = true;
+            this.DIA.Width = 110;
+            // 
+            // Enero
+            // 
+            this.Enero.HeaderText = "    T.C - Bs/USD                  (B)";
+            this.Enero.Name = "Enero";
+            this.Enero.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "          Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            this.Observaciones.Width = 147;
+            // 
             // gb_ctr_frm
             // 
             this.gb_ctr_frm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
@@ -307,29 +336,9 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click_1);
             // 
-            // DIA
-            // 
-            this.DIA.HeaderText = "         Fecha                   (A)";
-            this.DIA.Name = "DIA";
-            this.DIA.ReadOnly = true;
-            this.DIA.Width = 110;
-            // 
-            // Enero
-            // 
-            this.Enero.HeaderText = "    T.C - Bs/USD                  (B)";
-            this.Enero.Name = "Enero";
-            this.Enero.ReadOnly = true;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "          Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            this.Observaciones.Width = 147;
-            // 
             // adm013_09
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 442);
             this.ControlBox = false;
@@ -353,12 +362,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.Controls.TextBoxX tb_libro_xls;
         private DevComponents.DotNetBar.LabelX labelX3;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
@@ -368,5 +371,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_col_fin;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_fila_fin;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_col_ini;
+        private DevComponents.DotNetBar.Controls.TextBoxX tb_fila_ini;
     }
 }

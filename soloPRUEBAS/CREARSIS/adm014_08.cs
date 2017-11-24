@@ -301,5 +301,18 @@ namespace CREARSIS
                 fu_cer_rar_xls();
             }
         }
+
+        private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                fu_imp_xls();
+
+                if (app_xls != null)
+                {
+                    fu_cer_rar_xls();
+                }
+            }
+        }
     }
 }

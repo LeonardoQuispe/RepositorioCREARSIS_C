@@ -43,6 +43,56 @@ namespace CREARSIS
 
 
         #region METODOS
+        string fu_ver_dat_imp()
+        {
+            char tmp1, tmp2;
+
+            if (tb_fila_ini.Text.Trim() == "")
+            {
+                tb_fila_ini.Focus();
+                return "Fila inicial vacía";
+            }
+
+            if (tb_fila_fin.Text.Trim() == "")
+            {
+                tb_fila_fin.Focus();
+                return "Fila final vacía";
+            }
+
+            if (tb_col_ini.Text.Trim() == "")
+            {
+                tb_col_ini.Focus();
+                return "Columna inicial vacía";
+            }
+
+            if (tb_col_fin.Text.Trim() == "")
+            {
+                tb_col_fin.Focus();
+                return "Columna final vacía";
+            }
+
+            if (char.IsLetter(tb_col_ini.Text, 0) == false)
+            {
+                tb_col_ini.Focus();
+                return "Columna inicial inválida";
+            }
+
+            if (char.IsLetter(tb_col_fin.Text, 0) == false)
+            {
+                tb_col_fin.Focus();
+                return "Columna final inválida";
+            }
+
+            tmp1 = tb_col_ini.Text[0];
+            tmp2 = tb_col_fin.Text[0];
+            if (Convert.ToInt32(tmp1) > Convert.ToInt32(tmp2))
+            {
+                tb_col_fin.Focus();
+                return "La columna final debe ser menor a la inicial";
+            }
+
+            return null;
+        }
 
         string fu_ver_dat()
         {
@@ -65,7 +115,17 @@ namespace CREARSIS
 
             try
             {
+                //Ruta del libro de Excel
                 string ruta = "";
+
+                //Variables de obtencion de fila y columna
+                char tmp_char;
+                int fila_ini, fila_fin, col_ini, col_fin, nro_fila, nro_col;
+
+                //Declarando varibles temporales y de validacion
+                DateTime tmp1;
+                decimal tmp2;
+                string fecha, tc, mensaje;
 
 
                 OpenFileDialog abrir_archivo = new OpenFileDialog();
@@ -73,6 +133,7 @@ namespace CREARSIS
                 abrir_archivo.Title = "Seleccione el Libro de Excel";
                 if (abrir_archivo.ShowDialog() == DialogResult.OK)
                 {
+
                     //Obtiene la Ruta del Libro de Excel Seleccionado
                     ruta = abrir_archivo.FileName;
 
@@ -85,9 +146,38 @@ namespace CREARSIS
                     //Seleccionando la primera hoja del libro de Excel elejido
                     hoja_xls = libro_xls.ActiveSheet;
 
-                    //asignando el rango de filas y columnas usadas en la hoja de excel
+                    ////asignando el rango de filas y columnas usadas en la hoja de excel
                     rango_xls = hoja_xls.UsedRange;
 
+
+
+
+
+
+                    //Obteniendo fila inicial
+                    fila_ini = int.Parse(tb_fila_ini.Text.Trim());
+
+                    //Obteniendo el numero ASCII equivalente a la letra ingresada para luego
+                    //restarle 64 y usarla como indice al recuperar datos de Excel
+                    tmp_char = Convert.ToChar(tb_col_ini.Text);
+                    col_ini = Convert.ToInt32(tmp_char) - 64;
+
+                    //Obteniendo fila final
+                    fila_fin = int.Parse(tb_fila_fin.Text.Trim());
+
+                    //Obteniendo el numero ASCII equivalente a la letra ingresada para luego
+                    //restarle 64 y usarla como indice al recuperar datos de Excel
+                    tmp_char = Convert.ToChar(tb_col_fin.Text);
+                    col_fin = Convert.ToInt32(tmp_char) - 64;
+
+                    //obteniendo el numero total de filas y columnas
+                    nro_fila = fila_fin - fila_ini + 1;
+                    nro_col = col_fin - col_ini + 1;
+
+                    if (nro_col != 2)
+                    {
+                        MessageBoxEx.Show("El número de columnas seleccionadas es incorrecto, sólo se mostrarán las columnas válidas.", "Nuevo T.C. Bs/Ufv por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                     Limpiar();
 
@@ -95,30 +185,21 @@ namespace CREARSIS
                     //recuperando el nombre del libro/ruta de Excel Seleccionado
                     tb_libro_xls.Text = ruta;
 
-                    //Recuperando el numero de fulas usadas en el libro de Excel
-                    int filas = rango_xls.Rows.Count;
 
-                    //Declarando varibles temporales y de validacion
-                    DateTime tmp1;
-                    decimal tmp2;
-                    string fecha;
-                    string tc;
-                    string mensaje;
-
-                    //Cargando COntenido
-                    for (int i = 0; i < filas; i++)
+                    //cargando el contenido 
+                    for (int i = 0; i < nro_fila; i++)
                     {
                         dg_res_ult.Rows.Add();
                         mensaje = "";
 
-                        //recupera fecha
-                        fecha = Convert.ToString(rango_xls[i + 1, "A"].Value ?? "");
-                        //Recupera TC
-                        tc = Convert.ToString(rango_xls[i + 1, "B"].Value ?? "").Replace(',', '.');
 
+                        //recupera fecha
+                        fecha = Convert.ToString(rango_xls[fila_ini + i, col_ini].Value ?? "");
+                        //Recupera TC
+                        tc = Convert.ToString(rango_xls[fila_ini + i, col_ini + 1].Value ?? "").Replace(',', '.');
 
                         //valida fecha
-                        if (DateTime.TryParse(fecha, out tmp1) == false)
+                        if (DateTime.TryParse(fecha, out tmp1) == false || fecha.Trim() == "")
                         {
                             dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                             mensaje = "Fecha Inválida";
@@ -129,7 +210,7 @@ namespace CREARSIS
                             continue;
                         }
                         //Valida que sea decimal y el tamaño menor a 7 caracteres 
-                        else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 4)
+                        else if (decimal.TryParse(tc, out tmp2) == false || tmp2 >= 3 || tc.Length > 7 || tc.Trim() == "")
                         {
                             dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                             mensaje = "T.C. Inválido";
@@ -139,6 +220,7 @@ namespace CREARSIS
                         dg_res_ult[1, i].Value = tc;
                         dg_res_ult[2, i].Value = mensaje;
                     }
+
                 }
             }
             catch (Exception ex)
@@ -200,6 +282,12 @@ namespace CREARSIS
         }
         private void tb_libro_xls_ButtonCustomClick(object sender, EventArgs e)
         {
+            err_msg = fu_ver_dat_imp();
+            if (err_msg != null)
+            {
+                MessageBoxEx.Show(err_msg, "Error T.C. Bs/USD por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             fu_imp_xls();
 
             if (app_xls != null)
@@ -274,9 +362,39 @@ namespace CREARSIS
             }
         }
 
+
         #endregion
 
+        private void tb_fila_ini_TextChanged(object sender, EventArgs e)
+        {
+            tb_fila_ini.Text = o_mg_glo_bal.valida_numeros(tb_fila_ini.Text);
+            tb_fila_ini.Select(tb_fila_ini.Text.Length, 0);
+        }
 
+        private void tb_fila_fin_TextChanged(object sender, EventArgs e)
+        {
+            tb_fila_fin.Text = o_mg_glo_bal.valida_numeros(tb_fila_fin.Text);
+            tb_fila_fin.Select(tb_fila_fin.Text.Length, 0);
+        }
+
+        private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                err_msg = fu_ver_dat_imp();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error T.C. Bs/USD por Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                fu_imp_xls();
+
+                if (app_xls != null)
+                {
+                    fu_cer_rar_xls();
+                }
+            }
+        }
     }
 
 }

@@ -313,5 +313,25 @@ namespace CREARSIS
                 }
             }
         }
+
+        private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                if (cb_tip_cam.Text == "")
+                {
+                    MessageBoxEx.Show("Seleccione un T.C. ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    fu_imp_xls();
+
+                    if (app_xls != null)
+                    {
+                        fu_cer_rar_xls();
+                    }
+                }
+            }
+        }
     }
 }
