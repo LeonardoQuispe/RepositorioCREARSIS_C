@@ -217,7 +217,7 @@ namespace CREARSIS
                             continue;
                         }
                         //Valida que sea decimal y el tamaño menor a 7 caracteres 
-                        else if (decimal.TryParse(tc, out tmp2) == false || tmp2 >= 10 || tc.Length > 4 || tc.Trim() == "")
+                        else if (decimal.TryParse(tc, out tmp2) == false || tc.Length > 4 || tc.Trim() == "")
                         {
                             dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                             mensaje = "T.C. Inválido";
