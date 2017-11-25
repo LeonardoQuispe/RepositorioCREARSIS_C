@@ -203,7 +203,7 @@ namespace CREARSIS
                         //recupera fecha
                         fecha = Convert.ToString(rango_xls[fila_ini + i, col_ini].Value ?? "");
                         //Recupera TC
-                        tc = Convert.ToString(rango_xls[fila_ini + i, col_ini + 1].Value ?? "").Replace(',', '.');
+                        tc = Convert.ToString(rango_xls[fila_ini + i, col_ini + 1].Value ?? "");
 
                         //valida fecha
                         if (DateTime.TryParse(fecha, out tmp1) == false || fecha.Trim() == "")
@@ -217,7 +217,7 @@ namespace CREARSIS
                             continue;
                         }
                         //Valida que sea decimal y el tamaño menor a 7 caracteres 
-                        else if (decimal.TryParse(tc, out tmp2) == false || tmp2 >= 3 || tc.Length > 7 || tc.Trim() == "")
+                        else if (decimal.TryParse(tc, out tmp2) == false || tmp2 >= 10 || tc.Length > 4 || tc.Trim() == "")
                         {
                             dg_res_ult.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                             mensaje = "T.C. Inválido";
@@ -337,7 +337,7 @@ namespace CREARSIS
                         if (dg_res_ult[2, i].Value.ToString() == "")
                         {
                             fec_aux = Convert.ToDateTime(dg_res_ult[0, i].Value.ToString());
-                            val_aux = dg_res_ult[1, i].Value.ToString().Replace(",", "."); ;
+                            val_aux = dg_res_ult[1, i].Value.ToString(); ;
 
                             //Borra datos de la fecha
                             o_adm013._06(fec_aux.ToShortDateString());
