@@ -94,7 +94,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE adm005 ");
                 vv_str_sql.AppendLine(" SET va_nro_ini = " + nro_ini + ", va_nro_fin =" + nro_fin + ", ");
-                vv_str_sql.AppendLine(" va_fec_ini = '" + fec_ini + "' , va_fec_fin = '" + fec_fin + "', ");
+                vv_str_sql.AppendLine(" va_fec_ini = '" + fec_ini.ToShortDateString() + "' , va_fec_fin = '" + fec_fin.ToShortDateString() + "', ");
                 vv_str_sql.AppendLine(" va_con_tad =" + con_tad);
                 vv_str_sql.AppendLine(" WHERE va_cod_doc = '" + cod_doc + "' AND va_nro_tal= " + nro_tal + " AND va_cod_ges= " + cod_ges);
 

@@ -199,12 +199,6 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
-        //[Menu NUMERACIONES]
-        private void m_ads002_Click(object sender, EventArgs e)
-        {
-            adm005_01 obj = new adm005_01();
-            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
-        }
         //[Menu SUCURSALES]
         private void mn_suc_urs_Click(object sender, EventArgs e)
         {
