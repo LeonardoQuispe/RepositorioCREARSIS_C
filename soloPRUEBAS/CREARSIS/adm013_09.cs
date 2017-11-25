@@ -203,7 +203,7 @@ namespace CREARSIS
                         //recupera fecha
                         fecha = Convert.ToString(rango_xls[fila_ini + i, col_ini].Value ?? "");
                         //Recupera TC
-                        tc = Convert.ToString(rango_xls[fila_ini + i, col_ini + 1].Value ?? "");
+                        tc = Convert.ToString(rango_xls[fila_ini + i, col_ini + 1].Value ?? "").Replace(',', '.');
 
                         //valida fecha
                         if (DateTime.TryParse(fecha, out tmp1) == false || fecha.Trim() == "")
