@@ -123,7 +123,8 @@
             this.tb_col_fin.PreventEnterBeep = true;
             this.tb_col_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_col_fin.TabIndex = 101;
-            this.tb_col_fin.WatermarkText = "Col. Fin.";
+            this.tb_col_fin.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_col_fin.WatermarkText = "B";
             // 
             // tb_fila_fin
             // 
@@ -141,7 +142,8 @@
             this.tb_fila_fin.PreventEnterBeep = true;
             this.tb_fila_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_fin.TabIndex = 100;
-            this.tb_fila_fin.WatermarkText = "Fil. Fin.";
+            this.tb_fila_fin.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fila_fin.WatermarkText = "500";
             this.tb_fila_fin.TextChanged += new System.EventHandler(this.tb_fila_fin_TextChanged);
             // 
             // tb_col_ini
@@ -161,7 +163,8 @@
             this.tb_col_ini.PreventEnterBeep = true;
             this.tb_col_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_col_ini.TabIndex = 99;
-            this.tb_col_ini.WatermarkText = "Col. Ini.";
+            this.tb_col_ini.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_col_ini.WatermarkText = "A";
             // 
             // tb_fila_ini
             // 
@@ -179,7 +182,8 @@
             this.tb_fila_ini.PreventEnterBeep = true;
             this.tb_fila_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_ini.TabIndex = 98;
-            this.tb_fila_ini.WatermarkText = "Fil. Ini.";
+            this.tb_fila_ini.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fila_ini.WatermarkText = "2";
             this.tb_fila_ini.TextChanged += new System.EventHandler(this.tb_fila_ini_TextChanged);
             // 
             // tb_libro_xls

@@ -48,51 +48,34 @@ namespace CREARSIS
         {
             char tmp1, tmp2;
 
-            if (tb_fila_ini.Text.Trim() == "")
+            if (tb_col_ini.Text.Trim() != "")
             {
-                tb_fila_ini.Focus();
-                return "Fila inicial vacía";
+                if (char.IsLetter(tb_col_ini.Text, 0) == false)
+                {
+                    tb_col_ini.Focus();
+                    return "Columna inicial inválida";
+                }
             }
 
-            if (tb_fila_fin.Text.Trim() == "")
+            if (tb_col_fin.Text.Trim() != "")
             {
-                tb_fila_fin.Focus();
-                return "Fila final vacía";
+                if (char.IsLetter(tb_col_fin.Text, 0) == false)
+                {
+                    tb_col_fin.Focus();
+                    return "Columna final inválida";
+                }
             }
 
-            if (tb_col_ini.Text.Trim() == "")
-            {
-                tb_col_ini.Focus();
-                return "Columna inicial vacía";
-            }
 
-            if (tb_col_fin.Text.Trim() == "")
-            {
-                tb_col_fin.Focus();
-                return "Columna final vacía";
-            }
-
-            if (char.IsLetter(tb_col_ini.Text, 0) == false)
-            {
-                tb_col_ini.Focus();
-                return "Columna inicial inválida";
-            }
-
-            if (char.IsLetter(tb_col_fin.Text, 0) == false)
-            {
-                tb_col_fin.Focus();
-                return "Columna final inválida";
-            }
-
-            tmp1 = tb_col_ini.Text[0];
-            tmp2 = tb_col_fin.Text[0];
+            tmp1 = Convert.ToChar(string.IsNullOrWhiteSpace(tb_col_ini.Text) ? tb_col_ini.WatermarkText : tb_col_ini.Text);
+            tmp2 = Convert.ToChar(string.IsNullOrWhiteSpace(tb_col_fin.Text) ? tb_col_fin.WatermarkText : tb_col_fin.Text);
             if (Convert.ToInt32(tmp1) >= Convert.ToInt32(tmp2))
             {
                 tb_col_fin.Focus();
                 return "La columna final debe ser mayor a la inicial";
             }
 
-            if (int.Parse(tb_fila_ini.Text.Trim()) >= int.Parse(tb_fila_fin.Text.Trim()))
+            if (int.Parse(string.IsNullOrWhiteSpace(tb_fila_ini.Text) ? tb_fila_ini.WatermarkText : tb_fila_ini.Text) >= int.Parse(string.IsNullOrWhiteSpace(tb_fila_fin.Text) ? tb_fila_fin.WatermarkText : tb_fila_fin.Text))
             {
                 tb_fila_fin.Focus();
                 return "La fila final debe ser mayor a la inicial";
@@ -162,19 +145,26 @@ namespace CREARSIS
 
 
                     //Obteniendo fila inicial
-                    fila_ini = int.Parse(tb_fila_ini.Text.Trim());
+                    fila_ini = int.Parse(string.IsNullOrWhiteSpace(tb_fila_ini.Text) ? tb_fila_ini.WatermarkText : tb_fila_ini.Text);
 
                     //Obteniendo el numero ASCII equivalente a la letra ingresada para luego
                     //restarle 64 y usarla como indice al recuperar datos de Excel
-                    tmp_char = Convert.ToChar(tb_col_ini.Text);
+                    tmp_char = Convert.ToChar(string.IsNullOrWhiteSpace(tb_col_ini.Text) ? tb_col_ini.WatermarkText : tb_col_ini.Text);
                     col_ini = Convert.ToInt32(tmp_char) - 64;
 
-                    //Obteniendo fila final
-                    fila_fin = int.Parse(tb_fila_fin.Text.Trim());
+                    //Obteniendo fila final y comparando el numero de filas usadas
+                    if (rango_xls.Rows.Count < 500 && string.IsNullOrWhiteSpace(tb_fila_fin.Text))
+                    {
+                        fila_fin = rango_xls.Rows.Count;
+                    }
+                    else
+                    {
+                        fila_fin = int.Parse(tb_fila_fin.Text);
+                    }
 
                     //Obteniendo el numero ASCII equivalente a la letra ingresada para luego
                     //restarle 64 y usarla como indice al recuperar datos de Excel
-                    tmp_char = Convert.ToChar(tb_col_fin.Text);
+                    tmp_char = Convert.ToChar(string.IsNullOrWhiteSpace(tb_col_fin.Text) ? tb_col_fin.WatermarkText : tb_col_fin.Text);
                     col_fin = Convert.ToInt32(tmp_char) - 64;
 
                     //obteniendo el numero total de filas y columnas
