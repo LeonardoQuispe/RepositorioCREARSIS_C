@@ -159,7 +159,7 @@ namespace CREARSIS
                     }
                     else
                     {
-                        fila_fin = int.Parse(tb_fila_fin.Text);
+                        fila_fin = int.Parse(string.IsNullOrWhiteSpace(tb_fila_fin.Text) ? tb_fila_fin.WatermarkText : tb_fila_fin.Text);
                     }
 
                     //Obteniendo el numero ASCII equivalente a la letra ingresada para luego
