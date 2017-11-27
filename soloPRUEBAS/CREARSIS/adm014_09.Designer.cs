@@ -84,7 +84,7 @@
             this.labelX2.Location = new System.Drawing.Point(242, 60);
             this.labelX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(40, 21);
+            this.labelX2.Size = new System.Drawing.Size(32, 17);
             this.labelX2.TabIndex = 97;
             this.labelX2.Text = "Hasta:";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -101,7 +101,7 @@
             this.labelX1.Location = new System.Drawing.Point(51, 60);
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(43, 21);
+            this.labelX1.Size = new System.Drawing.Size(35, 17);
             this.labelX1.TabIndex = 96;
             this.labelX1.Text = "Desde:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -121,7 +121,7 @@
             this.tb_col_fin.MaxLength = 1;
             this.tb_col_fin.Name = "tb_col_fin";
             this.tb_col_fin.PreventEnterBeep = true;
-            this.tb_col_fin.Size = new System.Drawing.Size(50, 26);
+            this.tb_col_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_col_fin.TabIndex = 95;
             this.tb_col_fin.WatermarkText = "Col. Fin.";
             // 
@@ -139,7 +139,7 @@
             this.tb_fila_fin.MaxLength = 5;
             this.tb_fila_fin.Name = "tb_fila_fin";
             this.tb_fila_fin.PreventEnterBeep = true;
-            this.tb_fila_fin.Size = new System.Drawing.Size(50, 26);
+            this.tb_fila_fin.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_fin.TabIndex = 94;
             this.tb_fila_fin.WatermarkText = "Fil. Fin.";
             this.tb_fila_fin.TextChanged += new System.EventHandler(this.tb_fila_fin_TextChanged);
@@ -159,7 +159,7 @@
             this.tb_col_ini.MaxLength = 1;
             this.tb_col_ini.Name = "tb_col_ini";
             this.tb_col_ini.PreventEnterBeep = true;
-            this.tb_col_ini.Size = new System.Drawing.Size(50, 26);
+            this.tb_col_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_col_ini.TabIndex = 93;
             this.tb_col_ini.WatermarkText = "Col. Ini.";
             // 
@@ -177,7 +177,7 @@
             this.tb_fila_ini.MaxLength = 5;
             this.tb_fila_ini.Name = "tb_fila_ini";
             this.tb_fila_ini.PreventEnterBeep = true;
-            this.tb_fila_ini.Size = new System.Drawing.Size(50, 26);
+            this.tb_fila_ini.Size = new System.Drawing.Size(50, 22);
             this.tb_fila_ini.TabIndex = 92;
             this.tb_fila_ini.WatermarkText = "Fil. Ini.";
             this.tb_fila_ini.TextChanged += new System.EventHandler(this.tb_fila_ini_TextChanged);
@@ -198,7 +198,7 @@
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(299, 26);
+            this.tb_libro_xls.Size = new System.Drawing.Size(299, 22);
             this.tb_libro_xls.TabIndex = 91;
             this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.tb_libro_xls_ButtonCustomClick);
             this.tb_libro_xls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_libro_xls_KeyDown);
@@ -211,11 +211,12 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX3.ForeColor = System.Drawing.Color.Black;
             this.labelX3.Location = new System.Drawing.Point(14, 22);
             this.labelX3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(89, 21);
+            this.labelX3.Size = new System.Drawing.Size(72, 17);
             this.labelX3.TabIndex = 90;
             this.labelX3.Text = "Libro de Excel:";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -339,7 +340,7 @@
             // adm014_09
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(406, 443);

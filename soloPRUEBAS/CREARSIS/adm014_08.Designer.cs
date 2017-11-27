@@ -213,6 +213,7 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX6.ForeColor = System.Drawing.Color.Black;
             this.labelX6.Location = new System.Drawing.Point(600, 24);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -255,7 +256,7 @@
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(346, 26);
+            this.tb_libro_xls.Size = new System.Drawing.Size(346, 22);
             this.tb_libro_xls.TabIndex = 41;
             this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.tb_libro_xls_ButtonCustomClick);
             this.tb_libro_xls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_libro_xls_KeyDown);
@@ -268,11 +269,12 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX1.ForeColor = System.Drawing.Color.Black;
             this.labelX1.Location = new System.Drawing.Point(24, 27);
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(89, 21);
+            this.labelX1.Size = new System.Drawing.Size(72, 17);
             this.labelX1.TabIndex = 40;
             this.labelX1.Text = "Libro de Excel:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -291,7 +293,7 @@
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
-            this.tb_año_xls.Size = new System.Drawing.Size(100, 26);
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
             this.tb_año_xls.TabIndex = 39;
             // 
             // gb_ctr_frm
@@ -344,7 +346,7 @@
             // adm014_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(783, 421);

@@ -123,7 +123,7 @@
             this.tb_año_xls.Name = "tb_año_xls";
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
-            this.tb_año_xls.Size = new System.Drawing.Size(100, 26);
+            this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
             this.tb_año_xls.TabIndex = 39;
             // 
             // tb_libro_xls
@@ -142,7 +142,7 @@
             this.tb_libro_xls.Name = "tb_libro_xls";
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
-            this.tb_libro_xls.Size = new System.Drawing.Size(346, 26);
+            this.tb_libro_xls.Size = new System.Drawing.Size(346, 22);
             this.tb_libro_xls.TabIndex = 37;
             this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.fu_imp_exc);
             this.tb_libro_xls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_libro_xls_KeyDown);
@@ -168,6 +168,7 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.label1.Location = new System.Drawing.Point(523, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 22);
@@ -182,13 +183,13 @@
             this.cb_tip_cam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_tip_cam.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_cam.FormattingEnabled = true;
-            this.cb_tip_cam.ItemHeight = 20;
+            this.cb_tip_cam.ItemHeight = 16;
             this.cb_tip_cam.Items.AddRange(new object[] {
             this.Venta,
             this.Compra});
             this.cb_tip_cam.Location = new System.Drawing.Point(624, 27);
             this.cb_tip_cam.Name = "cb_tip_cam";
-            this.cb_tip_cam.Size = new System.Drawing.Size(100, 26);
+            this.cb_tip_cam.Size = new System.Drawing.Size(100, 22);
             this.cb_tip_cam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_cam.TabIndex = 40;
             // 
@@ -357,8 +358,9 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(72, 59);
+            this.labelX6.Location = new System.Drawing.Point(72, 54);
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 27);
@@ -374,11 +376,12 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(19, 27);
+            this.labelX4.Location = new System.Drawing.Point(38, 27);
             this.labelX4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(89, 21);
+            this.labelX4.Size = new System.Drawing.Size(72, 17);
             this.labelX4.TabIndex = 34;
             this.labelX4.Text = "Libro de Excel:";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -386,7 +389,7 @@
             // adm013_08
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(782, 443);

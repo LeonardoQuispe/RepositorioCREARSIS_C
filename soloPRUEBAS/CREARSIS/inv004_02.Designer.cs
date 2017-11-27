@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_cod_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
@@ -54,39 +54,6 @@
             this.GroupBox1.TabIndex = 70;
             this.GroupBox1.TabStop = false;
             // 
-            // tb_cod_mar
-            // 
-            this.tb_cod_mar.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_mar.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_cod_mar.Border.Class = "TextBoxBorder";
-            this.tb_cod_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_mar.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_mar.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_mar.MaxLength = 9000;
-            this.tb_cod_mar.Name = "tb_cod_mar";
-            this.tb_cod_mar.PreventEnterBeep = true;
-            this.tb_cod_mar.Size = new System.Drawing.Size(62, 26);
-            this.tb_cod_mar.TabIndex = 10;
-            // 
-            // LabelX1
-            // 
-            this.LabelX1.AutoSize = true;
-            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(15, 21);
-            this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(47, 21);
-            this.LabelX1.TabIndex = 1;
-            this.LabelX1.Text = "Codigo";
-            // 
             // tb_nom_mar
             // 
             this.tb_nom_mar.BackColor = System.Drawing.Color.White;
@@ -102,7 +69,7 @@
             this.tb_nom_mar.MaxLength = 9000;
             this.tb_nom_mar.Name = "tb_nom_mar";
             this.tb_nom_mar.PreventEnterBeep = true;
-            this.tb_nom_mar.Size = new System.Drawing.Size(275, 26);
+            this.tb_nom_mar.Size = new System.Drawing.Size(275, 22);
             this.tb_nom_mar.TabIndex = 12;
             // 
             // labelX2
@@ -113,12 +80,47 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(53, 21);
+            this.labelX2.Size = new System.Drawing.Size(43, 17);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
+            // 
+            // tb_cod_mar
+            // 
+            this.tb_cod_mar.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_mar.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_cod_mar.Border.Class = "TextBoxBorder";
+            this.tb_cod_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_mar.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_mar.Location = new System.Drawing.Point(69, 19);
+            this.tb_cod_mar.MaxLength = 9000;
+            this.tb_cod_mar.Name = "tb_cod_mar";
+            this.tb_cod_mar.PreventEnterBeep = true;
+            this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_mar.TabIndex = 10;
+            // 
+            // LabelX1
+            // 
+            this.LabelX1.AutoSize = true;
+            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
+            this.LabelX1.ForeColor = System.Drawing.Color.Black;
+            this.LabelX1.Location = new System.Drawing.Point(15, 21);
+            this.LabelX1.Name = "LabelX1";
+            this.LabelX1.Size = new System.Drawing.Size(38, 17);
+            this.LabelX1.TabIndex = 1;
+            this.LabelX1.Text = "Codigo";
             // 
             // GroupBox2
             // 
@@ -165,7 +167,7 @@
             // inv004_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(362, 123);
