@@ -61,7 +61,7 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO inv004 VALUES");
-                vv_str_sql.AppendLine(" ('" + cod_mar + "', '" + cod_mar + "', 'H')");
+                vv_str_sql.AppendLine(" (" + cod_mar + ", '" + nom_mar + "', 'H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());                
             }
@@ -83,8 +83,8 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv004 SET");
-                vv_str_sql.AppendLine(" va_nom_mar='" + cod_mar + "'");
-                vv_str_sql.AppendLine(" WHERE va_cod_mod = '" + nom_mar+"'");
+                vv_str_sql.AppendLine(" va_nom_mar='" + nom_mar + "'");
+                vv_str_sql.AppendLine(" WHERE va_cod_mod =" + cod_mar);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -100,7 +100,7 @@ namespace DATOS.ADM
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <param name="est_ado">Estado de la Marca</param>
         /// <returns></returns>
-        public DataTable _04(string cod_mar, string est_ado)
+        public DataTable _04(int cod_mar, string est_ado)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv004 SET ");
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_mar =" + cod_mar);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -124,13 +124,13 @@ namespace DATOS.ADM
         /// </summary>
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <returns></returns>
-        public DataTable _05(string cod_mar)
+        public DataTable _05(int cod_mar)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv004 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_mar = " + cod_mar);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -146,13 +146,13 @@ namespace DATOS.ADM
         /// </summary>
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <returns></returns>
-        public DataTable _06(string cod_mar)
+        public DataTable _06(int cod_mar)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" DELETE inv004 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_mar = " + cod_mar);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
