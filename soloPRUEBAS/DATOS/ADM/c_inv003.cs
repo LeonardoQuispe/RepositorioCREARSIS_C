@@ -8,10 +8,10 @@ namespace DATOS.ADM
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-    /// Clase MARCAS
+    /// Clase UNIDADES DE MEDIDA
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
     /// </summary>
-    public class c_inv004
+    public class c_inv003
     {
         /// <summary>
         /// Objeto de la clase conexion
@@ -23,7 +23,7 @@ namespace DATOS.ADM
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Funcion "Buscar MARCA"
+        /// Funcion "Buscar UNIDAD"
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
@@ -33,12 +33,12 @@ namespace DATOS.ADM
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" select * from inv004  ");
+                vv_str_sql.AppendLine(" select * from inv003  ");
 
                 switch (prm_bus)
                 {
-                    case 1: vv_str_sql.AppendLine(" where va_cod_mar like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" where va_nom_mar like '" + val_bus + "%' "); break;
+                    case 1: vv_str_sql.AppendLine(" where va_cod_umd like '" + val_bus + "%' "); break;
+                    case 2: vv_str_sql.AppendLine(" where va_nom_umd like '" + val_bus + "%' "); break;
                 }
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -50,41 +50,18 @@ namespace DATOS.ADM
         }
 
         /// <summary>
-        /// funcion "Registrar MARCA"
+        /// funcion "Registrar UNIDAD"
         /// </summary>
-        /// <param name="cod_mar">Codigo de la Marca</param>
-        /// <param name="nom_mar">Nombre de la Marca</param>
+        /// <param name="cod_umd">Codigo de la Unidad</param>
+        /// <param name="nom_umd">Nombre de la Unidad</param>
         /// <returns></returns>
-        public DataTable _02(int cod_mar, string nom_mar)
+        public DataTable _02(int cod_umd, string nom_umd)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" INSERT INTO inv004 VALUES");
-                vv_str_sql.AppendLine(" ('" + cod_mar + "', '" + cod_mar + "', 'H')");
-
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());                
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        /// <summary>
-        /// funcion "Modifica MARCA"
-        /// </summary>
-        /// <param name="cod_mar">Codigo de la Marca</param>
-        /// <param name="nom_mar">Nombre de la Marca</param>
-        /// <returns></returns>
-        public DataTable _03(int cod_mar, string nom_mar)
-        {
-            try
-            {
-                vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" UPDATE inv004 SET");
-                vv_str_sql.AppendLine(" va_nom_mar='" + cod_mar + "'");
-                vv_str_sql.AppendLine(" WHERE va_cod_mod = '" + nom_mar+"'");
+                vv_str_sql.AppendLine(" INSERT INTO inv003 VALUES");
+                vv_str_sql.AppendLine(" ('" + cod_umd + "', '" + cod_umd + "', 'H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -95,20 +72,43 @@ namespace DATOS.ADM
         }
 
         /// <summary>
-        /// funcion "Habilita/Deshabilita MARCA"
+        /// funcion "Modifica UNIDAD"
         /// </summary>
-        /// <param name="cod_mar">Codigo de la Marca</param>
-        /// <param name="est_ado">Estado de la Marca</param>
+        /// <param name="cod_umd">Codigo de la Unidad</param>
+        /// <param name="nom_umd">Nombre de la Unidad</param>
         /// <returns></returns>
-        public DataTable _04(string cod_mar, string est_ado)
+        public DataTable _03(int cod_umd, string nom_umd)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" UPDATE inv003 SET");
+                vv_str_sql.AppendLine(" va_nom_umd='" + cod_umd + "'");
+                vv_str_sql.AppendLine(" WHERE va_cod_mod = '" + nom_umd + "'");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// funcion "Habilita/Deshabilita UNIDAD"
+        /// </summary>
+        /// <param name="cod_umd">Codigo de la Unidad</param>
+        /// <param name="est_ado">Estado de la Unidad</param>
+        /// <returns></returns>
+        public DataTable _04(string cod_umd, string est_ado)
         {
             try
             {
 
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" UPDATE inv004 SET ");
+                vv_str_sql.AppendLine(" UPDATE inv003 SET ");
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_umd = '" + cod_umd + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -120,17 +120,17 @@ namespace DATOS.ADM
         }
 
         /// <summary>
-        /// funcion "Consulta MARCA"
+        /// funcion "Consulta UNIDAD"
         /// </summary>
-        /// <param name="cod_mar">Codigo de la Marca</param>
+        /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <returns></returns>
-        public DataTable _05(string cod_mar)
+        public DataTable _05(string cod_umd)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT * fROM inv004 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" SELECT * fROM inv003 ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_umd = '" + cod_umd + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -142,17 +142,17 @@ namespace DATOS.ADM
         }
 
         /// <summary>
-        /// funcion "Elimina MARCA"
+        /// funcion "Elimina UNIDAD"
         /// </summary>
-        /// <param name="cod_mar">Codigo de la Marca</param>
+        /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <returns></returns>
-        public DataTable _06(string cod_mar)
+        public DataTable _06(string cod_umd)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" DELETE inv004 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_mar = '" + cod_mar + "'");
+                vv_str_sql.AppendLine(" DELETE inv003 ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_umd = '" + cod_umd + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 

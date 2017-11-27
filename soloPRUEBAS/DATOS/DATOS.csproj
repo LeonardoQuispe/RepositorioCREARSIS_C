@@ -54,6 +54,7 @@
     <Compile Include="ADM\c_ctb001.cs" />
     <Compile Include="ADM\c_ctb006.cs" />
     <Compile Include="ADM\c_ctb007.cs" />
+    <Compile Include="ADM\c_inv003.cs" />
     <Compile Include="ADM\c_inv004.cs" />
     <Compile Include="ADM\c_seg001.cs" />
     <Compile Include="ADM\c_seg020.cs" />

@@ -29,7 +29,6 @@ namespace DATOS.ADM
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
         /// <param name="est_bus">Estado del DOCUMENTO (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )</param>
         /// <returns></returns>
-
         public DataTable _01(string val_bus, int prm_bus, int est_bus)
         {
             try
@@ -66,7 +65,6 @@ namespace DATOS.ADM
         /// <param name="nom_doc">Nombre del Documento</param>
         /// <param name="des_doc">Descripcion del Documento</param>
         /// <returns></returns>
-
         public DataTable _02(int cod_mod, string cod_doc, string nom_doc, string des_doc)
         {
             try
