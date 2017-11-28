@@ -20,7 +20,7 @@ namespace CREARSIS
         #region VARIABLES
 
         public dynamic vg_frm_pad;
-        DataTable c_inv004;
+        DataTable tab_inv004;
         DataTable tabla;
 
         #endregion
@@ -53,42 +53,46 @@ namespace CREARSIS
         }
         public void fu_bus_car(string va_tex_bus, int va_par_ame)
         {
-            try
-            {
-                tabla = o_inv004._01(va_tex_bus, va_par_ame);
+            int va_ind_ice = 0;
+            string va_est_ado = "";
 
-                if (tabla.Rows.Count == 0)
+            dg_res_ult.Rows.Clear();
+
+            tab_inv004 = o_inv004._01(va_tex_bus, va_par_ame);
+
+            foreach (DataRow row in tab_inv004.Rows)
+            {
+                switch (row["va_est_ado"].ToString())
                 {
-                    dg_res_ult.Rows.Clear();
-                    tb_sel_ecc.Text = null;
-                    lb_sel_ecc.Text = "**No Existe**";
-                    return;
+                    case "H":
+                        va_est_ado = "Habilitado";
+                        break;
+                    case "N":
+                        va_est_ado = "Deshabilitado";
+                        break;
                 }
 
-                if (tabla.Rows.Count!=0)
-                {
-                    dg_res_ult.Rows.Clear();
+                dg_res_ult.Rows.Add(row["va_cod_mar"], row["va_nom_mar"], va_est_ado);
 
-                    for (int i = 0; i <= tabla.Rows.Count - 1; i++)
-                    {
-                        dg_res_ult.Rows.Add();
-
-                        dg_res_ult.Rows[i].Cells["va_cod_mar"].Value = tabla.Rows[i]["va_cod_mar"].ToString();
-                        dg_res_ult.Rows[i].Cells["va_nom_mar"].Value = tabla.Rows[i]["va_nom_mar"].ToString();
-
-                    }
-
-                    tb_sel_ecc.Text = dg_res_ult.Rows[0].Cells["va_cod_mar"].Value.ToString();
-                    lb_sel_ecc.Text = dg_res_ult.Rows[0].Cells["va_nom_mar"].Value.ToString();
-
-                }
-
+                dg_res_ult.Rows[va_ind_ice].Tag = row;
+                va_ind_ice = va_ind_ice + 1;
             }
-            catch (Exception ex)
+
+            if (va_ind_ice == 0)
             {
-                MessageBoxEx.Show(ex.Message, "Error");
+                tb_sel_ecc.Text = "";
+                lb_sel_ecc.Text = "** NO existe";
             }
+
+            if (va_ind_ice > 0)
+            {
+                tb_sel_ecc.Text = tab_inv004.Rows[0]["va_cod_mar"].ToString();
+                lb_sel_ecc.Text = tab_inv004.Rows[0]["va_nom_mar"].ToString();
+            }
+
+            tb_val_bus.Focus();
         }
+
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
@@ -140,7 +144,7 @@ namespace CREARSIS
             }
 
 
-           // tabla = o_inv003._05(tb_sel_ecc.Text);
+            tabla = o_inv004._05(int.Parse(tb_sel_ecc.Text));
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
@@ -151,6 +155,7 @@ namespace CREARSIS
             lb_sel_ecc.Text = tabla.Rows[0]["va_nom_mar"].ToString();
 
         }
+
         public void fu_fil_act()
         {
             if (dg_res_ult.SelectedRows.Count != 0)
