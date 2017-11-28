@@ -26,10 +26,11 @@ namespace CREARSIS
         #endregion
 
         #region INSTANCIAS
+        
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
         //c_inv004 o_inv004 = new c_inv004();
-
+        //DATOS.ADM.
         #endregion
         #region METODOS
 
