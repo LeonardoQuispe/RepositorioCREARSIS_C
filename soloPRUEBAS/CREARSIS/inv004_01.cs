@@ -29,8 +29,8 @@ namespace CREARSIS
         
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
-        //c_inv004 o_inv004 = new c_inv004();
-        //DATOS.ADM.
+        c_inv004 o_inv004 = new c_inv004();
+        
         #endregion
         #region METODOS
 
@@ -55,7 +55,7 @@ namespace CREARSIS
         {
             try
             {
-                //tabla = o_inv004._01(va_tex_bus, va_par_ame);
+                tabla = o_inv004._01(va_tex_bus, va_par_ame);
 
                 if (tabla.Rows.Count == 0)
                 {
@@ -226,6 +226,11 @@ namespace CREARSIS
             {
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
+        }
+
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
         }
     }
 }
