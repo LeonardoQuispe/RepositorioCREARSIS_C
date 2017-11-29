@@ -47,18 +47,19 @@ namespace CREARSIS
                 bt_can_cel.Enabled = true;
             }
             cb_prm_bus.SelectedIndex = 0;
+            cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car(tb_val_bus.Text,cb_prm_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text,cb_prm_bus.SelectedIndex,cb_est_bus.SelectedIndex);
 
         }
-        public void fu_bus_car(string va_tex_bus, int va_par_ame)
+        public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
 
-            tab_inv004 = o_inv004._01(va_tex_bus, va_par_ame);
+            tab_inv004 = o_inv004._01(val_bus, prm_bus,est_bus);
 
             foreach (DataRow row in tab_inv004.Rows)
             {
@@ -98,7 +99,7 @@ namespace CREARSIS
         /// </summary>
         public void fu_sel_fila(string cod_doc, string nom_doc)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_doc;
             lb_sel_ecc.Text = nom_doc;
@@ -236,6 +237,18 @@ namespace CREARSIS
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        private void m_inv004_02_Click(object sender, EventArgs e)
+        {
+            inv004_02 obj = new inv004_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        private void m_inv004_03_Click(object sender, EventArgs e)
+        {
+            inv004_02 obj = new inv004_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
         }
     }
 }
