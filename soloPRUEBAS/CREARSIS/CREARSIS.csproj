@@ -459,17 +459,23 @@
     <Compile Include="inv004_03.Designer.cs">
       <DependentUpon>inv004_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="inv004_04.cs">
+    <Compile Include="inv004_06.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inv004_04.Designer.cs">
-      <DependentUpon>inv004_04.cs</DependentUpon>
+    <Compile Include="inv004_06.Designer.cs">
+      <DependentUpon>inv004_06.cs</DependentUpon>
     </Compile>
     <Compile Include="inv004_05.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inv004_05.Designer.cs">
       <DependentUpon>inv004_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_04.Designer.cs">
+      <DependentUpon>inv004_04.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -739,6 +745,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inv004_04.resx">
       <DependentUpon>inv004_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_06.resx">
+      <DependentUpon>inv004_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inv004_05.resx">
       <DependentUpon>inv004_05.cs</DependentUpon>

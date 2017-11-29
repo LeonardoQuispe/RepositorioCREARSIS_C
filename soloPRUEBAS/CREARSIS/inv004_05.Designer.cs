@@ -35,6 +35,7 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.tb_nom_mar);
             this.GroupBox1.Controls.Add(this.labelX2);
             this.GroupBox1.Controls.Add(this.tb_cod_mar);
@@ -59,7 +61,6 @@
             // 
             // 
             // 
-            this.tb_nom_mar.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_mar.Border.Class = "TextBoxBorder";
             this.tb_nom_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_mar.DisabledBackColor = System.Drawing.Color.White;
@@ -68,6 +69,7 @@
             this.tb_nom_mar.MaxLength = 9000;
             this.tb_nom_mar.Name = "tb_nom_mar";
             this.tb_nom_mar.PreventEnterBeep = true;
+            this.tb_nom_mar.ReadOnly = true;
             this.tb_nom_mar.Size = new System.Drawing.Size(275, 22);
             this.tb_nom_mar.TabIndex = 12;
             // 
@@ -93,7 +95,6 @@
             // 
             // 
             // 
-            this.tb_cod_mar.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_mar.Border.Class = "TextBoxBorder";
             this.tb_cod_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
@@ -102,6 +103,7 @@
             this.tb_cod_mar.MaxLength = 9000;
             this.tb_cod_mar.Name = "tb_cod_mar";
             this.tb_cod_mar.PreventEnterBeep = true;
+            this.tb_cod_mar.ReadOnly = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);
             this.tb_cod_mar.TabIndex = 10;
             // 
@@ -146,6 +148,26 @@
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
             // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(217, 21);
+            this.tb_est_ado.MaxLength = 15;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(127, 22);
+            this.tb_est_ado.TabIndex = 73;
+            this.tb_est_ado.TabStop = false;
+            // 
             // inv004_05
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,8 +181,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "inv004_05";
-            this.Text = "Consulta marca";
-            this.TitleText = "Consulta marca";
+            this.Text = "Consulta Marca";
+            this.TitleText = "Consulta Marca";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
@@ -177,5 +199,6 @@
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }
