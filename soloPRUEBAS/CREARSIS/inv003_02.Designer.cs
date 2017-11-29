@@ -66,7 +66,7 @@
             this.tb_nom_uni.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_uni.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_uni.Location = new System.Drawing.Point(69, 51);
-            this.tb_nom_uni.MaxLength = 9000;
+            this.tb_nom_uni.MaxLength = 25;
             this.tb_nom_uni.Name = "tb_nom_uni";
             this.tb_nom_uni.PreventEnterBeep = true;
             this.tb_nom_uni.Size = new System.Drawing.Size(275, 26);
@@ -100,7 +100,7 @@
             this.tb_cod_uni.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_uni.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_uni.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_uni.MaxLength = 9000;
+            this.tb_cod_uni.MaxLength = 3;
             this.tb_cod_uni.Name = "tb_cod_uni";
             this.tb_cod_uni.PreventEnterBeep = true;
             this.tb_cod_uni.Size = new System.Drawing.Size(62, 26);

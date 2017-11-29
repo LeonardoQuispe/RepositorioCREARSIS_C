@@ -167,13 +167,13 @@ namespace CREARSIS
                 tab_inv003 = o_inv003._05(tb_sel_ecc.Text);
                 if (tab_inv003.Rows.Count == 0)
                 {
-                    return "La Marca no se encuentra registrada";
+                    return "La Unidad no se encuentra registrada";
                 }
 
-                //Verifica estado del dato
+                //Verifica estado del datos
                 if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    return "La Marca no se encuentra registrada";
+                    return "La Unidad  se encuentra Deshabilitada";
                 }
 
                 return null;
@@ -194,7 +194,7 @@ namespace CREARSIS
                 tab_inv003 = o_inv003._05(tb_sel_ecc.Text);
                 if (tab_inv003.Rows.Count == 0)
                 {
-                    return "La Marca no se encuentra registrada";
+                    return "La Unidad no se encuentra registrada";
                 }
 
                 return null;
@@ -214,13 +214,13 @@ namespace CREARSIS
                 tab_inv003 = o_inv003._05(tb_sel_ecc.Text);
                 if (tab_inv003.Rows.Count == 0)
                 {
-                    return "La Marca no se encuentra registrada";
+                    return "La Unidad no se encuentra registrada";
                 }
 
                 //Verifica estado del dato
                 if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "H")
                 {
-                    return "la Marca se encuentra Habilitado";
+                    return "la Unidad se encuentra Habilitado";
                 }
 
                 return null;
@@ -317,7 +317,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_03 obj = new inv003_03();
@@ -330,7 +330,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_04 obj = new inv003_04();
@@ -343,24 +343,30 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_06 obj = new inv003_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
         }
 
+        //[MENU- Consulta]
         private void m_inv003_05_Click(object sender, EventArgs e)
         {
             string vv_err_msg;
-            vv_err_msg = fu_ver_dat();
+            vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_05 obj = new inv003_05();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
+        }
+
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
         }
     }
 }

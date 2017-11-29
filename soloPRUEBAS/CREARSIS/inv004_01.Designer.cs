@@ -46,9 +46,6 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_cod_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
@@ -61,6 +58,9 @@
             this.m_inv004_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv004_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
+            this.va_cod_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -175,7 +175,7 @@
             this.tb_val_bus.DisabledBackColor = System.Drawing.Color.White;
             this.tb_val_bus.ForeColor = System.Drawing.Color.Black;
             this.tb_val_bus.Location = new System.Drawing.Point(16, 50);
-            this.tb_val_bus.MaxLength = 50;
+            this.tb_val_bus.MaxLength = 25;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
             this.tb_val_bus.Size = new System.Drawing.Size(332, 26);
@@ -195,7 +195,7 @@
             this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
             this.tb_sel_ecc.Location = new System.Drawing.Point(69, 19);
-            this.tb_sel_ecc.MaxLength = 9000;
+            this.tb_sel_ecc.MaxLength = 10;
             this.tb_sel_ecc.Name = "tb_sel_ecc";
             this.tb_sel_ecc.PreventEnterBeep = true;
             this.tb_sel_ecc.Size = new System.Drawing.Size(62, 26);
@@ -277,30 +277,6 @@
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
-            // 
-            // va_cod_mar
-            // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.va_cod_mar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.va_cod_mar.HeaderText = "Codigo";
-            this.va_cod_mar.Name = "va_cod_mar";
-            this.va_cod_mar.ReadOnly = true;
-            this.va_cod_mar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.va_cod_mar.Width = 60;
-            // 
-            // va_nom_mar
-            // 
-            this.va_nom_mar.HeaderText = "Nombre";
-            this.va_nom_mar.Name = "va_nom_mar";
-            this.va_nom_mar.ReadOnly = true;
-            this.va_nom_mar.Width = 230;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 227;
             // 
             // gb_ctr_frm
             // 
@@ -422,6 +398,30 @@
             this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
+            // 
+            // va_cod_mar
+            // 
+            dataGridViewCellStyle2.NullValue = null;
+            this.va_cod_mar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.va_cod_mar.HeaderText = "Codigo";
+            this.va_cod_mar.Name = "va_cod_mar";
+            this.va_cod_mar.ReadOnly = true;
+            this.va_cod_mar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.va_cod_mar.Width = 60;
+            // 
+            // va_nom_mar
+            // 
+            this.va_nom_mar.HeaderText = "Nombre";
+            this.va_nom_mar.Name = "va_nom_mar";
+            this.va_nom_mar.ReadOnly = true;
+            this.va_nom_mar.Width = 226;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 226;
             // 
             // inv004_01
             // 

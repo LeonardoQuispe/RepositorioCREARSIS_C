@@ -181,7 +181,7 @@ namespace CREARSIS
                 //Verifica estado del dato
                 if (tab_inv004.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    return "La Marca no se encuentra registrada";
+                    return "La Marca  se encuentra Deshabilitada";
                 }
 
                 return null;
@@ -373,7 +373,7 @@ namespace CREARSIS
         private void m_inv004_05_Click(object sender, EventArgs e)
         {
             string vv_err_msg;
-            vv_err_msg = fu_ver_dat();
+            vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
                 MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);

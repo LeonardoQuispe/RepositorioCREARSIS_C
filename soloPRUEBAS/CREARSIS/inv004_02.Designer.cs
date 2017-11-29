@@ -66,10 +66,10 @@
             this.tb_nom_mar.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_mar.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_mar.Location = new System.Drawing.Point(69, 51);
-            this.tb_nom_mar.MaxLength = 9000;
+            this.tb_nom_mar.MaxLength = 25;
             this.tb_nom_mar.Name = "tb_nom_mar";
             this.tb_nom_mar.PreventEnterBeep = true;
-            this.tb_nom_mar.Size = new System.Drawing.Size(275, 22);
+            this.tb_nom_mar.Size = new System.Drawing.Size(275, 26);
             this.tb_nom_mar.TabIndex = 12;
             // 
             // labelX2
@@ -84,7 +84,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(43, 17);
+            this.labelX2.Size = new System.Drawing.Size(53, 21);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
             // 
@@ -100,10 +100,10 @@
             this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_mar.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_mar.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_mar.MaxLength = 9000;
+            this.tb_cod_mar.MaxLength = 10;
             this.tb_cod_mar.Name = "tb_cod_mar";
             this.tb_cod_mar.PreventEnterBeep = true;
-            this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_mar.Size = new System.Drawing.Size(62, 26);
             this.tb_cod_mar.TabIndex = 10;
             this.tb_cod_mar.TextChanged += new System.EventHandler(this.tb_cod_mar_TextChanged);
             // 
@@ -119,7 +119,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(38, 17);
+            this.LabelX1.Size = new System.Drawing.Size(47, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Codigo";
             // 
@@ -170,7 +170,7 @@
             // inv004_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(362, 123);

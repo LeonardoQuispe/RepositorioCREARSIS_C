@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -36,7 +37,6 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,26 @@
             this.GroupBox1.Size = new System.Drawing.Size(359, 83);
             this.GroupBox1.TabIndex = 189;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
+            this.tb_est_ado.MaxLength = 15;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
+            this.tb_est_ado.TabIndex = 191;
+            this.tb_est_ado.TabStop = false;
             // 
             // tb_nom_uni
             // 
@@ -149,6 +169,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 30;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -165,26 +186,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
-            this.tb_est_ado.MaxLength = 15;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
-            this.tb_est_ado.TabIndex = 191;
-            this.tb_est_ado.TabStop = false;
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv003_04
             // 
@@ -201,8 +203,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "inv003_04";
-            this.Text = "Elimina unidad";
-            this.TitleText = "Elimina unidad";
+            this.Text = "Habilita/Deshabilita Unidad";
+            this.TitleText = "Habilita/Deshabilita Unidad";
+            this.Load += new System.EventHandler(this.inv003_04_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);

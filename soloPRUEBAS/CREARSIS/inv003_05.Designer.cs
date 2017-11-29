@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,26 @@
             this.GroupBox1.TabIndex = 189;
             this.GroupBox1.TabStop = false;
             // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
+            this.tb_est_ado.MaxLength = 15;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
+            this.tb_est_ado.TabIndex = 191;
+            this.tb_est_ado.TabStop = false;
+            // 
             // tb_nom_uni
             // 
             this.tb_nom_uni.BackColor = System.Drawing.Color.White;
@@ -70,6 +90,7 @@
             this.tb_nom_uni.MaxLength = 9000;
             this.tb_nom_uni.Name = "tb_nom_uni";
             this.tb_nom_uni.PreventEnterBeep = true;
+            this.tb_nom_uni.ReadOnly = true;
             this.tb_nom_uni.Size = new System.Drawing.Size(275, 26);
             this.tb_nom_uni.TabIndex = 12;
             // 
@@ -104,6 +125,7 @@
             this.tb_cod_uni.MaxLength = 9000;
             this.tb_cod_uni.Name = "tb_cod_uni";
             this.tb_cod_uni.PreventEnterBeep = true;
+            this.tb_cod_uni.ReadOnly = true;
             this.tb_cod_uni.Size = new System.Drawing.Size(62, 26);
             this.tb_cod_uni.TabIndex = 10;
             // 
@@ -147,26 +169,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
-            this.tb_est_ado.MaxLength = 15;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
-            this.tb_est_ado.TabIndex = 191;
-            this.tb_est_ado.TabStop = false;
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv003_05
             // 
@@ -184,6 +187,7 @@
             this.Name = "inv003_05";
             this.Text = "Consulta unidad";
             this.TitleText = "Consulta unidad";
+            this.Load += new System.EventHandler(this.inv003_05_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
