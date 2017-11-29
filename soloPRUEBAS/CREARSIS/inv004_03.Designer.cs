@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -36,14 +37,13 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.tb_nom_mar);
             this.GroupBox1.Controls.Add(this.labelX2);
@@ -55,6 +55,26 @@
             this.GroupBox1.Size = new System.Drawing.Size(359, 83);
             this.GroupBox1.TabIndex = 187;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
+            this.tb_est_ado.MaxLength = 15;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
+            this.tb_est_ado.TabIndex = 72;
+            this.tb_est_ado.TabStop = false;
             // 
             // tb_nom_mar
             // 
@@ -70,7 +90,7 @@
             this.tb_nom_mar.MaxLength = 9000;
             this.tb_nom_mar.Name = "tb_nom_mar";
             this.tb_nom_mar.PreventEnterBeep = true;
-            this.tb_nom_mar.Size = new System.Drawing.Size(275, 22);
+            this.tb_nom_mar.Size = new System.Drawing.Size(275, 26);
             this.tb_nom_mar.TabIndex = 12;
             // 
             // labelX2
@@ -85,7 +105,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(43, 17);
+            this.labelX2.Size = new System.Drawing.Size(53, 21);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
             // 
@@ -103,7 +123,8 @@
             this.tb_cod_mar.MaxLength = 9000;
             this.tb_cod_mar.Name = "tb_cod_mar";
             this.tb_cod_mar.PreventEnterBeep = true;
-            this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_mar.ReadOnly = true;
+            this.tb_cod_mar.Size = new System.Drawing.Size(62, 26);
             this.tb_cod_mar.TabIndex = 10;
             // 
             // LabelX1
@@ -118,14 +139,16 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(38, 17);
+            this.LabelX1.Size = new System.Drawing.Size(47, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Codigo";
             // 
             // GroupBox2
             // 
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.Controls.Add(this.bt_can_cel);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(2, 77);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(359, 50);
@@ -147,6 +170,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 30;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -163,31 +187,12 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
-            this.tb_est_ado.MaxLength = 15;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(127, 22);
-            this.tb_est_ado.TabIndex = 72;
-            this.tb_est_ado.TabStop = false;
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv004_03
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(363, 128);
@@ -201,6 +206,7 @@
             this.Name = "inv004_03";
             this.Text = "Actualiza Marca";
             this.TitleText = "Actualiza Marca";
+            this.Load += new System.EventHandler(this.inv004_03_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace CREARSIS
 {
-    partial class inv004_04
+    partial class inv003_06
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_nom_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nom_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_mar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_uni = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
@@ -45,12 +45,12 @@
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
             this.GroupBox1.Controls.Add(this.tb_est_ado);
-            this.GroupBox1.Controls.Add(this.tb_nom_mar);
+            this.GroupBox1.Controls.Add(this.tb_nom_uni);
             this.GroupBox1.Controls.Add(this.labelX2);
-            this.GroupBox1.Controls.Add(this.tb_cod_mar);
+            this.GroupBox1.Controls.Add(this.tb_cod_uni);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(2, -2);
+            this.GroupBox1.Location = new System.Drawing.Point(2, -5);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(359, 83);
             this.GroupBox1.TabIndex = 189;
@@ -67,32 +67,32 @@
             this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
             this.tb_est_ado.Enabled = false;
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(217, 19);
+            this.tb_est_ado.Location = new System.Drawing.Point(217, 21);
             this.tb_est_ado.MaxLength = 15;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(127, 26);
-            this.tb_est_ado.TabIndex = 72;
+            this.tb_est_ado.TabIndex = 73;
             this.tb_est_ado.TabStop = false;
             // 
-            // tb_nom_mar
+            // tb_nom_uni
             // 
-            this.tb_nom_mar.BackColor = System.Drawing.Color.White;
+            this.tb_nom_uni.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_nom_mar.Border.Class = "TextBoxBorder";
-            this.tb_nom_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_mar.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_mar.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_mar.Location = new System.Drawing.Point(69, 51);
-            this.tb_nom_mar.MaxLength = 9000;
-            this.tb_nom_mar.Name = "tb_nom_mar";
-            this.tb_nom_mar.PreventEnterBeep = true;
-            this.tb_nom_mar.ReadOnly = true;
-            this.tb_nom_mar.Size = new System.Drawing.Size(275, 26);
-            this.tb_nom_mar.TabIndex = 12;
+            this.tb_nom_uni.Border.Class = "TextBoxBorder";
+            this.tb_nom_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_uni.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_uni.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_uni.Location = new System.Drawing.Point(69, 51);
+            this.tb_nom_uni.MaxLength = 9000;
+            this.tb_nom_uni.Name = "tb_nom_uni";
+            this.tb_nom_uni.PreventEnterBeep = true;
+            this.tb_nom_uni.ReadOnly = true;
+            this.tb_nom_uni.Size = new System.Drawing.Size(275, 26);
+            this.tb_nom_uni.TabIndex = 12;
             // 
             // labelX2
             // 
@@ -110,23 +110,23 @@
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
             // 
-            // tb_cod_mar
+            // tb_cod_uni
             // 
-            this.tb_cod_mar.BackColor = System.Drawing.Color.White;
+            this.tb_cod_uni.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_cod_mar.Border.Class = "TextBoxBorder";
-            this.tb_cod_mar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_mar.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_mar.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_mar.MaxLength = 9000;
-            this.tb_cod_mar.Name = "tb_cod_mar";
-            this.tb_cod_mar.PreventEnterBeep = true;
-            this.tb_cod_mar.ReadOnly = true;
-            this.tb_cod_mar.Size = new System.Drawing.Size(62, 26);
-            this.tb_cod_mar.TabIndex = 10;
+            this.tb_cod_uni.Border.Class = "TextBoxBorder";
+            this.tb_cod_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_uni.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_uni.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_uni.Location = new System.Drawing.Point(69, 19);
+            this.tb_cod_uni.MaxLength = 9000;
+            this.tb_cod_uni.Name = "tb_cod_uni";
+            this.tb_cod_uni.PreventEnterBeep = true;
+            this.tb_cod_uni.ReadOnly = true;
+            this.tb_cod_uni.Size = new System.Drawing.Size(62, 26);
+            this.tb_cod_uni.TabIndex = 10;
             // 
             // LabelX1
             // 
@@ -148,7 +148,7 @@
             // 
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.Controls.Add(this.bt_can_cel);
-            this.GroupBox2.Location = new System.Drawing.Point(2, 80);
+            this.GroupBox2.Location = new System.Drawing.Point(2, 77);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(359, 50);
             this.GroupBox2.TabIndex = 190;
@@ -169,7 +169,6 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 30;
             this.bt_ace_pta.Text = "Aceptar";
-            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -186,25 +185,22 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
-            // inv004_04
+            // inv003_06
             // 
-            this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(363, 128);
+            this.ClientSize = new System.Drawing.Size(362, 123);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "inv004_04";
-            this.Text = "Habilita/Deshabilita Marca";
-            this.TitleText = "Habilita/Deshabilita Marca";
-            this.Load += new System.EventHandler(this.inv004_04_Load);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "inv003_06";
+            this.Text = "Elimina Unidad";
+            this.TitleText = "Elimina Unidad";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
@@ -216,9 +212,9 @@
 
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_mar;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_uni;
         internal DevComponents.DotNetBar.LabelX labelX2;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_mar;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_uni;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;

@@ -20,21 +20,54 @@ namespace CREARSIS
         #region VARIABLES
 
         public dynamic vg_frm_pad;
-        DataTable c_inv004;
-        DataTable tabla;
-        string va_msg_err;
+        public DataTable vg_str_ucc;
+        string err_msg = "";
 
         #endregion
 
         #region INSTANCIAS
 
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
-        //c_inv004 o_inv004 = new c_inv004();
+        c_inv004 o_inv004 = new c_inv004();
 
         #endregion
+
+        #region METODOS
+
+        void fu_ini_frm()
+        {
+            //Obtiene parametros y muestra en pantalla
+            if (vg_str_ucc.Rows.Count == 0)
+            {
+                return;
+            }
+            tb_cod_mar.Text = vg_str_ucc.Rows[0]["va_cod_mar"].ToString();
+            tb_nom_mar.Text = vg_str_ucc.Rows[0]["va_nom_mar"].ToString();
+
+            if (vg_str_ucc.Rows[0]["va_est_ado"].ToString() == "H")
+            {
+                tb_est_ado.Text = "Habilitado";
+            }
+            else
+            {
+                tb_est_ado.Text = "Deshabilitado";
+            }
+        }
+
+        #endregion
+
         public inv004_05()
         {
             InitializeComponent();
+        }
+
+        private void inv004_05_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

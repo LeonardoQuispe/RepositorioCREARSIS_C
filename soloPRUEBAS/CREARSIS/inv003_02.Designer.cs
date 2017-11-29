@@ -69,7 +69,7 @@
             this.tb_nom_uni.MaxLength = 9000;
             this.tb_nom_uni.Name = "tb_nom_uni";
             this.tb_nom_uni.PreventEnterBeep = true;
-            this.tb_nom_uni.Size = new System.Drawing.Size(275, 22);
+            this.tb_nom_uni.Size = new System.Drawing.Size(275, 26);
             this.tb_nom_uni.TabIndex = 12;
             // 
             // labelX2
@@ -84,7 +84,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(43, 17);
+            this.labelX2.Size = new System.Drawing.Size(53, 21);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
             // 
@@ -103,7 +103,7 @@
             this.tb_cod_uni.MaxLength = 9000;
             this.tb_cod_uni.Name = "tb_cod_uni";
             this.tb_cod_uni.PreventEnterBeep = true;
-            this.tb_cod_uni.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_uni.Size = new System.Drawing.Size(62, 26);
             this.tb_cod_uni.TabIndex = 10;
             // 
             // LabelX1
@@ -118,7 +118,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(38, 17);
+            this.LabelX1.Size = new System.Drawing.Size(47, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Codigo";
             // 
@@ -147,6 +147,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 30;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -163,11 +164,12 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv003_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(362, 123);
@@ -181,6 +183,7 @@
             this.Name = "inv003_02";
             this.Text = "Nueva unidad";
             this.TitleText = "Nueva unidad";
+            this.Load += new System.EventHandler(this.inv003_02_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);

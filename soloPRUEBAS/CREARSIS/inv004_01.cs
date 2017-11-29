@@ -32,6 +32,7 @@ namespace CREARSIS
         c_inv004 o_inv004 = new c_inv004();
         
         #endregion
+
         #region METODOS
 
         public void fu_ini_frm(int va_tip_frm = 0)
@@ -166,9 +167,81 @@ namespace CREARSIS
             }
 
         }
+        public string fu_ver_dat()
+        {
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                //Si aun existe
+                tab_inv004 = o_inv004._05(int.Parse(tb_sel_ecc.Text));
+                if (tab_inv004.Rows.Count == 0)
+                {
+                    return "La Marca no se encuentra registrada";
+                }
 
+                //Verifica estado del dato
+                if (tab_inv004.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Marca no se encuentra registrada";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+        }
+        /// <summary>
+        /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
+        /// </summary>
+        public string fu_ver_dat2()
+        {
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                //Si aun existe
+                tab_inv004 = o_inv004._05(int.Parse(tb_sel_ecc.Text));
+                if (tab_inv004.Rows.Count == 0)
+                {
+                    return "La Marca no se encuentra registrada";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+            
+        }
+        public string fu_ver_dat3()
+        {
+
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                ///Si aun existe
+                tab_inv004 = o_inv004._05(int.Parse(tb_sel_ecc.Text));
+                if (tab_inv004.Rows.Count == 0)
+                {
+                    return "La Marca no se encuentra registrada";
+                }
+
+                //Verifica estado del dato
+                if (tab_inv004.Rows[0]["va_est_ado"].ToString() == "H")
+                {
+                    return "la Marca se encuentra Habilitado";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+        }
 
         #endregion
+
+        #region EVENTOS
         public inv004_01()
         {
             InitializeComponent();
@@ -233,46 +306,82 @@ namespace CREARSIS
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
         }
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
+        {
+            tb_sel_ecc.Text = o_mg_glo_bal.valida_numeros(tb_sel_ecc.Text);
+        }
+        #endregion
 
-        //Atras
+        #region OPCIONES DEL MENU
+
+        //[MENU- Atras]
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
-        //Nuevo
+        //[MENU- Nuevo]
         private void m_inv004_02_Click(object sender, EventArgs e)
         {
             inv004_02 obj = new inv004_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
-        //Actualiza
+        //[MENU- Actualiza]
         private void m_inv004_03_Click(object sender, EventArgs e)
         {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             inv004_03 obj = new inv004_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv004);
         }
 
-        //Habilita/deshabilita
+        //[MENU- Habilita/deshabilita]
         private void m_inv004_04_Click(object sender, EventArgs e)
         {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             inv004_04 obj = new inv004_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv004);
         }
 
-        //Elimina
+        //[MENU- Elimina]
         private void m_inv004_06_Click(object sender, EventArgs e)
         {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             inv004_06 obj = new inv004_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv004);
         }
 
-        //Consulta
+        //[MENU- Consulta]
         private void m_inv004_05_Click(object sender, EventArgs e)
         {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             inv004_05 obj = new inv004_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv004);
         }
+        #endregion
     }
 }

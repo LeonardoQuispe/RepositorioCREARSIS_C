@@ -96,7 +96,7 @@ namespace DATOS.ADM
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv004 SET");
                 vv_str_sql.AppendLine(" va_nom_mar='" + nom_mar + "'");
-                vv_str_sql.AppendLine(" WHERE va_cod_mod =" + cod_mar);
+                vv_str_sql.AppendLine(" WHERE va_cod_mar =" + cod_mar);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

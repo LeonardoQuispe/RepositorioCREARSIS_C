@@ -32,6 +32,54 @@ namespace CREARSIS
 
         #endregion
 
+        #region METODOS
+
+        void fu_ini_frm()
+        {
+            tb_cod_mar.Focus();
+        }
+
+        /// <summary>
+        /// Metodo que limpia el formulario
+        /// </summary>
+        public void fu_lim_frm()
+        {
+            tb_cod_mar.Clear();
+            tb_nom_mar.Clear();
+
+            tb_cod_mar.Focus();
+        }
+
+        /// <summary>
+        /// Funcion que verifica los datos antes de grabar
+        /// </summary>
+        public string fu_ver_dat()
+        {
+            if (tb_cod_mar.Text.Trim() == "")
+            {
+                tb_cod_mar.Focus();
+                return "Debes proporcionar el código de laS Marca";
+            }
+
+            tab_inv004 = o_inv004._05(int.Parse(tb_cod_mar.Text));
+            if (tab_inv004.Rows.Count != 0)
+            {
+                tb_cod_mar.Focus();
+                return "El codigo de la Marca ya se encuentra registrada";
+            }
+
+            if (tb_nom_mar.Text.Trim() == "")
+            {
+                tb_nom_mar.Focus();
+                return "Debes proporcionar el nombre de la Marca";
+            }
+
+            return null;
+        }
+        #endregion
+
+        #region EVENTOS
+
         public inv004_02()
         {
             InitializeComponent();
@@ -85,53 +133,6 @@ namespace CREARSIS
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-
-
-        #region METODOS
-
-        void fu_ini_frm()
-        {
-            tb_cod_mar.Focus();
-        }
-
-        /// <summary>
-        /// Metodo que limpia el formulario
-        /// </summary>
-        public void fu_lim_frm()
-        {
-            tb_cod_mar.Clear();
-            tb_nom_mar.Clear();
-
-            tb_cod_mar.Focus();
-        }
-
-        /// <summary>
-        /// Funcion que verifica los datos antes de grabar
-        /// </summary>
-        public string fu_ver_dat()
-        {
-            if (tb_cod_mar.Text.Trim() == "")
-            {
-                tb_cod_mar.Focus();
-                return "Debes proporcionar el código de laS Marca";
-            }
-
-            tab_inv004 = o_inv004._05(int.Parse(tb_cod_mar.Text));
-            if (tab_inv004.Rows.Count!=0)
-            {
-                tb_cod_mar.Focus();
-                return "El codigo de la Marca ya se encuentra registrada";
-            }
-
-            if (tb_nom_mar.Text.Trim() == "")
-            {
-                tb_nom_mar.Focus();
-                return "Debes proporcionar el nombre de la Marca";
-            }
-
-            return null;
         }
         #endregion
     }
