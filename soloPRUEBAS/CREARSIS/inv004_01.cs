@@ -59,7 +59,7 @@ namespace CREARSIS
 
             dg_res_ult.Rows.Clear();
 
-            tab_inv004 = o_inv004._01(val_bus, prm_bus,est_bus);
+            tab_inv004 = o_inv004._01(val_bus, prm_bus,est_bus.ToString());
 
             foreach (DataRow row in tab_inv004.Rows)
             {
@@ -191,7 +191,7 @@ namespace CREARSIS
 
         private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
         }
 
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
@@ -234,20 +234,44 @@ namespace CREARSIS
             }
         }
 
+        //Atras
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+        //Nuevo
         private void m_inv004_02_Click(object sender, EventArgs e)
         {
             inv004_02 obj = new inv004_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
+        //Actualiza
         private void m_inv004_03_Click(object sender, EventArgs e)
         {
-            inv004_02 obj = new inv004_02();
+            inv004_03 obj = new inv004_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //Habilita/deshabilita
+        private void m_inv004_04_Click(object sender, EventArgs e)
+        {
+            inv004_04 obj = new inv004_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //Elimina
+        private void m_inv004_06_Click(object sender, EventArgs e)
+        {
+            inv004_06 obj = new inv004_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //Consulta
+        private void m_inv004_05_Click(object sender, EventArgs e)
+        {
+            inv004_05 obj = new inv004_05();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
     }

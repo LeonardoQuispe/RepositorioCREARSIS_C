@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_est_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.todos = new DevComponents.Editors.ComboItem();
+            this.habilitado = new DevComponents.Editors.ComboItem();
+            this.deshabilitado = new DevComponents.Editors.ComboItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.codigo = new DevComponents.Editors.ComboItem();
             this.nombre = new DevComponents.Editors.ComboItem();
@@ -42,6 +46,9 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.va_cod_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
@@ -54,13 +61,6 @@
             this.m_inv004_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv004_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
-            this.cb_est_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.todos = new DevComponents.Editors.ComboItem();
-            this.habilitado = new DevComponents.Editors.ComboItem();
-            this.deshabilitado = new DevComponents.Editors.ComboItem();
-            this.va_cod_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -83,6 +83,41 @@
             this.GroupBox1.Size = new System.Drawing.Size(543, 81);
             this.GroupBox1.TabIndex = 69;
             this.GroupBox1.TabStop = false;
+            // 
+            // cb_est_bus
+            // 
+            this.cb_est_bus.DisplayMember = "Text";
+            this.cb_est_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_est_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_est_bus.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
+            this.cb_est_bus.FormattingEnabled = true;
+            this.cb_est_bus.ItemHeight = 20;
+            this.cb_est_bus.Items.AddRange(new object[] {
+            this.todos,
+            this.habilitado,
+            this.deshabilitado});
+            this.cb_est_bus.Location = new System.Drawing.Point(446, 50);
+            this.cb_est_bus.Name = "cb_est_bus";
+            this.cb_est_bus.Size = new System.Drawing.Size(93, 26);
+            this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_est_bus.TabIndex = 41;
+            // 
+            // todos
+            // 
+            this.todos.Text = "Todos";
+            this.todos.Value = "";
+            // 
+            // habilitado
+            // 
+            this.habilitado.Text = "Habilitado";
+            this.habilitado.Value = "";
+            // 
+            // deshabilitado
+            // 
+            this.deshabilitado.Text = "Deshabilitado";
+            this.deshabilitado.Value = "";
             // 
             // cb_prm_bus
             // 
@@ -242,6 +277,30 @@
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             // 
+            // va_cod_mar
+            // 
+            dataGridViewCellStyle10.NullValue = null;
+            this.va_cod_mar.DefaultCellStyle = dataGridViewCellStyle10;
+            this.va_cod_mar.HeaderText = "Codigo";
+            this.va_cod_mar.Name = "va_cod_mar";
+            this.va_cod_mar.ReadOnly = true;
+            this.va_cod_mar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.va_cod_mar.Width = 60;
+            // 
+            // va_nom_mar
+            // 
+            this.va_nom_mar.HeaderText = "Nombre";
+            this.va_nom_mar.Name = "va_nom_mar";
+            this.va_nom_mar.ReadOnly = true;
+            this.va_nom_mar.Width = 230;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 227;
+            // 
             // gb_ctr_frm
             // 
             this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
@@ -334,18 +393,21 @@
             this.m_inv004_04.Name = "m_inv004_04";
             this.m_inv004_04.Size = new System.Drawing.Size(218, 26);
             this.m_inv004_04.Text = "&Habilita/Deshabiltia";
+            this.m_inv004_04.Click += new System.EventHandler(this.m_inv004_04_Click);
             // 
             // m_inv004_06
             // 
             this.m_inv004_06.Name = "m_inv004_06";
             this.m_inv004_06.Size = new System.Drawing.Size(218, 26);
             this.m_inv004_06.Text = "&Elimina";
+            this.m_inv004_06.Click += new System.EventHandler(this.m_inv004_06_Click);
             // 
             // m_inv004_05
             // 
             this.m_inv004_05.Name = "m_inv004_05";
             this.m_inv004_05.Size = new System.Drawing.Size(78, 24);
             this.m_inv004_05.Text = "&Consulta";
+            this.m_inv004_05.Click += new System.EventHandler(this.m_inv004_05_Click);
             // 
             // m_inv004_p00
             // 
@@ -359,65 +421,6 @@
             this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
-            // 
-            // cb_est_bus
-            // 
-            this.cb_est_bus.DisplayMember = "Text";
-            this.cb_est_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_est_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_est_bus.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
-            this.cb_est_bus.FormattingEnabled = true;
-            this.cb_est_bus.ItemHeight = 20;
-            this.cb_est_bus.Items.AddRange(new object[] {
-            this.todos,
-            this.habilitado,
-            this.deshabilitado});
-            this.cb_est_bus.Location = new System.Drawing.Point(446, 50);
-            this.cb_est_bus.Name = "cb_est_bus";
-            this.cb_est_bus.Size = new System.Drawing.Size(93, 26);
-            this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_est_bus.TabIndex = 41;
-            // 
-            // todos
-            // 
-            this.todos.Text = "Todos";
-            this.todos.Value = "";
-            // 
-            // habilitado
-            // 
-            this.habilitado.Text = "Habilitado";
-            this.habilitado.Value = "";
-            // 
-            // deshabilitado
-            // 
-            this.deshabilitado.Text = "Deshabilitado";
-            this.deshabilitado.Value = "";
-            // 
-            // va_cod_mar
-            // 
-            dataGridViewCellStyle10.NullValue = null;
-            this.va_cod_mar.DefaultCellStyle = dataGridViewCellStyle10;
-            this.va_cod_mar.HeaderText = "Codigo";
-            this.va_cod_mar.Name = "va_cod_mar";
-            this.va_cod_mar.ReadOnly = true;
-            this.va_cod_mar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.va_cod_mar.Width = 60;
-            // 
-            // va_nom_mar
-            // 
-            this.va_nom_mar.HeaderText = "Nombre";
-            this.va_nom_mar.Name = "va_nom_mar";
-            this.va_nom_mar.ReadOnly = true;
-            this.va_nom_mar.Width = 230;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 227;
             // 
             // inv004_01
             // 
