@@ -22,6 +22,7 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         DataTable tab_inv003;
         DataTable tabla;
+        string vv_err_msg = "";
 
         #endregion
 
@@ -313,11 +314,10 @@ namespace CREARSIS
 
         private void m_inv003_03_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_03 obj = new inv003_03();
@@ -326,11 +326,10 @@ namespace CREARSIS
 
         private void m_inv003_04_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_04 obj = new inv003_04();
@@ -339,11 +338,10 @@ namespace CREARSIS
 
         private void m_inv003_06_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_06 obj = new inv003_06();
@@ -353,11 +351,10 @@ namespace CREARSIS
         //[MENU- Consulta]
         private void m_inv003_05_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv003_05 obj = new inv003_05();

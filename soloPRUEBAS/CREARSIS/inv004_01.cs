@@ -22,11 +22,12 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         DataTable tab_inv004;
         DataTable tabla;
+        string vv_err_msg = "";
 
         #endregion
 
         #region INSTANCIAS
-        
+
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
         c_inv004 o_inv004 = new c_inv004();
@@ -329,12 +330,11 @@ namespace CREARSIS
 
         //[MENU- Actualiza]
         private void m_inv004_03_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg;
+        {            
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv004_03 obj = new inv004_03();
@@ -344,11 +344,10 @@ namespace CREARSIS
         //[MENU- Habilita/deshabilita]
         private void m_inv004_04_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv004_04 obj = new inv004_04();
@@ -358,11 +357,10 @@ namespace CREARSIS
         //[MENU- Elimina]
         private void m_inv004_06_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv004_06 obj = new inv004_06();
@@ -372,11 +370,10 @@ namespace CREARSIS
         //[MENU- Consulta]
         private void m_inv004_05_Click(object sender, EventArgs e)
         {
-            string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv004_05 obj = new inv004_05();
