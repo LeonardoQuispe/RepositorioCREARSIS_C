@@ -38,7 +38,7 @@ namespace DATOS.ADM
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendLine(" where va_cod_umd like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" where va_nom_umds like '" + val_bus + "%' "); break;
+                    case 2: vv_str_sql.AppendLine(" where va_nom_umd like '" + val_bus + "%' "); break;
                 }
 
                 switch (est_bus)
