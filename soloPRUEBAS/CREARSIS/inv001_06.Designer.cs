@@ -50,7 +50,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.labelX3);
             this.GroupBox1.Controls.Add(this.cb_tip_fap);
             this.GroupBox1.Controls.Add(this.LabelX4);
@@ -163,7 +163,6 @@
             // 
             // 
             // 
-            this.tb_nom_uni.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_uni.Border.Class = "TextBoxBorder";
             this.tb_nom_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_uni.DisabledBackColor = System.Drawing.Color.White;
@@ -197,7 +196,6 @@
             // 
             // 
             // 
-            this.tb_cod_uni.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_uni.Border.Class = "TextBoxBorder";
             this.tb_cod_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_uni.DisabledBackColor = System.Drawing.Color.White;
@@ -228,8 +226,10 @@
             // 
             // GroupBox2
             // 
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.Controls.Add(this.bt_can_cel);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(2, 119);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(359, 50);

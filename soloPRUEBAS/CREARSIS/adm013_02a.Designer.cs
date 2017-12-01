@@ -224,7 +224,6 @@
             // 
             // 
             // 
-            this.tb_val_tcm.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_val_tcm.Border.Class = "TextBoxBorder";
             this.tb_val_tcm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_val_tcm.DisabledBackColor = System.Drawing.Color.White;

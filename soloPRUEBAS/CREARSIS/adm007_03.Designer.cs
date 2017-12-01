@@ -138,7 +138,6 @@
             // 
             // 
             // 
-            this.tb_ciu_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_ciu_suc.Border.Class = "TextBoxBorder";
             this.tb_ciu_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_ciu_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -204,7 +203,6 @@
             // 
             // 
             // 
-            this.tb_ema_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_ema_suc.Border.Class = "TextBoxBorder";
             this.tb_ema_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_ema_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -222,7 +220,6 @@
             // 
             // 
             // 
-            this.tb_tel_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_tel_suc.Border.Class = "TextBoxBorder";
             this.tb_tel_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_tel_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -241,7 +238,6 @@
             // 
             // 
             // 
-            this.tb_ubi_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_ubi_suc.Border.Class = "TextBoxBorder";
             this.tb_ubi_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_ubi_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -259,7 +255,6 @@
             // 
             // 
             // 
-            this.tb_res_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_res_suc.Border.Class = "TextBoxBorder";
             this.tb_res_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_res_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -277,7 +272,6 @@
             // 
             // 
             // 
-            this.tb_nom_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_suc.Border.Class = "TextBoxBorder";
             this.tb_nom_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -295,7 +289,6 @@
             // 
             // 
             // 
-            this.tb_ley_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_ley_suc.Border.Class = "TextBoxBorder";
             this.tb_ley_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_ley_suc.DisabledBackColor = System.Drawing.Color.White;
@@ -347,7 +340,6 @@
             // 
             // 
             // 
-            this.tb_cod_suc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_suc.Border.Class = "TextBoxBorder";
             this.tb_cod_suc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_suc.DisabledBackColor = System.Drawing.Color.White;

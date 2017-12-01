@@ -60,7 +60,6 @@
             // 
             // 
             this.tb_lla_ve2.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve2.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_lla_ve2.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_ve2.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_ve2.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -88,7 +87,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(51, 217);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(47, 17);
+            this.LabelX2.Size = new System.Drawing.Size(58, 21);
             this.LabelX2.TabIndex = 98;
             this.LabelX2.Text = "Confirme";
             // 
@@ -99,7 +98,6 @@
             // 
             // 
             this.tb_lla_ve1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_ve1.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_lla_ve1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_ve1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_ve1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -127,7 +125,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(71, 128);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(27, 17);
+            this.LabelX3.Size = new System.Drawing.Size(33, 21);
             this.LabelX3.TabIndex = 98;
             this.LabelX3.Text = "Llave";
             // 
@@ -143,7 +141,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(254, 91);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(88, 17);
+            this.LabelX9.Size = new System.Drawing.Size(110, 21);
             this.LabelX9.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.LabelX9.TabIndex = 94;
             this.LabelX9.Text = "Límite de emisión";
@@ -160,7 +158,7 @@
             this.LabelX8.ForeColor = System.Drawing.Color.Black;
             this.LabelX8.Location = new System.Drawing.Point(67, 91);
             this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(31, 17);
+            this.LabelX8.Size = new System.Drawing.Size(38, 21);
             this.LabelX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.LabelX8.TabIndex = 93;
             this.LabelX8.Text = "Fecha";
@@ -172,7 +170,6 @@
             // 
             // 
             this.tb_nro_dos.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_nro_dos.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_dos.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_dos.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_dos.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -185,7 +182,7 @@
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(196, 22);
+            this.tb_nro_dos.Size = new System.Drawing.Size(196, 26);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.TabStop = false;
             // 
@@ -201,7 +198,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(13, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(85, 17);
+            this.LabelX1.Size = new System.Drawing.Size(106, 21);
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Nro. Dosificacion";
             // 
@@ -240,7 +237,7 @@
             this.labelX4.ForeColor = System.Drawing.Color.Black;
             this.labelX4.Location = new System.Drawing.Point(36, 57);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(62, 17);
+            this.labelX4.Size = new System.Drawing.Size(77, 21);
             this.labelX4.TabIndex = 163;
             this.labelX4.Text = "Tipo Factura";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -255,13 +252,13 @@
             this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_fac.FormattingEnabled = true;
-            this.cb_tip_fac.ItemHeight = 16;
+            this.cb_tip_fac.ItemHeight = 20;
             this.cb_tip_fac.Items.AddRange(new object[] {
             this.FC,
             this.FM});
             this.cb_tip_fac.Location = new System.Drawing.Point(103, 57);
             this.cb_tip_fac.Name = "cb_tip_fac";
-            this.cb_tip_fac.Size = new System.Drawing.Size(329, 22);
+            this.cb_tip_fac.Size = new System.Drawing.Size(329, 26);
             this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_fac.TabIndex = 162;
             // 
@@ -290,7 +287,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(116, 22);
+            this.tb_est_ado.Size = new System.Drawing.Size(116, 26);
             this.tb_est_ado.TabIndex = 161;
             this.tb_est_ado.TabStop = false;
             // 
@@ -339,7 +336,7 @@
             this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(84, 22);
+            this.tb_fec_fin.Size = new System.Drawing.Size(84, 26);
             this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_fin.TabIndex = 153;
             this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -390,7 +387,7 @@
             this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(84, 22);
+            this.tb_fec_ini.Size = new System.Drawing.Size(84, 26);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_ini.TabIndex = 152;
             this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -441,10 +438,10 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // ctb007_10
+            // ctb007_03a
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(460, 362);
@@ -454,7 +451,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "ctb007_10";
+            this.Name = "ctb007_03a";
             this.Text = "Actualiza Llave de Dosificación";
             this.TitleText = "Actualiza Llave de Dosificación";
             this.Load += new System.EventHandler(this.ctb007_10_Load);

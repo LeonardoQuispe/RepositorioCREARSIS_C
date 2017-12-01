@@ -163,7 +163,6 @@
             // 
             // 
             // 
-            this.tb_nom_fap.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_fap.Border.Class = "TextBoxBorder";
             this.tb_nom_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_fap.DisabledBackColor = System.Drawing.Color.White;
@@ -197,7 +196,6 @@
             // 
             // 
             // 
-            this.tb_cod_fap.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_fap.Border.Class = "TextBoxBorder";
             this.tb_cod_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_fap.DisabledBackColor = System.Drawing.Color.White;

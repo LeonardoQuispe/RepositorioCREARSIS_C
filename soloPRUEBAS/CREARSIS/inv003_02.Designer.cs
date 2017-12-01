@@ -60,7 +60,6 @@
             // 
             // 
             // 
-            this.tb_nom_uni.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_uni.Border.Class = "TextBoxBorder";
             this.tb_nom_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_uni.DisabledBackColor = System.Drawing.Color.White;
@@ -94,7 +93,6 @@
             // 
             // 
             // 
-            this.tb_cod_uni.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_uni.Border.Class = "TextBoxBorder";
             this.tb_cod_uni.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_uni.DisabledBackColor = System.Drawing.Color.White;

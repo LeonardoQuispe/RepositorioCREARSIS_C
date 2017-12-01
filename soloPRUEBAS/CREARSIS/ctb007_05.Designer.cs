@@ -149,7 +149,7 @@
             this.labelX10.ForeColor = System.Drawing.Color.Black;
             this.labelX10.Location = new System.Drawing.Point(77, 293);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(29, 17);
+            this.labelX10.Size = new System.Drawing.Size(36, 21);
             this.labelX10.TabIndex = 166;
             this.labelX10.Text = "Llave:";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -169,7 +169,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(116, 22);
+            this.tb_est_ado.Size = new System.Drawing.Size(116, 26);
             this.tb_est_ado.TabIndex = 160;
             this.tb_est_ado.TabStop = false;
             // 
@@ -179,7 +179,6 @@
             // 
             // 
             // 
-            this.tb_nom_ley.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_ley.Border.Class = "TextBoxBorder";
             this.tb_nom_ley.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_ley.DisabledBackColor = System.Drawing.Color.White;
@@ -205,7 +204,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(64, 222);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(43, 17);
+            this.LabelX9.Size = new System.Drawing.Size(53, 21);
             this.LabelX9.TabIndex = 156;
             this.LabelX9.Text = "Leyenda";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -216,7 +215,6 @@
             // 
             // 
             // 
-            this.tb_cod_ley.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_ley.Border.Class = "TextBoxBorder";
             this.tb_cod_ley.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_ley.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
@@ -229,7 +227,7 @@
             this.tb_cod_ley.Name = "tb_cod_ley";
             this.tb_cod_ley.PreventEnterBeep = true;
             this.tb_cod_ley.ReadOnly = true;
-            this.tb_cod_ley.Size = new System.Drawing.Size(71, 22);
+            this.tb_cod_ley.Size = new System.Drawing.Size(71, 26);
             this.tb_cod_ley.TabIndex = 155;
             // 
             // LabelX8
@@ -243,7 +241,7 @@
             this.LabelX8.ForeColor = System.Drawing.Color.Black;
             this.LabelX8.Location = new System.Drawing.Point(299, 187);
             this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(56, 17);
+            this.LabelX8.Size = new System.Drawing.Size(69, 21);
             this.LabelX8.TabIndex = 154;
             this.LabelX8.Text = "Fecha Final";
             // 
@@ -292,7 +290,7 @@
             this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(100, 22);
+            this.tb_fec_fin.Size = new System.Drawing.Size(100, 26);
             this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_fin.TabIndex = 153;
             this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -309,7 +307,7 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(46, 188);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(61, 17);
+            this.LabelX7.Size = new System.Drawing.Size(76, 21);
             this.LabelX7.TabIndex = 152;
             this.LabelX7.Text = "Fecha Inicial";
             this.LabelX7.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -359,7 +357,7 @@
             this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(100, 22);
+            this.tb_fec_ini.Size = new System.Drawing.Size(100, 26);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_ini.TabIndex = 151;
             this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -371,7 +369,6 @@
             // 
             // 
             // 
-            this.tb_nro_fin.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_fin.Border.Class = "TextBoxBorder";
             this.tb_nro_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_fin.DisabledBackColor = System.Drawing.Color.White;
@@ -381,7 +378,7 @@
             this.tb_nro_fin.Name = "tb_nro_fin";
             this.tb_nro_fin.PreventEnterBeep = true;
             this.tb_nro_fin.ReadOnly = true;
-            this.tb_nro_fin.Size = new System.Drawing.Size(70, 22);
+            this.tb_nro_fin.Size = new System.Drawing.Size(70, 26);
             this.tb_nro_fin.TabIndex = 51;
             this.tb_nro_fin.Text = "9999";
             this.tb_nro_fin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -397,7 +394,7 @@
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
             this.LabelX6.Location = new System.Drawing.Point(306, 153);
             this.LabelX6.Name = "LabelX6";
-            this.LabelX6.Size = new System.Drawing.Size(49, 17);
+            this.LabelX6.Size = new System.Drawing.Size(61, 21);
             this.LabelX6.TabIndex = 50;
             this.LabelX6.Text = "Nro. Final";
             // 
@@ -407,7 +404,6 @@
             // 
             // 
             // 
-            this.tb_nro_ini.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_ini.Border.Class = "TextBoxBorder";
             this.tb_nro_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_ini.DisabledBackColor = System.Drawing.Color.White;
@@ -417,7 +413,7 @@
             this.tb_nro_ini.Name = "tb_nro_ini";
             this.tb_nro_ini.PreventEnterBeep = true;
             this.tb_nro_ini.ReadOnly = true;
-            this.tb_nro_ini.Size = new System.Drawing.Size(70, 22);
+            this.tb_nro_ini.Size = new System.Drawing.Size(70, 26);
             this.tb_nro_ini.TabIndex = 49;
             this.tb_nro_ini.Text = "1";
             this.tb_nro_ini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -433,7 +429,7 @@
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
             this.LabelX5.Location = new System.Drawing.Point(53, 157);
             this.LabelX5.Name = "LabelX5";
-            this.LabelX5.Size = new System.Drawing.Size(54, 17);
+            this.LabelX5.Size = new System.Drawing.Size(67, 21);
             this.LabelX5.TabIndex = 48;
             this.LabelX5.Text = "Nro. Inicial";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -444,7 +440,6 @@
             // 
             // 
             // 
-            this.tb_nom_act.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_act.Border.Class = "TextBoxBorder";
             this.tb_nom_act.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_act.DisabledBackColor = System.Drawing.Color.White;
@@ -454,7 +449,7 @@
             this.tb_nom_act.Name = "tb_nom_act";
             this.tb_nom_act.PreventEnterBeep = true;
             this.tb_nom_act.ReadOnly = true;
-            this.tb_nom_act.Size = new System.Drawing.Size(266, 22);
+            this.tb_nom_act.Size = new System.Drawing.Size(266, 26);
             this.tb_nom_act.TabIndex = 47;
             // 
             // LabelX4
@@ -469,7 +464,7 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(4, 122);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(103, 17);
+            this.LabelX4.Size = new System.Drawing.Size(128, 21);
             this.LabelX4.TabIndex = 46;
             this.LabelX4.Text = "Actividad Economica";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -480,7 +475,6 @@
             // 
             // 
             // 
-            this.tb_cod_act.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_act.Border.Class = "TextBoxBorder";
             this.tb_cod_act.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_act.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
@@ -493,7 +487,7 @@
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
             this.tb_cod_act.ReadOnly = true;
-            this.tb_cod_act.Size = new System.Drawing.Size(71, 22);
+            this.tb_cod_act.Size = new System.Drawing.Size(71, 26);
             this.tb_cod_act.TabIndex = 45;
             // 
             // tb_nom_sucu
@@ -502,7 +496,6 @@
             // 
             // 
             // 
-            this.tb_nom_sucu.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nom_sucu.Border.Class = "TextBoxBorder";
             this.tb_nom_sucu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_sucu.DisabledBackColor = System.Drawing.Color.White;
@@ -512,7 +505,7 @@
             this.tb_nom_sucu.Name = "tb_nom_sucu";
             this.tb_nom_sucu.PreventEnterBeep = true;
             this.tb_nom_sucu.ReadOnly = true;
-            this.tb_nom_sucu.Size = new System.Drawing.Size(266, 22);
+            this.tb_nom_sucu.Size = new System.Drawing.Size(266, 26);
             this.tb_nom_sucu.TabIndex = 44;
             // 
             // LabelX3
@@ -527,7 +520,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(63, 90);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(43, 17);
+            this.LabelX3.Size = new System.Drawing.Size(53, 21);
             this.LabelX3.TabIndex = 43;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -544,7 +537,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(45, 55);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(62, 17);
+            this.LabelX2.Size = new System.Drawing.Size(77, 21);
             this.LabelX2.TabIndex = 42;
             this.LabelX2.Text = "Tipo Factura";
             this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -555,7 +548,6 @@
             // 
             // 
             // 
-            this.tb_cod_sucu.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_sucu.Border.Class = "TextBoxBorder";
             this.tb_cod_sucu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_sucu.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
@@ -568,7 +560,7 @@
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
             this.tb_cod_sucu.ReadOnly = true;
-            this.tb_cod_sucu.Size = new System.Drawing.Size(71, 22);
+            this.tb_cod_sucu.Size = new System.Drawing.Size(71, 26);
             this.tb_cod_sucu.TabIndex = 41;
             // 
             // cb_tip_fac
@@ -581,13 +573,13 @@
             this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_fac.FormattingEnabled = true;
-            this.cb_tip_fac.ItemHeight = 16;
+            this.cb_tip_fac.ItemHeight = 20;
             this.cb_tip_fac.Items.AddRange(new object[] {
             this.FC,
             this.FM});
             this.cb_tip_fac.Location = new System.Drawing.Point(112, 53);
             this.cb_tip_fac.Name = "cb_tip_fac";
-            this.cb_tip_fac.Size = new System.Drawing.Size(343, 22);
+            this.cb_tip_fac.Size = new System.Drawing.Size(343, 26);
             this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_fac.TabIndex = 40;
             // 
@@ -607,7 +599,6 @@
             // 
             // 
             // 
-            this.tb_nro_dos.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_dos.Border.Class = "TextBoxBorder";
             this.tb_nro_dos.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_dos.DisabledBackColor = System.Drawing.Color.White;
@@ -617,7 +608,7 @@
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(202, 22);
+            this.tb_nro_dos.Size = new System.Drawing.Size(202, 26);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
             // 
@@ -633,14 +624,14 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(22, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(85, 17);
+            this.LabelX1.Size = new System.Drawing.Size(106, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // ctb007_05
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(483, 406);
