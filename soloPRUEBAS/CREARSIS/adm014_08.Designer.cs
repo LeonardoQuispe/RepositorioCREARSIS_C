@@ -112,7 +112,7 @@
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.Size = new System.Drawing.Size(761, 266);
-            this.dg_res_ult.TabIndex = 29;
+            this.dg_res_ult.TabIndex = 4;
             this.dg_res_ult.TabStop = false;
             // 
             // DIA
@@ -219,7 +219,7 @@
             this.labelX6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 27);
-            this.labelX6.TabIndex = 36;
+            this.labelX6.TabIndex = 2;
             this.labelX6.Text = "Año:";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -237,7 +237,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Size = new System.Drawing.Size(781, 358);
-            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // tb_libro_xls
@@ -257,7 +257,7 @@
             this.tb_libro_xls.PreventEnterBeep = true;
             this.tb_libro_xls.ReadOnly = true;
             this.tb_libro_xls.Size = new System.Drawing.Size(346, 22);
-            this.tb_libro_xls.TabIndex = 41;
+            this.tb_libro_xls.TabIndex = 1;
             this.tb_libro_xls.ButtonCustomClick += new System.EventHandler(this.tb_libro_xls_ButtonCustomClick);
             this.tb_libro_xls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_libro_xls_KeyDown);
             // 
@@ -275,7 +275,7 @@
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(72, 17);
-            this.labelX1.TabIndex = 40;
+            this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Libro de Excel:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -294,7 +294,7 @@
             this.tb_año_xls.PreventEnterBeep = true;
             this.tb_año_xls.ReadOnly = true;
             this.tb_año_xls.Size = new System.Drawing.Size(100, 22);
-            this.tb_año_xls.TabIndex = 39;
+            this.tb_año_xls.TabIndex = 3;
             // 
             // gb_ctr_frm
             // 
@@ -307,7 +307,7 @@
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_ctr_frm.Size = new System.Drawing.Size(781, 57);
-            this.gb_ctr_frm.TabIndex = 78;
+            this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel
@@ -323,7 +323,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 102;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -339,7 +339,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 101;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 

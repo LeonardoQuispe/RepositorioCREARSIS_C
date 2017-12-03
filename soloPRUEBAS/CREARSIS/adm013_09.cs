@@ -119,7 +119,7 @@ namespace CREARSIS
 
 
                 OpenFileDialog abrir_archivo = new OpenFileDialog();
-                abrir_archivo.Filter = "Libro de Excel|*.xlsx|Libro de Excel 97-2003|*.xls";
+                abrir_archivo.Filter = "Libro de Excel|*.xls; *.xlsx";
                 abrir_archivo.Title = "Seleccione el Libro de Excel";
                 if (abrir_archivo.ShowDialog() == DialogResult.OK)
                 {
