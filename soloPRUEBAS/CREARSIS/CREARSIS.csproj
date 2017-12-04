@@ -832,6 +832,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="seg001_01.resx">
       <DependentUpon>seg001_01.cs</DependentUpon>
@@ -878,6 +879,9 @@
       <Project>{bf8c8891-4678-4cdc-b0ff-3500d5e25bf6}</Project>
       <Name>DATOS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sinimagenCREARSIS.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

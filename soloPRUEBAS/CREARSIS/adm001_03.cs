@@ -54,16 +54,17 @@ namespace CREARSIS
             tb_dir_web.Text = tabla.Rows[0]["va_dir_web"].ToString();
             tb_dir_fbk.Text = tabla.Rows[0]["va_dir_fbk"].ToString();
             tb_cla_wif.Text = tabla.Rows[0]["va_cla_wif"].ToString();
-            if ((Byte[])tabla.Rows[0]["va_log_emp"] != System.DBNull)
+
+            if (tabla.Rows[0]["va_log_emp"] == DBNull.Value)
+            {
+                pc_log_emp.Image = pc_log_emp.InitialImage;
+            }
+            else
             {
                 va_log_emp = (Byte[])tabla.Rows[0]["va_log_emp"];
-            }
-                
-            if(va_log_emp!=null)
-            {
                 pc_log_emp.Image = o_mg_glo_bal.fg_byt_img(va_log_emp);
             }
-            
+
             tb_nit_emp.Focus();
 
             
@@ -95,13 +96,15 @@ namespace CREARSIS
             return err_msg;
         }
 
-        private void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            int digitos;
-            digitos = OpenFileDialog1.SafeFileName.Length - 4;
-            pc_log_emp.ImageLocation = OpenFileDialog1.FileName;
-        }
+        //private void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        //{
+        //    int digitos;
+        //    digitos = OpenFileDialog1.SafeFileName.Length - 4;
+        //    pc_log_emp.ImageLocation = OpenFileDialog1.FileName;
+        //}
         #endregion
+
+
         public adm001_03()
         {
             InitializeComponent();
@@ -119,7 +122,14 @@ namespace CREARSIS
 
         private void bt_sub_log_Click(object sender, EventArgs e)
         {
-            OpenFileDialog1.ShowDialog();
+            //OpenFileDialog1.ShowDialog();
+            OpenFileDialog abrir_archivo = new OpenFileDialog();
+            abrir_archivo.Filter = "Imágenes | *.jpeg; *.jpg; *.png";
+            abrir_archivo.Title = "Seleccione la Imagen";
+            if (abrir_archivo.ShowDialog() == DialogResult.OK)
+            {
+                pc_log_emp.Image = Image.FromFile(abrir_archivo.FileName);
+            }
         }
 
         private void adm001_03_FormClosing(object sender, FormClosingEventArgs e)
@@ -144,9 +154,17 @@ namespace CREARSIS
                     return;
                 }
 
+                //Convierte la imagen a BYTE
                 va_log_emp =o_mg_glo_bal.fg_img_byt(pc_log_emp.Image);
+
+                //MODIFICA DATOS
                 o_adm001._03(tb_nit_emp.Text, tb_raz_soc.Text, tb_rep_leg.Text, tb_dir_emp.Text, tb_tel_emp.Text, tb_cel_emp.Text, tb_cor_reo.Text, tb_dir_web.Text, tb_dir_fbk.Text, tb_cla_wif.Text);
+
+                //GUARDA imagen/LOGO
                 o_adm001._03(va_log_emp);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Datos de la Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 o_mg_glo_bal.mg_ads000_04(this, 1);
             }
             catch (Exception ex)

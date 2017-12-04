@@ -55,7 +55,6 @@
             this.tb_raz_soc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_rep_leg = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pc_log_emp)).BeginInit();
@@ -136,6 +135,7 @@
             this.pc_log_emp.BackColor = System.Drawing.Color.White;
             this.pc_log_emp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pc_log_emp.ForeColor = System.Drawing.Color.Black;
+            this.pc_log_emp.InitialImage = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
             this.pc_log_emp.Location = new System.Drawing.Point(5, 18);
             this.pc_log_emp.Name = "pc_log_emp";
             this.pc_log_emp.Size = new System.Drawing.Size(207, 84);
@@ -501,15 +501,14 @@
             this.tb_rep_leg.Size = new System.Drawing.Size(297, 22);
             this.tb_rep_leg.TabIndex = 30;
             // 
-            // OpenFileDialog1
-            // 
-            this.OpenFileDialog1.FileName = "OpenFileDialog1";
-            // 
             // adm001_03
             // 
+            this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(679, 310);
+            this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
@@ -558,6 +557,5 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_raz_soc;
         internal DevComponents.DotNetBar.LabelX LabelX3;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_rep_leg;
-        internal System.Windows.Forms.OpenFileDialog OpenFileDialog1;
     }
 }
