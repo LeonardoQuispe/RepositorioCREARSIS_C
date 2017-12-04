@@ -221,7 +221,7 @@ namespace CREARSIS
                 //Verifica estado del dato
                 if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "H")
                 {
-                    return "la Unidad se encuentra Habilitado";
+                    return "la Unidad se encuentra Habilitada";
                 }
 
                 return null;

@@ -90,7 +90,7 @@
             this.cb_tip_fap.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_tip_fap.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_fap.FormattingEnabled = true;
-            this.cb_tip_fap.ItemHeight = 20;
+            this.cb_tip_fap.ItemHeight = 16;
             this.cb_tip_fap.Items.AddRange(new object[] {
             this.matriz,
             this.detalle,
@@ -98,7 +98,7 @@
             this.combos});
             this.cb_tip_fap.Location = new System.Drawing.Point(252, 21);
             this.cb_tip_fap.Name = "cb_tip_fap";
-            this.cb_tip_fap.Size = new System.Drawing.Size(93, 26);
+            this.cb_tip_fap.Size = new System.Drawing.Size(93, 22);
             this.cb_tip_fap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_fap.TabIndex = 193;
             this.cb_tip_fap.TabStop = false;
@@ -153,7 +153,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(275, 26);
+            this.tb_est_ado.Size = new System.Drawing.Size(275, 22);
             this.tb_est_ado.TabIndex = 191;
             this.tb_est_ado.TabStop = false;
             // 
@@ -171,7 +171,7 @@
             this.tb_nom_fap.MaxLength = 25;
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
-            this.tb_nom_fap.Size = new System.Drawing.Size(275, 26);
+            this.tb_nom_fap.Size = new System.Drawing.Size(275, 22);
             this.tb_nom_fap.TabIndex = 12;
             // 
             // labelX2
@@ -186,7 +186,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(53, 21);
+            this.labelX2.Size = new System.Drawing.Size(43, 17);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
             // 
@@ -205,7 +205,7 @@
             this.tb_cod_fap.Name = "tb_cod_fap";
             this.tb_cod_fap.PreventEnterBeep = true;
             this.tb_cod_fap.ReadOnly = true;
-            this.tb_cod_fap.Size = new System.Drawing.Size(62, 26);
+            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
             this.tb_cod_fap.TabIndex = 10;
             // 
             // LabelX1
@@ -220,7 +220,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(47, 21);
+            this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Codigo";
             // 
@@ -249,6 +249,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 30;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -265,11 +266,12 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 40;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv001_04
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(362, 170);
@@ -283,6 +285,7 @@
             this.Name = "inv001_04";
             this.Text = "Habilita/Deshabilita familia de producto";
             this.TitleText = "Habilita/Deshabilita familia de producto";
+            this.Load += new System.EventHandler(this.inv001_04_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);

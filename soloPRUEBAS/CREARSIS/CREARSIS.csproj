@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adm001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm001_03.Designer.cs">
+      <DependentUpon>adm001_03.cs</DependentUpon>
+    </Compile>
     <Compile Include="adm002_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -581,6 +587,9 @@
     <Compile Include="seg020_01.Designer.cs">
       <DependentUpon>seg020_01.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adm001_03.resx">
+      <DependentUpon>adm001_03.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adm002_01.resx">
       <DependentUpon>adm002_01.cs</DependentUpon>
     </EmbeddedResource>
