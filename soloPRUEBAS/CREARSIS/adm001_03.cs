@@ -57,6 +57,34 @@ namespace CREARSIS
             va_log_emp =Convert.ToByte( tabla.Rows[0]["va_log_emp"]);
             pc_log_emp.Image = o_mg_glo_bal.fg_byt_img(va_log_emp);
             tb_nit_emp.Focus();
+
+            
+        }
+        int tmp;
+
+        private string fu_ver_dat()
+        {
+            string err_msg = null;
+            if (int.TryParse(tb_nit_emp.Text.Trim(), out tmp) == false)
+            {
+                tb_nit_emp.Focus();
+                err_msg = "El Nit es incorrecto, debe ser numerico";
+                return err_msg;
+            }
+
+            if (tb_raz_soc.Text.Trim() == "")
+            {
+                err_msg = "Debe proporcionar la Razon Social de la empresa";
+                return err_msg;
+            }
+
+            if (tb_rep_leg.Text.Trim() == "")
+            {
+                err_msg = "Debe proporcionar el represtante legal de la empresa";
+                return err_msg;
+            }
+
+            return err_msg;
         }
 
         private void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
@@ -73,7 +101,50 @@ namespace CREARSIS
 
         private void adm001_03_Load(object sender, EventArgs e)
         {
+            fu_ini_frm();
+        }
 
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void bt_sub_log_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog1.ShowDialog();
+        }
+
+        private void adm001_03_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Datos de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var res_msg = MessageBoxEx.Show("Esta seguro de grabar los datos ?", "Datos de la empresa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                va_log_emp =o_mg_glo_bal.fg_img_byt(pc_log_emp.Image);
+                o_adm001._03(tb_nit_emp.Text, tb_raz_soc.Text, tb_rep_leg.Text, tb_dir_emp.Text, tb_tel_emp.Text, tb_cel_emp.Text, tb_cor_reo.Text, tb_dir_web.Text, tb_dir_fbk.Text, tb_cla_wif.Text);
+                o_adm001._03(va_log_emp);
+                o_mg_glo_bal.mg_ads000_04(this, 1);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Datos de la empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

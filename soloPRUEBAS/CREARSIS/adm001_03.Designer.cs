@@ -103,6 +103,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 90;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_sub_log
             // 
@@ -119,6 +120,7 @@
             this.bt_sub_log.TabIndex = 80;
             this.bt_sub_log.Text = "Subir Foto";
             this.bt_sub_log.TextColor = System.Drawing.Color.Navy;
+            this.bt_sub_log.Click += new System.EventHandler(this.bt_sub_log_Click);
             // 
             // GroupBox3
             // 
@@ -516,6 +518,7 @@
             this.Name = "adm001_03";
             this.Text = "Datos de la empresa";
             this.TitleText = "Datos de la empresa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.adm001_03_FormClosing);
             this.Load += new System.EventHandler(this.adm001_03_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox3.ResumeLayout(false);
