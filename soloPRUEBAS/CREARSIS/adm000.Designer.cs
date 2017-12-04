@@ -370,6 +370,7 @@
             this.m_ads002.Name = "m_ads002";
             this.m_ads002.Size = new System.Drawing.Size(161, 22);
             this.m_ads002.Text = "&Empresa";
+            this.m_ads002.Click += new System.EventHandler(this.m_ads002_Click);
             // 
             // mr_tip_cam
             // 

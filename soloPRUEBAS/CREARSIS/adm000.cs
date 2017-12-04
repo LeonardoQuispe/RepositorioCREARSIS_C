@@ -300,5 +300,11 @@ namespace CREARSIS
             inv001_01 obj = new inv001_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        private void m_ads002_Click(object sender, EventArgs e)
+        {
+            adm001_03 obj = new adm001_03();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

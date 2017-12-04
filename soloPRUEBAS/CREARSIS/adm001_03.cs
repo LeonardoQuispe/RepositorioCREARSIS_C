@@ -54,8 +54,16 @@ namespace CREARSIS
             tb_dir_web.Text = tabla.Rows[0]["va_dir_web"].ToString();
             tb_dir_fbk.Text = tabla.Rows[0]["va_dir_fbk"].ToString();
             tb_cla_wif.Text = tabla.Rows[0]["va_cla_wif"].ToString();
-            va_log_emp = (Byte[])tabla.Rows[0]["va_log_emp"];
-            pc_log_emp.Image = o_mg_glo_bal.fg_byt_img(va_log_emp);
+            if ((Byte[])tabla.Rows[0]["va_log_emp"] != System.DBNull)
+            {
+                va_log_emp = (Byte[])tabla.Rows[0]["va_log_emp"];
+            }
+                
+            if(va_log_emp!=null)
+            {
+                pc_log_emp.Image = o_mg_glo_bal.fg_byt_img(va_log_emp);
+            }
+            
             tb_nit_emp.Focus();
 
             
