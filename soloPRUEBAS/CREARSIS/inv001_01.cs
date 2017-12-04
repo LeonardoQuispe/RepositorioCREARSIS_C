@@ -302,15 +302,8 @@ namespace CREARSIS
             }
         }
 
-        private void tb_sel_ecc_Validating(object sender, CancelEventArgs e)
-        {
-            fu_con_sel();
 
-            if (lb_sel_ecc.Text != "** NO existe")
-            {
-                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
-            }
-        }
+        
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
@@ -374,6 +367,16 @@ namespace CREARSIS
             }
             inv001_06 obj = new inv001_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+
+        private void tb_sel_ecc_Validating_1(object sender, CancelEventArgs e)
+        {
+            fu_con_sel();
+
+            if (lb_sel_ecc.Text != "** NO existe")
+            {
+                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+            }
         }
     }
 }

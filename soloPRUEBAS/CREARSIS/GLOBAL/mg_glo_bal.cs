@@ -638,8 +638,6 @@ namespace CREARSIS.GLOBAL
                 //Oculta las etiquetas
                 tmp_win_pad.MdiParent.ss_etk_vna.visible = false;
                 tmp_win_pad.MdiParent.ss_nom_vna.visible = false;
-
-
             }
             else
             {
@@ -647,13 +645,11 @@ namespace CREARSIS.GLOBAL
                 {
                     tmp_win_pad.padre.ss_etk_vna.visible = false;
                     tmp_win_pad.padre.ss_nom_vna.visible = false;
-
                 }
                 else
                 {
                     tmp_win_pad.padre.MdiParent.ss_etk_vna.visible = false;
                     tmp_win_pad.padre.MdiParent.ss_nom_vna.visible = false;
-
                 }
             }
 
@@ -670,7 +666,6 @@ namespace CREARSIS.GLOBAL
         DataTable tab_usm = new DataTable();
         c_seg020 ob_usr_mnu = new c_seg020();
 
-
         /// <summary>
         ///  <example>
         ///   FUNCION GLOBAL: verifica opciones restringidas del menu en la aplicacion para el usuario
@@ -682,7 +677,6 @@ namespace CREARSIS.GLOBAL
         /// <returns></returns>
         public MenuStrip fg_ver_mnu(string ide_usr, string ide_ven, MenuStrip menu)
         {
-
             glo_ide_usr = ide_usr;
             glo_ide_ven = ide_ven;
 
@@ -707,9 +701,6 @@ namespace CREARSIS.GLOBAL
                     //verifica en las opciones Hijas
                     fu_bus_hi1(opcion_menu);
                 }
-
-                
-
             }
 
             return menu;
@@ -745,8 +736,6 @@ namespace CREARSIS.GLOBAL
                         fu_bus_hi2(itm_hi1, hijo1);
                     }
                 }
-
-
             }
         }
 

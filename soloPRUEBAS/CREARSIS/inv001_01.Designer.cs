@@ -42,7 +42,6 @@
             this.nombre = new DevComponents.Editors.ComboItem();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
@@ -62,6 +61,7 @@
             this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_tip_fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -72,11 +72,11 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.cb_est_bus);
             this.GroupBox1.Controls.Add(this.cb_prm_bus);
             this.GroupBox1.Controls.Add(this.lb_sel_ecc);
             this.GroupBox1.Controls.Add(this.tb_val_bus);
-            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(2, -1);
@@ -183,25 +183,6 @@
             this.tb_val_bus.TabIndex = 25;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
-            // 
-            // tb_sel_ecc
-            // 
-            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Border.Class = "TextBoxBorder";
-            this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Location = new System.Drawing.Point(69, 19);
-            this.tb_sel_ecc.MaxLength = 3;
-            this.tb_sel_ecc.Name = "tb_sel_ecc";
-            this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 22);
-            this.tb_sel_ecc.TabIndex = 10;
-            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating);
             // 
             // LabelX1
             // 
@@ -432,6 +413,22 @@
             this.va_est_ado.ReadOnly = true;
             this.va_est_ado.Width = 151;
             // 
+            // tb_sel_ecc
+            // 
+            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
+            this.tb_sel_ecc.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
+            this.tb_sel_ecc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_sel_ecc.Location = new System.Drawing.Point(58, 16);
+            this.tb_sel_ecc.Mask = "00-00-00";
+            this.tb_sel_ecc.Name = "tb_sel_ecc";
+            this.tb_sel_ecc.PromptChar = ' ';
+            this.tb_sel_ecc.Size = new System.Drawing.Size(61, 22);
+            this.tb_sel_ecc.TabIndex = 42;
+            this.tb_sel_ecc.Text = "000000";
+            this.tb_sel_ecc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating_1);
+            // 
             // inv001_01
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -475,7 +472,6 @@
         internal DevComponents.Editors.ComboItem nombre;
         internal DevComponents.DotNetBar.LabelX lb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_bus;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
@@ -495,5 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_mar;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_tip_fam;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        internal System.Windows.Forms.MaskedTextBox tb_sel_ecc;
     }
 }
