@@ -110,6 +110,7 @@
             this.bt_sub_log.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_sub_log.BackColor = System.Drawing.Color.Blue;
             this.bt_sub_log.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_sub_log.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_sub_log.Location = new System.Drawing.Point(425, 128);
             this.bt_sub_log.Name = "bt_sub_log";
             this.bt_sub_log.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlB);
