@@ -114,15 +114,15 @@ namespace CREARSIS
             {
                 case 1:
                     // verifica que el tipo sea matriz
-                    if (cb_tip_fam.SelectedItem.ToString() != "M")
+                    if (cb_tip_fam.SelectedIndex != 0)
                     {
                         err_msg = "La familia de producto debe ser matriz.";
                         return err_msg;
                     }
 
                     // verifica que la familia no existe
-                    tabla = o_inv001._01(tb_cod_fap.Text,1,"",2);
-                    if (tabla.Rows.Count!=1)
+                    tabla = o_inv001._01(tb_cod_fap.Text,1,"T",2);
+                    if (tabla.Rows.Count!=0)
                     {
                         err_msg = "La familia de producto ya se encuentra registrada";
                         return err_msg;
@@ -138,7 +138,7 @@ namespace CREARSIS
                     }
 
                     // verifica que la familia al primer nivel si existe
-                    tabla = o_inv001._01(va_mat_cod[0], 1,"", 1);
+                    tabla = o_inv001._01(va_mat_cod[0], 1,"T", 1);
                     if ((tabla.Rows.Count == 0))
                     {
                         err_msg = "La familia de producto a primer nivel no se encuentra registrada.";
@@ -163,7 +163,7 @@ namespace CREARSIS
                     }
 
                     // verifica que la familia al primer nivel si existe
-                    tabla = o_inv001._01(va_mat_cod[0], 1, "", 1);
+                    tabla = o_inv001._01(va_mat_cod[0], 1, "T", 1);
                     if ((tabla.Rows.Count == 0))
                     {
                         err_msg = "La familia de producto a primer nivel no se encuentra registrada.";

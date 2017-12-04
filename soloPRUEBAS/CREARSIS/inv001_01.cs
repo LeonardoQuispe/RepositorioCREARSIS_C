@@ -51,7 +51,7 @@ namespace CREARSIS
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex);
 
         }
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
@@ -119,7 +119,7 @@ namespace CREARSIS
         /// </summary>
         public void fu_sel_fila(string cod_doc, string nom_doc)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_doc;
             lb_sel_ecc.Text = nom_doc;
