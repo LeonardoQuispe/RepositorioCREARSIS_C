@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
             this.cb_est_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.todos = new DevComponents.Editors.ComboItem();
             this.habilitado = new DevComponents.Editors.ComboItem();
@@ -57,11 +58,10 @@
             this.m_inv003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_cod_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_mar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_cod_fam = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this.va_nom_fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_tip_fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -84,6 +84,22 @@
             this.GroupBox1.Size = new System.Drawing.Size(543, 81);
             this.GroupBox1.TabIndex = 77;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_sel_ecc
+            // 
+            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
+            this.tb_sel_ecc.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
+            this.tb_sel_ecc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_sel_ecc.Location = new System.Drawing.Point(58, 20);
+            this.tb_sel_ecc.Mask = "00-00-00";
+            this.tb_sel_ecc.Name = "tb_sel_ecc";
+            this.tb_sel_ecc.PromptChar = ' ';
+            this.tb_sel_ecc.Size = new System.Drawing.Size(61, 22);
+            this.tb_sel_ecc.TabIndex = 42;
+            this.tb_sel_ecc.Text = "000000";
+            this.tb_sel_ecc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating_1);
             // 
             // cb_est_bus
             // 
@@ -155,7 +171,7 @@
             // 
             this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(137, 19);
+            this.lb_sel_ecc.Location = new System.Drawing.Point(123, 18);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
             this.lb_sel_ecc.Size = new System.Drawing.Size(225, 23);
             this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -193,7 +209,7 @@
             // 
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(15, 21);
+            this.LabelX1.Location = new System.Drawing.Point(15, 22);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(37, 17);
             this.LabelX1.TabIndex = 1;
@@ -337,6 +353,7 @@
             this.dg_res_ult.AllowUserToAddRows = false;
             this.dg_res_ult.AllowUserToDeleteRows = false;
             this.dg_res_ult.AllowUserToOrderColumns = true;
+            this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -348,8 +365,8 @@
             this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.va_cod_mar,
-            this.va_nom_mar,
+            this.va_cod_fam,
+            this.va_nom_fam,
             this.va_tip_fam,
             this.va_est_ado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -361,8 +378,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
-            this.dg_res_ult.Location = new System.Drawing.Point(6, 16);
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.Location = new System.Drawing.Point(6, 13);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
@@ -376,58 +393,58 @@
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(533, 170);
-            this.dg_res_ult.TabIndex = 1;
+            this.dg_res_ult.Size = new System.Drawing.Size(531, 170);
+            this.dg_res_ult.TabIndex = 81;
             this.dg_res_ult.TabStop = false;
-            this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
-            this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
+            this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick_1);
+            this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged_1);
             // 
-            // va_cod_mar
+            // va_cod_fam
             // 
+            this.va_cod_fam.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.va_cod_fam.BackgroundStyle.Class = "DataGridViewBorder";
+            this.va_cod_fam.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_cod_fam.ButtonCustom.Visible = true;
+            this.va_cod_fam.Culture = new System.Globalization.CultureInfo("es-ES");
+            this.va_cod_fam.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             dataGridViewCellStyle2.NullValue = null;
-            this.va_cod_mar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.va_cod_mar.HeaderText = "Codigo";
-            this.va_cod_mar.Name = "va_cod_mar";
-            this.va_cod_mar.ReadOnly = true;
-            this.va_cod_mar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.va_cod_mar.Width = 60;
+            this.va_cod_fam.DefaultCellStyle = dataGridViewCellStyle2;
+            this.va_cod_fam.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.va_cod_fam.HeaderText = "Codigo";
+            this.va_cod_fam.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.va_cod_fam.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.va_cod_fam.Mask = "00-00-00";
+            this.va_cod_fam.Name = "va_cod_fam";
+            this.va_cod_fam.PasswordChar = '\0';
+            this.va_cod_fam.PromptChar = '-';
+            this.va_cod_fam.ReadOnly = true;
+            this.va_cod_fam.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.va_cod_fam.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.va_cod_fam.Text = "--------";
+            this.va_cod_fam.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
-            // va_nom_mar
+            // va_nom_fam
             // 
-            this.va_nom_mar.HeaderText = "Nombre";
-            this.va_nom_mar.Name = "va_nom_mar";
-            this.va_nom_mar.ReadOnly = true;
-            this.va_nom_mar.Width = 151;
+            this.va_nom_fam.HeaderText = "Nombre";
+            this.va_nom_fam.Name = "va_nom_fam";
+            this.va_nom_fam.ReadOnly = true;
+            this.va_nom_fam.Width = 240;
             // 
             // va_tip_fam
             // 
             this.va_tip_fam.HeaderText = "Tipo";
             this.va_tip_fam.Name = "va_tip_fam";
             this.va_tip_fam.ReadOnly = true;
-            this.va_tip_fam.Width = 151;
+            this.va_tip_fam.Width = 85;
             // 
             // va_est_ado
             // 
             this.va_est_ado.HeaderText = "Estado";
             this.va_est_ado.Name = "va_est_ado";
             this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 151;
-            // 
-            // tb_sel_ecc
-            // 
-            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
-            this.tb_sel_ecc.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_sel_ecc.Location = new System.Drawing.Point(58, 16);
-            this.tb_sel_ecc.Mask = "00-00-00";
-            this.tb_sel_ecc.Name = "tb_sel_ecc";
-            this.tb_sel_ecc.PromptChar = ' ';
-            this.tb_sel_ecc.Size = new System.Drawing.Size(61, 22);
-            this.tb_sel_ecc.TabIndex = 42;
-            this.tb_sel_ecc.Text = "000000";
-            this.tb_sel_ecc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating_1);
             // 
             // inv001_01
             // 
@@ -477,7 +494,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal System.Windows.Forms.GroupBox GroupBox2;
-        internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         internal System.Windows.Forms.ToolStripMenuItem m_inv003_p00;
         internal System.Windows.Forms.MenuStrip mn_pri_nci;
         internal System.Windows.Forms.ToolStripMenuItem m_inv001_02;
@@ -487,10 +503,11 @@
         internal System.Windows.Forms.ToolStripMenuItem m_inv001_06;
         internal System.Windows.Forms.ToolStripMenuItem m_inv001_05;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_mar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_mar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_tip_fam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
         internal System.Windows.Forms.MaskedTextBox tb_sel_ecc;
+        internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
+        internal DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn va_cod_fam;
+        internal System.Windows.Forms.DataGridViewTextBoxColumn va_nom_fam;
+        internal System.Windows.Forms.DataGridViewTextBoxColumn va_tip_fam;
+        internal System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
     }
 }

@@ -37,7 +37,7 @@ namespace CREARSIS
 
         void fu_ini_frm()
         {
-            cb_tip_fam.SelectedIndex = 0;
+            cb_tip_fap.SelectedIndex = 0;
             tb_cod_fap.Focus();
         }
 
@@ -47,7 +47,7 @@ namespace CREARSIS
         public void fu_lim_frm()
         {
             tb_cod_fap.Clear();
-            tb_nom_fam.Clear();
+            tb_nom_fap.Clear();
 
             tb_cod_fap.Focus();
         }
@@ -67,6 +67,11 @@ namespace CREARSIS
                 tb_cod_fap.Focus();
                 return "Debes proporcionar el código de la Familia de producto";
             }
+            if (tb_cod_fap.Text.Trim().Length !=6)
+            {
+                tb_cod_fap.Focus();
+                return "Debe proporcionar un codigo valido para la familia de producto";
+            }
 
             tab_inv001 = o_inv001._05(tb_cod_fap.Text);
             if (tab_inv001.Rows.Count != 0)
@@ -75,15 +80,14 @@ namespace CREARSIS
                 return "El codigo de la Familia de producto ya se encuentra registrada";
             }
 
-            if (tb_nom_fam.Text.Trim() == "")
+            if (tb_nom_fap.Text.Trim() == "")
             {
-                tb_nom_fam.Focus();
+                tb_nom_fap.Focus();
                 return "Debes proporcionar el nombre de la Familia de producto";
             }
 
             // aumentar guion 
-            codigo = (tb_cod_fap.Text.Substring(0, 2) + ("-"
-                        + (tb_cod_fap.Text.Substring(2, 2) + ("-" + tb_cod_fap.Text.Substring(4, 2)))));
+            codigo = (tb_cod_fap.Text.Substring(0, 2) + ("-" + (tb_cod_fap.Text.Substring(2, 2) + ("-" + tb_cod_fap.Text.Substring(4, 2)))));
             va_mat_cod = codigo.Split('-');
             // 
             if (va_mat_cod[0] == "0")
@@ -114,7 +118,7 @@ namespace CREARSIS
             {
                 case 1:
                     // verifica que el tipo sea matriz
-                    if (cb_tip_fam.SelectedIndex != 0)
+                    if (cb_tip_fap.SelectedIndex != 0)
                     {
                         err_msg = "La familia de producto debe ser matriz.";
                         return err_msg;
@@ -131,7 +135,7 @@ namespace CREARSIS
                     break;
                 case 2:
                     // verifica que el tipo sea matriz
-                    if ((cb_tip_fam.SelectedItem.ToString() != "M"))
+                    if (cb_tip_fap.SelectedIndex != 0)
                     {
                         err_msg = "La familia de producto debe ser matriz.";
                         return err_msg;
@@ -139,14 +143,14 @@ namespace CREARSIS
 
                     // verifica que la familia al primer nivel si existe
                     tabla = o_inv001._01(va_mat_cod[0], 1,"T", 1);
-                    if ((tabla.Rows.Count == 0))
+                    if (tabla.Rows.Count == 0)
                     {
                         err_msg = "La familia de producto a primer nivel no se encuentra registrada.";
                         return err_msg;
                     }
 
                     // verifica que la familia al segundo nivel no existe
-                    tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "", 1);
+                    tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "T", 1);
                     if (tabla.Rows.Count!=0)
                     {
                         err_msg = "La familia de producto ya se encuentra registrada.";
@@ -156,7 +160,7 @@ namespace CREARSIS
                     break;
                 case 3:
                     // verifica que el tipo sea matriz
-                    if ((cb_tip_fam.SelectedItem.ToString() == "M"))
+                    if (cb_tip_fap.SelectedIndex== 0)
                     {
                         err_msg = "La familia de producto no debe ser matriz.";
                         return err_msg;
@@ -164,23 +168,22 @@ namespace CREARSIS
 
                     // verifica que la familia al primer nivel si existe
                     tabla = o_inv001._01(va_mat_cod[0], 1, "T", 1);
-                    if ((tabla.Rows.Count == 0))
+                    if (tabla.Rows.Count == 0)
                     {
                         err_msg = "La familia de producto a primer nivel no se encuentra registrada.";
                         return err_msg;
                     }
 
                     // verifica que la familia al segundo nivel si existe
-                    tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "", 1);
-                    if ((tabla.Rows.Count == 0))
+                    tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "T", 1);
+                    if (tabla.Rows.Count == 0)
                     {
                         err_msg = "La familia de producto al segundo nivel no se encuentra registrada.";
                         return err_msg;
                     }
 
                     // verifica que la familia al tercer nivel no existe
-                    tabla = o_inv001._01((va_mat_cod[0]
-                                    + (va_mat_cod[1] + va_mat_cod[2])), 1, "", 1);
+                    tabla = o_inv001._01((va_mat_cod[0] + (va_mat_cod[1] + va_mat_cod[2])), 1, "T", 1);
                     if (tabla.Rows.Count!=0)
                     {
                         err_msg = "La familia de producto se encuentra registrada.";
@@ -221,11 +224,11 @@ namespace CREARSIS
                 }
 
                 //Graba datos
-                o_inv001._02(tb_cod_fap.Text.Trim(), tb_nom_fam.Text.Trim(), cb_tip_fam.SelectedIndex.ToString());
+                o_inv001._02(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim(), cb_tip_fap.SelectedIndex.ToString());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fam.Text.Trim());
+                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim());
                 fu_lim_frm();
             }
             catch (Exception ex)

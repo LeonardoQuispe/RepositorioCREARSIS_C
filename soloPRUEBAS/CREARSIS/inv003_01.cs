@@ -233,6 +233,7 @@ namespace CREARSIS
         }
 
         #endregion
+
         public inv003_01()
         {
             InitializeComponent();

@@ -109,9 +109,11 @@ namespace CREARSIS
                 //Graba datos
                 o_inv004._06(int.Parse(tb_cod_mar.Text.Trim()));
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Marca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
 
-                vg_frm_pad.fu_sel_fila(tb_cod_mar.Text.Trim(), tb_nom_mar.Text.Trim());
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Marca", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             catch (Exception ex)

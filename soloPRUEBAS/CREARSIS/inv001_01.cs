@@ -378,5 +378,15 @@ namespace CREARSIS
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
         }
+
+        private void dg_res_ult_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void dg_res_ult_SelectionChanged_1(object sender, EventArgs e)
+        {
+            fu_fil_act();
+        }
     }
 }

@@ -108,9 +108,12 @@ namespace CREARSIS
                 //Graba datos
                 o_inv003._06(tb_cod_uni.Text.Trim());
 
+                
+
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
+
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Unidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_uni.Text.Trim(), tb_nom_uni.Text.Trim());
                 Close();
             }
             catch (Exception ex)
