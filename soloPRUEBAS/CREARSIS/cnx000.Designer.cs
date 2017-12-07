@@ -46,7 +46,6 @@
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.lk_fan_pag = new System.Windows.Forms.LinkLabel();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.touchKeyboard1 = new DevComponents.DotNetBar.Keyboard.TouchKeyboard();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -283,14 +282,6 @@
             this.line1.Text = "line1";
             this.line1.VerticalLine = true;
             // 
-            // touchKeyboard1
-            // 
-            this.touchKeyboard1.FloatingLocation = new System.Drawing.Point(0, 0);
-            this.touchKeyboard1.FloatingSize = new System.Drawing.Size(740, 250);
-            this.touchKeyboard1.Location = new System.Drawing.Point(0, 0);
-            this.touchKeyboard1.Size = new System.Drawing.Size(740, 250);
-            this.touchKeyboard1.Text = "";
-            // 
             // cnx000
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -315,6 +306,7 @@
             this.Controls.Add(this.line1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -347,6 +339,5 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.LinkLabel lk_fan_pag;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private DevComponents.DotNetBar.Keyboard.TouchKeyboard touchKeyboard1;
     }
 }
