@@ -58,7 +58,7 @@ namespace CREARSIS
             if (tb_cod_uni.Text.Trim() == "")
             {
                 tb_cod_uni.Focus();
-                return "Debes proporcionar el código de las Unidad";
+                return "Debes proporcionar el código de la Unidad";
             }
 
             tab_inv003 = o_inv003._05(tb_cod_uni.Text);

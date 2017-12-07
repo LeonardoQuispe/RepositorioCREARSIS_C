@@ -28,18 +28,26 @@ namespace DATOS.ADM
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus)
-        {
+        public DataTable _01(string val_bus, int prm_bus, string est_bus,int tipo =1)
+         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" select * from inv001  ");
 
-                switch (prm_bus)
+                if (tipo==1)
                 {
-                    case 1: vv_str_sql.AppendLine(" where va_cod_fam like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" where va_nom_fam like '" + val_bus + "%' "); break;
+                    switch (prm_bus)
+                    {
+                        case 1: vv_str_sql.AppendLine(" where va_cod_fam like '" + val_bus + "%' "); break;
+                        case 2: vv_str_sql.AppendLine(" where va_nom_fam like '" + val_bus + "%' "); break;
+                    }
                 }
+                else if (tipo==2)
+                {
+                    vv_str_sql.AppendLine(" where va_cod_fam = '" + val_bus + "' ");                       
+                }
+                
 
                 switch (est_bus)
                 {

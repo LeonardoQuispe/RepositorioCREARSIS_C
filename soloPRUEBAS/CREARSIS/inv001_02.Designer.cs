@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cb_tip_fam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cb_tip_fap = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.matriz = new DevComponents.Editors.ComboItem();
             this.detalle = new DevComponents.Editors.ComboItem();
             this.sevicio = new DevComponents.Editors.ComboItem();
             this.combos = new DevComponents.Editors.ComboItem();
-            this.tb_nom_fam = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nom_fap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_fam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
@@ -49,11 +49,11 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_cod_fap);
             this.GroupBox1.Controls.Add(this.labelX3);
-            this.GroupBox1.Controls.Add(this.cb_tip_fam);
-            this.GroupBox1.Controls.Add(this.tb_nom_fam);
+            this.GroupBox1.Controls.Add(this.cb_tip_fap);
+            this.GroupBox1.Controls.Add(this.tb_nom_fap);
             this.GroupBox1.Controls.Add(this.labelX2);
-            this.GroupBox1.Controls.Add(this.tb_cod_fam);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(2, -5);
@@ -61,6 +61,22 @@
             this.GroupBox1.Size = new System.Drawing.Size(359, 83);
             this.GroupBox1.TabIndex = 189;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_cod_fap
+            // 
+            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_fap.Location = new System.Drawing.Point(69, 20);
+            this.tb_cod_fap.Mask = "00-00-00";
+            this.tb_cod_fap.Name = "tb_cod_fap";
+            this.tb_cod_fap.PromptChar = ' ';
+            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_fap.TabIndex = 48;
+            this.tb_cod_fap.TabStop = false;
+            this.tb_cod_fap.Text = "000000";
+            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // labelX3
             // 
@@ -76,26 +92,26 @@
             this.labelX3.TabIndex = 46;
             this.labelX3.Text = "Tipo";
             // 
-            // cb_tip_fam
+            // cb_tip_fap
             // 
-            this.cb_tip_fam.DisplayMember = "Text";
-            this.cb_tip_fam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tip_fam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tip_fam.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_tip_fam.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_tip_fam.ForeColor = System.Drawing.Color.Black;
-            this.cb_tip_fam.FormattingEnabled = true;
-            this.cb_tip_fam.ItemHeight = 16;
-            this.cb_tip_fam.Items.AddRange(new object[] {
+            this.cb_tip_fap.DisplayMember = "Text";
+            this.cb_tip_fap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_fap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_fap.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_tip_fap.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_tip_fap.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_fap.FormattingEnabled = true;
+            this.cb_tip_fap.ItemHeight = 16;
+            this.cb_tip_fap.Items.AddRange(new object[] {
             this.matriz,
             this.detalle,
             this.sevicio,
             this.combos});
-            this.cb_tip_fam.Location = new System.Drawing.Point(251, 21);
-            this.cb_tip_fam.Name = "cb_tip_fam";
-            this.cb_tip_fam.Size = new System.Drawing.Size(93, 22);
-            this.cb_tip_fam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fam.TabIndex = 45;
+            this.cb_tip_fap.Location = new System.Drawing.Point(251, 21);
+            this.cb_tip_fap.Name = "cb_tip_fap";
+            this.cb_tip_fap.Size = new System.Drawing.Size(93, 22);
+            this.cb_tip_fap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_fap.TabIndex = 45;
             // 
             // matriz
             // 
@@ -117,22 +133,22 @@
             this.combos.Text = "Combo";
             this.combos.Value = "C";
             // 
-            // tb_nom_fam
+            // tb_nom_fap
             // 
-            this.tb_nom_fam.BackColor = System.Drawing.Color.White;
+            this.tb_nom_fap.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_nom_fam.Border.Class = "TextBoxBorder";
-            this.tb_nom_fam.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_fam.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_fam.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_fam.Location = new System.Drawing.Point(69, 51);
-            this.tb_nom_fam.MaxLength = 25;
-            this.tb_nom_fam.Name = "tb_nom_fam";
-            this.tb_nom_fam.PreventEnterBeep = true;
-            this.tb_nom_fam.Size = new System.Drawing.Size(275, 22);
-            this.tb_nom_fam.TabIndex = 12;
+            this.tb_nom_fap.Border.Class = "TextBoxBorder";
+            this.tb_nom_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_fap.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_fap.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_fap.Location = new System.Drawing.Point(69, 51);
+            this.tb_nom_fap.MaxLength = 25;
+            this.tb_nom_fap.Name = "tb_nom_fap";
+            this.tb_nom_fap.PreventEnterBeep = true;
+            this.tb_nom_fap.Size = new System.Drawing.Size(275, 22);
+            this.tb_nom_fap.TabIndex = 12;
             // 
             // labelX2
             // 
@@ -149,23 +165,6 @@
             this.labelX2.Size = new System.Drawing.Size(43, 17);
             this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Nombre";
-            // 
-            // tb_cod_fam
-            // 
-            this.tb_cod_fam.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_fam.Border.Class = "TextBoxBorder";
-            this.tb_cod_fam.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_fam.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_fam.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_fam.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_fam.MaxLength = 3;
-            this.tb_cod_fam.Name = "tb_cod_fam";
-            this.tb_cod_fam.PreventEnterBeep = true;
-            this.tb_cod_fam.Size = new System.Drawing.Size(62, 22);
-            this.tb_cod_fam.TabIndex = 10;
             // 
             // LabelX1
             // 
@@ -255,18 +254,18 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox GroupBox1;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_fam;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_fap;
         internal DevComponents.DotNetBar.LabelX labelX2;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_fam;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.LabelX labelX3;
-        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_fam;
+        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_fap;
         internal DevComponents.Editors.ComboItem matriz;
         internal DevComponents.Editors.ComboItem detalle;
         internal DevComponents.Editors.ComboItem sevicio;
         internal DevComponents.Editors.ComboItem combos;
+        internal System.Windows.Forms.MaskedTextBox tb_cod_fap;
     }
 }

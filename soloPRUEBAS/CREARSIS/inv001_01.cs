@@ -51,7 +51,7 @@ namespace CREARSIS
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex);
 
         }
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
@@ -119,7 +119,7 @@ namespace CREARSIS
         /// </summary>
         public void fu_sel_fila(string cod_doc, string nom_doc)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_doc;
             lb_sel_ecc.Text = nom_doc;
@@ -302,15 +302,8 @@ namespace CREARSIS
             }
         }
 
-        private void tb_sel_ecc_Validating(object sender, CancelEventArgs e)
-        {
-            fu_con_sel();
 
-            if (lb_sel_ecc.Text != "** NO existe")
-            {
-                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
-            }
-        }
+        
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
@@ -374,6 +367,26 @@ namespace CREARSIS
             }
             inv001_06 obj = new inv001_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+
+        private void tb_sel_ecc_Validating_1(object sender, CancelEventArgs e)
+        {
+            fu_con_sel();
+
+            if (lb_sel_ecc.Text != "** NO existe")
+            {
+                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+            }
+        }
+
+        private void dg_res_ult_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void dg_res_ult_SelectionChanged_1(object sender, EventArgs e)
+        {
+            fu_fil_act();
         }
     }
 }

@@ -58,7 +58,7 @@ namespace CREARSIS
             if (tb_cod_mar.Text.Trim() == "")
             {
                 tb_cod_mar.Focus();
-                return "Debes proporcionar el código de laS Marca";
+                return "Debes proporcionar el código de la Marca";
             }
 
             tab_inv004 = o_inv004._05(int.Parse(tb_cod_mar.Text));

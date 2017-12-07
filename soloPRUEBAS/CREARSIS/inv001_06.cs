@@ -118,11 +118,12 @@ namespace CREARSIS
                 }
 
                 //Graba datos
-                o_inv001._06(tb_cod_fap.Text.Trim());
+                o_inv001._06(tb_cod_fap.Text.Trim());                
+
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim());
                 Close();
             }
             catch (Exception ex)

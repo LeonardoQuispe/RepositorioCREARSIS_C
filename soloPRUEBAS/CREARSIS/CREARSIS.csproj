@@ -525,6 +525,42 @@
     <Compile Include="inv004_04.Designer.cs">
       <DependentUpon>inv004_04.cs</DependentUpon>
     </Compile>
+    <Compile Include="inv011_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_01.Designer.cs">
+      <DependentUpon>inv011_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_02.Designer.cs">
+      <DependentUpon>inv011_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_03.Designer.cs">
+      <DependentUpon>inv011_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_04.Designer.cs">
+      <DependentUpon>inv011_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_05.Designer.cs">
+      <DependentUpon>inv011_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_06.Designer.cs">
+      <DependentUpon>inv011_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="seg001_01.cs">
@@ -823,6 +859,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inv004_05.resx">
       <DependentUpon>inv004_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_01.resx">
+      <DependentUpon>inv011_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_02.resx">
+      <DependentUpon>inv011_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_03.resx">
+      <DependentUpon>inv011_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_04.resx">
+      <DependentUpon>inv011_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_05.resx">
+      <DependentUpon>inv011_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_06.resx">
+      <DependentUpon>inv011_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
