@@ -18,7 +18,7 @@ namespace DATOS
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Funcion "Buscar UNIDAD"
+        /// Funcion "Buscar GRUPO DE ALMACENES"
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
@@ -115,7 +115,7 @@ namespace DATOS
         /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
         /// <param name="est_ado">Estado del Grupo de Almacenes</param>
         /// <returns></returns>
-        public DataTable _04(string cod_gru, string est_ado)
+        public DataTable _04(int cod_gru, string est_ado)
         {
             try
             {
@@ -139,13 +139,13 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
         /// <returns></returns>
-        public DataTable _05(string cod_mar)
+        public DataTable _05(int cod_gru)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv010 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_gru =" + cod_mar);
+                vv_str_sql.AppendLine(" WHERE  va_cod_gru =" + cod_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -161,7 +161,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
         /// <returns></returns>
-        public DataTable _06(string cod_gru)
+        public DataTable _06(int cod_gru)
         {
             try
             {
