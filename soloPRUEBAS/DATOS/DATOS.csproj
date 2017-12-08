@@ -63,6 +63,7 @@
     <Compile Include="ADM\c_seg022.cs" />
     <Compile Include="ADM\c_seg049.cs" />
     <Compile Include="c_cnx000.cs" />
+    <Compile Include="c_inv010.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
