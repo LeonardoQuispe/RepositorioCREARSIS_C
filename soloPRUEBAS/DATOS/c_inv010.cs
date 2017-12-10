@@ -33,8 +33,8 @@ namespace DATOS
 
                 switch (prm_bus)
                 {
-                    case 1: vv_str_sql.AppendLine(" where va_cod_gru like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" where va_nom_gru like '" + val_bus + "%' "); break;
+                    case 1: vv_str_sql.AppendFormat(" where va_cod_gru like '{0}%'",val_bus); break;
+                    case 2: vv_str_sql.AppendFormat(" where va_nom_gru like '{0}%'", val_bus); break;
                 }
 
                 switch (est_bus)
@@ -46,7 +46,7 @@ namespace DATOS
 
                 if (est_bus != "T")
                 {
-                    vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
+                    vv_str_sql.AppendFormat(" and va_est_ado ='{0}'",est_bus);
                 }
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -71,9 +71,9 @@ namespace DATOS
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" INSERT INTO inv010 VALUES");
-                vv_str_sql.AppendLine(" (" + cod_suc + ", " + nro_gru + ", " + cod_gru + ",'" + nom_gru);
-                vv_str_sql.AppendLine(" ','" + des_gru + "','H')");
+                vv_str_sql.AppendFormat(" INSERT INTO inv010 VALUES");
+                vv_str_sql.AppendFormat(" ({0},{1},{2},", cod_gru, cod_suc, nro_gru);
+                vv_str_sql.AppendFormat(" '{0}','{1}','H')", nom_gru, des_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -98,8 +98,8 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv010 SET");
-                vv_str_sql.AppendLine(" va_cod_gru=" + cod_gru + ", va_nom_gru='" + nom_gru + "', ");
-                vv_str_sql.AppendLine(" va_des_gru='" + des_gru + "'");
+                vv_str_sql.AppendFormat(" va_cod_gru={0}, va_nom_gru='{1}'",cod_gru,nom_gru);
+                vv_str_sql.AppendFormat(" ,va_des_gru='{0}'",des_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -122,8 +122,8 @@ namespace DATOS
 
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv010 SET ");
-                vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "'");
-                vv_str_sql.AppendLine(" WHERE  va_cod_gru = " + cod_gru);
+                vv_str_sql.AppendFormat(" va_est_ado='{0}'",est_ado);
+                vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}",cod_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -145,7 +145,7 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv010 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_gru =" + cod_gru);
+                vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}",cod_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -167,7 +167,7 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" DELETE inv010 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_gru =" + cod_gru);
+                vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}", cod_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
