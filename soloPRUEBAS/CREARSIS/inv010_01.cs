@@ -75,7 +75,7 @@ namespace CREARSIS
                         break;
                 }
 
-                dg_res_ult.Rows.Add(row["va_cod_suc"], row["va_nro_gru"], row["va_cod_gru"], row["va_nom_gru"], row["va_des_gru"], va_est_ado);
+                dg_res_ult.Rows.Add(row["va_cod_gru"],row["va_cod_suc"], row["va_nro_gru"],  row["va_nom_gru"], row["va_des_gru"], va_est_ado);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;
@@ -112,7 +112,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_doc && dg_res_ult.Rows[i].Cells[1].Value.ToString() == nom_doc)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_doc && dg_res_ult.Rows[i].Cells[3].Value.ToString() == nom_doc)
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -163,7 +163,7 @@ namespace CREARSIS
         {
             if (dg_res_ult.SelectedRows.Count != 0)
             {
-                tb_cod_gru.Text = dg_res_ult.SelectedRows[0].Cells[2].Value.ToString();
+                tb_cod_gru.Text = dg_res_ult.SelectedRows[0].Cells[0].Value.ToString();
                 lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[3].Value.ToString();
             }
 
@@ -327,11 +327,64 @@ namespace CREARSIS
         {
             fu_con_sel();
         }
-
+        //[MENU- Nuevo]
         private void m_inv010_02_Click(object sender, EventArgs e)
         {
             inv010_02 obj = new inv010_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+        //[MENU- Actualiza]
+        private void m_inv010_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv010_03 obj = new inv010_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
+        }
+        //[MENU- Elimina]
+        private void m_inv010_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv010_06 obj = new inv010_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
+        }
+        //[MENU- Habilita/deshabilita]
+        private void m_inv010_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv010_04 obj = new inv010_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
+        }
+        //[MENU- Consulta]
+        private void m_inv010_05_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv010_05 obj = new inv010_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
+        }
+        //[MENU- Atras]
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
         }
     }
 }

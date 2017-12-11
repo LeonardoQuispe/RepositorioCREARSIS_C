@@ -72,7 +72,7 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendFormat(" INSERT INTO inv010 VALUES");
-                vv_str_sql.AppendFormat(" ({0},{1},{2},", cod_gru, cod_suc, nro_gru);
+                vv_str_sql.AppendFormat(" ({0},{1},{2},", cod_suc, nro_gru, cod_gru);
                 vv_str_sql.AppendFormat(" '{0}','{1}','H')", nom_gru, des_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
