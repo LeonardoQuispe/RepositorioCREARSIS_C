@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_gru = new System.Windows.Forms.MaskedTextBox();
             this.tb_nro_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
@@ -42,8 +44,6 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,25 @@
             this.GroupBox1.TabIndex = 78;
             this.GroupBox1.TabStop = false;
             // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(69, 109);
+            this.tb_est_ado.MaxLength = 40;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(295, 26);
+            this.tb_est_ado.TabIndex = 209;
+            // 
             // labelX2
             // 
             this.labelX2.AutoSize = true;
@@ -82,16 +101,32 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(262, 17);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(58, 17);
+            this.labelX2.Size = new System.Drawing.Size(72, 21);
             this.labelX2.TabIndex = 205;
             this.labelX2.Text = "Cod. Grupo";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(6, 113);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(43, 21);
+            this.labelX5.TabIndex = 208;
+            this.labelX5.Text = "Estado";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // tb_cod_gru
             // 
             this.tb_cod_gru.BackColor = System.Drawing.Color.White;
             this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_gru.Enabled = false;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.tb_cod_gru.Location = new System.Drawing.Point(326, 12);
@@ -99,7 +134,7 @@
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PromptChar = ' ';
             this.tb_cod_gru.ReadOnly = true;
-            this.tb_cod_gru.Size = new System.Drawing.Size(38, 22);
+            this.tb_cod_gru.Size = new System.Drawing.Size(38, 26);
             this.tb_cod_gru.TabIndex = 204;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
@@ -120,7 +155,7 @@
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
             this.tb_nro_gru.ReadOnly = true;
-            this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
+            this.tb_nro_gru.Size = new System.Drawing.Size(34, 26);
             this.tb_nro_gru.TabIndex = 201;
             this.tb_nro_gru.Text = "0";
             // 
@@ -136,7 +171,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(147, 17);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(57, 17);
+            this.LabelX1.Size = new System.Drawing.Size(71, 21);
             this.LabelX1.TabIndex = 200;
             this.LabelX1.Text = "Nro. Grupo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -155,8 +190,7 @@
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
-            this.tb_nom_gru.ReadOnly = true;
-            this.tb_nom_gru.Size = new System.Drawing.Size(294, 22);
+            this.tb_nom_gru.Size = new System.Drawing.Size(294, 26);
             this.tb_nom_gru.TabIndex = 199;
             // 
             // tb_des_gru
@@ -174,7 +208,6 @@
             this.tb_des_gru.Multiline = true;
             this.tb_des_gru.Name = "tb_des_gru";
             this.tb_des_gru.PreventEnterBeep = true;
-            this.tb_des_gru.ReadOnly = true;
             this.tb_des_gru.Size = new System.Drawing.Size(295, 22);
             this.tb_des_gru.TabIndex = 157;
             // 
@@ -190,7 +223,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(6, 83);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(59, 17);
+            this.LabelX9.Size = new System.Drawing.Size(73, 21);
             this.LabelX9.TabIndex = 156;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -207,7 +240,7 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(7, 49);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(43, 17);
+            this.LabelX4.Size = new System.Drawing.Size(53, 21);
             this.LabelX4.TabIndex = 46;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -224,7 +257,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(6, 17);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(43, 17);
+            this.LabelX3.Size = new System.Drawing.Size(53, 21);
             this.LabelX3.TabIndex = 43;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -247,7 +280,7 @@
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
             this.tb_cod_sucu.ReadOnly = true;
-            this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
+            this.tb_cod_sucu.Size = new System.Drawing.Size(59, 26);
             this.tb_cod_sucu.TabIndex = 41;
             // 
             // gb_ctr_frm
@@ -277,6 +310,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -292,45 +326,11 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(69, 109);
-            this.tb_est_ado.MaxLength = 40;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(295, 22);
-            this.tb_est_ado.TabIndex = 209;
-            // 
-            // labelX5
-            // 
-            this.labelX5.AutoSize = true;
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(6, 113);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(35, 17);
-            this.labelX5.TabIndex = 208;
-            this.labelX5.Text = "Estado";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // inv010_03
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 191);
             this.ControlBox = false;
