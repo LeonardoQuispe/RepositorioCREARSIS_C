@@ -57,6 +57,7 @@ namespace CREARSIS
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
+            string va_cod_gru = "";
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
@@ -75,7 +76,15 @@ namespace CREARSIS
                         break;
                 }
 
-                dg_res_ult.Rows.Add(row["va_cod_gru"],row["va_cod_suc"], row["va_nro_gru"],  row["va_nom_gru"], row["va_des_gru"], va_est_ado);
+                //agregar ceros al inicio de los numeros con 3 digitos
+                va_cod_gru = row["va_cod_gru"].ToString();
+
+                if (row["va_cod_gru"].ToString().Length==3)
+                {
+                    va_cod_gru=va_cod_gru.PadLeft(4, '0');
+                }
+
+                dg_res_ult.Rows.Add(va_cod_gru,row["va_cod_suc"], row["va_nro_gru"],  row["va_nom_gru"], row["va_des_gru"], va_est_ado);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;
@@ -89,7 +98,7 @@ namespace CREARSIS
 
             if (va_ind_ice > 0)
             {
-                tb_cod_gru.Text = tab_inv010.Rows[0]["va_cod_gru"].ToString();
+                tb_cod_gru.Text = tab_inv010.Rows[0]["va_cod_gru"].ToString().PadLeft(4,'0');
                 lb_sel_ecc.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
             }
 
@@ -242,7 +251,7 @@ namespace CREARSIS
 
         #endregion
 
-
+        
         public inv010_01()
         {
             InitializeComponent();

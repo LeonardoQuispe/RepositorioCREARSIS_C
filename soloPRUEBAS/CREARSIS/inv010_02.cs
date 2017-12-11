@@ -196,5 +196,31 @@ namespace CREARSIS
         {
             tb_cod_sucu.Text = o_mg_glo_bal.valida_numeros(tb_cod_sucu.Text);
         }
+
+        private void tb_cod_sucu_Validated(object sender, EventArgs e)
+        {
+            string tmp = "";
+
+            if (string.IsNullOrWhiteSpace(tb_cod_sucu.Text)!=true)
+            {
+                tmp = tb_cod_sucu.Text.PadLeft(2,'0');
+
+                tb_cod_gru.Text = tb_cod_gru.Text[0].ToString()+ tb_cod_gru.Text[1].ToString() + tmp[0] + tmp[1];
+
+            }
+        }
+
+        private void tb_nro_gru_Validated(object sender, EventArgs e)
+        {
+            string tmp = "";
+
+            if (string.IsNullOrWhiteSpace(tb_nro_gru.Text) != true)
+            {
+                tmp = tb_nro_gru.Text.PadLeft(2, '0');
+
+                tb_cod_gru.Text = tmp[0] + tmp[1]+tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString();
+
+            }
+        }
     }
 }

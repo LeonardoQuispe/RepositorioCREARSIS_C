@@ -877,6 +877,16 @@ namespace CREARSIS.GLOBAL
         }
         #endregion
 
+
+        #region METODOS NUEVO 3.0
+
+        /// <summary>
+        /// Substring de Basic con base 0
+        /// </summary>
+        /// <param name="va_lor"></param>
+        /// <param name="indice"></param>
+        /// <param name="cuantos"></param>
+        /// <returns></returns>
         public string sub_string(string va_lor, int indice, int cuantos)
         {
             indice--;
@@ -898,10 +908,15 @@ namespace CREARSIS.GLOBAL
 
             return res_ult;
         }
-         
+
+        /// <summary>
+        /// Valida que solo se ingrese numeros
+        /// </summary>
+        /// <param name="dato"></param>
+        /// <returns></returns>
         public string valida_numeros(string dato)
         {
-            string nuevo=null;
+            string nuevo = null;
             bool bandera = false;
             long tmp;
 
@@ -910,20 +925,38 @@ namespace CREARSIS.GLOBAL
                 if (long.TryParse(dato[i].ToString(), out tmp) == true)
                 {
                     nuevo += dato[i];
-                }                
+                }
                 else if (long.TryParse(dato[i].ToString(), out tmp) == false)
                 {
                     bandera = true;
                 }
             }
 
-            if (bandera==true)
+            if (bandera == true)
             {
                 System.Media.SystemSounds.Beep.Play();
-            }           
+            }
 
             return nuevo;
-        }        
+        }
+
+        ///// <summary>
+        ///// METODO para aumentar CERO al principo de numero
+        ///// </summary>
+        ///// <param name="num"></param>
+        ///// <returns></returns>
+        //public string cod_mas_ked(string num)
+        //{
+        //    if (num.Length==1)
+        //    {
+        //        num = "0" + num;
+        //    }
+        //}
+
+
+        #endregion
+
+
 
     }
 }

@@ -98,8 +98,8 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv010 SET");
-                vv_str_sql.AppendFormat(" va_cod_gru={0}, va_nom_gru='{1}'",cod_gru,nom_gru);
-                vv_str_sql.AppendFormat(" ,va_des_gru='{0}'",des_gru);
+                vv_str_sql.AppendFormat(" va_nom_gru='{0}',va_des_gru='{1}'",nom_gru,des_gru);
+                vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}", cod_gru);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
