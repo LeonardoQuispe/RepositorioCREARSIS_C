@@ -43,7 +43,6 @@
             this.tb_cod_sucu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +66,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(0, -1);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(370, 145);
-            this.GroupBox1.TabIndex = 82;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // tb_est_ado
@@ -85,8 +84,9 @@
             this.tb_est_ado.MaxLength = 40;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(295, 22);
-            this.tb_est_ado.TabIndex = 209;
+            this.tb_est_ado.TabIndex = 11;
             // 
             // labelX2
             // 
@@ -101,7 +101,7 @@
             this.labelX2.Location = new System.Drawing.Point(262, 17);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(58, 17);
-            this.labelX2.TabIndex = 205;
+            this.labelX2.TabIndex = 4;
             this.labelX2.Text = "Cod. Grupo";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -118,7 +118,7 @@
             this.labelX5.Location = new System.Drawing.Point(6, 113);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(35, 17);
-            this.labelX5.TabIndex = 208;
+            this.labelX5.TabIndex = 10;
             this.labelX5.Text = "Estado";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -126,15 +126,15 @@
             // 
             this.tb_cod_gru.BackColor = System.Drawing.Color.White;
             this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_gru.Enabled = false;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.tb_cod_gru.Location = new System.Drawing.Point(326, 12);
             this.tb_cod_gru.Mask = "00-00";
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PromptChar = ' ';
+            this.tb_cod_gru.ReadOnly = true;
             this.tb_cod_gru.Size = new System.Drawing.Size(38, 22);
-            this.tb_cod_gru.TabIndex = 204;
+            this.tb_cod_gru.TabIndex = 5;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
             this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -148,14 +148,14 @@
             this.tb_nro_gru.Border.Class = "TextBoxBorder";
             this.tb_nro_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_gru.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_gru.Enabled = false;
             this.tb_nro_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_gru.Location = new System.Drawing.Point(212, 12);
             this.tb_nro_gru.MaxLength = 2;
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
+            this.tb_nro_gru.ReadOnly = true;
             this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_gru.TabIndex = 201;
+            this.tb_nro_gru.TabIndex = 3;
             this.tb_nro_gru.Text = "0";
             // 
             // LabelX1
@@ -171,7 +171,7 @@
             this.LabelX1.Location = new System.Drawing.Point(147, 17);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(57, 17);
-            this.LabelX1.TabIndex = 200;
+            this.LabelX1.TabIndex = 2;
             this.LabelX1.Text = "Nro. Grupo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -189,8 +189,9 @@
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
+            this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(294, 22);
-            this.tb_nom_gru.TabIndex = 199;
+            this.tb_nom_gru.TabIndex = 7;
             // 
             // tb_des_gru
             // 
@@ -207,8 +208,9 @@
             this.tb_des_gru.Multiline = true;
             this.tb_des_gru.Name = "tb_des_gru";
             this.tb_des_gru.PreventEnterBeep = true;
+            this.tb_des_gru.ReadOnly = true;
             this.tb_des_gru.Size = new System.Drawing.Size(295, 22);
-            this.tb_des_gru.TabIndex = 157;
+            this.tb_des_gru.TabIndex = 9;
             // 
             // LabelX9
             // 
@@ -223,7 +225,7 @@
             this.LabelX9.Location = new System.Drawing.Point(6, 83);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 156;
+            this.LabelX9.TabIndex = 8;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -240,7 +242,7 @@
             this.LabelX4.Location = new System.Drawing.Point(7, 49);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 46;
+            this.LabelX4.TabIndex = 6;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -257,7 +259,7 @@
             this.LabelX3.Location = new System.Drawing.Point(6, 17);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(43, 17);
-            this.LabelX3.TabIndex = 43;
+            this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -273,25 +275,24 @@
             this.tb_cod_sucu.ButtonCustom.Symbol = "";
             this.tb_cod_sucu.ButtonCustom.Visible = true;
             this.tb_cod_sucu.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_sucu.Enabled = false;
             this.tb_cod_sucu.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_sucu.Location = new System.Drawing.Point(69, 12);
             this.tb_cod_sucu.MaxLength = 2;
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
+            this.tb_cod_sucu.ReadOnly = true;
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
-            this.tb_cod_sucu.TabIndex = 41;
+            this.tb_cod_sucu.TabIndex = 1;
             // 
             // gb_ctr_frm
             // 
             this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
-            this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(0, 143);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(370, 48);
-            this.gb_ctr_frm.TabIndex = 83;
+            this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel
@@ -307,28 +308,15 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
-            // 
-            // bt_ace_pta
-            // 
-            this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(160, 17);
-            this.bt_ace_pta.Name = "bt_ace_pta";
-            this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
-            this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_ace_pta.Symbol = "";
-            this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
-            this.bt_ace_pta.Text = "Aceptar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv010_06
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(370, 191);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
@@ -339,6 +327,7 @@
             this.Name = "inv010_06";
             this.Text = "Elimina Grupo de Almacen";
             this.TitleText = "Elimina Grupo de Almacen";
+            this.Load += new System.EventHandler(this.inv010_06_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);
@@ -363,7 +352,6 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_sucu;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
-        internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
 
     }
 }

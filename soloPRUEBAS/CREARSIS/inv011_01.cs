@@ -15,5 +15,10 @@ namespace CREARSIS
         {
             InitializeComponent();
         }
+
+        private void inv011_01_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

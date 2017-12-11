@@ -43,7 +43,7 @@ namespace CREARSIS
             }
             tb_cod_sucu.Text = vg_str_ucc.Rows[0]["va_cod_suc"].ToString();
             tb_nro_gru.Text= vg_str_ucc.Rows[0]["va_nro_gru"].ToString();
-            tb_cod_gru.Text= vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
+            tb_cod_gru.Text= vg_str_ucc.Rows[0]["va_cod_gru"].ToString().PadLeft(4, '0');
             tb_nom_gru.Text= vg_str_ucc.Rows[0]["va_nom_gru"].ToString();
             tb_des_gru.Text= vg_str_ucc.Rows[0]["va_des_gru"].ToString();
 
@@ -66,14 +66,14 @@ namespace CREARSIS
             if (tb_cod_gru.Text.Trim() == "")
             {
                 tb_cod_gru.Focus();
-                return "Debes proporcionar el código del Grupo de Almacen";
+                return "Debes proporcionar el código del Grupo de Almacén";
             }
 
 
             if (tb_nom_gru.Text.Trim() == "")
             {
                 tb_nom_gru.Focus();
-                return "Debes proporcionar el nombre del Grupo de Almacen";
+                return "Debes proporcionar el nombre del Grupo de Almacén";
             }
 
             return null;
@@ -99,13 +99,13 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Actualiza Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Actualiza Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -115,14 +115,14 @@ namespace CREARSIS
                 //Graba datos
                 o_inv010._03(int.Parse(tb_cod_gru.Text),tb_nom_gru.Text,tb_des_gru.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_gru.Text, tb_nom_gru.Text);
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Actualiza Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Actualiza Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
