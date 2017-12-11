@@ -61,7 +61,7 @@
             this.tb_des_gru.Multiline = true;
             this.tb_des_gru.Name = "tb_des_gru";
             this.tb_des_gru.PreventEnterBeep = true;
-            this.tb_des_gru.Size = new System.Drawing.Size(295, 22);
+            this.tb_des_gru.Size = new System.Drawing.Size(285, 22);
             this.tb_des_gru.TabIndex = 7;
             // 
             // LabelX9
@@ -89,7 +89,7 @@
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(0, 110);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(381, 48);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(365, 48);
             this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -99,7 +99,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(280, 16);
+            this.bt_can_cel.Location = new System.Drawing.Point(263, 16);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -115,7 +115,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(165, 16);
+            this.bt_ace_pta.Location = new System.Drawing.Point(148, 16);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -160,7 +160,7 @@
             this.tb_cod_sucu.MaxLength = 2;
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
-            this.tb_cod_sucu.Size = new System.Drawing.Size(79, 22);
+            this.tb_cod_sucu.Size = new System.Drawing.Size(64, 22);
             this.tb_cod_sucu.TabIndex = 1;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
             this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
@@ -183,7 +183,7 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(0, -1);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(381, 112);
+            this.GroupBox1.Size = new System.Drawing.Size(365, 112);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
@@ -197,7 +197,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(262, 17);
+            this.labelX2.Location = new System.Drawing.Point(252, 17);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(58, 17);
             this.labelX2.TabIndex = 8;
@@ -210,7 +210,7 @@
             this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_gru.Location = new System.Drawing.Point(326, 12);
+            this.tb_cod_gru.Location = new System.Drawing.Point(316, 12);
             this.tb_cod_gru.Mask = "00-00";
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PromptChar = ' ';
@@ -231,7 +231,7 @@
             this.tb_nro_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_gru.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_gru.Location = new System.Drawing.Point(219, 12);
+            this.tb_nro_gru.Location = new System.Drawing.Point(209, 12);
             this.tb_nro_gru.MaxLength = 2;
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
@@ -251,7 +251,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(154, 17);
+            this.LabelX1.Location = new System.Drawing.Point(144, 17);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(57, 17);
             this.LabelX1.TabIndex = 2;
@@ -272,7 +272,7 @@
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
-            this.tb_nom_gru.Size = new System.Drawing.Size(294, 22);
+            this.tb_nom_gru.Size = new System.Drawing.Size(284, 22);
             this.tb_nom_gru.TabIndex = 5;
             // 
             // LabelX4
@@ -298,7 +298,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(383, 157);
+            this.ClientSize = new System.Drawing.Size(367, 157);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);

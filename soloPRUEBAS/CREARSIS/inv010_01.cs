@@ -108,20 +108,20 @@ namespace CREARSIS
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
-        public void fu_sel_fila(string cod_doc, string nom_doc)
+        public void fu_sel_fila(string cod_gru, string nom_gru)
         {
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_est_bus.SelectedIndex);
 
-            tb_cod_gru.Text = cod_doc;
-            lb_sel_ecc.Text = nom_doc;
+            tb_cod_gru.Text = cod_gru;
+            lb_sel_ecc.Text = nom_gru;
 
-            if (cod_doc != null)
+            if (cod_gru != null)
             {
                 try
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_doc && dg_res_ult.Rows[i].Cells[3].Value.ToString() == nom_doc)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_gru && dg_res_ult.Rows[i].Cells[3].Value.ToString() == nom_gru)
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -144,7 +144,6 @@ namespace CREARSIS
             if (tb_cod_gru.Text == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
-                tb_cod_gru.Text = "0000";
                 return;
             }
 
@@ -153,7 +152,6 @@ namespace CREARSIS
             if (int.TryParse(tb_cod_gru.Text, out tmp) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
-                tb_cod_gru.Text = "0000";
                 return;
             }
 
@@ -165,8 +163,13 @@ namespace CREARSIS
                 return;
             }
 
-            tb_cod_gru.Text = tabla.Rows[0]["va_cod_suc"].ToString();
+            tb_cod_gru.Text = tabla.Rows[0]["va_cod_gru"].ToString().PadLeft(4,'0');
             lb_sel_ecc.Text = tabla.Rows[0]["va_nom_gru"].ToString();
+
+            if (lb_sel_ecc.Text != "** NO existe")
+            {
+                fu_sel_fila(tb_cod_gru.Text, lb_sel_ecc.Text);
+            }
 
         }
 
