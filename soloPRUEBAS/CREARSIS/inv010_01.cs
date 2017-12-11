@@ -345,18 +345,7 @@ namespace CREARSIS
             inv010_03 obj = new inv010_03();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
         }
-        //[MENU- Elimina]
-        private void m_inv010_06_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat3();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            inv010_06 obj = new inv010_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
-        }
+       
         //[MENU- Habilita/deshabilita]
         private void m_inv010_04_Click(object sender, EventArgs e)
         {
@@ -367,6 +356,18 @@ namespace CREARSIS
                 return;
             }
             inv010_04 obj = new inv010_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
+        }
+        //[MENU- Elimina]
+        private void m_inv010_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv010_06 obj = new inv010_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv010);
         }
         //[MENU- Consulta]
