@@ -20,11 +20,10 @@ namespace CREARSIS
     {
         #region VARIABLES
 
-        public dynamic vg_frm_pad;
-        DataTable tab_inv010;
+        public dynamic vg_frm_pad;        
         string err_msg = "";
-        string cod_doc_aux;
-        DataTable tab_adm004;
+        DataTable tab_adm007;
+        DataTable tab_inv010;
 
         #endregion
 
@@ -37,19 +36,33 @@ namespace CREARSIS
         #endregion
 
         #region METODOS
-        public void fu_rec_suc(string cod_doc)
+        public void fu_rec_suc(string cod_suc)
         {
+            string tmp = "";
 
-            if (cod_doc_aux == cod_doc)
+            if (cod_suc.Trim() == "")
             {
+                tb_cod_sucu.Text = "** NO existe";
+                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
 
-            tb_cod_sucu.Clear();
+            tab_adm007 = o_adm007._05(cod_suc);
+            if (tab_adm007.Rows.Count == 0)
+            {
+                tb_cod_sucu.Text = "** NO existe";
+                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
+                return;
+            }
+
+            tb_cod_sucu.Text = cod_suc;
 
             
+            tmp = tb_cod_sucu.Text.PadLeft(2, '0');
 
-            tb_cod_sucu.Text = cod_doc;
+            tb_cod_gru.Text =  tmp[0].ToString() + tmp[1].ToString() +tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
+            
+
         }
         void fu_ini_frm()
         {
@@ -76,45 +89,65 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
+            
+            //**Verifica Codigo de la Sucursal-----------------------------------
+            int tmp;
+
             if (tb_cod_sucu.Text.Trim() == "")
             {
                 tb_cod_sucu.Focus();
                 return "Debes proporcionar el código de la Sucursal";
             }
 
-            tab_inv010 = o_inv010._05(int.Parse( tb_cod_gru.Text));
-            if (tab_inv010.Rows.Count != 0)
-            {
-                tb_cod_gru.Focus();
-                return "El codigo del Grupo de Almacen ya se encuentra registrado";
-            }
-
-            if (tb_nom_gru.Text.Trim() == "")
-            {
-                tb_nom_gru.Focus();
-                return "Debes proporcionar el nombre  del Grupo de Almacen";
-            }
-
-            //**Verifica Codigo de la Sucursal-----------------------------------
-            int tmp;
             if (int.TryParse(tb_cod_sucu.Text.Trim(), out tmp) == false)
             {
                 tb_cod_sucu.Focus();
                 return "El Codigo de la Sucursal NO es valido";
             }
 
-            tab_adm004 = o_adm007._05(tb_cod_sucu.Text);
-            if (tab_adm004.Rows.Count == 0)
+            tab_adm007 = o_adm007._05(tb_cod_sucu.Text);
+            if (tab_adm007.Rows.Count == 0)
             {
                 tb_cod_sucu.Focus();
                 return "El Codigo de la Sucursal NO se encuentra registrado";
             }
 
-            if (tab_adm004.Rows[0]["va_est_ado"].ToString() == "N")
+            if (tab_adm007.Rows[0]["va_est_ado"].ToString() == "N")
             {
                 tb_cod_sucu.Focus();
                 return "El Codigo de la Sucursal se encuentra Deshabilitado";
             }
+
+            //VERIFICA numero de Grupo
+
+            if (string.IsNullOrWhiteSpace(tb_nro_gru.Text))
+            {
+                tb_nro_gru.Focus();
+                return "Debes proporcionar el Número del Grupo de Almacén";
+            }
+
+            if (int.Parse(tb_nro_gru.Text)<=0)
+            {
+                tb_nro_gru.Focus();
+                return "El Número del Grupo de Almacén debe ser mayor a cero";
+            }
+
+            //**Verifica Codigo de GRUPO
+            tab_inv010 = o_inv010._05(int.Parse( tb_cod_gru.Text));
+            if (tab_inv010.Rows.Count != 0)
+            {
+                tb_cod_gru.Focus();
+                return "El codigo del Grupo de Almacén ya se encuentra registrado";
+            }
+
+            //**Verifica el nombre del grupo de almacen
+            if (tb_nom_gru.Text.Trim() == "")
+            {
+                tb_nom_gru.Focus();
+                return "Debes proporcionar el nombre  del Grupo de Almacén";
+            }
+
+            
 
 
             return null;
@@ -143,13 +176,13 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Nuevo Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -161,14 +194,14 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_sel_fila(tb_cod_gru.Text, tb_nom_gru.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 fu_lim_frm();
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Nuevo Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -195,19 +228,19 @@ namespace CREARSIS
         private void tb_cod_sucu_TextChanged(object sender, EventArgs e)
         {
             tb_cod_sucu.Text = o_mg_glo_bal.valida_numeros(tb_cod_sucu.Text);
+            tb_cod_sucu.Select(tb_cod_sucu.Text.Length, 0);
+        }
+
+        private void tb_nro_gru_TextChanged(object sender, EventArgs e)
+        {
+            tb_nro_gru.Text = o_mg_glo_bal.valida_numeros(tb_nro_gru.Text);
+            tb_nro_gru.Select(tb_nro_gru.Text.Length, 0);
         }
 
         private void tb_cod_sucu_Validated(object sender, EventArgs e)
+
         {
-            string tmp = "";
-
-            if (string.IsNullOrWhiteSpace(tb_cod_sucu.Text)!=true)
-            {
-                tmp = tb_cod_sucu.Text.PadLeft(2,'0');
-
-                tb_cod_gru.Text = tb_cod_gru.Text[0].ToString()+ tb_cod_gru.Text[1].ToString() + tmp[0] + tmp[1];
-
-            }
+            fu_rec_suc(tb_cod_sucu.Text);
         }
 
         private void tb_nro_gru_Validated(object sender, EventArgs e)
@@ -218,9 +251,11 @@ namespace CREARSIS
             {
                 tmp = tb_nro_gru.Text.PadLeft(2, '0');
 
-                tb_cod_gru.Text = tmp[0] + tmp[1]+tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString();
+                tb_cod_gru.Text =tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString()+tmp[0].ToString() + tmp[1].ToString();
 
             }
         }
+
+        
     }
 }

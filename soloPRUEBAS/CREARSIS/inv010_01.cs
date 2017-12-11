@@ -144,6 +144,7 @@ namespace CREARSIS
             if (tb_cod_gru.Text == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_cod_gru.Text = "0000";
                 return;
             }
 
@@ -152,6 +153,7 @@ namespace CREARSIS
             if (int.TryParse(tb_cod_gru.Text, out tmp) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_cod_gru.Text = "0000";
                 return;
             }
 

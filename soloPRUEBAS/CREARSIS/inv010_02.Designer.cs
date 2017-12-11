@@ -238,6 +238,7 @@
             this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
             this.tb_nro_gru.TabIndex = 3;
             this.tb_nro_gru.Text = "0";
+            this.tb_nro_gru.TextChanged += new System.EventHandler(this.tb_nro_gru_TextChanged);
             this.tb_nro_gru.Validated += new System.EventHandler(this.tb_nro_gru_Validated);
             // 
             // LabelX1
