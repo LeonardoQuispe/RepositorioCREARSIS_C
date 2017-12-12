@@ -415,8 +415,8 @@
     <Compile Include="ctb007_20.Designer.cs">
       <DependentUpon>ctb007_20.cs</DependentUpon>
     </Compile>
-    <Compile Include="GLOBAL\md_cod_ctr.cs" />
-    <Compile Include="GLOBAL\mg_glo_bal.cs" />
+    <Compile Include="GLOBAL\01_mg_cod_ctr.cs" />
+    <Compile Include="GLOBAL\01_mg_glo_bal.cs" />
     <Compile Include="inv001_01.cs">
       <SubType>Form</SubType>
     </Compile>

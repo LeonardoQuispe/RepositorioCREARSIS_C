@@ -135,8 +135,6 @@ namespace CREARSIS
             Close();
         }
 
-        #endregion
-
         private void tb_cod_suc_TextChanged(object sender, EventArgs e)
         {
             tb_cod_suc.Text = o_mg_glo_bal.valida_numeros(tb_cod_suc.Text);
@@ -146,5 +144,8 @@ namespace CREARSIS
         {
             tb_tel_suc.Text = o_mg_glo_bal.valida_numeros(tb_tel_suc.Text);
         }
+
+        #endregion
+
     }
 }

@@ -58,7 +58,6 @@
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm013_p00 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm013_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm013_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm013_02a = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
@@ -385,13 +384,6 @@
             this.m_adm013_p00.Size = new System.Drawing.Size(73, 24);
             this.m_adm013_p00.Text = "&Informe";
             // 
-            // m_adm013_05
-            // 
-            this.m_adm013_05.Name = "m_adm013_05";
-            this.m_adm013_05.Size = new System.Drawing.Size(78, 24);
-            this.m_adm013_05.Text = "&Consulta";
-            this.m_adm013_05.Click += new System.EventHandler(this.m_adm013_05_Click);
-            // 
             // m_adm013_02
             // 
             this.m_adm013_02.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -415,13 +407,12 @@
             this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_adm013_02,
-            this.m_adm013_05,
             this.m_adm013_p00,
             this.m_adm013_08,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(510, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(432, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -534,7 +525,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
         internal System.Windows.Forms.ToolStripMenuItem m_adm013_p00;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm013_05;
         internal System.Windows.Forms.ToolStripMenuItem m_adm013_02;
         internal System.Windows.Forms.ToolStripMenuItem m_adm013_02a;
         internal System.Windows.Forms.MenuStrip mn_pri_nci;

@@ -23,7 +23,6 @@ namespace CREARSIS
         public DataTable vg_str_ucc;
         string err_msg = "";
         DataTable tabla;
-        DataTable tab_inv001;
 
         #endregion
 
@@ -213,6 +212,9 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
         public inv001_03()
         {
             InitializeComponent();
@@ -261,5 +263,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message, "Error Actualiza Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

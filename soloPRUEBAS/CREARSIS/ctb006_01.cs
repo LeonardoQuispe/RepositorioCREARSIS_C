@@ -31,7 +31,6 @@ namespace CREARSIS
 
         #endregion
 
-
         #region METODOS
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
@@ -150,6 +149,7 @@ namespace CREARSIS
         }
         #endregion
 
+        #region EVENTOS
         public ctb006_01()
         {
             InitializeComponent();
@@ -249,5 +249,6 @@ namespace CREARSIS
         {
             tb_sel_ecc.Text = o_mg_glo_bal.valida_numeros(tb_sel_ecc.Text);
         }
+        #endregion
     }
 }

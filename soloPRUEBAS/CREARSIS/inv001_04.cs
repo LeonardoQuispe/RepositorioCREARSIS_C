@@ -86,6 +86,9 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
         public inv001_04()
         {
             InitializeComponent();
@@ -148,5 +151,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message, "Habilita/Deshabilita Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

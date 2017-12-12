@@ -28,7 +28,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
-        md_cod_ctr o_md_cod_ctr = new md_cod_ctr();
+        mg_cod_ctr o_md_cod_ctr = new mg_cod_ctr();
 
         #endregion
 

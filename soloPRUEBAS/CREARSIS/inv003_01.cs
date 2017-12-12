@@ -234,6 +234,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public inv003_01()
         {
             InitializeComponent();
@@ -244,7 +246,6 @@ namespace CREARSIS
             fu_fil_act();
         }
 
-       
 
         private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
         {
@@ -306,13 +307,16 @@ namespace CREARSIS
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
         }
-        
+        #endregion
+
+        #region OPCIONES DE MENU
+        //NUEVO
         private void m_inv003_02_Click(object sender, EventArgs e)
         {
             inv003_02 obj = new inv003_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
-
+        //ACTUALIZA
         private void m_inv003_03_Click(object sender, EventArgs e)
         {
             vv_err_msg = fu_ver_dat();
@@ -324,7 +328,7 @@ namespace CREARSIS
             inv003_03 obj = new inv003_03();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
         }
-
+        //HABILITA/DESHABILITA
         private void m_inv003_04_Click(object sender, EventArgs e)
         {
             vv_err_msg = fu_ver_dat2();
@@ -336,7 +340,7 @@ namespace CREARSIS
             inv003_04 obj = new inv003_04();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
         }
-
+        //ELIMINA
         private void m_inv003_06_Click(object sender, EventArgs e)
         {
             vv_err_msg = fu_ver_dat3();
@@ -349,7 +353,7 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
         }
 
-        //[MENU- Consulta]
+        //CONSULTA
         private void m_inv003_05_Click(object sender, EventArgs e)
         {
             vv_err_msg = fu_ver_dat2();
@@ -361,10 +365,11 @@ namespace CREARSIS
             inv003_05 obj = new inv003_05();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv003);
         }
-
+        //ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+        #endregion
     }
 }

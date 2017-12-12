@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CREARSIS.GLOBAL
 {
-    public class md_cod_ctr
+    public class mg_cod_ctr
     {
         int contador = 0;
 

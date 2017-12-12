@@ -41,7 +41,6 @@ namespace CREARSIS
 
         #endregion
 
-
         #region METODOS
 
         string fu_ver_dat_imp()

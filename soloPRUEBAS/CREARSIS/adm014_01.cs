@@ -400,20 +400,7 @@ namespace CREARSIS
             Close();
         }
         
-
-        private void m_adm014_05_Click(object sender, EventArgs e)
-        {
-
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Regional", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-        }
-
+        
         private void cb_prm_bus_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ban_aux == 1)

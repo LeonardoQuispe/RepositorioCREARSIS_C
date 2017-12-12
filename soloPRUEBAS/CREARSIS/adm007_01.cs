@@ -301,6 +301,10 @@ namespace CREARSIS
         {
             fu_fil_act();
         }
+        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
+        {
+            tb_sel_ecc.Text = o_mg_glo_bal.valida_numeros(tb_sel_ecc.Text);
+        }
 
         #endregion
 
@@ -377,10 +381,6 @@ namespace CREARSIS
 
 
         #endregion
-
-        private void tb_sel_ecc_TextChanged(object sender, EventArgs e)
-        {
-            tb_sel_ecc.Text = o_mg_glo_bal.valida_numeros(tb_sel_ecc.Text);
-        }
+        
     }
 }

@@ -198,6 +198,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public inv001_02()
         {
             InitializeComponent();
@@ -246,5 +248,6 @@ namespace CREARSIS
         {
             Close();
         }
+        #endregion
     }
 }

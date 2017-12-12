@@ -290,7 +290,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(Ex.Message);
             }
         }
-        #endregion
 
         private void tb_libro_xls_ButtonCustomClick(object sender, EventArgs e)
         {
@@ -314,5 +313,7 @@ namespace CREARSIS
                 }
             }
         }
+        #endregion
+
     }
 }

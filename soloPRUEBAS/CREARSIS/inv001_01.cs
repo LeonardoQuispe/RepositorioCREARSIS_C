@@ -252,6 +252,7 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
         public inv001_01()
         {
             InitializeComponent();
@@ -301,74 +302,6 @@ namespace CREARSIS
                 }
             }
         }
-
-
-        
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void m_atr_ass_Click(object sender, EventArgs e)
-        {
-            o_mg_glo_bal.mg_ads000_04(this, 1);
-        }
-
-        private void m_inv001_02_Click(object sender, EventArgs e)
-        {
-            inv001_02 obj = new inv001_02();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
-        }
-
-        private void m_inv001_03_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            inv001_03 obj = new inv001_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
-        }
-
-        private void m_inv001_04_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            inv001_04 obj = new inv001_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
-        }
-
-        private void m_inv001_05_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            inv001_05 obj = new inv001_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
-        }
-
-        private void m_inv001_06_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat3();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            inv001_06 obj = new inv001_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
-        }
-
         private void tb_sel_ecc_Validating_1(object sender, CancelEventArgs e)
         {
             fu_con_sel();
@@ -388,5 +321,75 @@ namespace CREARSIS
         {
             fu_fil_act();
         }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
+        #region OPCIONES DE MENU
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+        //NUEVO
+        private void m_inv001_02_Click(object sender, EventArgs e)
+        {
+            inv001_02 obj = new inv001_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+        //ACTUALIZA
+        private void m_inv001_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv001_03 obj = new inv001_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+        //HABILITA/DESHABILITA
+        private void m_inv001_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv001_04 obj = new inv001_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+        //CONSULTA
+        private void m_inv001_05_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv001_05 obj = new inv001_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+        //ELIMINA
+        private void m_inv001_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            inv001_06 obj = new inv001_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv001);
+        }
+
+        #endregion
     }
 }

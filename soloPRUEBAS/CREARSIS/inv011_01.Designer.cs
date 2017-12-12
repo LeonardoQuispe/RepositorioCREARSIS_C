@@ -63,6 +63,7 @@
             this.cb_est_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.mn_pri_nci.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -73,35 +74,35 @@
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_inv011_05
             // 
             this.m_inv011_05.Name = "m_inv011_05";
-            this.m_inv011_05.Size = new System.Drawing.Size(66, 20);
+            this.m_inv011_05.Size = new System.Drawing.Size(78, 24);
             this.m_inv011_05.Text = "&Consulta";
             this.m_inv011_05.Click += new System.EventHandler(this.m_inv011_05_Click);
             // 
             // m_inv011_06
             // 
             this.m_inv011_06.Name = "m_inv011_06";
-            this.m_inv011_06.Size = new System.Drawing.Size(178, 22);
+            this.m_inv011_06.Size = new System.Drawing.Size(218, 26);
             this.m_inv011_06.Text = "&Elimina";
             this.m_inv011_06.Click += new System.EventHandler(this.m_inv011_06_Click);
             // 
             // m_inv011_04
             // 
             this.m_inv011_04.Name = "m_inv011_04";
-            this.m_inv011_04.Size = new System.Drawing.Size(178, 22);
+            this.m_inv011_04.Size = new System.Drawing.Size(218, 26);
             this.m_inv011_04.Text = "&Habilita/Deshabiltia";
             this.m_inv011_04.Click += new System.EventHandler(this.m_inv011_04_Click);
             // 
             // m_inv011_03
             // 
             this.m_inv011_03.Name = "m_inv011_03";
-            this.m_inv011_03.Size = new System.Drawing.Size(178, 22);
+            this.m_inv011_03.Size = new System.Drawing.Size(218, 26);
             this.m_inv011_03.Text = "&Actualiza";
             this.m_inv011_03.Click += new System.EventHandler(this.m_inv011_03_Click);
             // 
@@ -112,13 +113,13 @@
             this.m_inv011_04,
             this.m_inv011_06});
             this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
+            this.mr_mod_ifi.Size = new System.Drawing.Size(80, 24);
             this.mr_mod_ifi.Text = "&Modifica";
             // 
             // m_inv011_02
             // 
             this.m_inv011_02.Name = "m_inv011_02";
-            this.m_inv011_02.Size = new System.Drawing.Size(54, 20);
+            this.m_inv011_02.Size = new System.Drawing.Size(64, 24);
             this.m_inv011_02.Text = "&Nuevo";
             this.m_inv011_02.Click += new System.EventHandler(this.m_inv011_02_Click);
             // 
@@ -136,7 +137,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(0, 118);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(358, 28);
             this.mn_pri_nci.TabIndex = 76;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -144,7 +145,7 @@
             // m_inv011_p00
             // 
             this.m_inv011_p00.Name = "m_inv011_p00";
-            this.m_inv011_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_inv011_p00.Size = new System.Drawing.Size(73, 24);
             this.m_inv011_p00.Text = "&Informe";
             // 
             // bt_can_cel
@@ -370,7 +371,7 @@
             this.tb_val_bus.MaxLength = 25;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(358, 22);
+            this.tb_val_bus.Size = new System.Drawing.Size(358, 26);
             this.tb_val_bus.TabIndex = 3;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
@@ -386,7 +387,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(13, 19);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(44, 17);
+            this.LabelX1.Size = new System.Drawing.Size(55, 21);
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Almacén";
             // 
@@ -407,13 +408,13 @@
             this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 16;
+            this.cb_prm_bus.ItemHeight = 20;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo,
             this.nombre});
             this.cb_prm_bus.Location = new System.Drawing.Point(377, 50);
             this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
+            this.cb_prm_bus.Size = new System.Drawing.Size(86, 26);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 4;
             // 
@@ -441,20 +442,21 @@
             this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_est_bus.FormattingEnabled = true;
-            this.cb_est_bus.ItemHeight = 16;
+            this.cb_est_bus.ItemHeight = 20;
             this.cb_est_bus.Items.AddRange(new object[] {
             this.todos,
             this.habilitado,
             this.deshabilitado});
             this.cb_est_bus.Location = new System.Drawing.Point(469, 50);
             this.cb_est_bus.Name = "cb_est_bus";
-            this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
+            this.cb_est_bus.Size = new System.Drawing.Size(93, 26);
             this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_est_bus.TabIndex = 5;
             // 
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.maskedTextBoxAdv1);
             this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.cb_est_bus);
             this.GroupBox1.Controls.Add(this.cb_prm_bus);
@@ -478,7 +480,7 @@
             this.tb_sel_ecc.Mask = "00-00-000";
             this.tb_sel_ecc.Name = "tb_sel_ecc";
             this.tb_sel_ecc.PromptChar = ' ';
-            this.tb_sel_ecc.Size = new System.Drawing.Size(60, 22);
+            this.tb_sel_ecc.Size = new System.Drawing.Size(60, 26);
             this.tb_sel_ecc.TabIndex = 1;
             this.tb_sel_ecc.TabStop = false;
             this.tb_sel_ecc.Text = "0000000";
@@ -486,10 +488,26 @@
             this.tb_sel_ecc.ValidatingType = typeof(int);
             this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
+            // maskedTextBoxAdv1
+            // 
+            // 
+            // 
+            // 
+            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
+            this.maskedTextBoxAdv1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.maskedTextBoxAdv1.ButtonCustom.Symbol = "";
+            this.maskedTextBoxAdv1.ButtonCustom.Visible = true;
+            this.maskedTextBoxAdv1.Location = new System.Drawing.Point(400, 15);
+            this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
+            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(75, 25);
+            this.maskedTextBoxAdv1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.maskedTextBoxAdv1.TabIndex = 21;
+            this.maskedTextBoxAdv1.Text = "";
+            // 
             // inv011_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(580, 394);
@@ -550,5 +568,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn va_fec_ctr;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_ecg;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv maskedTextBoxAdv1;
     }
 }
