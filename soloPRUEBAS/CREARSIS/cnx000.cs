@@ -168,45 +168,45 @@ namespace CREARSIS
         {
             //mg_not_ify("Notificacion", "Prueba de la notificacion")
 
+            
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-MX");
+
+            // Dim a = fg_gen_lic("01/10/2016", "b0-i3-11")
+
+            //Verifica datos en pantalla
+            if (fu_val_ida(tb_usr_usr.Text, tb_pss_usr.Text, cb_bdo_usr.Text) != null)
             {
-                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-MX");
-
-                // Dim a = fg_gen_lic("01/10/2016", "b0-i3-11")
-
-                //Verifica datos en pantalla
-                if (fu_val_ida(tb_usr_usr.Text, tb_pss_usr.Text, cb_bdo_usr.Text) != null)
-                {
-                    MessageBoxEx.Show(va_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-
-
-                dynamic vc_usr_log = o_mg_glo_bal.fg_cnx_usr(tb_usr_usr.Text, tb_pss_usr.Text, cb_bdo_usr.Text, false);
-
-
-                //verifica conexion de usuaio con la base de datos
-                if (vc_usr_log.vs_msg_err != "")
-                {
-                    MessageBoxEx.Show(vc_usr_log.vs_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-
-                this.Hide();
-
-                cnx003 o_cnx003 = new cnx003();
-
-                if (va_ban_mnu == 1)
-                {
-                    o_cnx003.ShowDialog();
-                    Close();
-                }
-
-                if (va_ban_mnu == 2)
-                {
-                    o_cnx003.ShowDialog();
-                    Close();
-                }
+                MessageBoxEx.Show(va_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
+
+
+            dynamic vc_usr_log = o_mg_glo_bal.fg_cnx_usr(tb_usr_usr.Text, tb_pss_usr.Text, cb_bdo_usr.Text, false);
+
+
+            //verifica conexion de usuaio con la base de datos
+            if (vc_usr_log.vs_msg_err != "")
+            {
+                MessageBoxEx.Show(vc_usr_log.vs_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+            this.Hide();
+
+            cnx003 o_cnx003 = new cnx003();
+
+            if (va_ban_mnu == 1)
+            {
+                o_cnx003.ShowDialog();
+                Close();
+            }
+
+            if (va_ban_mnu == 2)
+            {
+                o_cnx003.ShowDialog();
+                Close();
+            }
+            
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)

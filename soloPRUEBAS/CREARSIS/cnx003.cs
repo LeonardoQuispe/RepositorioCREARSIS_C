@@ -212,7 +212,7 @@ namespace CREARSIS
 
                         switch (tab_seg021.Rows[i][1].ToString())
                         {
-                            case "ads000    ":
+                            case "ads000":
                                 mt_ads000.Visible = true; break;
 
                             case "app_alq_uil":

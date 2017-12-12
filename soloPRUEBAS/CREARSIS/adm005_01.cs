@@ -60,7 +60,7 @@ namespace CREARSIS
 
                 int temp;
 
-                if (int.TryParse(cb_ges_tio.SelectedValue.ToString(), out temp) == false)
+                if (cb_ges_tio.SelectedValue!= null && int.TryParse(cb_ges_tio.SelectedValue.ToString(), out temp) == false)
                 {
                     fu_bus_car("", 1, 0);
                 }
