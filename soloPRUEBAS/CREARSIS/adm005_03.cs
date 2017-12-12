@@ -10,7 +10,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using DATOS.ADM;
 using DevComponents.DotNetBar;
-using CREARSIS.GLOBAL;
+
 
 namespace CREARSIS
 {
@@ -34,7 +34,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_adm002 o_adm002 = new c_adm002();
         c_adm003 o_adm003 = new c_adm003();
         c_adm004 o_adm004 = new c_adm004();

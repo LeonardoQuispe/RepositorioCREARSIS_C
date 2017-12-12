@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
 using DATOS.ADM;
 using DevComponents.DotNetBar;
 
@@ -29,7 +28,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm001 o_adm001 = new c_adm001();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         DataTable tab_adm001;
 
         #endregion

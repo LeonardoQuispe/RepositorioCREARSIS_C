@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
+
 using DATOS.ADM;
 using System.IO;
 using DevComponents.DotNetBar;
@@ -31,7 +31,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_seg001 o_ads005 = new c_seg001();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -119,7 +119,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(" Error: " + ex.Message + System.Environment.NewLine + mg_glo_bal.vc_usr_log.vs_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBoxEx.Show(" Error: " + ex.Message + System.Environment.NewLine + _01_mg_glo_bal.vc_usr_log.vs_msg_err, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {

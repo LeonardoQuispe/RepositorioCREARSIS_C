@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using DATOS.ADM;
 using DevComponents.DotNetBar;
 using System.Text.RegularExpressions;
-using CREARSIS.GLOBAL;
+
 
 namespace CREARSIS
 {
@@ -29,7 +29,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm007 o_adm007 = new c_adm007();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 

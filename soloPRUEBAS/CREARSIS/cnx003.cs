@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
+
 using DATOS.ADM;
 using System.Threading;
 using DevComponents.DotNetBar;
@@ -29,7 +29,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_seg001 o_seg001 = new c_seg001();
         c_seg021 o_seg021 = new c_seg021();
 
@@ -113,7 +113,7 @@ namespace CREARSIS
                 //Obtiene Nombre de la empresa
 
                 //Fecha un mes antes de que caduque la licencia
-                DateTime vv_fec_aux = mg_glo_bal.vc_usr_log.vs_fec_cad.AddMonths(-1);
+                DateTime vv_fec_aux = _01_mg_glo_bal.vc_usr_log.vs_fec_cad.AddMonths(-1);
                 //DateTime que obtine valor de la funcion global                
                 DateTime vv_fec_act = o_mg_glo_bal.fg_fec_act();
                 //COmpara fehca actual con fecha de licencia
@@ -121,7 +121,7 @@ namespace CREARSIS
 
                 if (ts.Days <= 0)
                 {
-                    mg_glo_bal.mg_not_ify("LICENCIA POR CADUCAR", "La Licencia esta proxima a caducar, comuniquese con Crearsis");
+                    _01_mg_glo_bal.mg_not_ify("LICENCIA POR CADUCAR", "La Licencia esta proxima a caducar, comuniquese con Crearsis");
 
                     lb_msg_lic.Text = "La Licencia esta por expirar...!!!";
                     //MessageBoxEx.Show("La Licencia esta por expirar...!!! " & Chr(13) & _
@@ -202,7 +202,7 @@ namespace CREARSIS
             mt_tes_caj.Visible = false;
             mt_ven_tas.Visible = false;
 
-            tab_seg021 = o_seg021._05(mg_glo_bal.vc_usr_log.vs_cod_usr);
+            tab_seg021 = o_seg021._05(_01_mg_glo_bal.vc_usr_log.vs_cod_usr);
 
             // Verifica la app permitidas para el usuario
             if (tab_seg021.Rows.Count != 0)

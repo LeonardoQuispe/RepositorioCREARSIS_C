@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
+
 using DATOS;
 using DATOS.ADM;
 
@@ -79,7 +79,7 @@ namespace CREARSIS
         private void SymbolBox1_Click(object sender, EventArgs e)
         {
             fu_cer_rar();
-            mg_glo_bal.mg_cer_not();
+            _01_mg_glo_bal.mg_cer_not();
         }
 
         private void tm_org_pos_Tick(object sender, EventArgs e)

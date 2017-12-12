@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
+
 using DevComponents.DotNetBar;
 
 
@@ -28,7 +28,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
-        mg_cod_ctr o_md_cod_ctr = new mg_cod_ctr();
+        _01_mg_cod_ctr o_md_cod_ctr = new _01_mg_cod_ctr();
 
         #endregion
 

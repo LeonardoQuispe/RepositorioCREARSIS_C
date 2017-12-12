@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using DATOS.ADM;
 using System.Transactions;
 using DevComponents.DotNetBar;
-using CREARSIS.GLOBAL;
+
 
 
 namespace CREARSIS
@@ -38,7 +38,7 @@ namespace CREARSIS
         c_adm003 o_adm003 = new c_adm003();
         c_adm004 o_adm004 = new c_adm004();
         c_ctb007 o_ctb007 = new c_ctb007();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 

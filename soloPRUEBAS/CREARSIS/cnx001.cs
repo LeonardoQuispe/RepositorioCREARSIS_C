@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using CREARSIS.GLOBAL;
+
 using DATOS.ADM;
 using DevComponents.DotNetBar;
 
@@ -31,7 +31,7 @@ namespace CREARSIS
 
         c_seg001 ob_usr_usr = new c_seg001();
         c_seg049 o_ads900 = new c_seg049();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 

@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-using CREARSIS.GLOBAL;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS

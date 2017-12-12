@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+using System.Drawing;
 using DATOS;
 using DATOS.ADM;
 using System.Data;
 using System.Windows.Forms;
-using System.Drawing;
- 
-namespace CREARSIS.GLOBAL
+
+
+namespace CREARSIS
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
     /// MODULO GENERICO DE FUNCIONES GLOBALES REUTILIZABLES
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-    /// </summary>    
-    public class mg_glo_bal
+    /// </summary> 
+    public class _01_mg_glo_bal
     {
         dynamic tmp_frm_nvo;
         dynamic tmp_frm_pad;
@@ -60,7 +62,7 @@ namespace CREARSIS.GLOBAL
         /// <returns></returns>
         public DateTime fg_fec_act()
         {
-            string StrSql = " select CURRENT_TIMESTAMP";                         
+            string StrSql = " select CURRENT_TIMESTAMP";
             DateTime fe_cha = Convert.ToDateTime(o_cnx000.fu_exe_sql(StrSql).Rows[0][0].ToString());
             return fe_cha;
         }
@@ -192,7 +194,7 @@ namespace CREARSIS.GLOBAL
 
         #region -> funciones de licenciamiento
 
-        
+
 
 
         /// <summary>
@@ -277,7 +279,7 @@ namespace CREARSIS.GLOBAL
             string[] vv_vec_mes = { "m", "h", "i", "j", "k", "l" }; //meses (enero=h ; febrero=i ; marzo=j ; abril=k ...)
 
             //'obtiene fecha del servidor//-------------MODIFY
-            
+
             fec_srv = fg_fec_act();
             //fec_srv = "14/08/2016"
 
@@ -509,7 +511,7 @@ namespace CREARSIS.GLOBAL
         {
             tmp_frm_nvo = ar_frm_nvo;
             tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
-            
+
 
             ar_frm_nvo.ShowDialog();
             ar_frm_nvo.Activate();
@@ -527,7 +529,7 @@ namespace CREARSIS.GLOBAL
             Form v_frm_pad = new Form();
             bool ban_frm = false;    /*??? para QUE ??? no se usa*/
 
-             v_frm_pad = ar_frm_pad.MdiParent;
+            v_frm_pad = ar_frm_pad.MdiParent;
 
             tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
             tmp_frm_nvo.vg_str_ucc = ar_str_ucc;
@@ -685,9 +687,9 @@ namespace CREARSIS.GLOBAL
             foreach (dynamic opcion_menu in menu.Items)
             {
 
-                tab_usm = ob_usr_mnu._05(glo_ide_usr, glo_ide_ven, opcion_menu.Name);                
+                tab_usm = ob_usr_mnu._05(glo_ide_usr, glo_ide_ven, opcion_menu.Name);
 
-                if (glo_ide_usr==Program.gl_usr_usr)
+                if (glo_ide_usr == Program.gl_usr_usr)
                 {
                     if (tab_usm.Rows.Count != 0)
                     {
@@ -920,8 +922,8 @@ namespace CREARSIS.GLOBAL
             bool bandera = false;
             long tmp;
 
-            if (string.IsNullOrWhiteSpace(dato)==false)
-            {   
+            if (string.IsNullOrWhiteSpace(dato) == false)
+            {
                 for (int i = 0; i < dato.Trim().Length; i++)
                 {
                     if (long.TryParse(dato[i].ToString(), out tmp) == true)
@@ -945,8 +947,5 @@ namespace CREARSIS.GLOBAL
         }
 
         #endregion
-
-
-
     }
 }

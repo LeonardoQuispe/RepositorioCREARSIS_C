@@ -11,7 +11,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using DATOS.ADM;
 using DevComponents.DotNetBar;
-using CREARSIS.GLOBAL;
+
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Transactions;
 using System.Runtime.InteropServices;
@@ -35,7 +35,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_adm014 o_adm014 = new c_adm014();
 
         #endregion

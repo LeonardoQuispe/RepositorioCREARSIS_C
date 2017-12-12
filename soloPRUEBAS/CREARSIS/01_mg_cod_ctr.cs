@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CREARSIS.GLOBAL
+namespace CREARSIS
 {
-    public class mg_cod_ctr
+    public class _01_mg_cod_ctr
     {
-        int contador = 0;
-
         #region VÁLIDAS PARA OBTENER CCF
+
+        int contador = 0;
 
         string formato(string valor)
         {
@@ -649,6 +649,5 @@ namespace CREARSIS.GLOBAL
         }
 
         #endregion
-
     }
 }
