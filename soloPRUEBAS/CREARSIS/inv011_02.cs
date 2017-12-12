@@ -18,15 +18,24 @@ namespace CREARSIS
 {
     public partial class inv011_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         string err_msg = "";
         DataTable tab_inv010;
         DataTable tab_inv011;
 
+        #endregion
+
+        #region INSTANCIAS
+
         c_inv010 o_inv010 = new c_inv010();
         c_inv011 o_inv011 = new c_inv011();
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
+        #endregion
+
+        #region EVENTOS
 
         public inv011_02()
         {
@@ -125,13 +134,9 @@ namespace CREARSIS
         {
             Close();
         }
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -259,8 +264,6 @@ namespace CREARSIS
 
             return null;
         }
-
-
-
+        #endregion
     }
 }

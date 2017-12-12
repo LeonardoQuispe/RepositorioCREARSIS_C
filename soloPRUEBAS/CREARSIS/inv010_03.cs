@@ -73,6 +73,7 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
 
         public inv010_03()
         {
@@ -122,5 +123,6 @@ namespace CREARSIS
         {
             Close();
         }
+        #endregion
     }
 }

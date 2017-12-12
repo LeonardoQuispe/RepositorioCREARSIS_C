@@ -71,6 +71,9 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
         public inv004_04()
         {
             InitializeComponent();
@@ -133,5 +136,6 @@ namespace CREARSIS
         {
             fu_ini_frm();
         }
+        #endregion
     }
 }

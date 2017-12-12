@@ -17,16 +17,23 @@ namespace CREARSIS
 {
     public partial class inv011_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_inv011;
         DataTable tabla;
         string vv_err_msg = "";
 
+        #endregion
 
+        #region INSTANCIAS
 
         mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
         c_inv011 o_inv011 = new c_inv011();
-        
+
+        #endregion
+
+        #region EVENTOS
 
         public inv011_01()
         {
@@ -113,12 +120,9 @@ namespace CREARSIS
             vg_frm_pad.Enabled = true;
             Close();
         }
+        #endregion
 
-
-
-
-
-        
+        #region OPCIONES DE MENU
         //NUEVO
         private void m_inv011_02_Click(object sender, EventArgs e)
         {
@@ -183,14 +187,9 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+        #endregion
 
-
-
-
-
-
-
-
+        #region METODOS
 
         public void fu_ini_frm()
         {
@@ -399,7 +398,6 @@ namespace CREARSIS
                 return "Ningún dato Seleccionado";
             }
         }
-
-        
+        #endregion
     }
 }

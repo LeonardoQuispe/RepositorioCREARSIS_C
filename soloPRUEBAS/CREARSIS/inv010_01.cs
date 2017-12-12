@@ -246,7 +246,8 @@ namespace CREARSIS
 
         #endregion
 
-        
+        #region EVENTOS
+
         public inv010_01()
         {
             InitializeComponent();
@@ -331,6 +332,9 @@ namespace CREARSIS
         {
             fu_con_sel();
         }
+        #endregion
+
+        #region OPCIONES DE MENU
         //[MENU- Nuevo]
         private void m_inv010_02_Click(object sender, EventArgs e)
         {
@@ -391,5 +395,6 @@ namespace CREARSIS
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+        #endregion
     }
 }

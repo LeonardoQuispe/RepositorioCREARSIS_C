@@ -70,6 +70,9 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
         public inv003_06()
         {
             InitializeComponent();
@@ -121,5 +124,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message, "Error Elimina Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

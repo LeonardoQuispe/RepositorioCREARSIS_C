@@ -243,6 +243,7 @@ namespace CREARSIS
         #endregion
 
         #region EVENTOS
+
         public inv004_01()
         {
             InitializeComponent();

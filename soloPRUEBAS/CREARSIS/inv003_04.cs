@@ -74,7 +74,7 @@ namespace CREARSIS
 
         #endregion
 
-
+        #region EVENTOS
 
         public inv003_04()
         {
@@ -138,5 +138,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message, "Habilita/Deshabilita Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

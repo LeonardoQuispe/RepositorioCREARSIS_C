@@ -71,6 +71,8 @@ namespace CREARSIS
 
         #endregion
 
+        #region EVENTOS
+
         public inv004_06()
         {
             InitializeComponent();
@@ -121,5 +123,6 @@ namespace CREARSIS
                 MessageBoxEx.Show(ex.Message, "Error Elimina Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

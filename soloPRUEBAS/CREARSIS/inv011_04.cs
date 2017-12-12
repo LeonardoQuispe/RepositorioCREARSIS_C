@@ -15,12 +15,20 @@ namespace CREARSIS
 {
     public partial class inv011_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_inv011 o_inv011 = new c_inv011();
 
+        #endregion
+
+        #region EVENTOS
 
         public inv011_04()
         {
@@ -46,7 +54,6 @@ namespace CREARSIS
                 {
                     res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Grupo de Almacén?", "Habilita Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
-
 
 
                 if (res_msg == DialogResult.Cancel)
@@ -80,10 +87,9 @@ namespace CREARSIS
         {
             Close();
         }
+        #endregion
 
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -128,10 +134,6 @@ namespace CREARSIS
 
             tb_nom_alm.Focus();
         }
-
-
-
-
-
+        #endregion
     }
 }

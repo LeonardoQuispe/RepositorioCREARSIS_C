@@ -77,7 +77,7 @@ namespace CREARSIS
         }
         #endregion
         
-        #region Metodos y Funciones
+        #region METODOS
 
         public void fu_ini_frm()
         {
