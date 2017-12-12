@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENCIAS
-using DATOS.ADM;
+using DATOS;
 using CREARSIS.GLOBAL;
 using DevComponents.DotNetBar;
 
@@ -17,25 +17,21 @@ namespace CREARSIS
 {
     public partial class inv010_06 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        string err_msg = "";
 
-        public inv010_06()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
-        private void inv010_06_Load(object sender, EventArgs e)
-        {
-            fu_ini_frm();
-        }
+        #region INSTANCIAS
 
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        c_inv010 o_inv010 = new c_inv010();
 
+        #endregion
 
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -60,6 +56,71 @@ namespace CREARSIS
                 tb_est_ado.Text = "Deshabilitado";
             }
         }
+        public string fu_ver_dat()
+        {
+            if (tb_cod_gru.Text.Trim() == "")
+            {
+                tb_cod_gru.Focus();
+                return "Debes proporcionar el código de la Grupo de Almacen";
+            }
 
+
+            return null;
+        }
+
+        #endregion
+
+        #region EVENTOS
+        public inv010_06()
+        {
+            InitializeComponent();
+        }
+
+        private void inv010_06_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar el Grupo de Almacen ?", "Elimina Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                //Graba datos
+                o_inv010._06(int.Parse(tb_cod_gru.Text.Trim()));
+
+
+
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
     }
 }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENCIAS
-using DATOS.ADM;
+using DATOS;
 using CREARSIS.GLOBAL;
 using DevComponents.DotNetBar;
 
@@ -17,30 +17,22 @@ namespace CREARSIS
 {
     public partial class inv010_05 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        string err_msg = "";
 
-        public inv010_05()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
-        private void inv010_05_Load(object sender, EventArgs e)
-        {
-            fu_ini_frm();
-        }
+        #region INSTANCIAS
 
-        private void bt_ace_pta_Click(object sender, EventArgs e)
-        {
+        c_inv010 o_inv010 = new c_inv010();
 
-        }
+        #endregion
 
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -66,7 +58,25 @@ namespace CREARSIS
             }
         }
 
+        #endregion;
 
+        #region EVENTOS
+        public inv010_05()
+        {
+            InitializeComponent();
+        }
 
+        private void inv010_05_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
     }
 }
