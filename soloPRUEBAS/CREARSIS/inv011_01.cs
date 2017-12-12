@@ -20,6 +20,7 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         DataTable tab_inv011;
+        DataTable tab_inv010;
         DataTable tabla;
         string vv_err_msg = "";
 
@@ -29,6 +30,7 @@ namespace CREARSIS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_inv011 o_inv011 = new c_inv011();
+        c_inv010 o_inv010 = new c_inv010();
 
         #endregion
 
@@ -202,11 +204,17 @@ namespace CREARSIS
         {
             int va_ind_ice = 0;
             string va_cod_alm = "";
+            string va_nom_gru = "";
+            string va_mon_inv="";
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
 
             tab_inv011 = o_inv011._01(val_bus, prm_bus, est_bus.ToString());
+
+            //Recupera y reemplaza nombre de Grupo de Almacén
+            tab_inv010 = o_inv010._05(int.Parse(tab_inv011.Rows[0]["va_cod_gru"].ToString()));
+            va_nom_gru = tab_inv010.Rows[0]["va_nom_gru"].ToString();
 
             foreach (DataRow row in tab_inv011.Rows)
             {
@@ -228,7 +236,14 @@ namespace CREARSIS
                     va_cod_alm=va_cod_alm.PadLeft(7, '0');
                 }
 
-                dg_res_ult.Rows.Add(va_cod_alm,row["va_nom_alm"], row["va_dir_alm"],  row["va_fec_ctr"], row["va_nom_ecg"], va_est_ado);
+                //Agrega Moneda al DATAGRID
+                switch (row["va_mon_inv"].ToString())
+                {
+                    case "B": va_mon_inv = "Bolivianos"; break;
+                    case "U": va_mon_inv = "Dólares"; break;
+                }
+
+                dg_res_ult.Rows.Add(va_cod_alm,row["va_nom_alm"], va_mon_inv, va_nom_gru, va_est_ado);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;

@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cta_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.tb_dir_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_alm = new System.Windows.Forms.MaskedTextBox();
+            this.tb_nro_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nom_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_des_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX9 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.cb_mtd_cto = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -47,20 +61,6 @@
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_cta_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.tb_dir_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_alm = new System.Windows.Forms.MaskedTextBox();
-            this.tb_nro_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tb_nom_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_des_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX9 = new DevComponents.DotNetBar.LabelX();
-            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -96,281 +96,6 @@
             this.GroupBox1.TabIndex = 25;
             this.GroupBox1.TabStop = false;
             // 
-            // cb_mtd_cto
-            // 
-            this.cb_mtd_cto.DisplayMember = "Text";
-            this.cb_mtd_cto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_mtd_cto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_mtd_cto.Enabled = false;
-            this.cb_mtd_cto.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_mtd_cto.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_mtd_cto.ForeColor = System.Drawing.Color.Black;
-            this.cb_mtd_cto.FormattingEnabled = true;
-            this.cb_mtd_cto.ItemHeight = 20;
-            this.cb_mtd_cto.Items.AddRange(new object[] {
-            this.comboItem3});
-            this.cb_mtd_cto.Location = new System.Drawing.Point(349, 242);
-            this.cb_mtd_cto.Name = "cb_mtd_cto";
-            this.cb_mtd_cto.Size = new System.Drawing.Size(131, 26);
-            this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mtd_cto.TabIndex = 17;
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Promedio Ponderado";
-            // 
-            // labelX10
-            // 
-            this.labelX10.AutoSize = true;
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(265, 242);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(97, 21);
-            this.labelX10.TabIndex = 16;
-            this.labelX10.Text = "Método Costeo";
-            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // cb_mon_inv
-            // 
-            this.cb_mon_inv.DisplayMember = "Text";
-            this.cb_mon_inv.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_mon_inv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_mon_inv.Enabled = false;
-            this.cb_mon_inv.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_mon_inv.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_mon_inv.ForeColor = System.Drawing.Color.Black;
-            this.cb_mon_inv.FormattingEnabled = true;
-            this.cb_mon_inv.ItemHeight = 20;
-            this.cb_mon_inv.Items.AddRange(new object[] {
-            this.BO,
-            this.USD});
-            this.cb_mon_inv.Location = new System.Drawing.Point(126, 242);
-            this.cb_mon_inv.Name = "cb_mon_inv";
-            this.cb_mon_inv.Size = new System.Drawing.Size(82, 26);
-            this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mon_inv.TabIndex = 15;
-            // 
-            // BO
-            // 
-            this.BO.Text = "Bolivianos";
-            // 
-            // USD
-            // 
-            this.USD.Text = "Dólares";
-            // 
-            // labelX7
-            // 
-            this.labelX7.AutoSize = true;
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(16, 242);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(118, 21);
-            this.labelX7.TabIndex = 14;
-            this.labelX7.Text = "Moneda Inventario";
-            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // LabelX3
-            // 
-            this.LabelX3.AutoSize = true;
-            this.LabelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX3.ForeColor = System.Drawing.Color.Black;
-            this.LabelX3.Location = new System.Drawing.Point(16, 20);
-            this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(97, 21);
-            this.LabelX3.TabIndex = 0;
-            this.LabelX3.Text = "Grupo Almacén";
-            this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_gru_alm
-            // 
-            this.tb_gru_alm.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_gru_alm.Border.Class = "TextBoxBorder";
-            this.tb_gru_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_gru_alm.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_gru_alm.ButtonCustom.Symbol = "";
-            this.tb_gru_alm.ButtonCustom.Visible = true;
-            this.tb_gru_alm.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_gru_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_gru_alm.Location = new System.Drawing.Point(127, 20);
-            this.tb_gru_alm.MaxLength = 4;
-            this.tb_gru_alm.Name = "tb_gru_alm";
-            this.tb_gru_alm.PreventEnterBeep = true;
-            this.tb_gru_alm.ReadOnly = true;
-            this.tb_gru_alm.Size = new System.Drawing.Size(81, 26);
-            this.tb_gru_alm.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.tb_dir_ecg);
-            this.groupBox2.Controls.Add(this.labelX11);
-            this.groupBox2.Controls.Add(this.tb_tlf_ecg);
-            this.groupBox2.Controls.Add(this.labelX12);
-            this.groupBox2.Controls.Add(this.tb_nom_ecg);
-            this.groupBox2.Controls.Add(this.labelX13);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 271);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 142);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            // 
-            // tb_dir_ecg
-            // 
-            this.tb_dir_ecg.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_dir_ecg.Border.Class = "TextBoxBorder";
-            this.tb_dir_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_dir_ecg.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_dir_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_dir_ecg.Location = new System.Drawing.Point(125, 102);
-            this.tb_dir_ecg.MaxLength = 200;
-            this.tb_dir_ecg.Multiline = true;
-            this.tb_dir_ecg.Name = "tb_dir_ecg";
-            this.tb_dir_ecg.PreventEnterBeep = true;
-            this.tb_dir_ecg.ReadOnly = true;
-            this.tb_dir_ecg.Size = new System.Drawing.Size(355, 22);
-            this.tb_dir_ecg.TabIndex = 5;
-            // 
-            // labelX11
-            // 
-            this.labelX11.AutoSize = true;
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX11.ForeColor = System.Drawing.Color.Black;
-            this.labelX11.Location = new System.Drawing.Point(16, 102);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(127, 21);
-            this.labelX11.TabIndex = 4;
-            this.labelX11.Text = "Dirección Encargado";
-            this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_tlf_ecg
-            // 
-            this.tb_tlf_ecg.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_tlf_ecg.Border.Class = "TextBoxBorder";
-            this.tb_tlf_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_tlf_ecg.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_tlf_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_tlf_ecg.Location = new System.Drawing.Point(125, 65);
-            this.tb_tlf_ecg.MaxLength = 10;
-            this.tb_tlf_ecg.Multiline = true;
-            this.tb_tlf_ecg.Name = "tb_tlf_ecg";
-            this.tb_tlf_ecg.PreventEnterBeep = true;
-            this.tb_tlf_ecg.ReadOnly = true;
-            this.tb_tlf_ecg.Size = new System.Drawing.Size(355, 22);
-            this.tb_tlf_ecg.TabIndex = 3;
-            // 
-            // labelX12
-            // 
-            this.labelX12.AutoSize = true;
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.ForeColor = System.Drawing.Color.Black;
-            this.labelX12.Location = new System.Drawing.Point(16, 65);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(123, 21);
-            this.labelX12.TabIndex = 2;
-            this.labelX12.Text = "Teléfono Encargado";
-            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_nom_ecg
-            // 
-            this.tb_nom_ecg.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_ecg.Border.Class = "TextBoxBorder";
-            this.tb_nom_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_ecg.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_ecg.Location = new System.Drawing.Point(125, 27);
-            this.tb_nom_ecg.MaxLength = 120;
-            this.tb_nom_ecg.Multiline = true;
-            this.tb_nom_ecg.Name = "tb_nom_ecg";
-            this.tb_nom_ecg.PreventEnterBeep = true;
-            this.tb_nom_ecg.ReadOnly = true;
-            this.tb_nom_ecg.Size = new System.Drawing.Size(355, 22);
-            this.tb_nom_ecg.TabIndex = 1;
-            // 
-            // labelX13
-            // 
-            this.labelX13.AutoSize = true;
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX13.ForeColor = System.Drawing.Color.Black;
-            this.labelX13.Location = new System.Drawing.Point(16, 27);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(121, 21);
-            this.labelX13.TabIndex = 0;
-            this.labelX13.Text = "Nombre Encargado";
-            this.labelX13.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // gb_ctr_frm
-            // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
-            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
-            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 412);
-            this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(493, 48);
-            this.gb_ctr_frm.TabIndex = 27;
-            this.gb_ctr_frm.TabStop = false;
-            // 
-            // bt_can_cel
-            // 
-            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(391, 16);
-            this.bt_can_cel.Name = "bt_can_cel";
-            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
-            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_can_cel.Symbol = "";
-            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
-            this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 1;
-            this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
             // tb_nom_gru
             // 
             this.tb_nom_gru.BackColor = System.Drawing.Color.White;
@@ -385,7 +110,8 @@
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
-            this.tb_nom_gru.Size = new System.Drawing.Size(266, 26);
+            this.tb_nom_gru.ReadOnly = true;
+            this.tb_nom_gru.Size = new System.Drawing.Size(266, 22);
             this.tb_nom_gru.TabIndex = 36;
             // 
             // tb_est_ado
@@ -438,7 +164,7 @@
             this.labelX6.ForeColor = System.Drawing.Color.Black;
             this.labelX6.Location = new System.Drawing.Point(14, 206);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(104, 21);
+            this.labelX6.Size = new System.Drawing.Size(84, 17);
             this.labelX6.TabIndex = 31;
             this.labelX6.Text = "Cuenta Contable";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -473,7 +199,7 @@
             this.labelX5.ForeColor = System.Drawing.Color.Black;
             this.labelX5.Location = new System.Drawing.Point(14, 169);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(59, 21);
+            this.labelX5.Size = new System.Drawing.Size(48, 17);
             this.labelX5.TabIndex = 29;
             this.labelX5.Text = "Dirección";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -490,7 +216,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(174, 57);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(86, 21);
+            this.labelX2.Size = new System.Drawing.Size(70, 17);
             this.labelX2.TabIndex = 33;
             this.labelX2.Text = "Cod. Almacén";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -501,12 +227,12 @@
             this.tb_cod_alm.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_cod_alm.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_alm.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_alm.Location = new System.Drawing.Point(266, 54);
+            this.tb_cod_alm.Location = new System.Drawing.Point(250, 54);
             this.tb_cod_alm.Mask = "00-00-000";
             this.tb_cod_alm.Name = "tb_cod_alm";
             this.tb_cod_alm.PromptChar = ' ';
             this.tb_cod_alm.ReadOnly = true;
-            this.tb_cod_alm.Size = new System.Drawing.Size(63, 26);
+            this.tb_cod_alm.Size = new System.Drawing.Size(63, 22);
             this.tb_cod_alm.TabIndex = 34;
             this.tb_cod_alm.TabStop = false;
             this.tb_cod_alm.Text = "0000000";
@@ -527,7 +253,7 @@
             this.tb_nro_alm.Name = "tb_nro_alm";
             this.tb_nro_alm.PreventEnterBeep = true;
             this.tb_nro_alm.ReadOnly = true;
-            this.tb_nro_alm.Size = new System.Drawing.Size(34, 26);
+            this.tb_nro_alm.Size = new System.Drawing.Size(34, 22);
             this.tb_nro_alm.TabIndex = 24;
             this.tb_nro_alm.Text = "0";
             // 
@@ -543,7 +269,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(14, 60);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(85, 21);
+            this.LabelX1.Size = new System.Drawing.Size(68, 17);
             this.LabelX1.TabIndex = 23;
             this.LabelX1.Text = "Nro. Almacén";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -562,7 +288,7 @@
             this.tb_nom_alm.MaxLength = 40;
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
-            this.tb_nom_alm.Size = new System.Drawing.Size(353, 26);
+            this.tb_nom_alm.Size = new System.Drawing.Size(353, 22);
             this.tb_nom_alm.TabIndex = 26;
             // 
             // tb_des_alm
@@ -595,7 +321,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(14, 131);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(73, 21);
+            this.LabelX9.Size = new System.Drawing.Size(59, 17);
             this.LabelX9.TabIndex = 27;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -612,14 +338,289 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(14, 93);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(53, 21);
+            this.LabelX4.Size = new System.Drawing.Size(43, 17);
             this.LabelX4.TabIndex = 25;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
+            // cb_mtd_cto
+            // 
+            this.cb_mtd_cto.DisplayMember = "Text";
+            this.cb_mtd_cto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_mtd_cto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_mtd_cto.Enabled = false;
+            this.cb_mtd_cto.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_mtd_cto.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_mtd_cto.ForeColor = System.Drawing.Color.Black;
+            this.cb_mtd_cto.FormattingEnabled = true;
+            this.cb_mtd_cto.ItemHeight = 16;
+            this.cb_mtd_cto.Items.AddRange(new object[] {
+            this.comboItem3});
+            this.cb_mtd_cto.Location = new System.Drawing.Point(349, 242);
+            this.cb_mtd_cto.Name = "cb_mtd_cto";
+            this.cb_mtd_cto.Size = new System.Drawing.Size(131, 22);
+            this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_mtd_cto.TabIndex = 17;
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "Promedio Ponderado";
+            // 
+            // labelX10
+            // 
+            this.labelX10.AutoSize = true;
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.ForeColor = System.Drawing.Color.Black;
+            this.labelX10.Location = new System.Drawing.Point(265, 242);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(78, 17);
+            this.labelX10.TabIndex = 16;
+            this.labelX10.Text = "Método Costeo";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // cb_mon_inv
+            // 
+            this.cb_mon_inv.DisplayMember = "Text";
+            this.cb_mon_inv.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_mon_inv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_mon_inv.Enabled = false;
+            this.cb_mon_inv.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_mon_inv.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_mon_inv.ForeColor = System.Drawing.Color.Black;
+            this.cb_mon_inv.FormattingEnabled = true;
+            this.cb_mon_inv.ItemHeight = 16;
+            this.cb_mon_inv.Items.AddRange(new object[] {
+            this.BO,
+            this.USD});
+            this.cb_mon_inv.Location = new System.Drawing.Point(126, 242);
+            this.cb_mon_inv.Name = "cb_mon_inv";
+            this.cb_mon_inv.Size = new System.Drawing.Size(82, 22);
+            this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_mon_inv.TabIndex = 15;
+            // 
+            // BO
+            // 
+            this.BO.Text = "Bolivianos";
+            // 
+            // USD
+            // 
+            this.USD.Text = "Dólares";
+            // 
+            // labelX7
+            // 
+            this.labelX7.AutoSize = true;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.ForeColor = System.Drawing.Color.Black;
+            this.labelX7.Location = new System.Drawing.Point(16, 242);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(95, 17);
+            this.labelX7.TabIndex = 14;
+            this.labelX7.Text = "Moneda Inventario";
+            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX3
+            // 
+            this.LabelX3.AutoSize = true;
+            this.LabelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX3.ForeColor = System.Drawing.Color.Black;
+            this.LabelX3.Location = new System.Drawing.Point(16, 20);
+            this.LabelX3.Name = "LabelX3";
+            this.LabelX3.Size = new System.Drawing.Size(78, 17);
+            this.LabelX3.TabIndex = 0;
+            this.LabelX3.Text = "Grupo Almacén";
+            this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_gru_alm
+            // 
+            this.tb_gru_alm.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_gru_alm.Border.Class = "TextBoxBorder";
+            this.tb_gru_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_gru_alm.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_gru_alm.ButtonCustom.Symbol = "";
+            this.tb_gru_alm.ButtonCustom.Visible = true;
+            this.tb_gru_alm.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_gru_alm.ForeColor = System.Drawing.Color.Black;
+            this.tb_gru_alm.Location = new System.Drawing.Point(127, 20);
+            this.tb_gru_alm.MaxLength = 4;
+            this.tb_gru_alm.Name = "tb_gru_alm";
+            this.tb_gru_alm.PreventEnterBeep = true;
+            this.tb_gru_alm.ReadOnly = true;
+            this.tb_gru_alm.Size = new System.Drawing.Size(81, 22);
+            this.tb_gru_alm.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.tb_dir_ecg);
+            this.groupBox2.Controls.Add(this.labelX11);
+            this.groupBox2.Controls.Add(this.tb_tlf_ecg);
+            this.groupBox2.Controls.Add(this.labelX12);
+            this.groupBox2.Controls.Add(this.tb_nom_ecg);
+            this.groupBox2.Controls.Add(this.labelX13);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(12, 271);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(493, 142);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            // 
+            // tb_dir_ecg
+            // 
+            this.tb_dir_ecg.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_dir_ecg.Border.Class = "TextBoxBorder";
+            this.tb_dir_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_dir_ecg.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_dir_ecg.ForeColor = System.Drawing.Color.Black;
+            this.tb_dir_ecg.Location = new System.Drawing.Point(125, 102);
+            this.tb_dir_ecg.MaxLength = 200;
+            this.tb_dir_ecg.Multiline = true;
+            this.tb_dir_ecg.Name = "tb_dir_ecg";
+            this.tb_dir_ecg.PreventEnterBeep = true;
+            this.tb_dir_ecg.ReadOnly = true;
+            this.tb_dir_ecg.Size = new System.Drawing.Size(355, 22);
+            this.tb_dir_ecg.TabIndex = 5;
+            // 
+            // labelX11
+            // 
+            this.labelX11.AutoSize = true;
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX11.ForeColor = System.Drawing.Color.Black;
+            this.labelX11.Location = new System.Drawing.Point(16, 102);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(102, 17);
+            this.labelX11.TabIndex = 4;
+            this.labelX11.Text = "Dirección Encargado";
+            this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_tlf_ecg
+            // 
+            this.tb_tlf_ecg.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_tlf_ecg.Border.Class = "TextBoxBorder";
+            this.tb_tlf_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_tlf_ecg.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_tlf_ecg.ForeColor = System.Drawing.Color.Black;
+            this.tb_tlf_ecg.Location = new System.Drawing.Point(125, 65);
+            this.tb_tlf_ecg.MaxLength = 10;
+            this.tb_tlf_ecg.Multiline = true;
+            this.tb_tlf_ecg.Name = "tb_tlf_ecg";
+            this.tb_tlf_ecg.PreventEnterBeep = true;
+            this.tb_tlf_ecg.ReadOnly = true;
+            this.tb_tlf_ecg.Size = new System.Drawing.Size(355, 22);
+            this.tb_tlf_ecg.TabIndex = 3;
+            // 
+            // labelX12
+            // 
+            this.labelX12.AutoSize = true;
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.ForeColor = System.Drawing.Color.Black;
+            this.labelX12.Location = new System.Drawing.Point(16, 65);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(99, 17);
+            this.labelX12.TabIndex = 2;
+            this.labelX12.Text = "Teléfono Encargado";
+            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_nom_ecg
+            // 
+            this.tb_nom_ecg.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_ecg.Border.Class = "TextBoxBorder";
+            this.tb_nom_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_ecg.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_ecg.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_ecg.Location = new System.Drawing.Point(125, 27);
+            this.tb_nom_ecg.MaxLength = 120;
+            this.tb_nom_ecg.Multiline = true;
+            this.tb_nom_ecg.Name = "tb_nom_ecg";
+            this.tb_nom_ecg.PreventEnterBeep = true;
+            this.tb_nom_ecg.ReadOnly = true;
+            this.tb_nom_ecg.Size = new System.Drawing.Size(355, 22);
+            this.tb_nom_ecg.TabIndex = 1;
+            // 
+            // labelX13
+            // 
+            this.labelX13.AutoSize = true;
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX13.ForeColor = System.Drawing.Color.Black;
+            this.labelX13.Location = new System.Drawing.Point(16, 27);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(97, 17);
+            this.labelX13.TabIndex = 0;
+            this.labelX13.Text = "Nombre Encargado";
+            this.labelX13.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // gb_ctr_frm
+            // 
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
+            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
+            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 412);
+            this.gb_ctr_frm.Name = "gb_ctr_frm";
+            this.gb_ctr_frm.Size = new System.Drawing.Size(493, 48);
+            this.gb_ctr_frm.TabIndex = 27;
+            this.gb_ctr_frm.TabStop = false;
+            // 
+            // bt_can_cel
+            // 
+            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_can_cel.Location = new System.Drawing.Point(391, 16);
+            this.bt_can_cel.Name = "bt_can_cel";
+            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
+            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_can_cel.Symbol = "";
+            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
+            this.bt_can_cel.SymbolSize = 15F;
+            this.bt_can_cel.TabIndex = 1;
+            this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
+            // 
             // inv011_05
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(517, 463);

@@ -42,6 +42,7 @@ namespace CREARSIS
             if (cod_suc.Trim() == "")
             {
                 tb_cod_sucu.Text = "";
+                tb_nom_sucu.Text= "** NO existe";
                 tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
@@ -50,13 +51,14 @@ namespace CREARSIS
             if (tab_adm007.Rows.Count == 0)
             {
                 tb_cod_sucu.Text = "";
+                tb_nom_sucu.Text = "** NO existe";
                 tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
 
             tb_cod_sucu.Text = cod_suc;
+            tb_nom_sucu.Text = tab_adm007.Rows[0]["va_nom_suc"].ToString();
 
-            
             tmp = tb_cod_sucu.Text.PadLeft(2, '0');
 
             tb_cod_gru.Text =  tmp[0].ToString() + tmp[1].ToString() +tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();

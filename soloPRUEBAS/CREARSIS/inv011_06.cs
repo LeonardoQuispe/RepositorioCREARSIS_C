@@ -20,12 +20,14 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_inv010;
 
         #endregion
 
         #region INSTANCIAS
 
         c_inv011 o_inv011 = new c_inv011();
+        c_inv010 o_inv010 = new c_inv010();
 
         #endregion
 
@@ -93,10 +95,11 @@ namespace CREARSIS
             tb_des_alm.Text = vg_str_ucc.Rows[0]["va_des_alm"].ToString();
             tb_dir_alm.Text = vg_str_ucc.Rows[0]["va_dir_alm"].ToString();
             tb_cta_alm.Text = vg_str_ucc.Rows[0]["va_cta_alm"].ToString();
-            dt_fec_ctr.Value = Convert.ToDateTime(vg_str_ucc.Rows[0]["va_fec_ctr"].ToString());
             tb_nom_ecg.Text = vg_str_ucc.Rows[0]["va_nom_ecg"].ToString();
             tb_tlf_ecg.Text = vg_str_ucc.Rows[0]["va_tlf_ecg"].ToString();
             tb_dir_ecg.Text = vg_str_ucc.Rows[0]["va_dir_ecg"].ToString();
+
+            fu_rec_gru(vg_str_ucc.Rows[0]["va_cod_gru"].ToString());
 
             switch (vg_str_ucc.Rows[0]["va_mon_inv"].ToString())
             {
@@ -121,6 +124,14 @@ namespace CREARSIS
 
             tb_nom_alm.Focus();
         }
+
+        public void fu_rec_gru(string cod_gru)
+        {
+            tab_inv010 = o_inv010._05(int.Parse(cod_gru));
+
+            tb_nom_gru.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
+        }
+
         #endregion
     }
 }

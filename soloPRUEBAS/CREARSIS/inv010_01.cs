@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-
+using DATOS.ADM;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS
@@ -21,6 +21,7 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         DataTable tab_inv010;
+        DataTable tab_adm007;
         DataTable tabla;
         string vv_err_msg = "";
 
@@ -31,6 +32,7 @@ namespace CREARSIS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_inv010 o_inv010 = new c_inv010();
+        c_adm007 o_adm007 = new c_adm007();
 
         #endregion
 
@@ -48,11 +50,17 @@ namespace CREARSIS
         {
             int va_ind_ice = 0;
             string va_cod_gru = "";
+            string va_nom_suc = "";
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
 
             tab_inv010 = o_inv010._01(val_bus, prm_bus, est_bus.ToString());
+
+            //Recupera y Rellena Nombre de Sucursal
+            tab_adm007 = o_adm007._05(tab_inv010.Rows[0]["va_cod_suc"].ToString());
+            va_nom_suc = tab_adm007.Rows[0]["va_nom_suc"].ToString();
+
 
             foreach (DataRow row in tab_inv010.Rows)
             {
@@ -74,7 +82,7 @@ namespace CREARSIS
                     va_cod_gru=va_cod_gru.PadLeft(4, '0');
                 }
 
-                dg_res_ult.Rows.Add(va_cod_gru,row["va_cod_suc"], row["va_nro_gru"],  row["va_nom_gru"], row["va_des_gru"], va_est_ado);
+                dg_res_ult.Rows.Add(va_cod_gru,  row["va_nom_gru"], row["va_des_gru"],va_nom_suc, va_est_ado);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;
@@ -111,7 +119,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_gru && dg_res_ult.Rows[i].Cells[3].Value.ToString() == nom_gru)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_gru && dg_res_ult.Rows[i].Cells[1].Value.ToString() == nom_gru)
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;

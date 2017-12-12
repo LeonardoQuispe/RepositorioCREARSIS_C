@@ -116,6 +116,12 @@ namespace CREARSIS
                 return "Debes proporcionar el codigo de documento";
             }
 
+            if (tb_cod_doc.Text.Length<3)
+            {
+                tb_cod_doc.Focus();
+                return "El código del documento debe tener 3 letras";
+            }
+
             tab_adm003 = o_adm003._05(tb_cod_doc.Text);
             if (tab_adm003.Rows.Count!=0)
             {

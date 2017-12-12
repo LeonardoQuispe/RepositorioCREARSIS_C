@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
+using DATOS.ADM;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS
@@ -21,13 +22,14 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
-        string err_msg = "";
+        DataTable tab_adm007;
 
         #endregion
 
         #region INSTANCIAS
 
         c_inv010 o_inv010 = new c_inv010();
+        c_adm007 o_adm007 = new c_adm007();
 
         #endregion
 
@@ -46,6 +48,7 @@ namespace CREARSIS
             tb_nom_gru.Text = vg_str_ucc.Rows[0]["va_nom_gru"].ToString();
             tb_des_gru.Text = vg_str_ucc.Rows[0]["va_des_gru"].ToString();
 
+            fu_rec_suc(vg_str_ucc.Rows[0]["va_cod_suc"].ToString());
 
             if (vg_str_ucc.Rows[0]["va_est_ado"].ToString() == "H")
             {
@@ -55,6 +58,13 @@ namespace CREARSIS
             {
                 tb_est_ado.Text = "Deshabilitado";
             }
+        }
+
+        void fu_rec_suc(string cod_suc)
+        {
+            tab_adm007 = o_adm007._05(cod_suc);
+
+            tb_nom_sucu.Text = tab_adm007.Rows[0]["va_nom_suc"].ToString();
         }
 
         #endregion;

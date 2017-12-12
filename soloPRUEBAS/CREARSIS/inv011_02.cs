@@ -113,7 +113,7 @@ namespace CREARSIS
 
                 //Graba datos Almacén
                 o_inv011._02(int.Parse(tb_cod_alm.Text),int.Parse(tb_gru_alm.Text),int.Parse(tb_nro_alm.Text),tb_nom_alm.Text.Trim(),tb_des_alm.Text.Trim(),
-                            tb_dir_alm.Text.Trim(),dt_fec_ctr.Value,cb_mon_inv.SelectedIndex.ToString(),cb_mon_inv.SelectedIndex.ToString(),tb_nom_ecg.Text.Trim(),
+                            tb_dir_alm.Text.Trim(),DateTime.Parse("01/01/1900"),cb_mon_inv.SelectedIndex.ToString(),cb_mon_inv.SelectedIndex.ToString(),tb_nom_ecg.Text.Trim(),
                             tb_tlf_ecg.Text.Trim(),tb_dir_ecg.Text.Trim(),tb_cta_alm.Text.Trim());
 
                 vg_frm_pad.fu_sel_fila(tb_cod_alm.Text, tb_nom_alm.Text);
@@ -152,6 +152,7 @@ namespace CREARSIS
             if (cod_alm.Trim() == "")
             {
                 tb_gru_alm.Text = "";
+                tb_nom_gru.Text = "** NO existe";
                 tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
@@ -160,12 +161,13 @@ namespace CREARSIS
             if (tab_inv010.Rows.Count == 0)
             {
                 tb_gru_alm.Text = "";
+                tb_nom_gru.Text = "** NO existe";
                 tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
 
             tb_gru_alm.Text = cod_alm;
-
+            tb_nom_gru.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
 
             tmp = tb_gru_alm.Text.PadLeft(4, '0');
 

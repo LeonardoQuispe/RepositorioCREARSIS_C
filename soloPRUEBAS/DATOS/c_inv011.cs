@@ -128,7 +128,7 @@ namespace DATOS
         /// <param name="cta_alm">Cuenta contable del Almacén</param>
         /// <returns></returns>
         public DataTable _03(int cod_alm, string nom_alm, string des_alm,string dir_alm
-                            , DateTime fec_ctr, string mon_inv, string mtd_cto
+                            , string mon_inv, string mtd_cto
                             , string nom_ecg, string tlf_ecg, string dir_ecg, string cta_alm)
         {
             try
@@ -148,7 +148,7 @@ namespace DATOS
                 }
 
                 vv_str_sql.AppendFormat(" va_nom_alm='{0}',va_des_alm='{1}',va_dir_alm='{2}',",nom_alm, des_alm,dir_alm);
-                vv_str_sql.AppendFormat("va_fec_ctr='{0}',va_mon_inv='{1}',va_mtd_cto='{2}',",fec_ctr.ToShortDateString(),mon_inv,mtd_cto);
+                vv_str_sql.AppendFormat("va_mon_inv='{0}',va_mtd_cto='{1}',",mon_inv,mtd_cto);
                 vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tlf_ecg='{1}',va_dir_ecg='{2}',va_cta_alm='{3}'",nom_ecg,tlf_ecg,dir_ecg,cta_alm);
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", cod_alm);
 

@@ -377,7 +377,7 @@ namespace CREARSIS
                 return;
             }
             
-            tb_cod_doc.Text = cod_doc;
+            tb_cod_doc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString(); ;
             tb_nom_doc.Text = tab_adm003.Rows[0]["va_nom_doc"].ToString();
         }
 
