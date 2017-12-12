@@ -157,7 +157,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBoxEx.Show(ex.Message);
             }
         }
 

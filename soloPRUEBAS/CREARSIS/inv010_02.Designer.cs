@@ -76,7 +76,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(6, 83);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(59, 17);
+            this.LabelX9.Size = new System.Drawing.Size(73, 21);
             this.LabelX9.TabIndex = 6;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -138,7 +138,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(6, 17);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(43, 17);
+            this.LabelX3.Size = new System.Drawing.Size(53, 21);
             this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -160,7 +160,7 @@
             this.tb_cod_sucu.MaxLength = 2;
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
-            this.tb_cod_sucu.Size = new System.Drawing.Size(64, 22);
+            this.tb_cod_sucu.Size = new System.Drawing.Size(64, 26);
             this.tb_cod_sucu.TabIndex = 1;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
             this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
@@ -199,7 +199,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(252, 17);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(58, 17);
+            this.labelX2.Size = new System.Drawing.Size(72, 21);
             this.labelX2.TabIndex = 8;
             this.labelX2.Text = "Cod. Grupo";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -215,7 +215,7 @@
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PromptChar = ' ';
             this.tb_cod_gru.ReadOnly = true;
-            this.tb_cod_gru.Size = new System.Drawing.Size(38, 22);
+            this.tb_cod_gru.Size = new System.Drawing.Size(38, 26);
             this.tb_cod_gru.TabIndex = 9;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
@@ -235,7 +235,7 @@
             this.tb_nro_gru.MaxLength = 2;
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
-            this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
+            this.tb_nro_gru.Size = new System.Drawing.Size(34, 26);
             this.tb_nro_gru.TabIndex = 3;
             this.tb_nro_gru.Text = "0";
             this.tb_nro_gru.TextChanged += new System.EventHandler(this.tb_nro_gru_TextChanged);
@@ -253,7 +253,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(144, 17);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(57, 17);
+            this.LabelX1.Size = new System.Drawing.Size(71, 21);
             this.LabelX1.TabIndex = 2;
             this.LabelX1.Text = "Nro. Grupo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -272,7 +272,7 @@
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
-            this.tb_nom_gru.Size = new System.Drawing.Size(284, 22);
+            this.tb_nom_gru.Size = new System.Drawing.Size(284, 26);
             this.tb_nom_gru.TabIndex = 5;
             // 
             // LabelX4
@@ -287,7 +287,7 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(7, 49);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(43, 17);
+            this.LabelX4.Size = new System.Drawing.Size(53, 21);
             this.LabelX4.TabIndex = 4;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -295,7 +295,7 @@
             // inv010_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(367, 157);

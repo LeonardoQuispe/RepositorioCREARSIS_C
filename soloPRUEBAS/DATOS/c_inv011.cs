@@ -67,7 +67,6 @@ namespace DATOS
         /// <param name="des_alm">Descripcion del almacen</param>
         /// <param name="dir_alm">Direccion del almacen</param>
         /// <param name="fec_ctr">ULTIMA FECHA CONTROL  DEL ALMACEN</param>
-        /// <param name="est_ado">ULTIMA FECHA CONTROL  DEL ALMACEN</param>
         /// <param name="mon_inv">Moneda del inventario B=Bolivianos ; U=Dolares</param>
         /// <param name="mtd_cto">Metodo de costeo 
         ///                         Promedio Ponderado(Solo usaremos este inicialmente)
@@ -79,16 +78,27 @@ namespace DATOS
         /// <param name="cta_alm">Cuenta contable del almacen</param>
         /// <returns></returns>
         public DataTable _02(int cod_alm, int cod_gru, int nro_alm, string nom_alm, string des_alm
-                            ,string dir_alm, DateTime fec_ctr, string est_ado, string mon_inv
+                            ,string dir_alm, DateTime fec_ctr, string mon_inv
                             ,string mtd_cto,string nom_ecg,string tlf_ecg,string dir_ecg,string cta_alm)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO inv011 VALUES");
+
+                switch (mon_inv)
+                {
+                    case "0": mon_inv = "B"; break;
+                }
+
+                switch (mtd_cto)
+                {
+                    case "0": mtd_cto = "P"; break;
+                }
+
                 vv_str_sql.AppendFormat(" ({0},{1},{2},'{3}','{4}',", cod_gru, nro_alm,cod_alm,nom_alm,des_alm);
-                vv_str_sql.AppendFormat("'{0}'{1}','H','{2}',",dir_alm,fec_ctr.ToShortDateString(),est_ado,mon_inv);
-                vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}','{4}')",mtd_cto,nom_ecg,tlf_ecg,dir_ecg,cta_alm);
+                vv_str_sql.AppendFormat("'{0}','{1}','{2}','H','{3}',",dir_alm, cta_alm, fec_ctr.ToShortDateString(),mon_inv);
+                vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}')",mtd_cto,nom_ecg,tlf_ecg,dir_ecg);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

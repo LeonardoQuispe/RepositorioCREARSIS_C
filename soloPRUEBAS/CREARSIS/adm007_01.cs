@@ -69,7 +69,7 @@ namespace CREARSIS
         /// <summary>
         /// -> Metodo que inicializa el formulario
         /// </summary>
-        public void fu_ini_frm(int va_tip_frm = 0)
+        public void fu_ini_frm()
         {
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;

@@ -152,11 +152,6 @@ namespace CREARSIS
 
             return null;
         }
-        void fu_bus_suc()
-        {
-            adm007_01 obj = new adm007_01();
-            o_mg_glo_bal.mg_ads000_03(obj, this);
-        }
         #endregion
 
         public inv010_02()
@@ -189,7 +184,7 @@ namespace CREARSIS
                     return;
                 }
 
-                //Graba datos NUMERACION
+                //Graba datos GRUPO DE ALMACEN
                 o_inv010._02(int.Parse(tb_cod_gru.Text), int.Parse(tb_cod_sucu.Text), int.Parse(tb_nro_gru.Text),tb_nom_gru.Text,tb_des_gru.Text);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_gru.Text, tb_nom_gru.Text);
