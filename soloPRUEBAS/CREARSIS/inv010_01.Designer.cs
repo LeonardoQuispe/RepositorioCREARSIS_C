@@ -73,34 +73,34 @@
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
+            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_inv010_p00
             // 
             this.m_inv010_p00.Name = "m_inv010_p00";
-            this.m_inv010_p00.Size = new System.Drawing.Size(73, 24);
+            this.m_inv010_p00.Size = new System.Drawing.Size(61, 20);
             this.m_inv010_p00.Text = "&Informe";
             // 
             // m_inv010_05
             // 
             this.m_inv010_05.Name = "m_inv010_05";
-            this.m_inv010_05.Size = new System.Drawing.Size(78, 24);
+            this.m_inv010_05.Size = new System.Drawing.Size(66, 20);
             this.m_inv010_05.Text = "&Consulta";
             this.m_inv010_05.Click += new System.EventHandler(this.m_inv010_05_Click);
             // 
             // m_inv010_06
             // 
             this.m_inv010_06.Name = "m_inv010_06";
-            this.m_inv010_06.Size = new System.Drawing.Size(218, 26);
+            this.m_inv010_06.Size = new System.Drawing.Size(178, 22);
             this.m_inv010_06.Text = "&Elimina";
             this.m_inv010_06.Click += new System.EventHandler(this.m_inv010_06_Click);
             // 
             // m_inv010_03
             // 
             this.m_inv010_03.Name = "m_inv010_03";
-            this.m_inv010_03.Size = new System.Drawing.Size(218, 26);
+            this.m_inv010_03.Size = new System.Drawing.Size(178, 22);
             this.m_inv010_03.Text = "&Actualiza";
             this.m_inv010_03.Click += new System.EventHandler(this.m_inv010_03_Click);
             // 
@@ -111,20 +111,20 @@
             this.m_inv010_04,
             this.m_inv010_06});
             this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(80, 24);
+            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
             this.mr_mod_ifi.Text = "&Modifica";
             // 
             // m_inv010_04
             // 
             this.m_inv010_04.Name = "m_inv010_04";
-            this.m_inv010_04.Size = new System.Drawing.Size(218, 26);
+            this.m_inv010_04.Size = new System.Drawing.Size(178, 22);
             this.m_inv010_04.Text = "&Habilita/Deshabiltia";
             this.m_inv010_04.Click += new System.EventHandler(this.m_inv010_04_Click);
             // 
             // m_inv010_02
             // 
             this.m_inv010_02.Name = "m_inv010_02";
-            this.m_inv010_02.Size = new System.Drawing.Size(64, 24);
+            this.m_inv010_02.Size = new System.Drawing.Size(54, 20);
             this.m_inv010_02.Text = "&Nuevo";
             this.m_inv010_02.Click += new System.EventHandler(this.m_inv010_02_Click);
             // 
@@ -142,7 +142,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(358, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -276,13 +276,12 @@
             // 
             this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(193, 18);
+            this.lb_sel_ecc.Location = new System.Drawing.Point(163, 17);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
             this.lb_sel_ecc.Size = new System.Drawing.Size(165, 23);
             this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lb_sel_ecc.TabIndex = 61;
             this.lb_sel_ecc.Text = "Nombre de grupo";
-            this.lb_sel_ecc.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // gb_ctr_frm
             // 
@@ -351,11 +350,11 @@
             this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_gru.Location = new System.Drawing.Point(137, 18);
+            this.tb_cod_gru.Location = new System.Drawing.Point(114, 18);
             this.tb_cod_gru.Mask = "00-00";
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PromptChar = ' ';
-            this.tb_cod_gru.Size = new System.Drawing.Size(43, 26);
+            this.tb_cod_gru.Size = new System.Drawing.Size(43, 22);
             this.tb_cod_gru.TabIndex = 198;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
@@ -371,14 +370,14 @@
             this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_est_bus.FormattingEnabled = true;
-            this.cb_est_bus.ItemHeight = 20;
+            this.cb_est_bus.ItemHeight = 16;
             this.cb_est_bus.Items.AddRange(new object[] {
             this.todos,
             this.habilitado,
             this.deshabilitado});
             this.cb_est_bus.Location = new System.Drawing.Point(500, 50);
             this.cb_est_bus.Name = "cb_est_bus";
-            this.cb_est_bus.Size = new System.Drawing.Size(93, 26);
+            this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
             this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_est_bus.TabIndex = 62;
             // 
@@ -404,13 +403,13 @@
             this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 20;
+            this.cb_prm_bus.ItemHeight = 16;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo,
             this.nombre});
             this.cb_prm_bus.Location = new System.Drawing.Point(396, 50);
             this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(98, 26);
+            this.cb_prm_bus.Size = new System.Drawing.Size(98, 22);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 50;
             // 
@@ -442,7 +441,7 @@
             this.tb_val_bus.MaxLength = 50;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(374, 26);
+            this.tb_val_bus.Size = new System.Drawing.Size(374, 22);
             this.tb_val_bus.TabIndex = 40;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
@@ -458,14 +457,14 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(116, 21);
+            this.LabelX1.Size = new System.Drawing.Size(93, 17);
             this.LabelX1.TabIndex = 1;
-            this.LabelX1.Text = "Grupo de Almacen";
+            this.LabelX1.Text = "Grupo de Almacén";
             // 
             // inv010_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(612, 394);
@@ -477,8 +476,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "inv010_01";
-            this.Text = "Busca Grupo de Almacen";
-            this.TitleText = "Busca Grupo de Almacen";
+            this.Text = "Busca Grupo de Almacén";
+            this.TitleText = "Busca Grupo de Almacén";
             this.Load += new System.EventHandler(this.inv010_01_Load);
             this.mn_pri_nci.ResumeLayout(false);
             this.mn_pri_nci.PerformLayout();

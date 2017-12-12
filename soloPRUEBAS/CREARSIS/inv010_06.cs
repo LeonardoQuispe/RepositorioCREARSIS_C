@@ -61,7 +61,7 @@ namespace CREARSIS
             if (tb_cod_gru.Text.Trim() == "")
             {
                 tb_cod_gru.Focus();
-                return "Debes proporcionar el código de la Grupo de Almacen";
+                return "Debes proporcionar el código de la Grupo de Almacén";
             }
 
 
@@ -93,13 +93,13 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Elimina Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar el Grupo de Almacen ?", "Elimina Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar el Grupo de Almacén ?", "Elimina Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -113,12 +113,12 @@ namespace CREARSIS
 
                 vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Elimina Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Elimina Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

@@ -152,12 +152,12 @@
             this.cb_mtd_cto.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_mtd_cto.ForeColor = System.Drawing.Color.Black;
             this.cb_mtd_cto.FormattingEnabled = true;
-            this.cb_mtd_cto.ItemHeight = 20;
+            this.cb_mtd_cto.ItemHeight = 16;
             this.cb_mtd_cto.Items.AddRange(new object[] {
             this.comboItem3});
-            this.cb_mtd_cto.Location = new System.Drawing.Point(310, 242);
+            this.cb_mtd_cto.Location = new System.Drawing.Point(349, 242);
             this.cb_mtd_cto.Name = "cb_mtd_cto";
-            this.cb_mtd_cto.Size = new System.Drawing.Size(131, 26);
+            this.cb_mtd_cto.Size = new System.Drawing.Size(131, 22);
             this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_mtd_cto.TabIndex = 17;
             // 
@@ -175,9 +175,9 @@
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(226, 242);
+            this.labelX10.Location = new System.Drawing.Point(265, 242);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(97, 21);
+            this.labelX10.Size = new System.Drawing.Size(78, 17);
             this.labelX10.TabIndex = 16;
             this.labelX10.Text = "Método Costeo";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -191,13 +191,13 @@
             this.cb_mon_inv.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_mon_inv.ForeColor = System.Drawing.Color.Black;
             this.cb_mon_inv.FormattingEnabled = true;
-            this.cb_mon_inv.ItemHeight = 20;
+            this.cb_mon_inv.ItemHeight = 16;
             this.cb_mon_inv.Items.AddRange(new object[] {
             this.BO,
             this.USD});
             this.cb_mon_inv.Location = new System.Drawing.Point(126, 242);
             this.cb_mon_inv.Name = "cb_mon_inv";
-            this.cb_mon_inv.Size = new System.Drawing.Size(82, 26);
+            this.cb_mon_inv.Size = new System.Drawing.Size(82, 22);
             this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_mon_inv.TabIndex = 15;
             // 
@@ -221,7 +221,7 @@
             this.labelX7.ForeColor = System.Drawing.Color.Black;
             this.labelX7.Location = new System.Drawing.Point(16, 242);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(118, 21);
+            this.labelX7.Size = new System.Drawing.Size(95, 17);
             this.labelX7.TabIndex = 14;
             this.labelX7.Text = "Moneda Inventario";
             this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -256,7 +256,7 @@
             this.labelX6.ForeColor = System.Drawing.Color.Black;
             this.labelX6.Location = new System.Drawing.Point(16, 161);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(104, 21);
+            this.labelX6.Size = new System.Drawing.Size(84, 17);
             this.labelX6.TabIndex = 10;
             this.labelX6.Text = "Cuenta Contable";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -272,7 +272,7 @@
             this.LabelX8.ForeColor = System.Drawing.Color.Black;
             this.LabelX8.Location = new System.Drawing.Point(16, 201);
             this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(130, 21);
+            this.LabelX8.Size = new System.Drawing.Size(104, 17);
             this.LabelX8.TabIndex = 12;
             this.LabelX8.Text = "Última Fecha Control";
             // 
@@ -322,7 +322,7 @@
             this.dt_fec_ctr.MonthCalendar.TodayButtonVisible = true;
             this.dt_fec_ctr.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dt_fec_ctr.Name = "dt_fec_ctr";
-            this.dt_fec_ctr.Size = new System.Drawing.Size(82, 26);
+            this.dt_fec_ctr.Size = new System.Drawing.Size(82, 22);
             this.dt_fec_ctr.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dt_fec_ctr.TabIndex = 13;
             this.dt_fec_ctr.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -358,7 +358,7 @@
             this.labelX5.ForeColor = System.Drawing.Color.Black;
             this.labelX5.Location = new System.Drawing.Point(16, 124);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(59, 21);
+            this.labelX5.Size = new System.Drawing.Size(48, 17);
             this.labelX5.TabIndex = 8;
             this.labelX5.Text = "Dirección";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -375,7 +375,7 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(341, 21);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(86, 21);
+            this.labelX2.Size = new System.Drawing.Size(70, 17);
             this.labelX2.TabIndex = 18;
             this.labelX2.Text = "Cod. Almacén";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -391,7 +391,7 @@
             this.tb_cod_alm.Name = "tb_cod_alm";
             this.tb_cod_alm.PromptChar = ' ';
             this.tb_cod_alm.ReadOnly = true;
-            this.tb_cod_alm.Size = new System.Drawing.Size(63, 26);
+            this.tb_cod_alm.Size = new System.Drawing.Size(63, 22);
             this.tb_cod_alm.TabIndex = 19;
             this.tb_cod_alm.TabStop = false;
             this.tb_cod_alm.Text = "0000000";
@@ -411,7 +411,7 @@
             this.tb_nro_alm.MaxLength = 3;
             this.tb_nro_alm.Name = "tb_nro_alm";
             this.tb_nro_alm.PreventEnterBeep = true;
-            this.tb_nro_alm.Size = new System.Drawing.Size(34, 26);
+            this.tb_nro_alm.Size = new System.Drawing.Size(34, 22);
             this.tb_nro_alm.TabIndex = 3;
             this.tb_nro_alm.Text = "0";
             this.tb_nro_alm.TextChanged += new System.EventHandler(this.tb_nro_alm_TextChanged);
@@ -429,7 +429,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(220, 20);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(85, 21);
+            this.LabelX1.Size = new System.Drawing.Size(68, 17);
             this.LabelX1.TabIndex = 2;
             this.LabelX1.Text = "Nro. Almacén";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -448,7 +448,7 @@
             this.tb_nom_alm.MaxLength = 40;
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
-            this.tb_nom_alm.Size = new System.Drawing.Size(353, 26);
+            this.tb_nom_alm.Size = new System.Drawing.Size(353, 22);
             this.tb_nom_alm.TabIndex = 5;
             // 
             // tb_des_alm
@@ -481,7 +481,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(16, 86);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(73, 21);
+            this.LabelX9.Size = new System.Drawing.Size(59, 17);
             this.LabelX9.TabIndex = 6;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -498,7 +498,7 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(16, 52);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(53, 21);
+            this.LabelX4.Size = new System.Drawing.Size(43, 17);
             this.LabelX4.TabIndex = 4;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -515,7 +515,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(16, 20);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(97, 21);
+            this.LabelX3.Size = new System.Drawing.Size(78, 17);
             this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Grupo Almacén";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -537,7 +537,7 @@
             this.tb_gru_alm.MaxLength = 4;
             this.tb_gru_alm.Name = "tb_gru_alm";
             this.tb_gru_alm.PreventEnterBeep = true;
-            this.tb_gru_alm.Size = new System.Drawing.Size(81, 26);
+            this.tb_gru_alm.Size = new System.Drawing.Size(81, 22);
             this.tb_gru_alm.TabIndex = 1;
             this.tb_gru_alm.ButtonCustomClick += new System.EventHandler(this.tb_gru_alm_ButtonCustomClick);
             this.tb_gru_alm.TextChanged += new System.EventHandler(this.tb_gru_alm_TextChanged);
@@ -590,7 +590,7 @@
             this.labelX11.ForeColor = System.Drawing.Color.Black;
             this.labelX11.Location = new System.Drawing.Point(16, 102);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(127, 21);
+            this.labelX11.Size = new System.Drawing.Size(102, 17);
             this.labelX11.TabIndex = 4;
             this.labelX11.Text = "Dirección Encargado";
             this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -625,7 +625,7 @@
             this.labelX12.ForeColor = System.Drawing.Color.Black;
             this.labelX12.Location = new System.Drawing.Point(16, 65);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(123, 21);
+            this.labelX12.Size = new System.Drawing.Size(99, 17);
             this.labelX12.TabIndex = 2;
             this.labelX12.Text = "Teléfono Encargado";
             this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -660,7 +660,7 @@
             this.labelX13.ForeColor = System.Drawing.Color.Black;
             this.labelX13.Location = new System.Drawing.Point(16, 27);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(121, 21);
+            this.labelX13.Size = new System.Drawing.Size(97, 17);
             this.labelX13.TabIndex = 0;
             this.labelX13.Text = "Nombre Encargado";
             this.labelX13.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -668,7 +668,7 @@
             // inv011_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(517, 463);

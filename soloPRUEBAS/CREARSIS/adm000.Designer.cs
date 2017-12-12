@@ -284,7 +284,7 @@
             // 
             this.mn_gru_alm.Name = "mn_gru_alm";
             this.mn_gru_alm.Size = new System.Drawing.Size(180, 22);
-            this.mn_gru_alm.Text = "&Grupo de almacen";
+            this.mn_gru_alm.Text = "&Grupo de Almacén";
             this.mn_gru_alm.Click += new System.EventHandler(this.mn_gru_alm_Click);
             // 
             // mr_fac_tur

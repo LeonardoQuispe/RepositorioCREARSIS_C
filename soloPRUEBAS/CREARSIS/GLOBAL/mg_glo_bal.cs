@@ -920,39 +920,29 @@ namespace CREARSIS.GLOBAL
             bool bandera = false;
             long tmp;
 
-            for (int i = 0; i < dato.Trim().Length; i++)
-            {
-                if (long.TryParse(dato[i].ToString(), out tmp) == true)
+            if (string.IsNullOrWhiteSpace(dato)==false)
+            {   
+                for (int i = 0; i < dato.Trim().Length; i++)
                 {
-                    nuevo += dato[i];
+                    if (long.TryParse(dato[i].ToString(), out tmp) == true)
+                    {
+                        nuevo += dato[i];
+                    }
+                    else if (long.TryParse(dato[i].ToString(), out tmp) == false)
+                    {
+                        bandera = true;
+                    }
                 }
-                else if (long.TryParse(dato[i].ToString(), out tmp) == false)
-                {
-                    bandera = true;
-                }
-            }
 
-            if (bandera == true)
-            {
-                System.Media.SystemSounds.Beep.Play();
+                if (bandera == true)
+                {
+                    System.Media.SystemSounds.Beep.Play();
+                }
             }
 
             return nuevo;
+
         }
-
-        ///// <summary>
-        ///// METODO para aumentar CERO al principo de numero
-        ///// </summary>
-        ///// <param name="num"></param>
-        ///// <returns></returns>
-        //public string cod_mas_ked(string num)
-        //{
-        //    if (num.Length==1)
-        //    {
-        //        num = "0" + num;
-        //    }
-        //}
-
 
         #endregion
 

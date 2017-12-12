@@ -28,7 +28,6 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_inv010 o_inv010 = new c_inv010();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -63,13 +62,6 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            if (tb_cod_gru.Text.Trim() == "")
-            {
-                tb_cod_gru.Focus();
-                return "Debes proporcionar el código del Grupo de Almacén";
-            }
-
-
             if (tb_nom_gru.Text.Trim() == "")
             {
                 tb_nom_gru.Focus();

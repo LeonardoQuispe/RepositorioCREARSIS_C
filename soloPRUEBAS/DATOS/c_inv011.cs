@@ -18,7 +18,7 @@ namespace DATOS
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Funcion "Buscar ALMACENES"
+        /// Funcion "Buscar AlmacénES"
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
@@ -58,24 +58,24 @@ namespace DATOS
         }
 
         /// <summary>
-        /// Registrar ALMACENES
+        /// Registrar AlmacénES
         /// </summary>
-        /// <param name="cod_alm">Codigo deL ALMACEN (##-##- ###) -> compuesto por (va_cod_gru , va_nro_alm)</param>
-        /// <param name="cod_gru">Grupo de Almacen </param>
-        /// <param name="nro_alm">Nro. de almacen</param>
-        /// <param name="nom_alm">Nombre del almacen</param>
-        /// <param name="des_alm">Descripcion del almacen</param>
-        /// <param name="dir_alm">Direccion del almacen</param>
-        /// <param name="fec_ctr">ULTIMA FECHA CONTROL  DEL ALMACEN</param>
+        /// <param name="cod_alm">Codigo deL Almacén (##-##- ###) -> compuesto por (va_cod_gru , va_nro_alm)</param>
+        /// <param name="cod_gru">Grupo de Almacén </param>
+        /// <param name="nro_alm">Nro. de Almacén</param>
+        /// <param name="nom_alm">Nombre del Almacén</param>
+        /// <param name="des_alm">Descripcion del Almacén</param>
+        /// <param name="dir_alm">Direccion del Almacén</param>
+        /// <param name="fec_ctr">ULTIMA FECHA CONTROL  DEL Almacén</param>
         /// <param name="mon_inv">Moneda del inventario B=Bolivianos ; U=Dolares</param>
         /// <param name="mtd_cto">Metodo de costeo 
         ///                         Promedio Ponderado(Solo usaremos este inicialmente)
         ///                         C=UEPS(Ultimos en Entrar, Primeros en Salir)
         ///                         A=PEPS(Primeros en Entrar Primeros en Salir)</param>
-        /// <param name="nom_ecg">Nombre del encargado del almacen</param>
+        /// <param name="nom_ecg">Nombre del encargado del Almacén</param>
         /// <param name="tlf_ecg">Telefono del encargado</param>
         /// <param name="dir_ecg">Direccion del encargado</param>
-        /// <param name="cta_alm">Cuenta contable del almacen</param>
+        /// <param name="cta_alm">Cuenta contable del Almacén</param>
         /// <returns></returns>
         public DataTable _02(int cod_alm, int cod_gru, int nro_alm, string nom_alm, string des_alm
                             ,string dir_alm, DateTime fec_ctr, string mon_inv
@@ -89,6 +89,7 @@ namespace DATOS
                 switch (mon_inv)
                 {
                     case "0": mon_inv = "B"; break;
+                    case "1": mon_inv = "U"; break;
                 }
 
                 switch (mtd_cto)
@@ -109,22 +110,22 @@ namespace DATOS
         }
 
         /// <summary>
-        /// Modifica ALMACENES
+        /// Modifica AlmacénES
         /// </summary>
-        /// <param name="cod_alm">Codigo deL ALMACEN (##-##- ###) -> compuesto por (va_cod_gru , va_nro_alm)</param>
-        /// <param name="nom_alm">Nombre del almacen</param>
-        /// <param name="des_alm">Descripcion del almacen</param>
-        /// <param name="dir_alm">Direccion del almacen</param>
-        /// <param name="fec_ctr">ULTIMA FECHA CONTROL  DEL ALMACEN</param>
+        /// <param name="cod_alm">Codigo deL Almacén (##-##-###) -> compuesto por (va_cod_gru , va_nro_alm)</param>
+        /// <param name="nom_alm">Nombre del Almacén</param>
+        /// <param name="des_alm">Descripcion del Almacén</param>
+        /// <param name="dir_alm">Direccion del Almacén</param>
+        /// <param name="fec_ctr">ULTIMA FECHA CONTROL  DEL Almacén</param>
         /// <param name="mon_inv">Moneda del inventario B=Bolivianos ; U=Dolares</param>
         /// <param name="mtd_cto">Metodo de costeo 
         ///                         Promedio Ponderado(Solo usaremos este inicialmente)
         ///                         C=UEPS(Ultimos en Entrar, Primeros en Salir)
         ///                         A=PEPS(Primeros en Entrar Primeros en Salir)</param>
-        /// <param name="nom_ecg">Nombre del encargado del almacen</param>
+        /// <param name="nom_ecg">Nombre del encargado del Almacén</param>
         /// <param name="tlf_ecg">Telefono del encargado</param>
         /// <param name="dir_ecg">Direccion del encargado</param>
-        /// <param name="cta_alm">Cuenta contable del almacen</param>
+        /// <param name="cta_alm">Cuenta contable del Almacén</param>
         /// <returns></returns>
         public DataTable _03(int cod_alm, string nom_alm, string des_alm,string dir_alm
                             , DateTime fec_ctr, string mon_inv, string mtd_cto
@@ -134,9 +135,21 @@ namespace DATOS
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv011 SET");
+
+                switch (mon_inv)
+                {
+                    case "0": mon_inv = "B"; break;
+                    case "1": mon_inv = "U"; break;
+                }
+
+                switch (mtd_cto)
+                {
+                    case "0": mtd_cto = "P"; break;
+                }
+
                 vv_str_sql.AppendFormat(" va_nom_alm='{0}',va_des_alm='{1}',va_dir_alm='{2}',",nom_alm, des_alm,dir_alm);
                 vv_str_sql.AppendFormat("va_fec_ctr='{0}',va_mon_inv='{1}',va_mtd_cto='{2}',",fec_ctr.ToShortDateString(),mon_inv,mtd_cto);
-                vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tel_ecg='{1}',va_dir_ecg='{2}',va_cta_alm='{3}'",nom_ecg,tlf_ecg,dir_ecg,cta_alm);
+                vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tlf_ecg='{1}',va_dir_ecg='{2}',va_cta_alm='{3}'",nom_ecg,tlf_ecg,dir_ecg,cta_alm);
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", cod_alm);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -148,10 +161,10 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Habilita/Deshabilita ALMACENES"
+        /// funcion "Habilita/Deshabilita AlmacénES"
         /// </summary>
-        /// <param name="cod_alm">Codigo del ALMACENES</param>
-        /// <param name="est_ado">Estado del ALMACENES</param>
+        /// <param name="cod_alm">Codigo del AlmacénES</param>
+        /// <param name="est_ado">Estado del AlmacénES</param>
         /// <returns></returns>
         public DataTable _04(int cod_alm, string est_ado)
         {
@@ -173,9 +186,9 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Consulta ALMACENES"
+        /// funcion "Consulta AlmacénES"
         /// </summary>
-        /// <param name="cod_gru">Codigo del ALMACENES</param>
+        /// <param name="cod_gru">Codigo del AlmacénES</param>
         /// <returns></returns>
         public DataTable _05(int cod_alm)
         {
@@ -195,9 +208,9 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Elimina ALMACENES"
+        /// funcion "Elimina AlmacénES"
         /// </summary>
-        /// <param name="cod_gru">Codigo del ALMACENES</param>
+        /// <param name="cod_gru">Codigo del AlmacénES</param>
         /// <returns></returns>
         public DataTable _06(int cod_alm)
         {

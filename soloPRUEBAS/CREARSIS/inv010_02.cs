@@ -42,7 +42,7 @@ namespace CREARSIS
 
             if (cod_suc.Trim() == "")
             {
-                tb_cod_sucu.Text = "** NO existe";
+                tb_cod_sucu.Text = "";
                 tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
@@ -50,7 +50,7 @@ namespace CREARSIS
             tab_adm007 = o_adm007._05(cod_suc);
             if (tab_adm007.Rows.Count == 0)
             {
-                tb_cod_sucu.Text = "** NO existe";
+                tb_cod_sucu.Text = "";
                 tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
@@ -140,7 +140,7 @@ namespace CREARSIS
                 return "El codigo del Grupo de Almacén ya se encuentra registrado";
             }
 
-            //**Verifica el nombre del grupo de almacen
+            //**Verifica el nombre del grupo de Almacén
             if (tb_nom_gru.Text.Trim() == "")
             {
                 tb_nom_gru.Focus();
@@ -184,7 +184,7 @@ namespace CREARSIS
                     return;
                 }
 
-                //Graba datos GRUPO DE ALMACEN
+                //Graba datos GRUPO DE Almacén
                 o_inv010._02(int.Parse(tb_cod_gru.Text), int.Parse(tb_cod_sucu.Text), int.Parse(tb_nro_gru.Text),tb_nom_gru.Text,tb_des_gru.Text);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_gru.Text, tb_nom_gru.Text);

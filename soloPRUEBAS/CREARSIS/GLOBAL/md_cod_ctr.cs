@@ -102,8 +102,8 @@ namespace CREARSIS.GLOBAL
             //Adiciona 5 dígitos de verificación a la suma total
             for (int i = 1; i <= 5; i++)
             {
-                va_5dg_obt += ObtenerVerhoeff(va_sum_vff);//Almacena solo los 5 digitos de verificacion obtenidos en base a la sumatoria total
-                va_sum_vff += ObtenerVerhoeff(va_sum_vff);//almacena la sumatoria total concatenada con los 5 digitos de verificacion
+                va_5dg_obt += ObtenerVerhoeff(va_sum_vff);//Almacéna solo los 5 digitos de verificacion obtenidos en base a la sumatoria total
+                va_sum_vff += ObtenerVerhoeff(va_sum_vff);//Almacéna la sumatoria total concatenada con los 5 digitos de verificacion
             }
             //#####################################################################################################################
 

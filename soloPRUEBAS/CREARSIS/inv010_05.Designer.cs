@@ -324,8 +324,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "inv010_05";
-            this.Text = "Consulta Grupo de Almacen";
-            this.TitleText = "Consulta Grupo de Almacen";
+            this.Text = "Consulta Grupo de Almacén";
+            this.TitleText = "Consulta Grupo de Almacén";
             this.Load += new System.EventHandler(this.inv010_05_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

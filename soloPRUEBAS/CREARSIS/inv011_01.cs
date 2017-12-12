@@ -225,7 +225,7 @@ namespace CREARSIS
                 //agregar ceros al inicio de los numeros con 3 digitos
                 va_cod_alm = row["va_cod_alm"].ToString();
 
-                if (row["va_cod_alm"].ToString().Length==6)
+                if (row["va_cod_alm"].ToString().Length<7)
                 {
                     va_cod_alm=va_cod_alm.PadLeft(7, '0');
                 }

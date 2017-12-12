@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-using CREARSIS.GLOBAL;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS
@@ -28,7 +27,6 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_inv010 o_inv010 = new c_inv010();
-        mg_glo_bal o_mg_glo_bal = new mg_glo_bal();
 
         #endregion
 
@@ -62,7 +60,7 @@ namespace CREARSIS
             if (tb_cod_gru.Text.Trim() == "")
             {
                 tb_cod_gru.Focus();
-                return "Debes proporcionar el código de la Grupo de Almacen";
+                return "Debes proporcionar el código de la Grupo de Almacén";
             }
             
             return null;
@@ -88,17 +86,17 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Habilita/Deshabilita Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Habilita/Deshabilita Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 DialogResult res_msg = new DialogResult();
                 if (tb_est_ado.Text == "Habilitado")
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la  Grupo de Almacen?", "Deshabilita  Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar la  Grupo de Almacén?", "Deshabilita  Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Grupo de Almacen?", "Habilita  Grupo de Almacen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Grupo de Almacén?", "Habilita  Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
 
@@ -118,7 +116,7 @@ namespace CREARSIS
                     o_inv010._04(int.Parse(tb_cod_gru.Text), "H");
                 }
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_gru.Text.Trim(), tb_nom_gru.Text.Trim());
                 Close();
@@ -126,7 +124,7 @@ namespace CREARSIS
                 
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Habilita/Deshabilita Grupo de Almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Habilita/Deshabilita Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

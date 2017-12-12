@@ -344,8 +344,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "inv010_06";
-            this.Text = "Elimina Grupo de Almacen";
-            this.TitleText = "Elimina Grupo de Almacen";
+            this.Text = "Elimina Grupo de Almacén";
+            this.TitleText = "Elimina Grupo de Almacén";
             this.Load += new System.EventHandler(this.inv010_06_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

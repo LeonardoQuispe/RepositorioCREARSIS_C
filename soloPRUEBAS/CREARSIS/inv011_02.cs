@@ -103,8 +103,8 @@ namespace CREARSIS
                     return;
                 }
 
-                //Graba datos ALMACEN
-                o_inv011._02(int.Parse(tb_cod_alm.Text),int.Parse(tb_gru_alm.Text),int.Parse(tb_cod_alm.Text),tb_nom_alm.Text.Trim(),tb_des_alm.Text.Trim(),
+                //Graba datos Almacén
+                o_inv011._02(int.Parse(tb_cod_alm.Text),int.Parse(tb_gru_alm.Text),int.Parse(tb_nro_alm.Text),tb_nom_alm.Text.Trim(),tb_des_alm.Text.Trim(),
                             tb_dir_alm.Text.Trim(),dt_fec_ctr.Value,cb_mon_inv.SelectedIndex.ToString(),cb_mon_inv.SelectedIndex.ToString(),tb_nom_ecg.Text.Trim(),
                             tb_tlf_ecg.Text.Trim(),tb_dir_ecg.Text.Trim(),tb_cta_alm.Text.Trim());
 
@@ -200,7 +200,7 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
 
-            //**Verifica Grupo de ALMACEN
+            //**Verifica Grupo de Almacén
             int tmp;
 
             if (tb_gru_alm.Text.Trim() == "")
@@ -242,7 +242,7 @@ namespace CREARSIS
                 return "El Número del Almacén debe ser mayor a cero";
             }
 
-            //**Verifica Codigo de ALMACEN
+            //**Verifica Codigo de Almacén
             tab_inv011 = o_inv011._05(int.Parse(tb_cod_alm.Text));
             if (tab_inv011.Rows.Count != 0)
             {
@@ -250,7 +250,7 @@ namespace CREARSIS
                 return "El Código del Almacén ya se encuentra registrado";
             }
 
-            //**Verifica el nombre del ALMACEN
+            //**Verifica el nombre del Almacén
             if (tb_nom_alm.Text.Trim() == "")
             {
                 tb_nom_alm.Focus();

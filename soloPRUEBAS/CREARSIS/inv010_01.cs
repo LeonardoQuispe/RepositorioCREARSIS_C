@@ -36,18 +36,8 @@ namespace CREARSIS
 
         #region METODOS
 
-        public void fu_ini_frm(int va_tip_frm = 0)
+        public void fu_ini_frm()
         {
-            if (va_tip_frm == 1)
-            {
-                bt_ace_pta.Enabled = false;
-                bt_can_cel.Enabled = false;
-            }
-            if (va_tip_frm == 2)
-            {
-                bt_ace_pta.Enabled = true;
-                bt_can_cel.Enabled = true;
-            }
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
@@ -79,7 +69,7 @@ namespace CREARSIS
                 //agregar ceros al inicio de los numeros con 3 digitos
                 va_cod_gru = row["va_cod_gru"].ToString();
 
-                if (row["va_cod_gru"].ToString().Length==3)
+                if (row["va_cod_gru"].ToString().Length<4)
                 {
                     va_cod_gru=va_cod_gru.PadLeft(4, '0');
                 }
@@ -190,13 +180,13 @@ namespace CREARSIS
                 tab_inv010 = o_inv010._05(int.Parse(tb_cod_gru.Text));
                 if (tab_inv010.Rows.Count == 0)
                 {
-                    return "El grupo de Almacen no se encuentra registrado";
+                    return "El grupo de Almacén no se encuentra registrado";
                 }
 
                 //Verifica estado del dato
                 if (tab_inv010.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    return "El grupo de Almacen  se encuentra Deshabilitada";
+                    return "El grupo de Almacén  se encuentra Deshabilitada";
                 }
 
                 return null;
@@ -217,7 +207,7 @@ namespace CREARSIS
                 tab_inv010 = o_inv010._05(int.Parse(tb_cod_gru.Text));
                 if (tab_inv010.Rows.Count == 0)
                 {
-                    return "El grupo de Almacen no se encuentra registrado";
+                    return "El grupo de Almacén no se encuentra registrado";
                 }
 
                 return null;
@@ -237,13 +227,13 @@ namespace CREARSIS
                 tab_inv010 = o_inv010._05(int.Parse(tb_cod_gru.Text));
                 if (tab_inv010.Rows.Count == 0)
                 {
-                    return "El grupo de Almacen no se encuentra registrado";
+                    return "El grupo de Almacén no se encuentra registrado";
                 }
 
                 //Verifica estado del dato
                 if (tab_inv010.Rows[0]["va_est_ado"].ToString() == "H")
                 {
-                    return "El grupo de Almacen se encuentra Habilitado";
+                    return "El grupo de Almacén se encuentra Habilitado";
                 }
 
                 return null;

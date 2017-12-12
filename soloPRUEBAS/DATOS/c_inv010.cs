@@ -18,7 +18,7 @@ namespace DATOS
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Funcion "Buscar GRUPO DE ALMACENES"
+        /// Funcion "Buscar GRUPO DE AlmacénES"
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
@@ -58,10 +58,10 @@ namespace DATOS
         }
 
         /// <summary>
-        /// Registrar Grupo de Almacenes
+        /// Registrar Grupo de Almacénes
         /// </summary>
-        /// <param name="cod_gru">Codigo del GRUPO de Almacen (##-###) -> compuesto por (va_cod_suc , va_nro_gru)</param>
-        /// <param name="cod_suc">Codigo de la sucursal al que pertenece el Grupo de almacen</param>
+        /// <param name="cod_gru">Codigo del GRUPO de Almacén (##-###) -> compuesto por (va_cod_suc , va_nro_gru)</param>
+        /// <param name="cod_suc">Codigo de la sucursal al que pertenece el Grupo de Almacén</param>
         /// <param name="nro_gru">Nro. de Grupo</param>
         /// <param name="nom_gru">Nombre del grupo</param>
         /// <param name="des_gru">Descripcion del grupo</param>
@@ -84,10 +84,10 @@ namespace DATOS
         }
 
         /// <summary>
-        /// Modifica Grupo de Almacenes
+        /// Modifica Grupo de Almacénes
         /// </summary>
-        /// <param name="cod_gru">Codigo del GRUPO de Almacen (##-###) -> compuesto por (va_cod_suc , va_nro_gru)</param>
-        /// <param name="cod_suc">Codigo de la sucursal al que pertenece el Grupo de almacen</param>
+        /// <param name="cod_gru">Codigo del GRUPO de Almacén (##-###) -> compuesto por (va_cod_suc , va_nro_gru)</param>
+        /// <param name="cod_suc">Codigo de la sucursal al que pertenece el Grupo de Almacén</param>
         /// <param name="nro_gru">Nro. de Grupo</param>
         /// <param name="nom_gru">Nombre del grupo</param>
         /// <param name="des_gru">Descripcion del grupo</param>
@@ -110,10 +110,10 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Habilita/Deshabilita Grupo de Almacenes"
+        /// funcion "Habilita/Deshabilita Grupo de Almacénes"
         /// </summary>
-        /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
-        /// <param name="est_ado">Estado del Grupo de Almacenes</param>
+        /// <param name="cod_gru">Codigo del Grupo de Almacénes</param>
+        /// <param name="est_ado">Estado del Grupo de Almacénes</param>
         /// <returns></returns>
         public DataTable _04(int cod_gru, string est_ado)
         {
@@ -135,9 +135,9 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Consulta Grupo de Almacenes"
+        /// funcion "Consulta Grupo de Almacénes"
         /// </summary>
-        /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
+        /// <param name="cod_gru">Codigo del Grupo de Almacénes</param>
         /// <returns></returns>
         public DataTable _05(int cod_gru)
         {
@@ -157,9 +157,9 @@ namespace DATOS
         }
 
         /// <summary>
-        /// funcion "Elimina Grupo de Almacenes"
+        /// funcion "Elimina Grupo de Almacénes"
         /// </summary>
-        /// <param name="cod_gru">Codigo del Grupo de Almacenes</param>
+        /// <param name="cod_gru">Codigo del Grupo de Almacénes</param>
         /// <returns></returns>
         public DataTable _06(int cod_gru)
         {
