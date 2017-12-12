@@ -27,8 +27,8 @@ namespace CREARSIS.GLOBAL
         #region Metodos/Funciones de Autenticación
 
         c_cnx000 o_cnx000 = new c_cnx000(); //** instancia clase conexión
-        c_seg001 o_ads005 = new c_seg001(); //** instancia clase usuario
-        c_seg049 o_ads900 = new c_seg049(); //** instancia clase licencia
+        c_seg001 o_seg001 = new c_seg001(); //** instancia clase usuario
+        c_seg049 o_seg049 = new c_seg049(); //** instancia clase licencia
         c_adm001 o_adm001 = new c_adm001(); //** instancia clase empresa
 
         DataTable tabla = new DataTable();  //** tabla contenedora de datos
@@ -108,7 +108,7 @@ namespace CREARSIS.GLOBAL
                 }
 
                 //verifica si el usuario y contraseña son corectos 
-                tabla = o_ads005._05(ar_usr_usr, ar_pss_usr);
+                tabla = o_seg001._05(ar_usr_usr, ar_pss_usr);
                 if (tabla.Rows.Count == 0)
                 {
                     o_cnx000.mt_cer_cnx();
@@ -146,7 +146,7 @@ namespace CREARSIS.GLOBAL
                 }
 
                 //consulta licencia
-                tabla = o_ads900._01();
+                tabla = o_seg049._01();
                 if (tabla.Rows.Count == 0)
                 {
                     o_cnx000.mt_cer_cnx();

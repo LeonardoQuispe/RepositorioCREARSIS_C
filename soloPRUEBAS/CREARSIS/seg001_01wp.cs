@@ -24,7 +24,7 @@ namespace CREARSIS
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             //Obtiene datos
-            //tab_ads005 = o_ads005._01p1(cb_est_ado.SelectedItem.ToString());
+            //tab_ads005 = o_seg001._01p1(cb_est_ado.SelectedItem.ToString());
         }
 
         private void seg001_01wp_Load(object sender, EventArgs e)
