@@ -38,15 +38,17 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.cb_tip_fac = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.FC = new DevComponents.Editors.ComboItem();
-            this.FM = new DevComponents.Editors.ComboItem();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tb_fec_ini = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.FM = new DevComponents.Editors.ComboItem();
+            this.FC = new DevComponents.Editors.ComboItem();
+            this.cb_tip_fac = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
@@ -87,7 +89,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(51, 217);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(58, 21);
+            this.LabelX2.Size = new System.Drawing.Size(47, 17);
             this.LabelX2.TabIndex = 98;
             this.LabelX2.Text = "Confirme";
             // 
@@ -125,7 +127,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(71, 128);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(33, 21);
+            this.LabelX3.Size = new System.Drawing.Size(27, 17);
             this.LabelX3.TabIndex = 98;
             this.LabelX3.Text = "Llave";
             // 
@@ -141,7 +143,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(254, 91);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(110, 21);
+            this.LabelX9.Size = new System.Drawing.Size(88, 17);
             this.LabelX9.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.LabelX9.TabIndex = 94;
             this.LabelX9.Text = "Límite de emisión";
@@ -158,7 +160,7 @@
             this.LabelX8.ForeColor = System.Drawing.Color.Black;
             this.LabelX8.Location = new System.Drawing.Point(67, 91);
             this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(38, 21);
+            this.LabelX8.Size = new System.Drawing.Size(31, 17);
             this.LabelX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.LabelX8.TabIndex = 93;
             this.LabelX8.Text = "Fecha";
@@ -182,7 +184,7 @@
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(196, 26);
+            this.tb_nro_dos.Size = new System.Drawing.Size(196, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.TabStop = false;
             // 
@@ -198,15 +200,15 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(13, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(106, 21);
+            this.LabelX1.Size = new System.Drawing.Size(85, 17);
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Nro. Dosificacion";
             // 
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.labelX4);
             this.GroupBox1.Controls.Add(this.cb_tip_fac);
+            this.GroupBox1.Controls.Add(this.labelX4);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.tb_fec_fin);
             this.GroupBox1.Controls.Add(this.tb_fec_ini);
@@ -237,40 +239,10 @@
             this.labelX4.ForeColor = System.Drawing.Color.Black;
             this.labelX4.Location = new System.Drawing.Point(36, 57);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(77, 21);
+            this.labelX4.Size = new System.Drawing.Size(62, 17);
             this.labelX4.TabIndex = 163;
             this.labelX4.Text = "Tipo Factura";
             this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // cb_tip_fac
-            // 
-            this.cb_tip_fac.DisplayMember = "Text";
-            this.cb_tip_fac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tip_fac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tip_fac.Enabled = false;
-            this.cb_tip_fac.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
-            this.cb_tip_fac.FormattingEnabled = true;
-            this.cb_tip_fac.ItemHeight = 20;
-            this.cb_tip_fac.Items.AddRange(new object[] {
-            this.FC,
-            this.FM});
-            this.cb_tip_fac.Location = new System.Drawing.Point(103, 57);
-            this.cb_tip_fac.Name = "cb_tip_fac";
-            this.cb_tip_fac.Size = new System.Drawing.Size(329, 26);
-            this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fac.TabIndex = 162;
-            // 
-            // FC
-            // 
-            this.FC.Text = "Factura Computarizada";
-            this.FC.Value = "0";
-            // 
-            // FM
-            // 
-            this.FM.Text = "Factura Manual";
-            this.FM.Value = "1";
             // 
             // tb_est_ado
             // 
@@ -287,7 +259,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(116, 26);
+            this.tb_est_ado.Size = new System.Drawing.Size(116, 22);
             this.tb_est_ado.TabIndex = 161;
             this.tb_est_ado.TabStop = false;
             // 
@@ -336,7 +308,7 @@
             this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(84, 26);
+            this.tb_fec_fin.Size = new System.Drawing.Size(84, 22);
             this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_fin.TabIndex = 153;
             this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -387,7 +359,7 @@
             this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(84, 26);
+            this.tb_fec_ini.Size = new System.Drawing.Size(84, 22);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_ini.TabIndex = 152;
             this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
@@ -438,10 +410,50 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // FM
+            // 
+            this.FM.Text = "Factura Manual";
+            this.FM.Value = "1";
+            // 
+            // FC
+            // 
+            this.FC.Text = "Factura Computarizada";
+            this.FC.Value = "0";
+            // 
+            // cb_tip_fac
+            // 
+            this.cb_tip_fac.DisplayMember = "Text";
+            this.cb_tip_fac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_fac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_fac.Enabled = false;
+            this.cb_tip_fac.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_fac.FormattingEnabled = true;
+            this.cb_tip_fac.ItemHeight = 16;
+            this.cb_tip_fac.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2});
+            this.cb_tip_fac.Location = new System.Drawing.Point(104, 56);
+            this.cb_tip_fac.Name = "cb_tip_fac";
+            this.cb_tip_fac.Size = new System.Drawing.Size(328, 22);
+            this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_fac.TabIndex = 164;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "Facturas emitidas por computadora";
+            this.comboItem1.Value = "0";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Factura Manual";
+            this.comboItem2.Value = "1";
+            // 
             // ctb007_03a
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(460, 362);
@@ -480,9 +492,11 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
-        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_fac;
-        internal DevComponents.Editors.ComboItem FC;
-        internal DevComponents.Editors.ComboItem FM;
         internal DevComponents.DotNetBar.LabelX labelX4;
+        internal DevComponents.Editors.ComboItem FM;
+        internal DevComponents.Editors.ComboItem FC;
+        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_fac;
+        internal DevComponents.Editors.ComboItem comboItem1;
+        internal DevComponents.Editors.ComboItem comboItem2;
     }
 }

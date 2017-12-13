@@ -919,17 +919,16 @@ namespace CREARSIS
         {
             string nuevo = null;
             bool bandera = false;
-            long tmp;
 
             if (string.IsNullOrWhiteSpace(dato) == false)
             {
                 for (int i = 0; i < dato.Trim().Length; i++)
                 {
-                    if (long.TryParse(dato[i].ToString(), out tmp) == true)
+                    if (char.IsNumber(dato[i]) == true)
                     {
                         nuevo += dato[i];
                     }
-                    else if (long.TryParse(dato[i].ToString(), out tmp) == false)
+                    else if (char.IsNumber(dato[i]) == false)
                     {
                         bandera = true;
                     }

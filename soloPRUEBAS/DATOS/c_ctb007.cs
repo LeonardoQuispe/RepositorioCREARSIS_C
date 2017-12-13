@@ -73,7 +73,7 @@ namespace DATOS
         /// <param name="fec_fin">Fecha final dosificacion</param>
         /// <param name="cod_ley">Codigo de leyenda</param>
         /// <returns></returns>
-        public DataTable _02(Int64 nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
+        public DataTable _02(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace DATOS
         /// <param name="fec_fin"></param>
         /// <param name="cod_ley"></param>
         /// <returns></returns>
-        public DataTable _03(Int64 nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_ve)
+        public DataTable _03(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_ve)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace DATOS
         /// <param name="nro_dos">Numero de dosificacion</param>
         /// <param name="lla_vee"></param>
         /// <returns></returns>
-        public DataTable _03(Int64 nro_dos, string lla_vee)
+        public DataTable _03(long nro_dos, string lla_vee)
         {
             try
             {
@@ -154,7 +154,7 @@ namespace DATOS
         /// <param name="nro_dos">Codigo de dosificaion</param>
         /// <param name="est_ado">Estado de dosificaion</param>
         /// <returns></returns>
-        public DataTable _04(Int64 nro_dos, string est_ado)
+        public DataTable _04(long nro_dos, string est_ado)
         {
             try
             {
@@ -183,7 +183,7 @@ namespace DATOS
         /// </summary>
         /// <param name="nro_dos">Codigo de la dosificacion</param>
         /// <returns></returns>
-        public DataTable _055(string proc, Int64 nro_dos)
+        public DataTable _055(string proc, long nro_dos)
         {
             try
             {
@@ -198,7 +198,7 @@ namespace DATOS
                 throw ex;
             }
         }
-        public DataTable _05(Int64 nro_dos)
+        public DataTable _05(long nro_dos)
         {
             try
             {
@@ -218,7 +218,7 @@ namespace DATOS
         /// </summary>
         /// <param name="nro_dos">codigo de Dosificacion</param>
         /// <returns></returns>
-        public DataTable _06(Int64 nro_dos)
+        public DataTable _06(long nro_dos)
         {
             try
             {

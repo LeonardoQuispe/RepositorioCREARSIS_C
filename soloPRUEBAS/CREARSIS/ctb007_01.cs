@@ -237,6 +237,24 @@ namespace CREARSIS
             }
 
         }
+
+        string fu_ver_dat2()
+        {
+            ///Si aun existe
+            tab_ctb007 = o_ctb007._05(long.Parse(tb_sel_ecc.Text));
+            if (tab_ctb007.Rows.Count == 0)
+            {
+                return "La Dosificación no se encuentra registrada";
+            }
+
+            //Verifica estado del dato
+            if (tab_ctb007.Rows[0]["va_tip_fac"].ToString() != "0")
+            {
+                return "Sólo las facturas Emitidas por Computadora pueden Actualizar Llave";
+            }
+
+            return null;
+        }
         /// <summary>
         ///-> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos y Estado Habilitada)
         /// </summary>
@@ -396,7 +414,7 @@ namespace CREARSIS
             try
             {
                 string vv_err_msg = null;
-                vv_err_msg = fu_ver_dat("03a");
+                vv_err_msg = fu_ver_dat2();
                 if (vv_err_msg != null)
                 {
                     MessageBoxEx.Show(vv_err_msg, "Error Dosificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
