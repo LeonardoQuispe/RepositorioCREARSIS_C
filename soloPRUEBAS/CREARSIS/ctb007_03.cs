@@ -90,7 +90,7 @@ namespace CREARSIS
                 
 
                 //grabar datos
-                o_ctb007._03(int.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()),vg_str_ucc.Rows[0]["va_lla_vee"].ToString());
+                o_ctb007._03(Int64.Parse(tb_nro_dos.Text.Trim()), cb_tip_fac.SelectedIndex, int.Parse(tb_cod_sucu.Text.Trim()), int.Parse(tb_cod_act.Text.Trim()), int.Parse(tb_nro_ini.Text.Trim()), int.Parse(tb_nro_fin.Text.Trim()), tb_fec_ini.Value, tb_fec_fin.Value, int.Parse(tb_cod_ley.Text.Trim()),vg_str_ucc.Rows[0]["va_lla_vee"].ToString());
 
                 vg_frm_pad.fu_sel_fila(tb_nro_dos.Text);
 
