@@ -5,7 +5,6 @@ using System.Text;
 
 using System.Drawing;
 using DATOS;
-using DATOS.ADM;
 using System.Data;
 using System.Windows.Forms;
 

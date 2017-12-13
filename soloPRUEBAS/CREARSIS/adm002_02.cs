@@ -10,7 +10,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using System.Transactions;
 using DevComponents.DotNetBar;
-using DATOS.ADM;
+using DATOS;
 
 
 

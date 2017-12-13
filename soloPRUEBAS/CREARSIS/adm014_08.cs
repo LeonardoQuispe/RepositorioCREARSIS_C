@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENCIAS
-using DATOS.ADM;
+using DATOS;
 using DevComponents.DotNetBar;
 
 using Excel = Microsoft.Office.Interop.Excel;

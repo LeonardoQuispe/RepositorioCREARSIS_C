@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using DATOS.ADM;
+using DATOS;
 
 using System.Transactions;
 using DevComponents.DotNetBar;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DATOS.ADM
+namespace DATOS
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘

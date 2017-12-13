@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 
 
-namespace DATOS.ADM
+namespace DATOS
 {
     /// <summary>
     ///  Permiso y RESTRICCIONES DEL MENU P/USUARIO

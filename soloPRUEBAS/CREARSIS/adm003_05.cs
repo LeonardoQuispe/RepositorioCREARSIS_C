@@ -8,7 +8,7 @@ using System.Text;
 
 //REFERENCIAS
 using System.Windows.Forms;
-using DATOS.ADM;
+using DATOS;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS

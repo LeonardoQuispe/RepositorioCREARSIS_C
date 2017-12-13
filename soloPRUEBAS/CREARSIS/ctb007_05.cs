@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REFERENIAS
-using DATOS.ADM;
+using DATOS;
 
 
 

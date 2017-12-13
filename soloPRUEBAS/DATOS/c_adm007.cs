@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace DATOS.ADM
+namespace DATOS
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
@@ -80,8 +80,8 @@ namespace DATOS.ADM
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO adm007 VALUES ");
-                vv_str_sql.AppendLine(" (" + cod_suc + ", '" + nom_suc + "','" + enc_suc + "','" + ubi_suc + "','" + tel_suc + "'");
-                vv_str_sql.AppendLine(",'" + ema_suc + "','" + ciu_suc + "','" + ley_suc + "','H')");
+                vv_str_sql.AppendLine(" (" + cod_suc + ", '" + nom_suc + "','" + enc_suc + "','" + ubi_suc + "','" + tel_suc);
+                vv_str_sql.AppendLine("','" + ema_suc + "','" + ciu_suc + "','" + ley_suc + "','H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

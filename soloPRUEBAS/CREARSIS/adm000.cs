@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
 //REFERENCIAS
 using System.Runtime.InteropServices;
 using DevComponents.DotNetBar;

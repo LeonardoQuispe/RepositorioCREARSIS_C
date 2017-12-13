@@ -212,54 +212,59 @@ namespace CREARSIS
 
             tab_inv011 = o_inv011._01(val_bus, prm_bus, est_bus.ToString());
 
-            //Recupera y reemplaza nombre de Grupo de Almacén
-            tab_inv010 = o_inv010._05(int.Parse(tab_inv011.Rows[0]["va_cod_gru"].ToString()));
-            va_nom_gru = tab_inv010.Rows[0]["va_nom_gru"].ToString();
-
-            foreach (DataRow row in tab_inv011.Rows)
+            if (tab_inv011.Rows.Count!=0)
             {
-                switch (row["va_est_ado"].ToString())
+                //Recupera y reemplaza nombre de Grupo de Almacén
+                tab_inv010 = o_inv010._05(int.Parse(tab_inv011.Rows[0]["va_cod_gru"].ToString()));
+                va_nom_gru = tab_inv010.Rows[0]["va_nom_gru"].ToString();
+
+                foreach (DataRow row in tab_inv011.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    //agregar ceros al inicio de los numeros con 3 digitos
+                    va_cod_alm = row["va_cod_alm"].ToString();
+
+                    if (row["va_cod_alm"].ToString().Length < 7)
+                    {
+                        va_cod_alm = va_cod_alm.PadLeft(7, '0');
+                    }
+
+                    //Agrega Moneda al DATAGRID
+                    switch (row["va_mon_inv"].ToString())
+                    {
+                        case "B": va_mon_inv = "Bolivianos"; break;
+                        case "U": va_mon_inv = "Dólares"; break;
+                    }
+
+                    dg_res_ult.Rows.Add(va_cod_alm, row["va_nom_alm"], va_mon_inv, va_nom_gru, va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
 
-                //agregar ceros al inicio de los numeros con 3 digitos
-                va_cod_alm = row["va_cod_alm"].ToString();
-
-                if (row["va_cod_alm"].ToString().Length<7)
+                if (va_ind_ice == 0)
                 {
-                    va_cod_alm=va_cod_alm.PadLeft(7, '0');
+                    tb_sel_ecc.Text = "";
+                    lb_sel_ecc.Text = "** NO existe";
                 }
 
-                //Agrega Moneda al DATAGRID
-                switch (row["va_mon_inv"].ToString())
+                if (va_ind_ice > 0)
                 {
-                    case "B": va_mon_inv = "Bolivianos"; break;
-                    case "U": va_mon_inv = "Dólares"; break;
+                    tb_sel_ecc.Text = tab_inv011.Rows[0]["va_cod_alm"].ToString().PadLeft(7, '0');
+                    lb_sel_ecc.Text = tab_inv011.Rows[0]["va_nom_alm"].ToString();
                 }
-
-                dg_res_ult.Rows.Add(va_cod_alm,row["va_nom_alm"], va_mon_inv, va_nom_gru, va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
-            if (va_ind_ice == 0)
-            {
-                tb_sel_ecc.Text = "";
-                lb_sel_ecc.Text = "** NO existe";
-            }
-
-            if (va_ind_ice > 0)
-            {
-                tb_sel_ecc.Text = tab_inv011.Rows[0]["va_cod_alm"].ToString().PadLeft(7,'0');
-                lb_sel_ecc.Text = tab_inv011.Rows[0]["va_nom_alm"].ToString();
-            }
+            
 
             tb_val_bus.Focus();
         }

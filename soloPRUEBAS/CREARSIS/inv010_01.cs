@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-using DATOS.ADM;
+using DATOS;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS
@@ -57,48 +57,53 @@ namespace CREARSIS
 
             tab_inv010 = o_inv010._01(val_bus, prm_bus, est_bus.ToString());
 
-            //Recupera y Rellena Nombre de Sucursal
-            tab_adm007 = o_adm007._05(tab_inv010.Rows[0]["va_cod_suc"].ToString());
-            va_nom_suc = tab_adm007.Rows[0]["va_nom_suc"].ToString();
-
-
-            foreach (DataRow row in tab_inv010.Rows)
+            if (tab_inv010.Rows.Count!=0)
             {
-                switch (row["va_est_ado"].ToString())
+                //Recupera y Rellena Nombre de Sucursal
+                tab_adm007 = o_adm007._05(tab_inv010.Rows[0]["va_cod_suc"].ToString());
+                va_nom_suc = tab_adm007.Rows[0]["va_nom_suc"].ToString();
+
+
+                foreach (DataRow row in tab_inv010.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    //agregar ceros al inicio de los numeros con 3 digitos
+                    va_cod_gru = row["va_cod_gru"].ToString();
+
+                    if (row["va_cod_gru"].ToString().Length < 4)
+                    {
+                        va_cod_gru = va_cod_gru.PadLeft(4, '0');
+                    }
+
+                    dg_res_ult.Rows.Add(va_cod_gru, row["va_nom_gru"], row["va_des_gru"], va_nom_suc, va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
 
-                //agregar ceros al inicio de los numeros con 3 digitos
-                va_cod_gru = row["va_cod_gru"].ToString();
-
-                if (row["va_cod_gru"].ToString().Length<4)
+                if (va_ind_ice == 0)
                 {
-                    va_cod_gru=va_cod_gru.PadLeft(4, '0');
+                    tb_cod_gru.Text = "";
+                    lb_sel_ecc.Text = "** NO existe";
                 }
 
-                dg_res_ult.Rows.Add(va_cod_gru,  row["va_nom_gru"], row["va_des_gru"],va_nom_suc, va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
+                if (va_ind_ice > 0)
+                {
+                    tb_cod_gru.Text = tab_inv010.Rows[0]["va_cod_gru"].ToString().PadLeft(4, '0');
+                    lb_sel_ecc.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
+                }
             }
 
-            if (va_ind_ice == 0)
-            {
-                tb_cod_gru.Text = "";
-                lb_sel_ecc.Text = "** NO existe";
-            }
-
-            if (va_ind_ice > 0)
-            {
-                tb_cod_gru.Text = tab_inv010.Rows[0]["va_cod_gru"].ToString().PadLeft(4,'0');
-                lb_sel_ecc.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
-            }
+            
 
             tb_val_bus.Focus();
         }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 
 //REGERENCIAS
-using DATOS.ADM;
+using DATOS;
 using DevComponents.DotNetBar;
 
 

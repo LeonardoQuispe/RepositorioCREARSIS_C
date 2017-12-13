@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace DATOS.ADM
+namespace DATOS
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
