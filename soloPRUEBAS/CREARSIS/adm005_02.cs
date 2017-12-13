@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-
 using System.Transactions;
 using DevComponents.DotNetBar;
 

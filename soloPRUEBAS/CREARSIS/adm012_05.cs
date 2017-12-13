@@ -11,7 +11,6 @@ using System.Windows.Forms;
 //REFERENCIAS
 using DATOS;
 
-
 namespace CREARSIS
 {
     public partial class adm012_05 : DevComponents.DotNetBar.Metro.MetroForm

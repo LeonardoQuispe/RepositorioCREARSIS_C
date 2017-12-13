@@ -11,7 +11,6 @@ using System.Windows.Forms;
 //REFERENCIAS
 
 using DATOS;
-using DATOS;
 
 namespace CREARSIS
 {

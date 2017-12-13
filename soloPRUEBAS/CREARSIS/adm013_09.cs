@@ -10,7 +10,6 @@ using System.Windows.Forms;
 //REFERENCIAS
 using DATOS;
 using DevComponents.DotNetBar;
-
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Transactions;
 using System.Runtime.InteropServices;

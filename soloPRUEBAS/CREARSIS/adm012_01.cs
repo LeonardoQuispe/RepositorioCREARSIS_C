@@ -13,7 +13,6 @@ using DevComponents.DotNetBar;
 using DATOS;
 
 
-
 namespace CREARSIS
 {
     public partial class adm012_01 : DevComponents.DotNetBar.Metro.MetroForm

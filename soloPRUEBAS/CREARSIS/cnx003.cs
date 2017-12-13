@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-
 using DATOS;
 using System.Threading;
 using DevComponents.DotNetBar;

@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-
 using DevComponents.DotNetBar;
 using System.Globalization;
 

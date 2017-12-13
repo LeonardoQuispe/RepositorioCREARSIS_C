@@ -12,7 +12,6 @@ using System.Windows.Forms;
 using DATOS;
 
 
-
 namespace CREARSIS
 {
     public partial class ctb007_05 : DevComponents.DotNetBar.Metro.MetroForm

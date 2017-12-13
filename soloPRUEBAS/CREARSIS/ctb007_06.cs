@@ -14,7 +14,6 @@ using DevComponents.DotNetBar;
 
 
 
-
 namespace CREARSIS
 {
     public partial class ctb007_06 : DevComponents.DotNetBar.Metro.MetroForm
