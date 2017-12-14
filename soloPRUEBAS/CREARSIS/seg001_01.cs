@@ -196,8 +196,9 @@ namespace CREARSIS
         //[MENU - Informe "Listado de Usuario"]
         private void m_seg001_p01_Click(object sender, EventArgs e)
         {
-            seg001_01wp seg001_01wp = new seg001_01wp();
-            o_mg_glo_bal.mg_ads000_02(seg001_01wp, this);
+            //seg001_01wp seg001_01wp = new seg001_01wp();
+            seg001_wp01 obj = new seg001_wp01();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
         private void m_atr_ass_Click(object sender, EventArgs e)

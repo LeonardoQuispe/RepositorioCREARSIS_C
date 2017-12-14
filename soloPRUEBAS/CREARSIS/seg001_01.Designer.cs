@@ -173,7 +173,6 @@
             // 
             // 
             // 
-            this.tb_val_bus.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_val_bus.Border.Class = "TextBoxBorder";
             this.tb_val_bus.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_val_bus.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
@@ -196,7 +195,6 @@
             // 
             // 
             // 
-            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_sel_ecc.Border.Class = "TextBoxBorder";
             this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
@@ -251,7 +249,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(460, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(368, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -396,7 +394,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 13);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -501,6 +499,7 @@
             this.Controls.Add(this.gb_ctr_frm);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
