@@ -46,13 +46,13 @@
             this.m_adm010 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_tip_per = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_inv_ent = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_gru_alm = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_alm_ace = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_fam_pro = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pro_duc = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_uni_med = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_mar_pro = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_lot_ess = new System.Windows.Forms.ToolStripMenuItem();
-            this.mn_gru_alm = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_fac_tur = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_dos_ifi = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_suc_urs = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +88,7 @@
             this.MenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip1.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip1.Name = "MenuStrip1";
-            this.MenuStrip1.Size = new System.Drawing.Size(1093, 24);
+            this.MenuStrip1.Size = new System.Drawing.Size(1084, 28);
             this.MenuStrip1.TabIndex = 10;
             this.MenuStrip1.Text = "MenuStrip1";
             this.MenuStrip1.Visible = false;
@@ -240,6 +240,13 @@
             this.mr_inv_ent.Size = new System.Drawing.Size(192, 26);
             this.mr_inv_ent.Text = "&Inventario";
             // 
+            // mn_gru_alm
+            // 
+            this.mn_gru_alm.Name = "mn_gru_alm";
+            this.mn_gru_alm.Size = new System.Drawing.Size(217, 26);
+            this.mn_gru_alm.Text = "&Grupo de Almacén";
+            this.mn_gru_alm.Click += new System.EventHandler(this.mn_gru_alm_Click);
+            // 
             // mn_alm_ace
             // 
             this.mn_alm_ace.Name = "mn_alm_ace";
@@ -279,13 +286,6 @@
             this.mn_lot_ess.Name = "mn_lot_ess";
             this.mn_lot_ess.Size = new System.Drawing.Size(217, 26);
             this.mn_lot_ess.Text = "Lote";
-            // 
-            // mn_gru_alm
-            // 
-            this.mn_gru_alm.Name = "mn_gru_alm";
-            this.mn_gru_alm.Size = new System.Drawing.Size(217, 26);
-            this.mn_gru_alm.Text = "&Grupo de Almacén";
-            this.mn_gru_alm.Click += new System.EventHandler(this.mn_gru_alm_Click);
             // 
             // mr_fac_tur
             // 
@@ -503,8 +503,8 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MenuStrip1;
             this.Name = "adm000";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Administración y Seguridad";
+            this.TitleText = "Menú Administración y Seguridad";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cnx004_FormClosing);
             this.Load += new System.EventHandler(this.cnx004_Load);

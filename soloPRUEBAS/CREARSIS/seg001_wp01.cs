@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 //REFERENCIAS
 using DATOS;
 using DevComponents.DotNetBar;
+
 
 namespace CREARSIS
 {
@@ -28,16 +30,16 @@ namespace CREARSIS
             InitializeComponent();
         }
 
-        private void seg001_rpt01_Load(object sender, EventArgs e)
+        private void seg001_wp01_Load(object sender, EventArgs e)
         {
-            fu_ini_frm();            
+            fu_ini_frm();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
-           {
+        {
             string vv_err_msg = fu_ver_dat();
 
-            if (vv_err_msg!=null)
+            if (vv_err_msg != null)
             {
                 MessageBoxEx.Show(vv_err_msg, "Informe Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -45,13 +47,15 @@ namespace CREARSIS
 
             //Se llama al formulario de reporte pasandole el Datatable como parametro
             seg001_rpt01 obj = new seg001_rpt01();
-            o_mg_glo_bal.mg_ads000_03(obj, this, tab_seg001);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
 
 
 
@@ -65,13 +69,15 @@ namespace CREARSIS
             //Se recupera los datos de la BD
             tab_seg001 = o_seg001._01("", 0, cb_est_bus.SelectedIndex);
 
-            if (tab_seg001.Rows.Count==0)
+            if (tab_seg001.Rows.Count == 0)
             {
                 return "Ningún dato encontrado";
             }
 
             return null;
         }
+
+
 
 
     }
