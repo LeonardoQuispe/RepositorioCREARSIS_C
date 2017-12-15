@@ -34,7 +34,7 @@ namespace CREARSIS
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
-        {
+           {
             string vv_err_msg = fu_ver_dat();
 
             if (vv_err_msg!=null)

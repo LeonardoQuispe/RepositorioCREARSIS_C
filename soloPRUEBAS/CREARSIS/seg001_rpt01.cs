@@ -26,14 +26,8 @@ namespace CREARSIS
 
         private void seg001_rpt01_Load(object sender, EventArgs e)
         {
-            fu_ini_frm();
             this.Dock = DockStyle.Fill;
-            this.reportViewer1.RefreshReport();
-        }
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
+            fu_ini_frm();
         }
 
 
@@ -41,22 +35,26 @@ namespace CREARSIS
         void fu_ini_frm()
         {
             //Carga la el datatable con los datos al DataSource
-            seg001_ds01 o_dat_set = new seg001_ds01();            
-
-            //Carga el Dataset
+            seg001_ds01 o_dat_set = new seg001_ds01();
             o_dat_set.Tables.Add(vg_str_ucc);
 
+            //Pasando Parametros al REPORTE
+            ReportParameter par_ame_tro = new ReportParameter("par_am1", "ES UNA PRUEBAZA");
+            rep_view.LocalReport.SetParameters(par_ame_tro);
+
             //Carga el Datasource al REPORTE
-            ReportDataSource seg001_ds = new ReportDataSource("tab_seg001", o_dat_set.Tables[1]);
+            ReportDataSource seg001_ds = new ReportDataSource("tab_seg001", o_dat_set.Tables[1]);            
             rep_view.LocalReport.DataSources.Clear();
             rep_view.LocalReport.DataSources.Add(seg001_ds);
-            rep_view.LocalReport.Refresh();
-            
+            rep_view.LocalReport.Refresh();            
             rep_view.RefreshReport();
 
 
         }
 
-
+        private void m_atr_atr_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
