@@ -54,6 +54,7 @@ namespace CREARSIS
             }
 
             rep_view.LocalReport.SetParameters(par_ame_tro);
+
             
 
             //Carga el Datasource al REPORTE
@@ -63,6 +64,9 @@ namespace CREARSIS
             rep_view.LocalReport.Refresh();            
             rep_view.RefreshReport();
 
+
+
+            rep_view.SetDisplayMode(DisplayMode.PrintLayout);
 
         }
 

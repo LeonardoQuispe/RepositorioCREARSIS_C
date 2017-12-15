@@ -55,7 +55,7 @@
             // rep_view
             // 
             this.rep_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rep_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rep_view.ForeColor = System.Drawing.Color.Black;
             reportDataSource1.Name = "seg001_ds01";
@@ -63,24 +63,25 @@
             this.rep_view.LocalReport.DataSources.Add(reportDataSource1);
             this.rep_view.LocalReport.ReportEmbeddedResource = "CREARSIS.seg001_rpt01.rdlc";
             this.rep_view.Location = new System.Drawing.Point(0, 0);
+            this.rep_view.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rep_view.Name = "rep_view";
             this.rep_view.ServerReport.BearerToken = null;
             this.rep_view.Size = new System.Drawing.Size(772, 520);
             this.rep_view.TabIndex = 1;
-            this.rep_view.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // mn_pri_nci
             // 
             this.mn_pri_nci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
             this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
+            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_imp_rim,
             this.m_exp_ort,
             this.m_atr_atr});
             this.mn_pri_nci.Location = new System.Drawing.Point(58, 144);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(181, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(218, 28);
             this.mn_pri_nci.TabIndex = 11;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -88,25 +89,25 @@
             // m_imp_rim
             // 
             this.m_imp_rim.Name = "m_imp_rim";
-            this.m_imp_rim.Size = new System.Drawing.Size(65, 20);
+            this.m_imp_rim.Size = new System.Drawing.Size(78, 24);
             this.m_imp_rim.Text = "&Imprimir";
             // 
             // m_exp_ort
             // 
             this.m_exp_ort.Name = "m_exp_ort";
-            this.m_exp_ort.Size = new System.Drawing.Size(62, 20);
+            this.m_exp_ort.Size = new System.Drawing.Size(77, 24);
             this.m_exp_ort.Text = "&Exportar";
             // 
             // m_atr_atr
             // 
             this.m_atr_atr.Name = "m_atr_atr";
-            this.m_atr_atr.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_atr.Size = new System.Drawing.Size(55, 24);
             this.m_atr_atr.Text = "&Atras";
             this.m_atr_atr.Click += new System.EventHandler(this.m_atr_atr_Click);
             // 
             // seg001_rpt01
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 520);
             this.ControlBox = false;
@@ -114,13 +115,11 @@
             this.Controls.Add(this.rep_view);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "seg001_rpt01";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form Informe Usuarios";
             this.TitleText = "Form Informe Usuarios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.seg001_rpt01_Load);
             ((System.ComponentModel.ISupportInitialize)(this.seg001BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seg001_ds01)).EndInit();
