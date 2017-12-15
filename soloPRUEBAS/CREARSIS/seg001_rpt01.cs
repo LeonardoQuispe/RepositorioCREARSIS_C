@@ -67,6 +67,9 @@ namespace CREARSIS
 
 
             rep_view.SetDisplayMode(DisplayMode.PrintLayout);
+            rep_view.ZoomMode = ZoomMode.Percent;
+
+            
 
         }
 
