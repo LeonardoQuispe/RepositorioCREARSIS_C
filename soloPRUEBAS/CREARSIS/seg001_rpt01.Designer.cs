@@ -54,8 +54,10 @@
             // 
             // rep_view
             // 
+            this.rep_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rep_view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rep_view.ForeColor = System.Drawing.Color.Black;
             reportDataSource1.Name = "seg001_ds01";
             reportDataSource1.Value = this.seg001BindingSource;
             this.rep_view.LocalReport.DataSources.Add(reportDataSource1);
@@ -65,11 +67,11 @@
             this.rep_view.ServerReport.BearerToken = null;
             this.rep_view.Size = new System.Drawing.Size(772, 520);
             this.rep_view.TabIndex = 1;
-            this.rep_view.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rep_view.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // mn_pri_nci
             // 
-            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
+            this.mn_pri_nci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
             this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
             this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -118,6 +120,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form Informe Usuarios";
             this.TitleText = "Form Informe Usuarios";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.seg001_rpt01_Load);
             ((System.ComponentModel.ISupportInitialize)(this.seg001BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seg001_ds01)).EndInit();
