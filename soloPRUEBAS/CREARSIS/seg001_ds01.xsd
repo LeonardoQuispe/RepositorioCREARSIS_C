@@ -15,13 +15,19 @@
         <xs:element name="seg001" msprop:Generator_TableClassName="seg001DataTable" msprop:Generator_TableVarName="tableseg001" msprop:Generator_TablePropName="seg001" msprop:Generator_RowDeletingName="seg001RowDeleting" msprop:Generator_RowChangingName="seg001RowChanging" msprop:Generator_RowEvHandlerName="seg001RowChangeEventHandler" msprop:Generator_RowDeletedName="seg001RowDeleted" msprop:Generator_UserTableName="seg001" msprop:Generator_RowChangedName="seg001RowChanged" msprop:Generator_RowEvArgName="seg001RowChangeEvent" msprop:Generator_RowClassName="seg001Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="va_tip_usr" msprop:Generator_ColumnVarNameInTable="columnva_tip_usr" msprop:Generator_ColumnPropNameInRow="va_tip_usr" msprop:Generator_ColumnPropNameInTable="va_tip_usrColumn" msprop:Generator_UserColumnName="va_tip_usr" type="xs:string" minOccurs="0" />
+              <xs:element name="va_tip_usr" msprop:Generator_ColumnVarNameInTable="columnva_tip_usr" msprop:Generator_ColumnPropNameInRow="va_tip_usr" msprop:Generator_ColumnPropNameInTable="va_tip_usrColumn" msprop:Generator_UserColumnName="va_tip_usr" type="xs:int" minOccurs="0" />
               <xs:element name="va_cod_usr" msprop:Generator_ColumnVarNameInTable="columnva_cod_usr" msprop:Generator_ColumnPropNameInRow="va_cod_usr" msprop:Generator_ColumnPropNameInTable="va_cod_usrColumn" msprop:Generator_UserColumnName="va_cod_usr" type="xs:string" minOccurs="0" />
               <xs:element name="va_nom_usr" msprop:Generator_ColumnVarNameInTable="columnva_nom_usr" msprop:Generator_ColumnPropNameInRow="va_nom_usr" msprop:Generator_ColumnPropNameInTable="va_nom_usrColumn" msprop:Generator_UserColumnName="va_nom_usr" type="xs:string" minOccurs="0" />
               <xs:element name="va_tel_fon" msprop:Generator_ColumnVarNameInTable="columnva_tel_fon" msprop:Generator_ColumnPropNameInRow="va_tel_fon" msprop:Generator_ColumnPropNameInTable="va_tel_fonColumn" msprop:Generator_UserColumnName="va_tel_fon" type="xs:string" minOccurs="0" />
               <xs:element name="va_car_usr" msprop:Generator_ColumnVarNameInTable="columnva_car_usr" msprop:Generator_ColumnPropNameInRow="va_car_usr" msprop:Generator_ColumnPropNameInTable="va_car_usrColumn" msprop:Generator_UserColumnName="va_car_usr" type="xs:string" minOccurs="0" />
               <xs:element name="va_cor_usr" msprop:Generator_ColumnVarNameInTable="columnva_cor_usr" msprop:Generator_ColumnPropNameInRow="va_cor_usr" msprop:Generator_ColumnPropNameInTable="va_cor_usrColumn" msprop:Generator_UserColumnName="va_cor_usr" type="xs:string" minOccurs="0" />
-              <xs:element name="va_est_ado" msprop:Generator_ColumnVarNameInTable="columnva_est_ado" msprop:Generator_ColumnPropNameInRow="va_est_ado" msprop:Generator_ColumnPropNameInTable="va_est_adoColumn" msprop:Generator_UserColumnName="va_est_ado" type="xs:string" minOccurs="0" />
+              <xs:element name="va_est_ado" msprop:Generator_ColumnVarNameInTable="columnva_est_ado" msprop:Generator_ColumnPropNameInRow="va_est_ado" msprop:Generator_ColumnPropNameInTable="va_est_adoColumn" msprop:Generator_UserColumnName="va_est_ado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

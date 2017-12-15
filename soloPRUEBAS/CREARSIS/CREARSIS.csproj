@@ -692,6 +692,7 @@
     <Compile Include="seg020_01.Designer.cs">
       <DependentUpon>seg020_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="adm001_03.resx">
       <DependentUpon>adm001_03.cs</DependentUpon>
     </EmbeddedResource>
@@ -999,6 +1000,7 @@
     <EmbeddedResource Include="seg001_06.resx">
       <DependentUpon>seg001_06.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="seg001_rpt01.rdlc" />
     <EmbeddedResource Include="seg001_rpt01.resx">
       <DependentUpon>seg001_rpt01.cs</DependentUpon>
     </EmbeddedResource>
@@ -1008,6 +1010,7 @@
     <EmbeddedResource Include="seg020_01.resx">
       <DependentUpon>seg020_01.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1037,6 +1040,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sinimagenCREARSIS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

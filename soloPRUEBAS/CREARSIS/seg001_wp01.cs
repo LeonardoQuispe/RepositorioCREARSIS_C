@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
-
+using DevComponents.DotNetBar;
 
 namespace CREARSIS
 {
@@ -20,6 +20,8 @@ namespace CREARSIS
 
 
         c_seg001 o_seg001 = new c_seg001();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+
 
         public seg001_wp01()
         {
@@ -28,12 +30,22 @@ namespace CREARSIS
 
         private void seg001_rpt01_Load(object sender, EventArgs e)
         {
-            fu_ini_frm();
+            fu_ini_frm();            
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            fu_bus_car(cb_est_bus.SelectedIndex);
+            string vv_err_msg = fu_ver_dat();
+
+            if (vv_err_msg!=null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Informe Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Se llama al formulario de reporte pasandole el Datatable como parametro
+            seg001_rpt01 obj = new seg001_rpt01();
+            o_mg_glo_bal.mg_ads000_03(obj, this, tab_seg001);
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -48,18 +60,18 @@ namespace CREARSIS
             cb_est_bus.SelectedIndex = 0;
         }
 
+        string fu_ver_dat()
+        {
+            //Se recupera los datos de la BD
+            tab_seg001 = o_seg001._01("", 0, cb_est_bus.SelectedIndex);
 
-        /// <summary>
-        /// Metodo que Consulta a Base de datos y devuelve un DATATABLE
-        /// </summary>
-        /// <param name="est_bus">Estado  0="TODOS", 1="HABILITADO", 2="DESHABILITADO"</param>
-        public void fu_bus_car(int est_bus)
-        {    
-            //Se llena Datatable con datos recuperados de la BD
-            tab_seg001 = o_seg001._01("",0, est_bus);
+            if (tab_seg001.Rows.Count==0)
+            {
+                return "Ningún dato encontrado";
+            }
 
+            return null;
         }
-
 
 
     }

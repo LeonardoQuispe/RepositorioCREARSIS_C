@@ -419,7 +419,7 @@ namespace CREARSIS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public seg001Row Addseg001Row(string va_tip_usr, string va_cod_usr, string va_nom_usr, string va_tel_fon, string va_car_usr, string va_cor_usr, string va_est_ado) {
+            public seg001Row Addseg001Row(int va_tip_usr, string va_cod_usr, string va_nom_usr, string va_tel_fon, string va_car_usr, string va_cor_usr, char va_est_ado) {
                 seg001Row rowseg001Row = ((seg001Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         va_tip_usr,
@@ -463,7 +463,7 @@ namespace CREARSIS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnva_tip_usr = new global::System.Data.DataColumn("va_tip_usr", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnva_tip_usr = new global::System.Data.DataColumn("va_tip_usr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnva_tip_usr);
                 this.columnva_cod_usr = new global::System.Data.DataColumn("va_cod_usr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnva_cod_usr);
@@ -475,7 +475,7 @@ namespace CREARSIS {
                 base.Columns.Add(this.columnva_car_usr);
                 this.columnva_cor_usr = new global::System.Data.DataColumn("va_cor_usr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnva_cor_usr);
-                this.columnva_est_ado = new global::System.Data.DataColumn("va_est_ado", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnva_est_ado = new global::System.Data.DataColumn("va_est_ado", typeof(char), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnva_est_ado);
             }
             
@@ -619,10 +619,10 @@ namespace CREARSIS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string va_tip_usr {
+            public int va_tip_usr {
                 get {
                     try {
-                        return ((string)(this[this.tableseg001.va_tip_usrColumn]));
+                        return ((int)(this[this.tableseg001.va_tip_usrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'va_tip_usr\' de la tabla \'seg001\' es DBNull.", e);
@@ -715,10 +715,10 @@ namespace CREARSIS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string va_est_ado {
+            public char va_est_ado {
                 get {
                     try {
-                        return ((string)(this[this.tableseg001.va_est_adoColumn]));
+                        return ((char)(this[this.tableseg001.va_est_adoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'va_est_ado\' de la tabla \'seg001\' es DBNull.", e);
