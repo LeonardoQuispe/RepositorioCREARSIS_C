@@ -61,7 +61,7 @@ namespace DATOS
             {
                 throw ex;
             }
-        }
+        }        
         /// <summary>
         /// Funcion "Registrar USUARIO"
         /// </summary>
@@ -233,15 +233,15 @@ namespace DATOS
         /// <summary>
         /// Procedimiento reporte "Lista de Usuarios"
         /// </summary>
-        /// <param name="est_ado">Estado (0=Todos ; 1=Habilitado ; 2=Deshabilitado)</param>
+        /// <param name="est_ado">Estado (T=Todos ; H=Habilitado ; N=Deshabilitado)</param>
         /// <returns></returns>
-        public DataTable _01p1(int est_ado)
+        public DataTable _01p1(string est_ado)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("Exec seg001_01p1 ");
-                vv_str_sql.AppendLine(Convert.ToString(est_ado));
+                vv_str_sql.AppendLine("EXEC seg001_01p1 ");
+                vv_str_sql.AppendLine("'"+est_ado+"'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -250,7 +250,6 @@ namespace DATOS
                 throw ex;
             }
         }
-
         ////////////////////ESTILO//////////////////////
 
         /// <summary>

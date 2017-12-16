@@ -37,11 +37,21 @@ namespace CREARSIS
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            string vv_err_msg = fu_ver_dat();
+            string est_ado="";
 
-            if (vv_err_msg != null)
+            switch (cb_est_bus.SelectedIndex)
             {
-                MessageBoxEx.Show(vv_err_msg, "Informe Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                case 0: est_ado = "T"; break;
+                case 1: est_ado = "H"; break;
+                case 2: est_ado = "N"; break;
+            }
+
+            //Se recupera los datos de la BD
+            tab_seg001 = o_seg001._01p1(est_ado);
+
+            if (tab_seg001.Rows.Count == 0)
+            {
+                MessageBoxEx.Show("Ningún dato encontrado", "Informe Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -63,22 +73,7 @@ namespace CREARSIS
         {
             cb_est_bus.SelectedIndex = 0;
         }
-
-        string fu_ver_dat()
-        {
-            //Se recupera los datos de la BD
-            tab_seg001 = o_seg001._01("", 0, cb_est_bus.SelectedIndex);
-
-            if (tab_seg001.Rows.Count == 0)
-            {
-                return "Ningún dato encontrado";
-            }
-
-            return null;
-        }
-
-
-
+        
 
     }
 }

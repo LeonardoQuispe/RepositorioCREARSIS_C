@@ -22,6 +22,9 @@ namespace CREARSIS
         public seg001_rpt01()
         {
             InitializeComponent();
+            ////Se cambió propiedades de Visualización del REPORTE
+            rep_view.SetDisplayMode(DisplayMode.PrintLayout);
+            rep_view.ZoomMode = ZoomMode.Percent;
         }
 
         private void seg001_rpt01_Load(object sender, EventArgs e)
@@ -39,10 +42,11 @@ namespace CREARSIS
             vg_str_ucc.TableName = "seg001";
             o_dat_set.Tables.Add(vg_str_ucc);
 
+
             //Pasando Parametros al REPORTE
             ReportParameter[] par_ame_tro = new ReportParameter[3];
             par_ame_tro[0] = new ReportParameter("cod_usr", "(" + Program.gl_usr_usr + ")");
-            par_ame_tro[1] = new ReportParameter("nom_emp","("+Program.gl_nom_emp+")");
+            par_ame_tro[1] = new ReportParameter("nom_emp", "(" + Program.gl_nom_emp + ")");
 
             switch (vg_frm_pad.cb_est_bus.SelectedIndex)
             {
@@ -55,22 +59,17 @@ namespace CREARSIS
 
             rep_view.LocalReport.SetParameters(par_ame_tro);
 
+
             
+
 
             //Carga el Datasource al REPORTE
-            ReportDataSource seg001_ds = new ReportDataSource("tab_seg001", o_dat_set.Tables[1]);            
+            ReportDataSource seg001_ds = new ReportDataSource("tab_seg001", o_dat_set.Tables[1]);
             rep_view.LocalReport.DataSources.Clear();
             rep_view.LocalReport.DataSources.Add(seg001_ds);
-            rep_view.LocalReport.Refresh();            
+            rep_view.LocalReport.Refresh();
             rep_view.RefreshReport();
-
-
-
-            rep_view.SetDisplayMode(DisplayMode.PrintLayout);
-            rep_view.ZoomMode = ZoomMode.Percent;
-
             
-
         }
 
         private void m_atr_atr_Click(object sender, EventArgs e)
