@@ -65,7 +65,6 @@ namespace CREARSIS
 
 
 
-
             //Carga el Datasource al REPORTE
             ReportDataSource seg001_ds = new ReportDataSource("tab_seg001", o_dat_set.Tables[1]);
             rep_view.LocalReport.DataSources.Clear();
