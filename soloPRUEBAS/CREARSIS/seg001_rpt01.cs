@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
+//REFERENCIAS
 using Microsoft.Reporting.WinForms;
+
 
 namespace CREARSIS
 {
@@ -29,12 +32,6 @@ namespace CREARSIS
             this.Dock = DockStyle.Fill;
             fu_ini_frm();
         }
-
-        private void m_atr_atr_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
 
 
 
@@ -63,6 +60,7 @@ namespace CREARSIS
             rep_view.LocalReport.SetParameters(par_ame_tro);
 
 
+            
 
 
             //Carga el Datasource al REPORTE
@@ -71,9 +69,12 @@ namespace CREARSIS
             rep_view.LocalReport.DataSources.Add(seg001_ds);
             rep_view.LocalReport.Refresh();
             rep_view.RefreshReport();
-
+            
         }
 
-        
+        private void m_atr_atr_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

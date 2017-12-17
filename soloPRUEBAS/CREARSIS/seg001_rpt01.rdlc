@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>abe0649b-e6ba-4c35-95e4-7862f4e1ef86</rd:DataSourceID>
+      <rd:DataSourceID>d6f5bdc4-992e-4d13-8742-3e000e68186e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -48,7 +48,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>seg001_ds01</rd:DataSetName>
-        <rd:SchemaPath>E:\Documentos\Visual Studio 2012\Projects\RepositorioCREARSIS_C\soloPRUEBAS\CREARSIS\seg001_ds01.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Leonardo Quispe M\Source\Repos\RepositorioCREARSIS_C\soloPRUEBAS\CREARSIS\seg001_ds01.xsd</rd:SchemaPath>
         <rd:TableName>seg001</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -673,10 +673,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>tab_seg001</DataSetName>
-            <Top>1.22562cm</Top>
-            <Left>3.41313cm</Left>
+            <Left>0.635cm</Left>
             <Height>2.62876cm</Height>
-            <Width>20.30326cm</Width>
+            <Width>20.30328cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -684,13 +683,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.98958in</Height>
         <Style />
       </Body>
-      <Width>10.68091in</Width>
+      <Width>8.49342in</Width>
       <Page>
         <PageHeader>
-          <Height>3.57188cm</Height>
+          <Height>3.22884cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -796,8 +795,8 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.50948cm</Top>
-              <Left>3.41312cm</Left>
+              <Top>0.67592cm</Top>
+              <Left>0.635cm</Left>
               <Height>2.55292cm</Height>
               <Width>20.30328cm</Width>
               <Style>
@@ -814,7 +813,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>2.11667cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -835,8 +834,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
-              <Top>0.97cm</Top>
-              <Left>6.23438cm</Left>
+              <Top>0.94078cm</Top>
+              <Left>3.3753cm</Left>
               <Height>0.6cm</Height>
               <Width>3.94986cm</Width>
               <Style>
@@ -867,8 +866,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>0.97cm</Top>
-              <Left>11.64324cm</Left>
+              <Top>0.94078cm</Top>
+              <Left>8.78416cm</Left>
               <Height>0.6cm</Height>
               <Width>4.165cm</Width>
               <ZIndex>1</ZIndex>
@@ -883,6 +882,18 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Line Name="Line1">
+              <Top>0.52599cm</Top>
+              <Left>0.44661cm</Left>
+              <Height>0cm</Height>
+              <Width>20.62396cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Dashed</Style>
+                </Border>
+              </Style>
+            </Line>
             <Textbox Name="Textbox5">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -898,11 +909,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.97cm</Top>
-              <Left>3.96715cm</Left>
+              <Top>0.94078cm</Top>
+              <Left>1.10807cm</Left>
               <Height>0.6cm</Height>
               <Width>2.02375cm</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -929,11 +940,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.97cm</Top>
-              <Left>20.66236cm</Left>
+              <Top>0.94078cm</Top>
+              <Left>17.80328cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -952,12 +963,12 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1001,5 +1012,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b605e50f-b5f4-46f7-80fa-f0568be562f3</rd:ReportID>
+  <rd:ReportID>4275ec21-27a2-4e37-9c71-8e1746958a84</rd:ReportID>
 </Report>
