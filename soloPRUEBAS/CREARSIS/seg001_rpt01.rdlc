@@ -673,9 +673,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>tab_seg001</DataSetName>
+            <Top>0cm</Top>
             <Left>0.635cm</Left>
             <Height>2.62876cm</Height>
-            <Width>20.30328cm</Width>
+            <Width>20.30326cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -970,7 +971,9 @@
         <TopMargin>0cm</TopMargin>
         <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
-        <Style />
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
       </Page>
     </ReportSection>
   </ReportSections>
