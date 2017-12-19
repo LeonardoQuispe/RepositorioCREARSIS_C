@@ -100,6 +100,7 @@
                                 <TextRun>
                                   <Value>Código</Value>
                                   <Style>
+                                    <FontFamily />
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -112,20 +113,12 @@
                           <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -158,20 +151,12 @@
                           <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -204,20 +189,12 @@
                           <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -250,20 +227,12 @@
                           <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -296,20 +265,12 @@
                           <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -342,20 +303,12 @@
                           <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -388,20 +341,12 @@
                           <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>Dashed</Style>
-                            </Border>
-                            <TopBorder>
                               <Style>None</Style>
-                            </TopBorder>
+                              <Width>2pt</Width>
+                            </Border>
                             <BottomBorder>
-                              <Style>Dashed</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Style>Dashed</Style>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Style>Dashed</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -679,7 +624,8 @@
             <Width>20.30326cm</Width>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
+                <Width>2pt</Width>
               </Border>
             </Style>
           </Tablix>
@@ -694,118 +640,104 @@
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Rectangle Name="Rectangle1">
-              <ReportItems>
-                <Textbox Name="Textbox1">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>INFORME USUARIOS</Value>
-                          <Style>
-                            <FontSize>18pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <TextDecoration>Underline</TextDecoration>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox1</rd:DefaultName>
-                  <Top>0.50271cm</Top>
-                  <Left>6.53521cm</Left>
-                  <Height>1.42021cm</Height>
-                  <Width>6.86375cm</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox9">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Parameters!nom_emp.Value</Value>
-                          <Style />
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>0.33169cm</Top>
-                  <Left>0.3175cm</Left>
-                  <Height>0.6cm</Height>
-                  <Width>2.5cm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox11">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Parameters!est_prm.Value</Value>
-                          <Style />
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>1.61961cm</Top>
-                  <Left>17.32544cm</Left>
-                  <Height>0.6cm</Height>
-                  <Width>2.63229cm</Width>
-                  <ZIndex>2</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-              </ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
-              <Top>0.67592cm</Top>
-              <Left>0.635cm</Left>
-              <Height>2.55292cm</Height>
-              <Width>20.30328cm</Width>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>INFORME USUARIOS</Value>
+                      <Style>
+                        <FontSize>18pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.84148cm</Top>
+              <Left>7.44882cm</Left>
+              <Height>1.42021cm</Height>
+              <Width>6.78438cm</Width>
               <Style>
                 <Border>
-                  <Style>Dashed</Style>
+                  <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
-            </Rectangle>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!nom_emp.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox9</rd:DefaultName>
+              <Top>0.67046cm</Top>
+              <Left>0.96653cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!est_prm.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox9</rd:DefaultName>
+              <Top>1.95838cm</Top>
+              <Left>17.97447cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.63229cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -868,9 +800,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.94078cm</Top>
-              <Left>8.78416cm</Left>
+              <Left>8.70479cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.165cm</Width>
+              <Width>4.24438cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -891,7 +823,8 @@
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
-                  <Style>Dashed</Style>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
                 </Border>
               </Style>
             </Line>
