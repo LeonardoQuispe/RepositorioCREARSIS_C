@@ -21,17 +21,62 @@ namespace CREARSIS
 
         public seg001_rpt01()
         {
-            InitializeComponent();
-            ////Se cambió propiedades de Visualización del REPORTE
-            rep_view.SetDisplayMode(DisplayMode.PrintLayout);
-            rep_view.ZoomMode = ZoomMode.Percent;
+            InitializeComponent();            
         }
 
         private void seg001_rpt01_Load(object sender, EventArgs e)
         {
+            //Se amplia el reporte en toda la pantalla del forulario Padre
             this.Dock = DockStyle.Fill;
+
+            //Se cambió propiedades de Visualización del REPORTE
+            rep_view.SetDisplayMode(DisplayMode.PrintLayout);
+            rep_view.ZoomMode = ZoomMode.Percent;
+
+            //Ejecuta funcion Inicial
             fu_ini_frm();
         }
+
+        //Evento Imprimir
+        private void m_imp_rim_Click(object sender, EventArgs e)
+        {
+            rep_view.PrintDialog();
+        }
+
+        //Evento Exportar a WORD
+        private void m_exp_docx_Click(object sender, EventArgs e)
+        {
+            RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();
+            RenderingExtension ext_exp = list_exp[5];
+
+            rep_view.ExportDialog(ext_exp);
+        }
+
+        //Evento Exportar PDF
+        private void m_exp_pdf_Click(object sender, EventArgs e)
+        {
+            RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();
+            RenderingExtension ext_exp = list_exp[3];
+
+            rep_view.ExportDialog(ext_exp);
+        }
+
+        //Evento Exportar Excel
+        private void m_exp_xlsx_Click(object sender, EventArgs e)
+        {
+            RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();
+            RenderingExtension ext_exp = list_exp[1];
+
+            rep_view.ExportDialog(ext_exp);
+        }
+
+        private void m_atr_atr_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+
 
 
 
@@ -57,10 +102,7 @@ namespace CREARSIS
                 case 2: par_ame_tro[2] = new ReportParameter("est_prm", "(Deshabilitados)"); break;
             }
 
-            rep_view.LocalReport.SetParameters(par_ame_tro);
-
-
-            
+            rep_view.LocalReport.SetParameters(par_ame_tro);            
 
 
             //Carga el Datasource al REPORTE
@@ -72,9 +114,6 @@ namespace CREARSIS
             
         }
 
-        private void m_atr_atr_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
     }
 }

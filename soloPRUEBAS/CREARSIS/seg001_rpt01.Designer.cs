@@ -36,6 +36,9 @@
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.m_imp_rim = new System.Windows.Forms.ToolStripMenuItem();
             this.m_exp_ort = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_exp_docx = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_exp_pdf = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_exp_xlsx = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_atr = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.seg001BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seg001_ds01)).BeginInit();
@@ -66,6 +69,9 @@
             this.rep_view.Margin = new System.Windows.Forms.Padding(0);
             this.rep_view.Name = "rep_view";
             this.rep_view.ServerReport.BearerToken = null;
+            this.rep_view.ShowBackButton = false;
+            this.rep_view.ShowExportButton = false;
+            this.rep_view.ShowPrintButton = false;
             this.rep_view.Size = new System.Drawing.Size(772, 520);
             this.rep_view.TabIndex = 1;
             // 
@@ -91,12 +97,38 @@
             this.m_imp_rim.Name = "m_imp_rim";
             this.m_imp_rim.Size = new System.Drawing.Size(65, 20);
             this.m_imp_rim.Text = "&Imprimir";
+            this.m_imp_rim.Click += new System.EventHandler(this.m_imp_rim_Click);
             // 
             // m_exp_ort
             // 
+            this.m_exp_ort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_exp_docx,
+            this.m_exp_pdf,
+            this.m_exp_xlsx});
             this.m_exp_ort.Name = "m_exp_ort";
             this.m_exp_ort.Size = new System.Drawing.Size(62, 20);
             this.m_exp_ort.Text = "&Exportar";
+            // 
+            // m_exp_docx
+            // 
+            this.m_exp_docx.Name = "m_exp_docx";
+            this.m_exp_docx.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_docx.Text = "&Word";
+            this.m_exp_docx.Click += new System.EventHandler(this.m_exp_docx_Click);
+            // 
+            // m_exp_pdf
+            // 
+            this.m_exp_pdf.Name = "m_exp_pdf";
+            this.m_exp_pdf.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_pdf.Text = "&PDF";
+            this.m_exp_pdf.Click += new System.EventHandler(this.m_exp_pdf_Click);
+            // 
+            // m_exp_xlsx
+            // 
+            this.m_exp_xlsx.Name = "m_exp_xlsx";
+            this.m_exp_xlsx.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_xlsx.Text = "&Excel";
+            this.m_exp_xlsx.Click += new System.EventHandler(this.m_exp_xlsx_Click);
             // 
             // m_atr_atr
             // 
@@ -138,5 +170,8 @@
         internal System.Windows.Forms.ToolStripMenuItem m_imp_rim;
         internal System.Windows.Forms.ToolStripMenuItem m_exp_ort;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_atr;
+        private System.Windows.Forms.ToolStripMenuItem m_exp_docx;
+        private System.Windows.Forms.ToolStripMenuItem m_exp_pdf;
+        private System.Windows.Forms.ToolStripMenuItem m_exp_xlsx;
     }
 }
