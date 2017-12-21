@@ -39,13 +39,13 @@ namespace CREARSIS
             fu_ini_frm();
         }
 
-        //Evento Imprimir
+        //Imprimir
         private void m_imp_rim_Click(object sender, EventArgs e)
         {
             rep_view.PrintDialog();
         }
 
-        //Evento Exportar a WORD
+        //Exportar a WORD
         private void m_exp_docx_Click(object sender, EventArgs e)
         {
             RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();
@@ -54,7 +54,7 @@ namespace CREARSIS
             rep_view.ExportDialog(ext_exp);
         }
 
-        //Evento Exportar PDF
+        //Exportar PDF
         private void m_exp_pdf_Click(object sender, EventArgs e)
         {
             RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();
@@ -63,7 +63,7 @@ namespace CREARSIS
             rep_view.ExportDialog(ext_exp);
         }
 
-        //Evento Exportar Excel
+        //Exportar Excel
         private void m_exp_xlsx_Click(object sender, EventArgs e)
         {
             RenderingExtension[] list_exp = rep_view.LocalReport.ListRenderingExtensions();

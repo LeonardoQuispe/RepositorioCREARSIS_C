@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.seg001BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seg001_ds01 = new CREARSIS.seg001_ds01();
             this.rep_view = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -61,9 +61,9 @@
             this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rep_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rep_view.ForeColor = System.Drawing.Color.Black;
-            reportDataSource1.Name = "seg001_ds01";
-            reportDataSource1.Value = this.seg001BindingSource;
-            this.rep_view.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "seg001_ds01";
+            reportDataSource4.Value = this.seg001BindingSource;
+            this.rep_view.LocalReport.DataSources.Add(reportDataSource4);
             this.rep_view.LocalReport.ReportEmbeddedResource = "CREARSIS.seg001_rpt01.rdlc";
             this.rep_view.Location = new System.Drawing.Point(0, 0);
             this.rep_view.Margin = new System.Windows.Forms.Padding(0);
@@ -112,21 +112,21 @@
             // m_exp_docx
             // 
             this.m_exp_docx.Name = "m_exp_docx";
-            this.m_exp_docx.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_docx.Size = new System.Drawing.Size(103, 22);
             this.m_exp_docx.Text = "&Word";
             this.m_exp_docx.Click += new System.EventHandler(this.m_exp_docx_Click);
             // 
             // m_exp_pdf
             // 
             this.m_exp_pdf.Name = "m_exp_pdf";
-            this.m_exp_pdf.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_pdf.Size = new System.Drawing.Size(103, 22);
             this.m_exp_pdf.Text = "&PDF";
             this.m_exp_pdf.Click += new System.EventHandler(this.m_exp_pdf_Click);
             // 
             // m_exp_xlsx
             // 
             this.m_exp_xlsx.Name = "m_exp_xlsx";
-            this.m_exp_xlsx.Size = new System.Drawing.Size(152, 22);
+            this.m_exp_xlsx.Size = new System.Drawing.Size(103, 22);
             this.m_exp_xlsx.Text = "&Excel";
             this.m_exp_xlsx.Click += new System.EventHandler(this.m_exp_xlsx_Click);
             // 
