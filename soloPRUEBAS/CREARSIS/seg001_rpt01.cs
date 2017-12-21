@@ -19,6 +19,8 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
 
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+
         public seg001_rpt01()
         {
             InitializeComponent();            
@@ -89,7 +91,7 @@ namespace CREARSIS
 
 
             //Pasando Parametros al REPORTE
-            ReportParameter[] par_ame_tro = new ReportParameter[3];
+            ReportParameter[] par_ame_tro = new ReportParameter[4];
             par_ame_tro[0] = new ReportParameter("cod_usr", "(" + Program.gl_usr_usr + ")");
             par_ame_tro[1] = new ReportParameter("nom_emp", "(" + Program.gl_nom_emp + ")");
 
@@ -101,7 +103,11 @@ namespace CREARSIS
 
                 case 2: par_ame_tro[2] = new ReportParameter("est_prm", "(Deshabilitados)"); break;
             }
+            //Obtiene Fecha y hora del servidor para pasar al reporte
+            par_ame_tro[3]= new ReportParameter("fec_act", o_mg_glo_bal.fg_fec_act().ToString());
 
+
+            //Carga los parametros al reporte
             rep_view.LocalReport.SetParameters(par_ame_tro);            
 
 
