@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CREARSIS.SEG;
+using CREARSIS.SEG.seg001_usr_;
 
 
 //REFERENCIAS

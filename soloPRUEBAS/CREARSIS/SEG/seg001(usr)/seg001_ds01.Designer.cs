@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CREARSIS {
+namespace CREARSIS.SEG.seg001_usr_ {
     
     
     /// <summary>
