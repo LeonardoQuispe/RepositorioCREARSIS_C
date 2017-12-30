@@ -393,9 +393,11 @@
             this.Controls.Add(this.MetroTilePanel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(711, 557);
+            this.MinimumSize = new System.Drawing.Size(711, 557);
             this.Name = "cnx003";
             this.Text = "MetroForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cnx003_FormClosing);

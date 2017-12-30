@@ -77,7 +77,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.cb_prm_bus);
             this.GroupBox1.Controls.Add(this.cb_est_bus);
             this.GroupBox1.Controls.Add(this.lb_sel_ecc);
@@ -161,6 +161,7 @@
             // 
             // 
             this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
             this.lb_sel_ecc.Location = new System.Drawing.Point(136, 21);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
             this.lb_sel_ecc.Size = new System.Drawing.Size(390, 23);
@@ -223,7 +224,7 @@
             // 
             // GroupBox2
             // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.mn_pri_nci);
             this.GroupBox2.Controls.Add(this.dg_res_ult);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
@@ -236,7 +237,7 @@
             // 
             // mn_pri_nci
             // 
-            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
+            this.mn_pri_nci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
             this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
             this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -370,7 +371,7 @@
             this.dg_res_ult.AllowUserToDeleteRows = false;
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
-            this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
+            this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -386,7 +387,7 @@
             this.va_tip_usr,
             this.va_est_ado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -394,7 +395,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 13);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -442,7 +443,7 @@
             // 
             // gb_ctr_frm
             // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
@@ -499,12 +500,12 @@
             this.Controls.Add(this.gb_ctr_frm);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "seg001_01";
             this.Text = "Busca Usuario";
+            this.TitleText = "Busca Usuario";
             this.Load += new System.EventHandler(this.seg001_01_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);

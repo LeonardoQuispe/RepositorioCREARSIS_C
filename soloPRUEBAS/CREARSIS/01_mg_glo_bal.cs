@@ -472,7 +472,7 @@ namespace CREARSIS
         {
             tmp_frm_nvo = ar_frm_nvo;
 
-            Form v_frm_pad = new Form();
+            dynamic v_frm_pad;
             bool ban_frm = false;
 
             v_frm_pad = ar_frm_pad.MdiParent;
@@ -493,6 +493,11 @@ namespace CREARSIS
                 ar_frm_nvo.MdiParent = v_frm_pad;
                 ar_frm_nvo.Show();
                 ar_frm_nvo.Activate();
+
+                // Obtiene el usuario logueado               
+
+                string cod_usr = Program.gl_usr_usr;
+                v_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, v_frm_pad.MenuStrip1);
             }
             else
             {
@@ -783,7 +788,10 @@ namespace CREARSIS
             }
             else
             {
-                v_mnu_usr.obtiene_menu(ide_usr, frm_hja.Name, frm_hja.vg_frm_pad.MenuStrip1);
+                dynamic padre = frm_hja.MdiParent;
+                
+
+                v_mnu_usr.obtiene_menu(ide_usr, frm_hja.Name, frm_hja.MdiParent.MenuStrip1);
             }
             v_mnu_usr.ShowDialog();
         }

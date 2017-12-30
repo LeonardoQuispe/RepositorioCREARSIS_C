@@ -65,8 +65,9 @@ namespace CREARSIS
             this.Activate();
             if (WindowState == FormWindowState.Minimized)
             {
-                WindowState = FormWindowState.Minimized;
+                WindowState = FormWindowState.Maximized;
             }
+
             DialogResult vv_res_msg;
             vv_res_msg = MessageBoxEx.Show(this, "Esta seguro de Salir de la aplicación ?", "Salir",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
