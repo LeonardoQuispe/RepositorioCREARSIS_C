@@ -67,8 +67,13 @@ namespace CREARSIS
         private void cnx003_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult vv_res_msg;
-            int vv_nro_vtn = 0;
-            //nro de ventanas abiertas del sistema
+            int vv_nro_vtn = 0; //nro de ventanas abiertas del sistema
+
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+
 
             //VALIDAR QUE LAS VENTANAS HIJAS ESTE CERRADAS
             vv_nro_vtn = Convert.ToInt32(Program.gl_nro_win);

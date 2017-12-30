@@ -125,6 +125,7 @@
             this.tb_sel_usr.PreventEnterBeep = true;
             this.tb_sel_usr.Size = new System.Drawing.Size(164, 22);
             this.tb_sel_usr.TabIndex = 30;
+            this.tb_sel_usr.Text = "crearsis";
             this.tb_sel_usr.ButtonCustomClick += new System.EventHandler(this.tb_sel_usr_ButtonCustomClick);
             this.tb_sel_usr.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_sel_usr_KeyUp);
             this.tb_sel_usr.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_usr_Validating);
@@ -154,6 +155,7 @@
             this.tb_pas_usr.PreventEnterBeep = true;
             this.tb_pas_usr.Size = new System.Drawing.Size(164, 22);
             this.tb_pas_usr.TabIndex = 20;
+            this.tb_pas_usr.Text = "Crearsis123.";
             this.tb_pas_usr.UseSystemPasswordChar = true;
             this.tb_pas_usr.WatermarkText = "**************";
             // 
@@ -175,6 +177,7 @@
             this.tb_usr_usr.PreventEnterBeep = true;
             this.tb_usr_usr.Size = new System.Drawing.Size(164, 22);
             this.tb_usr_usr.TabIndex = 10;
+            this.tb_usr_usr.Text = "crearsis";
             // 
             // GroupBox2
             // 
@@ -242,6 +245,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
             this.Name = "cnx002";
+            this.ShowInTaskbar = false;
             this.Text = "Autenticación personalización menú";
             this.TitleText = "Autenticación personalización menú";
             this.Activated += new System.EventHandler(this.cnx002_Activated);

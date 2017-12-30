@@ -30,7 +30,7 @@ namespace CREARSIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.seg001BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seg001_ds01 = new CREARSIS.SEG.seg001_usr_.seg001_ds01();
             this.rep_view = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -62,9 +62,9 @@ namespace CREARSIS
             this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rep_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rep_view.ForeColor = System.Drawing.Color.Black;
-            reportDataSource4.Name = "seg001_ds01";
-            reportDataSource4.Value = this.seg001BindingSource;
-            this.rep_view.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "seg001_ds01";
+            reportDataSource1.Value = this.seg001BindingSource;
+            this.rep_view.LocalReport.DataSources.Add(reportDataSource1);
             this.rep_view.LocalReport.ReportEmbeddedResource = "CREARSIS.seg001_rpt01.rdlc";
             this.rep_view.Location = new System.Drawing.Point(0, 0);
             this.rep_view.Margin = new System.Windows.Forms.Padding(0);
@@ -88,7 +88,7 @@ namespace CREARSIS
             this.m_atr_atr});
             this.mn_pri_nci.Location = new System.Drawing.Point(58, 144);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(181, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(273, 24);
             this.mn_pri_nci.TabIndex = 11;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -167,12 +167,12 @@ namespace CREARSIS
         private System.Windows.Forms.BindingSource seg001BindingSource;
         private SEG.seg001_usr_.seg001_ds01 seg001_ds01;
         private Microsoft.Reporting.WinForms.ReportViewer rep_view;
-        internal System.Windows.Forms.MenuStrip mn_pri_nci;
         internal System.Windows.Forms.ToolStripMenuItem m_imp_rim;
         internal System.Windows.Forms.ToolStripMenuItem m_exp_ort;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_atr;
         private System.Windows.Forms.ToolStripMenuItem m_exp_docx;
         private System.Windows.Forms.ToolStripMenuItem m_exp_pdf;
         private System.Windows.Forms.ToolStripMenuItem m_exp_xlsx;
+        public System.Windows.Forms.MenuStrip mn_pri_nci;
     }
 }

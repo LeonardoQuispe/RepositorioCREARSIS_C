@@ -46,11 +46,13 @@
             // 
             // GroupBox1
             // 
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.lb_nom_ven);
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.lb_sel_usr);
             this.GroupBox1.Controls.Add(this.tb_sel_usr);
             this.GroupBox1.Controls.Add(this.LabelX1);
+            this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(4, 5);
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox1.Name = "GroupBox1";
@@ -71,7 +73,7 @@
             this.lb_nom_ven.Location = new System.Drawing.Point(77, 56);
             this.lb_nom_ven.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_nom_ven.Name = "lb_nom_ven";
-            this.lb_nom_ven.Size = new System.Drawing.Size(11, 21);
+            this.lb_nom_ven.Size = new System.Drawing.Size(10, 17);
             this.lb_nom_ven.TabIndex = 53;
             this.lb_nom_ven.Text = "...";
             // 
@@ -87,7 +89,7 @@
             this.LabelX2.Location = new System.Drawing.Point(13, 56);
             this.LabelX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(71, 21);
+            this.LabelX2.Size = new System.Drawing.Size(57, 17);
             this.LabelX2.TabIndex = 53;
             this.LabelX2.Text = "Formulario:";
             // 
@@ -121,7 +123,7 @@
             this.tb_sel_usr.Name = "tb_sel_usr";
             this.tb_sel_usr.PreventEnterBeep = true;
             this.tb_sel_usr.ReadOnly = true;
-            this.tb_sel_usr.Size = new System.Drawing.Size(92, 26);
+            this.tb_sel_usr.Size = new System.Drawing.Size(92, 22);
             this.tb_sel_usr.TabIndex = 10;
             this.tb_sel_usr.TabStop = false;
             // 
@@ -137,13 +139,15 @@
             this.LabelX1.Location = new System.Drawing.Point(31, 25);
             this.LabelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(49, 21);
+            this.LabelX1.Size = new System.Drawing.Size(39, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Usuario";
             // 
             // GroupBox2
             // 
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.Tv_men_usr);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(4, 90);
             this.GroupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox2.Name = "GroupBox2";
@@ -165,7 +169,7 @@
             // 
             // GroupBox3
             // 
-            this.GroupBox3.BackColor = System.Drawing.Color.White;
+            this.GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox3.Controls.Add(this.bt_can_cel);
             this.GroupBox3.Controls.Add(this.bt_ace_pta);
             this.GroupBox3.ForeColor = System.Drawing.Color.Black;
@@ -216,11 +220,12 @@
             // seg020_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(374, 418);
+            this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox3);
@@ -228,6 +233,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "seg020_01";
+            this.ShowInTaskbar = false;
             this.Text = "Personaliza menú al usuario";
             this.TitleText = "Personaliza menú al usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.seg020_01_FormClosing);

@@ -67,7 +67,9 @@ namespace CREARSIS
                 }
                 else
                 {
-                    vg_frm_pad.vg_frm_pad.Activate();
+                    //this.vg_frm_pad.Activate();
+                    //vg_frm_pad.vg_frm_pad.Activate();
+                    vg_frm_pad.Activate();
                     this.Close();
                 }
             }
