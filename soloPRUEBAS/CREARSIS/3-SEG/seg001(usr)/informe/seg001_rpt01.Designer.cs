@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.seg001BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seg001_ds01 = new CREARSIS.seg001_ds01();
+            this.seg001_ds01 = new CREARSIS._3_SEG.seg001_usr_.informe.seg001_ds01();
             this.rep_view = new Microsoft.Reporting.WinForms.ReportViewer();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.m_imp_rim = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,7 +164,7 @@
 
         #endregion
         private System.Windows.Forms.BindingSource seg001BindingSource;
-        private seg001_ds01 seg001_ds01;
+        private CREARSIS._3_SEG.seg001_usr_.informe.seg001_ds01 seg001_ds01;
         private Microsoft.Reporting.WinForms.ReportViewer rep_view;
         internal System.Windows.Forms.ToolStripMenuItem m_imp_rim;
         internal System.Windows.Forms.ToolStripMenuItem m_exp_ort;
