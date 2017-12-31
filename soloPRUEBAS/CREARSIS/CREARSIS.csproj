@@ -1,0 +1,1095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22D4DDFA-9BFC-49EE-B546-31AD61FCFD28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CREARSIS</RootNamespace>
+    <AssemblyName>CREARSIS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Escritorio\prueba\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E7D722DB93DEE9D0837A1FFB6600DC32BB0A137F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CREARSIS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=12.3.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.3.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01_mg_cod_ctr.cs" />
+    <Compile Include="01_mg_glo_bal.cs" />
+    <Compile Include="adm001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm001_03.Designer.cs">
+      <DependentUpon>adm001_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm002_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm002_01.Designer.cs">
+      <DependentUpon>adm002_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm002_01wp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm002_01wp.Designer.cs">
+      <DependentUpon>adm002_01wp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm002_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm002_02.Designer.cs">
+      <DependentUpon>adm002_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm002_02a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm002_02a.Designer.cs">
+      <DependentUpon>adm002_02a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_01.Designer.cs">
+      <DependentUpon>adm003_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_02.Designer.cs">
+      <DependentUpon>adm003_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_03.Designer.cs">
+      <DependentUpon>adm003_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_04.Designer.cs">
+      <DependentUpon>adm003_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_05.Designer.cs">
+      <DependentUpon>adm003_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm003_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm003_06.Designer.cs">
+      <DependentUpon>adm003_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_01.Designer.cs">
+      <DependentUpon>adm004_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_01a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_01a.Designer.cs">
+      <DependentUpon>adm004_01a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_02.Designer.cs">
+      <DependentUpon>adm004_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_03.Designer.cs">
+      <DependentUpon>adm004_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_04.Designer.cs">
+      <DependentUpon>adm004_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_05.Designer.cs">
+      <DependentUpon>adm004_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm004_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm004_06.Designer.cs">
+      <DependentUpon>adm004_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm005_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm005_01.Designer.cs">
+      <DependentUpon>adm005_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm005_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm005_02.Designer.cs">
+      <DependentUpon>adm005_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm005_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm005_03.Designer.cs">
+      <DependentUpon>adm005_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm005_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm005_05.Designer.cs">
+      <DependentUpon>adm005_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm005_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm005_06.Designer.cs">
+      <DependentUpon>adm005_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_01.Designer.cs">
+      <DependentUpon>adm007_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_02.Designer.cs">
+      <DependentUpon>adm007_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_03.Designer.cs">
+      <DependentUpon>adm007_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_04.Designer.cs">
+      <DependentUpon>adm007_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_05.Designer.cs">
+      <DependentUpon>adm007_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm007_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm007_06.Designer.cs">
+      <DependentUpon>adm007_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_01.Designer.cs">
+      <DependentUpon>adm012_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_02.Designer.cs">
+      <DependentUpon>adm012_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_03.Designer.cs">
+      <DependentUpon>adm012_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_04.Designer.cs">
+      <DependentUpon>adm012_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_05.Designer.cs">
+      <DependentUpon>adm012_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm012_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm012_06.Designer.cs">
+      <DependentUpon>adm012_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_01.Designer.cs">
+      <DependentUpon>adm013_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_02.Designer.cs">
+      <DependentUpon>adm013_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_02a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_02a.Designer.cs">
+      <DependentUpon>adm013_02a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_08.Designer.cs">
+      <DependentUpon>adm013_08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm013_09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm013_09.Designer.cs">
+      <DependentUpon>adm013_09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm014_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_01.Designer.cs">
+      <DependentUpon>adm014_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm014_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_02.Designer.cs">
+      <DependentUpon>adm014_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm014_02a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_02a.Designer.cs">
+      <DependentUpon>adm014_02a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm014_08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_08.Designer.cs">
+      <DependentUpon>adm014_08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm014_09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm014_09.Designer.cs">
+      <DependentUpon>adm014_09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cnx000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnx000.Designer.cs">
+      <DependentUpon>cnx000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cnx000_20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnx000_20.Designer.cs">
+      <DependentUpon>cnx000_20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cnx001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnx001.Designer.cs">
+      <DependentUpon>cnx001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cnx002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnx002.Designer.cs">
+      <DependentUpon>cnx002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cnx003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnx003.Designer.cs">
+      <DependentUpon>cnx003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adm000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adm000.Designer.cs">
+      <DependentUpon>adm000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb006_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb006_01.Designer.cs">
+      <DependentUpon>ctb006_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_01.Designer.cs">
+      <DependentUpon>ctb007_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_02.Designer.cs">
+      <DependentUpon>ctb007_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_03.Designer.cs">
+      <DependentUpon>ctb007_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_04.Designer.cs">
+      <DependentUpon>ctb007_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_05.Designer.cs">
+      <DependentUpon>ctb007_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_05a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_05a.Designer.cs">
+      <DependentUpon>ctb007_05a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_06.Designer.cs">
+      <DependentUpon>ctb007_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_03a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_03a.Designer.cs">
+      <DependentUpon>ctb007_03a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctb007_20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctb007_20.Designer.cs">
+      <DependentUpon>ctb007_20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_01.Designer.cs">
+      <DependentUpon>inv001_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_02.Designer.cs">
+      <DependentUpon>inv001_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_03.Designer.cs">
+      <DependentUpon>inv001_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_04.Designer.cs">
+      <DependentUpon>inv001_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_05.Designer.cs">
+      <DependentUpon>inv001_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv001_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv001_06.Designer.cs">
+      <DependentUpon>inv001_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_01.Designer.cs">
+      <DependentUpon>inv003_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_02.Designer.cs">
+      <DependentUpon>inv003_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_03.Designer.cs">
+      <DependentUpon>inv003_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_04.Designer.cs">
+      <DependentUpon>inv003_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_05.Designer.cs">
+      <DependentUpon>inv003_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv003_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv003_06.Designer.cs">
+      <DependentUpon>inv003_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_01.Designer.cs">
+      <DependentUpon>inv004_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_02.Designer.cs">
+      <DependentUpon>inv004_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_03.Designer.cs">
+      <DependentUpon>inv004_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_06.Designer.cs">
+      <DependentUpon>inv004_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_05.Designer.cs">
+      <DependentUpon>inv004_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv004_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv004_04.Designer.cs">
+      <DependentUpon>inv004_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_01.Designer.cs">
+      <DependentUpon>inv010_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_02.Designer.cs">
+      <DependentUpon>inv010_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_03.Designer.cs">
+      <DependentUpon>inv010_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_04.Designer.cs">
+      <DependentUpon>inv010_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_05.Designer.cs">
+      <DependentUpon>inv010_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv010_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv010_06.Designer.cs">
+      <DependentUpon>inv010_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_01.Designer.cs">
+      <DependentUpon>inv011_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_02.Designer.cs">
+      <DependentUpon>inv011_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_03.Designer.cs">
+      <DependentUpon>inv011_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_04.Designer.cs">
+      <DependentUpon>inv011_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_05.Designer.cs">
+      <DependentUpon>inv011_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inv011_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inv011_06.Designer.cs">
+      <DependentUpon>inv011_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seg001_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_01.Designer.cs">
+      <DependentUpon>seg001_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_02.Designer.cs">
+      <DependentUpon>seg001_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_03.Designer.cs">
+      <DependentUpon>seg001_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_03a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_03a.Designer.cs">
+      <DependentUpon>seg001_03a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_03b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_03b.Designer.cs">
+      <DependentUpon>seg001_03b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_04.Designer.cs">
+      <DependentUpon>seg001_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_05.Designer.cs">
+      <DependentUpon>seg001_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_06.Designer.cs">
+      <DependentUpon>seg001_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_ds01.cs">
+      <DependentUpon>seg001_ds01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_ds01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>seg001_ds01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_rpt01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_rpt01.Designer.cs">
+      <DependentUpon>seg001_rpt01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg001_wp01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg001_wp01.Designer.cs">
+      <DependentUpon>seg001_wp01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seg020_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seg020_01.Designer.cs">
+      <DependentUpon>seg020_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="adm001_03.resx">
+      <DependentUpon>adm001_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm002_01.resx">
+      <DependentUpon>adm002_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm002_01wp.resx">
+      <DependentUpon>adm002_01wp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm002_02.resx">
+      <DependentUpon>adm002_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm002_02a.resx">
+      <DependentUpon>adm002_02a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_01.resx">
+      <DependentUpon>adm003_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_02.resx">
+      <DependentUpon>adm003_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_03.resx">
+      <DependentUpon>adm003_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_04.resx">
+      <DependentUpon>adm003_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_05.resx">
+      <DependentUpon>adm003_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm003_06.resx">
+      <DependentUpon>adm003_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_01.resx">
+      <DependentUpon>adm004_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_01a.resx">
+      <DependentUpon>adm004_01a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_02.resx">
+      <DependentUpon>adm004_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_03.resx">
+      <DependentUpon>adm004_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_04.resx">
+      <DependentUpon>adm004_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_05.resx">
+      <DependentUpon>adm004_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm004_06.resx">
+      <DependentUpon>adm004_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm005_01.resx">
+      <DependentUpon>adm005_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm005_02.resx">
+      <DependentUpon>adm005_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm005_03.resx">
+      <DependentUpon>adm005_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm005_05.resx">
+      <DependentUpon>adm005_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm005_06.resx">
+      <DependentUpon>adm005_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_01.resx">
+      <DependentUpon>adm007_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_02.resx">
+      <DependentUpon>adm007_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_03.resx">
+      <DependentUpon>adm007_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_04.resx">
+      <DependentUpon>adm007_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_05.resx">
+      <DependentUpon>adm007_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm007_06.resx">
+      <DependentUpon>adm007_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_01.resx">
+      <DependentUpon>adm012_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_02.resx">
+      <DependentUpon>adm012_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_03.resx">
+      <DependentUpon>adm012_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_04.resx">
+      <DependentUpon>adm012_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_05.resx">
+      <DependentUpon>adm012_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm012_06.resx">
+      <DependentUpon>adm012_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_01.resx">
+      <DependentUpon>adm013_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_02.resx">
+      <DependentUpon>adm013_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_02a.resx">
+      <DependentUpon>adm013_02a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_08.resx">
+      <DependentUpon>adm013_08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm013_09.resx">
+      <DependentUpon>adm013_09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_01.resx">
+      <DependentUpon>adm014_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_02.resx">
+      <DependentUpon>adm014_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_02a.resx">
+      <DependentUpon>adm014_02a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_08.resx">
+      <DependentUpon>adm014_08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm014_09.resx">
+      <DependentUpon>adm014_09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnx000.resx">
+      <DependentUpon>cnx000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnx000_20.resx">
+      <DependentUpon>cnx000_20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnx001.resx">
+      <DependentUpon>cnx001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnx002.resx">
+      <DependentUpon>cnx002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnx003.resx">
+      <DependentUpon>cnx003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adm000.resx">
+      <DependentUpon>adm000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb006_01.resx">
+      <DependentUpon>ctb006_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_01.resx">
+      <DependentUpon>ctb007_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_02.resx">
+      <DependentUpon>ctb007_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_03.resx">
+      <DependentUpon>ctb007_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_04.resx">
+      <DependentUpon>ctb007_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_05.resx">
+      <DependentUpon>ctb007_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_05a.resx">
+      <DependentUpon>ctb007_05a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_06.resx">
+      <DependentUpon>ctb007_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_03a.resx">
+      <DependentUpon>ctb007_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctb007_20.resx">
+      <DependentUpon>ctb007_20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_01.resx">
+      <DependentUpon>inv001_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_02.resx">
+      <DependentUpon>inv001_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_03.resx">
+      <DependentUpon>inv001_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_04.resx">
+      <DependentUpon>inv001_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_05.resx">
+      <DependentUpon>inv001_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv001_06.resx">
+      <DependentUpon>inv001_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_01.resx">
+      <DependentUpon>inv003_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_02.resx">
+      <DependentUpon>inv003_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_03.resx">
+      <DependentUpon>inv003_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_04.resx">
+      <DependentUpon>inv003_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_05.resx">
+      <DependentUpon>inv003_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv003_06.resx">
+      <DependentUpon>inv003_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_01.resx">
+      <DependentUpon>inv004_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_02.resx">
+      <DependentUpon>inv004_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_03.resx">
+      <DependentUpon>inv004_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_04.resx">
+      <DependentUpon>inv004_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_06.resx">
+      <DependentUpon>inv004_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv004_05.resx">
+      <DependentUpon>inv004_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_01.resx">
+      <DependentUpon>inv010_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_02.resx">
+      <DependentUpon>inv010_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_03.resx">
+      <DependentUpon>inv010_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_04.resx">
+      <DependentUpon>inv010_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_05.resx">
+      <DependentUpon>inv010_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv010_06.resx">
+      <DependentUpon>inv010_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_01.resx">
+      <DependentUpon>inv011_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_02.resx">
+      <DependentUpon>inv011_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_03.resx">
+      <DependentUpon>inv011_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_04.resx">
+      <DependentUpon>inv011_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_05.resx">
+      <DependentUpon>inv011_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inv011_06.resx">
+      <DependentUpon>inv011_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="seg001_01.resx">
+      <DependentUpon>seg001_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_02.resx">
+      <DependentUpon>seg001_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_03.resx">
+      <DependentUpon>seg001_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_03a.resx">
+      <DependentUpon>seg001_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_03b.resx">
+      <DependentUpon>seg001_03b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_04.resx">
+      <DependentUpon>seg001_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_05.resx">
+      <DependentUpon>seg001_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_06.resx">
+      <DependentUpon>seg001_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_rpt01.rdlc" />
+    <EmbeddedResource Include="seg001_rpt01.resx">
+      <DependentUpon>seg001_rpt01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg001_wp01.resx">
+      <DependentUpon>seg001_wp01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seg020_01.resx">
+      <DependentUpon>seg020_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="seg001_ds01.xsc">
+      <DependentUpon>seg001_ds01.xsd</DependentUpon>
+    </None>
+    <None Include="seg001_ds01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>seg001_ds01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="seg001_ds01.xss">
+      <DependentUpon>seg001_ds01.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATOS\DATOS.csproj">
+      <Project>{bf8c8891-4678-4cdc-b0ff-3500d5e25bf6}</Project>
+      <Name>DATOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sinimagenCREARSIS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

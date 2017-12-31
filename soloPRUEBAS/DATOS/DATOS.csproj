@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF8C8891-4678-4CDC-B0FF-3500D5E25BF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DATOS</RootNamespace>
+    <AssemblyName>DATOS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="c_adm001.cs" />
+    <Compile Include="c_adm002.cs" />
+    <Compile Include="c_adm003.cs" />
+    <Compile Include="c_adm004.cs" />
+    <Compile Include="c_adm005.cs" />
+    <Compile Include="c_adm007.cs" />
+    <Compile Include="c_adm008.cs" />
+    <Compile Include="c_adm010.cs" />
+    <Compile Include="c_adm011.cs" />
+    <Compile Include="c_adm012.cs" />
+    <Compile Include="c_adm013.cs" />
+    <Compile Include="c_adm014.cs" />
+    <Compile Include="c_ctb001.cs" />
+    <Compile Include="c_ctb006.cs" />
+    <Compile Include="c_ctb007.cs" />
+    <Compile Include="c_inv001.cs" />
+    <Compile Include="c_inv003.cs" />
+    <Compile Include="c_inv004.cs" />
+    <Compile Include="c_seg001.cs" />
+    <Compile Include="c_seg020.cs" />
+    <Compile Include="c_seg021.cs" />
+    <Compile Include="c_seg022.cs" />
+    <Compile Include="c_seg049.cs" />
+    <Compile Include="c_cnx000.cs" />
+    <Compile Include="c_inv010.cs" />
+    <Compile Include="c_inv011.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
