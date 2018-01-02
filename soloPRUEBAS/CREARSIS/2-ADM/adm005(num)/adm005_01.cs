@@ -219,7 +219,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[1].Value.ToString() == cod_doc && dg_res_ult.Rows[i].Cells[3].Value.ToString() == nro_tal && dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_gest)
+                        if (dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == cod_doc.ToUpper() && dg_res_ult.Rows[i].Cells[3].Value.ToString().ToUpper() == nro_tal.ToUpper() && dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_gest.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;

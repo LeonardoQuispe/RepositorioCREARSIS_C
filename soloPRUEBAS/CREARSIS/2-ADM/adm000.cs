@@ -144,14 +144,29 @@ namespace CREARSIS
         private void cnx004_MdiChildActivate(object sender, EventArgs e)
         {
             //Obtiene Formulario Hijo Activo            
-            Form co_ide_ven = (Form)this.ActiveMdiChild;
+            Form co_ide_ven = ActiveMdiChild;
 
             if ((co_ide_ven != null))
             {
+                //Muestra nombre en la parte superior de ventana
+                //FORMATO: (NOMBRE EMPRESA)-(Nombre Contenedor)-(Nombre de ventana hija actual activa)
+                Text = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad" + " - " + co_ide_ven.Text;
+                TitleText = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad" + " - " + co_ide_ven.Text;
+
+                
+                //Muestra nombre de ventana en la parde inferior del PADRE
                 o_mg_glo_bal.fg_mue_nap(co_ide_ven);
             }
             else
             {
+                //Muestra nombre en la parte superior de ventana
+                //FORMATO: (NOMBRE EMPRESA)-(Nombre Contenedor)-(Nombre de ventana hija actual activa)
+                Text = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad";
+                TitleText = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad";
+
+
+
+                //Muestra nombre de ventana en la parde inferior del PADRE
                 co_ide_ven = this;
                 o_mg_glo_bal.fg_mue_nap(co_ide_ven);
             }

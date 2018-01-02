@@ -126,7 +126,7 @@ namespace CREARSIS
                     rango_xls = hoja_xls.UsedRange;
 
 
-                    if (rango_xls[3, 1].Value != "COTIZACIONES OFICIALES DEL BOLIVIANO CON RELACIÓN AL DÓLAR ESTADOUNIDENSE")
+                    if (rango_xls[3, 1].Value.ToString() != "COTIZACIONES OFICIALES DEL BOLIVIANO CON RELACIÓN AL DÓLAR ESTADOUNIDENSE")
                     {
                         MessageBoxEx.Show("El formato del Libro de Excel es Inválido ", "Error T.C. Bs/USD por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Limpiar();

@@ -57,18 +57,16 @@
     <Compile Include="4-INV\c_inv001.cs" />
     <Compile Include="4-INV\c_inv003.cs" />
     <Compile Include="4-INV\c_inv004.cs" />
-    <Compile Include="5-CTB\c_seg001.cs" />
-    <Compile Include="5-CTB\c_seg020.cs" />
-    <Compile Include="5-CTB\c_seg021.cs" />
-    <Compile Include="5-CTB\c_seg022.cs" />
-    <Compile Include="5-CTB\c_seg049.cs" />
+    <Compile Include="3-SEG\c_seg001.cs" />
+    <Compile Include="3-SEG\c_seg020.cs" />
+    <Compile Include="3-SEG\c_seg021.cs" />
+    <Compile Include="3-SEG\c_seg022.cs" />
+    <Compile Include="3-SEG\c_seg049.cs" />
     <Compile Include="0-INICIO\c_cnx000.cs" />
     <Compile Include="4-INV\c_inv010.cs" />
     <Compile Include="4-INV\c_inv011.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="3-SEG\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

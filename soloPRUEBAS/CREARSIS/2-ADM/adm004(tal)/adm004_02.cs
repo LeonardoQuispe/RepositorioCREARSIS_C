@@ -160,7 +160,10 @@ namespace CREARSIS
 
         private void tb_nro_dos_Validated(object sender, EventArgs e)
         {
-            fu_rec_dos(tb_nro_aut.Text);
+            if (tb_nro_aut.Text.Trim()!="0")
+            {
+                fu_rec_dos(tb_nro_aut.Text);
+            }
         }
 
 

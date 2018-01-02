@@ -285,7 +285,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString() == cod_alm && dg_res_ult.Rows[i].Cells[1].Value.ToString() == nom_alm)
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_alm.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == nom_alm.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;

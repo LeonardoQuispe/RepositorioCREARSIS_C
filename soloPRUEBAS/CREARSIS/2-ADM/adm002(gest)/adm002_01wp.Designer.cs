@@ -50,7 +50,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(93, 44);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(49, 21);
+            this.LabelX3.Size = new System.Drawing.Size(40, 17);
             this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Gestión";
             // 
@@ -95,10 +95,10 @@
             this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
             this.cb_ges_tio.FormattingEnabled = true;
-            this.cb_ges_tio.ItemHeight = 20;
+            this.cb_ges_tio.ItemHeight = 16;
             this.cb_ges_tio.Location = new System.Drawing.Point(139, 43);
             this.cb_ges_tio.Name = "cb_ges_tio";
-            this.cb_ges_tio.Size = new System.Drawing.Size(86, 26);
+            this.cb_ges_tio.Size = new System.Drawing.Size(86, 22);
             this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_ges_tio.TabIndex = 68;
             // 
@@ -125,19 +125,21 @@
             // adm002_01wp
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(340, 145);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_01wp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Periodos de una gestión";
             this.TitleText = "Periodos de una gestión";
             this.Load += new System.EventHandler(this.adm002_01wp_Load);

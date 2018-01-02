@@ -23,6 +23,7 @@ namespace CREARSIS
 
         DataTable tab_seg001;
         DataTable tab_seg021;
+        DataTable tab_adm001;
 
         #endregion
 
@@ -31,6 +32,7 @@ namespace CREARSIS
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_seg001 o_seg001 = new c_seg001();
         c_seg021 o_seg021 = new c_seg021();
+        c_adm001 o_adm001 = new c_adm001();
 
         #endregion
 
@@ -103,18 +105,61 @@ namespace CREARSIS
 
         private void cnx003_Load(object sender, EventArgs e)
         {
+            fu_ini_frm();            
+        }
+
+        private void bt_ref_mnu_Click(object sender, EventArgs e)
+        {
+            fu_ref_mnu();
+            fu_ini_frm();
+        }
+
+        #endregion
+
+        #region METODOS
+
+        #region "Cambia estilo de la aplicación"
+        //Cambia el estilo de las pantallas
+        void fu_est_ilo(int va_nro_est)
+        {
+            switch (va_nro_est)
+            {
+                case 1:
+                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.OfficeMobile2014;
+                    break;
+                case 2:
+                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Dark;
+                    break;
+                case 3:
+                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
+                    break;
+                case 4:
+                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass;
+                    //estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;                   
+                    break;
+            }
+        }
+
+        #endregion
+
+        
+        void fu_ini_frm()
+        {
             fu_cfg_reg();
             try
             {
                 Text = "Menú inicial - " + Program.gl_nom_emp;
                 TitleText = "Menú inicial - " + Program.gl_nom_emp;
 
-                lb_usr_usr.Text = Program.gl_usr_usr;
                 //Obtiene Codigo de usuario
-                lb_nom_usr.Text = Program.gl_nom_usr;
+                lb_usr_usr.Text = Program.gl_usr_usr;
                 //Obtiene Nombre de usuario
-                lb_nom_emp.Text = Program.gl_nom_emp;
+                lb_nom_usr.Text = Program.gl_nom_usr;
                 //Obtiene Nombre de la empresa
+                lb_nom_emp.Text = Program.gl_nom_emp;
+
+                //Obtiene LOGO de EMPRESA
+                pc_log_emp.Image = fu_log_emp();
 
                 //Fecha un mes antes de que caduque la licencia
                 DateTime vv_fec_aux = _01_mg_glo_bal.vc_usr_log.vs_fec_cad.AddMonths(-1);
@@ -150,40 +195,6 @@ namespace CREARSIS
                 return;
             }
         }
-
-        private void bt_ref_mnu_Click(object sender, EventArgs e)
-        {
-            fu_ref_mnu();
-        }
-
-        #endregion
-
-        #region METODOS
-
-        #region "Cambia estilo de la aplicación"
-        //Cambia el estilo de las pantallas
-        void fu_est_ilo(int va_nro_est)
-        {
-            switch (va_nro_est)
-            {
-                case 1:
-                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.OfficeMobile2014;
-                    break;
-                case 2:
-                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Dark;
-                    break;
-                case 3:
-                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
-                    break;
-                case 4:
-                    estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass;
-                    //estiloMob2014.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;                   
-                    break;
-            }
-        }
-
-        #endregion
-
         
         /// <summary>
         /// Configuracion de la regional
@@ -246,6 +257,30 @@ namespace CREARSIS
 
             MetroTilePanel1.Refresh();
         }
+
+        /// <summary>
+        /// Funcion que obtiene el Logo de la Empresa Actual
+        /// </summary>
+        /// <returns></returns>
+        Image fu_log_emp()
+        {
+            byte[] va_log_emp;
+
+            tab_adm001 = o_adm001._01();
+
+            if (tab_adm001.Rows[0]["va_log_emp"] == DBNull.Value)
+            {
+                return pc_log_emp.InitialImage;
+            }
+            else
+            {
+                va_log_emp = (Byte[])tab_adm001.Rows[0]["va_log_emp"];
+
+                return o_mg_glo_bal.fg_byt_img(va_log_emp);
+            }
+        }
+
+
         #endregion
 
         #region "OPERACIONES DE LOS MOSAICOS DEL MENU"

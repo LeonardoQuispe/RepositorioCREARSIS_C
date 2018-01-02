@@ -93,7 +93,7 @@ namespace CREARSIS
 
 
                     //Valida que sea un excel Válido
-                    if (rango_xls[3, 1].Value != "UNIDAD DE FOMENTO DE VIVIENDA (UFV)")
+                    if (rango_xls[3, 1].Value.ToString() != "UNIDAD DE FOMENTO DE VIVIENDA (UFV)")
                     {
                         MessageBoxEx.Show("El formato del Libro de Excel es Inválido ","Error T.C. Bs/Ufv por Año", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Limpiar();          

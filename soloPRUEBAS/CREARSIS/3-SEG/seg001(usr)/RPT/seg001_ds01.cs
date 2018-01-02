@@ -1,4 +1,4 @@
-﻿namespace CREARSIS._3_SEG.seg001_usr_.informe
+﻿namespace CREARSIS._3_SEG.seg001_usr_.RPT
 {
     partial class seg001_ds01
     {

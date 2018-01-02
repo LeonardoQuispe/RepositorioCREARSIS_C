@@ -128,7 +128,7 @@ namespace CREARSIS
                     _with1.Size = new Size(72, 70);
                     _with1.Margin = val_pad;
                     _with1.TabIndex = 0;
-                    _with1.Text = "T.C" + (Char)13 + "0.00" + (Char)13 + (Char)13 + "---------";
+                    _with1.Text = "T.C" + (Char)13 + "0.00000" + (Char)13 + (Char)13 + "---------";
                     _with1.Name = j.ToString() ;
                     _with1.FlatStyle = FlatStyle.Popup;
                     _with1.Enabled = false;
@@ -200,7 +200,7 @@ namespace CREARSIS
                         _with3.Size = new Size(72, 70);
                         _with3.Margin = val_pad;
                         _with3.TabIndex = i;
-                        _with3.Text = "T.C" + (Char)13 + "0.00" + (Char)13 + (Char)13 + fec_aux.ToShortDateString();
+                        _with3.Text = "T.C" + (Char)13 + "0.00000" + (Char)13 + (Char)13 + fec_aux.ToShortDateString();
                         _with3.Name = fec_aux.ToString();
                         _with3.Cursor = Cursors.Hand;
 

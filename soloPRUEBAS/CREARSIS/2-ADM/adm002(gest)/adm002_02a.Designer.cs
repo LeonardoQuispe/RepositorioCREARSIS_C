@@ -53,7 +53,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(22, 21);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(344, 39);
+            this.LabelX2.Size = new System.Drawing.Size(276, 32);
             this.LabelX2.TabIndex = 21;
             this.LabelX2.Text = "Esta opción prepara  todos los periodos de la siguiente\r\ngestión. Desea continuar" +
     " ? ";
@@ -73,7 +73,7 @@
             this.tb_ges_act.MaxLength = 4;
             this.tb_ges_act.Name = "tb_ges_act";
             this.tb_ges_act.PreventEnterBeep = true;
-            this.tb_ges_act.Size = new System.Drawing.Size(54, 26);
+            this.tb_ges_act.Size = new System.Drawing.Size(54, 22);
             this.tb_ges_act.TabIndex = 20;
             // 
             // LabelX1
@@ -87,7 +87,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(79, 70);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(89, 21);
+            this.LabelX1.Size = new System.Drawing.Size(71, 17);
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Gestión actual";
             // 
@@ -119,7 +119,7 @@
             this.tb_ges_nva.MaxLength = 4;
             this.tb_ges_nva.Name = "tb_ges_nva";
             this.tb_ges_nva.PreventEnterBeep = true;
-            this.tb_ges_nva.Size = new System.Drawing.Size(54, 26);
+            this.tb_ges_nva.Size = new System.Drawing.Size(54, 22);
             this.tb_ges_nva.TabIndex = 20;
             // 
             // LabelX3
@@ -134,7 +134,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(62, 98);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(109, 21);
+            this.LabelX3.Size = new System.Drawing.Size(88, 17);
             this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Siguiente Gestión";
             // 
@@ -185,7 +185,7 @@
             // adm002_02a
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(340, 183);
@@ -199,6 +199,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_02a";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pre gestión";
             this.TitleText = "Nueva gestión";
             this.Load += new System.EventHandler(this.adm002_02a_Load);

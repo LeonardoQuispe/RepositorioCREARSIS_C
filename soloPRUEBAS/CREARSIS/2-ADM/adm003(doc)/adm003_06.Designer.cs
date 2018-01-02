@@ -146,7 +146,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.LabelX8);
             this.GroupBox1.Controls.Add(this.tb_des_doc);
@@ -216,7 +216,7 @@
             // 
             // GroupBox2
             // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;

@@ -73,7 +73,10 @@ namespace CREARSIS
 
         private void tb_nro_aut_Validated(object sender, EventArgs e)
         {
-            fu_rec_dos(tb_nro_aut.Text);
+            if (tb_nro_aut.Text.Trim()!="0")
+            {
+                fu_rec_dos(tb_nro_aut.Text);
+            }
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)

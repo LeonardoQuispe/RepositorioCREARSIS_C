@@ -126,10 +126,10 @@
             this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
             this.cb_ges_tio.FormattingEnabled = true;
-            this.cb_ges_tio.ItemHeight = 20;
+            this.cb_ges_tio.ItemHeight = 16;
             this.cb_ges_tio.Location = new System.Drawing.Point(559, 50);
             this.cb_ges_tio.Name = "cb_ges_tio";
-            this.cb_ges_tio.Size = new System.Drawing.Size(86, 26);
+            this.cb_ges_tio.Size = new System.Drawing.Size(86, 22);
             this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_ges_tio.TabIndex = 60;
             // 
@@ -148,7 +148,7 @@
             this.tb_cod_ges.MaxLength = 4;
             this.tb_cod_ges.Name = "tb_cod_ges";
             this.tb_cod_ges.PreventEnterBeep = true;
-            this.tb_cod_ges.Size = new System.Drawing.Size(44, 26);
+            this.tb_cod_ges.Size = new System.Drawing.Size(44, 22);
             this.tb_cod_ges.TabIndex = 30;
             this.tb_cod_ges.TextChanged += new System.EventHandler(this.tb_cod_ges_TextChanged);
             this.tb_cod_ges.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
@@ -168,7 +168,7 @@
             this.tb_nro_tal.MaxLength = 2;
             this.tb_nro_tal.Name = "tb_nro_tal";
             this.tb_nro_tal.PreventEnterBeep = true;
-            this.tb_nro_tal.Size = new System.Drawing.Size(28, 26);
+            this.tb_nro_tal.Size = new System.Drawing.Size(28, 22);
             this.tb_nro_tal.TabIndex = 10;
             this.tb_nro_tal.TextChanged += new System.EventHandler(this.tb_nro_tal_TextChanged);
             this.tb_nro_tal.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
@@ -211,13 +211,13 @@
             this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 20;
+            this.cb_prm_bus.ItemHeight = 16;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.cod_doc,
             this.nom_doc});
             this.cb_prm_bus.Location = new System.Drawing.Point(442, 50);
             this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(98, 26);
+            this.cb_prm_bus.Size = new System.Drawing.Size(98, 22);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 50;
             // 
@@ -249,7 +249,7 @@
             this.tb_val_bus.MaxLength = 50;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(418, 26);
+            this.tb_val_bus.Size = new System.Drawing.Size(418, 22);
             this.tb_val_bus.TabIndex = 40;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
@@ -269,7 +269,7 @@
             this.tb_cod_doc.MaxLength = 3;
             this.tb_cod_doc.Name = "tb_cod_doc";
             this.tb_cod_doc.PreventEnterBeep = true;
-            this.tb_cod_doc.Size = new System.Drawing.Size(36, 26);
+            this.tb_cod_doc.Size = new System.Drawing.Size(36, 22);
             this.tb_cod_doc.TabIndex = 20;
             this.tb_cod_doc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
@@ -284,7 +284,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(72, 21);
+            this.LabelX1.Size = new System.Drawing.Size(58, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Numerador";
             // 
@@ -314,7 +314,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(358, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -322,7 +322,7 @@
             // m_adm005_02
             // 
             this.m_adm005_02.Name = "m_adm005_02";
-            this.m_adm005_02.Size = new System.Drawing.Size(64, 24);
+            this.m_adm005_02.Size = new System.Drawing.Size(54, 20);
             this.m_adm005_02.Text = "&Nuevo";
             this.m_adm005_02.Click += new System.EventHandler(this.m_adm005_02_Click);
             // 
@@ -332,27 +332,27 @@
             this.m_adm005_03,
             this.m_adm005_06});
             this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(80, 24);
+            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
             this.mr_mod_ifi.Text = "&Modifica";
             // 
             // m_adm005_03
             // 
             this.m_adm005_03.Name = "m_adm005_03";
-            this.m_adm005_03.Size = new System.Drawing.Size(181, 26);
+            this.m_adm005_03.Size = new System.Drawing.Size(122, 22);
             this.m_adm005_03.Text = "&Actualiza";
             this.m_adm005_03.Click += new System.EventHandler(this.m_adm005_03_Click);
             // 
             // m_adm005_06
             // 
             this.m_adm005_06.Name = "m_adm005_06";
-            this.m_adm005_06.Size = new System.Drawing.Size(181, 26);
+            this.m_adm005_06.Size = new System.Drawing.Size(122, 22);
             this.m_adm005_06.Text = "&Elimina";
             this.m_adm005_06.Click += new System.EventHandler(this.m_adm005_06_Click);
             // 
             // m_adm005_05
             // 
             this.m_adm005_05.Name = "m_adm005_05";
-            this.m_adm005_05.Size = new System.Drawing.Size(78, 24);
+            this.m_adm005_05.Size = new System.Drawing.Size(66, 20);
             this.m_adm005_05.Text = "&Consulta";
             this.m_adm005_05.Click += new System.EventHandler(this.m_adm005_05_Click);
             // 
@@ -361,20 +361,20 @@
             this.m_adm005_p00.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_adm005_p01});
             this.m_adm005_p00.Name = "m_adm005_p00";
-            this.m_adm005_p00.Size = new System.Drawing.Size(73, 24);
+            this.m_adm005_p00.Size = new System.Drawing.Size(61, 20);
             this.m_adm005_p00.Text = "&Informe";
             // 
             // m_adm005_p01
             // 
             this.m_adm005_p01.Name = "m_adm005_p01";
-            this.m_adm005_p01.Size = new System.Drawing.Size(309, 26);
+            this.m_adm005_p01.Size = new System.Drawing.Size(251, 22);
             this.m_adm005_p01.Text = "&Numeraciones           (adm005_01)";
             this.m_adm005_p01.Click += new System.EventHandler(this.m_adm005_p01_Click);
             // 
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
+            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
@@ -413,7 +413,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(7, 10);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -431,6 +431,8 @@
             this.dg_res_ult.Size = new System.Drawing.Size(645, 247);
             this.dg_res_ult.TabIndex = 6;
             this.dg_res_ult.TabStop = false;
+            this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
+            this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             // 
             // va_cod_ges
             // 
@@ -504,7 +506,7 @@
             // adm005_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 394);
             this.ControlBox = false;

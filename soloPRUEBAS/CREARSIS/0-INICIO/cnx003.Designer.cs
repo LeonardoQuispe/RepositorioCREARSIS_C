@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_nom_emp = new DevComponents.DotNetBar.LabelX();
-            this.SymbolBox1 = new DevComponents.DotNetBar.Controls.SymbolBox();
             this.lb_usr_usr = new DevComponents.DotNetBar.LabelX();
             this.lb_nom_usr = new DevComponents.DotNetBar.LabelX();
             this.mt_ads000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
@@ -51,15 +50,17 @@
             this.estiloMob2014 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.bt_ref_mnu = new DevComponents.DotNetBar.ButtonX();
             this.MetroTilePanel1 = new DevComponents.DotNetBar.Metro.MetroTilePanel();
+            this.pc_log_emp = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
             this.MetroTilePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pc_log_emp)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox1.Controls.Add(this.pc_log_emp);
             this.GroupBox1.Controls.Add(this.lb_nom_emp);
-            this.GroupBox1.Controls.Add(this.SymbolBox1);
             this.GroupBox1.Controls.Add(this.lb_usr_usr);
             this.GroupBox1.Controls.Add(this.lb_nom_usr);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
@@ -81,29 +82,13 @@
             this.lb_nom_emp.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_nom_emp.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nom_emp.ForeColor = System.Drawing.Color.Black;
-            this.lb_nom_emp.Location = new System.Drawing.Point(77, 62);
+            this.lb_nom_emp.Location = new System.Drawing.Point(149, 62);
             this.lb_nom_emp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_nom_emp.Name = "lb_nom_emp";
-            this.lb_nom_emp.Size = new System.Drawing.Size(39, 17);
+            this.lb_nom_emp.Size = new System.Drawing.Size(91, 17);
             this.lb_nom_emp.TabIndex = 1;
-            this.lb_nom_emp.Text = "LabelX1";
+            this.lb_nom_emp.Text = "(Nombre Empresa)";
             this.lb_nom_emp.TextLineAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // SymbolBox1
-            // 
-            this.SymbolBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            // 
-            // 
-            // 
-            this.SymbolBox1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.SymbolBox1.ForeColor = System.Drawing.Color.Black;
-            this.SymbolBox1.Location = new System.Drawing.Point(6, 17);
-            this.SymbolBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SymbolBox1.Name = "SymbolBox1";
-            this.SymbolBox1.Size = new System.Drawing.Size(53, 51);
-            this.SymbolBox1.Symbol = "";
-            this.SymbolBox1.TabIndex = 2;
-            this.SymbolBox1.Text = "SymbolBox1";
             // 
             // lb_usr_usr
             // 
@@ -116,12 +101,12 @@
             this.lb_usr_usr.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usr_usr.FontBold = true;
             this.lb_usr_usr.ForeColor = System.Drawing.Color.Black;
-            this.lb_usr_usr.Location = new System.Drawing.Point(77, 12);
+            this.lb_usr_usr.Location = new System.Drawing.Point(149, 12);
             this.lb_usr_usr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_usr_usr.Name = "lb_usr_usr";
-            this.lb_usr_usr.Size = new System.Drawing.Size(67, 26);
+            this.lb_usr_usr.Size = new System.Drawing.Size(141, 26);
             this.lb_usr_usr.TabIndex = 0;
-            this.lb_usr_usr.Text = "LabelX1";
+            this.lb_usr_usr.Text = "(Código Usuario)";
             this.lb_usr_usr.TextLineAlignment = System.Drawing.StringAlignment.Near;
             // 
             // lb_nom_usr
@@ -134,16 +119,17 @@
             this.lb_nom_usr.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_nom_usr.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nom_usr.ForeColor = System.Drawing.Color.Black;
-            this.lb_nom_usr.Location = new System.Drawing.Point(77, 42);
+            this.lb_nom_usr.Location = new System.Drawing.Point(149, 42);
             this.lb_nom_usr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_nom_usr.Name = "lb_nom_usr";
-            this.lb_nom_usr.Size = new System.Drawing.Size(39, 17);
+            this.lb_nom_usr.Size = new System.Drawing.Size(87, 17);
             this.lb_nom_usr.TabIndex = 1;
-            this.lb_nom_usr.Text = "LabelX1";
+            this.lb_nom_usr.Text = "(Nombre Usuario)";
             this.lb_nom_usr.TextLineAlignment = System.Drawing.StringAlignment.Near;
             // 
             // mt_ads000
             // 
+            this.mt_ads000.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_ads000.KeyTips = "A";
             this.mt_ads000.Name = "mt_ads000";
             this.mt_ads000.NotificationMarkColor = System.Drawing.Color.Red;
@@ -186,6 +172,7 @@
             // 
             // mt_inv_pro
             // 
+            this.mt_inv_pro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_inv_pro.KeyTips = "I";
             this.mt_inv_pro.Name = "mt_inv_pro";
             this.mt_inv_pro.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlI);
@@ -202,6 +189,7 @@
             // 
             // mt_ven_tas
             // 
+            this.mt_ven_tas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_ven_tas.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.mt_ven_tas.KeyTips = "V";
             this.mt_ven_tas.Name = "mt_ven_tas";
@@ -219,6 +207,7 @@
             // 
             // mt_res_tau
             // 
+            this.mt_res_tau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_res_tau.Name = "mt_res_tau";
             this.mt_res_tau.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlC);
             this.mt_res_tau.Symbol = "";
@@ -233,6 +222,7 @@
             // 
             // mt_alq_uil
             // 
+            this.mt_alq_uil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_alq_uil.KeyTips = "Q";
             this.mt_alq_uil.Name = "mt_alq_uil";
             this.mt_alq_uil.NotificationMarkColor = System.Drawing.Color.Red;
@@ -249,6 +239,7 @@
             // 
             // mt_tes_caj
             // 
+            this.mt_tes_caj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_tes_caj.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.mt_tes_caj.KeyTips = "V";
             this.mt_tes_caj.Name = "mt_tes_caj";
@@ -267,6 +258,7 @@
             // 
             // mt_con_tab
             // 
+            this.mt_con_tab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt_con_tab.Name = "mt_con_tab";
             this.mt_con_tab.Symbol = "";
             this.mt_con_tab.SymbolColor = System.Drawing.Color.Empty;
@@ -297,7 +289,7 @@
             this.bt_est_ilo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_est_ilo.AutoExpandOnClick = true;
             this.bt_est_ilo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_est_ilo.Location = new System.Drawing.Point(648, 496);
+            this.bt_est_ilo.Location = new System.Drawing.Point(649, 491);
             this.bt_est_ilo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bt_est_ilo.Name = "bt_est_ilo";
             this.bt_est_ilo.Size = new System.Drawing.Size(32, 24);
@@ -350,6 +342,7 @@
             this.bt_ref_mnu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ref_mnu.AutoCheckOnClick = true;
             this.bt_ref_mnu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ref_mnu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_ref_mnu.Location = new System.Drawing.Point(17, 365);
             this.bt_ref_mnu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bt_ref_mnu.Name = "bt_ref_mnu";
@@ -382,6 +375,17 @@
             this.MetroTilePanel1.TabIndex = 21;
             this.MetroTilePanel1.Text = "mt_tod_men";
             // 
+            // pc_log_emp
+            // 
+            this.pc_log_emp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pc_log_emp.InitialImage = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
+            this.pc_log_emp.Location = new System.Drawing.Point(15, 13);
+            this.pc_log_emp.Name = "pc_log_emp";
+            this.pc_log_emp.Size = new System.Drawing.Size(122, 62);
+            this.pc_log_emp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pc_log_emp.TabIndex = 3;
+            this.pc_log_emp.TabStop = false;
+            // 
             // cnx003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +409,7 @@
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.MetroTilePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pc_log_emp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +419,6 @@
 
         internal System.Windows.Forms.GroupBox GroupBox1;
         public DevComponents.DotNetBar.LabelX lb_nom_emp;
-        internal DevComponents.DotNetBar.Controls.SymbolBox SymbolBox1;
         public DevComponents.DotNetBar.LabelX lb_usr_usr;
         public DevComponents.DotNetBar.LabelX lb_nom_usr;
         internal DevComponents.DotNetBar.Metro.MetroTileItem mt_ads000;
@@ -434,5 +438,6 @@
         internal DevComponents.DotNetBar.StyleManager estiloMob2014;
         public DevComponents.DotNetBar.ButtonX bt_ref_mnu;
         internal DevComponents.DotNetBar.Metro.MetroTilePanel MetroTilePanel1;
+        private System.Windows.Forms.PictureBox pc_log_emp;
     }
 }

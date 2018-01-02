@@ -245,13 +245,11 @@
             this.tb_nro_aut.ButtonCustom.Symbol = "";
             this.tb_nro_aut.ButtonCustom.Visible = true;
             this.tb_nro_aut.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_aut.Enabled = false;
             this.tb_nro_aut.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_aut.Location = new System.Drawing.Point(356, 59);
             this.tb_nro_aut.MaxLength = 15;
             this.tb_nro_aut.Name = "tb_nro_aut";
             this.tb_nro_aut.PreventEnterBeep = true;
-            this.tb_nro_aut.ReadOnly = true;
             this.tb_nro_aut.Size = new System.Drawing.Size(144, 22);
             this.tb_nro_aut.TabIndex = 70;
             this.tb_nro_aut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

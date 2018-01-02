@@ -354,7 +354,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().Trim() == cod_dos.Trim())
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().Trim().ToUpper() == cod_dos.Trim().ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;

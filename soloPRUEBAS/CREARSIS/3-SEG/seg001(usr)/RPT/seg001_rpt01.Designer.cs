@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.seg001BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seg001_ds01 = new CREARSIS._3_SEG.seg001_usr_.informe.seg001_ds01();
+            this.seg001_ds01 = new CREARSIS._3_SEG.seg001_usr_.RPT.seg001_ds01();
             this.rep_view = new Microsoft.Reporting.WinForms.ReportViewer();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.m_imp_rim = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,10 +60,7 @@
             this.rep_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rep_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rep_view.ForeColor = System.Drawing.Color.Black;
-            reportDataSource1.Name = "seg001_ds01";
-            reportDataSource1.Value = this.seg001BindingSource;
-            this.rep_view.LocalReport.DataSources.Add(reportDataSource1);
-            this.rep_view.LocalReport.ReportEmbeddedResource = "CREARSIS.seg001_rpt01.rdlc";
+            this.rep_view.LocalReport.ReportEmbeddedResource = "CREARSIS.3-SEG.seg001(usr).RPT.seg001_rpt01.rdlc";
             this.rep_view.Location = new System.Drawing.Point(0, 0);
             this.rep_view.Margin = new System.Windows.Forms.Padding(0);
             this.rep_view.Name = "rep_view";
@@ -87,7 +83,7 @@
             this.m_atr_atr});
             this.mn_pri_nci.Location = new System.Drawing.Point(58, 144);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(273, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(181, 24);
             this.mn_pri_nci.TabIndex = 11;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -164,7 +160,7 @@
 
         #endregion
         private System.Windows.Forms.BindingSource seg001BindingSource;
-        private CREARSIS._3_SEG.seg001_usr_.informe.seg001_ds01 seg001_ds01;
+        private CREARSIS._3_SEG.seg001_usr_.RPT.seg001_ds01 seg001_ds01;
         private Microsoft.Reporting.WinForms.ReportViewer rep_view;
         internal System.Windows.Forms.ToolStripMenuItem m_imp_rim;
         internal System.Windows.Forms.ToolStripMenuItem m_exp_ort;

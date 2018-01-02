@@ -109,7 +109,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(67, 95);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(88, 21);
+            this.LabelX1.Size = new System.Drawing.Size(71, 17);
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Periodo inicial";
             // 
@@ -155,7 +155,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(98, 58);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(49, 21);
+            this.LabelX3.Size = new System.Drawing.Size(40, 17);
             this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Gestión";
             // 
@@ -191,7 +191,7 @@
             this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
             this.cb_ges_tio.FormattingEnabled = true;
-            this.cb_ges_tio.ItemHeight = 20;
+            this.cb_ges_tio.ItemHeight = 16;
             this.cb_ges_tio.Items.AddRange(new object[] {
             this.ene_cb,
             this.feb_cb,
@@ -207,7 +207,7 @@
             this.dic_cb});
             this.cb_ges_tio.Location = new System.Drawing.Point(144, 90);
             this.cb_ges_tio.Name = "cb_ges_tio";
-            this.cb_ges_tio.Size = new System.Drawing.Size(132, 26);
+            this.cb_ges_tio.Size = new System.Drawing.Size(132, 22);
             this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_ges_tio.TabIndex = 31;
             // 
@@ -241,7 +241,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(22, 21);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(160, 21);
+            this.LabelX2.Size = new System.Drawing.Size(129, 17);
             this.LabelX2.TabIndex = 21;
             this.LabelX2.Text = "Define la primera gestion";
             // 
@@ -260,13 +260,13 @@
             this.tb_ges_nva.MaxLength = 4;
             this.tb_ges_nva.Name = "tb_ges_nva";
             this.tb_ges_nva.PreventEnterBeep = true;
-            this.tb_ges_nva.Size = new System.Drawing.Size(54, 26);
+            this.tb_ges_nva.Size = new System.Drawing.Size(54, 22);
             this.tb_ges_nva.TabIndex = 20;
             // 
             // adm002_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(340, 183);
@@ -279,6 +279,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_02";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crea nueva gestión";
             this.TitleText = "Crea nueva gestión";
             this.Load += new System.EventHandler(this.adm002_02_Load);

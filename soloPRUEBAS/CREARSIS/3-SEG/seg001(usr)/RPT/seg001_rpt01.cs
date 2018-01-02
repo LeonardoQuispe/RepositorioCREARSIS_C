@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using CREARSIS._3_SEG.seg001_usr_.informe;
+using CREARSIS._3_SEG.seg001_usr_.RPT;
 
 
 //REFERENCIAS
