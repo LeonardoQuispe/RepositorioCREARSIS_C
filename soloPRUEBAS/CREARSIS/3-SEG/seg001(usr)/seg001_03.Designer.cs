@@ -62,7 +62,7 @@
             this.GroupBox2.Location = new System.Drawing.Point(9, 197);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(430, 44);
-            this.GroupBox2.TabIndex = 67;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
             // 
             // bt_can_cel
@@ -78,7 +78,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -95,7 +95,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -120,7 +120,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(9, 6);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(430, 193);
-            this.GroupBox1.TabIndex = 66;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // LabelX3
@@ -136,7 +136,7 @@
             this.LabelX3.Location = new System.Drawing.Point(254, 155);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(86, 17);
-            this.LabelX3.TabIndex = 53;
+            this.LabelX3.TabIndex = 12;
             this.LabelX3.Text = "Max. Formularios";
             // 
             // tb_win_max
@@ -154,7 +154,7 @@
             this.tb_win_max.Name = "tb_win_max";
             this.tb_win_max.PreventEnterBeep = true;
             this.tb_win_max.Size = new System.Drawing.Size(55, 22);
-            this.tb_win_max.TabIndex = 70;
+            this.tb_win_max.TabIndex = 13;
             // 
             // LabelX8
             // 
@@ -168,7 +168,7 @@
             this.LabelX8.Location = new System.Drawing.Point(13, 119);
             this.LabelX8.Name = "LabelX8";
             this.LabelX8.Size = new System.Drawing.Size(36, 17);
-            this.LabelX8.TabIndex = 51;
+            this.LabelX8.TabIndex = 10;
             this.LabelX8.Text = "Correo";
             // 
             // tb_cor_usr
@@ -186,7 +186,7 @@
             this.tb_cor_usr.Name = "tb_cor_usr";
             this.tb_cor_usr.PreventEnterBeep = true;
             this.tb_cor_usr.Size = new System.Drawing.Size(323, 22);
-            this.tb_cor_usr.TabIndex = 60;
+            this.tb_cor_usr.TabIndex = 11;
             // 
             // cb_tip_usr
             // 
@@ -204,7 +204,7 @@
             this.cb_tip_usr.Name = "cb_tip_usr";
             this.cb_tip_usr.Size = new System.Drawing.Size(102, 22);
             this.cb_tip_usr.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_usr.TabIndex = 20;
+            this.cb_tip_usr.TabIndex = 3;
             // 
             // administrador
             // 
@@ -247,7 +247,7 @@
             this.LabelX5.Location = new System.Drawing.Point(271, 20);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(35, 23);
-            this.LabelX5.TabIndex = 0;
+            this.LabelX5.TabIndex = 2;
             this.LabelX5.Text = "Tipo";
             // 
             // tb_cod_usr
@@ -266,7 +266,7 @@
             this.tb_cod_usr.PreventEnterBeep = true;
             this.tb_cod_usr.ReadOnly = true;
             this.tb_cod_usr.Size = new System.Drawing.Size(127, 22);
-            this.tb_cod_usr.TabIndex = 10;
+            this.tb_cod_usr.TabIndex = 1;
             this.tb_cod_usr.TabStop = false;
             // 
             // LabelX7
@@ -281,7 +281,7 @@
             this.LabelX7.Location = new System.Drawing.Point(210, 88);
             this.LabelX7.Name = "LabelX7";
             this.LabelX7.Size = new System.Drawing.Size(32, 17);
-            this.LabelX7.TabIndex = 0;
+            this.LabelX7.TabIndex = 8;
             this.LabelX7.Text = "Cargo";
             // 
             // LabelX6
@@ -295,7 +295,7 @@
             this.LabelX6.Location = new System.Drawing.Point(13, 85);
             this.LabelX6.Name = "LabelX6";
             this.LabelX6.Size = new System.Drawing.Size(45, 23);
-            this.LabelX6.TabIndex = 0;
+            this.LabelX6.TabIndex = 6;
             this.LabelX6.Text = "Telefono";
             // 
             // LabelX2
@@ -310,7 +310,7 @@
             this.LabelX2.Location = new System.Drawing.Point(13, 51);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(45, 23);
-            this.LabelX2.TabIndex = 0;
+            this.LabelX2.TabIndex = 4;
             this.LabelX2.Text = "Nombre";
             // 
             // tb_car_usr
@@ -328,7 +328,7 @@
             this.tb_car_usr.Name = "tb_car_usr";
             this.tb_car_usr.PreventEnterBeep = true;
             this.tb_car_usr.Size = new System.Drawing.Size(154, 22);
-            this.tb_car_usr.TabIndex = 50;
+            this.tb_car_usr.TabIndex = 9;
             // 
             // tb_tel_usr
             // 
@@ -345,7 +345,7 @@
             this.tb_tel_usr.Name = "tb_tel_usr";
             this.tb_tel_usr.PreventEnterBeep = true;
             this.tb_tel_usr.Size = new System.Drawing.Size(95, 22);
-            this.tb_tel_usr.TabIndex = 40;
+            this.tb_tel_usr.TabIndex = 7;
             // 
             // tb_nom_usr
             // 
@@ -362,7 +362,7 @@
             this.tb_nom_usr.Name = "tb_nom_usr";
             this.tb_nom_usr.PreventEnterBeep = true;
             this.tb_nom_usr.Size = new System.Drawing.Size(323, 22);
-            this.tb_nom_usr.TabIndex = 30;
+            this.tb_nom_usr.TabIndex = 5;
             // 
             // seg001_03
             // 

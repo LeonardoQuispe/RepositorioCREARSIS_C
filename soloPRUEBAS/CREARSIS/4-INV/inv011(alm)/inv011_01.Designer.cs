@@ -45,6 +45,11 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.va_cod_alm = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this.va_nom_alm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_mon_inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
@@ -57,11 +62,6 @@
             this.cb_est_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
-            this.va_cod_alm = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this.va_nom_alm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_mon_inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mn_pri_nci.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -252,7 +252,57 @@
             this.dg_res_ult.TabIndex = 0;
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
+            this.dg_res_ult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellDoubleClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
+            // 
+            // va_cod_alm
+            // 
+            this.va_cod_alm.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.va_cod_alm.BackgroundStyle.Class = "DataGridViewBorder";
+            this.va_cod_alm.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_cod_alm.Culture = new System.Globalization.CultureInfo("es-MX");
+            this.va_cod_alm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.va_cod_alm.HeaderText = "Codigo";
+            this.va_cod_alm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.va_cod_alm.Mask = "00-00-000";
+            this.va_cod_alm.Name = "va_cod_alm";
+            this.va_cod_alm.PasswordChar = '\0';
+            this.va_cod_alm.ReadOnly = true;
+            this.va_cod_alm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.va_cod_alm.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.va_cod_alm.Text = "  -  -";
+            this.va_cod_alm.Width = 70;
+            // 
+            // va_nom_alm
+            // 
+            this.va_nom_alm.HeaderText = "Nombre";
+            this.va_nom_alm.Name = "va_nom_alm";
+            this.va_nom_alm.ReadOnly = true;
+            this.va_nom_alm.Width = 130;
+            // 
+            // va_mon_inv
+            // 
+            this.va_mon_inv.HeaderText = "Moneda Inventario";
+            this.va_mon_inv.Name = "va_mon_inv";
+            this.va_mon_inv.ReadOnly = true;
+            this.va_mon_inv.Width = 80;
+            // 
+            // va_nom_gru
+            // 
+            this.va_nom_gru.HeaderText = "Nombre Grupo Almacén";
+            this.va_nom_gru.Name = "va_nom_gru";
+            this.va_nom_gru.ReadOnly = true;
+            this.va_nom_gru.Width = 130;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
             // 
             // lb_sel_ecc
             // 
@@ -402,55 +452,6 @@
             this.tb_sel_ecc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_sel_ecc.ValidatingType = typeof(int);
             this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
-            // 
-            // va_cod_alm
-            // 
-            this.va_cod_alm.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.va_cod_alm.BackgroundStyle.Class = "DataGridViewBorder";
-            this.va_cod_alm.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.va_cod_alm.Culture = new System.Globalization.CultureInfo("es-MX");
-            this.va_cod_alm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.va_cod_alm.HeaderText = "Codigo";
-            this.va_cod_alm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.va_cod_alm.Mask = "00-00-000";
-            this.va_cod_alm.Name = "va_cod_alm";
-            this.va_cod_alm.PasswordChar = '\0';
-            this.va_cod_alm.ReadOnly = true;
-            this.va_cod_alm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.va_cod_alm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.va_cod_alm.Text = "  -  -";
-            this.va_cod_alm.Width = 70;
-            // 
-            // va_nom_alm
-            // 
-            this.va_nom_alm.HeaderText = "Nombre";
-            this.va_nom_alm.Name = "va_nom_alm";
-            this.va_nom_alm.ReadOnly = true;
-            this.va_nom_alm.Width = 130;
-            // 
-            // va_mon_inv
-            // 
-            this.va_mon_inv.HeaderText = "Moneda Inventario";
-            this.va_mon_inv.Name = "va_mon_inv";
-            this.va_mon_inv.ReadOnly = true;
-            this.va_mon_inv.Width = 80;
-            // 
-            // va_nom_gru
-            // 
-            this.va_nom_gru.HeaderText = "Nombre Grupo Almacén";
-            this.va_nom_gru.Name = "va_nom_gru";
-            this.va_nom_gru.ReadOnly = true;
-            this.va_nom_gru.Width = 130;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 80;
             // 
             // inv011_01
             // 

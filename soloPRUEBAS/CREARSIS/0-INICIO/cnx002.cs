@@ -63,6 +63,7 @@ namespace CREARSIS
         
         private void cnx002_Activated(object sender, EventArgs e)
         {
+            //Actualiza nombre de ventana en parte de abajo de FORM Padre
             o_mg_glo_bal.fg_mue_nap(this);
         }
 
@@ -100,6 +101,9 @@ namespace CREARSIS
                 vg_frm_pad.MdiParent.Enabled = true;
                 vg_frm_pad.MdiParent.Activate();
             }
+
+            //Actualiza nombre de Ventana en parte inferior
+            o_mg_glo_bal.fg_mue_nap(vg_frm_pad);
         }
         #endregion
 

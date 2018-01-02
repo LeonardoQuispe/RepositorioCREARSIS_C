@@ -51,7 +51,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(2, -5);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(359, 83);
-            this.GroupBox1.TabIndex = 187;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // tb_nom_uni
@@ -68,8 +68,8 @@
             this.tb_nom_uni.MaxLength = 25;
             this.tb_nom_uni.Name = "tb_nom_uni";
             this.tb_nom_uni.PreventEnterBeep = true;
-            this.tb_nom_uni.Size = new System.Drawing.Size(275, 26);
-            this.tb_nom_uni.TabIndex = 12;
+            this.tb_nom_uni.Size = new System.Drawing.Size(275, 22);
+            this.tb_nom_uni.TabIndex = 3;
             // 
             // labelX2
             // 
@@ -83,8 +83,8 @@
             this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(53, 21);
-            this.labelX2.TabIndex = 11;
+            this.labelX2.Size = new System.Drawing.Size(43, 17);
+            this.labelX2.TabIndex = 2;
             this.labelX2.Text = "Nombre";
             // 
             // tb_cod_uni
@@ -101,8 +101,8 @@
             this.tb_cod_uni.MaxLength = 3;
             this.tb_cod_uni.Name = "tb_cod_uni";
             this.tb_cod_uni.PreventEnterBeep = true;
-            this.tb_cod_uni.Size = new System.Drawing.Size(62, 26);
-            this.tb_cod_uni.TabIndex = 10;
+            this.tb_cod_uni.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_uni.TabIndex = 1;
             // 
             // LabelX1
             // 
@@ -116,8 +116,8 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(47, 21);
-            this.LabelX1.TabIndex = 1;
+            this.LabelX1.Size = new System.Drawing.Size(38, 17);
+            this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Codigo";
             // 
             // GroupBox2
@@ -127,7 +127,7 @@
             this.GroupBox2.Location = new System.Drawing.Point(2, 77);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(359, 50);
-            this.GroupBox2.TabIndex = 188;
+            this.GroupBox2.TabIndex = 0;
             this.GroupBox2.TabStop = false;
             // 
             // bt_ace_pta
@@ -143,7 +143,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 30;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -160,14 +160,14 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 40;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // inv003_02
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(362, 123);

@@ -194,6 +194,7 @@
             this.dg_res_ult.Size = new System.Drawing.Size(425, 309);
             this.dg_res_ult.TabIndex = 0;
             this.dg_res_ult.TabStop = false;
+            this.dg_res_ult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellDoubleClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             // 
             // va_cod_doc

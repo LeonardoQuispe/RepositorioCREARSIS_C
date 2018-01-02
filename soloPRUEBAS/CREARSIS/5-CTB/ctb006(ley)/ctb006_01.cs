@@ -178,6 +178,14 @@ namespace CREARSIS
             Close();
         }
 
+        private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vg_frm_pad.fu_rec_ley(tb_sel_ecc.Text);
+            vg_frm_pad.Enabled = true;
+
+            Close();
+        }
+
         private void m_adm003_02_Click(object sender, EventArgs e)
         {
             DialogResult vv_res_dlg = new DialogResult();
@@ -250,5 +258,7 @@ namespace CREARSIS
             tb_sel_ecc.Text = o_mg_glo_bal.valida_numeros(tb_sel_ecc.Text);
         }
         #endregion
+
+        
     }
 }

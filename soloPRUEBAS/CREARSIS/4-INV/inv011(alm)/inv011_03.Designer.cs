@@ -94,7 +94,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(12, 3);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(493, 279);
-            this.GroupBox1.TabIndex = 3;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // tb_nom_gru
@@ -113,7 +113,7 @@
             this.tb_nom_gru.PreventEnterBeep = true;
             this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(266, 22);
-            this.tb_nom_gru.TabIndex = 22;
+            this.tb_nom_gru.TabIndex = 2;
             // 
             // tb_est_ado
             // 
@@ -132,7 +132,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.Size = new System.Drawing.Size(143, 22);
-            this.tb_est_ado.TabIndex = 21;
+            this.tb_est_ado.TabIndex = 7;
             this.tb_est_ado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cb_mtd_cto
@@ -151,7 +151,7 @@
             this.cb_mtd_cto.Name = "cb_mtd_cto";
             this.cb_mtd_cto.Size = new System.Drawing.Size(131, 22);
             this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mtd_cto.TabIndex = 17;
+            this.cb_mtd_cto.TabIndex = 19;
             // 
             // comboItem3
             // 
@@ -170,7 +170,7 @@
             this.labelX10.Location = new System.Drawing.Point(265, 242);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(78, 17);
-            this.labelX10.TabIndex = 16;
+            this.labelX10.TabIndex = 18;
             this.labelX10.Text = "Método Costeo";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -191,7 +191,7 @@
             this.cb_mon_inv.Name = "cb_mon_inv";
             this.cb_mon_inv.Size = new System.Drawing.Size(82, 22);
             this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mon_inv.TabIndex = 15;
+            this.cb_mon_inv.TabIndex = 17;
             // 
             // BO
             // 
@@ -214,7 +214,7 @@
             this.labelX7.Location = new System.Drawing.Point(16, 242);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(95, 17);
-            this.labelX7.TabIndex = 14;
+            this.labelX7.TabIndex = 16;
             this.labelX7.Text = "Moneda Inventario";
             this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -234,7 +234,7 @@
             this.tb_cta_alm.Name = "tb_cta_alm";
             this.tb_cta_alm.PreventEnterBeep = true;
             this.tb_cta_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_cta_alm.TabIndex = 11;
+            this.tb_cta_alm.TabIndex = 15;
             // 
             // labelX6
             // 
@@ -249,7 +249,7 @@
             this.labelX6.Location = new System.Drawing.Point(16, 206);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(84, 17);
-            this.labelX6.TabIndex = 10;
+            this.labelX6.TabIndex = 14;
             this.labelX6.Text = "Cuenta Contable";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -269,7 +269,7 @@
             this.tb_dir_alm.Name = "tb_dir_alm";
             this.tb_dir_alm.PreventEnterBeep = true;
             this.tb_dir_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_dir_alm.TabIndex = 9;
+            this.tb_dir_alm.TabIndex = 13;
             // 
             // labelX5
             // 
@@ -284,7 +284,7 @@
             this.labelX5.Location = new System.Drawing.Point(16, 169);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(48, 17);
-            this.labelX5.TabIndex = 8;
+            this.labelX5.TabIndex = 12;
             this.labelX5.Text = "Dirección";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -301,7 +301,7 @@
             this.labelX2.Location = new System.Drawing.Point(176, 57);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(70, 17);
-            this.labelX2.TabIndex = 18;
+            this.labelX2.TabIndex = 5;
             this.labelX2.Text = "Cod. Almacén";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -317,7 +317,7 @@
             this.tb_cod_alm.PromptChar = ' ';
             this.tb_cod_alm.ReadOnly = true;
             this.tb_cod_alm.Size = new System.Drawing.Size(63, 22);
-            this.tb_cod_alm.TabIndex = 19;
+            this.tb_cod_alm.TabIndex = 6;
             this.tb_cod_alm.TabStop = false;
             this.tb_cod_alm.Text = "0000000";
             this.tb_cod_alm.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -338,7 +338,7 @@
             this.tb_nro_alm.PreventEnterBeep = true;
             this.tb_nro_alm.ReadOnly = true;
             this.tb_nro_alm.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_alm.TabIndex = 3;
+            this.tb_nro_alm.TabIndex = 4;
             this.tb_nro_alm.Text = "0";
             // 
             // LabelX1
@@ -354,7 +354,7 @@
             this.LabelX1.Location = new System.Drawing.Point(16, 60);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(68, 17);
-            this.LabelX1.TabIndex = 2;
+            this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Almacén";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -373,7 +373,7 @@
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
             this.tb_nom_alm.Size = new System.Drawing.Size(353, 22);
-            this.tb_nom_alm.TabIndex = 5;
+            this.tb_nom_alm.TabIndex = 9;
             // 
             // tb_des_alm
             // 
@@ -391,7 +391,7 @@
             this.tb_des_alm.Name = "tb_des_alm";
             this.tb_des_alm.PreventEnterBeep = true;
             this.tb_des_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_des_alm.TabIndex = 7;
+            this.tb_des_alm.TabIndex = 11;
             // 
             // LabelX9
             // 
@@ -406,7 +406,7 @@
             this.LabelX9.Location = new System.Drawing.Point(16, 131);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 6;
+            this.LabelX9.TabIndex = 10;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -423,7 +423,7 @@
             this.LabelX4.Location = new System.Drawing.Point(16, 93);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 4;
+            this.LabelX4.TabIndex = 8;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -478,7 +478,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 271);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(493, 142);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // tb_dir_ecg
@@ -595,7 +595,7 @@
             this.gb_ctr_frm.Location = new System.Drawing.Point(12, 412);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(493, 48);
-            this.gb_ctr_frm.TabIndex = 5;
+            this.gb_ctr_frm.TabIndex = 2;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel

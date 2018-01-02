@@ -63,7 +63,7 @@
             this.tb_des_gru.Name = "tb_des_gru";
             this.tb_des_gru.PreventEnterBeep = true;
             this.tb_des_gru.Size = new System.Drawing.Size(284, 26);
-            this.tb_des_gru.TabIndex = 7;
+            this.tb_des_gru.TabIndex = 8;
             // 
             // LabelX9
             // 
@@ -78,7 +78,7 @@
             this.LabelX9.Location = new System.Drawing.Point(6, 122);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 6;
+            this.LabelX9.TabIndex = 7;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -205,7 +205,7 @@
             this.tb_nom_sucu.PreventEnterBeep = true;
             this.tb_nom_sucu.ReadOnly = true;
             this.tb_nom_sucu.Size = new System.Drawing.Size(215, 22);
-            this.tb_nom_sucu.TabIndex = 10;
+            this.tb_nom_sucu.TabIndex = 2;
             // 
             // labelX2
             // 
@@ -220,7 +220,7 @@
             this.labelX2.Location = new System.Drawing.Point(238, 55);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(58, 17);
-            this.labelX2.TabIndex = 8;
+            this.labelX2.TabIndex = 9;
             this.labelX2.Text = "Cod. Grupo";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -236,7 +236,7 @@
             this.tb_cod_gru.PromptChar = ' ';
             this.tb_cod_gru.ReadOnly = true;
             this.tb_cod_gru.Size = new System.Drawing.Size(38, 22);
-            this.tb_cod_gru.TabIndex = 9;
+            this.tb_cod_gru.TabIndex = 10;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
             this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -256,7 +256,7 @@
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
             this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_gru.TabIndex = 3;
+            this.tb_nro_gru.TabIndex = 4;
             this.tb_nro_gru.Text = "0";
             this.tb_nro_gru.TextChanged += new System.EventHandler(this.tb_nro_gru_TextChanged);
             this.tb_nro_gru.Validated += new System.EventHandler(this.tb_nro_gru_Validated);
@@ -274,7 +274,7 @@
             this.LabelX1.Location = new System.Drawing.Point(6, 55);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(57, 17);
-            this.LabelX1.TabIndex = 2;
+            this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Grupo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -293,7 +293,7 @@
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(284, 22);
-            this.tb_nom_gru.TabIndex = 5;
+            this.tb_nom_gru.TabIndex = 6;
             // 
             // LabelX4
             // 
@@ -308,7 +308,7 @@
             this.LabelX4.Location = new System.Drawing.Point(7, 88);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 4;
+            this.LabelX4.TabIndex = 5;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 

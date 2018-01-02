@@ -58,13 +58,14 @@ namespace CREARSIS
 
             if (tab_inv010.Rows.Count!=0)
             {
-                //Recupera y Rellena Nombre de Sucursal
-                tab_adm007 = o_adm007._05(tab_inv010.Rows[0]["va_cod_suc"].ToString());
-                va_nom_suc = tab_adm007.Rows[0]["va_nom_suc"].ToString();
-
-
                 foreach (DataRow row in tab_inv010.Rows)
                 {
+
+                    //Recupera y Rellena Nombre de Sucursal
+                    tab_adm007 = o_adm007._05(row["va_cod_suc"].ToString());
+                    va_nom_suc = tab_adm007.Rows[0]["va_nom_suc"].ToString();
+
+
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -180,7 +181,7 @@ namespace CREARSIS
             if (dg_res_ult.SelectedRows.Count != 0)
             {
                 tb_cod_gru.Text = dg_res_ult.SelectedRows[0].Cells[0].Value.ToString();
-                lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[3].Value.ToString();
+                lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[1].Value.ToString();
             }
 
         }
@@ -324,6 +325,14 @@ namespace CREARSIS
             Close();
         }
 
+        private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vg_frm_pad.fu_rec_gru(tb_cod_gru.Text);
+
+            vg_frm_pad.Enabled = true;
+            Close();
+        }
+
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             vg_frm_pad.Enabled = true;
@@ -408,5 +417,7 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
         #endregion
+
+        
     }
 }

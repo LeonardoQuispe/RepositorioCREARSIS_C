@@ -18,12 +18,12 @@ namespace CREARSIS
     /// </summary> 
     public class _01_mg_glo_bal
     {
-        dynamic tmp_frm_nvo;
-        dynamic tmp_frm_pad;
-        dynamic tmp_frm_act;
+        //dynamic tmp_frm_nvo;
+        //dynamic tmp_frm_pad;
+        //dynamic tmp_frm_act;
         dynamic tmp_frm_aux;
-        dynamic tmp_win_act;
-        dynamic tmp_win_pad;
+        //dynamic tmp_win_act;
+        //dynamic tmp_win_pad;
 
         #region Metodos/Funciones de Autenticación
 
@@ -362,12 +362,10 @@ namespace CREARSIS
         /// <param name="ar_frm_nvo">Formulario nuevo a abrir</param>
         /// <param name="ar_frm_pad">Formulario padre de donde es llamado el nuevo formulario a crear</param>
         /// <param name="ar_tip_nvl">Nivel en el que se abrira el nuevo formulario (1=abierto desde formulario MDI ; 2=Abierto desde otro formulario 'Buscar'</param>
-        public void mg_ads000_01(Form ar_frm_nvo, Form ar_frm_pad, int ar_tip_nvl)
+        public void mg_ads000_01(dynamic ar_frm_nvo, dynamic ar_frm_pad, int ar_tip_nvl)
         {
             try
-            {
-                tmp_frm_nvo = ar_frm_nvo;
-                tmp_frm_pad = ar_frm_pad;
+            {                
 
                 if (ar_tip_nvl == 1)
                 {
@@ -375,21 +373,21 @@ namespace CREARSIS
                     {
                         ar_frm_nvo.MdiParent = ar_frm_pad;
                         //Deshabilita la caja de botones Aceptar/Cancelar
-                        tmp_frm_nvo.gb_ctr_frm.Enabled = false;
+                        ar_frm_nvo.gb_ctr_frm.Enabled = false;
 
                     }
                     else
                     {
                         ar_frm_nvo.MdiParent = ar_frm_pad.MdiParent;
                         //Habilita la caja de botones Aceptar/Cancelar
-                        tmp_frm_nvo.gb_ctr_frm.Enabled = true;
+                        ar_frm_nvo.gb_ctr_frm.Enabled = true;
                     }
 
-                    tmp_frm_pad.mn_pri_nci.Visible = false;
-                    tmp_frm_pad.MenuStrip1.Visible = true;
+                    ar_frm_pad.mn_pri_nci.Visible = false;
+                    ar_frm_pad.MenuStrip1.Visible = true;
 
                     // pasa el padre quien llamo a la ventana
-                    tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
+                    ar_frm_nvo.vg_frm_pad = ar_frm_pad;
 
                     // Abre y activa formulario
                     ar_frm_nvo.Show();
@@ -398,7 +396,7 @@ namespace CREARSIS
 
                     // Obtiene el usuario logueado
                     string cod_usr = Program.gl_usr_usr;
-                    tmp_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, tmp_frm_pad.MenuStrip1);
+                    ar_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, ar_frm_pad.MenuStrip1);
                 }
 
                 if (ar_tip_nvl == 2)
@@ -416,7 +414,7 @@ namespace CREARSIS
                     }
 
                     ar_frm_nvo.MdiParent = ar_frm_pad.MdiParent;
-                    tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
+                    ar_frm_nvo.vg_frm_pad = ar_frm_pad;
                     ar_frm_nvo.Show();
                     ar_frm_nvo.Activate();
 
@@ -434,9 +432,8 @@ namespace CREARSIS
         /// </summary>
         /// <param name="ar_frm_nvo">Formulario nuevo a abrir</param>
         /// <param name="ar_frm_pad">Formulario padre</param>
-        public void mg_ads000_02(Form ar_frm_nvo, Form ar_frm_pad)
-        {
-            tmp_frm_nvo = ar_frm_nvo;
+        public void mg_ads000_02(dynamic ar_frm_nvo, dynamic ar_frm_pad)
+        {            
             Form v_frm_pad = new Form();
             bool ban_frm = false;
 
@@ -453,7 +450,7 @@ namespace CREARSIS
             //si el formulario aun no esta abierto
             if (ban_frm == false)
             {
-                tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
+                ar_frm_nvo.vg_frm_pad = ar_frm_pad;
                 ar_frm_nvo.MdiParent = v_frm_pad;
                 ar_frm_nvo.Show();
                 ar_frm_nvo.Activate();
@@ -468,9 +465,8 @@ namespace CREARSIS
         /// </summary>
         /// <param name="ar_frm_nvo">Formulario nuevo a abrir</param>
         /// <param name="ar_frm_pad">Formulario padre</param>
-        public void mg_ads000_02(Form ar_frm_nvo, Form ar_frm_pad, DataTable ar_str_ucc)
+        public void mg_ads000_02(dynamic ar_frm_nvo, Form ar_frm_pad, DataTable ar_str_ucc)
         {
-            tmp_frm_nvo = ar_frm_nvo;
 
             dynamic v_frm_pad;
             bool ban_frm = false;
@@ -488,8 +484,8 @@ namespace CREARSIS
             //si el formulario aun no esta abierto
             if (ban_frm == false)
             {
-                tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
-                tmp_frm_nvo.vg_str_ucc = ar_str_ucc;
+                ar_frm_nvo.vg_frm_pad = ar_frm_pad;
+                ar_frm_nvo.vg_str_ucc = ar_str_ucc;
                 ar_frm_nvo.MdiParent = v_frm_pad;
                 ar_frm_nvo.Show();
                 ar_frm_nvo.Activate();
@@ -511,10 +507,9 @@ namespace CREARSIS
         /// </summary>
         /// <param name="ar_frm_nvo">Formulario nuevo a abrir</param>
         /// <param name="ar_frm_pad">Formulario padre</param>
-        public void mg_ads000_03(Form ar_frm_nvo, Form ar_frm_pad)
+        public void mg_ads000_03(dynamic ar_frm_nvo, Form ar_frm_pad)
         {
-            tmp_frm_nvo = ar_frm_nvo;
-            tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
+            ar_frm_nvo.vg_frm_pad = ar_frm_pad;
 
 
             ar_frm_nvo.ShowDialog();
@@ -525,9 +520,8 @@ namespace CREARSIS
         /// </summary>
         /// <param name="ar_frm_nvo">Formulario nuevo a abrir</param>
         /// <param name="ar_frm_pad">Formulario padre</param>
-        public void mg_ads000_03(Form ar_frm_nvo, Form ar_frm_pad, DataTable ar_str_ucc)
+        public void mg_ads000_03(dynamic ar_frm_nvo, Form ar_frm_pad, DataTable ar_str_ucc)
         {
-            tmp_frm_nvo = ar_frm_nvo;
             //la ventana ya se encuentra abierta en el formulario padre ?
 
             Form v_frm_pad = new Form();
@@ -535,8 +529,8 @@ namespace CREARSIS
 
             v_frm_pad = ar_frm_pad.MdiParent;
 
-            tmp_frm_nvo.vg_frm_pad = ar_frm_pad;
-            tmp_frm_nvo.vg_str_ucc = ar_str_ucc;
+            ar_frm_nvo.vg_frm_pad = ar_frm_pad;
+            ar_frm_nvo.vg_str_ucc = ar_str_ucc;
             ar_frm_nvo.ShowDialog();
             ar_frm_nvo.Activate();
         }
@@ -546,27 +540,24 @@ namespace CREARSIS
         /// </summary>
         /// <param name="ar_frm_act">Formulario actual a cerrar</param>
         /// <param name="ar_tip_nvl">Nivel del formulario (1=1er Nivel abierto desde MDI, ; 2=2do nivel abierto desde otro frm menu)</param>
-        public void mg_ads000_04(Form ar_frm_act, int ar_tip_nvl)
+        public void mg_ads000_04(dynamic ar_frm_act, int ar_tip_nvl)
         {
-            tmp_frm_act = ar_frm_act;
-
-
             if (ar_tip_nvl == 1)
             {
                 //Cierra las ventanas hijas del formulario padre
                 foreach (Form va_frm_aux in ar_frm_act.MdiParent.MdiChildren)
                 {
                     tmp_frm_aux = va_frm_aux;
-                    if (tmp_frm_aux.vg_frm_pad.Name == ar_frm_act.Name)
+                    if (ar_frm_act.vg_frm_pad.Name == ar_frm_act.Name)
                     {
                         va_frm_aux.Dispose();
                     }
                 }
 
-                tmp_frm_act.vg_frm_pad.mn_pri_nci.Visible = true;
-                tmp_frm_act.vg_frm_pad.MenuStrip1.Visible = false;
+                ar_frm_act.vg_frm_pad.mn_pri_nci.Visible = true;
+                ar_frm_act.vg_frm_pad.MenuStrip1.Visible = false;
 
-                fg_mue_nap(tmp_frm_act.vg_frm_pad);
+                fg_mue_nap(ar_frm_act.vg_frm_pad);
                 ar_frm_act.Dispose();
 
             }
@@ -576,13 +567,13 @@ namespace CREARSIS
                 //Cierra las ventanas hijas del formulario padre
                 foreach (Form va_frm_aux in ar_frm_act.MdiParent.MdiChildren)
                 {
-                    if (tmp_frm_aux.vg_frm_pad.Name == tmp_frm_act.vg_frm_pad.Name)
+                    if (tmp_frm_aux.vg_frm_pad.Name == ar_frm_act.vg_frm_pad.Name)
                     {
                         va_frm_aux.Enabled = true;
                     }
                 }
 
-                fg_mue_nap(tmp_frm_act.vg_frm_pad);
+                fg_mue_nap(ar_frm_act.vg_frm_pad);
                 ar_frm_act.Dispose();
 
             }
@@ -593,38 +584,36 @@ namespace CREARSIS
         /// </summary>
         /// <remarks></remarks>
 
-        public void fg_mue_nap(Form ar_win_act)
+        public void fg_mue_nap(dynamic ar_win_act)
         {
-            tmp_win_act = ar_win_act;
-
             if (ar_win_act.IsMdiContainer == true)
             {
-                tmp_win_act.ss_nom_vna.Text = tmp_win_act.Name;
+                ar_win_act.ss_nom_vna.Text = ar_win_act.Name;
                 return;
             }
 
             if (ar_win_act.IsMdiChild == true)
             {
-                tmp_win_act.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
+                ar_win_act.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
             }
             else
             {
-                if (tmp_win_act.vg_frm_pad.IsMdiContainer == true)
+                if (ar_win_act.vg_frm_pad.IsMdiContainer == true)
                 {
                     //asigna valor a la etiqueta de nombre de la aplicacion
-                    tmp_win_act.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
+                    ar_win_act.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
                 }
                 else
                 {
-                    if (tmp_win_act.vg_frm_pad.MdiParent != null)
+                    if (ar_win_act.vg_frm_pad.MdiParent != null)
                     {
                         //asigna valor a la etiqueta nombre de la aplicacion
-                        tmp_win_act.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
+                        ar_win_act.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
                     }
                     else
                     {
                         //asigna valor a la etiqueta de nombre de la aplicacion
-                        tmp_win_act.vg_frm_pad.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
+                        ar_win_act.vg_frm_pad.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
                     }
                 }
             }
@@ -635,27 +624,25 @@ namespace CREARSIS
         /// </summary>
         /// <remarks></remarks>
 
-        public void fg_ocu_nap(Form ar_win_pad)
+        public void fg_ocu_nap(dynamic ar_win_pad)
         {
-            tmp_win_pad = ar_win_pad;
-
             if (ar_win_pad.IsMdiChild == true)
             {
                 //Oculta las etiquetas
-                tmp_win_pad.MdiParent.ss_etk_vna.visible = false;
-                tmp_win_pad.MdiParent.ss_nom_vna.visible = false;
+                ar_win_pad.MdiParent.ss_etk_vna.visible = false;
+                ar_win_pad.MdiParent.ss_nom_vna.visible = false;
             }
             else
             {
-                if (tmp_win_pad.padre.IsMdiContainer == true)
+                if (ar_win_pad.padre.IsMdiContainer == true)
                 {
-                    tmp_win_pad.padre.ss_etk_vna.visible = false;
-                    tmp_win_pad.padre.ss_nom_vna.visible = false;
+                    ar_win_pad.padre.ss_etk_vna.visible = false;
+                    ar_win_pad.padre.ss_nom_vna.visible = false;
                 }
                 else
                 {
-                    tmp_win_pad.padre.MdiParent.ss_etk_vna.visible = false;
-                    tmp_win_pad.padre.MdiParent.ss_nom_vna.visible = false;
+                    ar_win_pad.padre.MdiParent.ss_etk_vna.visible = false;
+                    ar_win_pad.padre.MdiParent.ss_nom_vna.visible = false;
                 }
             }
 

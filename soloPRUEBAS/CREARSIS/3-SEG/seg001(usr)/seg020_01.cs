@@ -31,6 +31,7 @@ namespace CREARSIS
 
         c_seg020 o_ads052 = new c_seg020();
         c_seg001 o_ads005 = new c_seg001();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -39,6 +40,12 @@ namespace CREARSIS
         public seg020_01()
         {
             InitializeComponent();
+        }
+
+        private void seg020_01_Activated(object sender, EventArgs e)
+        {
+            //Actualiza nombre de ventana en parte de abajo de FORM Padre
+            o_mg_glo_bal.fg_mue_nap(this);
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -52,6 +59,9 @@ namespace CREARSIS
         {
             vg_frm_pad.Enabled = true;
             vg_frm_pad.Activate();
+            
+            //ACtualiza nombre de ventana en parte inferior
+            o_mg_glo_bal.fg_mue_nap(vg_frm_pad);
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -59,6 +69,8 @@ namespace CREARSIS
             try
             {
                 graba_menu();
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Personaliza menú al usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (vg_frm_pad.IsMdiContainer == true)
                 {
@@ -299,5 +311,6 @@ namespace CREARSIS
         }
         #endregion
 
+        
     }
 }

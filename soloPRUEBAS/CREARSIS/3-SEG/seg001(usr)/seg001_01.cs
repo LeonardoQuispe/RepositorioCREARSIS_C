@@ -52,6 +52,13 @@ namespace CREARSIS
             Close();
         }
 
+        private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vg_frm_pad.fu_rec_usr(tb_sel_ecc.Text);
+            vg_frm_pad.Enabled = true;
+            Close();
+        }
+
         //Boton Cancelar
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
@@ -424,6 +431,7 @@ namespace CREARSIS
         }
 
         #endregion
+
         
     }
 }

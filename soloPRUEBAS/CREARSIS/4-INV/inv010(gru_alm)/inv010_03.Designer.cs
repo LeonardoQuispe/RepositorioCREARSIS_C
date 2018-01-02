@@ -69,7 +69,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(0, 1);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(370, 185);
-            this.GroupBox1.TabIndex = 78;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // tb_nom_sucu
@@ -88,7 +88,7 @@
             this.tb_nom_sucu.PreventEnterBeep = true;
             this.tb_nom_sucu.ReadOnly = true;
             this.tb_nom_sucu.Size = new System.Drawing.Size(230, 22);
-            this.tb_nom_sucu.TabIndex = 214;
+            this.tb_nom_sucu.TabIndex = 2;
             // 
             // labelX2
             // 
@@ -103,7 +103,7 @@
             this.labelX2.Location = new System.Drawing.Point(248, 54);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(58, 17);
-            this.labelX2.TabIndex = 212;
+            this.labelX2.TabIndex = 11;
             this.labelX2.Text = "Cod. Grupo";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -119,7 +119,7 @@
             this.tb_cod_gru.PromptChar = ' ';
             this.tb_cod_gru.ReadOnly = true;
             this.tb_cod_gru.Size = new System.Drawing.Size(38, 22);
-            this.tb_cod_gru.TabIndex = 213;
+            this.tb_cod_gru.TabIndex = 12;
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
             this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -139,7 +139,7 @@
             this.tb_nro_gru.Name = "tb_nro_gru";
             this.tb_nro_gru.PreventEnterBeep = true;
             this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_gru.TabIndex = 211;
+            this.tb_nro_gru.TabIndex = 4;
             this.tb_nro_gru.Text = "0";
             // 
             // LabelX1
@@ -155,7 +155,7 @@
             this.LabelX1.Location = new System.Drawing.Point(5, 54);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(57, 17);
-            this.LabelX1.TabIndex = 210;
+            this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Grupo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -176,7 +176,7 @@
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(295, 22);
-            this.tb_est_ado.TabIndex = 209;
+            this.tb_est_ado.TabIndex = 10;
             // 
             // labelX5
             // 
@@ -191,7 +191,7 @@
             this.labelX5.Location = new System.Drawing.Point(6, 151);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(35, 17);
-            this.labelX5.TabIndex = 208;
+            this.labelX5.TabIndex = 9;
             this.labelX5.Text = "Estado";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -210,7 +210,7 @@
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(294, 22);
-            this.tb_nom_gru.TabIndex = 199;
+            this.tb_nom_gru.TabIndex = 6;
             // 
             // tb_des_gru
             // 
@@ -228,7 +228,7 @@
             this.tb_des_gru.Name = "tb_des_gru";
             this.tb_des_gru.PreventEnterBeep = true;
             this.tb_des_gru.Size = new System.Drawing.Size(295, 22);
-            this.tb_des_gru.TabIndex = 157;
+            this.tb_des_gru.TabIndex = 8;
             // 
             // LabelX9
             // 
@@ -243,7 +243,7 @@
             this.LabelX9.Location = new System.Drawing.Point(6, 121);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 156;
+            this.LabelX9.TabIndex = 7;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -260,7 +260,7 @@
             this.LabelX4.Location = new System.Drawing.Point(7, 87);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 46;
+            this.LabelX4.TabIndex = 5;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -277,7 +277,7 @@
             this.LabelX3.Location = new System.Drawing.Point(6, 21);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(43, 17);
-            this.LabelX3.TabIndex = 43;
+            this.LabelX3.TabIndex = 0;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -300,7 +300,7 @@
             this.tb_cod_sucu.PreventEnterBeep = true;
             this.tb_cod_sucu.ReadOnly = true;
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
-            this.tb_cod_sucu.TabIndex = 41;
+            this.tb_cod_sucu.TabIndex = 1;
             // 
             // gb_ctr_frm
             // 
@@ -311,7 +311,7 @@
             this.gb_ctr_frm.Location = new System.Drawing.Point(0, 182);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(370, 48);
-            this.gb_ctr_frm.TabIndex = 79;
+            this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel
@@ -327,7 +327,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -343,7 +343,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 

@@ -105,6 +105,14 @@ namespace CREARSIS
             Close();
         }
 
+        private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);
+
+            vg_frm_pad.Enabled = true;
+            Close();
+        }
+
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             vg_frm_pad.Enabled = true;
@@ -402,6 +410,7 @@ namespace CREARSIS
                 lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[1].Value.ToString();
             }
         }
-        #endregion     
+        #endregion
+        
     }
 }

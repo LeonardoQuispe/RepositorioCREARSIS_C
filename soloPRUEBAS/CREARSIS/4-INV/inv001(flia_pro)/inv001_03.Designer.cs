@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cb_tip_fap = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.matriz = new DevComponents.Editors.ComboItem();
@@ -43,7 +44,6 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +63,26 @@
             this.GroupBox1.Location = new System.Drawing.Point(2, -5);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(359, 123);
-            this.GroupBox1.TabIndex = 191;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_cod_fap
+            // 
+            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_fap.Enabled = false;
+            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_fap.Location = new System.Drawing.Point(69, 17);
+            this.tb_cod_fap.Mask = "00-00-00";
+            this.tb_cod_fap.Name = "tb_cod_fap";
+            this.tb_cod_fap.PromptChar = ' ';
+            this.tb_cod_fap.ReadOnly = true;
+            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_fap.TabIndex = 1;
+            this.tb_cod_fap.TabStop = false;
+            this.tb_cod_fap.Text = "000000";
+            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // labelX3
             // 
@@ -77,7 +95,7 @@
             this.labelX3.Location = new System.Drawing.Point(215, 21);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(30, 23);
-            this.labelX3.TabIndex = 194;
+            this.labelX3.TabIndex = 6;
             this.labelX3.Text = "Tipo";
             // 
             // cb_tip_fap
@@ -99,7 +117,7 @@
             this.cb_tip_fap.Name = "cb_tip_fap";
             this.cb_tip_fap.Size = new System.Drawing.Size(93, 22);
             this.cb_tip_fap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fap.TabIndex = 193;
+            this.cb_tip_fap.TabIndex = 7;
             this.cb_tip_fap.TabStop = false;
             // 
             // matriz
@@ -133,7 +151,7 @@
             this.LabelX4.Location = new System.Drawing.Point(15, 80);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(45, 23);
-            this.LabelX4.TabIndex = 192;
+            this.LabelX4.TabIndex = 4;
             this.LabelX4.Text = "Estado";
             // 
             // tb_est_ado
@@ -153,7 +171,7 @@
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(275, 22);
-            this.tb_est_ado.TabIndex = 191;
+            this.tb_est_ado.TabIndex = 5;
             this.tb_est_ado.TabStop = false;
             // 
             // tb_nom_fap
@@ -171,7 +189,7 @@
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
             this.tb_nom_fap.Size = new System.Drawing.Size(275, 22);
-            this.tb_nom_fap.TabIndex = 12;
+            this.tb_nom_fap.TabIndex = 3;
             // 
             // labelX2
             // 
@@ -186,7 +204,7 @@
             this.labelX2.Location = new System.Drawing.Point(15, 53);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(43, 17);
-            this.labelX2.TabIndex = 11;
+            this.labelX2.TabIndex = 2;
             this.labelX2.Text = "Nombre";
             // 
             // LabelX1
@@ -202,7 +220,7 @@
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(38, 17);
-            this.LabelX1.TabIndex = 1;
+            this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Codigo";
             // 
             // GroupBox2
@@ -212,7 +230,7 @@
             this.GroupBox2.Location = new System.Drawing.Point(2, 119);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(359, 50);
-            this.GroupBox2.TabIndex = 192;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
             // 
             // bt_ace_pta
@@ -228,7 +246,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 30;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -245,27 +263,9 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 40;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
-            // tb_cod_fap
-            // 
-            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
-            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_fap.Enabled = false;
-            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_fap.Location = new System.Drawing.Point(69, 17);
-            this.tb_cod_fap.Mask = "00-00-00";
-            this.tb_cod_fap.Name = "tb_cod_fap";
-            this.tb_cod_fap.PromptChar = ' ';
-            this.tb_cod_fap.ReadOnly = true;
-            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
-            this.tb_cod_fap.TabIndex = 195;
-            this.tb_cod_fap.TabStop = false;
-            this.tb_cod_fap.Text = "000000";
-            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // inv001_03
             // 

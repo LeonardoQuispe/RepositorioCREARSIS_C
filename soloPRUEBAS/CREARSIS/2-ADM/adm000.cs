@@ -46,19 +46,7 @@ namespace CREARSIS
 
         private void cnx004_Load(object sender, EventArgs e)
         {
-            //para ocultar las barras scroll
-            MDI_CLI_WIN();
-
-            //incrementa el contador de ventanas o formularios abiertos
-            Program.gl_nro_win++;
-
-            //Obtiene los datos del usuario y de la empresa para mostrarla en el pie del formulario
-            ss_cod_usr.Text = Program.gl_usr_usr;
-            ss_nom_emp.Text = Program.gl_nom_emp;
-            ss_nom_bdo.Text = Program.gl_bdo_usr;
-
-            o_mg_glo_bal.fg_mue_nap(this);
-            mn_pri_nci = o_mg_glo_bal.fg_ver_mnu(ss_cod_usr.Text, Name, mn_pri_nci);
+            fu_ini_frm();
         }
         private void cnx004_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -277,7 +265,32 @@ namespace CREARSIS
         }
 
 
+        void fu_ini_frm()
+        {
+            //para ocultar las barras scroll
+            MDI_CLI_WIN();
 
+            //Muestra nombre en la parte superior de ventana
+            //FORMATO: (NOMBRE EMPRESA)-(Nombre Contenedor)
+            Text = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad";
+            TitleText = Program.gl_nom_emp + " - " + "Menú Administración y Seguridad";
+
+
+            //incrementa el contador de ventanas o formularios abiertos
+            Program.gl_nro_win++;
+
+            //Obtiene los datos del usuario y de la empresa para mostrarla en el pie del formulario
+            ss_cod_usr.Text = Program.gl_usr_usr;
+            ss_nom_emp.Text = Program.gl_nom_emp;
+            ss_nom_bdo.Text = Program.gl_bdo_usr;
+
+            o_mg_glo_bal.fg_mue_nap(this);
+            mn_pri_nci = o_mg_glo_bal.fg_ver_mnu(ss_cod_usr.Text, Name, mn_pri_nci);
+
+
+
+            
+        }
 
 
 

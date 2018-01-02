@@ -236,6 +236,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Personaliza menú al usuario";
             this.TitleText = "Personaliza menú al usuario";
+            this.Activated += new System.EventHandler(this.seg020_01_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.seg020_01_FormClosing);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

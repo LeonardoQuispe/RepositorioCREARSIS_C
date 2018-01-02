@@ -116,6 +116,14 @@ namespace CREARSIS
             Close();
         }
 
+        private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
+
+            vg_frm_pad.Enabled = true;
+            Close();
+        }
+
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             vg_frm_pad.Enabled = true;
@@ -214,12 +222,13 @@ namespace CREARSIS
 
             if (tab_inv011.Rows.Count!=0)
             {
-                //Recupera y reemplaza nombre de Grupo de Almacén
-                tab_inv010 = o_inv010._05(int.Parse(tab_inv011.Rows[0]["va_cod_gru"].ToString()));
-                va_nom_gru = tab_inv010.Rows[0]["va_nom_gru"].ToString();
-
                 foreach (DataRow row in tab_inv011.Rows)
                 {
+                    //Recupera y reemplaza nombre de Grupo de Almacén
+                    tab_inv010 = o_inv010._05(int.Parse(row["va_cod_gru"].ToString()));
+                    va_nom_gru = tab_inv010.Rows[0]["va_nom_gru"].ToString();
+
+
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -418,5 +427,7 @@ namespace CREARSIS
             }
         }
         #endregion
+
+        
     }
 }

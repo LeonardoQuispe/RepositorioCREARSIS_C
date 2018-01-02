@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.pc_log_emp = new System.Windows.Forms.PictureBox();
             this.lb_nom_emp = new DevComponents.DotNetBar.LabelX();
             this.lb_usr_usr = new DevComponents.DotNetBar.LabelX();
             this.lb_nom_usr = new DevComponents.DotNetBar.LabelX();
@@ -50,10 +51,9 @@
             this.estiloMob2014 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.bt_ref_mnu = new DevComponents.DotNetBar.ButtonX();
             this.MetroTilePanel1 = new DevComponents.DotNetBar.Metro.MetroTilePanel();
-            this.pc_log_emp = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
-            this.MetroTilePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pc_log_emp)).BeginInit();
+            this.MetroTilePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBox1
@@ -71,6 +71,18 @@
             this.GroupBox1.Size = new System.Drawing.Size(648, 86);
             this.GroupBox1.TabIndex = 20;
             this.GroupBox1.TabStop = false;
+            // 
+            // pc_log_emp
+            // 
+            this.pc_log_emp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pc_log_emp.Image = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
+            this.pc_log_emp.InitialImage = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
+            this.pc_log_emp.Location = new System.Drawing.Point(15, 13);
+            this.pc_log_emp.Name = "pc_log_emp";
+            this.pc_log_emp.Size = new System.Drawing.Size(122, 62);
+            this.pc_log_emp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pc_log_emp.TabIndex = 3;
+            this.pc_log_emp.TabStop = false;
             // 
             // lb_nom_emp
             // 
@@ -375,17 +387,6 @@
             this.MetroTilePanel1.TabIndex = 21;
             this.MetroTilePanel1.Text = "mt_tod_men";
             // 
-            // pc_log_emp
-            // 
-            this.pc_log_emp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pc_log_emp.InitialImage = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
-            this.pc_log_emp.Location = new System.Drawing.Point(15, 13);
-            this.pc_log_emp.Name = "pc_log_emp";
-            this.pc_log_emp.Size = new System.Drawing.Size(122, 62);
-            this.pc_log_emp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pc_log_emp.TabIndex = 3;
-            this.pc_log_emp.TabStop = false;
-            // 
             // cnx003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +398,7 @@
             this.Controls.Add(this.MetroTilePanel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -408,8 +410,8 @@
             this.Load += new System.EventHandler(this.cnx003_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            this.MetroTilePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pc_log_emp)).EndInit();
+            this.MetroTilePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -76,9 +76,9 @@ namespace CREARSIS
                 }
 
                 //Graba datos NUMERACION
-                o_adm005._02(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(tb_cod_ges.Text), Convert.ToInt32(tb_nro_ini.Text), Convert.ToInt32(tb_nro_fin.Text), tb_fec_ini.Value, tb_fec_fin.Value, 0);
+                o_adm005._02(tb_cod_doc.Text, Convert.ToInt32(tb_nro_tal.Text), Convert.ToInt32(cb_ges_tio.Text), Convert.ToInt32(tb_nro_ini.Text), Convert.ToInt32(tb_nro_fin.Text), tb_fec_ini.Value, tb_fec_fin.Value, 0);
 
-                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, tb_cod_ges.Text);
+                vg_frm_pad.fu_sel_fila(tb_nro_tal.Text, tb_cod_doc.Text, cb_ges_tio.Text);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Numeración", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -172,6 +172,12 @@ namespace CREARSIS
 
             tb_fec_ini.Value = DateTime.Now;
             tb_fec_fin.Value = DateTime.Now;
+
+            //Carga gestiones
+            tab_adm002 = o_adm002._05();
+            cb_ges_tio.DisplayMember = "va_cod_ges";
+            cb_ges_tio.ValueMember = "va_cod_ges";
+            cb_ges_tio.DataSource = tab_adm002;
 
             tb_cod_doc.Focus();
 
@@ -268,23 +274,23 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Numeracion----------------------------------
-            tab_adm005 = o_adm005._05(tb_cod_doc.Text,Convert.ToInt32( tb_nro_tal.Text),Convert.ToInt32( tb_cod_ges.Text));
+            tab_adm005 = o_adm005._05(tb_cod_doc.Text,Convert.ToInt32( tb_nro_tal.Text),Convert.ToInt32(cb_ges_tio.Text));
             if (tab_adm005.Rows.Count!=0)
             {
                 tb_nro_tal.Focus();
                 return "La numeración para el Talonario ya se encuentra registrada";
             }
             //**Verifica que la gestion sea valida-------------------
-            if (int.TryParse(tb_cod_ges.Text.Trim(), out tmp) == false)
+            if (int.TryParse(cb_ges_tio.Text.Trim(), out tmp) == false)
             {
-                tb_cod_ges.Focus();
+                cb_ges_tio.Focus();
                 return "La Gestion no es valida";
             }
 
-            tab_adm002 = o_adm002._05(Convert.ToInt32( tb_cod_ges.Text));
+            tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text));
             if (tab_adm002.Rows.Count == 0)
             {
-                tb_cod_ges.Focus();
+                cb_ges_tio.Focus();
                 return "La Gestión NO se encuentra registrada";
             }
             //**-----------------------------------------------------
@@ -324,7 +330,7 @@ namespace CREARSIS
                 tb_fec_ini.Focus();
                 return "La fecha inicial debe ser menor a la fecha final";
             }
-            tab_adm002 = o_adm002._05(Convert.ToInt32( tb_cod_ges.Text), 1);
+            tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text), 1);
 
             ts = tb_fec_ini.Value- Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_ini"].ToString());
 
@@ -335,7 +341,7 @@ namespace CREARSIS
             }
 
 
-            tab_adm002 = o_adm002._05(Convert.ToInt32(tb_cod_ges.Text), 12);
+            tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text), 12);
 
             ts = Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_fin"].ToString()) - tb_fec_fin.Value;
 
@@ -411,12 +417,7 @@ namespace CREARSIS
         {
             tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
         }
-
-        private void tb_cod_ges_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_ges.Text = o_mg_glo_bal.valida_numeros(tb_cod_ges.Text);
-        }
-
+        
         private void tb_nro_ini_TextChanged(object sender, EventArgs e)
         {
             tb_nro_ini.Text = o_mg_glo_bal.valida_numeros(tb_nro_ini.Text);

@@ -58,6 +58,7 @@ namespace CREARSIS
             int va_ind_ice = 0;
             string va_est_ado = "";
             string va_tip_fap = "";
+            string va_nom_fam = "";
 
             dg_res_ult.Rows.Clear();
 
@@ -92,7 +93,26 @@ namespace CREARSIS
                         break;
                 }
 
-                dg_res_ult.Rows.Add(row["va_cod_fam"], row["va_nom_fam"], va_tip_fap, va_est_ado);
+                //Ordena nombre de famiia de acuerdo al nivel (3 Niveles)
+                va_nom_fam = row["va_cod_fam"].ToString();
+
+                int a = int.Parse(va_nom_fam.Substring(0, 2));
+                 
+                if (int.Parse(va_nom_fam.Substring(4, 2)) > 0)
+                {
+                    va_nom_fam = "--.--."+row["va_nom_fam"].ToString();
+                }
+                else if (int.Parse(va_nom_fam.Substring(2, 2)) > 0)
+                {
+                    va_nom_fam = "--." + row["va_nom_fam"].ToString();
+                }
+                else if (int.Parse(va_nom_fam.Substring(0, 2)) > 0)
+                {
+                    va_nom_fam = row["va_nom_fam"].ToString();
+                }
+
+
+                dg_res_ult.Rows.Add(row["va_cod_fam"], va_nom_fam, va_tip_fap, va_est_ado);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;
