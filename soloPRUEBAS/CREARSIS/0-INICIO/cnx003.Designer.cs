@@ -74,7 +74,6 @@
             // 
             // pc_log_emp
             // 
-            this.pc_log_emp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pc_log_emp.Image = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
             this.pc_log_emp.InitialImage = global::CREARSIS.Properties.Resources.sinimagenCREARSIS;
             this.pc_log_emp.Location = new System.Drawing.Point(15, 13);
