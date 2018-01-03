@@ -69,6 +69,8 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nit_emp='" + nit_emp + "' , va_raz_soc= '" + raz_soc + "', va_rep_leg='" + rep_leg + "', va_dir_emp='" + dir_emp + "', ");
                 vv_str_sql.AppendLine(" va_tel_emp='" + tel_emp + "' , va_cel_emp='" + cel_emp + "' , va_cor_reo='" + cor_reo + "', va_dir_web ='" + dir_web + "', ");
                 vv_str_sql.AppendLine(" va_dir_fbk= '" + dir_fbk + "', va_cla_wif='" + cla_wif + "' ");
+
+                o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

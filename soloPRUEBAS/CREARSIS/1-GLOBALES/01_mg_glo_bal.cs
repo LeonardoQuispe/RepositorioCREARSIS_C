@@ -104,7 +104,7 @@ namespace CREARSIS
                 if (tabla.Rows.Count != 0)
                 {
                     Program.gl_nom_emp = (tabla.Rows[0]["va_raz_soc"].ToString());
-                    string a = Program.gl_nom_emp;
+                    //string a = Program.gl_nom_emp;
                     vc_usr_log.vs_nom_emp = Program.gl_nom_emp;
                 }
 
@@ -118,6 +118,7 @@ namespace CREARSIS
                     return vc_usr_log;
                 }
 
+                //Guarda datos de usuario, tipo de usuario en ESTRUCTURA ESTATICA
                 vc_usr_log.vs_cod_usr = ar_usr_usr;
                 vc_usr_log.vs_nom_usr = tabla.Rows[0]["va_nom_usr"].ToString();
                 vc_usr_log.vs_bdo_usr = va_bdo_usr;

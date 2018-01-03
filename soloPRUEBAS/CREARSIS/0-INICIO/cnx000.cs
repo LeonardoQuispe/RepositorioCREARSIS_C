@@ -181,6 +181,7 @@ namespace CREARSIS
             }
 
 
+            //Obtiene y guarda datos de usuario y empresa en variables GLOBALES
             dynamic vc_usr_log = o_mg_glo_bal.fg_cnx_usr(tb_usr_usr.Text, tb_pss_usr.Text, cb_bdo_usr.Text, false);
 
 
