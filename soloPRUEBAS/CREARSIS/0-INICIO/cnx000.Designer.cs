@@ -46,7 +46,6 @@
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.lk_fan_pag = new System.Windows.Forms.LinkLabel();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -283,13 +282,6 @@
             this.line1.Text = "line1";
             this.line1.VerticalLine = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(126, 73);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 90;
-            // 
             // cnx000
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -298,7 +290,6 @@
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(510, 211);
             this.ControlBox = false;
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lk_fan_pag);
             this.Controls.Add(this.bt_ver_pss);
             this.Controls.Add(this.bt_can_cel);
@@ -348,6 +339,5 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.LinkLabel lk_fan_pag;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
