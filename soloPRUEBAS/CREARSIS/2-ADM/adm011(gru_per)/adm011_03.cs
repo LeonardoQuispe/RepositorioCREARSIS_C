@@ -73,7 +73,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
                 return "Debes proporcionar el nombre de Grupo de Persona";
             }
 
-            tab_adm003 = o_adm011._05(tb_cod_gru.Text);
+            tab_adm003 = o_adm011._05(int.Parse(tb_cod_gru.Text));
             if (tab_adm003.Rows.Count == 0)
             {
                 return "Los datos han cambiado desde su ultima lectura; El Grupo de Persona ya NO se encuentra registrado";
@@ -108,12 +108,12 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Acatualiza Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Modifica Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Acatualiza Grupo de Persona", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Modifica Grupo de Persona", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {

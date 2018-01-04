@@ -351,6 +351,7 @@
             this.tb_cod_gru.TabStop = false;
             this.tb_cod_gru.Text = "0000";
             this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_gru.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_cod_gru.Validating += new System.ComponentModel.CancelEventHandler(this.tb_cod_gru_Validating);
             // 
             // cb_est_bus

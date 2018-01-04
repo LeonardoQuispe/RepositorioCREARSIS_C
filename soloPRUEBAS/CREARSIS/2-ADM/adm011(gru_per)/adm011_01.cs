@@ -51,6 +51,8 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
         /// </summary>
         public void fu_con_sel()
         {
+            long tmp;
+
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
             {
@@ -58,7 +60,14 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
                 return;
             }
 
-            tabla = o_adm011._05(tb_sel_ecc.Text);
+            //Verifica que sea numero
+            if (long.TryParse(tb_sel_ecc.Text.Trim(),out tmp)==false)
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
+            tabla = o_adm011._05(int.Parse(tb_sel_ecc.Text));
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
@@ -77,7 +86,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm011 = o_adm011._05(tb_sel_ecc.Text);
+                tab_adm011 = o_adm011._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_adm011.Rows.Count == 0)
                 {
                     return "El Grupo de Persona no se encuentra registrado";
@@ -99,7 +108,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm011 = o_adm011._05(tb_sel_ecc.Text);
+                tab_adm011 = o_adm011._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_adm011.Rows.Count == 0)
                 {
                     return "El Grupo de Persona no se encuentra registrado";
@@ -129,7 +138,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm011 = o_adm011._05(tb_sel_ecc.Text);
+                tab_adm011 = o_adm011._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_adm011.Rows.Count == 0)
                 {
                     return "El Grupo de Persona no se encuentra registrado";
@@ -345,7 +354,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Busca Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             adm011_03 obj = new adm011_03();
@@ -358,7 +367,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Busca Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             adm011_04 obj = new adm011_04();
@@ -371,7 +380,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Busca Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             adm011_06 obj = new adm011_06();
@@ -384,7 +393,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Busca Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             adm011_05 obj = new adm011_05();

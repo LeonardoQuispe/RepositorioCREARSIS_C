@@ -68,7 +68,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
         public string fu_ver_dat()
         {
             //Si aun existe el dato
-            tab_adm003 = o_adm011._05(tb_cod_gru.Text);
+            tab_adm003 = o_adm011._05(int.Parse(tb_cod_gru.Text));
             if (tab_adm003.Rows.Count == 0)
             {
                 return "El Grupo de Persona no se encuentra registrado";
@@ -109,7 +109,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
                 }
 
                 //Graba datos
-                o_adm011._06(tb_cod_gru.Text);
+                o_adm011._06(int.Parse(tb_cod_gru.Text));
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

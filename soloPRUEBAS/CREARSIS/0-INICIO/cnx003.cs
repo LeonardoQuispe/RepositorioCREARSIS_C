@@ -111,7 +111,6 @@ namespace CREARSIS
         private void bt_ref_mnu_Click(object sender, EventArgs e)
         {
             fu_ref_mnu();
-            fu_ini_frm();
         }
 
         #endregion

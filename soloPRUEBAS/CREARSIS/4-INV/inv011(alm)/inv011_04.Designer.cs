@@ -37,20 +37,13 @@
             this.cb_mon_inv = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.BO = new DevComponents.Editors.ComboItem();
             this.USD = new DevComponents.Editors.ComboItem();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.tb_cta_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_dir_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_alm = new System.Windows.Forms.MaskedTextBox();
             this.tb_nro_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_des_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX9 = new DevComponents.DotNetBar.LabelX();
-            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
-            this.LabelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_gru_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_dir_ecg = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -62,6 +55,13 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX9 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX3 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -70,25 +70,25 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.labelX7);
+            this.GroupBox1.Controls.Add(this.labelX6);
+            this.GroupBox1.Controls.Add(this.labelX5);
+            this.GroupBox1.Controls.Add(this.LabelX1);
+            this.GroupBox1.Controls.Add(this.LabelX9);
+            this.GroupBox1.Controls.Add(this.LabelX4);
+            this.GroupBox1.Controls.Add(this.LabelX3);
             this.GroupBox1.Controls.Add(this.tb_nom_gru);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.cb_mtd_cto);
             this.GroupBox1.Controls.Add(this.labelX10);
             this.GroupBox1.Controls.Add(this.cb_mon_inv);
-            this.GroupBox1.Controls.Add(this.labelX7);
             this.GroupBox1.Controls.Add(this.tb_cta_alm);
-            this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.tb_dir_alm);
-            this.GroupBox1.Controls.Add(this.labelX5);
             this.GroupBox1.Controls.Add(this.labelX2);
             this.GroupBox1.Controls.Add(this.tb_cod_alm);
             this.GroupBox1.Controls.Add(this.tb_nro_alm);
-            this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.Controls.Add(this.tb_nom_alm);
             this.GroupBox1.Controls.Add(this.tb_des_alm);
-            this.GroupBox1.Controls.Add(this.LabelX9);
-            this.GroupBox1.Controls.Add(this.LabelX4);
-            this.GroupBox1.Controls.Add(this.LabelX3);
             this.GroupBox1.Controls.Add(this.tb_gru_alm);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(12, 3);
@@ -203,23 +203,6 @@
             // 
             this.USD.Text = "Dólares";
             // 
-            // labelX7
-            // 
-            this.labelX7.AutoSize = true;
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(16, 242);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(95, 17);
-            this.labelX7.TabIndex = 14;
-            this.labelX7.Text = "Moneda Inventario";
-            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // tb_cta_alm
             // 
             this.tb_cta_alm.BackColor = System.Drawing.Color.White;
@@ -239,23 +222,6 @@
             this.tb_cta_alm.Size = new System.Drawing.Size(354, 22);
             this.tb_cta_alm.TabIndex = 11;
             // 
-            // labelX6
-            // 
-            this.labelX6.AutoSize = true;
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(16, 206);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(84, 17);
-            this.labelX6.TabIndex = 10;
-            this.labelX6.Text = "Cuenta Contable";
-            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // tb_dir_alm
             // 
             this.tb_dir_alm.BackColor = System.Drawing.Color.White;
@@ -274,23 +240,6 @@
             this.tb_dir_alm.ReadOnly = true;
             this.tb_dir_alm.Size = new System.Drawing.Size(354, 22);
             this.tb_dir_alm.TabIndex = 9;
-            // 
-            // labelX5
-            // 
-            this.labelX5.AutoSize = true;
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(16, 169);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(48, 17);
-            this.labelX5.TabIndex = 8;
-            this.labelX5.Text = "Dirección";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // labelX2
             // 
@@ -345,23 +294,6 @@
             this.tb_nro_alm.TabIndex = 3;
             this.tb_nro_alm.Text = "0";
             // 
-            // LabelX1
-            // 
-            this.LabelX1.AutoSize = true;
-            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(16, 60);
-            this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(68, 17);
-            this.LabelX1.TabIndex = 2;
-            this.LabelX1.Text = "Nro. Almacén";
-            this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // tb_nom_alm
             // 
             this.tb_nom_alm.BackColor = System.Drawing.Color.White;
@@ -398,57 +330,6 @@
             this.tb_des_alm.ReadOnly = true;
             this.tb_des_alm.Size = new System.Drawing.Size(354, 22);
             this.tb_des_alm.TabIndex = 7;
-            // 
-            // LabelX9
-            // 
-            this.LabelX9.AutoSize = true;
-            this.LabelX9.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX9.ForeColor = System.Drawing.Color.Black;
-            this.LabelX9.Location = new System.Drawing.Point(16, 131);
-            this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 6;
-            this.LabelX9.Text = "Descripcion";
-            this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // LabelX4
-            // 
-            this.LabelX4.AutoSize = true;
-            this.LabelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(16, 93);
-            this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 4;
-            this.LabelX4.Text = "Nombre";
-            this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // LabelX3
-            // 
-            this.LabelX3.AutoSize = true;
-            this.LabelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX3.ForeColor = System.Drawing.Color.Black;
-            this.LabelX3.Location = new System.Drawing.Point(16, 20);
-            this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(78, 17);
-            this.LabelX3.TabIndex = 0;
-            this.LabelX3.Text = "Grupo Almacén";
-            this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // tb_gru_alm
             // 
@@ -640,6 +521,125 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // labelX7
+            // 
+            this.labelX7.AutoSize = true;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.ForeColor = System.Drawing.Color.Black;
+            this.labelX7.Location = new System.Drawing.Point(23, 241);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(95, 17);
+            this.labelX7.TabIndex = 33;
+            this.labelX7.Text = "Moneda Inventario";
+            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX6
+            // 
+            this.labelX6.AutoSize = true;
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
+            this.labelX6.Location = new System.Drawing.Point(34, 209);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(84, 17);
+            this.labelX6.TabIndex = 32;
+            this.labelX6.Text = "Cuenta Contable";
+            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(70, 172);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(48, 17);
+            this.labelX5.TabIndex = 31;
+            this.labelX5.Text = "Dirección";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX1
+            // 
+            this.LabelX1.AutoSize = true;
+            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX1.ForeColor = System.Drawing.Color.Black;
+            this.LabelX1.Location = new System.Drawing.Point(50, 62);
+            this.LabelX1.Name = "LabelX1";
+            this.LabelX1.Size = new System.Drawing.Size(68, 17);
+            this.LabelX1.TabIndex = 28;
+            this.LabelX1.Text = "Nro. Almacén";
+            this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX9
+            // 
+            this.LabelX9.AutoSize = true;
+            this.LabelX9.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX9.ForeColor = System.Drawing.Color.Black;
+            this.LabelX9.Location = new System.Drawing.Point(59, 135);
+            this.LabelX9.Name = "LabelX9";
+            this.LabelX9.Size = new System.Drawing.Size(59, 17);
+            this.LabelX9.TabIndex = 30;
+            this.LabelX9.Text = "Descripcion";
+            this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX4
+            // 
+            this.LabelX4.AutoSize = true;
+            this.LabelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX4.ForeColor = System.Drawing.Color.Black;
+            this.LabelX4.Location = new System.Drawing.Point(75, 102);
+            this.LabelX4.Name = "LabelX4";
+            this.LabelX4.Size = new System.Drawing.Size(43, 17);
+            this.LabelX4.TabIndex = 29;
+            this.LabelX4.Text = "Nombre";
+            this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX3
+            // 
+            this.LabelX3.AutoSize = true;
+            this.LabelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX3.ForeColor = System.Drawing.Color.Black;
+            this.LabelX3.Location = new System.Drawing.Point(42, 22);
+            this.LabelX3.Name = "LabelX3";
+            this.LabelX3.Size = new System.Drawing.Size(78, 17);
+            this.LabelX3.TabIndex = 27;
+            this.LabelX3.Text = "Grupo Almacén";
+            this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
             // inv011_04
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -675,20 +675,13 @@
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_mon_inv;
         private DevComponents.Editors.ComboItem BO;
         private DevComponents.Editors.ComboItem USD;
-        internal DevComponents.DotNetBar.LabelX labelX7;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cta_alm;
-        internal DevComponents.DotNetBar.LabelX labelX6;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_alm;
-        internal DevComponents.DotNetBar.LabelX labelX5;
         internal DevComponents.DotNetBar.LabelX labelX2;
         internal System.Windows.Forms.MaskedTextBox tb_cod_alm;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nro_alm;
-        internal DevComponents.DotNetBar.LabelX LabelX1;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_alm;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_des_alm;
-        internal DevComponents.DotNetBar.LabelX LabelX9;
-        internal DevComponents.DotNetBar.LabelX LabelX4;
-        internal DevComponents.DotNetBar.LabelX LabelX3;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_gru_alm;
         public System.Windows.Forms.GroupBox groupBox2;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_ecg;
@@ -702,5 +695,12 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_gru;
+        internal DevComponents.DotNetBar.LabelX labelX7;
+        internal DevComponents.DotNetBar.LabelX labelX6;
+        internal DevComponents.DotNetBar.LabelX labelX5;
+        internal DevComponents.DotNetBar.LabelX LabelX1;
+        internal DevComponents.DotNetBar.LabelX LabelX9;
+        internal DevComponents.DotNetBar.LabelX LabelX4;
+        internal DevComponents.DotNetBar.LabelX LabelX3;
     }
 }

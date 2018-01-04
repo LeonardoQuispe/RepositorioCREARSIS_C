@@ -59,23 +59,7 @@ namespace DATOS
                 throw ex;
             }
         }
-        //public DataTable _01(string cod_usr)
-        //{
-        //    try
-        //    {
-        //        vv_str_sql = new StringBuilder();
-        //        vv_str_sql.AppendLine(" SELECT seg022.va_cod_usr , adm011.va_cod_gru, adm011.va_nom_gru  ");
-        //        vv_str_sql.AppendLine(" FROM adm011, seg022");
-        //        vv_str_sql.AppendLine(" WHERE adm011.va_cod_gru = seg022.va_cod_gru	AND");
-        //        vv_str_sql.AppendLine(" va_cod_usr ='" + cod_usr + "' ");
-
-        //        return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-
+        
         //}
         /// <summary>
         /// Funcion "Registrar GRUPO DE PERSONA"
@@ -149,7 +133,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">codigo del GRUPO de persona</param>
         /// <returns></returns>
-        public DataTable _05(string cod_gru)
+        public DataTable _05(int cod_gru)
         {
             try
             {
@@ -169,7 +153,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del GRUPO de persona</param>
         /// <returns></returns>
-        public DataTable _06(string cod_gru)
+        public DataTable _06(int cod_gru)
         {
             try
             {

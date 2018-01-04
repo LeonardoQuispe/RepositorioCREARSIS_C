@@ -64,7 +64,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             //    return "El código del Grupo de Persona debe tener 3 letras";
             //}
 
-            tab_adm011 = o_adm011._05(tb_cod_gru.Text);
+            tab_adm011 = o_adm011._05(int.Parse(tb_cod_gru.Text));
             if (tab_adm011.Rows.Count != 0)
             {
                 tb_cod_gru.Focus();

@@ -162,7 +162,7 @@ namespace CREARSIS
                 //GUARDA imagen/LOGO
                 o_adm001._03(va_log_emp);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Datos de la Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente \r\n\r\nNOTA: Para que los cambios se apliquen \r\ndebe reiniciar el sistema Crearsis", "Datos de la Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 o_mg_glo_bal.mg_ads000_04(this, 1);
             }

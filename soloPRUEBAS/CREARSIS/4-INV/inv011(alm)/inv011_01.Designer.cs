@@ -451,6 +451,7 @@
             this.tb_sel_ecc.Text = "0000000";
             this.tb_sel_ecc.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_sel_ecc.ValidatingType = typeof(int);
+            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
             // inv011_01

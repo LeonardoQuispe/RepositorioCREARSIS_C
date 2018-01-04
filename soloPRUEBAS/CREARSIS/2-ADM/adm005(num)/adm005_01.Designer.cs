@@ -151,6 +151,7 @@
             this.tb_cod_ges.Size = new System.Drawing.Size(44, 22);
             this.tb_cod_ges.TabIndex = 30;
             this.tb_cod_ges.TextChanged += new System.EventHandler(this.tb_cod_ges_TextChanged);
+            this.tb_cod_ges.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_cod_ges.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
             // tb_nro_tal
@@ -271,6 +272,7 @@
             this.tb_cod_doc.PreventEnterBeep = true;
             this.tb_cod_doc.Size = new System.Drawing.Size(36, 22);
             this.tb_cod_doc.TabIndex = 20;
+            this.tb_cod_doc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_cod_doc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
             // LabelX1
