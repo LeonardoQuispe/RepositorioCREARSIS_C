@@ -120,6 +120,30 @@ namespace DATOS
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// Funcion "Habilita/Deshabilita Grupo de Persona"
+        /// </summary>
+        /// <param name="cod_per">Codigo de Actividad</param>
+        /// <param name="est_ado">Estado de Actividad</param>
+        /// <remarks></remarks>
+        public object _04(int cod_gru, string est_ado)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" UPDATE adm011 SET ");
+                vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_gru = '" + cod_gru + "'");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         /// <summary>
         /// Funcion consultar "GRUPO DE PERSONA"
         /// </summary>

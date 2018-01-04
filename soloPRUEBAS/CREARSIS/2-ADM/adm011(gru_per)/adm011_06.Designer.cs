@@ -51,11 +51,13 @@
             this.tb_nom_gru.Border.Class = "TextBoxBorder";
             this.tb_nom_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_gru.Enabled = false;
             this.tb_nom_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_gru.Location = new System.Drawing.Point(77, 58);
             this.tb_nom_gru.MaxLength = 80;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
+            this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(323, 26);
             this.tb_nom_gru.TabIndex = 30;
             // 
@@ -74,6 +76,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -90,6 +93,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // LabelX1
             // 
@@ -115,11 +119,13 @@
             this.tb_cod_gru.Border.Class = "TextBoxBorder";
             this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.Enabled = false;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.Location = new System.Drawing.Point(77, 22);
             this.tb_cod_gru.MaxLength = 3;
             this.tb_cod_gru.Name = "tb_cod_gru";
             this.tb_cod_gru.PreventEnterBeep = true;
+            this.tb_cod_gru.ReadOnly = true;
             this.tb_cod_gru.Size = new System.Drawing.Size(118, 26);
             this.tb_cod_gru.TabIndex = 10;
             // 
@@ -220,6 +226,7 @@
             this.Name = "adm011_06";
             this.Text = "Elimina Grupo de Persona";
             this.TitleText = "Elimina Grupo de Persona";
+            this.Load += new System.EventHandler(this.adm011_06_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
