@@ -345,5 +345,11 @@ namespace CREARSIS
             inv011_01 obj = new inv011_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        private void mn_gru_per_Click(object sender, EventArgs e)
+        {
+            CREARSIS._2_ADM.adm011_gru_per_.adm011_01 obj = new CREARSIS._2_ADM.adm011_gru_per_.adm011_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
