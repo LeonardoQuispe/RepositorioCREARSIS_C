@@ -54,14 +54,14 @@
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.va_cod_suc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_raz_soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_com = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nit_ced = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.mn_pri_nci.SuspendLayout();
@@ -79,7 +79,7 @@
             this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(11, 7);
+            this.GroupBox1.Location = new System.Drawing.Point(1, -9);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(555, 81);
             this.GroupBox1.TabIndex = 71;
@@ -92,13 +92,13 @@
             this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 16;
+            this.cb_prm_bus.ItemHeight = 20;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo,
             this.nombre});
             this.cb_prm_bus.Location = new System.Drawing.Point(354, 50);
             this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
+            this.cb_prm_bus.Size = new System.Drawing.Size(86, 26);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 30;
             // 
@@ -121,14 +121,14 @@
             this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
             this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
             this.cb_est_bus.FormattingEnabled = true;
-            this.cb_est_bus.ItemHeight = 16;
+            this.cb_est_bus.ItemHeight = 20;
             this.cb_est_bus.Items.AddRange(new object[] {
             this.todos,
             this.habilitado,
             this.deshabilitado});
             this.cb_est_bus.Location = new System.Drawing.Point(448, 50);
             this.cb_est_bus.Name = "cb_est_bus";
-            this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
+            this.cb_est_bus.Size = new System.Drawing.Size(93, 26);
             this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_est_bus.TabIndex = 40;
             // 
@@ -178,7 +178,7 @@
             this.tb_val_bus.MaxLength = 50;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(332, 22);
+            this.tb_val_bus.Size = new System.Drawing.Size(332, 26);
             this.tb_val_bus.TabIndex = 20;
             // 
             // tb_sel_ecc
@@ -195,7 +195,7 @@
             this.tb_sel_ecc.MaxLength = 2;
             this.tb_sel_ecc.Name = "tb_sel_ecc";
             this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 22);
+            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 26);
             this.tb_sel_ecc.TabIndex = 10;
             // 
             // LabelX1
@@ -209,7 +209,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(15, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(41, 17);
+            this.LabelX1.Size = new System.Drawing.Size(51, 21);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Persona";
             // 
@@ -219,7 +219,7 @@
             this.GroupBox2.Controls.Add(this.mn_pri_nci);
             this.GroupBox2.Controls.Add(this.dg_res_ult);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(11, 86);
+            this.GroupBox2.Location = new System.Drawing.Point(1, 72);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(555, 190);
             this.GroupBox2.TabIndex = 72;
@@ -239,7 +239,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(358, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -247,7 +247,7 @@
             // m_adm003_02
             // 
             this.m_adm003_02.Name = "m_adm003_02";
-            this.m_adm003_02.Size = new System.Drawing.Size(54, 20);
+            this.m_adm003_02.Size = new System.Drawing.Size(64, 24);
             this.m_adm003_02.Text = "&Nuevo";
             this.m_adm003_02.Click += new System.EventHandler(this.m_adm003_02_Click);
             // 
@@ -258,43 +258,43 @@
             this.m_adm003_04,
             this.m_adm003_06});
             this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
+            this.mr_mod_ifi.Size = new System.Drawing.Size(80, 24);
             this.mr_mod_ifi.Text = "&Modifica";
             // 
             // m_adm003_03
             // 
             this.m_adm003_03.Name = "m_adm003_03";
-            this.m_adm003_03.Size = new System.Drawing.Size(178, 22);
+            this.m_adm003_03.Size = new System.Drawing.Size(218, 26);
             this.m_adm003_03.Text = "&Actualiza";
             // 
             // m_adm003_04
             // 
             this.m_adm003_04.Name = "m_adm003_04";
-            this.m_adm003_04.Size = new System.Drawing.Size(178, 22);
+            this.m_adm003_04.Size = new System.Drawing.Size(218, 26);
             this.m_adm003_04.Text = "&Habilita/Deshabiltia";
             // 
             // m_adm003_06
             // 
             this.m_adm003_06.Name = "m_adm003_06";
-            this.m_adm003_06.Size = new System.Drawing.Size(178, 22);
+            this.m_adm003_06.Size = new System.Drawing.Size(218, 26);
             this.m_adm003_06.Text = "&Elimina";
             // 
             // m_adm003_05
             // 
             this.m_adm003_05.Name = "m_adm003_05";
-            this.m_adm003_05.Size = new System.Drawing.Size(66, 20);
+            this.m_adm003_05.Size = new System.Drawing.Size(78, 24);
             this.m_adm003_05.Text = "&Consulta";
             // 
             // m_adm003_p00
             // 
             this.m_adm003_p00.Name = "m_adm003_p00";
-            this.m_adm003_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_adm003_p00.Size = new System.Drawing.Size(73, 24);
             this.m_adm003_p00.Text = "&Informe";
             // 
             // m_atr_ass
             // 
             this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
             // 
             // dg_res_ult
@@ -328,8 +328,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
-            this.dg_res_ult.Location = new System.Drawing.Point(15, 14);
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.Location = new System.Drawing.Point(11, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
@@ -347,13 +347,47 @@
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
             // 
+            // va_cod_suc
+            // 
+            this.va_cod_suc.HeaderText = "Codigo";
+            this.va_cod_suc.Name = "va_cod_suc";
+            this.va_cod_suc.ReadOnly = true;
+            this.va_cod_suc.Width = 60;
+            // 
+            // va_raz_soc
+            // 
+            this.va_raz_soc.HeaderText = "Razón Social";
+            this.va_raz_soc.Name = "va_raz_soc";
+            this.va_raz_soc.ReadOnly = true;
+            this.va_raz_soc.Width = 150;
+            // 
+            // va_nom_com
+            // 
+            this.va_nom_com.HeaderText = "Nombre Comercial";
+            this.va_nom_com.Name = "va_nom_com";
+            this.va_nom_com.ReadOnly = true;
+            this.va_nom_com.Width = 150;
+            // 
+            // va_nit_ced
+            // 
+            this.va_nit_ced.HeaderText = "NIT/CI";
+            this.va_nit_ced.Name = "va_nit_ced";
+            this.va_nit_ced.ReadOnly = true;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
+            // 
             // gb_ctr_frm
             // 
             this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 284);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(1, 268);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(555, 48);
             this.gb_ctr_frm.TabIndex = 73;
@@ -390,47 +424,13 @@
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
             // 
-            // va_cod_suc
-            // 
-            this.va_cod_suc.HeaderText = "Codigo";
-            this.va_cod_suc.Name = "va_cod_suc";
-            this.va_cod_suc.ReadOnly = true;
-            this.va_cod_suc.Width = 60;
-            // 
-            // va_raz_soc
-            // 
-            this.va_raz_soc.HeaderText = "Razón Social";
-            this.va_raz_soc.Name = "va_raz_soc";
-            this.va_raz_soc.ReadOnly = true;
-            this.va_raz_soc.Width = 150;
-            // 
-            // va_nom_com
-            // 
-            this.va_nom_com.HeaderText = "Nombre Comercial";
-            this.va_nom_com.Name = "va_nom_com";
-            this.va_nom_com.ReadOnly = true;
-            this.va_nom_com.Width = 150;
-            // 
-            // va_nit_ced
-            // 
-            this.va_nit_ced.HeaderText = "NIT/CI";
-            this.va_nit_ced.Name = "va_nit_ced";
-            this.va_nit_ced.ReadOnly = true;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 80;
-            // 
             // adm010_01
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(584, 342);
+            this.ClientSize = new System.Drawing.Size(556, 320);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
