@@ -14,7 +14,7 @@ using DevComponents.DotNetBar;
 namespace CREARSIS
 {
     /// <summary>
-    /// FORMULARIO MODIFICA DOCUMENTO
+    /// FORMULARIO MODIFICA Grupo de Persona
     /// </summary>
     public partial class adm003_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
@@ -52,12 +52,12 @@ namespace CREARSIS
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Acatualiza documento", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Acatualiza Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Acatualiza documento", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Acatualiza Grupo de Persona", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -67,7 +67,7 @@ namespace CREARSIS
                 //Graba datos
                 o_adm003._03(0, tb_cod_doc.Text, tb_nom_doc.Text, tb_des_doc.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Modifica Documento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Modifica Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_doc.Text, tb_nom_doc.Text);
 
@@ -75,7 +75,7 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Grupo de Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -128,18 +128,18 @@ namespace CREARSIS
             if (tb_nom_doc.Text.Trim() == "")
             {
                 tb_nom_doc.Focus();
-                return "Debes proporcionar el nombre de documento";
+                return "Debes proporcionar el nombre de Grupo de Persona";
             }
 
             tab_adm003 = o_adm003._05(tb_cod_doc.Text);
             if (tab_adm003.Rows.Count == 0)
             {
-                return "Los datos han cambiado desde su ultima lectura; El documento ya NO se encuentra registrado";
+                return "Los datos han cambiado desde su ultima lectura; El Grupo de Persona ya NO se encuentra registrado";
             }
 
             if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
             {
-                return "El documento se encuentra Deshabilitado";
+                return "El Grupo de Persona se encuentra Deshabilitado";
             }
 
             return null;
