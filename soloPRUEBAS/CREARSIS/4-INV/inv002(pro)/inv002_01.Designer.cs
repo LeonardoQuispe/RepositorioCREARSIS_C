@@ -35,6 +35,11 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.va_cod_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_fab_ric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,11 +62,8 @@
             this.codigo = new DevComponents.Editors.ComboItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.va_cod_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_des_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fab_ric = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new DevComponents.Editors.ComboItem();
+            this.fabricante = new DevComponents.Editors.ComboItem();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.mn_pri_nci.SuspendLayout();
@@ -161,6 +163,40 @@
             this.dg_res_ult.Size = new System.Drawing.Size(541, 170);
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
+            // 
+            // va_cod_pro
+            // 
+            this.va_cod_pro.HeaderText = "Codigo";
+            this.va_cod_pro.Name = "va_cod_pro";
+            this.va_cod_pro.ReadOnly = true;
+            this.va_cod_pro.Width = 60;
+            // 
+            // va_nom_pro
+            // 
+            this.va_nom_pro.HeaderText = "Nombre";
+            this.va_nom_pro.Name = "va_nom_pro";
+            this.va_nom_pro.ReadOnly = true;
+            this.va_nom_pro.Width = 150;
+            // 
+            // va_des_pro
+            // 
+            this.va_des_pro.HeaderText = "Descripcion";
+            this.va_des_pro.Name = "va_des_pro";
+            this.va_des_pro.ReadOnly = true;
+            this.va_des_pro.Width = 150;
+            // 
+            // va_fab_ric
+            // 
+            this.va_fab_ric.HeaderText = "Fabricante";
+            this.va_fab_ric.Name = "va_fab_ric";
+            this.va_fab_ric.ReadOnly = true;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
             // 
             // m_atr_ass
             // 
@@ -366,7 +402,9 @@
             this.cb_prm_bus.ItemHeight = 20;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo,
-            this.nombre});
+            this.nombre,
+            this.descripcion,
+            this.fabricante});
             this.cb_prm_bus.Location = new System.Drawing.Point(351, 45);
             this.cb_prm_bus.Name = "cb_prm_bus";
             this.cb_prm_bus.Size = new System.Drawing.Size(86, 26);
@@ -389,39 +427,15 @@
             this.GroupBox1.TabIndex = 74;
             this.GroupBox1.TabStop = false;
             // 
-            // va_cod_pro
+            // descripcion
             // 
-            this.va_cod_pro.HeaderText = "Codigo";
-            this.va_cod_pro.Name = "va_cod_pro";
-            this.va_cod_pro.ReadOnly = true;
-            this.va_cod_pro.Width = 60;
+            this.descripcion.Text = "comboItem1";
+            this.descripcion.Value = "3";
             // 
-            // va_nom_pro
+            // fabricante
             // 
-            this.va_nom_pro.HeaderText = "Nombre";
-            this.va_nom_pro.Name = "va_nom_pro";
-            this.va_nom_pro.ReadOnly = true;
-            this.va_nom_pro.Width = 150;
-            // 
-            // va_des_pro
-            // 
-            this.va_des_pro.HeaderText = "Descripcion";
-            this.va_des_pro.Name = "va_des_pro";
-            this.va_des_pro.ReadOnly = true;
-            this.va_des_pro.Width = 150;
-            // 
-            // va_fab_ric
-            // 
-            this.va_fab_ric.HeaderText = "Fabricante";
-            this.va_fab_ric.Name = "va_fab_ric";
-            this.va_fab_ric.ReadOnly = true;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 80;
+            this.fabricante.Text = "comboItem1";
+            this.fabricante.Value = "4";
             // 
             // inv002_01
             // 
@@ -482,5 +496,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn va_des_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_fab_ric;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        private DevComponents.Editors.ComboItem descripcion;
+        private DevComponents.Editors.ComboItem fabricante;
     }
 }
