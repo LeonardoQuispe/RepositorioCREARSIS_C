@@ -158,7 +158,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Busca Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv011_04 obj = new inv011_04();
@@ -171,7 +171,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Busca Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv011_05 obj = new inv011_05();
@@ -184,7 +184,7 @@ namespace CREARSIS
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Error Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Error Busca Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             inv011_06 obj = new inv011_06();
