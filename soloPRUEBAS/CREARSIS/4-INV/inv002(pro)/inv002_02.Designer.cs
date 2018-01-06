@@ -289,6 +289,7 @@
             this.tb_cod_mar.TabIndex = 9;
             this.tb_cod_mar.ButtonCustomClick += new System.EventHandler(this.tb_cod_mar_ButtonCustomClick);
             this.tb_cod_mar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_mar_KeyDown);
+            this.tb_cod_mar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cod_mar_KeyPress);
             this.tb_cod_mar.Validated += new System.EventHandler(this.tb_cod_mar_Validated);
             // 
             // tb_fab_ric
@@ -501,6 +502,7 @@
             this.tb_cod_fap.Size = new System.Drawing.Size(94, 26);
             this.tb_cod_fap.TabIndex = 1;
             this.tb_cod_fap.ButtonCustomClick += new System.EventHandler(this.tb_cod_flia_ButtonCustomClick);
+            this.tb_cod_fap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_fap_KeyDown_1);
             this.tb_cod_fap.Validated += new System.EventHandler(this.tb_cod_fap_Validated);
             // 
             // listBoxItem2

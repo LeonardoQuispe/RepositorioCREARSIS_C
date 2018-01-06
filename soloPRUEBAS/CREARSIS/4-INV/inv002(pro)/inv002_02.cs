@@ -232,14 +232,14 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             if (cod_umd.Trim() == "")
             {
-                tb_nom_pro.Text = "** NO existe";
+                tb_nom_inv.Text = "** NO existe";
                 return;
             }
 
             tab_inv003 = o_inv003._05(cod_umd);
             if (tab_inv003.Rows.Count == 0)
             {
-                tb_nom_pro.Text = "** NO existe";
+                tb_nom_inv.Text = "** NO existe";
                 return;
             }
 
@@ -367,9 +367,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             inv001_01 obj = new inv001_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
-
-        //Keydown flia producto
-        private void tb_cod_fap_KeyDown(object sender, KeyEventArgs e)
+        private void tb_cod_fap_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
             {
@@ -377,11 +375,13 @@ namespace CREARSIS._4_INV.inv002_pro_
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
         }
+        
         //validat flia producto
         private void tb_cod_fap_Validated(object sender, EventArgs e)
         {
             fu_rec_fam(tb_cod_fap.Text);
         }
+
         //Buton marca
         private void tb_cod_mar_ButtonCustomClick(object sender, EventArgs e)
         {
@@ -462,6 +462,27 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             inv003_01 obj = new inv003_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_cod_mar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+                 if (Char.IsDigit(e.KeyChar))
+                 {
+                       e.Handled = false;
+                   }
+                else if (Char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = false;
+                     }
+                else if (Char.IsSeparator(e.KeyChar))
+                    {
+                         e.Handled = false;
+                     }
+                else
+     {
+                       e.Handled = true;
+                   }
         }
     }
 }
