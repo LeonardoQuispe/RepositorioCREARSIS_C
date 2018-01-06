@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
@@ -41,14 +41,14 @@
             this.va_fab_ric = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_05 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_06 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_04 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_03 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_p00 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_06 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_04 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_03 = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_mod_ifi = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
-            this.m_adm003_02 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_inv002_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -61,9 +61,9 @@
             this.nombre = new DevComponents.Editors.ComboItem();
             this.codigo = new DevComponents.Editors.ComboItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.descripcion = new DevComponents.Editors.ComboItem();
             this.fabricante = new DevComponents.Editors.ComboItem();
+            this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.mn_pri_nci.SuspendLayout();
@@ -85,6 +85,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // gb_ctr_frm
             // 
@@ -113,6 +114,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // dg_res_ult
             // 
@@ -121,14 +123,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_cod_pro,
@@ -136,33 +138,36 @@
             this.va_des_pro,
             this.va_fab_ric,
             this.va_est_ado});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle17;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(8, 12);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(541, 170);
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
+            this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
+            this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
+            this.dg_res_ult.DoubleClick += new System.EventHandler(this.dg_res_ult_DoubleClick);
             // 
             // va_cod_pro
             // 
@@ -203,43 +208,48 @@
             this.m_atr_ass.Name = "m_atr_ass";
             this.m_atr_ass.Size = new System.Drawing.Size(55, 24);
             this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
-            // m_adm003_p00
+            // m_inv002_p00
             // 
-            this.m_adm003_p00.Name = "m_adm003_p00";
-            this.m_adm003_p00.Size = new System.Drawing.Size(73, 24);
-            this.m_adm003_p00.Text = "&Informe";
+            this.m_inv002_p00.Name = "m_inv002_p00";
+            this.m_inv002_p00.Size = new System.Drawing.Size(73, 24);
+            this.m_inv002_p00.Text = "&Informe";
             // 
-            // m_adm003_05
+            // m_inv002_05
             // 
-            this.m_adm003_05.Name = "m_adm003_05";
-            this.m_adm003_05.Size = new System.Drawing.Size(78, 24);
-            this.m_adm003_05.Text = "&Consulta";
+            this.m_inv002_05.Name = "m_inv002_05";
+            this.m_inv002_05.Size = new System.Drawing.Size(78, 24);
+            this.m_inv002_05.Text = "&Consulta";
+            this.m_inv002_05.Click += new System.EventHandler(this.m_inv002_05_Click);
             // 
-            // m_adm003_06
+            // m_inv002_06
             // 
-            this.m_adm003_06.Name = "m_adm003_06";
-            this.m_adm003_06.Size = new System.Drawing.Size(218, 26);
-            this.m_adm003_06.Text = "&Elimina";
+            this.m_inv002_06.Name = "m_inv002_06";
+            this.m_inv002_06.Size = new System.Drawing.Size(218, 26);
+            this.m_inv002_06.Text = "&Elimina";
+            this.m_inv002_06.Click += new System.EventHandler(this.m_inv002_06_Click);
             // 
-            // m_adm003_04
+            // m_inv002_04
             // 
-            this.m_adm003_04.Name = "m_adm003_04";
-            this.m_adm003_04.Size = new System.Drawing.Size(218, 26);
-            this.m_adm003_04.Text = "&Habilita/Deshabiltia";
+            this.m_inv002_04.Name = "m_inv002_04";
+            this.m_inv002_04.Size = new System.Drawing.Size(218, 26);
+            this.m_inv002_04.Text = "&Habilita/Deshabiltia";
+            this.m_inv002_04.Click += new System.EventHandler(this.m_inv002_04_Click);
             // 
-            // m_adm003_03
+            // m_inv002_03
             // 
-            this.m_adm003_03.Name = "m_adm003_03";
-            this.m_adm003_03.Size = new System.Drawing.Size(218, 26);
-            this.m_adm003_03.Text = "&Actualiza";
+            this.m_inv002_03.Name = "m_inv002_03";
+            this.m_inv002_03.Size = new System.Drawing.Size(218, 26);
+            this.m_inv002_03.Text = "&Actualiza";
+            this.m_inv002_03.Click += new System.EventHandler(this.m_inv002_03_Click);
             // 
             // mr_mod_ifi
             // 
             this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_adm003_03,
-            this.m_adm003_04,
-            this.m_adm003_06});
+            this.m_inv002_03,
+            this.m_inv002_04,
+            this.m_inv002_06});
             this.mr_mod_ifi.Name = "mr_mod_ifi";
             this.mr_mod_ifi.Size = new System.Drawing.Size(80, 24);
             this.mr_mod_ifi.Text = "&Modifica";
@@ -251,23 +261,24 @@
             this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
             this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_adm003_02,
+            this.m_inv002_02,
             this.mr_mod_ifi,
-            this.m_adm003_05,
-            this.m_adm003_p00,
+            this.m_inv002_05,
+            this.m_inv002_p00,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(56, 87);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(358, 28);
+            this.mn_pri_nci.Size = new System.Drawing.Size(473, 28);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
             // 
-            // m_adm003_02
+            // m_inv002_02
             // 
-            this.m_adm003_02.Name = "m_adm003_02";
-            this.m_adm003_02.Size = new System.Drawing.Size(64, 24);
-            this.m_adm003_02.Text = "&Nuevo";
+            this.m_inv002_02.Name = "m_inv002_02";
+            this.m_inv002_02.Size = new System.Drawing.Size(64, 24);
+            this.m_inv002_02.Text = "&Nuevo";
+            this.m_inv002_02.Click += new System.EventHandler(this.m_inv002_02_Click);
             // 
             // GroupBox2
             // 
@@ -314,6 +325,8 @@
             this.tb_val_bus.PreventEnterBeep = true;
             this.tb_val_bus.Size = new System.Drawing.Size(332, 26);
             this.tb_val_bus.TabIndex = 20;
+            this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
+            this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             // 
             // tb_sel_ecc
             // 
@@ -331,6 +344,8 @@
             this.tb_sel_ecc.PreventEnterBeep = true;
             this.tb_sel_ecc.Size = new System.Drawing.Size(62, 26);
             this.tb_sel_ecc.TabIndex = 10;
+            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sel_ecc_KeyDown);
+            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating);
             // 
             // LabelX1
             // 
@@ -411,6 +426,16 @@
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_prm_bus.TabIndex = 30;
             // 
+            // descripcion
+            // 
+            this.descripcion.Text = "comboItem1";
+            this.descripcion.Value = "3";
+            // 
+            // fabricante
+            // 
+            this.fabricante.Text = "comboItem1";
+            this.fabricante.Value = "4";
+            // 
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
@@ -427,16 +452,6 @@
             this.GroupBox1.TabIndex = 74;
             this.GroupBox1.TabStop = false;
             // 
-            // descripcion
-            // 
-            this.descripcion.Text = "comboItem1";
-            this.descripcion.Value = "3";
-            // 
-            // fabricante
-            // 
-            this.fabricante.Text = "comboItem1";
-            this.fabricante.Value = "4";
-            // 
             // inv002_01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -451,6 +466,7 @@
             this.Name = "inv002_01";
             this.Text = "Busca Producto";
             this.TitleText = "Busca Producto";
+            this.Load += new System.EventHandler(this.inv002_01_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).EndInit();
             this.mn_pri_nci.ResumeLayout(false);
@@ -470,14 +486,14 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_p00;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_05;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_06;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_04;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_03;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_p00;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_05;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_06;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_04;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_03;
         internal System.Windows.Forms.ToolStripMenuItem mr_mod_ifi;
         internal System.Windows.Forms.MenuStrip mn_pri_nci;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_02;
+        internal System.Windows.Forms.ToolStripMenuItem m_inv002_02;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.LabelX lb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_bus;

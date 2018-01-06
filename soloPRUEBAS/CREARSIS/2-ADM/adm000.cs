@@ -357,5 +357,12 @@ namespace CREARSIS
             CREARSIS._2_ADM.adm010_per_.adm010_01 obj = new CREARSIS._2_ADM.adm010_per_.adm010_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        //[Menu PRODUCTO]
+        private void mn_pro_duc_Click(object sender, EventArgs e)
+        {
+            CREARSIS._4_INV.inv002_pro_.inv002_01 obj = new CREARSIS._4_INV.inv002_pro_.inv002_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
