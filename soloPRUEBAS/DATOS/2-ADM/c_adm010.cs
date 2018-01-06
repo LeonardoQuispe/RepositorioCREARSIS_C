@@ -30,57 +30,34 @@ namespace DATOS
         /// <param name="est_bus">Estado del persona (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )(</param>
         /// <param name="cod_tpr">Codigo del tipo de persona para buscar (0=todos)</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus, int cod_tpr)
+        public DataTable _01(string val_bus, int prm_bus, string est_bus)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT adm010.va_cod_per, adm010.va_cod_tpr, adm011.va_nom_tpr,  adm010.va_raz_soc, adm010.va_nom_per, adm010.va_ape_pat, adm010.va_ape_mat,");
-                vv_str_sql.AppendLine("        adm010.va_nit_per, adm010.va_nro_cip, adm010.va_tel_per, adm010.va_cel_per, adm010.va_ema_per, ");
-                vv_str_sql.AppendLine("        adm010.va_dir_per, adm010.va_ciu_dad, adm010.va_fec_nac, adm010.va_est_civ, adm010.va_est_ado ");
-                vv_str_sql.AppendLine(" FROM adm010, adm011, seg022 ");
-                vv_str_sql.AppendLine(" WHERE adm010.va_cod_tpr = adm011.va_cod_tpr	AND  ");
-                vv_str_sql.AppendLine("       adm011.va_cod_tpr = seg022.va_cod_tpr	AND  ");
 
-                if (prm_bus == 1)//codigo
+                vv_str_sql.AppendLine(" select * from adm010  ");
+
+                switch (prm_bus)
                 {
-                    vv_str_sql.AppendLine("   adm010.va_cod_per LIKE '" + val_bus + "%'		    ");
+                    case 1: vv_str_sql.AppendFormat(" where va_cod_per like '{0}%'", val_bus); break;
+                    case 2: vv_str_sql.AppendFormat(" where va_raz_soc like '{0}%'", val_bus); break;
+                    case 3: vv_str_sql.AppendFormat(" where va_nom_com like '{0}%'", val_bus); break;
+                    case 4: vv_str_sql.AppendFormat(" where va_nit_ced like '{0}%'", val_bus); break;
                 }
-                if (prm_bus == 2)//razon social
+
+                switch (est_bus)
                 {
-                    vv_str_sql.AppendLine("   adm010.va_raz_soc LIKE '" + val_bus + "%'			");
-                }
-                if (prm_bus == 3)//nombre
-                {
-                    vv_str_sql.AppendLine("   adm010.va_nom_per LIKE '" + val_bus + "%'		    ");
-                }
-                if (prm_bus == 4)//apellido paterno
-                {
-                    vv_str_sql.AppendLine("   adm010.va_ape_pat LIKE '" + val_bus + "%'			");
-                }
-                if (prm_bus == 5)//apellido materno
-                {
-                    vv_str_sql.AppendLine("   adm010.va_ape_mat LIKE '" + val_bus + "%'		    ");
-                }
-                if (prm_bus == 6)//C.I.
-                {
-                    vv_str_sql.AppendLine("   adm010.va_nro_cip LIKE '" + val_bus + "%'			");
-                }
-                if (prm_bus == 7)//nit
-                {
-                    vv_str_sql.AppendLine("   adm010.va_nit_per LIKE '" + val_bus + "%'			");
+                    case "0": est_bus = "T"; break;
+                    case "1": est_bus = "H"; break;
+                    case "2": est_bus = "N"; break;
                 }
 
                 if (est_bus != "T")
                 {
-                    vv_str_sql.AppendLine("   AND  adm010.va_est_ado='" + est_bus + "' ");
+                    vv_str_sql.AppendFormat(" and va_est_ado ='{0}'", est_bus);
                 }
 
-                if (cod_tpr != 0)
-                {
-                    vv_str_sql.AppendLine("   AND  adm010.va_cod_tpr=" + cod_tpr + " ");
-                }
-                vv_str_sql.AppendLine(" ORDER BY va_cod_per ASC");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
@@ -203,13 +180,13 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_doc">Codigo del persona</param>
         /// <returns></returns>
-        public DataTable _05(string cod_doc)
+        public DataTable _05(string cod_per)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * FROM adm010 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_doc + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_per + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
