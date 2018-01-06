@@ -21,10 +21,12 @@ namespace CREARSIS._4_INV.inv002_pro_
         #region VARIABLES
 
         public dynamic vg_frm_pad;
-        DataTable tab_adm002;
-        DataTable tab_adm003;
-        DataTable tab_adm004;
-        DataTable tab_ctb007;
+        
+        DataTable tab_inv003;
+        DataTable tab_inv002;
+        DataTable tab_inv004;
+        DataTable tab_inv001;
+
 
         string err_msg = "";
 
@@ -32,11 +34,11 @@ namespace CREARSIS._4_INV.inv002_pro_
 
         #region INSTANCIAS
 
-        c_adm002 o_adm002 = new c_adm002();
-        c_adm003 o_adm003 = new c_adm003();
-        c_adm004 o_adm004 = new c_adm004();
-        c_adm005 o_adm005 = new c_adm005();
-        c_ctb007 o_ctb007 = new c_ctb007();
+        DATOS._4_INV.c_inv002 o_inv002 = new DATOS._4_INV.c_inv002();
+        c_inv003 o_inv003 = new c_inv003();
+        c_inv004 o_inv004 = new c_inv004();
+        c_inv001 o_inv001 = new c_inv001();
+
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
@@ -45,14 +47,7 @@ namespace CREARSIS._4_INV.inv002_pro_
 
         public void fu_ini_frm()
         {
-            cb_tip_num.SelectedIndex = 0;
-            tb_for_mat.Text = "0";
-            cb_nro_cop.SelectedIndex = 0;
-            //tb_nro_dos.Text = "0";
-            cb_for_log.SelectedIndex = 0;
-
-            tb_cod_doc.Focus();
-
+            tb_cod_fap.Focus();
         }
 
         /// <summary>
@@ -60,19 +55,30 @@ namespace CREARSIS._4_INV.inv002_pro_
         /// </summary>
         public void fu_lim_frm()
         {
-            tb_cod_doc.Clear();
-            tb_nom_doc.Clear();
-            tb_nro_tal.Clear();
-            tb_nom_tal.Clear();
-            tb_cod_ges.Clear();
-            tb_for_mat.Text = "0";
-            tb_nro_aut.Text = "0";
-            tb_fir_ma1.Clear();
-            tb_fir_ma2.Clear();
-            tb_fir_ma3.Clear();
-            tb_fir_ma4.Clear();
+            tb_cod_pro.Clear();
+            tb_cod_fap.Clear();
+            tb_nom_fap.Clear();
+            tb_nom_pro.Clear();
+            tb_des_pro.Clear();
+            tb_fab_ric.Clear();
+            tb_cod_mar.Clear();
+            tb_nom_mar.Clear();
+            tb_uni_inv.Clear();
+            tb_nom_inv.Clear();
+            tb_uni_ven.Clear();
+            tb_nom_ven.Clear();
+            tb_eqv_ven.Clear();
+            tb_uni_com.Clear();
+            tb_nom_com.Clear();
+            tb_eqv_com.Clear();
 
-            tb_nro_tal.Focus();
+            chk_lot.Checked = false;
+            chk_ser.Checked = false;
+            chk_com.Checked = false;
+            chk_lot.Checked = false;
+
+            tb_cod_fap.Focus();
+
 
         }
 
@@ -82,151 +88,202 @@ namespace CREARSIS._4_INV.inv002_pro_
         public string fu_ver_dat()
         {
             int tmp;
-            Int64 tmp2;
 
-            //** Verifica Documento---------------------------------
-            if (tb_cod_doc.Text.Trim() == "")
+            //**Verifica Marca-----------------------------------
+            if (int.TryParse(tb_cod_mar.Text.Trim(), out tmp) == false)
             {
-                tb_cod_doc.Focus();
-                return "Debes proporcionar el codigo de documento";
+                tb_cod_mar.Focus();
+                return "El Nro de la Marca debe ser numérico";
             }
 
-            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
-            if (tab_adm003.Rows.Count == 0)
+            if (tb_cod_mar.Text == "0")
             {
-                tb_cod_doc.Focus();
-                return "El documento NO se encuentra registrado";
+                tb_cod_mar.Focus();
+                return "El Nro de la Marca debe ser diferente de 0";
             }
-            if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
+            if (tb_cod_mar.Text.Trim() == "")
             {
-                tb_cod_doc.Focus();
-                return "El documento se encuentra Deshabilitado";
-            }
-            //**-----------------------------------------------------
-
-            //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
-            {
-                tb_nro_tal.Focus();
-                return "El Nro de Talonario debe ser numérico";
+                tb_cod_mar.Focus();
+                return "Debes proporcionar el codigo de la Marca";
             }
 
-            if (tb_nro_tal.Text == "0")
+            tab_inv004 = o_inv004._05(int.Parse(tb_cod_mar.Text));
+            if (tab_inv004.Rows.Count == 0)
             {
-                tb_nro_tal.Focus();
-                return "El Nro de Talonario debe ser diferente de 0";
+                tb_cod_mar.Focus();
+                return "La Marca NO se encuentra registrada";
             }
-
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
-            if (tab_adm004.Rows.Count != 0)
+            if (tab_inv004.Rows[0]["va_est_ado"].ToString() == "N")
             {
-                tb_nro_tal.Focus();
-                return "El Talonario ya se encuentra registrado";
+                tb_cod_mar.Focus();
+                return "La Marca se encuentra Deshabilitada";
             }
             //**-----------------------------------------------------
 
-            //**Verifica que la gestion sea valida-------------------
-            if (int.TryParse(tb_cod_ges.Text.Trim(), out tmp) == false)
+            //** Verifica Unidad de Medida---------------------------------
+            if (tb_uni_inv.Text.Trim() == "")
             {
-                tb_cod_ges.Focus();
-                return "La Gestion no es valida";
+                tb_uni_inv.Focus();
+                return "Debes proporcionar la Unidad de Medida";
             }
 
-            tab_adm002 = o_adm002._05(int.Parse(tb_cod_ges.Text));
-            if (tab_adm002.Rows.Count == 0)
+            tab_inv003 = o_inv003._05(tb_uni_inv.Text);
+            if (tab_inv003.Rows.Count == 0)
             {
-                tb_cod_ges.Focus();
-                return "La Gestión NO se encuentra registrada";
+                tb_uni_inv.Focus();
+                return "La Unidad de Medida NO se encuentra registrada";
             }
-            //**-----------------------------------------------------
-
-            //**Verifica formato-------------------------------------
-            if (int.TryParse(tb_for_mat.Text.Trim(), out tmp) == false)
+            if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
             {
-                tb_for_mat.Focus();
-                return "El formato debe ser numerico";
+                tb_uni_inv.Focus();
+                return "La Unidad de Medida se encuentra Deshabilitada";
             }
             //**-----------------------------------------------------
 
-            //**Verifica Nro de Dosificacion-------------------------
-            if (tb_nro_aut.Text.Trim() == "")
+            //** Verifica Unidad de Medida de Ventas---------------------------------
+            if (tb_uni_com.Text.Trim() == "")
             {
-                tb_cod_doc.Focus();
-                return "Debes proporcionar el codigo de Dosificación";
+                tb_uni_com.Focus();
+                return "Debes proporcionar el codigo de la Unidad de Medida en Ventas";
             }
 
-            if (tb_nro_aut.Text != "0")
+            tab_inv003 = o_inv003._05(tb_uni_com.Text);
+            if (tab_inv003.Rows.Count == 0)
             {
-                tab_ctb007 = o_ctb007._05(Int64.Parse(tb_nro_aut.Text));
-                if (tab_ctb007.Rows.Count == 0)
-                {
-                    tb_nro_aut.Focus();
-                    return "La Dosificación NO se encuentra registrada";
-                }
-                if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    tb_nro_aut.Focus();
-                    return "La Dosificación se encuentra Deshabilitada";
-                }
+                tb_uni_com.Focus();
+                return "La Unidad de Medida de Ventas NO se encuentra registrada";
+            }
+            if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_uni_com.Focus();
+                return "La Unidad de Medida de Ventas se encuentra Deshabilitada";
+            }
+            //**-----------------------------------------------------
+
+            //** Verifica Unidad de Medida de Compras---------------------------------
+            if (tb_uni_com.Text.Trim() == "")
+            {
+                tb_uni_com.Focus();
+                return "Debes proporcionar el codigo de la Unidad de Medida en Compras";
             }
 
-            //if (Int64.TryParse(tb_nro_aut.Text.Trim(), out tmp2) == false)
-            //{
-            //    tb_nro_aut.Focus();
-            //    return "El Nro de Dosificación debe ser numérico";
-            //}
+            tab_inv003 = o_inv003._05(tb_uni_com.Text);
+            if (tab_inv003.Rows.Count == 0)
+            {
+                tb_uni_com.Focus();
+                return "La Unidad de Medida de Compras NO se encuentra registrada";
+            }
+            if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_uni_com.Focus();
+                return "La Unidad de Medida de Compras se encuentra Deshabilitada";
+            }
+            //**-----------------------------------------------------
 
-            //if (tb_nro_aut.Text.Trim() == "0")
-            //{
-            //    tb_nro_aut.Focus();
-            //    return "El Nro de Dosificación debe ser diferente de 0";
-            //}           
-
+           
             return null;
         }
 
 
-        public void fu_rec_doc(string cod_doc)
+
+
+        //----------------Familia Producto----------
+        public void fu_rec_fam(string cod_fam)
         {
-            if (cod_doc.Trim() == "")
+            if (cod_fam.Trim() == "")
             {
-                tb_nom_doc.Text = "** NO existe";
+                tb_nom_fap.Text = "** NO existe";
                 return;
             }
 
-            tab_adm003 = o_adm003._05(cod_doc);
-            if (tab_adm003.Rows.Count == 0)
+            tab_inv001 = o_inv001._05(cod_fam);
+            if (tab_inv003.Rows.Count == 0)
             {
-                tb_nom_doc.Text = "** NO existe";
+                tb_nom_fap.Text = "** NO existe";
                 return;
             }
 
-            tb_cod_doc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString();
-            tb_nom_doc.Text = tab_adm003.Rows[0]["va_nom_doc"].ToString();
+            tb_cod_fap.Text = tab_inv001.Rows[0]["va_cod_fam"].ToString();
+            tb_nom_fap.Text = tab_inv003.Rows[0]["va_nom_fam"].ToString();
+        }
+        //-----------------Marca-----------
+        public void fu_rec_mar(string cod_mar)
+        {
+            if (cod_mar.Trim() == "")
+            {
+                tb_nom_mar.Text = "** NO existe";
+                return;
+            }
 
+            tab_inv004 = o_inv004._05(int.Parse(cod_mar));
+            if (tab_inv004.Rows.Count == 0)
+            {
+                tb_nom_mar.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_mar.Text = tab_inv003.Rows[0]["va_cod_mar"].ToString();
+            tb_nom_mar.Text = tab_inv003.Rows[0]["va_nom_mar"].ToString();
         }
 
-        public void fu_rec_dos(string cod_dos)
+        
+        //------------Unidad de Medida-----------------
+        public void fu_rec_umd(string cod_umd)
         {
-            if (cod_dos.Trim() == "")
+            if (cod_umd.Trim() == "")
             {
-                tb_nro_aut.Text = "";
+                tb_nom_pro.Text = "** NO existe";
                 return;
             }
 
-            if (cod_dos != "0")
+            tab_inv003 = o_inv003._05(cod_umd);
+            if (tab_inv003.Rows.Count == 0)
             {
-                tab_ctb007 = o_ctb007._05(Int64.Parse(cod_dos));
-                if (tab_ctb007.Rows.Count == 0)
-                {
-                    tb_nro_aut.Text = "";
-                    return;
-                }
-
-                tb_nro_aut.Text = cod_dos;
+                tb_nom_pro.Text = "** NO existe";
+                return;
             }
-        }
 
+            tb_uni_inv.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+            tb_nom_inv.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+        }
+        //------------Unidad de Medida En ventas----------------
+        public void fu_rec_umv(string cod_umv)
+        {
+            if (cod_umv.Trim() == "")
+            {
+                tb_nom_ven.Text = "** NO existe";
+                return;
+            }
+
+            tab_inv003 = o_inv003._05(cod_umv);
+            if (tab_inv003.Rows.Count == 0)
+            {
+                tb_nom_ven.Text = "** NO existe";
+                return;
+            }
+
+            tb_uni_ven.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+            tb_nom_ven.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+        }
+        //------------Unidad de Medida en Compras-----------------
+        public void fu_rec_umc(string cod_umc)
+        {
+            if (cod_umc.Trim() == "")
+            {
+                tb_nom_com.Text = "** NO existe";
+                return;
+            }
+
+            tab_inv003 = o_inv003._05(cod_umc);
+            if (tab_inv003.Rows.Count == 0)
+            {
+                tb_nom_com.Text = "** NO existe";
+                return;
+            }
+
+            tb_uni_com.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+            tb_nom_com.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+        }
 
         #endregion
 
@@ -249,32 +306,53 @@ namespace CREARSIS._4_INV.inv002_pro_
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Nuevo Producto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Grupo de Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Producto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
                     return;
                 }
+                //----------- chekbox--
+                int var_lot = 0;
+                int var_ser = 0;
+                int var_ven = 0;
+                int var_com = 0;
 
-                //Graba datos GRUPO DE Almacén
-                o_inv010._02(int.Parse(tb_cod_gru.Text), int.Parse(tb_cod_sucu.Text), int.Parse(tb_nro_gru.Text), tb_nom_gru.Text, tb_des_gru.Text);
+                if(chk_lot.Checked==true)
+                {
+                    var_lot = 1;
+                }
+                if (chk_ser.Checked == true)
+                {
+                    var_ser = 1;
+                }
+                if (chk_ven.Checked == true)
+                {
+                    var_ven = 1;
+                }
+                if (chk_com.Checked == true)
+                {
+                    var_com = 1;
+                }
 
-                vg_frm_pad.fu_sel_fila(tb_cod_gru.Text, tb_nom_gru.Text);
+                //Graba datos Producto
+                o_inv002._02(tb_cod_pro.Text,tb_cod_fap.Text,tb_uni_inv.Text,tb_uni_com.Text,tb_uni_ven.Text,tb_cod_mar.Text,tb_nom_pro.Text,tb_des_pro.Text,tb_cod_bar.Text,tb_fab_ric.Text,tb_eqv_com.Text,tb_eqv_ven.Text,var_ser,var_ven,var_com,var_lot);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Actualiza la grilla de busqueda en la ventana padre
+                vg_frm_pad.fu_sel_fila(tb_cod_pro.Text, tb_cod_pro.Text, tb_nom_pro.Text);
 
-
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fu_lim_frm();
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show(ex.Message, "Error Nuevo Grupo de Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(ex.Message, "Error Nuevo Producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -282,10 +360,11 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             Close();
         }
+
         //Buton Flia Producto
         private void tb_cod_flia_ButtonCustomClick(object sender, EventArgs e)
         {
-            adm007_01 obj = new adm007_01();
+            inv001_01 obj = new inv001_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
 
@@ -294,9 +373,95 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             if (e.KeyData == Keys.Up)
             {
-                adm007_01 obj = new adm007_01();
+                inv001_01 obj = new inv001_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
+        }
+        //validat flia producto
+        private void tb_cod_fap_Validated(object sender, EventArgs e)
+        {
+            fu_rec_fam(tb_cod_fap.Text);
+        }
+        //Buton marca
+        private void tb_cod_mar_ButtonCustomClick(object sender, EventArgs e)
+        {
+            inv004_01 obj = new inv004_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+        //Keydown flia marca
+        private void tb_cod_mar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                inv004_01 obj = new inv004_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+        //validate marca
+        private void tb_cod_mar_Validated(object sender, EventArgs e)
+        {
+            fu_rec_mar(tb_cod_mar.Text);
+        }
+        //keydown unidad de medida
+        private void tb_uni_inv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                inv003_01 obj = new inv003_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+        //keydown unidad de medida
+        private void tb_uni_inv_Validated(object sender, EventArgs e)
+        {
+            fu_rec_umd(tb_cod_mar.Text);
+        }
+
+        private void tb_uni_ven_ButtonCustomClick(object sender, EventArgs e)
+        {
+            inv003_01 obj = new inv003_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_uni_ven_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                inv003_01 obj = new inv003_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_uni_ven_Validated(object sender, EventArgs e)
+        {
+            fu_rec_umv(tb_uni_ven.Text);
+        }
+
+        private void tb_uni_com_ButtonCustomClick(object sender, EventArgs e)
+        {
+            inv003_01 obj = new inv003_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_uni_com_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                inv003_01 obj = new inv003_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_uni_com_Validated(object sender, EventArgs e)
+        {
+            fu_rec_umc(tb_uni_com.Text);
+        }
+        #endregion
+
+        private void tb_uni_inv_ButtonCustomClick(object sender, EventArgs e)
+        {
+            inv003_01 obj = new inv003_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
         }
     }
 }

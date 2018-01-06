@@ -164,13 +164,13 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_fam">Codigo de la familia de producto</param>
         /// <returns></returns>
-        public DataTable _05(string cod_mar)
+        public DataTable _05(string cod_fam)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv001 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_fam = " + "'" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_fam = " + "'" + cod_fam + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 

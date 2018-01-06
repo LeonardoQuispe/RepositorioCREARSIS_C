@@ -136,13 +136,13 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <returns></returns>
-        public DataTable _05(string cod_mar)
+        public DataTable _05(string cod_umd)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv003 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_umd = " + "'" + cod_mar + "'");
+                vv_str_sql.AppendLine(" WHERE  va_cod_umd = " + "'" + cod_umd + "'");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 

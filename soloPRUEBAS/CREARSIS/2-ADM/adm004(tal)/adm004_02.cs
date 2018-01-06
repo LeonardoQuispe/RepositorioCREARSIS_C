@@ -359,6 +359,7 @@ namespace CREARSIS
 
         #endregion
 
+
         private void tb_cod_ges_TextChanged(object sender, EventArgs e)
         {
             tb_cod_ges.Text = o_mg_glo_bal.valida_numeros(tb_cod_ges.Text);

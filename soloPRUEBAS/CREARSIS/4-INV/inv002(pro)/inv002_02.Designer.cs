@@ -32,7 +32,6 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
             this.tb_nom_inv = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.tb_uni_inv = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -51,7 +50,7 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_flia = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_fap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.listBoxItem2 = new DevComponents.DotNetBar.ListBoxItem();
             this.listBoxItem1 = new DevComponents.DotNetBar.ListBoxItem();
             this.listBoxItem3 = new DevComponents.DotNetBar.ListBoxItem();
@@ -59,7 +58,6 @@
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.chk_ven = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.chk_com = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_ser = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_lot = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.bt_eli_img = new DevComponents.DotNetBar.ButtonX();
@@ -71,11 +69,12 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.tb_eqv_com = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nom_com = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.tb_inv_com = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_uni_com = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_eqv_ven = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.chk_com = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
@@ -132,7 +131,6 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.tb_cod_fap);
             this.GroupBox1.Controls.Add(this.tb_nom_inv);
             this.GroupBox1.Controls.Add(this.labelX16);
             this.GroupBox1.Controls.Add(this.tb_uni_inv);
@@ -151,30 +149,13 @@
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.Controls.Add(this.labelX11);
             this.GroupBox1.Controls.Add(this.labelX12);
-            this.GroupBox1.Controls.Add(this.tb_cod_flia);
+            this.GroupBox1.Controls.Add(this.tb_cod_fap);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(1, -8);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(529, 253);
             this.GroupBox1.TabIndex = 3;
             this.GroupBox1.TabStop = false;
-            // 
-            // tb_cod_fap
-            // 
-            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
-            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_fap.Location = new System.Drawing.Point(102, 19);
-            this.tb_cod_fap.Mask = "00-00-00";
-            this.tb_cod_fap.Name = "tb_cod_fap";
-            this.tb_cod_fap.PromptChar = ' ';
-            this.tb_cod_fap.Size = new System.Drawing.Size(62, 26);
-            this.tb_cod_fap.TabIndex = 85;
-            this.tb_cod_fap.TabStop = false;
-            this.tb_cod_fap.Text = "000000";
-            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_fap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_fap_KeyDown);
             // 
             // tb_nom_inv
             // 
@@ -230,6 +211,9 @@
             this.tb_uni_inv.PreventEnterBeep = true;
             this.tb_uni_inv.Size = new System.Drawing.Size(53, 26);
             this.tb_uni_inv.TabIndex = 83;
+            this.tb_uni_inv.ButtonCustomClick += new System.EventHandler(this.tb_uni_inv_ButtonCustomClick);
+            this.tb_uni_inv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_uni_inv_KeyDown);
+            this.tb_uni_inv.Validated += new System.EventHandler(this.tb_uni_inv_Validated);
             // 
             // tb_des_pro
             // 
@@ -303,6 +287,9 @@
             this.tb_cod_mar.PreventEnterBeep = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(53, 26);
             this.tb_cod_mar.TabIndex = 9;
+            this.tb_cod_mar.ButtonCustomClick += new System.EventHandler(this.tb_cod_mar_ButtonCustomClick);
+            this.tb_cod_mar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_mar_KeyDown);
+            this.tb_cod_mar.Validated += new System.EventHandler(this.tb_cod_mar_Validated);
             // 
             // tb_fab_ric
             // 
@@ -494,26 +481,27 @@
             this.labelX12.Text = "Flia. Producto";
             this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // tb_cod_flia
+            // tb_cod_fap
             // 
-            this.tb_cod_flia.BackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_cod_flia.Border.Class = "TextBoxBorder";
-            this.tb_cod_flia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_flia.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_flia.ButtonCustom.Symbol = "";
-            this.tb_cod_flia.ButtonCustom.Visible = true;
-            this.tb_cod_flia.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_flia.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_flia.Location = new System.Drawing.Point(156, 19);
-            this.tb_cod_flia.MaxLength = 4;
-            this.tb_cod_flia.Name = "tb_cod_flia";
-            this.tb_cod_flia.PreventEnterBeep = true;
-            this.tb_cod_flia.Size = new System.Drawing.Size(39, 26);
-            this.tb_cod_flia.TabIndex = 1;
-            this.tb_cod_flia.ButtonCustomClick += new System.EventHandler(this.tb_cod_flia_ButtonCustomClick);
+            this.tb_cod_fap.Border.Class = "TextBoxBorder";
+            this.tb_cod_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_fap.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_fap.ButtonCustom.Symbol = "";
+            this.tb_cod_fap.ButtonCustom.Visible = true;
+            this.tb_cod_fap.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_fap.Location = new System.Drawing.Point(100, 20);
+            this.tb_cod_fap.MaxLength = 4;
+            this.tb_cod_fap.Name = "tb_cod_fap";
+            this.tb_cod_fap.PreventEnterBeep = true;
+            this.tb_cod_fap.Size = new System.Drawing.Size(94, 26);
+            this.tb_cod_fap.TabIndex = 1;
+            this.tb_cod_fap.ButtonCustomClick += new System.EventHandler(this.tb_cod_flia_ButtonCustomClick);
+            this.tb_cod_fap.Validated += new System.EventHandler(this.tb_cod_fap_Validated);
             // 
             // listBoxItem2
             // 
@@ -533,10 +521,10 @@
             // GroupBox3
             // 
             this.GroupBox3.BackColor = System.Drawing.Color.White;
+            this.GroupBox3.Controls.Add(this.chk_com);
             this.GroupBox3.Controls.Add(this.textBoxX1);
             this.GroupBox3.Controls.Add(this.labelX9);
             this.GroupBox3.Controls.Add(this.chk_ven);
-            this.GroupBox3.Controls.Add(this.chk_com);
             this.GroupBox3.Controls.Add(this.chk_ser);
             this.GroupBox3.Controls.Add(this.chk_lot);
             this.GroupBox3.Controls.Add(this.bt_eli_img);
@@ -590,25 +578,12 @@
             // 
             // 
             this.chk_ven.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_ven.Location = new System.Drawing.Point(119, 277);
+            this.chk_ven.Location = new System.Drawing.Point(6, 278);
             this.chk_ven.Name = "chk_ven";
             this.chk_ven.Size = new System.Drawing.Size(80, 18);
             this.chk_ven.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chk_ven.TabIndex = 114;
             this.chk_ven.Text = "Venta";
-            // 
-            // chk_com
-            // 
-            // 
-            // 
-            // 
-            this.chk_com.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_com.Location = new System.Drawing.Point(6, 277);
-            this.chk_com.Name = "chk_com";
-            this.chk_com.Size = new System.Drawing.Size(80, 18);
-            this.chk_com.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chk_com.TabIndex = 113;
-            this.chk_com.Text = "Compra";
             // 
             // chk_ser
             // 
@@ -682,9 +657,9 @@
             this.groupBox2.Controls.Add(this.labelX4);
             this.groupBox2.Controls.Add(this.tb_eqv_com);
             this.groupBox2.Controls.Add(this.labelX8);
-            this.groupBox2.Controls.Add(this.textBoxX6);
+            this.groupBox2.Controls.Add(this.tb_nom_com);
             this.groupBox2.Controls.Add(this.labelX3);
-            this.groupBox2.Controls.Add(this.tb_inv_com);
+            this.groupBox2.Controls.Add(this.tb_uni_com);
             this.groupBox2.Controls.Add(this.tb_eqv_ven);
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
@@ -731,6 +706,9 @@
             this.tb_uni_ven.PreventEnterBeep = true;
             this.tb_uni_ven.Size = new System.Drawing.Size(53, 26);
             this.tb_uni_ven.TabIndex = 99;
+            this.tb_uni_ven.ButtonCustomClick += new System.EventHandler(this.tb_uni_ven_ButtonCustomClick);
+            this.tb_uni_ven.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_uni_ven_KeyDown);
+            this.tb_uni_ven.Validated += new System.EventHandler(this.tb_uni_ven_Validated);
             // 
             // labelX4
             // 
@@ -784,23 +762,23 @@
             this.labelX8.Text = "Eq. Inventario";
             this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // textBoxX6
+            // tb_nom_com
             // 
-            this.textBoxX6.BackColor = System.Drawing.Color.White;
+            this.tb_nom_com.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(161, 61);
-            this.textBoxX6.MaxLength = 40;
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.ReadOnly = true;
-            this.textBoxX6.Size = new System.Drawing.Size(149, 26);
-            this.textBoxX6.TabIndex = 92;
+            this.tb_nom_com.Border.Class = "TextBoxBorder";
+            this.tb_nom_com.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_com.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_com.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_com.Location = new System.Drawing.Point(161, 61);
+            this.tb_nom_com.MaxLength = 40;
+            this.tb_nom_com.Name = "tb_nom_com";
+            this.tb_nom_com.PreventEnterBeep = true;
+            this.tb_nom_com.ReadOnly = true;
+            this.tb_nom_com.Size = new System.Drawing.Size(149, 26);
+            this.tb_nom_com.TabIndex = 92;
             // 
             // labelX3
             // 
@@ -819,25 +797,28 @@
             this.labelX3.Text = "Unid. Compra";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // tb_inv_com
+            // tb_uni_com
             // 
-            this.tb_inv_com.BackColor = System.Drawing.Color.White;
+            this.tb_uni_com.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_inv_com.Border.Class = "TextBoxBorder";
-            this.tb_inv_com.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_inv_com.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_inv_com.ButtonCustom.Symbol = "";
-            this.tb_inv_com.ButtonCustom.Visible = true;
-            this.tb_inv_com.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_inv_com.ForeColor = System.Drawing.Color.Black;
-            this.tb_inv_com.Location = new System.Drawing.Point(102, 60);
-            this.tb_inv_com.MaxLength = 4;
-            this.tb_inv_com.Name = "tb_inv_com";
-            this.tb_inv_com.PreventEnterBeep = true;
-            this.tb_inv_com.Size = new System.Drawing.Size(53, 26);
-            this.tb_inv_com.TabIndex = 91;
+            this.tb_uni_com.Border.Class = "TextBoxBorder";
+            this.tb_uni_com.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_uni_com.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_uni_com.ButtonCustom.Symbol = "";
+            this.tb_uni_com.ButtonCustom.Visible = true;
+            this.tb_uni_com.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_uni_com.ForeColor = System.Drawing.Color.Black;
+            this.tb_uni_com.Location = new System.Drawing.Point(102, 60);
+            this.tb_uni_com.MaxLength = 4;
+            this.tb_uni_com.Name = "tb_uni_com";
+            this.tb_uni_com.PreventEnterBeep = true;
+            this.tb_uni_com.Size = new System.Drawing.Size(53, 26);
+            this.tb_uni_com.TabIndex = 91;
+            this.tb_uni_com.ButtonCustomClick += new System.EventHandler(this.tb_uni_com_ButtonCustomClick);
+            this.tb_uni_com.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_uni_com_KeyDown);
+            this.tb_uni_com.Validated += new System.EventHandler(this.tb_uni_com_Validated);
             // 
             // tb_eqv_ven
             // 
@@ -873,6 +854,19 @@
             this.labelX7.TabIndex = 85;
             this.labelX7.Text = "Eq. Inventario";
             this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // chk_com
+            // 
+            // 
+            // 
+            // 
+            this.chk_com.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_com.Location = new System.Drawing.Point(119, 278);
+            this.chk_com.Name = "chk_com";
+            this.chk_com.Size = new System.Drawing.Size(80, 18);
+            this.chk_com.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chk_com.TabIndex = 115;
+            this.chk_com.Text = "Compra";
             // 
             // inv002_02
             // 
@@ -922,7 +916,7 @@
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal DevComponents.DotNetBar.LabelX labelX11;
         internal DevComponents.DotNetBar.LabelX labelX12;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_flia;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_fap;
         private DevComponents.DotNetBar.ListBoxItem listBoxItem2;
         private DevComponents.DotNetBar.ListBoxItem listBoxItem1;
         private DevComponents.DotNetBar.ListBoxItem listBoxItem3;
@@ -944,16 +938,15 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_lot;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_eqv_com;
         internal DevComponents.DotNetBar.LabelX labelX8;
-        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_com;
         internal DevComponents.DotNetBar.LabelX labelX3;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_inv_com;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_uni_com;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_ven;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_uni_ven;
         internal DevComponents.DotNetBar.LabelX labelX4;
-        internal System.Windows.Forms.MaskedTextBox tb_cod_fap;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_ven;
-        private DevComponents.DotNetBar.Controls.CheckBoxX chk_com;
         internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         internal DevComponents.DotNetBar.LabelX labelX9;
+        private DevComponents.DotNetBar.Controls.CheckBoxX chk_com;
     }
 }
