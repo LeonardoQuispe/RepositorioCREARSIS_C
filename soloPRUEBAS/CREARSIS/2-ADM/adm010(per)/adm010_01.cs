@@ -183,6 +183,11 @@ namespace CREARSIS._2_ADM.adm010_per_
             {
                 foreach (DataRow row in tab_adm010.Rows)
                 {
+                    //Inicializa las bandera en falso
+                    va_ban_cli = false;
+                    va_ban_pro = false;
+                    va_ban_emp = false;
+
                     //agregar ceros al inicio de los codigos con 7 DIGITOS
                     va_cod_per = row["va_cod_per"].ToString().PadLeft(7, '0');
 
@@ -225,9 +230,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
 
-                    va_ban_cli = false;
-                    va_ban_pro = false;
-                    va_ban_emp = false;
+                    
                 }                
             }
 

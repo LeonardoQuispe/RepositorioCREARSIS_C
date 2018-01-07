@@ -32,11 +32,11 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_gru = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -108,24 +108,6 @@
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Codigo";
             // 
-            // tb_cod_gru
-            // 
-            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_gru.Border.Class = "TextBoxBorder";
-            this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_gru.Enabled = false;
-            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_gru.Location = new System.Drawing.Point(77, 18);
-            this.tb_cod_gru.MaxLength = 2;
-            this.tb_cod_gru.Name = "tb_cod_gru";
-            this.tb_cod_gru.PreventEnterBeep = true;
-            this.tb_cod_gru.Size = new System.Drawing.Size(52, 22);
-            this.tb_cod_gru.TabIndex = 10;
-            // 
             // LabelX2
             // 
             this.LabelX2.AutoSize = true;
@@ -145,9 +127,9 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_cod_gru);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.LabelX1);
-            this.GroupBox1.Controls.Add(this.tb_cod_gru);
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.tb_nom_gru);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
@@ -189,6 +171,21 @@
             this.GroupBox2.TabIndex = 71;
             this.GroupBox2.TabStop = false;
             // 
+            // tb_cod_gru
+            // 
+            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_gru.Location = new System.Drawing.Point(77, 19);
+            this.tb_cod_gru.Mask = "00";
+            this.tb_cod_gru.Name = "tb_cod_gru";
+            this.tb_cod_gru.PromptChar = ' ';
+            this.tb_cod_gru.Size = new System.Drawing.Size(35, 22);
+            this.tb_cod_gru.TabIndex = 74;
+            this.tb_cod_gru.TabStop = false;
+            this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
             // adm011_04
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -220,10 +217,10 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.LabelX LabelX1;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_gru;
         internal DevComponents.DotNetBar.LabelX LabelX2;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal System.Windows.Forms.GroupBox GroupBox2;
+        internal System.Windows.Forms.MaskedTextBox tb_cod_gru;
     }
 }

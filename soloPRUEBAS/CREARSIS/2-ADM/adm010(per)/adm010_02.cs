@@ -24,6 +24,8 @@ namespace CREARSIS._2_ADM.adm010_per_
         string err_msg = "";
         DataTable tab_adm010;
         DataTable tab_adm011;
+        string tmp = "";
+        int tmp2;
 
 
         c_adm010 o_adm010 = new c_adm010();
@@ -135,9 +137,6 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         private void tb_nro_per_Validated(object sender, EventArgs e)
         {
-            string tmp = "";
-            int tmp2;
-
             if (string.IsNullOrWhiteSpace(tb_nro_per.Text) != true)
             {
                 if (int.TryParse(tb_nro_per.Text, out tmp2) != false)
@@ -224,7 +223,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
 
             //**Verifica Grupo de PErsona
-            int tmp;
+            int tmp2;
 
             if (tb_cod_gru.Text.Trim() == "")
             {
@@ -232,7 +231,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Debes proporcionar el Grupo de Persona";
             }
 
-            if (int.TryParse(tb_cod_gru.Text.Trim(), out tmp) == false)
+            if (int.TryParse(tb_cod_gru.Text.Trim(), out tmp2) == false)
             {
                 tb_cod_gru.Focus();
                 return "El Codigo del Grupo de Persona NO es valido";
@@ -286,7 +285,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 tb_nit_per.Focus();
                 return "Debes proporcionar el NIT/CI de la Persona";
             }
-            if (int.TryParse(tb_nit_per.Text.Trim(),out tmp)==false)
+            if (int.TryParse(tb_nit_per.Text.Trim(),out tmp2)==false)
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI debe ser numérico";
@@ -305,7 +304,13 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         public void fu_rec_gru(string cod_gru)
         {
-            string tmp = "";
+
+            if (int.TryParse(cod_gru,out tmp2)==false)
+            {
+                tb_cod_gru.Text = "";
+                tb_nom_gru.Text = "** NO existe";
+                return;
+            }
 
             if (cod_gru.Trim() == "")
             {

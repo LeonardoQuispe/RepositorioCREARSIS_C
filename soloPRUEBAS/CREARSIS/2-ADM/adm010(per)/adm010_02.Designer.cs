@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.tb_cel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.tb_dir_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.tb_ema_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.tb_tel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tab_gen = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.cb_tip_cam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.itm_bs = new DevComponents.Editors.ComboItem();
@@ -55,6 +45,16 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pre_cli = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tab_cli = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tb_cel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.tb_dir_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.tb_ema_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.tb_tel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tab_gen = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tb_nom_pag_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
@@ -87,8 +87,8 @@
             this.listBoxItem3 = new DevComponents.DotNetBar.ListBoxItem();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
-            this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
+            this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
@@ -114,9 +114,9 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(9, 251);
             this.superTabControl1.Name = "superTabControl1";
@@ -131,157 +131,6 @@
             this.tab_cli,
             this.tab_prv});
             this.superTabControl1.Text = "superTabControl1";
-            // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.Controls.Add(this.tb_cel_gen);
-            this.superTabControlPanel1.Controls.Add(this.labelX7);
-            this.superTabControlPanel1.Controls.Add(this.tb_dir_gen);
-            this.superTabControlPanel1.Controls.Add(this.labelX3);
-            this.superTabControlPanel1.Controls.Add(this.tb_ema_gen);
-            this.superTabControlPanel1.Controls.Add(this.labelX4);
-            this.superTabControlPanel1.Controls.Add(this.labelX9);
-            this.superTabControlPanel1.Controls.Add(this.tb_tel_gen);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(417, 141);
-            this.superTabControlPanel1.TabIndex = 0;
-            this.superTabControlPanel1.TabItem = this.tab_gen;
-            // 
-            // tb_cel_gen
-            // 
-            this.tb_cel_gen.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cel_gen.Border.Class = "TextBoxBorder";
-            this.tb_cel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cel_gen.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cel_gen.ForeColor = System.Drawing.Color.Black;
-            this.tb_cel_gen.Location = new System.Drawing.Point(274, 61);
-            this.tb_cel_gen.MaxLength = 15;
-            this.tb_cel_gen.Name = "tb_cel_gen";
-            this.tb_cel_gen.PreventEnterBeep = true;
-            this.tb_cel_gen.Size = new System.Drawing.Size(115, 22);
-            this.tb_cel_gen.TabIndex = 5;
-            // 
-            // labelX7
-            // 
-            this.labelX7.AutoSize = true;
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(56, 23);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(48, 17);
-            this.labelX7.TabIndex = 0;
-            this.labelX7.Text = "Dirección";
-            // 
-            // tb_dir_gen
-            // 
-            this.tb_dir_gen.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_dir_gen.Border.Class = "TextBoxBorder";
-            this.tb_dir_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_dir_gen.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_dir_gen.ForeColor = System.Drawing.Color.Black;
-            this.tb_dir_gen.Location = new System.Drawing.Point(110, 22);
-            this.tb_dir_gen.MaxLength = 80;
-            this.tb_dir_gen.Name = "tb_dir_gen";
-            this.tb_dir_gen.PreventEnterBeep = true;
-            this.tb_dir_gen.Size = new System.Drawing.Size(279, 22);
-            this.tb_dir_gen.TabIndex = 1;
-            // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(76, 100);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(28, 17);
-            this.labelX3.TabIndex = 6;
-            this.labelX3.Text = "Email";
-            // 
-            // tb_ema_gen
-            // 
-            this.tb_ema_gen.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_ema_gen.Border.Class = "TextBoxBorder";
-            this.tb_ema_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_ema_gen.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_ema_gen.ForeColor = System.Drawing.Color.Black;
-            this.tb_ema_gen.Location = new System.Drawing.Point(110, 98);
-            this.tb_ema_gen.MaxLength = 80;
-            this.tb_ema_gen.Name = "tb_ema_gen";
-            this.tb_ema_gen.PreventEnterBeep = true;
-            this.tb_ema_gen.Size = new System.Drawing.Size(279, 22);
-            this.tb_ema_gen.TabIndex = 7;
-            // 
-            // labelX4
-            // 
-            this.labelX4.AutoSize = true;
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(236, 64);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(36, 17);
-            this.labelX4.TabIndex = 4;
-            this.labelX4.Text = "Celular";
-            // 
-            // labelX9
-            // 
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.ForeColor = System.Drawing.Color.Black;
-            this.labelX9.Location = new System.Drawing.Point(59, 60);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(45, 23);
-            this.labelX9.TabIndex = 2;
-            this.labelX9.Text = "Telefono";
-            // 
-            // tb_tel_gen
-            // 
-            this.tb_tel_gen.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_tel_gen.Border.Class = "TextBoxBorder";
-            this.tb_tel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_tel_gen.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_tel_gen.ForeColor = System.Drawing.Color.Black;
-            this.tb_tel_gen.Location = new System.Drawing.Point(110, 61);
-            this.tb_tel_gen.MaxLength = 15;
-            this.tb_tel_gen.Name = "tb_tel_gen";
-            this.tb_tel_gen.PreventEnterBeep = true;
-            this.tb_tel_gen.Size = new System.Drawing.Size(115, 22);
-            this.tb_tel_gen.TabIndex = 3;
-            // 
-            // tab_gen
-            // 
-            this.tab_gen.AttachedControl = this.superTabControlPanel1;
-            this.tab_gen.GlobalItem = false;
-            this.tab_gen.Name = "tab_gen";
-            this.tab_gen.Text = "General";
             // 
             // superTabControlPanel2
             // 
@@ -536,6 +385,157 @@
             this.tab_cli.Name = "tab_cli";
             this.tab_cli.Text = "Cliente";
             this.tab_cli.Visible = false;
+            // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Controls.Add(this.tb_cel_gen);
+            this.superTabControlPanel1.Controls.Add(this.labelX7);
+            this.superTabControlPanel1.Controls.Add(this.tb_dir_gen);
+            this.superTabControlPanel1.Controls.Add(this.labelX3);
+            this.superTabControlPanel1.Controls.Add(this.tb_ema_gen);
+            this.superTabControlPanel1.Controls.Add(this.labelX4);
+            this.superTabControlPanel1.Controls.Add(this.labelX9);
+            this.superTabControlPanel1.Controls.Add(this.tb_tel_gen);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(417, 141);
+            this.superTabControlPanel1.TabIndex = 0;
+            this.superTabControlPanel1.TabItem = this.tab_gen;
+            // 
+            // tb_cel_gen
+            // 
+            this.tb_cel_gen.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cel_gen.Border.Class = "TextBoxBorder";
+            this.tb_cel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cel_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cel_gen.ForeColor = System.Drawing.Color.Black;
+            this.tb_cel_gen.Location = new System.Drawing.Point(274, 61);
+            this.tb_cel_gen.MaxLength = 15;
+            this.tb_cel_gen.Name = "tb_cel_gen";
+            this.tb_cel_gen.PreventEnterBeep = true;
+            this.tb_cel_gen.Size = new System.Drawing.Size(115, 22);
+            this.tb_cel_gen.TabIndex = 5;
+            // 
+            // labelX7
+            // 
+            this.labelX7.AutoSize = true;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.ForeColor = System.Drawing.Color.Black;
+            this.labelX7.Location = new System.Drawing.Point(56, 23);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(48, 17);
+            this.labelX7.TabIndex = 0;
+            this.labelX7.Text = "Dirección";
+            // 
+            // tb_dir_gen
+            // 
+            this.tb_dir_gen.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_dir_gen.Border.Class = "TextBoxBorder";
+            this.tb_dir_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_dir_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_dir_gen.ForeColor = System.Drawing.Color.Black;
+            this.tb_dir_gen.Location = new System.Drawing.Point(110, 22);
+            this.tb_dir_gen.MaxLength = 80;
+            this.tb_dir_gen.Name = "tb_dir_gen";
+            this.tb_dir_gen.PreventEnterBeep = true;
+            this.tb_dir_gen.Size = new System.Drawing.Size(279, 22);
+            this.tb_dir_gen.TabIndex = 1;
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(76, 100);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(28, 17);
+            this.labelX3.TabIndex = 6;
+            this.labelX3.Text = "Email";
+            // 
+            // tb_ema_gen
+            // 
+            this.tb_ema_gen.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_ema_gen.Border.Class = "TextBoxBorder";
+            this.tb_ema_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_ema_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_ema_gen.ForeColor = System.Drawing.Color.Black;
+            this.tb_ema_gen.Location = new System.Drawing.Point(110, 98);
+            this.tb_ema_gen.MaxLength = 80;
+            this.tb_ema_gen.Name = "tb_ema_gen";
+            this.tb_ema_gen.PreventEnterBeep = true;
+            this.tb_ema_gen.Size = new System.Drawing.Size(279, 22);
+            this.tb_ema_gen.TabIndex = 7;
+            // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(236, 64);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(36, 17);
+            this.labelX4.TabIndex = 4;
+            this.labelX4.Text = "Celular";
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.ForeColor = System.Drawing.Color.Black;
+            this.labelX9.Location = new System.Drawing.Point(59, 60);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(45, 23);
+            this.labelX9.TabIndex = 2;
+            this.labelX9.Text = "Telefono";
+            // 
+            // tb_tel_gen
+            // 
+            this.tb_tel_gen.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_tel_gen.Border.Class = "TextBoxBorder";
+            this.tb_tel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_tel_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_tel_gen.ForeColor = System.Drawing.Color.Black;
+            this.tb_tel_gen.Location = new System.Drawing.Point(110, 61);
+            this.tb_tel_gen.MaxLength = 15;
+            this.tb_tel_gen.Name = "tb_tel_gen";
+            this.tb_tel_gen.PreventEnterBeep = true;
+            this.tb_tel_gen.Size = new System.Drawing.Size(115, 22);
+            this.tb_tel_gen.TabIndex = 3;
+            // 
+            // tab_gen
+            // 
+            this.tab_gen.AttachedControl = this.superTabControlPanel1;
+            this.tab_gen.GlobalItem = false;
+            this.tab_gen.Name = "tab_gen";
+            this.tab_gen.Text = "General";
             // 
             // superTabControlPanel3
             // 
@@ -1021,10 +1021,10 @@
             this.Load += new System.EventHandler(this.adm010_02_Load);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
-            this.superTabControlPanel1.PerformLayout();
             this.superTabControlPanel2.ResumeLayout(false);
             this.superTabControlPanel2.PerformLayout();
+            this.superTabControlPanel1.ResumeLayout(false);
+            this.superTabControlPanel1.PerformLayout();
             this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel3.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);
