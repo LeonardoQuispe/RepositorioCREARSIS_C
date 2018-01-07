@@ -199,11 +199,11 @@ namespace CREARSIS._2_ADM.adm010_per_
                     }
                     if (row["va_ban_pro"].ToString() == "1")
                     {
-                        va_ban_cli = true;
+                        va_ban_pro = true;
                     }
                     if (row["va_ban_emp"].ToString() == "1")
                     {
-                        va_ban_cli = true;
+                        va_ban_emp = true;
                     }
 
 
@@ -224,6 +224,10 @@ namespace CREARSIS._2_ADM.adm010_per_
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
+
+                    va_ban_cli = false;
+                    va_ban_pro = false;
+                    va_ban_emp = false;
                 }                
             }
 
