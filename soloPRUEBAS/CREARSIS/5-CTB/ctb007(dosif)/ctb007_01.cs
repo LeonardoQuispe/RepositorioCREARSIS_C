@@ -52,26 +52,29 @@ namespace CREARSIS
 
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Down)
+            if (dg_res_ult.Rows.Count != 0)
             {
-                if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                if (e.KeyData == Keys.Down)
                 {
-                    int fila = dg_res_ult.CurrentRow.Index + 1;
-                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                    fu_fil_act();
+                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index + 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
 
+                    }
                 }
-            }
 
-            //al presionar tecla para ARRIBA
-            if (e.KeyData == Keys.Up)
-            {
-                if (dg_res_ult.CurrentRow.Index != 0)
+                //al presionar tecla para ARRIBA
+                if (e.KeyData == Keys.Up)
                 {
-                    int fila = dg_res_ult.CurrentRow.Index - 1;
-                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                    fu_fil_act();
+                    if (dg_res_ult.CurrentRow.Index != 0)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index - 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
 
+                    }
                 }
             }
         }
@@ -107,10 +110,13 @@ namespace CREARSIS
 
         private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            vg_frm_pad.fu_rec_dos(tb_sel_ecc.Text);
+            if (gb_ctr_frm.Enabled == true)
+            {
+                vg_frm_pad.fu_rec_dos(tb_sel_ecc.Text);
 
-            vg_frm_pad.Enabled = true;
-            Close();
+                vg_frm_pad.Enabled = true;
+                Close();
+            }
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)

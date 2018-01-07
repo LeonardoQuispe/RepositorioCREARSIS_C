@@ -49,35 +49,38 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
         {
-            try
+            if (dg_res_ult.Rows.Count != 0)
             {
-                //al presionar tecla para ABAJO
-                if (e.KeyData == Keys.Down)
+                try
                 {
-                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                    //al presionar tecla para ABAJO
+                    if (e.KeyData == Keys.Down)
                     {
-                        int fila = dg_res_ult.CurrentRow.Index + 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
+                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        {
+                            int fila = dg_res_ult.CurrentRow.Index + 1;
+                            dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                            fu_fil_act();
 
+                        }
+                    }
+
+                    //al presionar tecla para ARRIBA
+                    if (e.KeyData == Keys.Up)
+                    {
+                        if (dg_res_ult.CurrentRow.Index != 0)
+                        {
+                            int fila = dg_res_ult.CurrentRow.Index - 1;
+                            dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                            fu_fil_act();
+
+                        }
                     }
                 }
-
-                //al presionar tecla para ARRIBA
-                if (e.KeyData == Keys.Up)
+                catch (Exception ex)
                 {
-                    if (dg_res_ult.CurrentRow.Index != 0)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index - 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
+                    MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,10 +101,13 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
+            if (gb_ctr_frm.Enabled == true)
+            {
+                //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
 
-            vg_frm_pad.Enabled = true;
-            Close();
+                vg_frm_pad.Enabled = true;
+                Close();
+            }
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -279,15 +285,15 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
             
 
-            tab_adm011 = o_adm011._05(int.Parse(tb_sel_ecc.Text));
-            if (tab_adm011.Rows.Count == 0)
+            tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
+            if (tab_adm010.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            tb_sel_ecc.Text = tab_adm011.Rows[0]["va_cod_per"].ToString().PadLeft(7, '0');
-            lb_sel_ecc.Text = tab_adm011.Rows[0]["va_nom_com"].ToString();
+            tb_sel_ecc.Text = tab_adm010.Rows[0]["va_cod_per"].ToString().PadLeft(7, '0');
+            lb_sel_ecc.Text = tab_adm010.Rows[0]["va_nom_com"].ToString();
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
@@ -310,7 +316,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm010 = o_adm010._05(int.Parse(tb_sel_ecc.Text));
+                tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
                 if (tab_adm010.Rows.Count == 0)
                 {
                     return "La Persona no se encuentra registrada";
@@ -337,7 +343,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm010 = o_adm010._05(int.Parse(tb_sel_ecc.Text));
+                tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
                 if (tab_adm010.Rows.Count == 0)
                 {
                     return "La Persona no se encuentra registrada";
@@ -357,7 +363,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 ///Si aun existe
-                tab_adm010 = o_adm010._05(int.Parse(tb_sel_ecc.Text));
+                tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
                 if (tab_adm010.Rows.Count == 0)
                 {
                     return "La Persona no se encuentra registrada";

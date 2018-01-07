@@ -68,38 +68,44 @@ namespace DATOS
 
         }
         /// <summary>
-        /// Funcion "Registrar persona"
+        /// Registrar "PERSONA"
         /// </summary>
-        /// <param name="cod_tpr">Codigo tipo persona (10=Cliente ...)</param>
-        /// <param name="cod_per">Codigo de la persona (990000)-> [99=codigo de tipo de persona ; 0000=codigo correlativo para la persona]</param>
-        /// <param name="raz_soc">Razon Social de la persona</param>
-        /// <param name="nom_per">Nombre de la persona</param>
-        /// <param name="ape_pat">Apellido paterno de la persona</param>
-        /// <param name="ape_mat">Apellido materno de la persona</param>
-        /// <param name="nit_per">Nit de la persona</param>
-        /// <param name="nro_cip">Nro de cedula de identidad de la persona</param>
+        /// <param name="cod_per">Codigo Persona (2 de Grup. Per y 5 de Persona)</param>
+        /// <param name="nro_per">Nro. de Persona (5 digitos)</param>
+        /// <param name="cod_gru">Cod Grupo Persona</param>
+        /// <param name="raz_soc">Razon social de la persona</param>
+        /// <param name="nom_com">Nombre comercial de la persona</param>
+        /// <param name="nit_ced">Nit/Cedula de la persona</param>
+        /// <param name="dir_per">Direccion de la persona</param>
         /// <param name="tel_per">Telefono de la persona</param>
         /// <param name="cel_per">Celular de la persona</param>
         /// <param name="ema_per">Email de la persona</param>
-        /// <param name="dir_per">Direccion de la persona</param>
-        /// <param name="ciu_dad">Ciudad donde vive la persona</param>
-        /// <param name="fec_nac">Fecha de nacimiento de la persona</param>
-        /// <param name="est_civ">Estado civil de la persona (0=soltero ; 1=casado ; 2=viudo ; 3=divorsiado)</param>
-        /// <param name="obs_per">>Observacion o detalle de la persona</param>
+        /// <param name="cod_lpr">Codigo de lista de precio</param>
+        /// <param name="cod_ven">Codigo de Vendedor asociado</param>
+        /// <param name="lim_cre">Limite de credito para el cliente</param>
+        /// <param name="mon_cre">Moneda del limite de credito (B=BOlivianos, U=Dolares americanos)</param>
+        /// <param name="con_pac">Condicion de pago del cliente</param>
+        /// <param name="con_pap">Condicion de pago del proveedor</param>
+        /// <param name="ban_cli">Bandera si identifica persona como cliente</param>
+        /// <param name="ban_pro">Bandera si identifica persona como proveedor</param>
+        /// <param name="ban_emp">Bandera si identifica persona como empleado</param>
         /// <returns></returns>
-        public DataTable _02(int cod_tpr, string cod_per, string raz_soc, string nom_per,
-        string ape_pat, string ape_mat, string nit_per, string nro_cip,
-        string tel_per, string cel_per, string ema_per, string dir_per,
-        string ciu_dad, DateTime fec_nac, int est_civ, string obs_per)
+        public DataTable _02(string cod_per,string nro_per,string cod_gru,string raz_soc,string nom_com,string nit_ced,string dir_per,
+                            string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,string lim_cre,string mon_cre,
+                            string con_pac,string con_pap,string ban_cli,string ban_pro,string ban_emp)
         {
             try
             {
+                if (lim_cre=="")
+                {
+                    lim_cre = "0.0";
+                }
+
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO adm010 VALUES ");
-                vv_str_sql.AppendLine(" (" + cod_tpr + ", '" + cod_per + "','" + raz_soc + "', '" + nom_per + "' ,");
-                vv_str_sql.AppendLine(" '" + ape_pat + "','" + ape_mat + "', '" + nit_per + "' , '" + nro_cip + "' , ");
-                vv_str_sql.AppendLine(" '" + tel_per + "','" + cel_per + "','" + ema_per + "','" + dir_per + "',");
-                vv_str_sql.AppendLine(" '" + ciu_dad + "','" + fec_nac + "', " + est_civ + " , 'H','" + obs_per + "' )");
+                vv_str_sql.AppendFormat("('{0}','{1}','{2}','{3}','{4}','{5}','{6}',", cod_per, nro_per, cod_gru, raz_soc, nom_com, nit_ced, dir_per);
+                vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}','{4}','{5}','{6}',", tel_per, cel_per,ema_per,cod_lpr,cod_ven,lim_cre,mon_cre);
+                vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}','{4}','H')", con_pac, con_pap, ban_cli, ban_pro, ban_emp);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -178,7 +184,7 @@ namespace DATOS
         /// <summary>
         /// Funcion "Consulta persona"
         /// </summary>
-        /// <param name="cod_doc">Codigo del persona</param>
+        /// <param name="cod_per">Codigo del persona</param>
         /// <returns></returns>
         public DataTable _05(string cod_per)
         {
@@ -195,26 +201,26 @@ namespace DATOS
                 throw ex;
             }
         }
-        /// <summary>
-        /// Obtiene el numero correlativo de la persona a crear segun el tipo de persona
-        /// </summary>
-        /// <param name="cod_tpr">codigo tipo de persona</param>
-        /// <returns></returns>
-        public DataTable _05(int cod_tpr)
-        {
-            try
-            {
-                vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" select (( MAX( va_cod_per) %10000) + 1) as va_nro_per from adm010 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_tpr = " + cod_tpr + "");
+        ///// <summary>
+        ///// Obtiene el numero correlativo de la persona a crear segun el tipo de persona
+        ///// </summary>
+        ///// <param name="cod_tpr">codigo tipo de persona</param>
+        ///// <returns></returns>
+        //public DataTable _05(int cod_tpr)
+        //{
+        //    try
+        //    {
+        //        vv_str_sql = new StringBuilder();
+        //        vv_str_sql.AppendLine(" select (( MAX( va_cod_per) %10000) + 1) as va_nro_per from adm010 ");
+        //        vv_str_sql.AppendLine(" WHERE  va_cod_tpr = " + cod_tpr + "");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //        return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
         /// <summary>
         /// Funcion "Elimina persona"
         /// </summary>
