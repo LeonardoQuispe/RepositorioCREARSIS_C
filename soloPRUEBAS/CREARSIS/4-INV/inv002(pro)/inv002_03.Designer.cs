@@ -110,6 +110,7 @@
             this.tb_uni_com.ButtonCustom.Symbol = "";
             this.tb_uni_com.ButtonCustom.Visible = true;
             this.tb_uni_com.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_uni_com.Enabled = false;
             this.tb_uni_com.ForeColor = System.Drawing.Color.Black;
             this.tb_uni_com.Location = new System.Drawing.Point(102, 59);
             this.tb_uni_com.MaxLength = 3;
@@ -127,6 +128,7 @@
             this.tb_eqv_ven.Border.Class = "TextBoxBorder";
             this.tb_eqv_ven.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_eqv_ven.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_eqv_ven.Enabled = false;
             this.tb_eqv_ven.ForeColor = System.Drawing.Color.Black;
             this.tb_eqv_ven.Location = new System.Drawing.Point(406, 23);
             this.tb_eqv_ven.MaxLength = 7;
@@ -161,6 +163,7 @@
             this.tb_nom_inv.Border.Class = "TextBoxBorder";
             this.tb_nom_inv.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_inv.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_inv.Enabled = false;
             this.tb_nom_inv.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_inv.Location = new System.Drawing.Point(432, 216);
             this.tb_nom_inv.MaxLength = 40;
@@ -199,6 +202,7 @@
             this.tb_uni_inv.ButtonCustom.Symbol = "";
             this.tb_uni_inv.ButtonCustom.Visible = true;
             this.tb_uni_inv.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_uni_inv.Enabled = false;
             this.tb_uni_inv.ForeColor = System.Drawing.Color.Black;
             this.tb_uni_inv.Location = new System.Drawing.Point(373, 216);
             this.tb_uni_inv.MaxLength = 3;
@@ -206,6 +210,7 @@
             this.tb_uni_inv.PreventEnterBeep = true;
             this.tb_uni_inv.Size = new System.Drawing.Size(53, 22);
             this.tb_uni_inv.TabIndex = 17;
+            this.tb_uni_inv.Validated += new System.EventHandler(this.tb_uni_inv_Validated);
             // 
             // tb_des_pro
             // 
@@ -279,6 +284,9 @@
             this.tb_cod_mar.PreventEnterBeep = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(53, 22);
             this.tb_cod_mar.TabIndex = 14;
+            this.tb_cod_mar.ButtonCustomClick += new System.EventHandler(this.tb_cod_mar_ButtonCustomClick);
+            this.tb_cod_mar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_mar_KeyDown);
+            this.tb_cod_mar.Validated += new System.EventHandler(this.tb_cod_mar_Validated);
             // 
             // tb_fab_ric
             // 
@@ -360,6 +368,7 @@
             this.tb_uni_ven.ButtonCustom.Symbol = "";
             this.tb_uni_ven.ButtonCustom.Visible = true;
             this.tb_uni_ven.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_uni_ven.Enabled = false;
             this.tb_uni_ven.ForeColor = System.Drawing.Color.Black;
             this.tb_uni_ven.Location = new System.Drawing.Point(101, 23);
             this.tb_uni_ven.MaxLength = 3;
@@ -377,6 +386,7 @@
             this.tb_eqv_com.Border.Class = "TextBoxBorder";
             this.tb_eqv_com.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_eqv_com.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_eqv_com.Enabled = false;
             this.tb_eqv_com.ForeColor = System.Drawing.Color.Black;
             this.tb_eqv_com.Location = new System.Drawing.Point(406, 60);
             this.tb_eqv_com.MaxLength = 7;
@@ -411,6 +421,7 @@
             this.tb_nom_com.Border.Class = "TextBoxBorder";
             this.tb_nom_com.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_com.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_com.Enabled = false;
             this.tb_nom_com.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_com.Location = new System.Drawing.Point(161, 60);
             this.tb_nom_com.MaxLength = 40;
@@ -446,6 +457,7 @@
             this.tb_nom_fap.Border.Class = "TextBoxBorder";
             this.tb_nom_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_fap.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_fap.Enabled = false;
             this.tb_nom_fap.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_fap.Location = new System.Drawing.Point(201, 19);
             this.tb_nom_fap.MaxLength = 40;
@@ -480,11 +492,13 @@
             this.tb_cod_pro.Border.Class = "TextBoxBorder";
             this.tb_cod_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pro.Enabled = false;
             this.tb_cod_pro.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_pro.Location = new System.Drawing.Point(406, 19);
             this.tb_cod_pro.MaxLength = 15;
             this.tb_cod_pro.Name = "tb_cod_pro";
             this.tb_cod_pro.PreventEnterBeep = true;
+            this.tb_cod_pro.ReadOnly = true;
             this.tb_cod_pro.Size = new System.Drawing.Size(106, 22);
             this.tb_cod_pro.TabIndex = 4;
             // 
@@ -561,12 +575,12 @@
             this.tb_est_ado.Border.Class = "TextBoxBorder";
             this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
             this.tb_est_ado.Location = new System.Drawing.Point(547, 323);
             this.tb_est_ado.MaxLength = 40;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(183, 22);
             this.tb_est_ado.TabIndex = 18;
             // 
@@ -606,6 +620,7 @@
             // 
             // 
             this.chk_lot.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_lot.Enabled = false;
             this.chk_lot.Location = new System.Drawing.Point(549, 227);
             this.chk_lot.Name = "chk_lot";
             this.chk_lot.Size = new System.Drawing.Size(80, 18);
@@ -625,6 +640,7 @@
             this.tb_cod_fap.ButtonCustom.Symbol = "";
             this.tb_cod_fap.ButtonCustom.Visible = true;
             this.tb_cod_fap.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.Enabled = false;
             this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_fap.Location = new System.Drawing.Point(100, 19);
             this.tb_cod_fap.MaxLength = 6;
@@ -662,6 +678,7 @@
             this.tb_nom_ven.Border.Class = "TextBoxBorder";
             this.tb_nom_ven.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_ven.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_ven.Enabled = false;
             this.tb_nom_ven.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_ven.Location = new System.Drawing.Point(160, 24);
             this.tb_nom_ven.MaxLength = 40;
@@ -683,6 +700,7 @@
             this.bt_eli_img.Symbol = "";
             this.bt_eli_img.TabIndex = 1;
             this.bt_eli_img.Tooltip = "Eliminar Imagen cargada del producto";
+            this.bt_eli_img.Click += new System.EventHandler(this.bt_eli_img_Click);
             // 
             // pc_img_pro
             // 
@@ -709,6 +727,7 @@
             this.bt_bus_img.Symbol = "";
             this.bt_bus_img.TabIndex = 0;
             this.bt_bus_img.Tooltip = "Elegir imagen del producto";
+            this.bt_bus_img.Click += new System.EventHandler(this.bt_bus_img_Click);
             // 
             // GroupBox3
             // 
@@ -744,6 +763,7 @@
             // 
             // 
             this.chk_ser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_ser.Enabled = false;
             this.chk_ser.Location = new System.Drawing.Point(662, 227);
             this.chk_ser.Name = "chk_ser";
             this.chk_ser.Size = new System.Drawing.Size(70, 18);

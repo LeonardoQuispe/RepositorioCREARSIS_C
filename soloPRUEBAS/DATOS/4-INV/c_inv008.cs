@@ -67,6 +67,28 @@ namespace DATOS._4_INV
                 throw ex;
             }
         }
+        
+        /// <summary>
+        /// Funcion "Elimina Imagen"
+        /// </summary>
+        /// <param name="cod_pro">Codigo del producto</param>
+        /// <returns></returns>
+        public DataTable _06(string cod_pro)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" DELETE inv008 ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_pro = '" + cod_pro + "'");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }

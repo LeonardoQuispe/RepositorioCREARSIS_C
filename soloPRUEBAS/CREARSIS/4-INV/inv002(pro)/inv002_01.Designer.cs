@@ -455,15 +455,20 @@
             // 
             // inv002_01
             // 
+            this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(562, 317);
+            this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "inv002_01";
             this.Text = "Busca Producto";
             this.TitleText = "Busca Producto";

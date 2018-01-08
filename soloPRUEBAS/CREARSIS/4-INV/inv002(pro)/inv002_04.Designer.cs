@@ -115,6 +115,7 @@
             this.tb_uni_com.MaxLength = 3;
             this.tb_uni_com.Name = "tb_uni_com";
             this.tb_uni_com.PreventEnterBeep = true;
+            this.tb_uni_com.ReadOnly = true;
             this.tb_uni_com.Size = new System.Drawing.Size(53, 22);
             this.tb_uni_com.TabIndex = 6;
             // 
@@ -132,6 +133,7 @@
             this.tb_eqv_ven.MaxLength = 7;
             this.tb_eqv_ven.Name = "tb_eqv_ven";
             this.tb_eqv_ven.PreventEnterBeep = true;
+            this.tb_eqv_ven.ReadOnly = true;
             this.tb_eqv_ven.Size = new System.Drawing.Size(106, 22);
             this.tb_eqv_ven.TabIndex = 4;
             // 
@@ -204,6 +206,7 @@
             this.tb_uni_inv.MaxLength = 3;
             this.tb_uni_inv.Name = "tb_uni_inv";
             this.tb_uni_inv.PreventEnterBeep = true;
+            this.tb_uni_inv.ReadOnly = true;
             this.tb_uni_inv.Size = new System.Drawing.Size(53, 22);
             this.tb_uni_inv.TabIndex = 17;
             // 
@@ -222,6 +225,7 @@
             this.tb_des_pro.Multiline = true;
             this.tb_des_pro.Name = "tb_des_pro";
             this.tb_des_pro.PreventEnterBeep = true;
+            this.tb_des_pro.ReadOnly = true;
             this.tb_des_pro.Size = new System.Drawing.Size(412, 54);
             this.tb_des_pro.TabIndex = 8;
             // 
@@ -277,6 +281,7 @@
             this.tb_cod_mar.MaxLength = 3;
             this.tb_cod_mar.Name = "tb_cod_mar";
             this.tb_cod_mar.PreventEnterBeep = true;
+            this.tb_cod_mar.ReadOnly = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(53, 22);
             this.tb_cod_mar.TabIndex = 14;
             // 
@@ -294,6 +299,7 @@
             this.tb_fab_ric.MaxLength = 50;
             this.tb_fab_ric.Name = "tb_fab_ric";
             this.tb_fab_ric.PreventEnterBeep = true;
+            this.tb_fab_ric.ReadOnly = true;
             this.tb_fab_ric.Size = new System.Drawing.Size(144, 22);
             this.tb_fab_ric.TabIndex = 12;
             // 
@@ -328,6 +334,7 @@
             this.tb_cod_bar.MaxLength = 20;
             this.tb_cod_bar.Name = "tb_cod_bar";
             this.tb_cod_bar.PreventEnterBeep = true;
+            this.tb_cod_bar.ReadOnly = true;
             this.tb_cod_bar.Size = new System.Drawing.Size(190, 22);
             this.tb_cod_bar.TabIndex = 10;
             // 
@@ -365,6 +372,7 @@
             this.tb_uni_ven.MaxLength = 3;
             this.tb_uni_ven.Name = "tb_uni_ven";
             this.tb_uni_ven.PreventEnterBeep = true;
+            this.tb_uni_ven.ReadOnly = true;
             this.tb_uni_ven.Size = new System.Drawing.Size(53, 22);
             this.tb_uni_ven.TabIndex = 1;
             // 
@@ -382,6 +390,7 @@
             this.tb_eqv_com.MaxLength = 7;
             this.tb_eqv_com.Name = "tb_eqv_com";
             this.tb_eqv_com.PreventEnterBeep = true;
+            this.tb_eqv_com.ReadOnly = true;
             this.tb_eqv_com.Size = new System.Drawing.Size(107, 22);
             this.tb_eqv_com.TabIndex = 9;
             // 
@@ -434,6 +443,7 @@
             this.tb_nom_pro.MaxLength = 80;
             this.tb_nom_pro.Name = "tb_nom_pro";
             this.tb_nom_pro.PreventEnterBeep = true;
+            this.tb_nom_pro.ReadOnly = true;
             this.tb_nom_pro.Size = new System.Drawing.Size(411, 22);
             this.tb_nom_pro.TabIndex = 6;
             // 
@@ -451,6 +461,7 @@
             this.tb_nom_fap.MaxLength = 40;
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
+            this.tb_nom_fap.ReadOnly = true;
             this.tb_nom_fap.Size = new System.Drawing.Size(146, 22);
             this.tb_nom_fap.TabIndex = 2;
             // 
@@ -480,6 +491,7 @@
             this.tb_cod_pro.Border.Class = "TextBoxBorder";
             this.tb_cod_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pro.Enabled = false;
             this.tb_cod_pro.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_pro.Location = new System.Drawing.Point(406, 20);
             this.tb_cod_pro.MaxLength = 15;
@@ -545,6 +557,7 @@
             // 
             // 
             this.chk_com.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_com.Enabled = false;
             this.chk_com.Location = new System.Drawing.Point(662, 276);
             this.chk_com.Name = "chk_com";
             this.chk_com.Size = new System.Drawing.Size(70, 18);
@@ -576,6 +589,7 @@
             // 
             // 
             this.chk_ven.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_ven.Enabled = false;
             this.chk_ven.Location = new System.Drawing.Point(549, 276);
             this.chk_ven.Name = "chk_ven";
             this.chk_ven.Size = new System.Drawing.Size(80, 18);
@@ -606,6 +620,7 @@
             // 
             // 
             this.chk_lot.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_lot.Enabled = false;
             this.chk_lot.Location = new System.Drawing.Point(549, 227);
             this.chk_lot.Name = "chk_lot";
             this.chk_lot.Size = new System.Drawing.Size(80, 18);
@@ -630,6 +645,7 @@
             this.tb_cod_fap.MaxLength = 6;
             this.tb_cod_fap.Name = "tb_cod_fap";
             this.tb_cod_fap.PreventEnterBeep = true;
+            this.tb_cod_fap.ReadOnly = true;
             this.tb_cod_fap.Size = new System.Drawing.Size(94, 22);
             this.tb_cod_fap.TabIndex = 1;
             // 
@@ -675,6 +691,7 @@
             // 
             this.bt_eli_img.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_eli_img.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_eli_img.Enabled = false;
             this.bt_eli_img.Location = new System.Drawing.Point(156, 176);
             this.bt_eli_img.Name = "bt_eli_img";
             this.bt_eli_img.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(6);
@@ -701,6 +718,7 @@
             // 
             this.bt_bus_img.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_bus_img.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_bus_img.Enabled = false;
             this.bt_bus_img.Location = new System.Drawing.Point(6, 176);
             this.bt_bus_img.Name = "bt_bus_img";
             this.bt_bus_img.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(6);
@@ -744,6 +762,7 @@
             // 
             // 
             this.chk_ser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_ser.Enabled = false;
             this.chk_ser.Location = new System.Drawing.Point(662, 227);
             this.chk_ser.Name = "chk_ser";
             this.chk_ser.Size = new System.Drawing.Size(70, 18);
@@ -795,6 +814,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // gb_ctr_frm
             // 
@@ -823,6 +843,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // inv002_04
             // 
@@ -849,6 +870,7 @@
             this.Name = "inv002_04";
             this.Text = "Habilita/Deshabilita Producto";
             this.TitleText = "Habilita/Deshabilita Producto";
+            this.Load += new System.EventHandler(this.inv002_04_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pc_img_pro)).EndInit();
