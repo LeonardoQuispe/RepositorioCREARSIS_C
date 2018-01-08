@@ -26,6 +26,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         DataTable tab_inv002;
         DataTable tab_inv004;
         DataTable tab_inv001;
+        int va_uni_dad;
 
 
         string err_msg = "";
@@ -197,14 +198,14 @@ namespace CREARSIS._4_INV.inv002_pro_
             }
 
             tab_inv001 = o_inv001._05(cod_fam);
-            if (tab_inv003.Rows.Count == 0)
+            if (tab_inv001.Rows.Count == 0)
             {
                 tb_nom_fap.Text = "** NO existe";
                 return;
             }
 
             tb_cod_fap.Text = tab_inv001.Rows[0]["va_cod_fam"].ToString();
-            tb_nom_fap.Text = tab_inv003.Rows[0]["va_nom_fam"].ToString();
+            tb_nom_fap.Text = tab_inv001.Rows[0]["va_nom_fam"].ToString();
         }
         //-----------------Marca-----------
         public void fu_rec_mar(string cod_mar)
@@ -222,29 +223,42 @@ namespace CREARSIS._4_INV.inv002_pro_
                 return;
             }
 
-            tb_cod_mar.Text = tab_inv003.Rows[0]["va_cod_mar"].ToString();
-            tb_nom_mar.Text = tab_inv003.Rows[0]["va_nom_mar"].ToString();
+            tb_cod_mar.Text = tab_inv004.Rows[0]["va_cod_mar"].ToString();
+            tb_nom_mar.Text = tab_inv004.Rows[0]["va_nom_mar"].ToString();
         }
 
         
         //------------Unidad de Medida-----------------
-        public void fu_rec_umd(string cod_umd)
+        public void fu_rec_uni(string cod_uni)
         {
-            if (cod_umd.Trim() == "")
+            if (cod_uni.Trim() == "")
             {
                 tb_nom_inv.Text = "** NO existe";
                 return;
             }
 
-            tab_inv003 = o_inv003._05(cod_umd);
+            tab_inv003 = o_inv003._05(cod_uni);
             if (tab_inv003.Rows.Count == 0)
             {
                 tb_nom_inv.Text = "** NO existe";
                 return;
             }
-
-            tb_uni_inv.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
-            tb_nom_inv.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            if(va_uni_dad==1)
+            {
+                tb_uni_inv.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+                tb_nom_inv.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            }
+            if(va_uni_dad==2)
+            {
+                tb_uni_ven.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+                tb_nom_ven.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            }
+            if(va_uni_dad==3)
+            {
+                tb_uni_com.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
+                tb_nom_com.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            }
+            
         }
         //------------Unidad de Medida En ventas----------------
         public void fu_rec_umv(string cod_umv)
@@ -262,8 +276,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 return;
             }
 
-            tb_uni_ven.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
-            tb_nom_ven.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            
         }
         //------------Unidad de Medida en Compras-----------------
         public void fu_rec_umc(string cod_umc)
@@ -281,8 +294,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 return;
             }
 
-            tb_uni_com.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
-            tb_nom_com.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
+            
         }
 
         #endregion
@@ -345,7 +357,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 o_inv002._02(tb_cod_pro.Text,tb_cod_fap.Text,tb_uni_inv.Text,tb_uni_com.Text,tb_uni_ven.Text,tb_cod_mar.Text,tb_nom_pro.Text,tb_des_pro.Text,tb_cod_bar.Text,tb_fab_ric.Text,tb_eqv_com.Text,tb_eqv_ven.Text,var_ser,var_ven,var_com,var_lot);
 
                 //Actualiza la grilla de busqueda en la ventana padre
-                vg_frm_pad.fu_sel_fila(tb_cod_pro.Text, tb_cod_pro.Text, tb_nom_pro.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_pro.Text, tb_nom_pro.Text);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fu_lim_frm();
@@ -388,7 +400,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             inv004_01 obj = new inv004_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
-        //Keydown flia marca
+        //Keydown  marca
         private void tb_cod_mar_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
@@ -407,59 +419,65 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             if (e.KeyData == Keys.Up)
             {
+                va_uni_dad = 1;
                 inv003_01 obj = new inv003_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
         }
-        //keydown unidad de medida
+        //validate unidad de medida
         private void tb_uni_inv_Validated(object sender, EventArgs e)
         {
-            fu_rec_umd(tb_cod_mar.Text);
+            fu_rec_uni(tb_uni_inv.Text);
         }
-
+        //boton unidad venta
         private void tb_uni_ven_ButtonCustomClick(object sender, EventArgs e)
         {
+            va_uni_dad = 2;
             inv003_01 obj = new inv003_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
-
+        //keydown unidad venta
         private void tb_uni_ven_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
             {
+                va_uni_dad = 2;
                 inv003_01 obj = new inv003_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
         }
-
+        //validate unidad  venta
         private void tb_uni_ven_Validated(object sender, EventArgs e)
         {
             fu_rec_umv(tb_uni_ven.Text);
         }
-
+        //boton unidad compra
         private void tb_uni_com_ButtonCustomClick(object sender, EventArgs e)
         {
+            va_uni_dad = 3;
             inv003_01 obj = new inv003_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
-
+        //keydown unidad compra
         private void tb_uni_com_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
             {
+                va_uni_dad = 3;
                 inv003_01 obj = new inv003_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
         }
-
+        //valite unidad compra
         private void tb_uni_com_Validated(object sender, EventArgs e)
         {
             fu_rec_umc(tb_uni_com.Text);
         }
         #endregion
-
+        //boton unidad de medidad
         private void tb_uni_inv_ButtonCustomClick(object sender, EventArgs e)
         {
+            va_uni_dad = 1;
             inv003_01 obj = new inv003_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
