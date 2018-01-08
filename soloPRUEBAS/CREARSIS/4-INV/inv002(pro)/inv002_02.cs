@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using DATOS;
+using DATOS._4_INV;
 using System.Transactions;
 using DevComponents.DotNetBar;
+
+
 
 namespace CREARSIS._4_INV.inv002_pro_
 {
@@ -26,6 +29,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         DataTable tab_inv002;
         DataTable tab_inv004;
         DataTable tab_inv001;
+        byte[] va_img_pro;
         int va_uni_dad;
 
 
@@ -39,6 +43,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         c_inv003 o_inv003 = new c_inv003();
         c_inv004 o_inv004 = new c_inv004();
         c_inv001 o_inv001 = new c_inv001();
+        c_inv008 o_inv008 = new c_inv008();
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
@@ -48,6 +53,8 @@ namespace CREARSIS._4_INV.inv002_pro_
 
         public void fu_ini_frm()
         {
+            pc_img_pro.Image = pc_img_pro.ErrorImage;
+
             tb_cod_fap.Focus();
         }
 
@@ -352,9 +359,22 @@ namespace CREARSIS._4_INV.inv002_pro_
                 {
                     var_com = 1;
                 }
+               
 
                 //Graba datos Producto
-                o_inv002._02(tb_cod_pro.Text,tb_cod_fap.Text,tb_uni_inv.Text,tb_uni_com.Text,tb_uni_ven.Text,tb_cod_mar.Text,tb_nom_pro.Text,tb_des_pro.Text,tb_cod_bar.Text,tb_fab_ric.Text,tb_eqv_com.Text,tb_eqv_ven.Text,var_ser,var_ven,var_com,var_lot);
+                o_inv002._02(tb_cod_pro.Text.Trim(),tb_cod_fap.Text.Trim(), tb_uni_inv.Text.Trim(), tb_uni_com.Text.Trim(), tb_uni_ven.Text.Trim(), tb_cod_mar.Text.Trim(),
+                            tb_nom_pro.Text.Trim(), tb_des_pro.Text.Trim(), tb_cod_bar.Text.Trim(), tb_fab_ric.Text.Trim(), tb_eqv_com.Text.Trim(), tb_eqv_ven.Text.Trim(), var_ser,var_ven,var_com,var_lot);
+
+
+                //Valida si ingresó una imagen
+                if (pc_img_pro.Image!=pc_img_pro.ErrorImage)
+                {
+                    //Convierte la imagen a BYTE
+                    va_img_pro = o_mg_glo_bal.fg_img_byt(pc_img_pro.Image);
+
+                    //Graba Imagen de Producto
+                    o_inv008._02(tb_cod_pro.Text.Trim(), va_img_pro);
+                }
 
                 //Actualiza la grilla de busqueda en la ventana padre
                 vg_frm_pad.fu_sel_fila(tb_cod_pro.Text, tb_nom_pro.Text);
@@ -501,6 +521,24 @@ namespace CREARSIS._4_INV.inv002_pro_
      {
                        e.Handled = true;
                    }
+        }
+
+
+        private void bt_bus_img_Click(object sender, EventArgs e)
+        {
+            //Carga Imagen
+            OpenFileDialog abrir_archivo = new OpenFileDialog();
+            abrir_archivo.Filter = "Imágenes | *.jpeg; *.jpg; *.png";
+            abrir_archivo.Title = "Seleccione la Imagen";
+            if (abrir_archivo.ShowDialog() == DialogResult.OK)
+            {
+                pc_img_pro.Image = Image.FromFile(abrir_archivo.FileName);
+            }
+        }
+
+        private void bt_eli_img_Click(object sender, EventArgs e)
+        {
+            pc_img_pro.Image = pc_img_pro.ErrorImage;
         }
     }
 }

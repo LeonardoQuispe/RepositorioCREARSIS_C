@@ -791,7 +791,7 @@ namespace CREARSIS
         /// </summary>
         /// <param name="imageIn">Imagen a converti</param>
         /// <returns></returns>
-        public byte[] fg_img_byt(System.Drawing.Image imageIn)
+        public byte[] fg_img_byt(Image imageIn)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);

@@ -121,7 +121,7 @@ namespace CREARSIS
 
         private void bt_sub_log_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog1.ShowDialog();
+            //Carga Imagen
             OpenFileDialog abrir_archivo = new OpenFileDialog();
             abrir_archivo.Filter = "Imágenes | *.jpeg; *.jpg; *.png";
             abrir_archivo.Title = "Seleccione la Imagen";
@@ -151,16 +151,21 @@ namespace CREARSIS
                 if (res_msg == DialogResult.Cancel)
                 {
                     return;
-                }
-
-                //Convierte la imagen a BYTE
-                va_log_emp =o_mg_glo_bal.fg_img_byt(pc_log_emp.Image);
+                }                
 
                 //MODIFICA DATOS
                 o_adm001._03(tb_nit_emp.Text, tb_raz_soc.Text, tb_rep_leg.Text, tb_dir_emp.Text, tb_tel_emp.Text, tb_cel_emp.Text, tb_cor_reo.Text, tb_dir_web.Text, tb_dir_fbk.Text, tb_cla_wif.Text);
 
-                //GUARDA imagen/LOGO
-                o_adm001._03(va_log_emp);
+
+                //Valida si ingreso una imagen
+                if (pc_log_emp.Image!=pc_log_emp.InitialImage)
+                {
+                    //Convierte la imagen a BYTE
+                    va_log_emp = o_mg_glo_bal.fg_img_byt(pc_log_emp.Image);
+
+                    //GUARDA imagen/LOGO
+                    o_adm001._03(va_log_emp);
+                }                
 
                 MessageBoxEx.Show("Operación completada exitosamente \r\n\r\nNOTA: Para que los cambios se apliquen \r\ndebe reiniciar el sistema Crearsis", "Datos de la Empresa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
