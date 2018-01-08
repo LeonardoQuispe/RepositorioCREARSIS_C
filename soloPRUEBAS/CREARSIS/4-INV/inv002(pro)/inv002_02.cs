@@ -434,7 +434,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         //validate unidad  venta
         private void tb_uni_ven_Validated(object sender, EventArgs e)
         {
-            fu_rec_umv(tb_uni_ven.Text);
+            fu_rec_uni(tb_uni_ven.Text);
         }
         //boton unidad compra
         private void tb_uni_com_ButtonCustomClick(object sender, EventArgs e)
@@ -456,7 +456,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         //valite unidad compra
         private void tb_uni_com_Validated(object sender, EventArgs e)
         {
-            fu_rec_umc(tb_uni_com.Text);
+            fu_rec_uni(tb_uni_com.Text);
         }
         #endregion
         //boton unidad de medidad

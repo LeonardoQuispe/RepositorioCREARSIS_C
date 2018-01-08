@@ -83,7 +83,7 @@ namespace CREARSIS._4_INV.inv002_pro_
 
             //lenar tbx nombre unidad medida compra
             tb_uni_com.Text = vg_str_ucc.Rows[0]["va_und_cmp"].ToString();
-            tab_inv003 = o_inv003._05(tb_uni_ven.Text);
+            tab_inv003 = o_inv003._05(tb_uni_com.Text);
             if (tab_inv001.Rows.Count != 0)
             {
                 tb_nom_com.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
