@@ -28,29 +28,36 @@ namespace DATOS
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus)
+        public DataTable _01(string val_bus, int prm_bus, string est_bus, int tipo = 1)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" select * from inv003  ");
 
-                switch (prm_bus)
+                if (tipo == 1)
                 {
-                    case 1: vv_str_sql.AppendLine(" where va_cod_umd like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" where va_nom_umd like '" + val_bus + "%' "); break;
-                }
+                    switch (prm_bus)
+                    {
+                        case 1: vv_str_sql.AppendLine(" where va_cod_umd like '" + val_bus + "%' "); break;
+                        case 2: vv_str_sql.AppendLine(" where va_nom_umd like '" + val_bus + "%' "); break;
+                    }
 
-                switch (est_bus)
-                {
-                    case "0": est_bus = "T"; break;
-                    case "1": est_bus = "H"; break;
-                    case "2": est_bus = "N"; break;
-                }
+                    switch (est_bus)
+                    {
+                        case "0": est_bus = "T"; break;
+                        case "1": est_bus = "H"; break;
+                        case "2": est_bus = "N"; break;
+                    }
 
-                if (est_bus != "T")
+                    if (est_bus != "T")
+                    {
+                        vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
+                    }
+                }
+                else if (tipo == 2)
                 {
-                    vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
+                    vv_str_sql.AppendLine(" where va_cod_umd = '" + val_bus + "' ");
                 }
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());

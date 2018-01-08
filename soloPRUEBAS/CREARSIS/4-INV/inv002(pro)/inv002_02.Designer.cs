@@ -70,7 +70,6 @@
             this.tb_eqv_ven = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.chk_com = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chk_ven = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_ser = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_lot = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -787,24 +786,6 @@
             this.chk_com.TabIndex = 6;
             this.chk_com.Text = "Compra";
             // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(550, 323);
-            this.textBoxX1.MaxLength = 40;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.ReadOnly = true;
-            this.textBoxX1.Size = new System.Drawing.Size(183, 22);
-            this.textBoxX1.TabIndex = 9;
-            // 
             // chk_ven
             // 
             // 
@@ -853,7 +834,6 @@
             this.ClientSize = new System.Drawing.Size(743, 413);
             this.ControlBox = false;
             this.Controls.Add(this.chk_com);
-            this.Controls.Add(this.textBoxX1);
             this.Controls.Add(this.chk_ven);
             this.Controls.Add(this.chk_ser);
             this.Controls.Add(this.chk_lot);
@@ -923,7 +903,6 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_uni_ven;
         internal DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_com;
-        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_ven;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_ser;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_lot;

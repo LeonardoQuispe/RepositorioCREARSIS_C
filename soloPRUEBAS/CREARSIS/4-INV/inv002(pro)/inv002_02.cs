@@ -267,42 +267,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             }
             
         }
-        //------------Unidad de Medida En ventas----------------
-        public void fu_rec_umv(string cod_umv)
-        {
-            if (cod_umv.Trim() == "")
-            {
-                tb_nom_ven.Text = "** NO existe";
-                return;
-            }
-
-            tab_inv003 = o_inv003._05(cod_umv);
-            if (tab_inv003.Rows.Count == 0)
-            {
-                tb_nom_ven.Text = "** NO existe";
-                return;
-            }
-
-            
-        }
-        //------------Unidad de Medida en Compras-----------------
-        public void fu_rec_umc(string cod_umc)
-        {
-            if (cod_umc.Trim() == "")
-            {
-                tb_nom_com.Text = "** NO existe";
-                return;
-            }
-
-            tab_inv003 = o_inv003._05(cod_umc);
-            if (tab_inv003.Rows.Count == 0)
-            {
-                tb_nom_com.Text = "** NO existe";
-                return;
-            }
-
-            
-        }
+       
 
         #endregion
 
@@ -343,7 +308,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 int var_ven = 0;
                 int var_com = 0;
 
-                if(chk_lot.Checked==true)
+                if(chk_lot.Checked == true)
                 {
                     var_lot = 1;
                 }
@@ -504,23 +469,7 @@ namespace CREARSIS._4_INV.inv002_pro_
 
         private void tb_cod_mar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-                 if (Char.IsDigit(e.KeyChar))
-                 {
-                       e.Handled = false;
-                   }
-                else if (Char.IsControl(e.KeyChar))
-                    {
-                        e.Handled = false;
-                     }
-                else if (Char.IsSeparator(e.KeyChar))
-                    {
-                         e.Handled = false;
-                     }
-                else
-     {
-                       e.Handled = true;
-                   }
+            
         }
 
 

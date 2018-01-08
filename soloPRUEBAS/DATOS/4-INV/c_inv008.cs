@@ -18,6 +18,28 @@ namespace DATOS._4_INV
         /// </summary>
         StringBuilder vv_str_sql = new StringBuilder();
 
+        /// <summary>
+        /// Buscar 
+        /// </summary>
+        /// <param name="cod_pro">cod producto</param>
+        /// <returns></returns>
+        public DataTable _01(string cod_pro)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" select * from inv008  ");
+
+                vv_str_sql.AppendLine("where va_cod_pro = '"+ cod_pro+" '");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         /// <summary>
         /// Registra Imagen de Producto
