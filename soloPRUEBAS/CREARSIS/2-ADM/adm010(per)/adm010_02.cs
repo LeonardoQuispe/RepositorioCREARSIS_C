@@ -25,7 +25,6 @@ namespace CREARSIS._2_ADM.adm010_per_
         DataTable tab_adm010;
         DataTable tab_adm011;
         string tmp = "";
-        int tmp2;
 
 
         c_adm010 o_adm010 = new c_adm010();
@@ -138,7 +137,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
             if (string.IsNullOrWhiteSpace(tb_nro_per.Text) != true)
             {
-                if (int.TryParse(tb_nro_per.Text, out tmp2) != false)
+                if (o_mg_glo_bal.fu_val_num(tb_nro_per.Text) != false)
                 {
                     tmp = tb_nro_per.Text.PadLeft(5, '0');
 
@@ -222,15 +221,14 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
 
             //**Verifica Grupo de PErsona
-            int tmp2;
-
+            
             if (tb_cod_gru.Text.Trim() == "")
             {
                 tb_cod_gru.Focus();
                 return "Debes proporcionar el Grupo de Persona";
             }
 
-            if (int.TryParse(tb_cod_gru.Text.Trim(), out tmp2) == false)
+            if (o_mg_glo_bal.fu_val_num(tb_cod_gru.Text) == false)
             {
                 tb_cod_gru.Focus();
                 return "El Codigo del Grupo de Persona NO es valido";
@@ -251,7 +249,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
             //VERIFICA numero de Grupo
 
-            if (string.IsNullOrWhiteSpace(tb_nro_per.Text))
+            if (tb_nro_per.Text.Trim()=="")
             {
                 tb_nro_per.Focus();
                 return "Debes proporcionar el Número del Persona";
@@ -284,7 +282,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 tb_nit_per.Focus();
                 return "Debes proporcionar el NIT/CI de la Persona";
             }
-            if (int.TryParse(tb_nit_per.Text.Trim(),out tmp2)==false)
+            if (o_mg_glo_bal.fu_val_num(tb_nit_per.Text) == false)
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI debe ser numérico";
@@ -304,7 +302,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         public void fu_rec_gru(string cod_gru)
         {
 
-            if (int.TryParse(cod_gru,out tmp2)==false)
+            if (o_mg_glo_bal.fu_val_num(tb_cod_gru.Text) == false)
             {
                 tb_cod_gru.Text = "";
                 tb_nom_gru.Text = "** NO existe";

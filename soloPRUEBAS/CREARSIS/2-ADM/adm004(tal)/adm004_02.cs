@@ -210,7 +210,6 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
             Int64 tmp2;
 
             //** Verifica Documento---------------------------------
@@ -234,7 +233,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fu_val_num(tb_nro_tal.Text) == false)
             {
                 tb_nro_tal.Focus();
                 return "El Nro de Talonario debe ser numérico";
@@ -255,7 +254,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica que la gestion sea valida-------------------
-            if (int.TryParse(tb_cod_ges.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fu_val_num(tb_cod_ges.Text) == false)
             {
                 tb_cod_ges.Focus();
                 return "La Gestion no es valida";
@@ -270,8 +269,8 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica formato-------------------------------------
-            if (int.TryParse(tb_for_mat.Text.Trim(), out tmp) == false)
-            {
+            if(o_mg_glo_bal.fu_val_num(tb_for_mat.Text) == false)
+            { 
                 tb_for_mat.Focus();
                 return "El formato debe ser numerico";
             }
@@ -298,18 +297,7 @@ namespace CREARSIS
                     return "La Dosificación se encuentra Deshabilitada";
                 }
             }
-            
-            //if (Int64.TryParse(tb_nro_aut.Text.Trim(), out tmp2) == false)
-            //{
-            //    tb_nro_aut.Focus();
-            //    return "El Nro de Dosificación debe ser numérico";
-            //}
-
-            //if (tb_nro_aut.Text.Trim() == "0")
-            //{
-            //    tb_nro_aut.Focus();
-            //    return "El Nro de Dosificación debe ser diferente de 0";
-            //}           
+                      
 
             return null;
         }

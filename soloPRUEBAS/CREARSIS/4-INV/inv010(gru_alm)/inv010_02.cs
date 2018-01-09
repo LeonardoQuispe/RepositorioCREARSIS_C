@@ -91,7 +91,7 @@ namespace CREARSIS
         {
             
             //**Verifica Codigo de la Sucursal-----------------------------------
-            int tmp;
+            
 
             if (tb_cod_sucu.Text.Trim() == "")
             {
@@ -99,7 +99,7 @@ namespace CREARSIS
                 return "Debes proporcionar el código de la Sucursal";
             }
 
-            if (int.TryParse(tb_cod_sucu.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fu_val_num(tb_cod_sucu.Text) == false)
             {
                 tb_cod_sucu.Focus();
                 return "El Codigo de la Sucursal NO es valido";
@@ -120,7 +120,13 @@ namespace CREARSIS
 
             //VERIFICA numero de Grupo
 
-            if (string.IsNullOrWhiteSpace(tb_nro_gru.Text))
+            if (o_mg_glo_bal.fu_val_num(tb_nro_gru.Text) == false)
+            {
+                tb_nro_gru.Focus();
+                return "El Número del Grupo de Almacén debe ser Numerico";
+            }
+
+            if (tb_nom_gru.Text.Trim()=="")
             {
                 tb_nro_gru.Focus();
                 return "Debes proporcionar el Número del Grupo de Almacén";
@@ -146,10 +152,7 @@ namespace CREARSIS
                 tb_nom_gru.Focus();
                 return "Debes proporcionar el nombre  del Grupo de Almacén";
             }
-
             
-
-
             return null;
         }
         #endregion
