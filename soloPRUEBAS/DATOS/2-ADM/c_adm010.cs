@@ -26,11 +26,11 @@ namespace DATOS
         /// Funcion "Buscar PERSONAS"
         /// </summary>
         /// <param name="val_bus">Valor de la busqued</param>
-        /// <param name="prm_bus">Parametro de busqueda (1=codigo ; 2=Raz Soc;3=nombre;4=Ape Pat;5=Ape Mat;6=CI;7=Nit )</param>
+        /// <param name="prm_bus">Parametro de busqueda (1=codigo ; 2=Raz Soc;3=nombre Comercial; 4=NIT/CI )</param>
         /// <param name="est_bus">Estado del persona (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )(</param>
-        /// <param name="cod_tpr">Codigo del tipo de persona para buscar (0=todos)</param>
+        /// <param name="con_bus">Condición de Búsqueda 0=LIKE(%); 1=IGUAL(=)</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus)
+        public DataTable _01(string val_bus, int prm_bus, string est_bus,int con_bus)
         {
             try
             {
@@ -38,6 +38,10 @@ namespace DATOS
 
                 vv_str_sql.AppendLine(" select * from adm010  ");
 
+                if (true)
+                {
+
+                }
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendFormat(" where va_cod_per like '{0}%'", val_bus); break;

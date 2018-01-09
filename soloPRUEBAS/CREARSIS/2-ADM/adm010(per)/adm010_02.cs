@@ -290,6 +290,13 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El NIT/CI debe ser numérico";
             }
 
+            tab_adm010 = o_adm010._01(tb_nit_per.Text.Trim(), 4, 0.ToString());
+            if (tab_adm010.Rows.Count!=0)
+            {
+                tb_nit_per.Focus();
+                return "El NIT/CI ya se encuentra Registrado";
+            }
+
             //**Verifica Nombre Comercial
             if (tb_nom_per.Text.Trim() == "")
             {
