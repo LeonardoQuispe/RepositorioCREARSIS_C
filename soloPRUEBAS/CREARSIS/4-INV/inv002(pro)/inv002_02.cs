@@ -84,6 +84,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             chk_ser.Checked = false;
             chk_com.Checked = false;
             chk_lot.Checked = false;
+            pc_img_pro.Image = pc_img_pro.ErrorImage;
 
             tb_cod_fap.Focus();
 
@@ -207,6 +208,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             tab_inv001 = o_inv001._05(cod_fam);
             if (tab_inv001.Rows.Count == 0)
             {
+                tb_cod_fap.Text = "";
                 tb_nom_fap.Text = "** NO existe";
                 return;
             }
@@ -219,6 +221,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         {
             if (cod_mar.Trim() == "")
             {
+                
                 tb_nom_mar.Text = "** NO existe";
                 return;
             }
@@ -226,6 +229,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             tab_inv004 = o_inv004._05(int.Parse(cod_mar));
             if (tab_inv004.Rows.Count == 0)
             {
+                tb_cod_mar.Text = "";
                 tb_nom_mar.Text = "** NO existe";
                 return;
             }
@@ -238,30 +242,40 @@ namespace CREARSIS._4_INV.inv002_pro_
         //------------Unidad de Medida-----------------
         public void fu_rec_uni(string cod_uni)
         {
-            if (cod_uni.Trim() == "")
-            {
-                tb_nom_inv.Text = "** NO existe";
-                return;
-            }
-
             tab_inv003 = o_inv003._05(cod_uni);
-            if (tab_inv003.Rows.Count == 0)
-            {
-                tb_nom_inv.Text = "** NO existe";
-                return;
-            }
+           
+
             if(va_uni_dad==1)
             {
+                if (tab_inv003.Rows.Count == 0)
+                {
+                    tb_uni_inv.Text = "";
+                    tb_nom_inv.Text = "** NO existe";
+                    return;
+                }
+                
                 tb_uni_inv.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
                 tb_nom_inv.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
             }
             if(va_uni_dad==2)
             {
+                if (tab_inv003.Rows.Count == 0)
+                {
+                    tb_uni_ven.Text = "";
+                    tb_nom_ven.Text = "** NO existe";
+                    return;
+                }
                 tb_uni_ven.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
                 tb_nom_ven.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
             }
             if(va_uni_dad==3)
             {
+                if (tab_inv003.Rows.Count == 0)
+                {
+                    tb_uni_com.Text = "";
+                    tb_nom_com.Text = "** NO existe";
+                    return;
+                }
                 tb_uni_com.Text = tab_inv003.Rows[0]["va_cod_umd"].ToString();
                 tb_nom_com.Text = tab_inv003.Rows[0]["va_nom_umd"].ToString();
             }
@@ -412,6 +426,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         //validate unidad de medida
         private void tb_uni_inv_Validated(object sender, EventArgs e)
         {
+            va_uni_dad = 1;
             fu_rec_uni(tb_uni_inv.Text);
         }
         //boton unidad venta
@@ -434,6 +449,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         //validate unidad  venta
         private void tb_uni_ven_Validated(object sender, EventArgs e)
         {
+            va_uni_dad = 2;
             fu_rec_uni(tb_uni_ven.Text);
         }
         //boton unidad compra
@@ -456,6 +472,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         //valite unidad compra
         private void tb_uni_com_Validated(object sender, EventArgs e)
         {
+            va_uni_dad = 3;
             fu_rec_uni(tb_uni_com.Text);
         }
         #endregion

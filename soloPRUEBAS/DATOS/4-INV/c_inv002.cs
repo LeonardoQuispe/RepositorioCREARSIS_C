@@ -126,7 +126,7 @@ namespace DATOS._4_INV
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE inv002 SET");
                 
-                vv_str_sql.AppendLine(" va_cod_fam='" + cod_fam + "' , va_cod_umd='" + cod_umd + "' , va_und_cmp='" + und_cmp + "' , va_und_vta='" + und_vta + "' , va_cod_mar='" + cod_mar + "' , va_nom_pro='" + nom_pro + "' , va_des_pro='" + des_pro);
+                vv_str_sql.AppendLine(" va_cod_fam='" + cod_fam + "' , va_cod_umd='" + cod_umd + "' , va_und_cmp='" + und_cmp + "' , va_und_vta='" + und_vta + "' , va_cod_mar='" + cod_mar + "' , va_nom_pro='" + nom_pro + "' , va_des_pro='" + des_pro+"',");
                 vv_str_sql.AppendLine(" va_cod_bar='" + cod_bar + "' , va_fab_ric='" + fab_ric + "' , va_eqv_cmp='" + eqv_cmp + "' , va_eqv_vta='" + eqv_vta + "' , va_ban_ser='" + ban_ser + "' , va_ban_vta='" + ban_vta + "' , va_ban_cmp='" + ban_cmp + "' , va_ban_lot='" + ban_lot + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_pro = '" + cod_pro + "'");
 
