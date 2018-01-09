@@ -463,6 +463,7 @@
             this.tb_nom_fap.MaxLength = 40;
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
+            this.tb_nom_fap.ReadOnly = true;
             this.tb_nom_fap.Size = new System.Drawing.Size(146, 22);
             this.tb_nom_fap.TabIndex = 2;
             // 

@@ -135,15 +135,23 @@ namespace CREARSIS._4_INV.inv002_pro_
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
+            if (o_mg_glo_bal.fu_val_num(tb_eqv_com.Text) == false)
+            {
+                tb_eqv_com.Focus();
+                return "La Cantidad de unidad de medida de Compra debe ser Numerico";
+            }
+            if (o_mg_glo_bal.fu_val_num(tb_eqv_ven.Text) == false)
+            {
+                tb_eqv_ven.Focus();
+                return "La Cantidad de unidad de medida de Venta debe ser Numerico";
+            }
 
             //**Verifica Marca-----------------------------------
-            
 
-            if (int.TryParse(tb_cod_mar.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fu_val_num(tb_cod_mar.Text) == true)
             {
                 tb_cod_mar.Focus();
-                return "El Nro de la Marca debe ser numérico";
+                return "El Nro de la Marca debe ser Numerico";
             }
 
             if (tb_cod_mar.Text == "0")
@@ -260,10 +268,17 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_nom_mar.Text = "** NO existe";
                 return;
             }
+            if (o_mg_glo_bal.fu_val_num(cod_mar) == false)
+            {
+                tb_cod_mar.Text = "";
+                tb_nom_mar.Text = "** NO existe";
+                return;
+            }
 
             tab_inv004 = o_inv004._05(int.Parse(cod_mar));
             if (tab_inv004.Rows.Count == 0)
             {
+                tb_cod_mar.Text = "";
                 tb_nom_mar.Text = "** NO existe";
                 return;
             }
