@@ -18,12 +18,9 @@ namespace CREARSIS
     /// </summary> 
     public class _01_mg_glo_bal
     {
-        //dynamic tmp_frm_nvo;
-        //dynamic tmp_frm_pad;
-        //dynamic tmp_frm_act;
         dynamic tmp_frm_aux;
-        //dynamic tmp_win_act;
-        //dynamic tmp_win_pad;
+        decimal va_tmp_dec;
+        long va_tmp_num;
 
         #region Metodos/Funciones de Autenticación
 
@@ -938,6 +935,26 @@ namespace CREARSIS
 
             return nuevo;
 
+        }
+
+        /// <summary>
+        /// FUncion Global Para Validar Números
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool fu_val_num(string num)
+        {
+            return long.TryParse(num.Trim(), out va_tmp_num);            
+        }
+
+        /// <summary>
+        /// FUncion Global Para Validar Decimales
+        /// </summary>
+        /// <param name="dec"></param>
+        /// <returns></returns>
+        public bool fu_val_dec(string dec)
+        {
+            return decimal.TryParse(dec.Trim(), out va_tmp_dec);
         }
 
         #endregion

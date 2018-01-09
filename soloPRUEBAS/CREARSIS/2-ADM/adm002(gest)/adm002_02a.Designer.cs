@@ -199,7 +199,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_02a";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pre gestión";
             this.TitleText = "Nueva gestión";
             this.Load += new System.EventHandler(this.adm002_02a_Load);

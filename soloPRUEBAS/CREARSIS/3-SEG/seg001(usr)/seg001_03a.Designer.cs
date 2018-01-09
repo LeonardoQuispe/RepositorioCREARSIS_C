@@ -245,6 +245,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(361, 183);
+            this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;

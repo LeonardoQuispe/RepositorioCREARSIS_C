@@ -34,9 +34,9 @@
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.tb_cod_gru = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(250, 22);
-            this.tb_nom_gru.TabIndex = 30;
+            this.tb_nom_gru.TabIndex = 4;
             // 
             // bt_can_cel
             // 
@@ -72,7 +72,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -89,7 +89,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -121,7 +121,7 @@
             this.LabelX2.Location = new System.Drawing.Point(13, 54);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(43, 17);
-            this.LabelX2.TabIndex = 0;
+            this.LabelX2.TabIndex = 3;
             this.LabelX2.Text = "Nombre";
             // 
             // GroupBox1
@@ -136,8 +136,25 @@
             this.GroupBox1.Location = new System.Drawing.Point(0, -8);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(342, 100);
-            this.GroupBox1.TabIndex = 70;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_cod_gru
+            // 
+            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_gru.Border.Class = "TextBoxBorder";
+            this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_gru.Location = new System.Drawing.Point(77, 19);
+            this.tb_cod_gru.MaxLength = 2;
+            this.tb_cod_gru.Name = "tb_cod_gru";
+            this.tb_cod_gru.PreventEnterBeep = true;
+            this.tb_cod_gru.Size = new System.Drawing.Size(35, 22);
+            this.tb_cod_gru.TabIndex = 44;
             // 
             // tb_est_ado
             // 
@@ -156,7 +173,7 @@
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(140, 22);
-            this.tb_est_ado.TabIndex = 73;
+            this.tb_est_ado.TabIndex = 2;
             this.tb_est_ado.TabStop = false;
             // 
             // GroupBox2
@@ -168,23 +185,8 @@
             this.GroupBox2.Location = new System.Drawing.Point(0, 86);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(342, 44);
-            this.GroupBox2.TabIndex = 71;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
-            // 
-            // tb_cod_gru
-            // 
-            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
-            this.tb_cod_gru.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_gru.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_gru.Location = new System.Drawing.Point(77, 19);
-            this.tb_cod_gru.Mask = "00";
-            this.tb_cod_gru.Name = "tb_cod_gru";
-            this.tb_cod_gru.PromptChar = ' ';
-            this.tb_cod_gru.Size = new System.Drawing.Size(35, 22);
-            this.tb_cod_gru.TabIndex = 74;
-            this.tb_cod_gru.TabStop = false;
-            this.tb_cod_gru.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // adm011_04
             // 
@@ -221,6 +223,6 @@
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal System.Windows.Forms.GroupBox GroupBox2;
-        internal System.Windows.Forms.MaskedTextBox tb_cod_gru;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_gru;
     }
 }

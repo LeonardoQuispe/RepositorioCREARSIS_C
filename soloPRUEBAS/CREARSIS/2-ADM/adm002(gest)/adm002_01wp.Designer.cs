@@ -139,7 +139,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_01wp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Periodos de una gestión";
             this.TitleText = "Periodos de una gestión";
             this.Load += new System.EventHandler(this.adm002_01wp_Load);

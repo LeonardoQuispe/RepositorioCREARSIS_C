@@ -99,10 +99,9 @@ namespace CREARSIS._2_ADM.adm010_per_
                         tb_ema_gen.Text.Trim(),tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), tb_cre_cli.Text.Trim(),
                         mon_cre, tb_cod_pag_cli.Text.Trim(),tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
 
-            vg_frm_pad.fu_sel_fila(tb_cod_per.Text, tb_nom_per.Text);
-
             MessageBoxEx.Show("Operación completada exitosamente", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            vg_frm_pad.fu_sel_fila(tb_cod_per.Text, tb_nom_per.Text);   
 
             fu_lim_frm();
         }
@@ -352,6 +351,24 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_raz_per.Clear();
             tb_nit_per.Clear();
             tb_nom_per.Clear();
+            tb_dir_gen.Clear();
+            tb_tel_gen.Clear();
+            tb_cel_gen.Clear();
+            tb_ema_gen.Clear();
+
+            tb_cod_pre_cli.Clear();
+            tb_nom_pre_cli.Clear();
+            tb_cod_ven_cli.Clear();
+            tb_nom_ven_cli.Clear();
+            tb_cre_cli.Clear();
+            cb_tip_cam.SelectedIndex = 0;
+            tb_cod_pag_cli.Clear();
+            tb_nom_pag_cli.Clear();
+
+            tb_cod_pag_pro.Clear();
+            tb_nom_pag_pro.Clear();
+
+            tb_cod_gru.Focus();
         }
 
         void fu_lim_cli()

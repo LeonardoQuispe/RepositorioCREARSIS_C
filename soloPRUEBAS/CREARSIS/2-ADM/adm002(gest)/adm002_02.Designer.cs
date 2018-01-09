@@ -279,7 +279,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm002_02";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crea nueva gestión";
             this.TitleText = "Crea nueva gestión";
             this.Load += new System.EventHandler(this.adm002_02_Load);

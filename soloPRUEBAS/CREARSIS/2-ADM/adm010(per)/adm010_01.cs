@@ -128,13 +128,67 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
 
-
+        //NUEVO
         private void m_adm003_02_Click(object sender, EventArgs e)
         {
             adm010_02 obj = new adm010_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
 
+        //ACTUALIZA
+        private void m_adm003_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_03 obj = new adm010_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this,tab_adm010);
+        }
+
+        //HABILITA/DESHABILITA
+        private void m_adm003_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_04 obj = new adm010_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //ELIMINA
+        private void m_adm003_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_06 obj = new adm010_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //CONSULTA
+        private void m_adm003_05_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_05 obj = new adm010_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
@@ -390,6 +444,5 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
         }
 
-        
     }
 }
