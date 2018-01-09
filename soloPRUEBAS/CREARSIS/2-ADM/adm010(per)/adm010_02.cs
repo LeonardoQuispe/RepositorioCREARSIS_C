@@ -261,11 +261,11 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El Número del Persona debe ser Numérico";
             }
 
-            //if (int.Parse(tb_nro_per.Text) <= 0)
-            //{
-            //    tb_nro_per.Focus();
-            //    return "El Número de Persona debe ser mayor a cero";
-            //}
+            if (int.Parse(tb_nro_per.Text) <= 0)
+            {
+                tb_nro_per.Focus();
+                return "El Número de Persona debe ser mayor a cero";
+            }
 
 
             //**Verifica Codigo de Persona

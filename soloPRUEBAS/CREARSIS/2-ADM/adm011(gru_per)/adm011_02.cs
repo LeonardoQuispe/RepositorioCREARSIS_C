@@ -26,6 +26,7 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
         #region INSTANCIAS
 
         c_adm011 o_adm011 = new c_adm011();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion      
 
@@ -56,6 +57,18 @@ namespace CREARSIS._2_ADM.adm011_gru_per_
             {
                 tb_cod_gru.Focus();
                 return "Debes proporcionar el codigo de Grupo de Persona";
+            }
+
+            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text)==false)
+            {
+                tb_cod_gru.Focus();
+                return "El código de Grupo debe ser numérico";
+            }
+
+            if (int.Parse(tb_cod_gru.Text)<=0)
+            {
+                tb_cod_gru.Focus();
+                return "El código de Grupo debe ser mayor a 0";
             }
 
             //if (tb_cod_gru.Text.Length < 3)
