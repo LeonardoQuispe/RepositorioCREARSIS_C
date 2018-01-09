@@ -96,28 +96,44 @@ namespace CREARSIS._4_INV.inv002_pro_
         /// </summary>
         public string fu_ver_dat()
         {
-
-            if (o_mg_glo_bal.fu_val_num(tb_eqv_com.Text) == false)
+            if (tb_cod_fap.Text.Trim() == "")
             {
-                tb_eqv_com.Focus();
-                return "La Cantidad de unidad de medida de Compra debe ser Numerico";
+                tb_cod_fap.Focus();
+                return "Debes proporcionar el codigo de la Familia de Producto";
             }
-            if (o_mg_glo_bal.fu_val_num(tb_eqv_ven.Text) == false)
+            if (tb_cod_pro.Text.Trim() == "")
             {
-                tb_eqv_ven.Focus();
-                return "La Cantidad de unidad de medida de Venta debe ser Numerico";
+                tb_cod_pro.Focus();
+                return "Debes proporcionar el codigo del Producto";
+            }
+
+            tab_inv002 = o_inv002._05(tb_cod_pro.Text);
+            if (tab_inv002.Rows.Count != 0)
+            {
+                tb_cod_pro.Focus();
+                return "El Codigo del Producto ya se encuentra Registrado";
+            }
+
+            if (tb_nom_pro.Text.Trim() == "")
+            {
+                tb_nom_pro.Focus();
+                return "Debes proporcionar el nombre del Producto";
+            }
+            if (tb_des_pro.Text.Trim() == "")
+            {
+                tb_des_pro.Focus();
+                return "Debes proporcionar una Descripcion del Producto";
             }
 
             if (o_mg_glo_bal.fu_val_num(tb_cod_mar.Text) == false)
             {
                 tb_cod_mar.Focus();
-                return "El Nro de la Marca debe ser Numerico";
+                return "El Codigo de la Marca debe ser Numerico";
             }
-
             if (tb_cod_mar.Text == "0")
             {
                 tb_cod_mar.Focus();
-                return "El Nro de la Marca debe ser diferente de 0";
+                return "El Codigo de la Marca debe ser diferente de 0";
             }
             if (tb_cod_mar.Text.Trim() == "")
             {
@@ -136,47 +152,67 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_cod_mar.Focus();
                 return "La Marca se encuentra Deshabilitada";
             }
-            //**-----------------------------------------------------
+
+
+            if (o_mg_glo_bal.fu_val_num(tb_cod_mar.Text) == false)
+            {
+                tb_cod_mar.Focus();
+                return "El Nro de la Marca debe ser Numerico";
+            }
 
             //** Verifica Unidad de Medida---------------------------------
             if (tb_uni_inv.Text.Trim() == "")
             {
                 tb_uni_inv.Focus();
-                return "Debes proporcionar la Unidad de Medida";
+                return "Debes proporcionar la Unidad de Medida del Producto";
             }
 
             tab_inv003 = o_inv003._05(tb_uni_inv.Text);
             if (tab_inv003.Rows.Count == 0)
             {
                 tb_uni_inv.Focus();
-                return "La Unidad de Medida NO se encuentra registrada";
+                return "La Unidad de Medida del Producto NO se encuentra registrada";
             }
             if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
             {
                 tb_uni_inv.Focus();
-                return "La Unidad de Medida se encuentra Deshabilitada";
+                return "La Unidad de Medida del Producto se encuentra Deshabilitada";
             }
-            //**-----------------------------------------------------
 
+            
             //** Verifica Unidad de Medida de Ventas---------------------------------
-            if (tb_uni_com.Text.Trim() == "")
+            if (tb_uni_ven.Text.Trim() == "")
             {
-                tb_uni_com.Focus();
+                tb_uni_ven.Focus();
                 return "Debes proporcionar el codigo de la Unidad de Medida en Ventas";
             }
 
-            tab_inv003 = o_inv003._05(tb_uni_com.Text);
+            tab_inv003 = o_inv003._05(tb_uni_ven.Text);
             if (tab_inv003.Rows.Count == 0)
             {
-                tb_uni_com.Focus();
+                tb_uni_ven.Focus();
                 return "La Unidad de Medida de Ventas NO se encuentra registrada";
             }
             if (tab_inv003.Rows[0]["va_est_ado"].ToString() == "N")
             {
-                tb_uni_com.Focus();
+                tb_uni_ven.Focus();
                 return "La Unidad de Medida de Ventas se encuentra Deshabilitada";
             }
             //**-----------------------------------------------------
+
+            if (tb_eqv_ven.Text.Trim() == "")
+            {
+                tb_eqv_ven.Focus();
+                return "Debes proporcionar la equivalencia de  Unidad de Medida en Ventas";
+            }
+            if (o_mg_glo_bal.fu_val_num(tb_eqv_ven.Text) == false)
+            {
+                tb_eqv_ven.Focus();
+                return "La la equivalencia de  Unidad de Medida en Ventas debe ser Numerico";
+            }
+
+            
+
 
             //** Verifica Unidad de Medida de Compras---------------------------------
             if (tb_uni_com.Text.Trim() == "")
@@ -198,7 +234,17 @@ namespace CREARSIS._4_INV.inv002_pro_
             }
             //**-----------------------------------------------------
 
-           
+            if (tb_eqv_com.Text.Trim() == "")
+            {
+                tb_eqv_com.Focus();
+                return "Debes proporcionar la equivalencia de  Unidad de Medida en Compras";
+            }
+            if (o_mg_glo_bal.fu_val_num(tb_eqv_com.Text) == false)
+            {
+                tb_eqv_com.Focus();
+                return "La la equivalencia de  Unidad de Medida en Compras debe ser Numerico";
+            }
+
             return null;
         }
 
