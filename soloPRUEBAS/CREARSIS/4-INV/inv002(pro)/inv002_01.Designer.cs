@@ -429,12 +429,12 @@
             // 
             // descripcion
             // 
-            this.descripcion.Text = "comboItem1";
+            this.descripcion.Text = "descripcion";
             this.descripcion.Value = "3";
             // 
             // fabricante
             // 
-            this.fabricante.Text = "comboItem1";
+            this.fabricante.Text = "fabricante";
             this.fabricante.Value = "4";
             // 
             // GroupBox1
