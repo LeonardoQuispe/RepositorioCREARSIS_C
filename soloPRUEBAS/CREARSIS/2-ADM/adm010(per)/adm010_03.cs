@@ -23,12 +23,11 @@ namespace CREARSIS._2_ADM.adm010_per_
         public DataTable vg_str_ucc;
         string err_msg = "";
         DataTable tab_adm011;
-        int tmp2;
 
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
-
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
 
         public adm010_03()
@@ -293,7 +292,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 tb_nit_per.Focus();
                 return "Debes proporcionar el NIT/CI de la Persona";
             }
-            if (int.TryParse(tb_nit_per.Text.Trim(), out tmp2) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nit_per.Text) == false)
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI debe ser numérico";

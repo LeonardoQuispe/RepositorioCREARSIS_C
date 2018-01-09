@@ -137,7 +137,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
             if (string.IsNullOrWhiteSpace(tb_nro_per.Text) != true)
             {
-                if (o_mg_glo_bal.fu_val_num(tb_nro_per.Text) != false)
+                if (o_mg_glo_bal.fg_val_num(tb_nro_per.Text) != false)
                 {
                     tmp = tb_nro_per.Text.PadLeft(5, '0');
 
@@ -228,7 +228,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Debes proporcionar el Grupo de Persona";
             }
 
-            if (o_mg_glo_bal.fu_val_num(tb_cod_gru.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text) == false)
             {
                 tb_cod_gru.Focus();
                 return "El Codigo del Grupo de Persona NO es valido";
@@ -247,7 +247,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El Grupo de Persona se encuentra Deshabilitado";
             }
 
-            //VERIFICA numero de Grupo
+            //VERIFICA numero de Persona
 
             if (tb_nro_per.Text.Trim()=="")
             {
@@ -255,11 +255,18 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Debes proporcionar el Número del Persona";
             }
 
-            if (int.Parse(tb_nro_per.Text) <= 0)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_per.Text)==false)
             {
                 tb_nro_per.Focus();
-                return "El Número de Persona debe ser mayor a cero";
+                return "El Número del Persona debe ser Numérico";
             }
+
+            //if (int.Parse(tb_nro_per.Text) <= 0)
+            //{
+            //    tb_nro_per.Focus();
+            //    return "El Número de Persona debe ser mayor a cero";
+            //}
+
 
             //**Verifica Codigo de Persona
             tab_adm010 = o_adm010._05(tb_cod_per.Text);
@@ -282,7 +289,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 tb_nit_per.Focus();
                 return "Debes proporcionar el NIT/CI de la Persona";
             }
-            if (o_mg_glo_bal.fu_val_num(tb_nit_per.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nit_per.Text) == false)
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI debe ser numérico";
@@ -309,7 +316,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         public void fu_rec_gru(string cod_gru)
         {
 
-            if (o_mg_glo_bal.fu_val_num(tb_cod_gru.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text) == false)
             {
                 tb_cod_gru.Text = "";
                 tb_nom_gru.Text = "** NO existe";

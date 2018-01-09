@@ -99,7 +99,7 @@ namespace CREARSIS
                 return "Debes proporcionar el código de la Sucursal";
             }
 
-            if (o_mg_glo_bal.fu_val_num(tb_cod_sucu.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_sucu.Text) == false)
             {
                 tb_cod_sucu.Focus();
                 return "El Codigo de la Sucursal NO es valido";
@@ -120,7 +120,7 @@ namespace CREARSIS
 
             //VERIFICA numero de Grupo
 
-            if (o_mg_glo_bal.fu_val_num(tb_nro_gru.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_gru.Text) == false)
             {
                 tb_nro_gru.Focus();
                 return "El Número del Grupo de Almacén debe ser Numerico";

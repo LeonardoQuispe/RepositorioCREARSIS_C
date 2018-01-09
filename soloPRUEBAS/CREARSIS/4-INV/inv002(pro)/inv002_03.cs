@@ -182,7 +182,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             }
 
 
-            if (o_mg_glo_bal.fu_val_num(tb_cod_mar.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_mar.Text) == false)
             {
                 tb_cod_mar.Focus();
                 return "El Nro de la Marca debe ser Numerico";
@@ -233,7 +233,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_eqv_ven.Focus();
                 return "Debes proporcionar la equivalencia de  Unidad de Medida en Ventas";
             }
-            if (o_mg_glo_bal.fu_val_num(tb_eqv_ven.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_eqv_ven.Text) == false)
             {
                 tb_eqv_ven.Focus();
                 return "La la equivalencia de  Unidad de Medida en Ventas debe ser Numerico";
@@ -267,7 +267,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_eqv_com.Focus();
                 return "Debes proporcionar la equivalencia de  Unidad de Medida en Compras";
             }
-            if (o_mg_glo_bal.fu_val_num(tb_eqv_com.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_eqv_com.Text) == false)
             {
                 tb_eqv_com.Focus();
                 return "La la equivalencia de  Unidad de Medida en Compras debe ser Numerico";
@@ -305,7 +305,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_nom_mar.Text = "** NO existe";
                 return;
             }
-            if (o_mg_glo_bal.fu_val_num(cod_mar) == false)
+            if (o_mg_glo_bal.fg_val_num(cod_mar) == false)
             {
                 tb_cod_mar.Text = "";
                 tb_nom_mar.Text = "** NO existe";

@@ -233,7 +233,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            if (o_mg_glo_bal.fu_val_num(tb_nro_tal.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_tal.Text) == false)
             {
                 tb_nro_tal.Focus();
                 return "El Nro de Talonario debe ser numérico";
@@ -254,7 +254,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica que la gestion sea valida-------------------
-            if (o_mg_glo_bal.fu_val_num(tb_cod_ges.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_ges.Text) == false)
             {
                 tb_cod_ges.Focus();
                 return "La Gestion no es valida";
@@ -269,7 +269,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica formato-------------------------------------
-            if(o_mg_glo_bal.fu_val_num(tb_for_mat.Text) == false)
+            if(o_mg_glo_bal.fg_val_num(tb_for_mat.Text) == false)
             { 
                 tb_for_mat.Focus();
                 return "El formato debe ser numerico";

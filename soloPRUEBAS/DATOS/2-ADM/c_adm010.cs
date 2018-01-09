@@ -30,7 +30,7 @@ namespace DATOS
         /// <param name="est_bus">Estado del persona (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )(</param>
         /// <param name="con_bus">Condición de Búsqueda 0=LIKE(%); 1=IGUAL(=)</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus,int con_bus)
+        public DataTable _01(string val_bus, int prm_bus, string est_bus)
         {
             try
             {

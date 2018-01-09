@@ -942,7 +942,7 @@ namespace CREARSIS
         /// </summary>
         /// <param name="num"></param>
         /// <returns></returns>
-        public bool fu_val_num(string num)
+        public bool fg_val_num(string num)
         {
             return long.TryParse(num.Trim(), out va_tmp_num);            
         }
@@ -950,11 +950,34 @@ namespace CREARSIS
         /// <summary>
         /// FUncion Global Para Validar Decimales
         /// </summary>
-        /// <param name="dec"></param>
+        /// <param name="num">Número decimal a Validar</param>
+        /// <param name="ent">Total de numero enteros</param>
+        /// <param name="dec">Total de numeros decimales</param>
         /// <returns></returns>
-        public bool fu_val_dec(string dec)
+        public string fg_val_dec(string num,int ent,int dec)
         {
-            return decimal.TryParse(dec.Trim(), out va_tmp_dec);
+            if (decimal.TryParse(num.Trim(),out va_tmp_dec)==true)
+            {
+                string[] tmp;
+                
+                tmp = va_tmp_dec.ToString().Split('.');
+
+                if (tmp[0].Length>ent)
+                {
+                    return "ent";
+                }
+
+                if (tmp.Length ==2  && tmp[1].Length > dec)
+                {
+                    return "dec";
+                }
+
+                return "OK";
+            }
+            else
+            {
+                return null;
+            }
         }
 
         #endregion

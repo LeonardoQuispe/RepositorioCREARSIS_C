@@ -74,7 +74,7 @@ namespace CREARSIS
         {
             string err_msg = null;
 
-            if (o_mg_glo_bal.fu_val_num(tb_nit_emp.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nit_emp.Text) == false)
             {
                 tb_nit_emp.Focus();
                 err_msg = "El Nit es incorrecto, debe ser numerico";
