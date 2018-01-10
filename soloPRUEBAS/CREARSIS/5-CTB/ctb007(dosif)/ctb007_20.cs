@@ -28,6 +28,7 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         _01_mg_cod_ctr o_md_cod_ctr = new _01_mg_cod_ctr();
 
         #endregion
@@ -83,21 +84,21 @@ namespace CREARSIS
             DateTime tmp2;
             decimal tmp3;
 
-            if (int.TryParse(tb_nro_aut.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_aut.Text) == false)
             {
                 va_msg_err = "Debe proporcionar un numero de autorizacion valido, solo numerico";
                 tb_nro_aut.Focus();
                 return va_msg_err;
             }
 
-            if (int.TryParse(tb_nro_fac.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_fac.Text) == false)
             {
                 va_msg_err = "Debe proporcionar un numero de factura valido, solo numerico";
                 tb_nro_fac.Focus();
                 return va_msg_err;
             }
 
-            if (int.TryParse(tb_nit_cli.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nit_cli.Text) == false)
             {
                 va_msg_err = "Debe proporcionar un nit valido, solo numerico";
                 tb_nit_cli.Focus();

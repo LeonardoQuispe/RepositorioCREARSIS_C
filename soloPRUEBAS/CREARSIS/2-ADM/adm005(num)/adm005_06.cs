@@ -117,7 +117,7 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
+           
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
             {
@@ -133,12 +133,7 @@ namespace CREARSIS
             }
             //**-----------------------------------------------------
 
-            //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
-            {
-                tb_nro_tal.Focus();
-                return "El Nro de talonario NO es valido";
-            }
+           
 
             tab_adm004 = o_adm004._05(tb_cod_doc.Text,Convert.ToInt32( tb_nro_tal.Text));
             if (tab_adm004.Rows.Count == 0)
@@ -148,12 +143,7 @@ namespace CREARSIS
             }
             //**-----------------------------------------------------
 
-            //**Verifica que la gestion sea valida-------------------
-            if (int.TryParse(tb_cod_ges.Text.Trim(), out tmp) == false)
-            {
-                tb_cod_ges.Focus();
-                return "La Gestion no es valida";
-            }
+          
 
             tab_adm002 = o_adm002._05(Convert.ToInt32(tb_cod_ges.Text));
             if (tab_adm002.Rows.Count == 0)
@@ -203,12 +193,7 @@ namespace CREARSIS
                 tb_nom_tal.Text = "** NO existe";
                 return;
             }
-            int tmp;
-            if (int.TryParse(nro_tal.Trim(), out tmp) == false)
-            {
-                tb_nom_tal.Text = "** NO existe";
-                return;
-            }
+           
 
             tab_adm004 = o_adm004._05(cod_doc, Convert.ToInt32(nro_tal));
             if (tab_adm004.Rows.Count == 0)

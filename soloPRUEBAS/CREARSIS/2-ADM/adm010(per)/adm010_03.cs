@@ -238,19 +238,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             //    tb_cod_gru.Focus();
             //    return "Debes proporcionar el Grupo de Persona";
             //}
+            
 
-            //if (int.TryParse(tb_cod_gru.Text.Trim(), out tmp2) == false)
-            //{
-            //    tb_cod_gru.Focus();
-            //    return "El Codigo del Grupo de Persona NO es valido";
-            //}
-
-            //tab_adm011 = o_adm011._05(int.Parse(tb_cod_gru.Text));
-            //if (tab_adm011.Rows.Count == 0)
-            //{
-            //    tb_cod_gru.Focus();
-            //    return "El Grupo de Persona NO se encuentra registrado";
-            //}
+            
 
             //if (tab_adm011.Rows[0]["va_est_ado"].ToString() == "N")
             //{
@@ -266,11 +256,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             //    return "Debes proporcionar el Número del Persona";
             //}
 
-            //if (int.Parse(tb_nro_per.Text) <= 0)
-            //{
-            //    tb_nro_per.Focus();
-            //    return "El Número de Persona debe ser mayor a cero";
-            //}
+            
 
             ////**Verifica Codigo de Persona
             //tab_adm010 = o_adm010._05(tb_cod_per.Text);

@@ -324,8 +324,7 @@ namespace CREARSIS
                 tb_nom_tal.Text = "** NO existe";
                 return;
             }
-            int tmp;
-            if (int.TryParse(nro_tal.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(nro_tal) == false)
             {
                 tb_nom_tal.Text = "** NO existe";
                 return;

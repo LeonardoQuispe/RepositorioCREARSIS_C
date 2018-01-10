@@ -204,7 +204,6 @@ namespace CREARSIS
         {
 
             //**Verifica Grupo de Almacén
-            int tmp;
 
             if (tb_gru_alm.Text.Trim() == "")
             {
@@ -212,7 +211,7 @@ namespace CREARSIS
                 return "Debes proporcionar el Grupo de Almacén";
             }
 
-            if (int.TryParse(tb_gru_alm.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_gru_alm.Text) == false)
             {
                 tb_gru_alm.Focus();
                 return "El Codigo del Grupo de Almacén NO es valido";

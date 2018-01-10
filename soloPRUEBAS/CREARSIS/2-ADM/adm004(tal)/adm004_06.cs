@@ -204,8 +204,6 @@ namespace CREARSIS
 
         public string fu_ver_dat()
         {
-            int tmp;
-
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
             {
@@ -224,10 +222,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
-            {
-                return "El Nro de talonario NO es valido";
-            }
+            
 
             tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
             if (tab_adm004.Rows.Count == 0)

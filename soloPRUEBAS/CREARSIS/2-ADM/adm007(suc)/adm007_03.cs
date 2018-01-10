@@ -74,8 +74,7 @@ namespace CREARSIS
                 return "Debes proporcionar el codigo";
             }
 
-            int tmp;
-            if (int.TryParse(tb_cod_suc.Text, out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_suc.Text) == false)
             {
                 tb_cod_suc.Focus();
                 return "Dato no valido, debe ser numerico el codigo";

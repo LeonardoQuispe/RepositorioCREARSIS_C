@@ -207,6 +207,10 @@ namespace CREARSIS
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
                 if (tab_adm012.Rows.Count == 0)
@@ -230,6 +234,10 @@ namespace CREARSIS
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_adm012 = o_adm012._05(tb_sel_ecc.Text);
                 if (tab_adm012.Rows.Count == 0)
@@ -256,7 +264,6 @@ namespace CREARSIS
         /// </summary>
         public void fu_con_sel()
         {
-            int tmp;
 
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
@@ -265,7 +272,7 @@ namespace CREARSIS
                 return;
             }
 
-            if (int.TryParse(tb_sel_ecc.Text, out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;

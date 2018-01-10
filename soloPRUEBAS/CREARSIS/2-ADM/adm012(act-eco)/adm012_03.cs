@@ -28,7 +28,9 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_adm012 o_adm012 = new c_adm012();
+
 
         #endregion
 
@@ -48,10 +50,8 @@ namespace CREARSIS
         {
             try
             {
-                string va_est_ado = "";
                 string vv_err_msg = null;
                 vv_err_msg = fu_ver_dat();
-                int tmp;
 
                 if (vv_err_msg != null)
                 {
@@ -66,7 +66,7 @@ namespace CREARSIS
                     return;
                 }
 
-                if (int.TryParse(tb_cod_act.Text, out tmp) == false)
+                if (o_mg_glo_bal.fg_val_num(tb_cod_act.Text) == false)
                 {
                     tb_cod_act.Focus();
                     MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Actualizar Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);

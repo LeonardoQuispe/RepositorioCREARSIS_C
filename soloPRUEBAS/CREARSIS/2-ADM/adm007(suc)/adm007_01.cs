@@ -144,9 +144,7 @@ namespace CREARSIS
                 return;
             }
 
-            int tmp;
-
-            if (int.TryParse(tb_sel_ecc.Text,out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
@@ -183,6 +181,10 @@ namespace CREARSIS
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_adm007 = o_adm007._05(tb_sel_ecc.Text);
                 if (tab_adm007.Rows.Count == 0)
@@ -206,6 +208,10 @@ namespace CREARSIS
         {
             if (tb_sel_ecc.Text.Trim() != "" )
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_adm007 = o_adm007._05(tb_sel_ecc.Text);
                 if (tab_adm007.Rows.Count == 0)

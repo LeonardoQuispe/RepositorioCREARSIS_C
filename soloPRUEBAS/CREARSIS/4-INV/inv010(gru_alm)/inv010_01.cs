@@ -150,9 +150,7 @@ namespace CREARSIS
                 return;
             }
 
-            int tmp;
-
-            if (int.TryParse(tb_cod_gru.Text, out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
