@@ -29,6 +29,7 @@ namespace CREARSIS
 
         c_inv010 o_inv010 = new c_inv010();
         c_adm007 o_adm007 = new c_adm007();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -68,6 +69,13 @@ namespace CREARSIS
             {
                 tb_nom_gru.Focus();
                 return "Debes proporcionar el nombre del Grupo de Almacén";
+            }
+            //VERIFICA numero de Grupo
+
+            if (o_mg_glo_bal.fg_val_num(tb_nro_gru.Text) == false)
+            {
+                tb_nro_gru.Focus();
+                return "El Número del Grupo de Almacén debe ser Numerico";
             }
 
             return null;

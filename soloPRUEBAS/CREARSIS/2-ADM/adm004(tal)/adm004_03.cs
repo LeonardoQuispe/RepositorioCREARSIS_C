@@ -243,9 +243,7 @@ namespace CREARSIS
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
         public string fu_ver_dat()
-        {            
-            int tmp;
-            long tmp2;
+        {   
 
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")
@@ -268,10 +266,10 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_tal.Text) == false)
             {
                 tb_nro_tal.Focus();
-                return "El Nro de talonario NO es valido";
+                return "El Nro de Talonario debe ser numérico";
             }
 
             tab_adm004 = o_adm004._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text));
@@ -283,7 +281,7 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica formato-------------------------------------
-            if (int.TryParse(tb_for_mat.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_for_mat.Text) == false)
             {
                 tb_for_mat.Focus();
                 return "El formato debe ser numerico";
@@ -291,18 +289,11 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Nro de Autorizacion-------------------------
-            if (long.TryParse(tb_nro_aut.Text.Trim(), out tmp2) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_aut.Text) == false)
             {
                 tb_nro_aut.Focus();
                 return "El Nro de autorización debe ser numerico";
             }
-
-            //if (tb_nro_aut.Text.Trim() != "")
-            //{
-            //    //Verifica existetncia del Nro de autorizacion
-
-            //}
-            ////**-----------------------------------------------------
 
             return null;
         }

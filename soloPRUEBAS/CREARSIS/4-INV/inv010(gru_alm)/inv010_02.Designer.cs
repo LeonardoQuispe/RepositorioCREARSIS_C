@@ -164,7 +164,6 @@
             this.tb_cod_sucu.Size = new System.Drawing.Size(64, 22);
             this.tb_cod_sucu.TabIndex = 1;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
-            this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
             this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
             this.tb_cod_sucu.Validated += new System.EventHandler(this.tb_cod_sucu_Validated);
             // 
@@ -258,7 +257,6 @@
             this.tb_nro_gru.Size = new System.Drawing.Size(34, 22);
             this.tb_nro_gru.TabIndex = 4;
             this.tb_nro_gru.Text = "0";
-            this.tb_nro_gru.TextChanged += new System.EventHandler(this.tb_nro_gru_TextChanged);
             this.tb_nro_gru.Validated += new System.EventHandler(this.tb_nro_gru_Validated);
             // 
             // LabelX1

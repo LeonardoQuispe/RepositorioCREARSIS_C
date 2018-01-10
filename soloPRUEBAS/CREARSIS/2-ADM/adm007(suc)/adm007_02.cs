@@ -46,6 +46,12 @@ namespace CREARSIS
                 return "Debes proporcionar el codigo";
             }
 
+            if (o_mg_glo_bal.fg_val_num(tb_cod_suc.Text) == false)
+            {
+                tb_cod_suc.Focus();
+                return "El Codigo de la Sucursal debe ser Numerico";
+            }
+
             if (tb_nom_suc.Text== "")
             {
                 tb_nom_suc.Focus();
@@ -134,16 +140,7 @@ namespace CREARSIS
         {
             Close();
         }
-
-        private void tb_cod_suc_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_suc.Text = o_mg_glo_bal.valida_numeros(tb_cod_suc.Text);
-        }
-
-        private void tb_tel_suc_TextChanged(object sender, EventArgs e)
-        {
-            tb_tel_suc.Text = o_mg_glo_bal.valida_numeros(tb_tel_suc.Text);
-        }
+        
 
         #endregion
 

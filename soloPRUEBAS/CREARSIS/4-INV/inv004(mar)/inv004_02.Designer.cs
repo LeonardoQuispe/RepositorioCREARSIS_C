@@ -103,7 +103,6 @@
             this.tb_cod_mar.PreventEnterBeep = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);
             this.tb_cod_mar.TabIndex = 1;
-            this.tb_cod_mar.TextChanged += new System.EventHandler(this.tb_cod_mar_TextChanged);
             // 
             // LabelX1
             // 

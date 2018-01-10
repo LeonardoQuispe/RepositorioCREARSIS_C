@@ -210,7 +210,6 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            Int64 tmp2;
 
             //** Verifica Documento---------------------------------
             if (tb_cod_doc.Text.Trim() == "")

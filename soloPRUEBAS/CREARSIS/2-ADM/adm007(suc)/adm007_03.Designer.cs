@@ -68,7 +68,7 @@
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(116, 26);
+            this.tb_est_ado.Size = new System.Drawing.Size(116, 22);
             this.tb_est_ado.TabIndex = 168;
             this.tb_est_ado.TabStop = false;
             // 
@@ -111,7 +111,7 @@
             this.LabelX7.ForeColor = System.Drawing.Color.Black;
             this.LabelX7.Location = new System.Drawing.Point(32, 53);
             this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(53, 21);
+            this.LabelX7.Size = new System.Drawing.Size(43, 17);
             this.LabelX7.TabIndex = 169;
             this.LabelX7.Text = "Nombre";
             this.LabelX7.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -127,7 +127,7 @@
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
             this.LabelX6.Location = new System.Drawing.Point(38, 193);
             this.LabelX6.Name = "LabelX6";
-            this.LabelX6.Size = new System.Drawing.Size(45, 21);
+            this.LabelX6.Size = new System.Drawing.Size(37, 17);
             this.LabelX6.TabIndex = 167;
             this.LabelX6.Text = "Ciudad";
             this.LabelX6.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -146,7 +146,7 @@
             this.tb_ciu_suc.MaxLength = 50;
             this.tb_ciu_suc.Name = "tb_ciu_suc";
             this.tb_ciu_suc.PreventEnterBeep = true;
-            this.tb_ciu_suc.Size = new System.Drawing.Size(343, 26);
+            this.tb_ciu_suc.Size = new System.Drawing.Size(343, 22);
             this.tb_ciu_suc.TabIndex = 70;
             // 
             // LabelX5
@@ -160,7 +160,7 @@
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
             this.LabelX5.Location = new System.Drawing.Point(216, 160);
             this.LabelX5.Name = "LabelX5";
-            this.LabelX5.Size = new System.Drawing.Size(35, 21);
+            this.LabelX5.Size = new System.Drawing.Size(28, 17);
             this.LabelX5.TabIndex = 165;
             this.LabelX5.Text = "Email";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -176,7 +176,7 @@
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
             this.LabelX4.Location = new System.Drawing.Point(25, 124);
             this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(62, 21);
+            this.LabelX4.Size = new System.Drawing.Size(50, 17);
             this.LabelX4.TabIndex = 164;
             this.LabelX4.Text = "Ubicación";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -192,7 +192,7 @@
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
             this.LabelX3.Location = new System.Drawing.Point(32, 160);
             this.LabelX3.Name = "LabelX3";
-            this.LabelX3.Size = new System.Drawing.Size(56, 21);
+            this.LabelX3.Size = new System.Drawing.Size(45, 17);
             this.LabelX3.TabIndex = 163;
             this.LabelX3.Text = "Telefono";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -211,7 +211,7 @@
             this.tb_ema_suc.MaxLength = 20;
             this.tb_ema_suc.Name = "tb_ema_suc";
             this.tb_ema_suc.PreventEnterBeep = true;
-            this.tb_ema_suc.Size = new System.Drawing.Size(173, 26);
+            this.tb_ema_suc.Size = new System.Drawing.Size(173, 22);
             this.tb_ema_suc.TabIndex = 60;
             // 
             // tb_tel_suc
@@ -228,9 +228,8 @@
             this.tb_tel_suc.MaxLength = 15;
             this.tb_tel_suc.Name = "tb_tel_suc";
             this.tb_tel_suc.PreventEnterBeep = true;
-            this.tb_tel_suc.Size = new System.Drawing.Size(92, 26);
+            this.tb_tel_suc.Size = new System.Drawing.Size(92, 22);
             this.tb_tel_suc.TabIndex = 50;
-            this.tb_tel_suc.TextChanged += new System.EventHandler(this.tb_tel_suc_TextChanged);
             // 
             // tb_ubi_suc
             // 
@@ -246,7 +245,7 @@
             this.tb_ubi_suc.MaxLength = 500;
             this.tb_ubi_suc.Name = "tb_ubi_suc";
             this.tb_ubi_suc.PreventEnterBeep = true;
-            this.tb_ubi_suc.Size = new System.Drawing.Size(343, 26);
+            this.tb_ubi_suc.Size = new System.Drawing.Size(343, 22);
             this.tb_ubi_suc.TabIndex = 40;
             // 
             // tb_res_suc
@@ -263,7 +262,7 @@
             this.tb_res_suc.MaxLength = 120;
             this.tb_res_suc.Name = "tb_res_suc";
             this.tb_res_suc.PreventEnterBeep = true;
-            this.tb_res_suc.Size = new System.Drawing.Size(343, 26);
+            this.tb_res_suc.Size = new System.Drawing.Size(343, 22);
             this.tb_res_suc.TabIndex = 30;
             // 
             // tb_nom_suc
@@ -280,7 +279,7 @@
             this.tb_nom_suc.MaxLength = 20;
             this.tb_nom_suc.Name = "tb_nom_suc";
             this.tb_nom_suc.PreventEnterBeep = true;
-            this.tb_nom_suc.Size = new System.Drawing.Size(342, 26);
+            this.tb_nom_suc.Size = new System.Drawing.Size(342, 22);
             this.tb_nom_suc.TabIndex = 20;
             // 
             // tb_ley_suc
@@ -312,7 +311,7 @@
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
             this.LabelX9.Location = new System.Drawing.Point(32, 229);
             this.LabelX9.Name = "LabelX9";
-            this.LabelX9.Size = new System.Drawing.Size(53, 21);
+            this.LabelX9.Size = new System.Drawing.Size(43, 17);
             this.LabelX9.TabIndex = 156;
             this.LabelX9.Text = "Leyenda";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -329,7 +328,7 @@
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
             this.LabelX2.Location = new System.Drawing.Point(13, 83);
             this.LabelX2.Name = "LabelX2";
-            this.LabelX2.Size = new System.Drawing.Size(79, 21);
+            this.LabelX2.Size = new System.Drawing.Size(64, 17);
             this.LabelX2.TabIndex = 42;
             this.LabelX2.Text = "Responsable";
             this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -349,9 +348,8 @@
             this.tb_cod_suc.Name = "tb_cod_suc";
             this.tb_cod_suc.PreventEnterBeep = true;
             this.tb_cod_suc.ReadOnly = true;
-            this.tb_cod_suc.Size = new System.Drawing.Size(58, 26);
+            this.tb_cod_suc.Size = new System.Drawing.Size(58, 22);
             this.tb_cod_suc.TabIndex = 10;
-            this.tb_cod_suc.TextChanged += new System.EventHandler(this.tb_cod_suc_TextChanged);
             // 
             // LabelX1
             // 
@@ -365,7 +363,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(39, 23);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(47, 21);
+            this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Codigo";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -418,7 +416,7 @@
             // adm007_03
             // 
             this.AcceptButton = this.bt_ace_pta;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(460, 334);

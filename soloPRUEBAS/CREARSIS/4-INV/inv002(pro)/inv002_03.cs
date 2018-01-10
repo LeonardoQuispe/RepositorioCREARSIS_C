@@ -135,33 +135,34 @@ namespace CREARSIS._4_INV.inv002_pro_
         /// </summary>
         public string fu_ver_dat()
         {
+            //valida cod familia producto
             if (tb_cod_fap.Text.Trim() == "")
             {
                 tb_cod_fap.Focus();
                 return "Debes proporcionar el codigo de la Familia de Producto";
             }
-            if (tb_cod_pro.Text.Trim() == "")
-            {
-                tb_cod_pro.Focus();
-                return "Debes proporcionar el codigo del Producto";
-            }
-
-           
-
+            // Valida Producto
             if (tb_nom_pro.Text.Trim() == "")
             {
                 tb_nom_pro.Focus();
                 return "Debes proporcionar el nombre del Producto";
             }
+
             if (tb_des_pro.Text.Trim() == "")
             {
                 tb_des_pro.Focus();
                 return "Debes proporcionar una Descripcion del Producto";
             }
+
+            if (o_mg_glo_bal.fg_val_num(tb_cod_mar.Text) == false)
+            {
+                tb_cod_mar.Focus();
+                return "El Codigo de la Marca debe ser Numerico";
+            }
             if (tb_cod_mar.Text == "0")
             {
                 tb_cod_mar.Focus();
-                return "El Nro de la Marca debe ser diferente de 0";
+                return "El Codigo de la Marca debe ser diferente de 0";
             }
             if (tb_cod_mar.Text.Trim() == "")
             {
@@ -226,21 +227,32 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_uni_ven.Focus();
                 return "La Unidad de Medida de Ventas se encuentra Deshabilitada";
             }
-            //**-----------------------------------------------------
+
+            //Valida Equivalencia de Unidad de Medida VENTAS      
 
             if (tb_eqv_ven.Text.Trim() == "")
             {
                 tb_eqv_ven.Focus();
                 return "Debes proporcionar la equivalencia de  Unidad de Medida en Ventas";
             }
-            if (o_mg_glo_bal.fg_val_num(tb_eqv_ven.Text) == false)
+
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_eqv_ven.Text, 6, 2);
+
+            if (err_msg == null)
             {
                 tb_eqv_ven.Focus();
-                return "La la equivalencia de  Unidad de Medida en Ventas debe ser Numerico";
+                return "La equivalencia de  Unidad de Medida en Ventas debe ser Numerico";
             }
-
-
-
+            if (err_msg == "ent")
+            {
+                tb_eqv_ven.Focus();
+                return "La equivalencia de  Unidad de Medida en Ventas debe tener hasta 6 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_eqv_ven.Focus();
+                return "La equivalencia de  Unidad de Medida en Ventas debe tener hasta 2 números Decimales";
+            }
 
             //** Verifica Unidad de Medida de Compras---------------------------------
             if (tb_uni_com.Text.Trim() == "")
@@ -267,10 +279,23 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_eqv_com.Focus();
                 return "Debes proporcionar la equivalencia de  Unidad de Medida en Compras";
             }
-            if (o_mg_glo_bal.fg_val_num(tb_eqv_com.Text) == false)
+
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_eqv_com.Text, 6, 2);
+
+            if (err_msg == null)
             {
                 tb_eqv_com.Focus();
-                return "La la equivalencia de  Unidad de Medida en Compras debe ser Numerico";
+                return "La equivalencia de  Unidad de Medida en Compras debe ser Numerico";
+            }
+            if (err_msg == "ent")
+            {
+                tb_eqv_com.Focus();
+                return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 6 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_eqv_com.Focus();
+                return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 2 números Decimales";
             }
 
             return null;

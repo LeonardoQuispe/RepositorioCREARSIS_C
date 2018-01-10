@@ -251,10 +251,23 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_eqv_com.Focus();
                 return "Debes proporcionar la equivalencia de  Unidad de Medida en Compras";
             }
-            if (o_mg_glo_bal.fg_val_num(tb_eqv_com.Text) == false)
+
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_eqv_com.Text, 6, 2);
+
+            if (err_msg == null)
             {
                 tb_eqv_com.Focus();
-                return "La la equivalencia de  Unidad de Medida en Compras debe ser Numerico";
+                return "La equivalencia de  Unidad de Medida en Compras debe ser Numerico";
+            }
+            if (err_msg == "ent")
+            {
+                tb_eqv_com.Focus();
+                return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 6 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_eqv_com.Focus();
+                return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 2 números Decimales";
             }
 
             return null;

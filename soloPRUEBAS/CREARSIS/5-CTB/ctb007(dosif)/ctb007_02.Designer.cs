@@ -148,7 +148,6 @@
             this.tb_cod_ley.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_ley.TabIndex = 16;
             this.tb_cod_ley.ButtonCustomClick += new System.EventHandler(this.tb_cod_ley_ButtonCustomClick);
-            this.tb_cod_ley.TextChanged += new System.EventHandler(this.tb_cod_ley_TextChanged);
             this.tb_cod_ley.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_ley_KeyDown);
             this.tb_cod_ley.Validated += new System.EventHandler(this.tb_cod_ley_Validated);
             // 
@@ -336,7 +335,6 @@
             this.tb_nro_ini.TabIndex = 12;
             this.tb_nro_ini.Text = "1";
             this.tb_nro_ini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tb_nro_ini.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nro_ini_KeyPress);
             // 
             // LabelX5
             // 
@@ -410,7 +408,6 @@
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_act.TabIndex = 9;
             this.tb_cod_act.ButtonCustomClick += new System.EventHandler(this.tb_cod_act_ButtonCustomClick);
-            this.tb_cod_act.TextChanged += new System.EventHandler(this.tb_cod_act_TextChanged);
             this.tb_cod_act.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_act_KeyDown);
             this.tb_cod_act.Validated += new System.EventHandler(this.tb_cod_act_Validated);
             // 
@@ -486,7 +483,6 @@
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_sucu.TabIndex = 6;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
-            this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
             this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
             this.tb_cod_sucu.Validated += new System.EventHandler(this.tb_cod_sucu_Validated);
             // 

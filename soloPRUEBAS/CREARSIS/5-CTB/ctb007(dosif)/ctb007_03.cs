@@ -284,8 +284,6 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            int tmp;
-
             try
             {
                 //** Verifica nro de dosificacion
@@ -293,6 +291,11 @@ namespace CREARSIS
                 {
                     tb_nro_dos.Focus();
                     return "Debes proporcionar el número de Dosificación";
+                }
+                if (o_mg_glo_bal.fg_val_num(tb_nro_dos.Text) == false)
+                {
+                    tb_nro_dos.Focus();
+                    return "El Nro de Dosificación debe ser Numerico";
                 }
                 if (tb_nro_dos.Text == "0")
                 {
@@ -307,7 +310,11 @@ namespace CREARSIS
                     tb_cod_sucu.Focus();
                     return "Debes seleccionar una Sucursal";
                 }
-
+                if (o_mg_glo_bal.fg_val_num(tb_cod_sucu.Text) == false)
+                {
+                    tb_cod_sucu.Focus();
+                    return "El Codigo de la Sucursal debe ser Numerico";
+                }
                 if (tb_nom_sucu.Text == "** NO existe")
                 {
                     tb_cod_sucu.Focus();
@@ -322,7 +329,11 @@ namespace CREARSIS
                     tb_cod_act.Focus();
                     return "Debes proporcionar la Actividad economica";
                 }
-
+                if (o_mg_glo_bal.fg_val_num(tb_cod_act.Text) == false)
+                {
+                    tb_cod_act.Focus();
+                    return "El Codigo de la Actividad Economica debe ser Numerico";
+                }
                 if (tb_nom_act.Text.Trim() == "** NO existe")
                 {
                     tb_cod_act.Focus();
@@ -331,12 +342,12 @@ namespace CREARSIS
 
 
                 //** Verifica nro inicial y final 
-                if (int.TryParse(tb_nro_ini.Text, out tmp) == false)
+                if (o_mg_glo_bal.fg_val_num(tb_nro_ini.Text) == false)
                 {
                     tb_nro_ini.Focus();
                     return "Dato no valido, el número inicial debe ser numerico ";
                 }
-                if (int.TryParse(tb_nro_fin.Text, out tmp) == false)
+                if (o_mg_glo_bal.fg_val_num(tb_nro_fin.Text) == false)
                 {
                     tb_nro_fin.Focus();
                     return "Dato no valido, el número final debe ser numerico ";
@@ -360,7 +371,11 @@ namespace CREARSIS
                     tb_cod_ley.Focus();
                     return "Debes proporcionar la Leyenda";
                 }
-
+                if (o_mg_glo_bal.fg_val_num(tb_cod_ley.Text) == false)
+                {
+                    tb_cod_ley.Focus();
+                    return "El Codigo de la Leyenda debe ser Numerico";
+                }
                 if (tb_nom_ley.Text.Trim() == "** NO existe")
                 {
                     tb_cod_ley.Focus();

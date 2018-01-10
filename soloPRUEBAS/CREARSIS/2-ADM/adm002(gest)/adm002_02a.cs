@@ -150,9 +150,8 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
             string err_msg = null;
-            int temp;
 
-            if (int.TryParse(tb_ges_nva.Text.Trim(),out temp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_ges_nva.Text) == false)
             {
                 err_msg = "La gestion a crear no es correcta";
                 return err_msg;

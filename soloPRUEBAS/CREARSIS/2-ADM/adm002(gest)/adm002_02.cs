@@ -25,7 +25,6 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         DataTable tabla;
-        int temp;
 
         #endregion
 
@@ -181,11 +180,11 @@ namespace CREARSIS
         public string fu_ver_dat()
         {
             string err_msg = null;
-            
 
-            if (int.TryParse(tb_ges_nva.Text.Trim(), out temp) == false)
+
+            if (o_mg_glo_bal.fg_val_num(tb_ges_nva.Text) == false)
             {
-                err_msg = "La gestion a crear no es correcta";
+                err_msg = "La gestion a Crear debe tener un valor numerico";
                 return err_msg;
             }
 

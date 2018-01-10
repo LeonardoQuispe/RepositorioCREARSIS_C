@@ -23,7 +23,6 @@ namespace CREARSIS
         
         public dynamic vg_frm_pad;
         DataTable tabla;
-        int temp;
 
         #endregion
 
@@ -160,14 +159,15 @@ namespace CREARSIS
         /// </summary>
         public void fu_con_sel()
         {
+            
             //Verifica que los datos en pantallas sean correctos
-            if (int.TryParse(tb_ges_sel.Text, out temp) == false || tb_ges_sel.Text == "0")
+            if (o_mg_glo_bal.fg_val_num(tb_ges_sel.Text) == false || tb_ges_sel.Text == "0")
             {
                 lb_des_sel.Text = "** NO existe";
                 return;
             }
 
-            if (int.TryParse(tb_prd_sel.Text, out temp) == false || tb_prd_sel.Text == "0")
+            if (o_mg_glo_bal.fg_val_num(tb_prd_sel.Text) == false || tb_prd_sel.Text == "0")
             {
                 lb_des_sel.Text = "** NO existe";
                 return;

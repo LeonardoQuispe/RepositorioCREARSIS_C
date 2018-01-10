@@ -29,6 +29,8 @@ namespace CREARSIS
 
         #region INSTANCIAS
 
+        
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_seg001 o_ads005 = new c_seg001();
 
         #endregion
@@ -131,7 +133,6 @@ namespace CREARSIS
 
         public string fu_ver_dat()
         {
-            int temp;
             if (tb_nom_usr.Text.Trim() == "")
             {
                 tb_nom_usr.Focus();
@@ -144,12 +145,12 @@ namespace CREARSIS
                 return "Los datos han cambiado desde su ultima lectura; El usuario ya NO se encuentra registrado";
             }
 
-            if (((string)(tab_ads005.Rows[0]["va_est_ado"])) == "N")
+            if (tab_ads005.Rows[0]["va_est_ado"].ToString() == "N")
             {
                 return "El usuario se encuentra Deshabilitado";
             }
 
-            if (int.TryParse(tb_win_max.Text.Trim(), out temp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_win_max.Text) == false)
             {
                 tb_win_max.Focus();
                 return "Dato no valido para el Nro Maximo de ventanas abiertas";

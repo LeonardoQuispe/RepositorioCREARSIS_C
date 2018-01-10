@@ -59,7 +59,11 @@ namespace CREARSIS
                 tb_cod_mar.Focus();
                 return "Debes proporcionar el código de la Marca";
             }
-
+            if (o_mg_glo_bal.fg_val_num(tb_cod_mar.Text) == false)
+            {
+                tb_cod_mar.Focus();
+                return "El codigo de la Marca debe ser Numerico";
+            }
             tab_inv004 = o_inv004._05(int.Parse(tb_cod_mar.Text));
             if (tab_inv004.Rows.Count != 0)
             {

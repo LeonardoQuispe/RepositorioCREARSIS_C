@@ -56,10 +56,9 @@ namespace CREARSIS
                 cb_ges_tio.DisplayMember = "va_cod_ges";
                 cb_ges_tio.ValueMember = "va_cod_ges";
                 cb_ges_tio.DataSource = tab_adm002;
+                
 
-                int temp;
-
-                if (cb_ges_tio.SelectedValue!= null && int.TryParse(cb_ges_tio.SelectedValue.ToString(), out temp) == false)
+                if (cb_ges_tio.SelectedValue!= null && o_mg_glo_bal.fg_val_num(cb_ges_tio.SelectedValue.ToString()) == false)
                 {
                     fu_bus_car("", 1, 0);
                 }

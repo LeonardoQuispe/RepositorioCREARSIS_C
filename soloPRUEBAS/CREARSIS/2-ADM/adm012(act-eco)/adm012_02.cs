@@ -29,6 +29,8 @@ namespace CREARSIS
 
         c_adm012 o_adm012 = new c_adm012();
 
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+
         #endregion
 
         #region EVENTOS
@@ -40,8 +42,6 @@ namespace CREARSIS
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            int tmp;
-
             try
             {
                 if (tb_cod_act.Text.Trim() == "")
@@ -51,12 +51,13 @@ namespace CREARSIS
                     return;
                 }
 
-                if (int.TryParse(tb_cod_act.Text, out tmp) == false)
+                if (o_mg_glo_bal.fg_val_num(tb_cod_act.Text) == false)
                 {
                     tb_cod_act.Focus();
-                    MessageBoxEx.Show("Dato no valido, debe ser numerico el codigo", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxEx.Show("Dato no valido, el codigo debe ser numerico ", "error Nueva Actividad Económica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 if (tb_nom_act.Text.Trim() == "")
                 {
                     tb_nom_act.Focus();

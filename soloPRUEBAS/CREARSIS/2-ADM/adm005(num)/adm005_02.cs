@@ -252,11 +252,10 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Talonario-----------------------------------
-            int tmp;
-            if (int.TryParse(tb_nro_tal.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_tal.Text) == false)
             {
                 tb_nro_tal.Focus();
-                return "El Nro de talonario NO es valido";
+                return "El Nro de talonario debe ser Numerico";
             }
 
             tab_adm004 = o_adm004._05(tb_cod_doc.Text,Convert.ToInt32( tb_nro_tal.Text));
@@ -281,10 +280,10 @@ namespace CREARSIS
                 return "La numeración para el Talonario ya se encuentra registrada";
             }
             //**Verifica que la gestion sea valida-------------------
-            if (int.TryParse(cb_ges_tio.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(cb_ges_tio.Text) == false)
             {
                 cb_ges_tio.Focus();
-                return "La Gestion no es valida";
+                return "La Gestion debe tener un valor Numerico";
             }
 
             tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text));
@@ -296,13 +295,13 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Numero inicial y fianl----------------------
-            if (int.TryParse(tb_nro_ini.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_ini.Text) == false)
             {
                 tb_nro_ini.Focus();
                 return "El Número inicial debe ser numerico";
             }
 
-            if (int.TryParse(tb_nro_fin.Text.Trim(), out tmp) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_fin.Text) == false)
             {
                 tb_nro_fin.Focus();
                 return "El Número final debe ser numerico";
