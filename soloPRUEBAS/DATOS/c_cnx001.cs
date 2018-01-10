@@ -15,7 +15,7 @@ namespace DATOS
         /// <summary>
         /// Objeto de Conexion de SQL
         /// </summary>
-        private SqlConnection obj_sql_cnx;
+        static SqlConnection obj_sql_cnx;
         /// <summary>
         /// Objeto de Parámetro de SQL
         /// </summary>
@@ -30,8 +30,8 @@ namespace DATOS
         private SqlTransaction obj_sql_tra;
 
         //Datos de Acceso a la Base de Datos
-        private string va_nom_srv = "";              //Nombre del Servidor
-        private string va_nom_bdo = "";                //Nombre de la Base de Datos
+        public string va_nom_srv = "";              //Nombre del Servidor
+        public string va_nom_bdo = "";                //Nombre de la Base de Datos
         private string va_cod_usr = "chlsql";           //Nombre de usuario para loguearse en la BD
         private string va_pws_usr = "Crearsis123.";    //Contraseña del Usuario para loguearse en la BD
 
@@ -42,14 +42,14 @@ namespace DATOS
 
         #region METODOS
 
-        void c_cnx000()
-        {
-            if (gl_cnx_str != null)
-            {
-                //Instanciamos el objeto conecction
-                obj_sql_cnx = new SqlConnection(gl_cnx_str);
-            }
-        }
+        //public c_cnx001()
+        //{
+        //    if (gl_cnx_str != null)
+        //    {
+        //        //Instanciamos el objeto conecction
+        //        obj_sql_cnx = new SqlConnection(gl_cnx_str);
+        //    }
+        //}
 
         /// <summary>
         /// Funcion Conexion inicial (Al loguearse)
@@ -58,6 +58,8 @@ namespace DATOS
         {
             gl_cnx_str = "Data Source=" + va_nom_srv + "; Initial Catalog=" + va_nom_bdo + " ; " +
                         "user=" + va_cod_usr + "; password=" + va_pws_usr + ";packet size=4096;Connect Timeout=300";
+
+            obj_sql_cnx = new SqlConnection(gl_cnx_str);
         }
 
 
@@ -122,8 +124,9 @@ namespace DATOS
             {
 
                 DataTable tab_aux = new DataTable();    //Tabla Auxiliar donde se Cargará los datos retornados           
-                SqlDataAdapter obj_sql_adp = new SqlDataAdapter();     //Objetos Adaptador de sql (para llenar la Tabla con datos de BD)
                 obj_sql_cmd = new SqlCommand();     //Instancia el Objeto de Comando de SQL
+                SqlDataAdapter obj_sql_adp;     //Objetos Adaptador de sql (para llenar la Tabla con datos de BD)
+                
 
                 //Abre la Conexion por si está cerrada
                 if (obj_sql_cnx.State == ConnectionState.Closed)
@@ -133,6 +136,7 @@ namespace DATOS
 
                 obj_sql_cmd.CommandText = va_cad_sql;   //Llena la Consulta al Objeto Comando de SQL
                 obj_sql_cmd.Connection = obj_sql_cnx;   //Asigna el objeto Conexion SQL al Comando
+                obj_sql_adp = new SqlDataAdapter(obj_sql_cmd);  //Asigna el Comando al Adaptador SQL
                 obj_sql_adp.Fill(tab_aux);      //Llena datos de la BD a Tabla auxiliar
                 obj_sql_cnx.Close();    //Cierra la Conexion
 

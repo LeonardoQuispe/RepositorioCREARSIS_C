@@ -34,7 +34,7 @@ namespace DATOS
             try
             {
                 StringBuilder vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" EXECUTE adm001_01p1");
+                vv_str_sql.AppendLine(" SELECT * FROM adm001");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }
