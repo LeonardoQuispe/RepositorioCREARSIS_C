@@ -127,7 +127,6 @@
             this.tb_nro_tal.PreventEnterBeep = true;
             this.tb_nro_tal.Size = new System.Drawing.Size(36, 22);
             this.tb_nro_tal.TabIndex = 20;
-            this.tb_nro_tal.TextChanged += new System.EventHandler(this.tb_nro_tal_TextChanged);
             // 
             // LabelX1
             // 
@@ -236,7 +235,6 @@
             this.tb_cod_ges.PreventEnterBeep = true;
             this.tb_cod_ges.Size = new System.Drawing.Size(54, 22);
             this.tb_cod_ges.TabIndex = 35;
-            this.tb_cod_ges.TextChanged += new System.EventHandler(this.tb_cod_ges_TextChanged);
             // 
             // LabelX12
             // 
@@ -292,7 +290,6 @@
             this.tb_nro_aut.Text = "0";
             this.tb_nro_aut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_nro_aut.ButtonCustomClick += new System.EventHandler(this.tb_nro_dos_ButtonCustomClick);
-            this.tb_nro_aut.TextChanged += new System.EventHandler(this.tb_nro_aut_TextChanged);
             this.tb_nro_aut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_dos_KeyDown);
             this.tb_nro_aut.Validated += new System.EventHandler(this.tb_nro_dos_Validated);
             // 

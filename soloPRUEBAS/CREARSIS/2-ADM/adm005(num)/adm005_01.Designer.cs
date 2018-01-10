@@ -150,7 +150,6 @@
             this.tb_cod_ges.PreventEnterBeep = true;
             this.tb_cod_ges.Size = new System.Drawing.Size(44, 22);
             this.tb_cod_ges.TabIndex = 30;
-            this.tb_cod_ges.TextChanged += new System.EventHandler(this.tb_cod_ges_TextChanged);
             this.tb_cod_ges.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_cod_ges.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
@@ -171,7 +170,6 @@
             this.tb_nro_tal.PreventEnterBeep = true;
             this.tb_nro_tal.Size = new System.Drawing.Size(28, 22);
             this.tb_nro_tal.TabIndex = 10;
-            this.tb_nro_tal.TextChanged += new System.EventHandler(this.tb_nro_tal_TextChanged);
             this.tb_nro_tal.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
             // GroupBox1
@@ -415,7 +413,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(7, 10);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";

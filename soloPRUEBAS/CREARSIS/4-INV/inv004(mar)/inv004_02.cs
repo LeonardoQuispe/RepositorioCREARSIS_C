@@ -88,11 +88,7 @@ namespace CREARSIS
             InitializeComponent();
         }
 
-        private void tb_cod_mar_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_mar.Text = o_mg_glo_bal.valida_numeros(tb_cod_mar.Text);
-            tb_cod_mar.Select(tb_cod_mar.Text.Length, 0);
-        }
+        
 
         private void inv004_02_Load(object sender, EventArgs e)
         {

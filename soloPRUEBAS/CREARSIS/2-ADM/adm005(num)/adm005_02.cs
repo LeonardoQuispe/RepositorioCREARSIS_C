@@ -405,20 +405,6 @@ namespace CREARSIS
         }
 
         #endregion
-
-        private void tb_nro_tal_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
-        }
         
-        private void tb_nro_ini_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_ini.Text = o_mg_glo_bal.valida_numeros(tb_nro_ini.Text);
-        }
-
-        private void tb_nro_fin_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_fin.Text = o_mg_glo_bal.valida_numeros(tb_nro_fin.Text);
-        }
     }
 }

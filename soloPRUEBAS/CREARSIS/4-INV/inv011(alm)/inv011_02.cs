@@ -60,21 +60,11 @@ namespace CREARSIS
             }
         }
 
-        private void tb_gru_alm_TextChanged(object sender, EventArgs e)
-        {
-            tb_gru_alm.Text = o_mg_glo_bal.valida_numeros(tb_gru_alm.Text);
-            tb_gru_alm.Select(tb_gru_alm.Text.Length, 0);
-        }
+        
 
         private void tb_gru_alm_Validated(object sender, EventArgs e)
         {
             fu_rec_gru(tb_gru_alm.Text);
-        }
-
-        private void tb_nro_alm_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_alm.Text = o_mg_glo_bal.valida_numeros(tb_nro_alm.Text);
-            tb_nro_alm.Select(tb_nro_alm.Text.Length, 0);
         }
 
         private void tb_nro_alm_Validated(object sender, EventArgs e)

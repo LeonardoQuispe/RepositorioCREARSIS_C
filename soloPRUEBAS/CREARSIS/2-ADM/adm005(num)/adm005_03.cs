@@ -342,25 +342,6 @@ namespace CREARSIS
             tb_nom_tal.Text = tab_adm004.Rows[0]["va_nom_tal"].ToString();
         }
         #endregion
-
-        private void tb_cod_ges_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_ges.Text = o_mg_glo_bal.valida_numeros(tb_cod_ges.Text);
-        }
-
-        private void tb_nro_ini_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_ini.Text = o_mg_glo_bal.valida_numeros(tb_nro_ini.Text);
-        }
-
-        private void tb_nro_fin_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_fin.Text = o_mg_glo_bal.valida_numeros(tb_nro_fin.Text);
-        }
-
-        private void tb_nro_tal_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
-        }
+      
     }
 }

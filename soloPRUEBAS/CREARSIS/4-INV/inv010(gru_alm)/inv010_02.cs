@@ -232,18 +232,6 @@ namespace CREARSIS
             }
         }
 
-        private void tb_cod_sucu_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_sucu.Text = o_mg_glo_bal.valida_numeros(tb_cod_sucu.Text);
-            tb_cod_sucu.Select(tb_cod_sucu.Text.Length, 0);
-        }
-
-        private void tb_nro_gru_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_gru.Text = o_mg_glo_bal.valida_numeros(tb_nro_gru.Text);
-            tb_nro_gru.Select(tb_nro_gru.Text.Length, 0);
-        }
-
         private void tb_cod_sucu_Validated(object sender, EventArgs e)
 
         {

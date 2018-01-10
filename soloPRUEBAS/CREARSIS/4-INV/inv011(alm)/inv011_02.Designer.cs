@@ -362,7 +362,6 @@
             this.tb_nro_alm.Size = new System.Drawing.Size(34, 22);
             this.tb_nro_alm.TabIndex = 4;
             this.tb_nro_alm.Text = "0";
-            this.tb_nro_alm.TextChanged += new System.EventHandler(this.tb_nro_alm_TextChanged);
             this.tb_nro_alm.Validated += new System.EventHandler(this.tb_nro_alm_Validated);
             // 
             // LabelX1
@@ -488,7 +487,6 @@
             this.tb_gru_alm.Size = new System.Drawing.Size(81, 22);
             this.tb_gru_alm.TabIndex = 1;
             this.tb_gru_alm.ButtonCustomClick += new System.EventHandler(this.tb_gru_alm_ButtonCustomClick);
-            this.tb_gru_alm.TextChanged += new System.EventHandler(this.tb_gru_alm_TextChanged);
             this.tb_gru_alm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_gru_alm_KeyDown);
             this.tb_gru_alm.Validated += new System.EventHandler(this.tb_gru_alm_Validated);
             // 

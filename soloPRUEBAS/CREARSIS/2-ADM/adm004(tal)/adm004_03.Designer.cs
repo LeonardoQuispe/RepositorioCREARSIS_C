@@ -127,7 +127,6 @@
             this.tb_nro_tal.ReadOnly = true;
             this.tb_nro_tal.Size = new System.Drawing.Size(36, 22);
             this.tb_nro_tal.TabIndex = 20;
-            this.tb_nro_tal.TextChanged += new System.EventHandler(this.tb_nro_tal_TextChanged);
             // 
             // LabelX1
             // 
@@ -254,7 +253,6 @@
             this.tb_nro_aut.TabIndex = 70;
             this.tb_nro_aut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_nro_aut.ButtonCustomClick += new System.EventHandler(this.tb_nro_aut_ButtonCustomClick);
-            this.tb_nro_aut.TextChanged += new System.EventHandler(this.tb_nro_aut_TextChanged);
             this.tb_nro_aut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_aut_KeyDown);
             this.tb_nro_aut.Validated += new System.EventHandler(this.tb_nro_aut_Validated);
             // 

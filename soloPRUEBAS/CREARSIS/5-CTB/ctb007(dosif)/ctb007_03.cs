@@ -208,30 +208,7 @@ namespace CREARSIS
 
             o_mg_glo_bal.mg_ads000_03(obj, this, vg_str_ucc);
         }
-        private void tb_nro_dos_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_dos.Text = o_mg_glo_bal.valida_numeros(tb_nro_dos.Text);
-            tb_nro_dos.Select(tb_nro_dos.Text.Length, 0);
-        }
-
-        private void tb_cod_sucu_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_sucu.Text = o_mg_glo_bal.valida_numeros(tb_cod_sucu.Text);
-            tb_cod_sucu.Select(tb_cod_sucu.Text.Length, 0);
-        }
-
-        private void tb_cod_act_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_act.Text = o_mg_glo_bal.valida_numeros(tb_cod_act.Text);
-            tb_cod_act.Select(tb_cod_act.Text.Length, 0);
-        }
-
-        private void tb_cod_ley_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_ley.Text = o_mg_glo_bal.valida_numeros(tb_cod_ley.Text);
-            tb_cod_ley.Select(tb_cod_ley.Text.Length, 0);
-        }
-
+       
         #endregion
 
         #region METODOS

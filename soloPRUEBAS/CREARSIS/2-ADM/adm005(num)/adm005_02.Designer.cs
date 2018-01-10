@@ -34,6 +34,7 @@
             this.LabelX6 = new DevComponents.DotNetBar.LabelX();
             this.LabelX5 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_ges_tio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.tb_fec_fin = new System.Windows.Forms.DateTimePicker();
             this.tb_fec_ini = new System.Windows.Forms.DateTimePicker();
             this.tb_nro_fin = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -48,7 +49,6 @@
             this.tb_nom_tal = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_doc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.cb_ges_tio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox3.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
@@ -150,6 +150,20 @@
             this.GroupBox2.TabIndex = 5;
             this.GroupBox2.TabStop = false;
             // 
+            // cb_ges_tio
+            // 
+            this.cb_ges_tio.DisplayMember = "Text";
+            this.cb_ges_tio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
+            this.cb_ges_tio.FormattingEnabled = true;
+            this.cb_ges_tio.ItemHeight = 16;
+            this.cb_ges_tio.Location = new System.Drawing.Point(77, 21);
+            this.cb_ges_tio.Name = "cb_ges_tio";
+            this.cb_ges_tio.Size = new System.Drawing.Size(86, 22);
+            this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_ges_tio.TabIndex = 91;
+            // 
             // tb_fec_fin
             // 
             this.tb_fec_fin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -182,7 +196,6 @@
             this.tb_nro_fin.PreventEnterBeep = true;
             this.tb_nro_fin.Size = new System.Drawing.Size(54, 22);
             this.tb_nro_fin.TabIndex = 50;
-            this.tb_nro_fin.TextChanged += new System.EventHandler(this.tb_nro_fin_TextChanged);
             // 
             // LabelX4
             // 
@@ -216,7 +229,6 @@
             this.tb_nro_ini.PreventEnterBeep = true;
             this.tb_nro_ini.Size = new System.Drawing.Size(54, 22);
             this.tb_nro_ini.TabIndex = 40;
-            this.tb_nro_ini.TextChanged += new System.EventHandler(this.tb_nro_ini_TextChanged);
             // 
             // LabelX3
             // 
@@ -269,7 +281,6 @@
             this.tb_nro_tal.Size = new System.Drawing.Size(63, 22);
             this.tb_nro_tal.TabIndex = 20;
             this.tb_nro_tal.ButtonCustomClick += new System.EventHandler(this.tb_nro_tal_ButtonCustomClick);
-            this.tb_nro_tal.TextChanged += new System.EventHandler(this.tb_nro_tal_TextChanged);
             this.tb_nro_tal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_tal_KeyDown);
             this.tb_nro_tal.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
@@ -380,20 +391,6 @@
             this.GroupBox1.Size = new System.Drawing.Size(516, 87);
             this.GroupBox1.TabIndex = 4;
             this.GroupBox1.TabStop = false;
-            // 
-            // cb_ges_tio
-            // 
-            this.cb_ges_tio.DisplayMember = "Text";
-            this.cb_ges_tio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
-            this.cb_ges_tio.FormattingEnabled = true;
-            this.cb_ges_tio.ItemHeight = 16;
-            this.cb_ges_tio.Location = new System.Drawing.Point(77, 21);
-            this.cb_ges_tio.Name = "cb_ges_tio";
-            this.cb_ges_tio.Size = new System.Drawing.Size(86, 22);
-            this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_ges_tio.TabIndex = 91;
             // 
             // adm005_02
             // 

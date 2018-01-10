@@ -92,21 +92,22 @@ namespace CREARSIS
                 return;
             }
 
-
-            tabla = o_adm005._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text), int.Parse(tb_cod_ges.Text));
-
-            if (tabla.Rows.Count == 0)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_tal.Text) == true)
             {
-                lb_sel_ecc.Text = "** NO existe";
-                return;
+                tabla = o_adm005._05(tb_cod_doc.Text, int.Parse(tb_nro_tal.Text), int.Parse(tb_cod_ges.Text));
+
+                if (tabla.Rows.Count == 0)
+                {
+                    lb_sel_ecc.Text = "** NO existe";
+                    return;
+                }
+
+                tb_nro_tal.Text = tabla.Rows[0]["va_nro_tal"].ToString();
+                tb_cod_doc.Text = tabla.Rows[0]["va_cod_doc"].ToString();
+                tb_cod_ges.Text = tabla.Rows[0]["va_cod_ges"].ToString();
+
+                lb_sel_ecc.Text = tabla.Rows[0]["va_nom_tal"].ToString();
             }
-
-            tb_nro_tal.Text = tabla.Rows[0]["va_nro_tal"].ToString();
-            tb_cod_doc.Text = tabla.Rows[0]["va_cod_doc"].ToString();
-            tb_cod_ges.Text = tabla.Rows[0]["va_cod_ges"].ToString();
-
-            lb_sel_ecc.Text = tabla.Rows[0]["va_nom_tal"].ToString();
-
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
@@ -357,16 +358,6 @@ namespace CREARSIS
 
         #region OPCIONES DE MENU
 
-        private void tb_nro_tal_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
-
-        }
-
-        private void tb_cod_ges_TextChanged(object sender, EventArgs e)
-        {
-            tb_cod_ges.Text = o_mg_glo_bal.valida_numeros(tb_cod_ges.Text);
-        }
         //[MENU- Nuevo]
         private void m_adm005_02_Click(object sender, EventArgs e)
         {

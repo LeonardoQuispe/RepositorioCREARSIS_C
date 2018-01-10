@@ -532,7 +532,6 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
             this.tb_nro_dos.TabIndex = 2;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.TextChanged += new System.EventHandler(this.tb_nro_dos_TextChanged);
             // 
             // LabelX1
             // 

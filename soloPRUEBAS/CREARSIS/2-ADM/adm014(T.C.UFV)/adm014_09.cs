@@ -357,18 +357,7 @@ namespace CREARSIS
         {
             Close();
         }
-
-        private void tb_fila_ini_TextChanged(object sender, EventArgs e)
-        {
-            tb_fila_ini.Text = o_mg_glo_bal.valida_numeros(tb_fila_ini.Text);
-            tb_fila_ini.Select(tb_fila_ini.Text.Length, 0);
-        }
-
-        private void tb_fila_fin_TextChanged(object sender, EventArgs e)
-        {
-            tb_fila_fin.Text = o_mg_glo_bal.valida_numeros(tb_fila_fin.Text);
-            tb_fila_fin.Select(tb_fila_fin.Text.Length, 0);
-        }
+        
 
         private void tb_libro_xls_KeyDown(object sender, KeyEventArgs e)
         {

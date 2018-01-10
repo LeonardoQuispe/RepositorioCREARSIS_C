@@ -228,14 +228,17 @@ namespace CREARSIS
                 return;
             }
 
-            tab_ctb007 = o_ctb007._05(Int64.Parse(cod_dos));
-            if (tab_ctb007.Rows.Count == 0)
+            if (o_mg_glo_bal.fg_val_num(cod_dos) == true)
             {
-                tb_nro_aut.Text = "** NO existe";
-                return;
-            }
+                tab_ctb007 = o_ctb007._05(Int64.Parse(cod_dos));
+                if (tab_ctb007.Rows.Count == 0)
+                {
+                    tb_nro_aut.Text = "** NO existe";
+                    return;
+                }
 
-            tb_nro_aut.Text = cod_dos;
+                tb_nro_aut.Text = cod_dos;
+            }
 
         }
 
@@ -300,15 +303,6 @@ namespace CREARSIS
 
         #endregion
 
-
-        private void tb_nro_tal_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_tal.Text = o_mg_glo_bal.valida_numeros(tb_nro_tal.Text);
-        }
-
-        private void tb_nro_aut_TextChanged(object sender, EventArgs e)
-        {
-            tb_nro_aut.Text = o_mg_glo_bal.valida_numeros(tb_nro_aut.Text);
-        }
+        
     }
 }

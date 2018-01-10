@@ -901,39 +901,7 @@ namespace CREARSIS
             return res_ult;
         }
 
-        /// <summary>
-        /// Valida que solo se ingrese numeros
-        /// </summary>
-        /// <param name="dato"></param>
-        /// <returns></returns>
-        public string valida_numeros(string dato)
-        {
-            string nuevo = null;
-            bool bandera = false;
-
-            if (string.IsNullOrWhiteSpace(dato) == false)
-            {
-                for (int i = 0; i < dato.Trim().Length; i++)
-                {
-                    if (char.IsNumber(dato[i]) == true)
-                    {
-                        nuevo += dato[i];
-                    }
-                    else if (char.IsNumber(dato[i]) == false)
-                    {
-                        bandera = true;
-                    }
-                }
-
-                if (bandera == true)
-                {
-                    System.Media.SystemSounds.Beep.Play();
-                }
-            }
-
-            return nuevo;
-
-        }
+       
 
         /// <summary>
         /// FUncion Global Para Validar Números

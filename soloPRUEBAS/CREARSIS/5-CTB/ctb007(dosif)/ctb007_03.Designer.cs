@@ -203,7 +203,6 @@
             this.tb_cod_ley.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_ley.TabIndex = 15;
             this.tb_cod_ley.ButtonCustomClick += new System.EventHandler(this.tb_cod_ley_ButtonCustomClick);
-            this.tb_cod_ley.TextChanged += new System.EventHandler(this.tb_cod_ley_TextChanged);
             this.tb_cod_ley.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_ley_KeyDown);
             // 
             // LabelX8
@@ -467,7 +466,6 @@
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_act.TabIndex = 8;
             this.tb_cod_act.ButtonCustomClick += new System.EventHandler(this.tb_cod_act_ButtonCustomClick);
-            this.tb_cod_act.TextChanged += new System.EventHandler(this.tb_cod_act_TextChanged);
             this.tb_cod_act.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_act_KeyDown);
             // 
             // tb_nom_sucu
@@ -543,7 +541,6 @@
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
             this.tb_cod_sucu.TabIndex = 5;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
-            this.tb_cod_sucu.TextChanged += new System.EventHandler(this.tb_cod_sucu_TextChanged);
             this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
             // 
             // cb_tip_fac
@@ -593,7 +590,6 @@
             this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
             this.tb_nro_dos.TabIndex = 1;
             this.tb_nro_dos.Text = "0";
-            this.tb_nro_dos.TextChanged += new System.EventHandler(this.tb_nro_dos_TextChanged);
             // 
             // LabelX1
             // 

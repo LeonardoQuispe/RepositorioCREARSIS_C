@@ -144,7 +144,6 @@
             this.tb_fila_fin.TabIndex = 100;
             this.tb_fila_fin.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_fila_fin.WatermarkText = "500";
-            this.tb_fila_fin.TextChanged += new System.EventHandler(this.tb_fila_fin_TextChanged);
             // 
             // tb_col_ini
             // 
@@ -184,7 +183,6 @@
             this.tb_fila_ini.TabIndex = 98;
             this.tb_fila_ini.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_fila_ini.WatermarkText = "2";
-            this.tb_fila_ini.TextChanged += new System.EventHandler(this.tb_fila_ini_TextChanged);
             // 
             // tb_libro_xls
             // 
