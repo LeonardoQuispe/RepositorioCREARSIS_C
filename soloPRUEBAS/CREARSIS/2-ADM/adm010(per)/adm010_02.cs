@@ -354,7 +354,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             //Funcion que sugiere un numero de persona de acuerdo al grupo de persona
             tab_adm010 = o_adm010._05b(int.Parse(cod_gru));
 
-            if (tab_adm010.Rows.Count!=0)
+            if (tab_adm010.Rows[0][0].ToString()!="")
             {
                 int va_sug_nro_per = (Convert.ToInt32(tab_adm010.Rows[0][0].ToString()) + 1);
 
