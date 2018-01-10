@@ -165,10 +165,8 @@ namespace CREARSIS
                 //guarda la fecha de caducidad en el vector
                 vc_usr_log.vs_fec_cad = vv_fec_cad;
 
-                //Ejecuta Método para obtener fecha Actual del Sistema                
-                TimeSpan ts = vv_fec_cad - fg_fec_act();
-
-                if (ts.Days < 0)
+                //Ejecuta Método para obtener fecha Actual del Sistema 
+                if ((vv_fec_cad - fg_fec_act()).Days < 0)
                 {
                     vc_usr_log.vs_msg_err = ("La licencia del sistema ah expirado, comuniquese con su Ing. Sistemas ¡¡");
                     return vc_usr_log;
