@@ -93,9 +93,7 @@ namespace CREARSIS
                 fec_fin= fec_ini.AddMonths(1);
                 fec_fin= fec_fin.AddDays(-1);
                 
-                TimeSpan ts = fec_fin - fec_ini;
-
-                nro_dms = ts.Days;
+                nro_dms = (fec_fin - fec_ini).Days;
                 nro_dms = nro_dms + 1;
 
 

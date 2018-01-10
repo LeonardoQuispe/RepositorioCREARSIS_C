@@ -219,10 +219,8 @@ namespace CREARSIS
             }
 
             //**Verifica Fecha inicial y final-----------------------
-
-            TimeSpan ts = tb_fec_fin.Value - tb_fec_ini.Value;
-
-            if (ts.Days < 0)
+            
+            if ((tb_fec_fin.Value - tb_fec_ini.Value).Days < 0)
             {
                 tb_fec_ini.Focus();
                 return "La fecha inicial debe ser menor a la fecha final";

@@ -321,19 +321,15 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica Fecha inicial y final-----------------------
-
-            TimeSpan ts = tb_fec_fin.Value - tb_fec_ini.Value;
-
-            if (ts.Days < 0)
+            
+            if ((tb_fec_fin.Value - tb_fec_ini.Value).Days < 0)
             {
                 tb_fec_ini.Focus();
                 return "La fecha inicial debe ser menor a la fecha final";
             }
             tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text), 1);
-
-            ts = tb_fec_ini.Value- Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_ini"].ToString());
-
-            if (ts.Days < 0)
+            
+            if ((tb_fec_ini.Value - Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_ini"].ToString())).Days < 0)
             {
                 tb_fec_ini.Focus();
                 return "La fecha inicial No pertenece a una fecha valida para la gestion";
@@ -341,10 +337,8 @@ namespace CREARSIS
 
 
             tab_adm002 = o_adm002._05(Convert.ToInt32(cb_ges_tio.Text), 12);
-
-            ts = Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_fin"].ToString()) - tb_fec_fin.Value;
-
-            if (ts.Days< 0)
+            
+            if ((Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_fin"].ToString()) - tb_fec_fin.Value).Days< 0)
             {
                 tb_fec_ini.Focus();
                 return "La fecha Final No pertenece a una fecha valida para la gestion";

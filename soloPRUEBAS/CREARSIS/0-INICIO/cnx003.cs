@@ -164,10 +164,9 @@ namespace CREARSIS
                 DateTime vv_fec_aux = _01_mg_glo_bal.vc_usr_log.vs_fec_cad.AddMonths(-1);
                 //DateTime que obtine valor de la funcion global                
                 DateTime vv_fec_act = o_mg_glo_bal.fg_fec_act();
-                //COmpara fehca actual con fecha de licencia
-                TimeSpan ts = vv_fec_aux - o_mg_glo_bal.fg_fec_act();
 
-                if (ts.Days <= 0)
+                //COmpara fehca actual con fecha de licencia
+                if ((vv_fec_aux - o_mg_glo_bal.fg_fec_act()).Days <= 0)
                 {
                     _01_mg_glo_bal.mg_not_ify("LICENCIA POR CADUCAR", "La Licencia esta proxima a caducar, comuniquese con Crearsis");
 
