@@ -265,22 +265,21 @@ namespace CREARSIS
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
-                }
-
-                if (va_ind_ice == 0)
-                {
-                    tb_sel_ecc.Text = "";
-                    lb_sel_ecc.Text = "** NO existe";
-                }
-
-                if (va_ind_ice > 0)
-                {
-                    tb_sel_ecc.Text = tab_inv011.Rows[0]["va_cod_alm"].ToString().PadLeft(7, '0');
-                    lb_sel_ecc.Text = tab_inv011.Rows[0]["va_nom_alm"].ToString();
-                }
+                }                
             }
 
-            
+            if (va_ind_ice == 0)
+            {
+                tb_sel_ecc.Text = "";
+                lb_sel_ecc.Text = "** NO existe";
+            }
+
+            if (va_ind_ice > 0)
+            {
+                tb_sel_ecc.Text = tab_inv011.Rows[0]["va_cod_alm"].ToString().PadLeft(7, '0');
+                lb_sel_ecc.Text = tab_inv011.Rows[0]["va_nom_alm"].ToString();
+            }
+
 
             tb_val_bus.Focus();
         }

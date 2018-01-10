@@ -148,6 +148,7 @@
             this.tb_cod_gru.Border.Class = "TextBoxBorder";
             this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.Enabled = false;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.Location = new System.Drawing.Point(77, 19);
             this.tb_cod_gru.MaxLength = 2;

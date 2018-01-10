@@ -165,21 +165,33 @@ namespace CREARSIS
 
             tab_adm005 = o_adm005._01(cod_ges, val_bus, prm_bus);
 
-            foreach (DataRow row in tab_adm005.Rows)
+            if (tab_adm005.Rows.Count != 0)
             {
-                dg_res_ult.Rows.Add(row["va_cod_ges"], row["va_cod_doc"], row["va_nom_doc"], row["va_nro_tal"], row["va_nom_tal"], row["va_nro_ini"], row["va_nro_fin"], row["va_fec_ini"], row["va_fec_fin"]);
+                foreach (DataRow row in tab_adm005.Rows)
+                {
+                    dg_res_ult.Rows.Add(row["va_cod_ges"], row["va_cod_doc"], row["va_nom_doc"], row["va_nro_tal"], row["va_nom_tal"], row["va_nro_ini"], row["va_nro_fin"], row["va_fec_ini"], row["va_fec_fin"]);
 
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
+                }
             }
 
-            if (tab_adm005.Rows.Count != 0)
+
+            if (va_ind_ice == 0)
+            {
+                tb_nro_tal.Text = "";
+                tb_cod_doc.Text = "";
+                tb_cod_ges.Text = "";
+                lb_sel_ecc.Text = "** NO existe";
+            }
+
+            if (va_ind_ice > 0)
             {
                 tb_nro_tal.Text = tab_adm005.Rows[0]["va_nro_tal"].ToString();
                 tb_cod_doc.Text = tab_adm005.Rows[0]["va_cod_doc"].ToString();
                 tb_cod_ges.Text = tab_adm005.Rows[0]["va_cod_ges"].ToString();
-            }
-
+                lb_sel_ecc.Text = tab_adm005.Rows[0]["va_nom_tal"].ToString();
+            }            
 
             tb_val_bus.Focus();
 

@@ -379,33 +379,36 @@ namespace CREARSIS
 
             tab_adm004 = o_adm004._01(0, val_bus, prm_bus, est_bus);
 
-            foreach (DataRow row in tab_adm004.Rows)
+            if (tab_adm004.Rows.Count!=0)
             {
-                switch (row["va_est_ado"].ToString())
+                foreach (DataRow row in tab_adm004.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    switch (row["va_tip_num"].ToString())
+                    {
+                        case "0":
+                            va_tip_num = "Manual";
+                            break;
+                        case "1":
+                            va_tip_num = "Automatico";
+                            break;
+                    }
+
+
+                    dg_res_ult.Rows.Add(row["va_cod_doc"].ToString(), row["va_nom_doc"].ToString(), row["va_nro_tal"].ToString(), row["va_nom_tal"].ToString(), va_tip_num, va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
-
-                switch (row["va_tip_num"].ToString())
-                {
-                    case "0":
-                        va_tip_num = "Manual";
-                        break;
-                    case "1":
-                        va_tip_num = "Automatico";
-                        break;
-                }
-
-
-                dg_res_ult.Rows.Add(row["va_cod_doc"].ToString(), row["va_nom_doc"].ToString(), row["va_nro_tal"].ToString(), row["va_nom_tal"].ToString(), va_tip_num, va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
             if (va_ind_ice == 0)

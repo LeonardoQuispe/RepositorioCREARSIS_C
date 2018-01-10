@@ -45,6 +45,13 @@ namespace CREARSIS
                 tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
+            if (o_mg_glo_bal.fg_val_num(cod_suc)==false)
+            {
+                tb_cod_sucu.Text = "";
+                tb_nom_sucu.Text = "** NO existe";
+                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
+                return;
+            }
 
             tab_adm007 = o_adm007._05(cod_suc);
             if (tab_adm007.Rows.Count == 0)
@@ -249,11 +256,17 @@ namespace CREARSIS
 
             if (string.IsNullOrWhiteSpace(tb_nro_gru.Text) != true)
             {
-                tmp = tb_nro_gru.Text.PadLeft(2, '0');
+                if (o_mg_glo_bal.fg_val_num(tb_nro_gru.Text) != false)
+                {
+                    tmp = tb_nro_gru.Text.PadLeft(2, '0');
 
-                tb_cod_gru.Text =tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString()+tmp[0].ToString() + tmp[1].ToString();
-
+                    tb_cod_gru.Text = tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString() + tmp[0].ToString() + tmp[1].ToString();
+                    return;
+                }
             }
+
+            tb_nro_gru.Clear();
+            tb_cod_gru.Text = tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString() + "00";
         }
         #endregion
     }

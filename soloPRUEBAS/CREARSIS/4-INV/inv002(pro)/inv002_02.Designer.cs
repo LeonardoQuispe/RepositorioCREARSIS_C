@@ -89,7 +89,7 @@
             this.gb_ctr_frm.Location = new System.Drawing.Point(1, 362);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(742, 48);
-            this.gb_ctr_frm.TabIndex = 0;
+            this.gb_ctr_frm.TabIndex = 7;
             this.gb_ctr_frm.TabStop = false;
             // 
             // bt_can_cel

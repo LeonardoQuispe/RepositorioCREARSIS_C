@@ -22,6 +22,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
+        DataTable tab_adm010;
         DataTable tab_adm011;
 
 
@@ -296,6 +297,16 @@ namespace CREARSIS._2_ADM.adm010_per_
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI debe ser numérico";
+            }
+            tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
+            
+            if (tab_adm010.Rows.Count != 0)
+            {
+                if (tab_adm010.Rows[0]["va_cod_per"].ToString()!=tb_cod_per.Text)
+                {
+                    tb_nit_per.Focus();
+                    return "El NIT/CI ya se encuentra Registrado";
+                }                
             }
 
             //**Verifica Nombre Comercial

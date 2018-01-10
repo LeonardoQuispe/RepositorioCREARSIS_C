@@ -83,11 +83,18 @@ namespace CREARSIS
 
             if (string.IsNullOrWhiteSpace(tb_nro_alm.Text) != true)
             {
-                tmp = tb_nro_alm.Text.PadLeft(3, '0');
+                if (o_mg_glo_bal.fg_val_num(tb_nro_alm.Text)==true)
+                {
+                    tmp = tb_nro_alm.Text.PadLeft(3, '0');
 
-                tb_cod_alm.Text = tb_cod_alm.Text[0].ToString() + tb_cod_alm.Text[1].ToString()+ tb_cod_alm.Text[2].ToString() + tb_cod_alm.Text[3].ToString() + tmp[0].ToString() + tmp[1].ToString()+ tmp[2].ToString();
-
+                    tb_cod_alm.Text = tb_cod_alm.Text[0].ToString() + tb_cod_alm.Text[1].ToString() + tb_cod_alm.Text[2].ToString() + tb_cod_alm.Text[3].ToString() + tmp[0].ToString() + tmp[1].ToString() + tmp[2].ToString();
+                    return;
+                }     
             }
+
+            tb_cod_alm.Text = tb_cod_alm.Text[0].ToString() + tb_cod_alm.Text[1].ToString() + tb_cod_alm.Text[2].ToString() + tb_cod_alm.Text[3].ToString() + "000";
+            tb_nro_alm.Clear();
+
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -182,6 +189,7 @@ namespace CREARSIS
         public void fu_lim_frm()
         {
             tb_gru_alm.Clear();
+            tb_nom_gru.Clear();
             tb_nro_alm.Clear();
             tb_cod_alm.Clear();
             tb_nom_alm.Clear();

@@ -162,29 +162,34 @@ namespace CREARSIS
                 dg_res_ult.Rows.Clear();
 
                 tab_ctb007 = o_ctb007._01(val_bus, prm_bus, fec_ini, fec_fin, est_bus);
-                foreach (DataRow row in tab_ctb007.Rows)
+
+                if (tab_ctb007.Rows.Count != 0)
                 {
-                    switch (row["va_est_ado"].ToString())
-                    {
-                        case "H":
-                            va_est_ado = "Habilitada";
-                            break;
-                        case "N":
-                            va_est_ado = "Deshabilitada";
-                            break;
-                    }
 
-                    if (row["va_lla_vee"].ToString()!="")
+                    foreach (DataRow row in tab_ctb007.Rows)
                     {
-                        dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado,va_lla_vee.Checked=true);
-                    }
-                    else
-                    {
-                        dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
-                    }                    
+                        switch (row["va_est_ado"].ToString())
+                        {
+                            case "H":
+                                va_est_ado = "Habilitada";
+                                break;
+                            case "N":
+                                va_est_ado = "Deshabilitada";
+                                break;
+                        }
 
-                    dg_res_ult.Rows[va_ind_ice].Tag = row;
-                    va_ind_ice = va_ind_ice + 1;
+                        if (row["va_lla_vee"].ToString() != "")
+                        {
+                            dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado, va_lla_vee.Checked = true);
+                        }
+                        else
+                        {
+                            dg_res_ult.Rows.Add(row["va_nro_aut"], row["va_cod_suc"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+                        }
+
+                        dg_res_ult.Rows[va_ind_ice].Tag = row;
+                        va_ind_ice = va_ind_ice + 1;
+                    }
                 }
 
                 if (va_ind_ice == 0)

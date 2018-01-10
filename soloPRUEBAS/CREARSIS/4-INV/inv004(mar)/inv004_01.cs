@@ -62,22 +62,27 @@ namespace CREARSIS
 
             tab_inv004 = o_inv004._01(val_bus, prm_bus,est_bus.ToString());
 
-            foreach (DataRow row in tab_inv004.Rows)
+            if (tab_inv004.Rows.Count != 0)
             {
-                switch (row["va_est_ado"].ToString())
+
+                foreach (DataRow row in tab_inv004.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_cod_mar"], row["va_nom_mar"], va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
 
-                dg_res_ult.Rows.Add(row["va_cod_mar"], row["va_nom_mar"], va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
             if (va_ind_ice == 0)

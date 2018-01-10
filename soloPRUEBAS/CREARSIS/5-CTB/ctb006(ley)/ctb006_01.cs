@@ -113,12 +113,18 @@ namespace CREARSIS
             dg_res_ult.Rows.Clear();
 
             tab_ctb006 = o_ctb006._01(val_bus, prm_bus);
-            foreach (DataRow row in tab_ctb006.Rows)
-            {
-                dg_res_ult.Rows.Add(row["va_cod_ley"], row["va_nom_ley"]);
 
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
+            if (tab_ctb006.Rows.Count != 0)
+            {
+
+                foreach (DataRow row in tab_ctb006.Rows)
+                {
+                    dg_res_ult.Rows.Add(row["va_cod_ley"], row["va_nom_ley"]);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
+                }
+
             }
 
             if (va_ind_ice == 0)

@@ -131,6 +131,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         private void tb_cod_gru_Validated(object sender, EventArgs e)
         {
             fu_rec_gru(tb_cod_gru.Text.Trim());
+
         }
 
         private void tb_nro_per_Validated(object sender, EventArgs e)
@@ -142,12 +143,13 @@ namespace CREARSIS._2_ADM.adm010_per_
                     tmp = tb_nro_per.Text.PadLeft(5, '0');
 
                     tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + tmp[0].ToString() + tmp[1].ToString() + tmp[2].ToString() + tmp[3].ToString() + tmp[4].ToString();
-                }
-                else
-                {
-                    MessageBoxEx.Show("Sólo se admiten números", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
+
+            tb_nro_per.Clear();
+            tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + "00000";
+
         }
 
         private void chk_cli_CheckedChanged(object sender, EventArgs e)
@@ -295,7 +297,7 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El NIT/CI debe ser numérico";
             }
 
-            tab_adm010 = o_adm010._01(tb_nit_per.Text.Trim(), 4, 0.ToString());
+            tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
             if (tab_adm010.Rows.Count!=0)
             {
                 tb_nit_per.Focus();
@@ -316,10 +318,11 @@ namespace CREARSIS._2_ADM.adm010_per_
         public void fu_rec_gru(string cod_gru)
         {
 
-            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(cod_gru) == false)
             {
                 tb_cod_gru.Text = "";
                 tb_nom_gru.Text = "** NO existe";
+                tb_cod_per.Text = "00" + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
                 return;
             }
 
@@ -348,6 +351,20 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_cod_per.Text = tmp[0].ToString() + tmp[1].ToString() + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
 
 
+            //Funcion que sugiere un numero de persona de acuerdo al grupo de persona
+            tab_adm010 = o_adm010._05b(int.Parse(cod_gru));
+
+            if (tab_adm010.Rows.Count!=0)
+            {
+                int va_sug_nro_per = (Convert.ToInt32(tab_adm010.Rows[0][0].ToString()) + 1);
+
+                if (va_sug_nro_per <= 99999)
+                {
+                    tb_nro_per.Text = va_sug_nro_per.ToString();
+
+                    tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + va_sug_nro_per.ToString().PadLeft(5, '0');
+                }                
+            }
         }
         
 

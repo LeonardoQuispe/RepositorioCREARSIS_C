@@ -335,35 +335,41 @@ namespace CREARSIS
             dg_res_ult.Rows.Clear();
 
             tab_seg001 = o_seg001._01(val_bus, prm_bus, est_bus);
-            foreach (DataRow row in tab_seg001.Rows)
+
+            if (tab_seg001.Rows.Count != 0)
             {
-                switch (row["va_tip_usr"].ToString())
+
+                foreach (DataRow row in tab_seg001.Rows)
                 {
-                    case "1":
-                        va_tip_usr = "Administrador";
-                        break;
-                    case "2":
-                        va_tip_usr = "Supervisor";
-                        break;
-                    case "3":
-                        va_tip_usr = "Normal";
-                        break;
+                    switch (row["va_tip_usr"].ToString())
+                    {
+                        case "1":
+                            va_tip_usr = "Administrador";
+                            break;
+                        case "2":
+                            va_tip_usr = "Supervisor";
+                            break;
+                        case "3":
+                            va_tip_usr = "Normal";
+                            break;
+                    }
+
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_cod_usr"], row["va_nom_usr"], va_tip_usr, va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
 
-                switch (row["va_est_ado"].ToString())
-                {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
-                }
-
-                dg_res_ult.Rows.Add(row["va_cod_usr"], row["va_nom_usr"], va_tip_usr, va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
             if (va_ind_ice == 0)

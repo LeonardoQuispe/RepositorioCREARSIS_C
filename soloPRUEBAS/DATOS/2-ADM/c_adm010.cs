@@ -257,6 +257,49 @@ namespace DATOS
         }
 
         /// <summary>
+        /// Funcion "Consulta persona por NID/CI"
+        /// </summary>
+        /// <param name="nit_ci">NIT/CI de persona</param>
+        /// <returns></returns>
+        public DataTable _05a(string nit_ci)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" SELECT * FROM adm010 ");
+                vv_str_sql.AppendLine(" WHERE  va_nit_ced = '" + nit_ci + "'");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// Funcion sugerir nro de Persona según el Codigo de grupo de Persona
+        /// </summary>
+        /// <param name="cod_gru">codigo del GRUPO de persona</param>
+        /// <returns></returns>
+        public DataTable _05b(int cod_gru)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" SELECT MAX(va_nro_per) FROM adm010   ");
+                vv_str_sql.AppendLine(" WHERE va_cod_gru ='" + cod_gru + "' ");
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Funcion "Elimina persona"
         /// </summary>
         /// <param name="cod_per">Codigo del persona</param>

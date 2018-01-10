@@ -170,22 +170,27 @@ namespace CREARSIS
 
             tab_adm003 = o_adm003._01(val_bus, prm_bus + 1, est_bus);
 
-            foreach (DataRow row in tab_adm003.Rows)
+            if (tab_adm003.Rows.Count != 0)
             {
-                switch (row["va_est_ado"].ToString())
+
+                foreach (DataRow row in tab_adm003.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_cod_doc"], row["va_nom_doc"], row["va_des_doc"], va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
 
-                dg_res_ult.Rows.Add(row["va_cod_doc"], row["va_nom_doc"], row["va_des_doc"], va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
             if (va_ind_ice == 0)
@@ -199,6 +204,7 @@ namespace CREARSIS
                 tb_sel_ecc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString();
                 lb_sel_ecc.Text = tab_adm003.Rows[0]["va_nom_doc"].ToString();
             }
+            
 
             tb_val_bus.Focus();
 

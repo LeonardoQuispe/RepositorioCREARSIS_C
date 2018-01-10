@@ -64,58 +64,62 @@ namespace CREARSIS
 
             tab_inv001 = o_inv001._01(val_bus, prm_bus, est_bus.ToString());
 
-            foreach (DataRow row in tab_inv001.Rows)
+            if (tab_inv001.Rows.Count != 0)
             {
-                switch (row["va_est_ado"].ToString())
+
+                foreach (DataRow row in tab_inv001.Rows)
                 {
-                    case "H":
-                        va_est_ado = "Habilitado";
-                        break;
-                    case "N":
-                        va_est_ado = "Deshabilitado";
-                        break;
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    switch (row["va_tip_fam"].ToString())
+                    {
+                        case "M":
+
+                            va_tip_fap = "Matriz";
+                            break;
+                        case "D":
+                            va_tip_fap = "Detalle";
+                            break;
+                        case "S":
+                            va_tip_fap = "Servicio";
+                            break;
+                        case "C":
+                            va_tip_fap = "Combo";
+                            break;
+                    }
+
+                    //Ordena nombre de famiia de acuerdo al nivel (3 Niveles)
+                    va_nom_fam = row["va_cod_fam"].ToString();
+
+                    int a = int.Parse(va_nom_fam.Substring(0, 2));
+
+                    if (int.Parse(va_nom_fam.Substring(4, 2)) > 0)
+                    {
+                        va_nom_fam = "--.--." + row["va_nom_fam"].ToString();
+                    }
+                    else if (int.Parse(va_nom_fam.Substring(2, 2)) > 0)
+                    {
+                        va_nom_fam = "--." + row["va_nom_fam"].ToString();
+                    }
+                    else if (int.Parse(va_nom_fam.Substring(0, 2)) > 0)
+                    {
+                        va_nom_fam = row["va_nom_fam"].ToString();
+                    }
+
+
+                    dg_res_ult.Rows.Add(row["va_cod_fam"], va_nom_fam, va_tip_fap, va_est_ado);
+
+                    dg_res_ult.Rows[va_ind_ice].Tag = row;
+                    va_ind_ice = va_ind_ice + 1;
                 }
-               
-                switch (row["va_tip_fam"].ToString())
-                {
-                    case "M":
-
-                        va_tip_fap = "Matriz";
-                        break;
-                    case "D":
-                        va_tip_fap = "Detalle";
-                        break;
-                    case "S":
-                        va_tip_fap = "Servicio";
-                        break;
-                    case "C":
-                        va_tip_fap = "Combo";
-                        break;
-                }
-
-                //Ordena nombre de famiia de acuerdo al nivel (3 Niveles)
-                va_nom_fam = row["va_cod_fam"].ToString();
-
-                int a = int.Parse(va_nom_fam.Substring(0, 2));
-                 
-                if (int.Parse(va_nom_fam.Substring(4, 2)) > 0)
-                {
-                    va_nom_fam = "--.--."+row["va_nom_fam"].ToString();
-                }
-                else if (int.Parse(va_nom_fam.Substring(2, 2)) > 0)
-                {
-                    va_nom_fam = "--." + row["va_nom_fam"].ToString();
-                }
-                else if (int.Parse(va_nom_fam.Substring(0, 2)) > 0)
-                {
-                    va_nom_fam = row["va_nom_fam"].ToString();
-                }
-
-
-                dg_res_ult.Rows.Add(row["va_cod_fam"], va_nom_fam, va_tip_fap, va_est_ado);
-
-                dg_res_ult.Rows[va_ind_ice].Tag = row;
-                va_ind_ice = va_ind_ice + 1;
             }
 
             if (va_ind_ice == 0)
