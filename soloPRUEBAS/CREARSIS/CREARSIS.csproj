@@ -752,6 +752,42 @@
     <Compile Include="4-INV\inv011%28alm%29\inv011_06.Designer.cs">
       <DependentUpon>inv011_06.cs</DependentUpon>
     </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_01.Designer.cs">
+      <DependentUpon>cmr001_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_02.Designer.cs">
+      <DependentUpon>cmr001_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_03.Designer.cs">
+      <DependentUpon>cmr001_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_04.Designer.cs">
+      <DependentUpon>cmr001_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_05.Designer.cs">
+      <DependentUpon>cmr001_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr001%28lista_precios%29\cmr001_06.Designer.cs">
+      <DependentUpon>cmr001_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1191,6 +1227,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv011%28alm%29\inv011_06.resx">
       <DependentUpon>inv011_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_01.resx">
+      <DependentUpon>cmr001_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_02.resx">
+      <DependentUpon>cmr001_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_03.resx">
+      <DependentUpon>cmr001_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_04.resx">
+      <DependentUpon>cmr001_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_05.resx">
+      <DependentUpon>cmr001_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr001%28lista_precios%29\cmr001_06.resx">
+      <DependentUpon>cmr001_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_01.resx">
       <DependentUpon>cmr003_01.cs</DependentUpon>

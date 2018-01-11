@@ -67,6 +67,7 @@
     <Compile Include="0-INICIO\c_cnx000.cs" />
     <Compile Include="4-INV\c_inv010.cs" />
     <Compile Include="4-INV\c_inv011.cs" />
+    <Compile Include="6-CMR\c_cmr001.cs" />
     <Compile Include="c_cnx001.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
