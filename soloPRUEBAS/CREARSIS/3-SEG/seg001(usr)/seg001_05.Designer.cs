@@ -58,7 +58,7 @@
             this.GroupBox2.BackColor = System.Drawing.Color.White;
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(9, 197);
+            this.GroupBox2.Location = new System.Drawing.Point(9, 200);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(430, 44);
             this.GroupBox2.TabIndex = 67;

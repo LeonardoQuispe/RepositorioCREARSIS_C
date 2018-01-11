@@ -752,6 +752,42 @@
     <Compile Include="4-INV\inv011%28alm%29\inv011_06.Designer.cs">
       <DependentUpon>inv011_06.cs</DependentUpon>
     </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_01.Designer.cs">
+      <DependentUpon>cmr003_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_02.Designer.cs">
+      <DependentUpon>cmr003_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_03.Designer.cs">
+      <DependentUpon>cmr003_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_04.Designer.cs">
+      <DependentUpon>cmr003_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_05.Designer.cs">
+      <DependentUpon>cmr003_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_06.Designer.cs">
+      <DependentUpon>cmr003_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="3-SEG\seg001%28usr%29\seg001_01.cs">
@@ -1155,6 +1191,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv011%28alm%29\inv011_06.resx">
       <DependentUpon>inv011_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_01.resx">
+      <DependentUpon>cmr003_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_02.resx">
+      <DependentUpon>cmr003_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_03.resx">
+      <DependentUpon>cmr003_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_04.resx">
+      <DependentUpon>cmr003_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_05.resx">
+      <DependentUpon>cmr003_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_06.resx">
+      <DependentUpon>cmr003_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
