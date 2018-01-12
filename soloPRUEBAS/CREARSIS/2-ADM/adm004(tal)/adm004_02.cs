@@ -312,6 +312,7 @@ namespace CREARSIS
         {
             if (cod_doc.Trim() == "")
             {
+                tb_cod_doc.Clear();
                 tb_nom_doc.Text = "** NO existe";
                 return;
             }
@@ -319,6 +320,7 @@ namespace CREARSIS
             tab_adm003 = o_adm003._05(cod_doc);
             if (tab_adm003.Rows.Count == 0)
             {
+                tb_cod_doc.Clear();
                 tb_nom_doc.Text = "** NO existe";
                 return;
             }

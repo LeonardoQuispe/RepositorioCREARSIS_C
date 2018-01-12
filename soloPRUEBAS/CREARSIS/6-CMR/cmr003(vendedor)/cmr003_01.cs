@@ -90,7 +90,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         {
             if (gb_ctr_frm.Enabled == true)
             {
-                vg_frm_pad.fu_rec_ven(tb_sel_ecc.Text, lb_sel_ecc.Text);
+                vg_frm_pad.fu_rec_ven(tb_sel_ecc.Text);
 
                 vg_frm_pad.Enabled = true;
                 Close();
@@ -104,7 +104,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            vg_frm_pad.fu_rec_ven(tb_sel_ecc.Text, lb_sel_ecc.Text);
+            vg_frm_pad.fu_rec_ven(tb_sel_ecc.Text);
 
             vg_frm_pad.Enabled = true;
             Close();

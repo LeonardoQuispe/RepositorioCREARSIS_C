@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using CREARSIS._2_ADM.adm011_gru_per_;
 using DATOS;
+using DATOS._6_CMR;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS._2_ADM.adm010_per_
@@ -22,6 +23,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_adm011;
+        DataTable tab_cmr003;
 
         #endregion
 
@@ -29,6 +31,9 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
+        c_cmr003 o_cmr003 = new c_cmr003();
+
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -122,31 +127,6 @@ namespace CREARSIS._2_ADM.adm010_per_
             //Recupera Nombre de Grupo de Persona
             tab_adm011 = o_adm011._05(int.Parse(vg_str_ucc.Rows[0]["va_cod_gru"].ToString()));
 
-            //Llena los datos
-            tb_cod_gru.Text = vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
-            tb_nom_gru.Text = tab_adm011.Rows[0]["va_nom_gru"].ToString();
-            tb_nro_per.Text = vg_str_ucc.Rows[0]["va_nro_per"].ToString();
-            tb_cod_per.Text = vg_str_ucc.Rows[0]["va_cod_per"].ToString().PadLeft(7, '0');
-            tb_raz_per.Text = vg_str_ucc.Rows[0]["va_raz_soc"].ToString();
-            tb_nit_per.Text = vg_str_ucc.Rows[0]["va_nit_ced"].ToString();
-            tb_nom_per.Text = vg_str_ucc.Rows[0]["va_nom_com"].ToString();
-            tb_dir_gen.Text = vg_str_ucc.Rows[0]["va_dir_per"].ToString();
-            tb_tel_gen.Text = vg_str_ucc.Rows[0]["va_tel_per"].ToString();
-            tb_cel_gen.Text = vg_str_ucc.Rows[0]["va_cel_per"].ToString();
-            tb_ema_gen.Text = vg_str_ucc.Rows[0]["va_ema_per"].ToString();
-
-            //CLIENTE
-            tb_cod_pre_cli.Text = vg_str_ucc.Rows[0]["va_cod_lpr"].ToString();
-            tb_cod_ven_cli.Text = vg_str_ucc.Rows[0]["va_cod_ven"].ToString();
-            tb_cre_cli.Text = vg_str_ucc.Rows[0]["va_lim_cre"].ToString();
-            tb_cod_pag_cli.Text = vg_str_ucc.Rows[0]["va_con_pac"].ToString();
-
-            //PROOVEDOR
-            tb_cod_pag_pro.Text = vg_str_ucc.Rows[0]["va_con_pap"].ToString();
-
-
-
-
             //Valida si es CLIENTE-PROOVEDOR
             if (vg_str_ucc.Rows[0]["va_ban_cli"].ToString() == "1")
             {
@@ -162,6 +142,40 @@ namespace CREARSIS._2_ADM.adm010_per_
             {
                 chk_emp.Checked = true;
             }
+
+            //Llena los datos
+            tb_cod_gru.Text = vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
+            tb_nom_gru.Text = tab_adm011.Rows[0]["va_nom_gru"].ToString();
+            tb_nro_per.Text = vg_str_ucc.Rows[0]["va_nro_per"].ToString();
+            tb_cod_per.Text = vg_str_ucc.Rows[0]["va_cod_per"].ToString().PadLeft(7, '0');
+            tb_raz_per.Text = vg_str_ucc.Rows[0]["va_raz_soc"].ToString();
+            tb_nit_per.Text = vg_str_ucc.Rows[0]["va_nit_ced"].ToString();
+            tb_nom_per.Text = vg_str_ucc.Rows[0]["va_nom_com"].ToString();
+            tb_dir_gen.Text = vg_str_ucc.Rows[0]["va_dir_per"].ToString();
+            tb_tel_gen.Text = vg_str_ucc.Rows[0]["va_tel_per"].ToString();
+            tb_cel_gen.Text = vg_str_ucc.Rows[0]["va_cel_per"].ToString();
+            tb_ema_gen.Text = vg_str_ucc.Rows[0]["va_ema_per"].ToString();
+
+            if (chk_cli.Checked==true)
+            {
+                //CLIENTE
+                tb_cod_pre_cli.Text = vg_str_ucc.Rows[0]["va_cod_lpr"].ToString();
+                tb_cod_ven_cli.Text = vg_str_ucc.Rows[0]["va_cod_ven"].ToString();
+                fu_rec_ven(tb_cod_ven_cli.Text);
+                tb_cre_cli.Text = vg_str_ucc.Rows[0]["va_lim_cre"].ToString();
+                tb_cod_pag_cli.Text = vg_str_ucc.Rows[0]["va_con_pac"].ToString();
+            }
+
+
+            if (chk_cli.Checked == true)
+            {
+                //PROOVEDOR
+                tb_cod_pag_pro.Text = vg_str_ucc.Rows[0]["va_con_pap"].ToString();
+            }
+
+
+
+            
 
             //Elige tipo de cambio
             if (vg_str_ucc.Rows[0]["va_mon_cre"].ToString() == "B")
@@ -185,6 +199,34 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         }
 
+
+        public void fu_rec_ven(string cod_ven)
+        {
+            if (cod_ven.Trim() == "")
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_num(cod_ven) == false)
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            tab_cmr003 = o_cmr003._05(cod_ven);
+            if (tab_cmr003.Rows.Count == 0)
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_ven_cli.Text = tab_cmr003.Rows[0]["va_cod_ven"].ToString();
+            tb_nom_ven_cli.Text = tab_cmr003.Rows[0]["va_nom_ven"].ToString();
+        }
         #endregion
     }
 }

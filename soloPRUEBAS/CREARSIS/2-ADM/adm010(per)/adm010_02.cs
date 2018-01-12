@@ -11,7 +11,9 @@ using System.Windows.Forms;
 
 //REFERENCIAS
 using CREARSIS._2_ADM.adm011_gru_per_;
+using CREARSIS._6_CMR.cmr003_vendedor_;
 using DATOS;
+using DATOS._6_CMR;
 using DevComponents.DotNetBar;
 
 
@@ -27,6 +29,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         string err_msg = "";
         DataTable tab_adm010;
         DataTable tab_adm011;
+        DataTable tab_cmr003;
         string tmp = "";
 
         #endregion
@@ -35,6 +38,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
+        c_cmr003 o_cmr003 = new c_cmr003();
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
@@ -204,6 +208,28 @@ namespace CREARSIS._2_ADM.adm010_per_
             //}
         }
 
+        private void tb_cod_ven_cli_ButtonCustomClick(object sender, EventArgs e)
+        {
+            cmr003_01 obj = new cmr003_01();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_cod_ven_cli_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                cmr003_01 obj = new cmr003_01();
+
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_cod_ven_cli_Validated(object sender, EventArgs e)
+        {
+            fu_rec_ven(tb_cod_ven_cli.Text.Trim());
+        }
+
 
         #endregion
 
@@ -312,6 +338,41 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
 
 
+            //VERIFICA TIPOS DE PERSONA
+
+            //Verifica si Selecciona Cliente
+            if (chk_cli.Checked==true)
+            {
+
+                //Verifica Codigo de Vendedor de la Persona
+                if (tb_cod_ven_cli.Text.Trim() == "")
+                {
+                    tb_cod_ven_cli.Focus();
+                    return "Debes proporcionar el Código de Vendedor de la Persona";
+                }
+
+                tab_cmr003 = o_cmr003._05(tb_cod_ven_cli.Text);
+                if (tab_cmr003.Rows.Count == 0)
+                {
+                    tb_cod_ven_cli.Focus();
+                    return "el Código de Vendedor de la Persona NO se encuentra registrado";
+                }
+                if (tab_cmr003.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    tb_cod_ven_cli.Focus();
+                    return "el Código de Vendedor de la Persona se encuentra Deshabilitado";
+                }
+            }
+
+            //Verifica si Selecciona Proveedor
+            if (chk_pro.Checked == true)
+            {
+
+            }
+
+
+
+
             return null;
         }
 
@@ -368,6 +429,35 @@ namespace CREARSIS._2_ADM.adm010_per_
         }
 
 
+        public void fu_rec_ven(string cod_ven)
+        {
+            if (cod_ven.Trim() == "")
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_num(cod_ven) == false)
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            tab_cmr003 = o_cmr003._05(cod_ven);
+            if (tab_cmr003.Rows.Count == 0)
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_ven_cli.Text = tab_cmr003.Rows[0]["va_cod_ven"].ToString();
+            tb_nom_ven_cli.Text = tab_cmr003.Rows[0]["va_nom_ven"].ToString();
+        }
+
+
         void fu_lim_frm()
         {
             tb_cod_gru.Clear();
@@ -418,5 +508,19 @@ namespace CREARSIS._2_ADM.adm010_per_
         }
 
         #endregion
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
     }
 }
