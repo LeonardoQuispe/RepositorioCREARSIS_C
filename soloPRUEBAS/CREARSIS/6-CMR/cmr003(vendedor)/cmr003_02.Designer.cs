@@ -178,7 +178,7 @@
             this.tb_cod_ven.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_ven.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_ven.Location = new System.Drawing.Point(71, 20);
-            this.tb_cod_ven.MaxLength = 3;
+            this.tb_cod_ven.MaxLength = 4;
             this.tb_cod_ven.Name = "tb_cod_ven";
             this.tb_cod_ven.PreventEnterBeep = true;
             this.tb_cod_ven.Size = new System.Drawing.Size(60, 22);
@@ -226,7 +226,7 @@
             this.tb_por_ven.DisabledBackColor = System.Drawing.Color.White;
             this.tb_por_ven.ForeColor = System.Drawing.Color.Black;
             this.tb_por_ven.Location = new System.Drawing.Point(71, 92);
-            this.tb_por_ven.MaxLength = 7;
+            this.tb_por_ven.MaxLength = 8;
             this.tb_por_ven.Name = "tb_por_ven";
             this.tb_por_ven.PreventEnterBeep = true;
             this.tb_por_ven.Size = new System.Drawing.Size(95, 22);

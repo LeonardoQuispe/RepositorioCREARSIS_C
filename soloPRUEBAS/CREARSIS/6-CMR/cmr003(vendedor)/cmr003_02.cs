@@ -89,7 +89,13 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             {
                 tb_cod_ven.Focus();
                 return "Debes proporcionar el Grupo de Persona";
-            }            
+            }
+
+            if (o_mg_glo_bal.fg_val_num(tb_cod_ven.Text) == false)
+            {
+                tb_cod_ven.Focus();
+                return "El Código de Vendedor debe ser Numérico";
+            }
 
             tab_cmr003 = o_cmr003._05(tb_cod_ven.Text);
             if (tab_cmr003.Rows.Count != 0)

@@ -289,6 +289,13 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
                 return;
             }
 
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+            {
+                tb_sel_ecc.Clear();
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
 
             tab_cmr003 = o_cmr003._05(tb_sel_ecc.Text.Trim());
             if (tab_cmr003.Rows.Count == 0)
@@ -322,6 +329,13 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Clear();
+                    lb_sel_ecc.Text = "** NO existe";
+                    return "El Código de Vendedor debe ser Numérico";
+                }
+
                 //Si aun existe
                 tab_cmr003 = o_cmr003._05(tb_sel_ecc.Text);
                 if (tab_cmr003.Rows.Count == 0)
@@ -349,6 +363,13 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Clear();
+                    lb_sel_ecc.Text = "** NO existe";
+                    return "El Código de Vendedor debe ser Numérico";
+                }
+
                 //Si aun existe
                 tab_cmr003 = o_cmr003._05(tb_sel_ecc.Text);
                 if (tab_cmr003.Rows.Count == 0)
@@ -369,6 +390,13 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Clear();
+                    lb_sel_ecc.Text = "** NO existe";
+                    return "El Código de Vendedor debe ser Numérico";
+                }
+
                 ///Si aun existe
                 tab_cmr003 = o_cmr003._05(tb_sel_ecc.Text);
                 if (tab_cmr003.Rows.Count == 0)
