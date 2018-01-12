@@ -140,21 +140,21 @@
             // m_ads005
             // 
             this.m_ads005.Name = "m_ads005";
-            this.m_ads005.Size = new System.Drawing.Size(152, 22);
+            this.m_ads005.Size = new System.Drawing.Size(137, 22);
             this.m_ads005.Text = "D&ocumento";
             this.m_ads005.Click += new System.EventHandler(this.m_ads005_Click);
             // 
             // m_ads006
             // 
             this.m_ads006.Name = "m_ads006";
-            this.m_ads006.Size = new System.Drawing.Size(152, 22);
+            this.m_ads006.Size = new System.Drawing.Size(137, 22);
             this.m_ads006.Text = "&Talonario";
             this.m_ads006.Click += new System.EventHandler(this.m_ads006_Click);
             // 
             // m_ads007
             // 
             this.m_ads007.Name = "m_ads007";
-            this.m_ads007.Size = new System.Drawing.Size(152, 22);
+            this.m_ads007.Size = new System.Drawing.Size(137, 22);
             this.m_ads007.Text = "&Numerador";
             this.m_ads007.Click += new System.EventHandler(this.m_ads007_Click);
             // 
@@ -195,6 +195,7 @@
             this.mn_pre_cio.Name = "mn_pre_cio";
             this.mn_pre_cio.Size = new System.Drawing.Size(162, 22);
             this.mn_pre_cio.Text = "Lista de precio";
+            this.mn_pre_cio.Click += new System.EventHandler(this.mn_pre_cio_Click);
             // 
             // mn_det_pre
             // 

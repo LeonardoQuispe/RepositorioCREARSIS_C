@@ -371,5 +371,11 @@ namespace CREARSIS
             CREARSIS._6_CMR.cmr003_vendedor_.cmr003_01 obj = new CREARSIS._6_CMR.cmr003_vendedor_.cmr003_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+        //[Menu LISTA DE PRECIOS]
+        private void mn_pre_cio_Click(object sender, EventArgs e)
+        {
+            CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01 obj = new CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

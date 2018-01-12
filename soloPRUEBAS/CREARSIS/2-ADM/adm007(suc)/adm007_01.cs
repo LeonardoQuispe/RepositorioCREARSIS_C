@@ -328,12 +328,14 @@ namespace CREARSIS
         #endregion
 
         #region OPCIONES DEL MENU
+
+        //MENU NUEVO
         private void m_adm003_02_Click(object sender, EventArgs e)
         {
             adm007_02 obj = new adm007_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
-
+        //Menu ACTUALIZA
         private void m_adm003_03_Click(object sender, EventArgs e)
         {
 
@@ -348,7 +350,7 @@ namespace CREARSIS
             adm007_03 obj = new adm007_03();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
-
+        //MENU HABILITA/DESHABILITA
         private void m_adm003_04_Click(object sender, EventArgs e)
         {
 
@@ -362,7 +364,7 @@ namespace CREARSIS
             adm007_04 obj = new adm007_04();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
-
+        //MENU ELIMINA
         private void m_adm003_06_Click(object sender, EventArgs e)
         {
 
@@ -377,7 +379,7 @@ namespace CREARSIS
             adm007_06 obj = new adm007_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
-
+        //MENU CONSULTA
         private void m_adm003_05_Click(object sender, EventArgs e)
         {
             string vv_err_msg = null;
@@ -391,13 +393,11 @@ namespace CREARSIS
             adm007_05 obj = new adm007_05();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm007);
         }
-
+        //MENU ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
-
-
 
         #endregion
 

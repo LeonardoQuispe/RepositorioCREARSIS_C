@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS._6_CMR.cmr001_lista_precios_
 {
-    public partial class cmr001_04 : Form
+    public partial class cmr001_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public cmr001_04()
         {
