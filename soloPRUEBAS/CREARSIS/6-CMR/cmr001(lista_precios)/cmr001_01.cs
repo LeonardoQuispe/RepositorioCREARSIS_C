@@ -105,7 +105,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                         case "B":
                             va_mon_lis = "Bolivianos";
                             break;
-                        case "D":
+                        case "U":
                             va_mon_lis = "Dólares";
                             break;
                     }
@@ -113,10 +113,10 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
-                            va_est_ado = "Habilitada";
+                            va_est_ado = "Habilitado";
                             break;
                         case "N":
-                            va_est_ado = "Deshabilitada";
+                            va_est_ado = "Deshabilitado";
                             break;
                     }
 
@@ -382,7 +382,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Sucursal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
@@ -396,7 +396,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Sucursal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             cmr001_04 obj = new cmr001_04();
@@ -409,7 +409,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Sucursal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -423,7 +423,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Sucursal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

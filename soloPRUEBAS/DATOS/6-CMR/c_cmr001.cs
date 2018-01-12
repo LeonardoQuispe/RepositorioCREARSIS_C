@@ -102,9 +102,14 @@ namespace DATOS._6_CMR
                 {
                     vv_str_sql = new StringBuilder();
                     vv_str_sql.AppendLine(" UPDATE cmr001 SET ");
-                    vv_str_sql.AppendLine(" va_nom_lis='" + mon_lis +"', va_mon_lis='" + mon_lis + "',");
-                    vv_str_sql.AppendLine(" va_fec_ini='" + fec_ini.ToShortDateString() + "', va_fec_fin='" + fec_fin.ToShortDateString() + "',");
-                    vv_str_sql.AppendLine("' WHERE va_cod_lis =" + cod_lis);
+                    switch (mon_lis)
+                    {
+                        case "0": mon_lis = "B"; break;
+                        case "1": mon_lis = "U"; break;
+                    }
+                    vv_str_sql.AppendLine(" va_nom_lis='" + nom_lis + "', va_mon_lis='" + mon_lis + "',");
+                    vv_str_sql.AppendLine(" va_fec_ini='" + fec_ini.ToShortDateString() + "', va_fec_fin='" + fec_fin.ToShortDateString()+"'");
+                    vv_str_sql.AppendLine(" WHERE va_cod_lis = " + cod_lis );
 
                     return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
                 }
