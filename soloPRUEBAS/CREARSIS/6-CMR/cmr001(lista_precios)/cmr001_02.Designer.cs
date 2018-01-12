@@ -76,7 +76,7 @@
             // 
             // 
             this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
             this.LabelX6.Location = new System.Drawing.Point(189, 97);
             this.LabelX6.Name = "LabelX6";
@@ -92,7 +92,7 @@
             // 
             // 
             this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
             this.LabelX5.Location = new System.Drawing.Point(6, 96);
             this.LabelX5.Name = "LabelX5";
@@ -159,7 +159,7 @@
             // Dolares
             // 
             this.Dolares.Text = "Dolares";
-            this.Dolares.Value = "D";
+            this.Dolares.Value = "U";
             // 
             // tb_nom_lis
             // 
