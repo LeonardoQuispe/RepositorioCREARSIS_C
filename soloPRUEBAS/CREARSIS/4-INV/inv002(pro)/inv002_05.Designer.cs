@@ -832,6 +832,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(743, 413);
+            this.ControlBox = false;
             this.Controls.Add(this.tb_est_ado);
             this.Controls.Add(this.chk_lot);
             this.Controls.Add(this.groupBox2);

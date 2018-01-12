@@ -19,6 +19,9 @@ namespace CREARSIS._2_ADM.adm010_per_
 {
     public partial class adm010_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
@@ -26,10 +29,17 @@ namespace CREARSIS._2_ADM.adm010_per_
         DataTable tab_adm011;
 
 
+        #endregion
+
+        #region INSTANCIAS
+
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
+        #endregion
+
+        #region EVENTOS
 
         public adm010_03()
         {
@@ -105,6 +115,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             int ban_cli = 0;
             int ban_pro = 0;
             int ban_emp = 0;
+            decimal tmp;
 
             if (chk_cli.Checked == true)
             {
@@ -131,9 +142,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
 
             //Guarda PERSONA
-            o_adm010._03(tb_cod_per.Text.Trim(),tb_raz_per.Text.Trim(),tb_nom_per.Text.Trim(), tb_nit_per.Text.Trim(), tb_dir_gen.Text.Trim(), tb_tel_gen.Text.Trim(), 
-                        tb_cel_gen.Text.Trim(),tb_ema_gen.Text.Trim(), tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), tb_cre_cli.Text.Trim(),
-                        mon_cre, tb_cod_pag_cli.Text.Trim(), tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
+            o_adm010._03(tb_cod_per.Text.Trim(), tb_raz_per.Text.Trim(), tb_nom_per.Text.Trim(), tb_nit_per.Text.Trim(), tb_dir_gen.Text.Trim(), tb_tel_gen.Text.Trim(),
+                        tb_cel_gen.Text.Trim(), tb_ema_gen.Text.Trim(), tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), decimal.TryParse(tb_cre_cli.Text,out tmp) ? tmp:0m
+                       , mon_cre, tb_cod_pag_cli.Text.Trim(), tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
 
             MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -147,8 +158,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             Close();
         }
 
+        #endregion
 
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -162,10 +174,10 @@ namespace CREARSIS._2_ADM.adm010_per_
             tab_adm011 = o_adm011._05(int.Parse(vg_str_ucc.Rows[0]["va_cod_gru"].ToString()));
 
             //Llena los datos
-            tb_cod_gru.Text= vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
+            tb_cod_gru.Text = vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
             tb_nom_gru.Text = tab_adm011.Rows[0]["va_nom_gru"].ToString();
             tb_nro_per.Text = vg_str_ucc.Rows[0]["va_nro_per"].ToString();
-            tb_cod_per.Text = vg_str_ucc.Rows[0]["va_cod_per"].ToString().PadLeft(7,'0');
+            tb_cod_per.Text = vg_str_ucc.Rows[0]["va_cod_per"].ToString().PadLeft(7, '0');
             tb_raz_per.Text = vg_str_ucc.Rows[0]["va_raz_soc"].ToString();
             tb_nit_per.Text = vg_str_ucc.Rows[0]["va_nit_ced"].ToString();
             tb_nom_per.Text = vg_str_ucc.Rows[0]["va_nom_com"].ToString();
@@ -187,7 +199,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
             //Valida si es CLIENTE-PROOVEDOR
-            if (vg_str_ucc.Rows[0]["va_ban_cli"].ToString()=="1")
+            if (vg_str_ucc.Rows[0]["va_ban_cli"].ToString() == "1")
             {
                 chk_cli.Checked = true;
             }
@@ -203,7 +215,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
 
             //Elige tipo de cambio
-            if (vg_str_ucc.Rows[0]["va_mon_cre"].ToString()=="B")
+            if (vg_str_ucc.Rows[0]["va_mon_cre"].ToString() == "B")
             {
                 cb_tip_cam.SelectedIndex = 0;
             }
@@ -238,9 +250,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             //    tb_cod_gru.Focus();
             //    return "Debes proporcionar el Grupo de Persona";
             //}
-            
 
-            
+
+
 
             //if (tab_adm011.Rows[0]["va_est_ado"].ToString() == "N")
             //{
@@ -256,7 +268,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             //    return "Debes proporcionar el Número del Persona";
             //}
 
-            
+
 
             ////**Verifica Codigo de Persona
             //tab_adm010 = o_adm010._05(tb_cod_per.Text);
@@ -285,14 +297,14 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El NIT/CI debe ser numérico";
             }
             tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
-            
+
             if (tab_adm010.Rows.Count != 0)
             {
-                if (tab_adm010.Rows[0]["va_cod_per"].ToString()!=tb_cod_per.Text)
+                if (tab_adm010.Rows[0]["va_cod_per"].ToString() != tb_cod_per.Text)
                 {
                     tb_nit_per.Focus();
                     return "El NIT/CI ya se encuentra Registrado";
-                }                
+                }
             }
 
             //**Verifica Nombre Comercial
@@ -323,13 +335,6 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_nom_pag_pro.Clear();
         }
 
-
-
-
-
-
-
-
-
+        #endregion
     }
 }

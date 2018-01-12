@@ -20,19 +20,27 @@ namespace CREARSIS._2_ADM.adm010_per_
 {
     public partial class adm010_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         string err_msg = "";
         DataTable tab_adm010;
         DataTable tab_adm011;
         string tmp = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
+        #endregion
 
+        #region EVENTOS
 
         public adm010_02()
         {
@@ -63,16 +71,17 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
 
 
-            string mon_cre="";
-            int ban_cli =0;
+            string mon_cre = "";
+            int ban_cli = 0;
             int ban_pro = 0;
-            int ban_emp=0;
+            int ban_emp = 0;
+            decimal tmp;
 
-            if (chk_cli.Checked==true)
+            if (chk_cli.Checked == true)
             {
                 ban_cli = 1;
 
-                if (cb_tip_cam.SelectedIndex==0)
+                if (cb_tip_cam.SelectedIndex == 0)
                 {
                     mon_cre = "B";
                 }
@@ -94,15 +103,17 @@ namespace CREARSIS._2_ADM.adm010_per_
 
             //Guarda PERSONA
             o_adm010._02(tb_cod_per.Text.Trim(), tb_nro_per.Text.Trim(), tb_cod_gru.Text.Trim(), tb_raz_per.Text.Trim(),
-                        tb_nom_per.Text.Trim(), tb_nit_per.Text.Trim(), tb_dir_gen.Text.Trim(), tb_tel_gen.Text.Trim(), tb_cel_gen.Text.Trim(), 
-                        tb_ema_gen.Text.Trim(),tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), tb_cre_cli.Text.Trim(),
-                        mon_cre, tb_cod_pag_cli.Text.Trim(),tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
+                        tb_nom_per.Text.Trim(), tb_nit_per.Text.Trim(), tb_dir_gen.Text.Trim(), tb_tel_gen.Text.Trim(), tb_cel_gen.Text.Trim(),
+                        tb_ema_gen.Text.Trim(), tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), decimal.TryParse(tb_cre_cli.Text, out tmp) ? tmp : 0m,
+                        mon_cre, tb_cod_pag_cli.Text.Trim(), tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
 
             MessageBoxEx.Show("Operación completada exitosamente", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            vg_frm_pad.fu_sel_fila(tb_cod_per.Text, tb_nom_per.Text);   
+            vg_frm_pad.fu_sel_fila(tb_cod_per.Text, tb_nom_per.Text);
 
             fu_lim_frm();
+
+            tb_cod_gru.Focus();
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -194,25 +205,14 @@ namespace CREARSIS._2_ADM.adm010_per_
         }
 
 
+        #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
             cb_tip_cam.SelectedIndex = 0;
-            
+
 
         }
 
@@ -223,7 +223,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
 
             //**Verifica Grupo de PErsona
-            
+
             if (tb_cod_gru.Text.Trim() == "")
             {
                 tb_cod_gru.Focus();
@@ -251,13 +251,13 @@ namespace CREARSIS._2_ADM.adm010_per_
 
             //VERIFICA numero de Persona
 
-            if (tb_nro_per.Text.Trim()=="")
+            if (tb_nro_per.Text.Trim() == "")
             {
                 tb_nro_per.Focus();
                 return "Debes proporcionar el Número del Persona";
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_nro_per.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_per.Text) == false)
             {
                 tb_nro_per.Focus();
                 return "El Número del Persona debe ser Numérico";
@@ -298,7 +298,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
 
             tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
-            if (tab_adm010.Rows.Count!=0)
+            if (tab_adm010.Rows.Count != 0)
             {
                 tb_nit_per.Focus();
                 return "El NIT/CI ya se encuentra Registrado";
@@ -354,7 +354,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             //Funcion que sugiere un numero de persona de acuerdo al grupo de persona
             tab_adm010 = o_adm010._05b(int.Parse(cod_gru));
 
-            if (tab_adm010.Rows[0][0].ToString()!="")
+            if (tab_adm010.Rows[0][0].ToString() != "")
             {
                 int va_sug_nro_per = (Convert.ToInt32(tab_adm010.Rows[0][0].ToString()) + 1);
 
@@ -363,10 +363,10 @@ namespace CREARSIS._2_ADM.adm010_per_
                     tb_nro_per.Text = va_sug_nro_per.ToString();
 
                     tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + va_sug_nro_per.ToString().PadLeft(5, '0');
-                }                
+                }
             }
         }
-        
+
 
         void fu_lim_frm()
         {
@@ -417,9 +417,6 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_nom_pag_pro.Clear();
         }
 
-
-
-
-
+        #endregion
     }
 }

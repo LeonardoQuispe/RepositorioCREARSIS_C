@@ -910,7 +910,15 @@ namespace CREARSIS
         /// <returns></returns>
         public bool fg_val_num(string num)
         {
-            return long.TryParse(num.Trim(), out va_tmp_num);            
+            if (long.TryParse(num.Trim(), out va_tmp_num)==true)
+            {
+                if (va_tmp_num>=0)
+                {
+                    return true;
+                }
+            }
+
+            return false;          
         }
 
         /// <summary>
@@ -924,26 +932,27 @@ namespace CREARSIS
         {
             if (decimal.TryParse(num.Trim(),out va_tmp_dec)==true)
             {
-                string[] tmp;
-                
-                tmp = va_tmp_dec.ToString().Split('.');
-
-                if (tmp[0].Length>ent)
+                if (va_tmp_dec>=0)
                 {
-                    return "ent";
-                }
+                    string[] tmp;
 
-                if (tmp.Length ==2  && tmp[1].Length > dec)
-                {
-                    return "dec";
-                }
+                    tmp = va_tmp_dec.ToString().Split('.');
 
-                return "OK";
+                    if (tmp[0].Length > ent)
+                    {
+                        return "ent";
+                    }
+
+                    if (tmp.Length == 2 && tmp[1].Length > dec)
+                    {
+                        return "dec";
+                    }
+
+                    return "OK";
+                }
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
         #endregion

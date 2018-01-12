@@ -89,6 +89,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         public void fu_bus_car(string val_bus, int prm_bus, string est_bus)
         {
             int va_ind_ice = 0;
+            string va_mon_lis = "";
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
@@ -99,6 +100,16 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             {
                 foreach (DataRow row in tab_cmr001.Rows)
                 {
+                    switch (row["va_mon_lis"].ToString())
+                    {
+                        case "B":
+                            va_mon_lis = "Bolivianos";
+                            break;
+                        case "D":
+                            va_mon_lis = "Dólares";
+                            break;
+                    }
+
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -109,7 +120,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_cod_lis"], row["va_mon_lis"], row["va_des_lis"], row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_lis"], row["va_nom_lis"], va_mon_lis, row["va_fec_ini"], row["va_fec_fin"], va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -126,7 +137,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             if (va_ind_ice > 0)
             {
                 tb_sel_ecc.Text = tab_cmr001.Rows[0]["va_cod_lis"].ToString();
-                lb_sel_ecc.Text = tab_cmr001.Rows[0]["va_mon_lis"].ToString();
+                lb_sel_ecc.Text = tab_cmr001.Rows[0]["va_nom_lis"].ToString();
             }
 
             tb_val_bus.Focus();
@@ -160,7 +171,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             }
 
             tb_sel_ecc.Text = tabla.Rows[0]["va_cod_lis"].ToString();
-            lb_sel_ecc.Text = tabla.Rows[0]["va_mon_lis"].ToString();
+            lb_sel_ecc.Text = tabla.Rows[0]["va_nom_lis"].ToString();
 
         }
         /// <summary>

@@ -17,20 +17,24 @@ namespace CREARSIS._2_ADM.adm010_per_
 {
     public partial class adm010_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_adm010;
         DataTable tab_adm011;
         string vv_err_msg = "";
 
+        #endregion
 
-
-
-
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
 
+        #endregion
+
+        #region EVENTOS
 
         public adm010_01()
         {
@@ -103,7 +107,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
             if (gb_ctr_frm.Enabled == true)
             {
-                //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
+                //vg_frm_pad.fu_rec_per(tb_sel_ecc.Text, lb_sel_ecc.Text);
 
                 vg_frm_pad.Enabled = true;
                 Close();
@@ -123,92 +127,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-        //NUEVO
-        private void m_adm003_02_Click(object sender, EventArgs e)
-        {
-            adm010_02 obj = new adm010_02();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
-        }
-
-        //ACTUALIZA
-        private void m_adm003_03_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            adm010_03 obj = new adm010_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this,tab_adm010);
-        }
-
-        //HABILITA/DESHABILITA
-        private void m_adm003_04_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            adm010_04 obj = new adm010_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
-        }
-
-        //ELIMINA
-        private void m_adm003_06_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat3();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            adm010_06 obj = new adm010_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
-        }
-
-        //CONSULTA
-        private void m_adm003_05_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg;
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            adm010_05 obj = new adm010_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
-        }
-
-        //ATRAS
-        private void m_atr_ass_Click(object sender, EventArgs e)
-        {
-            o_mg_glo_bal.mg_ads000_04(this, 1);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region METODOS
 
         public void fu_ini_frm()
         {
@@ -277,15 +198,15 @@ namespace CREARSIS._2_ADM.adm010_per_
                             break;
                     }
 
-                    
-                    dg_res_ult.Rows.Add(va_cod_per, row["va_raz_soc"], row["va_nom_com"], row["va_nit_ced"],va_nom_gru,
-                                    ban_cli.Checked=va_ban_cli,ban_pro.Checked=va_ban_pro, ban_emp.Checked = va_ban_emp, va_est_ado);
+
+                    dg_res_ult.Rows.Add(va_cod_per, row["va_raz_soc"], row["va_nom_com"], row["va_nit_ced"], va_nom_gru,
+                                    ban_cli.Checked = va_ban_cli, ban_pro.Checked = va_ban_pro, ban_emp.Checked = va_ban_emp, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
 
-                    
-                }                
+
+                }
             }
 
             if (va_ind_ice == 0)
@@ -341,14 +262,16 @@ namespace CREARSIS._2_ADM.adm010_per_
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
             {
+                tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
-            
+
 
             tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
             if (tab_adm010.Rows.Count == 0)
             {
+                tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
@@ -444,5 +367,78 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
         }
 
+        #endregion
+
+        #region OPCIONES DEL MENU
+
+        //NUEVO
+        private void m_adm003_02_Click(object sender, EventArgs e)
+        {
+            adm010_02 obj = new adm010_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //ACTUALIZA
+        private void m_adm003_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_03 obj = new adm010_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //HABILITA/DESHABILITA
+        private void m_adm003_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_04 obj = new adm010_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //ELIMINA
+        private void m_adm003_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_06 obj = new adm010_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //CONSULTA
+        private void m_adm003_05_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            adm010_05 obj = new adm010_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm010);
+        }
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        #endregion
+
+        
     }
 }

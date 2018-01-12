@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_cod_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_mon_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fec_ini = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fec_fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr001_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +58,12 @@
             this.codigo = new DevComponents.Editors.ComboItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.va_cod_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_mon_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_fec_ini = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.va_fec_fin = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.mn_pri_nci.SuspendLayout();
@@ -78,7 +79,7 @@
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(0, 274);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(555, 48);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(575, 48);
             this.gb_ctr_frm.TabIndex = 73;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -88,7 +89,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(449, 17);
+            this.bt_can_cel.Location = new System.Drawing.Point(466, 12);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -104,7 +105,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(337, 17);
+            this.bt_ace_pta.Location = new System.Drawing.Point(354, 12);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -122,83 +123,52 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_cod_lis,
+            this.va_nom_lis,
             this.va_mon_lis,
             this.va_fec_ini,
             this.va_fec_fin,
             this.va_est_ado});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(15, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(532, 170);
+            this.dg_res_ult.Size = new System.Drawing.Size(548, 170);
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             this.dg_res_ult.DoubleClick += new System.EventHandler(this.dg_res_ult_DoubleClick);
-            // 
-            // va_cod_lis
-            // 
-            this.va_cod_lis.HeaderText = "Codigo";
-            this.va_cod_lis.Name = "va_cod_lis";
-            this.va_cod_lis.ReadOnly = true;
-            this.va_cod_lis.Width = 75;
-            // 
-            // va_mon_lis
-            // 
-            this.va_mon_lis.HeaderText = "Moneda";
-            this.va_mon_lis.Name = "va_mon_lis";
-            this.va_mon_lis.ReadOnly = true;
-            this.va_mon_lis.Width = 150;
-            // 
-            // va_fec_ini
-            // 
-            this.va_fec_ini.HeaderText = "Fecha Inicio";
-            this.va_fec_ini.Name = "va_fec_ini";
-            this.va_fec_ini.ReadOnly = true;
-            // 
-            // va_fec_fin
-            // 
-            this.va_fec_fin.HeaderText = "Fecha final";
-            this.va_fec_fin.Name = "va_fec_fin";
-            this.va_fec_fin.ReadOnly = true;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
             // 
             // m_atr_ass
             // 
@@ -273,7 +243,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(445, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(353, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -292,7 +262,7 @@
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(0, 81);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(555, 190);
+            this.GroupBox2.Size = new System.Drawing.Size(575, 190);
             this.GroupBox2.TabIndex = 72;
             this.GroupBox2.TabStop = false;
             // 
@@ -442,9 +412,104 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(0, 2);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(555, 81);
+            this.GroupBox1.Size = new System.Drawing.Size(575, 81);
             this.GroupBox1.TabIndex = 71;
             this.GroupBox1.TabStop = false;
+            // 
+            // va_cod_lis
+            // 
+            this.va_cod_lis.HeaderText = "Codigo";
+            this.va_cod_lis.Name = "va_cod_lis";
+            this.va_cod_lis.ReadOnly = true;
+            this.va_cod_lis.Width = 60;
+            // 
+            // va_nom_lis
+            // 
+            this.va_nom_lis.HeaderText = "Nombre";
+            this.va_nom_lis.Name = "va_nom_lis";
+            this.va_nom_lis.ReadOnly = true;
+            // 
+            // va_mon_lis
+            // 
+            this.va_mon_lis.HeaderText = "Moneda";
+            this.va_mon_lis.Name = "va_mon_lis";
+            this.va_mon_lis.ReadOnly = true;
+            this.va_mon_lis.Width = 90;
+            // 
+            // va_fec_ini
+            // 
+            // 
+            // 
+            // 
+            this.va_fec_ini.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
+            this.va_fec_ini.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_ini.HeaderText = "Fecha Inicio";
+            this.va_fec_ini.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            // 
+            // 
+            // 
+            this.va_fec_ini.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.va_fec_ini.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_ini.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            // 
+            // 
+            // 
+            this.va_fec_ini.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_ini.MonthCalendar.DisplayMonth = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.va_fec_ini.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.va_fec_ini.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.va_fec_ini.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.va_fec_ini.Name = "va_fec_ini";
+            this.va_fec_ini.ReadOnly = true;
+            this.va_fec_ini.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // va_fec_fin
+            // 
+            // 
+            // 
+            // 
+            this.va_fec_fin.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
+            this.va_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_fin.HeaderText = "Fecha final";
+            this.va_fec_fin.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            // 
+            // 
+            // 
+            this.va_fec_fin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.va_fec_fin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_fin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            // 
+            // 
+            // 
+            this.va_fec_fin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_fin.MonthCalendar.DisplayMonth = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.va_fec_fin.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.va_fec_fin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.va_fec_fin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.va_fec_fin.Name = "va_fec_fin";
+            this.va_fec_fin.ReadOnly = true;
+            this.va_fec_fin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
             // 
             // cmr001_01
             // 
@@ -452,7 +517,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(555, 324);
+            this.ClientSize = new System.Drawing.Size(579, 324);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox2);
@@ -507,9 +572,10 @@
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_prm_bus;
         internal System.Windows.Forms.GroupBox GroupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_lis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_lis;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_mon_lis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_ini;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_fin;
+        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn va_fec_ini;
+        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn va_fec_fin;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
     }
 }

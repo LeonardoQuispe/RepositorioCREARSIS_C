@@ -70,8 +70,15 @@ namespace DATOS._6_CMR
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO cmr001 VALUES ");
-                vv_str_sql.AppendLine(" (" + cod_lis + ", '"+ nom_lis + ", '" + mon_lis);
-                vv_str_sql.AppendLine("','" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "','H')");
+
+                switch (mon_lis)
+                {
+                    case "0": mon_lis = "B"; break;
+                    case "1": mon_lis = "U"; break;
+                }
+
+                vv_str_sql.AppendLine("(" + cod_lis + ", '"+ nom_lis + "', '" + mon_lis+ "',");
+                vv_str_sql.AppendLine("'"+fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "','H')");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

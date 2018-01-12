@@ -26,7 +26,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
         #region INSTANCIAS
 
-        DATOS._6_CMR.c_cmr001 cmr001 = new DATOS._6_CMR.c_cmr001();
+        DATOS._6_CMR.c_cmr001 o_cmr001 = new DATOS._6_CMR.c_cmr001();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
@@ -48,7 +48,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                 tb_cod_lis.Focus();
                 return "El Codigo de la Lista de Precios debe ser Numerico";
             }
-            tab_cmr001 = cmr001._05(tb_cod_lis.Text);
+            tab_cmr001 = o_cmr001._05(tb_cod_lis.Text);
             if (tab_cmr001.Rows.Count != 0)
             {
                 tb_cod_lis.Focus();
@@ -97,15 +97,19 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                 }
 
                 // grabar datos
-                cmr001._02(Convert.ToInt32(tb_cod_lis.Text), tb_nom_lis.Text.Trim().ToString(), cb_mon_lis.SelectedValue.ToString(), tb_fec_ini.Value, tb_fec_fin.Value);
+                o_cmr001._02(Convert.ToInt32(tb_cod_lis.Text), tb_nom_lis.Text.Trim().ToString(), cb_mon_lis.SelectedIndex.ToString(), tb_fec_ini.Value, tb_fec_fin.Value);
 
                 //Actualiza la grilla de busqueda en la ventana padre
                 vg_frm_pad.fu_sel_fila(tb_cod_lis.Text, tb_nom_lis.Text);
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Talonario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nueva Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 tb_cod_lis.Clear();
                 tb_nom_lis.Clear();
+                cb_mon_lis.SelectedIndex = 0;
+                tb_fec_ini.Value = o_mg_glo_bal.fg_fec_act();
+                tb_fec_fin.Value = o_mg_glo_bal.fg_fec_act().AddMonths(6);
+
 
                 tb_cod_lis.Focus();
             }
@@ -123,6 +127,8 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         private void cmr001_02_Load(object sender, EventArgs e)
         {
             cb_mon_lis.SelectedIndex = 0;
+
+            tb_fec_fin.Value = o_mg_glo_bal.fg_fec_act().AddMonths(6);
         }
     }
 }

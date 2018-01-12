@@ -95,15 +95,11 @@ namespace DATOS
         /// <param name="ban_emp">Bandera si identifica persona como empleado</param>
         /// <returns></returns>
         public DataTable _02(string cod_per,string nro_per,string cod_gru,string raz_soc,string nom_com,string nit_ced,string dir_per,
-                            string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,string lim_cre,string mon_cre,
+                            string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,decimal lim_cre,string mon_cre,
                             string con_pac,string con_pap,string ban_cli,string ban_pro,string ban_emp)
         {
             try
             {         
-                if (lim_cre=="")
-                {
-                    lim_cre = "0.0";
-                }
 
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO adm010 VALUES ");
@@ -164,16 +160,12 @@ namespace DATOS
         /// <param name="ban_emp">Bandera si identifica persona como empleado</param>
         /// <returns></returns>
         public DataTable _03(string cod_per, string raz_soc, string nom_com, string nit_ced, string dir_per,
-                            string tel_per, string cel_per, string ema_per, string cod_lpr, string cod_ven, string lim_cre, string mon_cre,
+                            string tel_per, string cel_per, string ema_per, string cod_lpr, string cod_ven, decimal lim_cre, string mon_cre,
                             string con_pac, string con_pap, string ban_cli, string ban_pro, string ban_emp)
         {
             try
             {
-                if (lim_cre == "")
-                {
-                    lim_cre = "0.0";
-                }
-
+                
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE adm010 SET ");
                 vv_str_sql.AppendFormat("va_raz_soc='{0}',va_nom_com='{1}',va_nit_ced='{2}',", raz_soc, nom_com, nit_ced);

@@ -16,14 +16,23 @@ namespace CREARSIS._2_ADM.adm010_per_
 {
     public partial class adm010_06 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_adm011;
 
+        #endregion
+
+        #region ISNTANCIAS
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
 
+        #endregion
+
+        #region EVENTOS
 
         public adm010_06()
         {
@@ -76,8 +85,8 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            DialogResult res_msg = new DialogResult();            
-            res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar la Persona?", "Elimina Persona", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);            
+            DialogResult res_msg = new DialogResult();
+            res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar la Persona?", "Elimina Persona", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res_msg == DialogResult.Cancel)
             {
                 return;
@@ -98,10 +107,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             Close();
         }
 
+        #endregion
 
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -177,6 +185,6 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         }
 
-        
+        #endregion
     }
 }

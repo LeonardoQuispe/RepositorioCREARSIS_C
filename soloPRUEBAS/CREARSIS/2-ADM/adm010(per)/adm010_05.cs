@@ -17,14 +17,23 @@ namespace CREARSIS._2_ADM.adm010_per_
 {
     public partial class adm010_05 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_adm011;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
 
+        #endregion
+
+        #region EVENTOS
 
         public adm010_05()
         {
@@ -81,9 +90,9 @@ namespace CREARSIS._2_ADM.adm010_per_
             Close();
         }
 
+        #endregion
 
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -156,9 +165,10 @@ namespace CREARSIS._2_ADM.adm010_per_
             {
                 tb_est_ado.Text = "Deshabilitado";
             }
-            
+
         }
 
-        
+
+        #endregion
     }
 }
