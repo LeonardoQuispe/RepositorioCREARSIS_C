@@ -252,7 +252,7 @@
             this.tb_nit_emp.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nit_emp.ForeColor = System.Drawing.Color.Black;
             this.tb_nit_emp.Location = new System.Drawing.Point(86, 21);
-            this.tb_nit_emp.MaxLength = 18;
+            this.tb_nit_emp.MaxLength = 10;
             this.tb_nit_emp.Name = "tb_nit_emp";
             this.tb_nit_emp.PreventEnterBeep = true;
             this.tb_nit_emp.Size = new System.Drawing.Size(109, 22);
