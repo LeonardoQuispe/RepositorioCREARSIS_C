@@ -39,6 +39,11 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.tb_tel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tab_gen = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tb_nom_pag_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_pag_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tab_prv = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.cb_tip_cam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.itm_bs = new DevComponents.Editors.ComboItem();
@@ -55,11 +60,6 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pre_cli = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tab_cli = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.tb_nom_pag_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_pag_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tab_prv = new DevComponents.DotNetBar.SuperTabItem();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.gb_tip_per = new System.Windows.Forms.GroupBox();
@@ -86,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
-            this.superTabControlPanel2.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.gb_tip_per.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -113,8 +113,8 @@
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(9, 251);
             this.superTabControl1.Name = "superTabControl1";
@@ -156,6 +156,7 @@
             this.tb_cel_gen.Border.Class = "TextBoxBorder";
             this.tb_cel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cel_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cel_gen.Enabled = false;
             this.tb_cel_gen.ForeColor = System.Drawing.Color.Black;
             this.tb_cel_gen.Location = new System.Drawing.Point(274, 61);
             this.tb_cel_gen.MaxLength = 15;
@@ -189,6 +190,7 @@
             this.tb_dir_gen.Border.Class = "TextBoxBorder";
             this.tb_dir_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_dir_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_dir_gen.Enabled = false;
             this.tb_dir_gen.ForeColor = System.Drawing.Color.Black;
             this.tb_dir_gen.Location = new System.Drawing.Point(110, 22);
             this.tb_dir_gen.MaxLength = 80;
@@ -222,6 +224,7 @@
             this.tb_ema_gen.Border.Class = "TextBoxBorder";
             this.tb_ema_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_ema_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_ema_gen.Enabled = false;
             this.tb_ema_gen.ForeColor = System.Drawing.Color.Black;
             this.tb_ema_gen.Location = new System.Drawing.Point(110, 98);
             this.tb_ema_gen.MaxLength = 80;
@@ -269,6 +272,7 @@
             this.tb_tel_gen.Border.Class = "TextBoxBorder";
             this.tb_tel_gen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_tel_gen.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_tel_gen.Enabled = false;
             this.tb_tel_gen.ForeColor = System.Drawing.Color.Black;
             this.tb_tel_gen.Location = new System.Drawing.Point(110, 61);
             this.tb_tel_gen.MaxLength = 15;
@@ -284,6 +288,84 @@
             this.tab_gen.GlobalItem = false;
             this.tab_gen.Name = "tab_gen";
             this.tab_gen.Text = "General";
+            // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.tb_nom_pag_pro);
+            this.superTabControlPanel3.Controls.Add(this.labelX16);
+            this.superTabControlPanel3.Controls.Add(this.tb_cod_pag_pro);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(417, 141);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.tab_prv;
+            // 
+            // tb_nom_pag_pro
+            // 
+            this.tb_nom_pag_pro.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_pag_pro.Border.Class = "TextBoxBorder";
+            this.tb_nom_pag_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_pag_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_pag_pro.Enabled = false;
+            this.tb_nom_pag_pro.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_pag_pro.Location = new System.Drawing.Point(177, 21);
+            this.tb_nom_pag_pro.MaxLength = 40;
+            this.tb_nom_pag_pro.Name = "tb_nom_pag_pro";
+            this.tb_nom_pag_pro.PreventEnterBeep = true;
+            this.tb_nom_pag_pro.ReadOnly = true;
+            this.tb_nom_pag_pro.Size = new System.Drawing.Size(215, 22);
+            this.tb_nom_pag_pro.TabIndex = 2;
+            // 
+            // labelX16
+            // 
+            this.labelX16.AutoSize = true;
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX16.ForeColor = System.Drawing.Color.Black;
+            this.labelX16.Location = new System.Drawing.Point(28, 23);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(79, 17);
+            this.labelX16.TabIndex = 0;
+            this.labelX16.Text = "Condición Pago";
+            this.labelX16.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_cod_pag_pro
+            // 
+            this.tb_cod_pag_pro.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_pag_pro.Border.Class = "TextBoxBorder";
+            this.tb_cod_pag_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_pag_pro.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_pag_pro.ButtonCustom.Symbol = "";
+            this.tb_cod_pag_pro.ButtonCustom.Visible = true;
+            this.tb_cod_pag_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pag_pro.Enabled = false;
+            this.tb_cod_pag_pro.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_pag_pro.Location = new System.Drawing.Point(113, 21);
+            this.tb_cod_pag_pro.MaxLength = 4;
+            this.tb_cod_pag_pro.Name = "tb_cod_pag_pro";
+            this.tb_cod_pag_pro.PreventEnterBeep = true;
+            this.tb_cod_pag_pro.ReadOnly = true;
+            this.tb_cod_pag_pro.Size = new System.Drawing.Size(53, 22);
+            this.tb_cod_pag_pro.TabIndex = 1;
+            // 
+            // tab_prv
+            // 
+            this.tab_prv.AttachedControl = this.superTabControlPanel3;
+            this.tab_prv.GlobalItem = false;
+            this.tab_prv.Name = "tab_prv";
+            this.tab_prv.Text = "Proveedor";
+            this.tab_prv.Visible = false;
             // 
             // superTabControlPanel2
             // 
@@ -341,6 +423,7 @@
             this.tb_cre_cli.Border.Class = "TextBoxBorder";
             this.tb_cre_cli.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cre_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cre_cli.Enabled = false;
             this.tb_cre_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_cre_cli.Location = new System.Drawing.Point(110, 75);
             this.tb_cre_cli.MaxLength = 20;
@@ -377,6 +460,7 @@
             this.tb_nom_pag_cli.Border.Class = "TextBoxBorder";
             this.tb_nom_pag_cli.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_pag_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_pag_cli.Enabled = false;
             this.tb_nom_pag_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_pag_cli.Location = new System.Drawing.Point(174, 107);
             this.tb_nom_pag_cli.MaxLength = 40;
@@ -415,6 +499,7 @@
             this.tb_cod_pag_cli.ButtonCustom.Symbol = "";
             this.tb_cod_pag_cli.ButtonCustom.Visible = true;
             this.tb_cod_pag_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pag_cli.Enabled = false;
             this.tb_cod_pag_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_pag_cli.Location = new System.Drawing.Point(110, 107);
             this.tb_cod_pag_cli.MaxLength = 4;
@@ -433,6 +518,7 @@
             this.tb_nom_ven_cli.Border.Class = "TextBoxBorder";
             this.tb_nom_ven_cli.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_ven_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_ven_cli.Enabled = false;
             this.tb_nom_ven_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_ven_cli.Location = new System.Drawing.Point(174, 42);
             this.tb_nom_ven_cli.MaxLength = 40;
@@ -471,6 +557,7 @@
             this.tb_cod_ven_cli.ButtonCustom.Symbol = "";
             this.tb_cod_ven_cli.ButtonCustom.Visible = true;
             this.tb_cod_ven_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_ven_cli.Enabled = false;
             this.tb_cod_ven_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_ven_cli.Location = new System.Drawing.Point(110, 42);
             this.tb_cod_ven_cli.MaxLength = 4;
@@ -489,6 +576,7 @@
             this.tb_nom_pre_cli.Border.Class = "TextBoxBorder";
             this.tb_nom_pre_cli.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_pre_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_pre_cli.Enabled = false;
             this.tb_nom_pre_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_pre_cli.Location = new System.Drawing.Point(174, 11);
             this.tb_nom_pre_cli.MaxLength = 40;
@@ -527,6 +615,7 @@
             this.tb_cod_pre_cli.ButtonCustom.Symbol = "";
             this.tb_cod_pre_cli.ButtonCustom.Visible = true;
             this.tb_cod_pre_cli.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pre_cli.Enabled = false;
             this.tb_cod_pre_cli.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_pre_cli.Location = new System.Drawing.Point(110, 10);
             this.tb_cod_pre_cli.MaxLength = 4;
@@ -543,82 +632,6 @@
             this.tab_cli.Name = "tab_cli";
             this.tab_cli.Text = "Cliente";
             this.tab_cli.Visible = false;
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.tb_nom_pag_pro);
-            this.superTabControlPanel3.Controls.Add(this.labelX16);
-            this.superTabControlPanel3.Controls.Add(this.tb_cod_pag_pro);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(417, 141);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.tab_prv;
-            // 
-            // tb_nom_pag_pro
-            // 
-            this.tb_nom_pag_pro.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_pag_pro.Border.Class = "TextBoxBorder";
-            this.tb_nom_pag_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_pag_pro.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_pag_pro.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_pag_pro.Location = new System.Drawing.Point(177, 21);
-            this.tb_nom_pag_pro.MaxLength = 40;
-            this.tb_nom_pag_pro.Name = "tb_nom_pag_pro";
-            this.tb_nom_pag_pro.PreventEnterBeep = true;
-            this.tb_nom_pag_pro.ReadOnly = true;
-            this.tb_nom_pag_pro.Size = new System.Drawing.Size(215, 22);
-            this.tb_nom_pag_pro.TabIndex = 2;
-            // 
-            // labelX16
-            // 
-            this.labelX16.AutoSize = true;
-            this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX16.ForeColor = System.Drawing.Color.Black;
-            this.labelX16.Location = new System.Drawing.Point(28, 23);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(79, 17);
-            this.labelX16.TabIndex = 0;
-            this.labelX16.Text = "Condición Pago";
-            this.labelX16.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cod_pag_pro
-            // 
-            this.tb_cod_pag_pro.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_pag_pro.Border.Class = "TextBoxBorder";
-            this.tb_cod_pag_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_pag_pro.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_pag_pro.ButtonCustom.Symbol = "";
-            this.tb_cod_pag_pro.ButtonCustom.Visible = true;
-            this.tb_cod_pag_pro.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_pag_pro.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_pag_pro.Location = new System.Drawing.Point(113, 21);
-            this.tb_cod_pag_pro.MaxLength = 4;
-            this.tb_cod_pag_pro.Name = "tb_cod_pag_pro";
-            this.tb_cod_pag_pro.PreventEnterBeep = true;
-            this.tb_cod_pag_pro.ReadOnly = true;
-            this.tb_cod_pag_pro.Size = new System.Drawing.Size(53, 22);
-            this.tb_cod_pag_pro.TabIndex = 1;
-            // 
-            // tab_prv
-            // 
-            this.tab_prv.AttachedControl = this.superTabControlPanel3;
-            this.tab_prv.GlobalItem = false;
-            this.tab_prv.Name = "tab_prv";
-            this.tab_prv.Text = "Proveedor";
-            this.tab_prv.Visible = false;
             // 
             // GroupBox1
             // 
@@ -655,6 +668,7 @@
             this.tb_est_ado.Border.Class = "TextBoxBorder";
             this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
             this.tb_est_ado.Location = new System.Drawing.Point(305, 52);
             this.tb_est_ado.MaxLength = 15;
@@ -670,6 +684,7 @@
             this.gb_tip_per.Controls.Add(this.chk_emp);
             this.gb_tip_per.Controls.Add(this.chk_pro);
             this.gb_tip_per.Controls.Add(this.chk_cli);
+            this.gb_tip_per.Enabled = false;
             this.gb_tip_per.Location = new System.Drawing.Point(113, 80);
             this.gb_tip_per.Name = "gb_tip_per";
             this.gb_tip_per.Size = new System.Drawing.Size(279, 31);
@@ -727,6 +742,7 @@
             this.tb_nit_per.Border.Class = "TextBoxBorder";
             this.tb_nit_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nit_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nit_per.Enabled = false;
             this.tb_nit_per.ForeColor = System.Drawing.Color.Black;
             this.tb_nit_per.Location = new System.Drawing.Point(113, 164);
             this.tb_nit_per.MaxLength = 15;
@@ -780,6 +796,7 @@
             this.tb_nom_gru.Border.Class = "TextBoxBorder";
             this.tb_nom_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_gru.Enabled = false;
             this.tb_nom_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_gru.Location = new System.Drawing.Point(177, 20);
             this.tb_nom_gru.MaxLength = 40;
@@ -810,6 +827,7 @@
             // 
             this.tb_cod_per.BackColor = System.Drawing.Color.White;
             this.tb_cod_per.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_per.Enabled = false;
             this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_per.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.tb_cod_per.Location = new System.Drawing.Point(240, 52);
@@ -832,6 +850,7 @@
             this.tb_nro_per.Border.Class = "TextBoxBorder";
             this.tb_nro_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_per.Enabled = false;
             this.tb_nro_per.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_per.Location = new System.Drawing.Point(113, 52);
             this.tb_nro_per.MaxLength = 5;
@@ -868,6 +887,7 @@
             this.tb_raz_per.Border.Class = "TextBoxBorder";
             this.tb_raz_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_raz_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_raz_per.Enabled = false;
             this.tb_raz_per.ForeColor = System.Drawing.Color.Black;
             this.tb_raz_per.Location = new System.Drawing.Point(113, 126);
             this.tb_raz_per.MaxLength = 120;
@@ -886,6 +906,7 @@
             this.tb_nom_per.Border.Class = "TextBoxBorder";
             this.tb_nom_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_per.Enabled = false;
             this.tb_nom_per.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_per.Location = new System.Drawing.Point(113, 201);
             this.tb_nom_per.MaxLength = 100;
@@ -959,6 +980,7 @@
             this.tb_cod_gru.ButtonCustom.Symbol = "";
             this.tb_cod_gru.ButtonCustom.Visible = true;
             this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.Enabled = false;
             this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_gru.Location = new System.Drawing.Point(113, 19);
             this.tb_cod_gru.MaxLength = 2;
@@ -1019,7 +1041,7 @@
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.bt_ace_pta;
+            this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(434, 471);
             this.ControlBox = false;
             this.Controls.Add(this.superTabControl1);
@@ -1036,10 +1058,10 @@
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel1.PerformLayout();
-            this.superTabControlPanel2.ResumeLayout(false);
-            this.superTabControlPanel2.PerformLayout();
             this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel3.PerformLayout();
+            this.superTabControlPanel2.ResumeLayout(false);
+            this.superTabControlPanel2.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.gb_tip_per.ResumeLayout(false);

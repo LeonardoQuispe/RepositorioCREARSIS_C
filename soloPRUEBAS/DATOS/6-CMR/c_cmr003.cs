@@ -101,7 +101,7 @@ namespace DATOS._6_CMR
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE cmr003 SET  ");
-                vv_str_sql.AppendFormat("va_nom_per='{0}',va_por_cms='{1}',va_tip_cms='{2}' ", cod_ven, nom_per, por_cms, tip_cms);
+                vv_str_sql.AppendFormat("va_nom_ven='{0}',va_por_cms='{1}',va_tip_cms='{2}' ", nom_per, por_cms, tip_cms);
                 vv_str_sql.AppendFormat(" WHERE va_cod_ven='{0}' ", cod_ven);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());

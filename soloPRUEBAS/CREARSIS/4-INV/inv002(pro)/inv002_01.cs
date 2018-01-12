@@ -359,15 +359,7 @@ namespace CREARSIS._4_INV.inv002_pro_
                 Close();
             }
         }
-
-        private void dg_res_ult_DoubleClick(object sender, EventArgs e)
-        {
-            vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);
-
-            vg_frm_pad.Enabled = true;
-            Close();
-        }
-
+        
         private void bt_can_cel_Click(object sender, EventArgs e)
         {
             vg_frm_pad.Enabled = true;
