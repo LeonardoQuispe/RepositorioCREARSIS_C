@@ -44,6 +44,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         /// </summary>
         public string fu_ver_dat()
         {
+            tab_cmr002 = o_cmr002._01(tb_cod_lis.Text);
+
             if (tb_cod_lis.Text == "")
             {
                 tb_cod_lis.Focus();
