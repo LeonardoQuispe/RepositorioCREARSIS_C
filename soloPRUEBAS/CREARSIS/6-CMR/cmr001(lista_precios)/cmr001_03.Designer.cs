@@ -246,7 +246,7 @@
             this.tb_cod_lis.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_lis.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_lis.Location = new System.Drawing.Point(73, 21);
-            this.tb_cod_lis.MaxLength = 2;
+            this.tb_cod_lis.MaxLength = 8;
             this.tb_cod_lis.Name = "tb_cod_lis";
             this.tb_cod_lis.PreventEnterBeep = true;
             this.tb_cod_lis.ReadOnly = true;

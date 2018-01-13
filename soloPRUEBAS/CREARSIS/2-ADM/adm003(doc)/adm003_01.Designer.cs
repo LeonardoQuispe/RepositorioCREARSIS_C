@@ -118,7 +118,7 @@
             this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
             this.tb_sel_ecc.Location = new System.Drawing.Point(84, 19);
-            this.tb_sel_ecc.MaxLength = 15;
+            this.tb_sel_ecc.MaxLength = 3;
             this.tb_sel_ecc.Name = "tb_sel_ecc";
             this.tb_sel_ecc.PreventEnterBeep = true;
             this.tb_sel_ecc.Size = new System.Drawing.Size(47, 22);
@@ -344,7 +344,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(6, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";

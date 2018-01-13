@@ -153,7 +153,7 @@ namespace DATOS._6_CMR
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * FROM cmr001 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_lis =" + cod_lis);
+                vv_str_sql.AppendLine(" WHERE  va_cod_lis ='" + cod_lis+"' ");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

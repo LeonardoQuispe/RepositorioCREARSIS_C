@@ -35,6 +35,12 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.va_cod_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_mon_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_fec_ini = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.va_fec_fin = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr001_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,12 +64,6 @@
             this.codigo = new DevComponents.Editors.ComboItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.va_cod_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_mon_lis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fec_ini = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.va_fec_fin = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.mn_pri_nci.SuspendLayout();
@@ -148,7 +148,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(15, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -169,252 +169,6 @@
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             this.dg_res_ult.DoubleClick += new System.EventHandler(this.dg_res_ult_DoubleClick);
-            // 
-            // m_atr_ass
-            // 
-            this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
-            this.m_atr_ass.Text = "&Atras";
-            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
-            // 
-            // m_adm003_p00
-            // 
-            this.m_adm003_p00.Name = "m_adm003_p00";
-            this.m_adm003_p00.Size = new System.Drawing.Size(61, 20);
-            this.m_adm003_p00.Text = "&Informe";
-            // 
-            // m_cmr001_05
-            // 
-            this.m_cmr001_05.Name = "m_cmr001_05";
-            this.m_cmr001_05.Size = new System.Drawing.Size(66, 20);
-            this.m_cmr001_05.Text = "&Consulta";
-            this.m_cmr001_05.Click += new System.EventHandler(this.m_cmr001_05_Click);
-            // 
-            // m_cmr001_06
-            // 
-            this.m_cmr001_06.Name = "m_cmr001_06";
-            this.m_cmr001_06.Size = new System.Drawing.Size(178, 22);
-            this.m_cmr001_06.Text = "&Elimina";
-            this.m_cmr001_06.Click += new System.EventHandler(this.m_cmr001_06_Click);
-            // 
-            // m_cmr001_04
-            // 
-            this.m_cmr001_04.Name = "m_cmr001_04";
-            this.m_cmr001_04.Size = new System.Drawing.Size(178, 22);
-            this.m_cmr001_04.Text = "&Habilita/Deshabiltia";
-            this.m_cmr001_04.Click += new System.EventHandler(this.m_cmr001_04_Click);
-            // 
-            // m_cmr001_03
-            // 
-            this.m_cmr001_03.Name = "m_cmr001_03";
-            this.m_cmr001_03.Size = new System.Drawing.Size(178, 22);
-            this.m_cmr001_03.Text = "&Actualiza";
-            this.m_cmr001_03.Click += new System.EventHandler(this.m_cmr001_03_Click);
-            // 
-            // mr_mod_ifi
-            // 
-            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_cmr001_03,
-            this.m_cmr001_04,
-            this.m_cmr001_06});
-            this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
-            this.mr_mod_ifi.Text = "&Modifica";
-            // 
-            // m_cmr001_02
-            // 
-            this.m_cmr001_02.Name = "m_cmr001_02";
-            this.m_cmr001_02.Size = new System.Drawing.Size(54, 20);
-            this.m_cmr001_02.Text = "&Nuevo";
-            this.m_cmr001_02.Click += new System.EventHandler(this.m_cmr001_02_Click);
-            // 
-            // mn_pri_nci
-            // 
-            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
-            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
-            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
-            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_cmr001_02,
-            this.mr_mod_ifi,
-            this.m_cmr001_05,
-            this.m_adm003_p00,
-            this.m_cmr002_01,
-            this.m_atr_ass});
-            this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
-            this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(353, 24);
-            this.mn_pri_nci.TabIndex = 5;
-            this.mn_pri_nci.Text = "MenuStrip1";
-            this.mn_pri_nci.Visible = false;
-            // 
-            // m_cmr002_01
-            // 
-            this.m_cmr002_01.Name = "m_cmr002_01";
-            this.m_cmr002_01.Size = new System.Drawing.Size(52, 20);
-            this.m_cmr002_01.Text = "&Precio";
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
-            this.GroupBox2.Controls.Add(this.mn_pri_nci);
-            this.GroupBox2.Controls.Add(this.dg_res_ult);
-            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(0, 81);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(575, 190);
-            this.GroupBox2.TabIndex = 72;
-            this.GroupBox2.TabStop = false;
-            // 
-            // lb_sel_ecc
-            // 
-            this.lb_sel_ecc.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(137, 19);
-            this.lb_sel_ecc.Name = "lb_sel_ecc";
-            this.lb_sel_ecc.Size = new System.Drawing.Size(390, 23);
-            this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lb_sel_ecc.TabIndex = 1;
-            // 
-            // tb_val_bus
-            // 
-            this.tb_val_bus.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_val_bus.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_val_bus.Border.Class = "TextBoxBorder";
-            this.tb_val_bus.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_val_bus.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_val_bus.ButtonCustom.Symbol = "";
-            this.tb_val_bus.ButtonCustom.Visible = true;
-            this.tb_val_bus.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_val_bus.ForeColor = System.Drawing.Color.Black;
-            this.tb_val_bus.Location = new System.Drawing.Point(16, 50);
-            this.tb_val_bus.MaxLength = 50;
-            this.tb_val_bus.Name = "tb_val_bus";
-            this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(332, 22);
-            this.tb_val_bus.TabIndex = 20;
-            this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
-            this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
-            // 
-            // tb_sel_ecc
-            // 
-            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Border.Class = "TextBoxBorder";
-            this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Location = new System.Drawing.Point(69, 19);
-            this.tb_sel_ecc.MaxLength = 2;
-            this.tb_sel_ecc.Name = "tb_sel_ecc";
-            this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 22);
-            this.tb_sel_ecc.TabIndex = 10;
-            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sel_ecc_KeyDown);
-            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating);
-            // 
-            // LabelX1
-            // 
-            this.LabelX1.AutoSize = true;
-            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(15, 21);
-            this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(43, 17);
-            this.LabelX1.TabIndex = 1;
-            this.LabelX1.Text = "Sucursal";
-            // 
-            // deshabilitado
-            // 
-            this.deshabilitado.Text = "Deshabilitado";
-            this.deshabilitado.Value = "N";
-            // 
-            // habilitado
-            // 
-            this.habilitado.Text = "Habilitado";
-            this.habilitado.Value = "H";
-            // 
-            // todos
-            // 
-            this.todos.Text = "Todos";
-            this.todos.Value = "T";
-            // 
-            // cb_est_bus
-            // 
-            this.cb_est_bus.DisplayMember = "Text";
-            this.cb_est_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_est_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_est_bus.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
-            this.cb_est_bus.FormattingEnabled = true;
-            this.cb_est_bus.ItemHeight = 16;
-            this.cb_est_bus.Items.AddRange(new object[] {
-            this.todos,
-            this.habilitado,
-            this.deshabilitado});
-            this.cb_est_bus.Location = new System.Drawing.Point(448, 50);
-            this.cb_est_bus.Name = "cb_est_bus";
-            this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
-            this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_est_bus.TabIndex = 40;
-            // 
-            // nombre
-            // 
-            this.nombre.Text = "Nombre";
-            this.nombre.Value = "2";
-            // 
-            // codigo
-            // 
-            this.codigo.Text = "Codigo";
-            this.codigo.Value = "1";
-            // 
-            // cb_prm_bus
-            // 
-            this.cb_prm_bus.DisplayMember = "Text";
-            this.cb_prm_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
-            this.cb_prm_bus.FormattingEnabled = true;
-            this.cb_prm_bus.ItemHeight = 16;
-            this.cb_prm_bus.Items.AddRange(new object[] {
-            this.codigo,
-            this.nombre});
-            this.cb_prm_bus.Location = new System.Drawing.Point(354, 50);
-            this.cb_prm_bus.Name = "cb_prm_bus";
-            this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
-            this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_prm_bus.TabIndex = 30;
-            // 
-            // GroupBox1
-            // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.cb_prm_bus);
-            this.GroupBox1.Controls.Add(this.cb_est_bus);
-            this.GroupBox1.Controls.Add(this.lb_sel_ecc);
-            this.GroupBox1.Controls.Add(this.tb_val_bus);
-            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
-            this.GroupBox1.Controls.Add(this.LabelX1);
-            this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(0, 2);
-            this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(575, 81);
-            this.GroupBox1.TabIndex = 71;
-            this.GroupBox1.TabStop = false;
             // 
             // va_cod_lis
             // 
@@ -510,6 +264,253 @@
             this.va_est_ado.Name = "va_est_ado";
             this.va_est_ado.ReadOnly = true;
             this.va_est_ado.Width = 80;
+            // 
+            // m_atr_ass
+            // 
+            this.m_atr_ass.Name = "m_atr_ass";
+            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
+            // 
+            // m_adm003_p00
+            // 
+            this.m_adm003_p00.Name = "m_adm003_p00";
+            this.m_adm003_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_adm003_p00.Text = "&Informe";
+            // 
+            // m_cmr001_05
+            // 
+            this.m_cmr001_05.Name = "m_cmr001_05";
+            this.m_cmr001_05.Size = new System.Drawing.Size(66, 20);
+            this.m_cmr001_05.Text = "&Consulta";
+            this.m_cmr001_05.Click += new System.EventHandler(this.m_cmr001_05_Click);
+            // 
+            // m_cmr001_06
+            // 
+            this.m_cmr001_06.Name = "m_cmr001_06";
+            this.m_cmr001_06.Size = new System.Drawing.Size(178, 22);
+            this.m_cmr001_06.Text = "&Elimina";
+            this.m_cmr001_06.Click += new System.EventHandler(this.m_cmr001_06_Click);
+            // 
+            // m_cmr001_04
+            // 
+            this.m_cmr001_04.Name = "m_cmr001_04";
+            this.m_cmr001_04.Size = new System.Drawing.Size(178, 22);
+            this.m_cmr001_04.Text = "&Habilita/Deshabiltia";
+            this.m_cmr001_04.Click += new System.EventHandler(this.m_cmr001_04_Click);
+            // 
+            // m_cmr001_03
+            // 
+            this.m_cmr001_03.Name = "m_cmr001_03";
+            this.m_cmr001_03.Size = new System.Drawing.Size(178, 22);
+            this.m_cmr001_03.Text = "&Actualiza";
+            this.m_cmr001_03.Click += new System.EventHandler(this.m_cmr001_03_Click);
+            // 
+            // mr_mod_ifi
+            // 
+            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_cmr001_03,
+            this.m_cmr001_04,
+            this.m_cmr001_06});
+            this.mr_mod_ifi.Name = "mr_mod_ifi";
+            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
+            this.mr_mod_ifi.Text = "&Modifica";
+            // 
+            // m_cmr001_02
+            // 
+            this.m_cmr001_02.Name = "m_cmr001_02";
+            this.m_cmr001_02.Size = new System.Drawing.Size(54, 20);
+            this.m_cmr001_02.Text = "&Nuevo";
+            this.m_cmr001_02.Click += new System.EventHandler(this.m_cmr001_02_Click);
+            // 
+            // mn_pri_nci
+            // 
+            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
+            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
+            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
+            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_cmr001_02,
+            this.mr_mod_ifi,
+            this.m_cmr001_05,
+            this.m_adm003_p00,
+            this.m_cmr002_01,
+            this.m_atr_ass});
+            this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
+            this.mn_pri_nci.Name = "mn_pri_nci";
+            this.mn_pri_nci.Size = new System.Drawing.Size(445, 24);
+            this.mn_pri_nci.TabIndex = 5;
+            this.mn_pri_nci.Text = "MenuStrip1";
+            this.mn_pri_nci.Visible = false;
+            // 
+            // m_cmr002_01
+            // 
+            this.m_cmr002_01.Name = "m_cmr002_01";
+            this.m_cmr002_01.Size = new System.Drawing.Size(52, 20);
+            this.m_cmr002_01.Text = "&Precio";
+            this.m_cmr002_01.Click += new System.EventHandler(this.m_cmr002_01_Click);
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.Controls.Add(this.mn_pri_nci);
+            this.GroupBox2.Controls.Add(this.dg_res_ult);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(0, 82);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(575, 190);
+            this.GroupBox2.TabIndex = 72;
+            this.GroupBox2.TabStop = false;
+            // 
+            // lb_sel_ecc
+            // 
+            this.lb_sel_ecc.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
+            this.lb_sel_ecc.Location = new System.Drawing.Point(166, 19);
+            this.lb_sel_ecc.Name = "lb_sel_ecc";
+            this.lb_sel_ecc.Size = new System.Drawing.Size(390, 23);
+            this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lb_sel_ecc.TabIndex = 1;
+            // 
+            // tb_val_bus
+            // 
+            this.tb_val_bus.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_val_bus.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_val_bus.Border.Class = "TextBoxBorder";
+            this.tb_val_bus.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_val_bus.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_val_bus.ButtonCustom.Symbol = "";
+            this.tb_val_bus.ButtonCustom.Visible = true;
+            this.tb_val_bus.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_val_bus.ForeColor = System.Drawing.Color.Black;
+            this.tb_val_bus.Location = new System.Drawing.Point(16, 50);
+            this.tb_val_bus.MaxLength = 50;
+            this.tb_val_bus.Name = "tb_val_bus";
+            this.tb_val_bus.PreventEnterBeep = true;
+            this.tb_val_bus.Size = new System.Drawing.Size(332, 22);
+            this.tb_val_bus.TabIndex = 20;
+            this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
+            this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
+            // 
+            // tb_sel_ecc
+            // 
+            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_sel_ecc.Border.Class = "TextBoxBorder";
+            this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
+            this.tb_sel_ecc.Location = new System.Drawing.Point(98, 19);
+            this.tb_sel_ecc.MaxLength = 2;
+            this.tb_sel_ecc.Name = "tb_sel_ecc";
+            this.tb_sel_ecc.PreventEnterBeep = true;
+            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 22);
+            this.tb_sel_ecc.TabIndex = 10;
+            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sel_ecc_KeyDown);
+            this.tb_sel_ecc.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_ecc_Validating);
+            // 
+            // LabelX1
+            // 
+            this.LabelX1.AutoSize = true;
+            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX1.ForeColor = System.Drawing.Color.Black;
+            this.LabelX1.Location = new System.Drawing.Point(15, 21);
+            this.LabelX1.Name = "LabelX1";
+            this.LabelX1.Size = new System.Drawing.Size(77, 17);
+            this.LabelX1.TabIndex = 1;
+            this.LabelX1.Text = "Lista de Precios";
+            // 
+            // deshabilitado
+            // 
+            this.deshabilitado.Text = "Deshabilitado";
+            this.deshabilitado.Value = "N";
+            // 
+            // habilitado
+            // 
+            this.habilitado.Text = "Habilitado";
+            this.habilitado.Value = "H";
+            // 
+            // todos
+            // 
+            this.todos.Text = "Todos";
+            this.todos.Value = "T";
+            // 
+            // cb_est_bus
+            // 
+            this.cb_est_bus.DisplayMember = "Text";
+            this.cb_est_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_est_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_est_bus.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_est_bus.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_est_bus.ForeColor = System.Drawing.Color.Black;
+            this.cb_est_bus.FormattingEnabled = true;
+            this.cb_est_bus.ItemHeight = 16;
+            this.cb_est_bus.Items.AddRange(new object[] {
+            this.todos,
+            this.habilitado,
+            this.deshabilitado});
+            this.cb_est_bus.Location = new System.Drawing.Point(448, 50);
+            this.cb_est_bus.Name = "cb_est_bus";
+            this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
+            this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_est_bus.TabIndex = 40;
+            // 
+            // nombre
+            // 
+            this.nombre.Text = "Nombre";
+            this.nombre.Value = "2";
+            // 
+            // codigo
+            // 
+            this.codigo.Text = "Codigo";
+            this.codigo.Value = "1";
+            // 
+            // cb_prm_bus
+            // 
+            this.cb_prm_bus.DisplayMember = "Text";
+            this.cb_prm_bus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_prm_bus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_prm_bus.ForeColor = System.Drawing.Color.Black;
+            this.cb_prm_bus.FormattingEnabled = true;
+            this.cb_prm_bus.ItemHeight = 16;
+            this.cb_prm_bus.Items.AddRange(new object[] {
+            this.codigo,
+            this.nombre});
+            this.cb_prm_bus.Location = new System.Drawing.Point(354, 50);
+            this.cb_prm_bus.Name = "cb_prm_bus";
+            this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
+            this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_prm_bus.TabIndex = 30;
+            // 
+            // GroupBox1
+            // 
+            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.cb_prm_bus);
+            this.GroupBox1.Controls.Add(this.cb_est_bus);
+            this.GroupBox1.Controls.Add(this.lb_sel_ecc);
+            this.GroupBox1.Controls.Add(this.tb_val_bus);
+            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
+            this.GroupBox1.Controls.Add(this.LabelX1);
+            this.GroupBox1.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox1.Location = new System.Drawing.Point(0, 2);
+            this.GroupBox1.Name = "GroupBox1";
+            this.GroupBox1.Size = new System.Drawing.Size(575, 81);
+            this.GroupBox1.TabIndex = 71;
+            this.GroupBox1.TabStop = false;
             // 
             // cmr001_01
             // 

@@ -19,6 +19,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
         public dynamic vg_frm_pad;
         DataTable tab_cmr001;
+        DataTable tab_cmr002;
         DataTable tabla;
 
         #endregion
@@ -27,6 +28,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         DATOS._6_CMR.c_cmr001 o_cmr001 = new DATOS._6_CMR.c_cmr001();
+        DATOS._6_CMR.c_cmr002 o_cmr002 = new DATOS._6_CMR.c_cmr002();
 
         #endregion
 
@@ -243,8 +245,59 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             {
                 return "Ningún dato Seleccionado";
             }
+        }
+        public string fu_ver_dat3()
+        {
 
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                ///Si aun existe
+                tab_cmr001 = o_cmr001._05(tb_sel_ecc.Text);
+                if (tab_cmr001.Rows.Count == 0)
+                {
+                    return "La lista de Precios no se encuentra registrada";
+                }
 
+                //Verifica estado del dato
+                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Lista de Precio  se encuentra Deshabilitada";
+                }
+
+                tab_cmr002 = o_cmr001._05(tb_sel_ecc.Text);
+                
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+        }
+        public string fu_ver_dat4()
+        {
+
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                ///Si aun existe
+                tab_cmr001 = o_cmr001._05(tb_sel_ecc.Text);
+                if (tab_cmr001.Rows.Count == 0)
+                {
+                    return "La lista de Precios no se encuentra registrada";
+                }
+
+                //Verifica estado del dato
+                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "H")
+                {
+                    return "La lista de Precios se encuentra Habilitada";
+                }
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
         }
         #endregion
 
@@ -406,7 +459,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         private void m_cmr001_06_Click(object sender, EventArgs e)
         {
             string vv_err_msg;
-            vv_err_msg = fu_ver_dat();
+            vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
                 MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -436,5 +489,19 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
         #endregion
+
+        private void m_cmr002_01_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01();
+
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+        }
     }
 }
