@@ -321,7 +321,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            vg_frm_pad.fu_rec_suc(tb_sel_ecc.Text);
+            vg_frm_pad.fu_rec_lis(tb_sel_ecc.Text);
             vg_frm_pad.Enabled = true;
             Close();
         }
@@ -330,7 +330,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         {
             if (gb_ctr_frm.Enabled == true)
             {
-                vg_frm_pad.fu_rec_suc(tb_sel_ecc.Text);
+                vg_frm_pad.fu_rec_lis(tb_sel_ecc.Text);
                 vg_frm_pad.Enabled = true;
                 Close();
             }

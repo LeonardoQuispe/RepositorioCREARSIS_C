@@ -202,6 +202,7 @@
             this.mn_det_pre.Name = "mn_det_pre";
             this.mn_det_pre.Size = new System.Drawing.Size(162, 22);
             this.mn_det_pre.Text = "Detalle de precio";
+            this.mn_det_pre.Click += new System.EventHandler(this.mn_det_pre_Click);
             // 
             // m_ven_dedor
             // 

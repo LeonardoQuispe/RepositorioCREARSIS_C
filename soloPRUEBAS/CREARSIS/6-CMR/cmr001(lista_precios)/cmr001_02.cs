@@ -73,6 +73,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             return null;
         }
         #endregion
+
         public cmr001_02()
         {
             InitializeComponent();
