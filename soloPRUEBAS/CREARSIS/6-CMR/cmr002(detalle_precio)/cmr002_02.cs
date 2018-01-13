@@ -143,6 +143,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+
             try
             {
                 err_msg = fu_ver_dat();
