@@ -42,7 +42,7 @@
             this.va_fec_fin = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_cmr001_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr001_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr001_06 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr001_04 = new System.Windows.Forms.ToolStripMenuItem();
@@ -272,11 +272,11 @@
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
-            // m_adm003_p00
+            // m_cmr001_p00
             // 
-            this.m_adm003_p00.Name = "m_adm003_p00";
-            this.m_adm003_p00.Size = new System.Drawing.Size(61, 20);
-            this.m_adm003_p00.Text = "&Informe";
+            this.m_cmr001_p00.Name = "m_cmr001_p00";
+            this.m_cmr001_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_cmr001_p00.Text = "&Informe";
             // 
             // m_cmr001_05
             // 
@@ -333,12 +333,12 @@
             this.m_cmr001_02,
             this.mr_mod_ifi,
             this.m_cmr001_05,
-            this.m_adm003_p00,
+            this.m_cmr001_p00,
             this.m_cmr002_01,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(445, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(353, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -550,7 +550,7 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
-        internal System.Windows.Forms.ToolStripMenuItem m_adm003_p00;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr001_p00;
         internal System.Windows.Forms.ToolStripMenuItem m_cmr001_05;
         internal System.Windows.Forms.ToolStripMenuItem m_cmr001_06;
         internal System.Windows.Forms.ToolStripMenuItem m_cmr001_04;
