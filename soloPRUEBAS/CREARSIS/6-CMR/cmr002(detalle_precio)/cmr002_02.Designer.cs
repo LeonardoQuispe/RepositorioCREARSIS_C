@@ -81,7 +81,7 @@
             this.tb_pmx_inc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pmx_inc.ForeColor = System.Drawing.Color.Black;
             this.tb_pmx_inc.Location = new System.Drawing.Point(393, 88);
-            this.tb_pmx_inc.MaxLength = 2;
+            this.tb_pmx_inc.MaxLength = 5;
             this.tb_pmx_inc.Name = "tb_pmx_inc";
             this.tb_pmx_inc.PreventEnterBeep = true;
             this.tb_pmx_inc.Size = new System.Drawing.Size(36, 22);
@@ -155,7 +155,7 @@
             this.tb_pmx_des.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pmx_des.ForeColor = System.Drawing.Color.Black;
             this.tb_pmx_des.Location = new System.Drawing.Point(239, 88);
-            this.tb_pmx_des.MaxLength = 2;
+            this.tb_pmx_des.MaxLength = 5;
             this.tb_pmx_des.Name = "tb_pmx_des";
             this.tb_pmx_des.PreventEnterBeep = true;
             this.tb_pmx_des.Size = new System.Drawing.Size(36, 22);
@@ -188,7 +188,7 @@
             this.tb_pre_cio.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pre_cio.ForeColor = System.Drawing.Color.Black;
             this.tb_pre_cio.Location = new System.Drawing.Point(77, 90);
-            this.tb_pre_cio.MaxLength = 2;
+            this.tb_pre_cio.MaxLength = 11;
             this.tb_pre_cio.Name = "tb_pre_cio";
             this.tb_pre_cio.PreventEnterBeep = true;
             this.tb_pre_cio.Size = new System.Drawing.Size(73, 22);
