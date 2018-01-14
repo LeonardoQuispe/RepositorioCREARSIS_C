@@ -463,6 +463,7 @@
             this.va_nit_ced.HeaderText = "NIT/CI";
             this.va_nit_ced.Name = "va_nit_ced";
             this.va_nit_ced.ReadOnly = true;
+            this.va_nit_ced.Width = 90;
             // 
             // va_nom_gru
             // 
@@ -505,7 +506,7 @@
             this.va_est_ado.HeaderText = "Estado";
             this.va_est_ado.Name = "va_est_ado";
             this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 70;
+            this.va_est_ado.Width = 80;
             // 
             // adm010_01
             // 

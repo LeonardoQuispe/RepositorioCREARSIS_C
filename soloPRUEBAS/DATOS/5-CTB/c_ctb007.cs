@@ -78,7 +78,7 @@ namespace DATOS
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" EXECUTE ctb007_02p1 " + "'" + nro_dos + "',"+tip_fac+",");
+                vv_str_sql.AppendLine(" EXECUTE 4 " + "'" + nro_dos + "',"+tip_fac+",");
                 vv_str_sql.AppendLine("'" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "',");
                 vv_str_sql.AppendLine(nro_ini + "," + nro_fin + ","+cod_sucu+"," + cod_act + "," + cod_ley + ",");
                 vv_str_sql.AppendLine("'','H'");

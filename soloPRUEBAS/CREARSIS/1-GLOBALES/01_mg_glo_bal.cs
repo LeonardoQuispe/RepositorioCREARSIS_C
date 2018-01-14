@@ -543,8 +543,8 @@ namespace CREARSIS
                 //Cierra las ventanas hijas del formulario padre
                 foreach (Form va_frm_aux in ar_frm_act.MdiParent.MdiChildren)
                 {
-                    tmp_frm_aux = va_frm_aux;
-                    if (ar_frm_act.vg_frm_pad.Name == ar_frm_act.Name)
+                    //tmp_frm_aux = va_frm_aux;
+                    if (ar_frm_act.vg_frm_pad.Name == va_frm_aux.MdiParent.Name)
                     {
                         va_frm_aux.Dispose();
                     }
@@ -563,9 +563,9 @@ namespace CREARSIS
                 //Cierra las ventanas hijas del formulario padre
                 foreach (Form va_frm_aux in ar_frm_act.MdiParent.MdiChildren)
                 {
-                    if (tmp_frm_aux.vg_frm_pad.Name == ar_frm_act.vg_frm_pad.Name)
+                    if (ar_frm_act.vg_frm_pad.Name == va_frm_aux.MdiParent.Name)
                     {
-                        va_frm_aux.Enabled = true;
+                        ar_frm_act.Enabled = true;
                     }
                 }
 

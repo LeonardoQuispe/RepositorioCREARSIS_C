@@ -160,14 +160,14 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             {
                 if (vg_str_ucc.Rows.Count != 0)
                 {
-                    tb_sel_ecc2.Text = vg_str_ucc.Rows[0]["va_cod_pro"].ToString();
+                    tb_sel_ecc2.Text = vg_str_ucc.Rows[0]["va_cod_lis"].ToString();
 
                 }
                 //lenar tbx nombre lista de precio
                 tab_cmr001 = o_cmr001._05(tb_sel_ecc2.Text);
                 if (tab_cmr001.Rows.Count != 0)
                 {
-                    lb_sel_ecc2.Text = tab_cmr001.Rows[0]["va_nom_pro"].ToString();
+                    lb_sel_ecc2.Text = tab_cmr001.Rows[0]["va_nom_lis"].ToString();
                 }
             }
             cb_prm_bus.SelectedIndex = 0;
@@ -357,7 +357,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
-            Close();
+            o_mg_glo_bal.mg_ads000_04(this, 2);
         }
 
         private void tb_sel_ecc2_ButtonCustomClick(object sender, EventArgs e)
