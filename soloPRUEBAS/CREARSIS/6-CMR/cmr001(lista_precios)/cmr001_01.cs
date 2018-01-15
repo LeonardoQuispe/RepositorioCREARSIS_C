@@ -259,12 +259,12 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                 }
 
                 //Verifica estado del dato
-                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "N")
+                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "H")
                 {
-                    return "La Lista de Precio  se encuentra Deshabilitada";
+                    return "La Lista de Precio  se encuentra Habilitada";
                 }
 
-                tab_cmr002 = o_cmr001._05(tb_sel_ecc.Text);
+                tab_cmr001 = o_cmr001._05(tb_sel_ecc.Text);
                 
 
                 return null;

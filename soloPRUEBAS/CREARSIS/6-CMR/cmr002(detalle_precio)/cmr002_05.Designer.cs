@@ -31,7 +31,7 @@
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_por_cal = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_pmx_inc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -93,24 +93,24 @@
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             // 
-            // textBoxX1
+            // tb_por_cal
             // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.tb_por_cal.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(77, 119);
-            this.textBoxX1.MaxLength = 11;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.ReadOnly = true;
-            this.textBoxX1.Size = new System.Drawing.Size(73, 22);
-            this.textBoxX1.TabIndex = 206;
-            this.textBoxX1.Text = "0.00";
+            this.tb_por_cal.Border.Class = "TextBoxBorder";
+            this.tb_por_cal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_por_cal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_por_cal.ForeColor = System.Drawing.Color.Black;
+            this.tb_por_cal.Location = new System.Drawing.Point(77, 119);
+            this.tb_por_cal.MaxLength = 11;
+            this.tb_por_cal.Name = "tb_por_cal";
+            this.tb_por_cal.PreventEnterBeep = true;
+            this.tb_por_cal.ReadOnly = true;
+            this.tb_por_cal.Size = new System.Drawing.Size(73, 22);
+            this.tb_por_cal.TabIndex = 206;
+            this.tb_por_cal.Text = "0.00";
             // 
             // tb_pmx_inc
             // 
@@ -311,7 +311,7 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.textBoxX1);
+            this.GroupBox1.Controls.Add(this.tb_por_cal);
             this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.tb_pmx_inc);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -390,7 +390,7 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
-        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_por_cal;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_pmx_inc;
         internal DevComponents.DotNetBar.LabelX labelX5;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_pro;

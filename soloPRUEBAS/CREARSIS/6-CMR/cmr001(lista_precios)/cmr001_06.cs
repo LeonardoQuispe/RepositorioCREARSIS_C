@@ -113,7 +113,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar la Lista de Precios ?", "Elimina actividad economica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar la Lista de Precios ?", "Elimina Lista de Precios", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {

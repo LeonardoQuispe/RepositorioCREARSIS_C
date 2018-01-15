@@ -329,6 +329,33 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 return "Ningún dato Seleccionado";
             }
         }
+        public string fu_ver_dat3()
+        {
+            return null;
+
+            //if (tb_sel_ecc2.Text.Trim() != "")
+            //{
+            //    //Si aun existe
+            //    tab_inv002 = o_inv002._05(tb_sel_ecc.Text);
+            //    if (tab_inv002.Rows.Count == 0)
+            //    {
+            //        return "El Producto no se encuentra registrado";
+            //    }
+
+            //    //Verifica estado del dato
+            //    if (tab_inv002.Rows[0]["va_est_ado"].ToString() == "H")
+            //    {
+            //        return "El Producto se encuentra Habilitado";
+            //    }
+
+
+            //    return null;
+            //}
+            //else
+            //{
+            //    return "Ningún dato Seleccionado";
+            //}
+        }
         //---------------- Lista----------
         public void fu_rec_lis(string cod_lis)
         {
@@ -470,6 +497,20 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         }
         //ELIMINA
         private void m_cmr002_06_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            cmr002_06 obj = new cmr002_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+        }
+        //consulta
+        private void m_cmr002_05_Click(object sender, EventArgs e)
         {
 
         }

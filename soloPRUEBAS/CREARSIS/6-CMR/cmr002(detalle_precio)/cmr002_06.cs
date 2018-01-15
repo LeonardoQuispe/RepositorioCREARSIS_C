@@ -87,5 +87,42 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         {
             InitializeComponent();
         }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Elimina Detalle de Precio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar El detalle de Precios ?", "Elimina Detalle de Precio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                //Graba datos
+                o_cmr001._06(tb_cod_lis.Text);
+                MessageBoxEx.Show("Operación completada exitosamente", "Elimina Detalle de Precio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex.ToString());
+
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Elimina Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
