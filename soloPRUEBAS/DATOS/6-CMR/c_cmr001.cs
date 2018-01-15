@@ -18,11 +18,11 @@ namespace DATOS._6_CMR
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Cadena de comando sql
+        /// Funcion Buscar Detalle de Precio
         /// </summary>
-        /// <param name="val_bus">Valor de la busqueda</param>
-        /// <param name="prm_bus">Parametro de busqueda (1=codigo ; 2=Nombre )</param>
-        /// <param name="est_bus">Estado de la Actividad (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )</param>
+        /// <param name="val_bus"></param>
+        /// <param name="prm_bus"></param>
+        /// <param name="est_bus"></param>
         /// <returns></returns>
         public DataTable _01(string val_bus, int prm_bus, string est_bus)
         {

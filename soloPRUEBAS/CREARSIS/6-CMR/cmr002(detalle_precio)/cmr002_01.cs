@@ -49,7 +49,6 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         public void fu_bus_car(string val_bus)
         {
             int va_ind_ice = 0;
-            string va_mon_lis = "";
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
@@ -173,7 +172,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car("");
+            fu_bus_car(tb_sel_ecc2.Text);
 
         }
 
@@ -266,8 +265,18 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         /// </summary>
         public string fu_ver_dat()
         {
-            if (tb_sel_ecc.Text.Trim() != "")
+            if (tb_sel_ecc2.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc2.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
+                //Si aun existe
+                tab_cmr002 = o_cmr002._01(tb_sel_ecc2.Text);
+                if (tab_cmr002.Rows.Count == 0)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_inv002 = o_inv002._05(tb_sel_ecc.Text);
                 if (tab_inv002.Rows.Count == 0)
@@ -288,8 +297,18 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         /// </summary>
         public string fu_ver_dat2()
         {
-            if (tb_sel_ecc.Text.Trim() != "")
+            if (tb_sel_ecc2.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc2.Text) == false)
+                {
+                    return "Datos Incorrectos";
+                }
+                //Si aun existe
+                tab_cmr002 = o_cmr002._01(tb_sel_ecc2.Text);
+                if (tab_cmr002.Rows.Count == 0)
+                {
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_inv002 = o_inv002._05(tb_sel_ecc.Text);
                 if (tab_inv002.Rows.Count == 0)
@@ -313,6 +332,12 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         //---------------- Lista----------
         public void fu_rec_lis(string cod_lis)
         {
+            if (o_mg_glo_bal.fg_val_num(cod_lis) == false)
+            {
+                lb_sel_ecc2.Text = "** NO existe";
+                tb_sel_ecc2.Text = "";
+                return;
+            }
             if (cod_lis.Trim() == "")
             {
                 lb_sel_ecc2.Text = "** NO existe";
@@ -422,12 +447,31 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         private void tb_sel_ecc_Validated(object sender, EventArgs e)
         {
-            fu_con_sel();
+                fu_con_sel();
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
+        }
+        //ACTUALIZA
+        private void m_cmr002_03_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Detalle de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            cmr002_03 obj = new cmr002_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr002);
+        }
+        //ELIMINA
+        private void m_cmr002_06_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -806,12 +806,6 @@
     <Compile Include="6-CMR\cmr002%28detalle_precio%29\cmr002_03.Designer.cs">
       <DependentUpon>cmr002_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="6-CMR\cmr002%28detalle_precio%29\cmr002_04.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="6-CMR\cmr002%28detalle_precio%29\cmr002_04.Designer.cs">
-      <DependentUpon>cmr002_04.cs</DependentUpon>
-    </Compile>
     <Compile Include="6-CMR\cmr002%28detalle_precio%29\cmr002_05.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1290,9 +1284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6-CMR\cmr002%28detalle_precio%29\cmr002_03.resx">
       <DependentUpon>cmr002_03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="6-CMR\cmr002%28detalle_precio%29\cmr002_04.resx">
-      <DependentUpon>cmr002_04.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="6-CMR\cmr002%28detalle_precio%29\cmr002_05.resx">
       <DependentUpon>cmr002_05.cs</DependentUpon>

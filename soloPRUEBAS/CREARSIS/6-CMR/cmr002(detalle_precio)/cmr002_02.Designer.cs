@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_pmx_inc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pro = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -51,6 +53,8 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.textBoxX1);
+            this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.tb_pmx_inc);
             this.GroupBox1.Controls.Add(this.labelX5);
             this.GroupBox1.Controls.Add(this.tb_cod_pro);
@@ -66,9 +70,43 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(0, -7);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(437, 121);
+            this.GroupBox1.Size = new System.Drawing.Size(437, 153);
             this.GroupBox1.TabIndex = 6;
             this.GroupBox1.TabStop = false;
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX1.Location = new System.Drawing.Point(77, 119);
+            this.textBoxX1.MaxLength = 11;
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(73, 22);
+            this.textBoxX1.TabIndex = 206;
+            this.textBoxX1.Text = "0.00";
+            // 
+            // labelX6
+            // 
+            this.labelX6.AutoSize = true;
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
+            this.labelX6.Location = new System.Drawing.Point(12, 120);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(58, 17);
+            this.labelX6.TabIndex = 205;
+            this.labelX6.Text = "Precio Calc.";
             // 
             // tb_pmx_inc
             // 
@@ -80,12 +118,13 @@
             this.tb_pmx_inc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_pmx_inc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pmx_inc.ForeColor = System.Drawing.Color.Black;
-            this.tb_pmx_inc.Location = new System.Drawing.Point(393, 88);
+            this.tb_pmx_inc.Location = new System.Drawing.Point(393, 85);
             this.tb_pmx_inc.MaxLength = 5;
             this.tb_pmx_inc.Name = "tb_pmx_inc";
             this.tb_pmx_inc.PreventEnterBeep = true;
             this.tb_pmx_inc.Size = new System.Drawing.Size(36, 22);
-            this.tb_pmx_inc.TabIndex = 204;
+            this.tb_pmx_inc.TabIndex = 5;
+            this.tb_pmx_inc.Text = "0.00";
             // 
             // labelX5
             // 
@@ -97,10 +136,10 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(327, 90);
+            this.labelX5.Location = new System.Drawing.Point(327, 87);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(51, 17);
-            this.labelX5.TabIndex = 203;
+            this.labelX5.TabIndex = 4;
             this.labelX5.Text = "%inc. Max";
             // 
             // tb_cod_pro
@@ -120,7 +159,7 @@
             this.tb_cod_pro.Name = "tb_cod_pro";
             this.tb_cod_pro.PreventEnterBeep = true;
             this.tb_cod_pro.Size = new System.Drawing.Size(131, 22);
-            this.tb_cod_pro.TabIndex = 37;
+            this.tb_cod_pro.TabIndex = 1;
             this.tb_cod_pro.ButtonCustomClick += new System.EventHandler(this.tb_cod_pro_ButtonCustomClick);
             this.tb_cod_pro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_pro_KeyDown);
             this.tb_cod_pro.Validated += new System.EventHandler(this.tb_cod_pro_Validated);
@@ -154,12 +193,13 @@
             this.tb_pmx_des.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_pmx_des.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pmx_des.ForeColor = System.Drawing.Color.Black;
-            this.tb_pmx_des.Location = new System.Drawing.Point(239, 88);
+            this.tb_pmx_des.Location = new System.Drawing.Point(239, 85);
             this.tb_pmx_des.MaxLength = 5;
             this.tb_pmx_des.Name = "tb_pmx_des";
             this.tb_pmx_des.PreventEnterBeep = true;
             this.tb_pmx_des.Size = new System.Drawing.Size(36, 22);
-            this.tb_pmx_des.TabIndex = 34;
+            this.tb_pmx_des.TabIndex = 3;
+            this.tb_pmx_des.Text = "0.00";
             // 
             // labelX4
             // 
@@ -171,7 +211,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(174, 90);
+            this.labelX4.Location = new System.Drawing.Point(174, 87);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(59, 17);
             this.labelX4.TabIndex = 33;
@@ -187,12 +227,13 @@
             this.tb_pre_cio.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_pre_cio.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pre_cio.ForeColor = System.Drawing.Color.Black;
-            this.tb_pre_cio.Location = new System.Drawing.Point(77, 90);
+            this.tb_pre_cio.Location = new System.Drawing.Point(77, 87);
             this.tb_pre_cio.MaxLength = 11;
             this.tb_pre_cio.Name = "tb_pre_cio";
             this.tb_pre_cio.PreventEnterBeep = true;
             this.tb_pre_cio.Size = new System.Drawing.Size(73, 22);
-            this.tb_pre_cio.TabIndex = 32;
+            this.tb_pre_cio.TabIndex = 2;
+            this.tb_pre_cio.Text = "0.00";
             // 
             // labelX3
             // 
@@ -204,7 +245,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(12, 90);
+            this.labelX3.Location = new System.Drawing.Point(12, 87);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(32, 17);
             this.labelX3.TabIndex = 31;
@@ -243,7 +284,7 @@
             this.tb_cod_lis.Name = "tb_cod_lis";
             this.tb_cod_lis.PreventEnterBeep = true;
             this.tb_cod_lis.Size = new System.Drawing.Size(63, 22);
-            this.tb_cod_lis.TabIndex = 10;
+            this.tb_cod_lis.TabIndex = 0;
             this.tb_cod_lis.ButtonCustomClick += new System.EventHandler(this.tb_cod_lis_ButtonCustomClick);
             this.tb_cod_lis.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_lis_KeyDown);
             this.tb_cod_lis.Validated += new System.EventHandler(this.tb_cod_lis_Validated);
@@ -289,7 +330,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(0, 120);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(0, 145);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(437, 48);
             this.gb_ctr_frm.TabIndex = 80;
@@ -308,7 +349,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 100;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -324,7 +365,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 90;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -334,7 +375,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(437, 170);
+            this.ClientSize = new System.Drawing.Size(437, 193);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);
@@ -370,5 +411,7 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_pmx_inc;
         internal DevComponents.DotNetBar.LabelX labelX5;
+        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        internal DevComponents.DotNetBar.LabelX labelX6;
     }
 }
