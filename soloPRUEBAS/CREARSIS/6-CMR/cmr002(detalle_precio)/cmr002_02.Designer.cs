@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_por_cal = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_pmx_inc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -53,7 +53,7 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.textBoxX1);
+            this.GroupBox1.Controls.Add(this.tb_por_cal);
             this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.tb_pmx_inc);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -74,23 +74,23 @@
             this.GroupBox1.TabIndex = 6;
             this.GroupBox1.TabStop = false;
             // 
-            // textBoxX1
+            // tb_por_cal
             // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.tb_por_cal.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(77, 119);
-            this.textBoxX1.MaxLength = 11;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(73, 22);
-            this.textBoxX1.TabIndex = 206;
-            this.textBoxX1.Text = "0.00";
+            this.tb_por_cal.Border.Class = "TextBoxBorder";
+            this.tb_por_cal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_por_cal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_por_cal.ForeColor = System.Drawing.Color.Black;
+            this.tb_por_cal.Location = new System.Drawing.Point(77, 119);
+            this.tb_por_cal.MaxLength = 11;
+            this.tb_por_cal.Name = "tb_por_cal";
+            this.tb_por_cal.PreventEnterBeep = true;
+            this.tb_por_cal.Size = new System.Drawing.Size(73, 22);
+            this.tb_por_cal.TabIndex = 4;
+            this.tb_por_cal.Text = "0.00";
             // 
             // labelX6
             // 
@@ -123,7 +123,7 @@
             this.tb_pmx_inc.Name = "tb_pmx_inc";
             this.tb_pmx_inc.PreventEnterBeep = true;
             this.tb_pmx_inc.Size = new System.Drawing.Size(36, 22);
-            this.tb_pmx_inc.TabIndex = 5;
+            this.tb_pmx_inc.TabIndex = 3;
             this.tb_pmx_inc.Text = "0.00";
             // 
             // labelX5
@@ -159,7 +159,7 @@
             this.tb_cod_pro.Name = "tb_cod_pro";
             this.tb_cod_pro.PreventEnterBeep = true;
             this.tb_cod_pro.Size = new System.Drawing.Size(131, 22);
-            this.tb_cod_pro.TabIndex = 1;
+            this.tb_cod_pro.TabIndex = 0;
             this.tb_cod_pro.ButtonCustomClick += new System.EventHandler(this.tb_cod_pro_ButtonCustomClick);
             this.tb_cod_pro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_pro_KeyDown);
             this.tb_cod_pro.Validated += new System.EventHandler(this.tb_cod_pro_Validated);
@@ -198,7 +198,7 @@
             this.tb_pmx_des.Name = "tb_pmx_des";
             this.tb_pmx_des.PreventEnterBeep = true;
             this.tb_pmx_des.Size = new System.Drawing.Size(36, 22);
-            this.tb_pmx_des.TabIndex = 3;
+            this.tb_pmx_des.TabIndex = 2;
             this.tb_pmx_des.Text = "0.00";
             // 
             // labelX4
@@ -232,7 +232,7 @@
             this.tb_pre_cio.Name = "tb_pre_cio";
             this.tb_pre_cio.PreventEnterBeep = true;
             this.tb_pre_cio.Size = new System.Drawing.Size(73, 22);
-            this.tb_pre_cio.TabIndex = 2;
+            this.tb_pre_cio.TabIndex = 1;
             this.tb_pre_cio.Text = "0.00";
             // 
             // labelX3
@@ -284,7 +284,7 @@
             this.tb_cod_lis.Name = "tb_cod_lis";
             this.tb_cod_lis.PreventEnterBeep = true;
             this.tb_cod_lis.Size = new System.Drawing.Size(63, 22);
-            this.tb_cod_lis.TabIndex = 0;
+            this.tb_cod_lis.TabIndex = 5;
             this.tb_cod_lis.ButtonCustomClick += new System.EventHandler(this.tb_cod_lis_ButtonCustomClick);
             this.tb_cod_lis.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_lis_KeyDown);
             this.tb_cod_lis.Validated += new System.EventHandler(this.tb_cod_lis_Validated);
@@ -411,7 +411,7 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_pmx_inc;
         internal DevComponents.DotNetBar.LabelX labelX5;
-        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_por_cal;
         internal DevComponents.DotNetBar.LabelX labelX6;
     }
 }

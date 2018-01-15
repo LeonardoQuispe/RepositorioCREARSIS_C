@@ -379,7 +379,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "cmr002_03";
-            this.Text = "Actualiza Detalle de Precio";
+            this.Text = "Actualiza Detalle Precio";
             this.Load += new System.EventHandler(this.cmr002_03_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);

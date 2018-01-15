@@ -242,6 +242,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             }
             else
             {
+                tb_sel_ecc.Text = "";
                 lb_sel_ecc.Text = "** Ninguna Lista de Precios Seleccionada";
                 return;
             }
@@ -304,7 +305,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                     return "Datos Incorrectos";
                 }
                 //Si aun existe
-                tab_cmr002 = o_cmr002._01(tb_sel_ecc2.Text);
+                tab_cmr002 = o_cmr002._01(tb_sel_ecc2.Text,tb_sel_ecc.Text);
                 if (tab_cmr002.Rows.Count == 0)
                 {
                     return "Datos Incorrectos";
@@ -363,11 +364,14 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             {
                 lb_sel_ecc2.Text = "** NO existe";
                 tb_sel_ecc2.Text = "";
+
+                fu_bus_car(tb_sel_ecc2.Text);
                 return;
             }
             if (cod_lis.Trim() == "")
             {
                 lb_sel_ecc2.Text = "** NO existe";
+                fu_bus_car(tb_sel_ecc2.Text);
                 return;
             }
 
@@ -376,6 +380,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             {
                 tb_sel_ecc2.Text = "";
                 lb_sel_ecc2.Text = "** NO existe";
+
+                fu_bus_car(tb_sel_ecc2.Text);
                 return;
             }
 
@@ -383,6 +389,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             lb_sel_ecc2.Text = tab_cmr001.Rows[0]["va_nom_lis"].ToString();
 
             fu_bus_car(tb_sel_ecc2.Text);
+
         }
         #endregion
 
@@ -399,7 +406,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         private void m_cmr002_02_Click(object sender, EventArgs e)
         {
             CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
+            
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -507,12 +515,60 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             }
 
             cmr002_06 obj = new cmr002_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr002);
         }
         //consulta
         private void m_cmr002_05_Click(object sender, EventArgs e)
         {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            cmr002_05 obj = new cmr002_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr002);
+        }
+
+        private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dg_res_ult.Rows.Count != 0)
+            {
+                if (e.KeyData == Keys.Down)
+                {
+                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index + 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+
+                //al presionar tecla para ARRIBA
+                if (e.KeyData == Keys.Up)
+                {
+                    if (dg_res_ult.CurrentRow.Index != 0)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index - 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+            }
         }
     }
 }

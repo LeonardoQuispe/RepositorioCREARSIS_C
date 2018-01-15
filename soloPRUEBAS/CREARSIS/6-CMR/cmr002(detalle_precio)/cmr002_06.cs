@@ -83,6 +83,9 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
 
         #endregion
+
+        #region EVENTOS
+
         public cmr002_06()
         {
             InitializeComponent();
@@ -102,7 +105,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
 
                 DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar El detalle de Precios ?", "Elimina Detalle de Precio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar El Producto de esta Lista de Precios?", "Elimina Detalle de Precio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (res_msg == DialogResult.Cancel)
                 {
@@ -110,11 +113,12 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 }
 
                 //Graba datos
-                o_cmr001._06(tb_cod_lis.Text);
+                o_cmr002._06(tb_cod_lis.Text,tb_cod_pro.Text);
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Detalle de Precio", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex.ToString());
+                //Actualiza la grilla de busqueda en la ventana padre
+                vg_frm_pad.fu_bus_car(tb_cod_lis.Text);
 
                 Close();
 
@@ -124,5 +128,16 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 MessageBoxEx.Show(ex.Message, "Error Elimina Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cmr002_06_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
     }
 }

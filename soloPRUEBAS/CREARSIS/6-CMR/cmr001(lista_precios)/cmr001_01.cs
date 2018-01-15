@@ -264,9 +264,6 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                     return "La Lista de Precio  se encuentra Habilitada";
                 }
 
-                tab_cmr001 = o_cmr001._05(tb_sel_ecc.Text);
-                
-
                 return null;
             }
             else
@@ -287,10 +284,13 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
                 }
 
                 //Verifica estado del dato
-                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "H")
+                if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    return "La lista de Precios se encuentra Habilitada";
+                    return "La Lista de Precio  se encuentra Deshabilitada";
                 }
+
+                tab_cmr001 = o_cmr001._05(tb_sel_ecc.Text);
+
 
                 return null;
             }
@@ -493,7 +493,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         private void m_cmr002_01_Click(object sender, EventArgs e)
         {
             string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat3();
+            vv_err_msg = fu_ver_dat4();
             if (vv_err_msg != null)
             {
                 MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);

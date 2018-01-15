@@ -83,9 +83,25 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
 
         #endregion
+
+        #region EVENTOS
+
         public cmr002_05()
         {
             InitializeComponent();
         }
+
+        private void cmr002_05_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
+
     }
 }

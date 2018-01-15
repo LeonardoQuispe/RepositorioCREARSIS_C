@@ -39,51 +39,124 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         #region METODOS
 
+        public void fu_ini_frm()
+        {
+            //Obtiene parametros y muestra en pantalla
+            if (vg_str_ucc.Rows.Count == 0)
+            {
+                return;
+            }
+
+            //lenar tbx nombre Detalle de Precio
+            tb_cod_lis.Text = vg_str_ucc.Rows[0]["va_cod_lis"].ToString();
+            tab_cmr001 = o_cmr001._05(tb_cod_lis.Text);
+            if (tab_cmr001.Rows.Count != 0)
+            {
+                tb_nom_lis.Text = tab_cmr001.Rows[0]["va_nom_lis"].ToString();
+            }
+
+            tb_cod_pro.Focus();
+        }
         /// <summary>
-        /// Funcion que verifica los datos antes de grabar
-        /// </summary>
+        /// /// Funcion que verifica los datos antes de grabar
+        /// /// </summary>
         public string fu_ver_dat()
         {
-            tab_cmr002 = o_cmr002._01(tb_cod_lis.Text);
 
+            //Valida Lista de Precio
             if (tb_cod_lis.Text == "")
             {
                 tb_cod_lis.Focus();
-                return "Debes proporcionar el codigo de la Detalle de Precio";
+                return "Debes proporcionar el codigo de la Lista de Precio";
             }
             if (o_mg_glo_bal.fg_val_num(tb_cod_lis.Text) == false)
             {
                 tb_cod_lis.Focus();
-                return "El Codigo de la Detalle de Precios debe ser Numerico";
+                return "El Codigo de la Lista de Precios debe ser Numerico";
             }
+            //Valida Producto
             if (tb_cod_pro.Text == "")
             {
-                tb_cod_lis.Focus();
-                return "Debes proporcionar el codigo de la Detalle de Precio";
+                tb_cod_pro.Focus();
+                return "Debes proporcionar el codigo del Producto";
             }
 
+            //Si aun existe
+            tab_cmr002 = o_cmr002._01(tb_cod_lis.Text, tb_cod_pro.Text);
+            if (tab_cmr002.Rows.Count != 0)
+            {
+                return "El producto ya esta registrado en Esta Lista";
+            }
+
+
+            //valida PRECIO
             if (tb_pre_cio.Text == "")
             {
                 tb_pre_cio.Focus();
                 return "Debes proporcionar el Precio";
             }
-            //valida PRECIO
-            err_msg = o_mg_glo_bal.fg_val_dec(tb_pre_cio.Text, 10, 5);
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_pre_cio.Text, 5, 5);
 
             if (err_msg == null)
             {
                 tb_pre_cio.Focus();
-                return "La equivalencia de  Unidad de Medida en Ventas debe ser Numerico";
+                return "El Precio debe ser Numerico";
             }
             if (err_msg == "ent")
             {
                 tb_pre_cio.Focus();
-                return "La equivalencia de  Unidad de Medida en Ventas debe tener hasta 10 numeros Enteros";
+                return "El Precio debe tener hasta 5 numeros Enteros";
             }
             if (err_msg == "dec")
             {
                 tb_pre_cio.Focus();
-                return "La equivalencia de  Unidad de Medida en Ventas debe tener hasta 5 números Decimales";
+                return "El Precio debe tener hasta 5 números Decimales";
+            }
+            //valida Porcentaje Maximo de descuento
+            if (tb_pmx_des.Text == "")
+            {
+                tb_pmx_des.Focus();
+                return "Debes proporcionar el Porcentaje Maximo de Descuento";
+            }
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_pmx_des.Text, 2, 2);
+
+            if (err_msg == null)
+            {
+                tb_pmx_des.Focus();
+                return "El Porcentaje Maximo de Descuento debe ser Numerico";
+            }
+            if (err_msg == "ent")
+            {
+                tb_pmx_des.Focus();
+                return "El Porcentaje Maximo de Descuento debe tener hasta 2 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_pmx_des.Focus();
+                return "El Porcentaje Maximo de Descuento debe tener hasta 2 números Decimales";
+            }
+            //valida Porcentaje Maximo de Incremento
+            if (tb_pmx_inc.Text == "")
+            {
+                tb_pmx_inc.Focus();
+                return "Debes proporcionar el Porcentaje Maximo de Incremento";
+            }
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_pmx_inc.Text, 2, 2);
+
+            if (err_msg == null)
+            {
+                tb_pmx_inc.Focus();
+                return "El Porcentaje Maximo de Incremento debe ser Numerico";
+            }
+            if (err_msg == "ent")
+            {
+                tb_pmx_inc.Focus();
+                return "El Porcentaje Maximo de Incremento debe tener hasta 2 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_pmx_inc.Focus();
+                return "El Porcentaje Maximo de Incremento debe tener hasta 2 números Decimales";
             }
 
             return null;
@@ -138,7 +211,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         private void cmr002_02_Load(object sender, EventArgs e)
         {
-
+            fu_ini_frm();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -159,9 +232,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 {
                     return;
                 }
-                int aux = 0;
                 // grabar datos
-                o_cmr002._02(Convert.ToInt32(tb_cod_lis.Text), tb_cod_pro.Text.Trim().ToString(),Convert.ToInt32(tb_pre_cio.Text), Convert.ToInt32(tb_pmx_des.Text), Convert.ToInt32(tb_pmx_inc.Text),aux);
+                o_cmr002._02(Convert.ToInt32(tb_cod_lis.Text), tb_cod_pro.Text.Trim().ToString(),Convert.ToDecimal(tb_pre_cio.Text), Convert.ToDecimal(tb_pmx_des.Text), Convert.ToDecimal(tb_pmx_inc.Text), Convert.ToDecimal(tb_por_cal.Text));
 
                 //Actualiza la grilla de busqueda en la ventana padre
                 vg_frm_pad.fu_bus_car(tb_cod_lis.Text);
@@ -170,11 +242,17 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Detalle de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                tb_cod_lis.Clear();
-                tb_nom_lis.Clear();
+                tb_cod_pro.Clear();
+                tb_nom_pro.Clear();
+
+                tb_pre_cio.Text = "0.00";
+                tb_pmx_des.Text = "0.00";
+                tb_pmx_inc.Text = "0.00";
+                
+                tb_pmx_des.Text = "0.00";
 
 
-                tb_cod_lis.Focus();
+                tb_cod_pro.Focus();
             }
             catch (Exception ex)
             {

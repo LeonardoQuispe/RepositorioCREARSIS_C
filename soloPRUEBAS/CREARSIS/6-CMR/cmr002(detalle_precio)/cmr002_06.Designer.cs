@@ -93,6 +93,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // tb_por_cal
             // 
@@ -384,6 +385,7 @@
             this.Name = "cmr002_06";
             this.Text = "Elimina Producto de Detalle de Precio";
             this.TitleText = "Elimina Producto de Detalle de Precio";
+            this.Load += new System.EventHandler(this.cmr002_06_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
