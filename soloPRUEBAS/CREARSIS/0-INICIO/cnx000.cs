@@ -292,18 +292,21 @@ namespace CREARSIS
                 if (usr_usr.Trim() == "")
                 {
                     va_msg_err = "Debe proporcionar el nombre de usuario";
+                    tb_usr_usr.Focus();
                     return va_msg_err;
                 }
 
                 if (pss_usr.Trim() == "")
                 {
                     va_msg_err = "Debe proporcionar la contraseña de usuario";
+                    tb_pss_usr.Focus();
                     return va_msg_err;
                 }
 
                 if (ins_bdo.Trim() == "")
                 {
                     va_msg_err = "Debe proporcionar al menos una instancia de conexion";
+                    cb_bdo_usr.Focus();
                     return va_msg_err;
                 }
 

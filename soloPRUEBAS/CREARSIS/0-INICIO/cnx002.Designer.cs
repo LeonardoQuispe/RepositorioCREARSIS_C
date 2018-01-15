@@ -34,11 +34,13 @@
             this.Label4 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.tb_sel_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_pas_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_usr_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ver_pss = new DevComponents.DotNetBar.ButtonX();
+            this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
+            this.tb_pas_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -46,12 +48,13 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox1.Controls.Add(this.bt_ver_pss);
+            this.GroupBox1.Controls.Add(this.tb_pas_usr);
             this.GroupBox1.Controls.Add(this.lb_nom_usr);
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Controls.Add(this.Label4);
             this.GroupBox1.Controls.Add(this.Label3);
             this.GroupBox1.Controls.Add(this.tb_sel_usr);
-            this.GroupBox1.Controls.Add(this.tb_pas_usr);
             this.GroupBox1.Controls.Add(this.tb_usr_usr);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(8, -1);
@@ -59,7 +62,7 @@
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox1.Size = new System.Drawing.Size(271, 160);
-            this.GroupBox1.TabIndex = 59;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // lb_nom_usr
@@ -70,7 +73,7 @@
             this.lb_nom_usr.Location = new System.Drawing.Point(98, 124);
             this.lb_nom_usr.Name = "lb_nom_usr";
             this.lb_nom_usr.Size = new System.Drawing.Size(0, 13);
-            this.lb_nom_usr.TabIndex = 31;
+            this.lb_nom_usr.TabIndex = 6;
             // 
             // Label2
             // 
@@ -80,7 +83,7 @@
             this.Label2.Location = new System.Drawing.Point(7, 30);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(80, 13);
-            this.Label2.TabIndex = 11;
+            this.Label2.TabIndex = 0;
             this.Label2.Text = "Adminsitrador";
             // 
             // Label4
@@ -91,7 +94,7 @@
             this.Label4.Location = new System.Drawing.Point(40, 100);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(47, 13);
-            this.Label4.TabIndex = 22;
+            this.Label4.TabIndex = 4;
             this.Label4.Text = "Usuario";
             // 
             // Label3
@@ -102,7 +105,7 @@
             this.Label3.Location = new System.Drawing.Point(21, 64);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(66, 13);
-            this.Label3.TabIndex = 12;
+            this.Label3.TabIndex = 2;
             this.Label3.Text = "Contraseña";
             // 
             // tb_sel_usr
@@ -124,38 +127,10 @@
             this.tb_sel_usr.Name = "tb_sel_usr";
             this.tb_sel_usr.PreventEnterBeep = true;
             this.tb_sel_usr.Size = new System.Drawing.Size(164, 22);
-            this.tb_sel_usr.TabIndex = 30;
+            this.tb_sel_usr.TabIndex = 5;
             this.tb_sel_usr.ButtonCustomClick += new System.EventHandler(this.tb_sel_usr_ButtonCustomClick);
             this.tb_sel_usr.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_sel_usr_KeyUp);
             this.tb_sel_usr.Validating += new System.ComponentModel.CancelEventHandler(this.tb_sel_usr_Validating);
-            // 
-            // tb_pas_usr
-            // 
-            this.tb_pas_usr.AutoSelectAll = true;
-            this.tb_pas_usr.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_pas_usr.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_pas_usr.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_pas_usr.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_pas_usr.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_pas_usr.Border.Class = "TextBoxBorder";
-            this.tb_pas_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_pas_usr.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlM;
-            this.tb_pas_usr.ButtonCustom.Symbol = "";
-            this.tb_pas_usr.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_pas_usr.ForeColor = System.Drawing.Color.Black;
-            this.tb_pas_usr.Location = new System.Drawing.Point(101, 62);
-            this.tb_pas_usr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tb_pas_usr.MaxLength = 20;
-            this.tb_pas_usr.Name = "tb_pas_usr";
-            this.tb_pas_usr.PasswordChar = '*';
-            this.tb_pas_usr.PreventEnterBeep = true;
-            this.tb_pas_usr.Size = new System.Drawing.Size(164, 22);
-            this.tb_pas_usr.TabIndex = 20;
-            this.tb_pas_usr.UseSystemPasswordChar = true;
-            this.tb_pas_usr.WatermarkText = "**************";
             // 
             // tb_usr_usr
             // 
@@ -174,7 +149,7 @@
             this.tb_usr_usr.Name = "tb_usr_usr";
             this.tb_usr_usr.PreventEnterBeep = true;
             this.tb_usr_usr.Size = new System.Drawing.Size(164, 22);
-            this.tb_usr_usr.TabIndex = 10;
+            this.tb_usr_usr.TabIndex = 1;
             // 
             // GroupBox2
             // 
@@ -187,7 +162,7 @@
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox2.Size = new System.Drawing.Size(271, 56);
-            this.GroupBox2.TabIndex = 60;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
             // 
             // bt_can_cel
@@ -204,7 +179,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 72;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -222,9 +197,63 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 71;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
+            // 
+            // bt_ver_pss
+            // 
+            this.bt_ver_pss.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_ver_pss.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ver_pss.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ver_pss.Location = new System.Drawing.Point(238, 64);
+            this.bt_ver_pss.Margin = new System.Windows.Forms.Padding(0);
+            this.bt_ver_pss.Name = "bt_ver_pss";
+            this.bt_ver_pss.ShowSubItems = false;
+            this.bt_ver_pss.Size = new System.Drawing.Size(25, 18);
+            this.bt_ver_pss.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_ver_pss.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.itemContainer1});
+            this.bt_ver_pss.SubItemsExpandWidth = 0;
+            this.bt_ver_pss.Symbol = "";
+            this.bt_ver_pss.SymbolSize = 14F;
+            this.bt_ver_pss.TabIndex = 7;
+            this.bt_ver_pss.MouseLeave += new System.EventHandler(this.bt_ver_pss_MouseLeave);
+            this.bt_ver_pss.MouseHover += new System.EventHandler(this.bt_ver_pss_MouseHover);
+            // 
+            // itemContainer1
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer1.Name = "itemContainer1";
+            // 
+            // 
+            // 
+            this.itemContainer1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // tb_pas_usr
+            // 
+            this.tb_pas_usr.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_pas_usr.Border.Class = "TextBoxBorder";
+            this.tb_pas_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_pas_usr.ButtonCustom.Symbol = "";
+            this.tb_pas_usr.ButtonCustom2.Symbol = "";
+            this.tb_pas_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_pas_usr.ForeColor = System.Drawing.Color.Black;
+            this.tb_pas_usr.Location = new System.Drawing.Point(101, 62);
+            this.tb_pas_usr.MaxLength = 30;
+            this.tb_pas_usr.Name = "tb_pas_usr";
+            this.tb_pas_usr.PreventEnterBeep = true;
+            this.tb_pas_usr.Size = new System.Drawing.Size(164, 22);
+            this.tb_pas_usr.TabIndex = 3;
+            this.tb_pas_usr.UseSystemPasswordChar = true;
+            this.tb_pas_usr.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_pas_usr.WatermarkText = "**********";
             // 
             // cnx002
             // 
@@ -262,10 +291,12 @@
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label3;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_usr;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_pas_usr;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_usr_usr;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
+        private DevComponents.DotNetBar.ButtonX bt_ver_pss;
+        private DevComponents.DotNetBar.ItemContainer itemContainer1;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_pas_usr;
     }
 }

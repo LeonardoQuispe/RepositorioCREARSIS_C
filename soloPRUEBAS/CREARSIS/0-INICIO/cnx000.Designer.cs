@@ -113,7 +113,7 @@
             // lb_ver_sis
             // 
             this.lb_ver_sis.AutoSize = true;
-            this.lb_ver_sis.BackColor = System.Drawing.Color.White;
+            this.lb_ver_sis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.lb_ver_sis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ver_sis.ForeColor = System.Drawing.Color.Black;
             this.lb_ver_sis.Location = new System.Drawing.Point(49, 146);
@@ -244,7 +244,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.BackColor = System.Drawing.Color.White;
+            this.Label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.Color.Black;
             this.Label1.Location = new System.Drawing.Point(410, -3);
@@ -263,7 +263,9 @@
             // 
             this.lk_fan_pag.ActiveLinkColor = System.Drawing.Color.RosyBrown;
             this.lk_fan_pag.AutoSize = true;
+            this.lk_fan_pag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.lk_fan_pag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lk_fan_pag.ForeColor = System.Drawing.Color.Black;
             this.lk_fan_pag.LinkColor = System.Drawing.Color.Blue;
             this.lk_fan_pag.Location = new System.Drawing.Point(16, 191);
             this.lk_fan_pag.Name = "lk_fan_pag";
@@ -275,6 +277,8 @@
             // 
             // line1
             // 
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.line1.ForeColor = System.Drawing.Color.Black;
             this.line1.Location = new System.Drawing.Point(148, 33);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(11, 110);
@@ -306,7 +310,6 @@
             this.Controls.Add(this.line1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -145,8 +145,8 @@ namespace CREARSIS._2_ADM.adm010_per_
             int va_ind_ice = 0;
             string va_cod_per = "";
             string va_nom_gru = "";
-            bool va_ban_cli = false;
-            bool va_ban_pro = false;
+            bool va_ban_ven = false;
+            bool va_ban_com = false;
             bool va_ban_emp = false;
             string va_est_ado = "";
 
@@ -159,9 +159,8 @@ namespace CREARSIS._2_ADM.adm010_per_
                 foreach (DataRow row in tab_adm010.Rows)
                 {
                     //Inicializa las bandera en falso
-                    va_ban_cli = false;
-                    va_ban_pro = false;
-                    va_ban_emp = false;
+                    va_ban_ven = false;
+                    va_ban_com = false;
 
                     //agregar ceros al inicio de los codigos con 7 DIGITOS
                     va_cod_per = row["va_cod_per"].ToString().PadLeft(7, '0');
@@ -173,19 +172,14 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
                     //Se valida las banderas para mostrar en check de datagrid
-                    if (row["va_ban_cli"].ToString() == "1")
+                    if (row["va_ban_ven"].ToString() == "1")
                     {
-                        va_ban_cli = true;
+                        va_ban_ven = true;
                     }
-                    if (row["va_ban_pro"].ToString() == "1")
+                    if (row["va_ban_com"].ToString() == "1")
                     {
-                        va_ban_pro = true;
+                        va_ban_com = true;
                     }
-                    if (row["va_ban_emp"].ToString() == "1")
-                    {
-                        va_ban_emp = true;
-                    }
-
 
 
                     switch (row["va_est_ado"].ToString())
@@ -200,7 +194,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
                     dg_res_ult.Rows.Add(va_cod_per, row["va_raz_soc"], row["va_nom_com"], row["va_nit_ced"], va_nom_gru,
-                                    ban_cli.Checked = va_ban_cli, ban_pro.Checked = va_ban_pro, ban_emp.Checked = va_ban_emp, va_est_ado);
+                                    ban_ven.Checked = va_ban_ven, ban_com.Checked = va_ban_com, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;

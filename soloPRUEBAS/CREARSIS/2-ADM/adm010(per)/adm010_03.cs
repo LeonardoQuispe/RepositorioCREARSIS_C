@@ -55,46 +55,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             fu_ini_frm();
         }
 
-        private void chk_cli_CheckedChanged(object sender, EventArgs e)
-        {
-            //Oculta / muestra el panel correspondiente si está chekeado
-            if (chk_cli.Checked == true)
-            {
-                tab_cli.Visible = true;
-            }
-            else if (chk_cli.Checked == false)
-            {
-                fu_lim_cli();
-                tab_cli.Visible = false;
-            }
-        }
 
-        private void chk_pro_CheckedChanged(object sender, EventArgs e)
-        {
-            //Oculta / muestra el panel correspondiente si está chekeado
-            if (chk_pro.Checked == true)
-            {
-                tab_prv.Visible = true;
-            }
-            else if (chk_pro.Checked == false)
-            {
-                fu_lim_pro();
-                tab_prv.Visible = false;
-            }
-        }
-
-        private void chk_emp_CheckedChanged(object sender, EventArgs e)
-        {
-            //Oculta / muestra el panel correspondiente si está chekeado
-            //if (chk_emp.Checked == true)
-            //{
-            //    tab_emp.Visible = true;
-            //}
-            //else if (chk_emp.Checked == false)
-            //{
-            //    tab_emp.Visible = false;
-            //}
-        }
 
         private void tb_cod_ven_cli_ButtonCustomClick(object sender, EventArgs e)
         {
@@ -118,6 +79,20 @@ namespace CREARSIS._2_ADM.adm010_per_
             fu_rec_ven(tb_cod_ven_cli.Text.Trim());
         }
 
+
+        private void chk_ven_CheckedChanged(object sender, EventArgs e)
+        {
+            //Oculta / muestra el panel correspondiente si está chekeado
+            if (chk_ven.Checked == true)
+            {
+                tab_ven.Visible = true;
+            }
+            else if (chk_ven.Checked == false)
+            {
+                tab_ven.Visible = false;
+            }
+        }
+
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             err_msg = fu_ver_dat();
@@ -136,41 +111,23 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return;
             }
 
+            int ban_ven = 0;
+            int ban_com = 0;
 
-            string mon_cre = "";
-            int ban_cli = 0;
-            int ban_pro = 0;
-            int ban_emp = 0;
-            decimal tmp;
-
-            if (chk_cli.Checked == true)
+            if (chk_ven.Checked == true)
             {
-                ban_cli = 1;
-
-                if (cb_tip_cam.SelectedIndex == 0)
-                {
-                    mon_cre = "B";
-                }
-                else if (cb_tip_cam.SelectedIndex == 1)
-                {
-                    mon_cre = "U";
-                }
+                ban_ven = 1;
             }
 
-            if (chk_pro.Checked == true)
+            if (chk_com.Checked == true)
             {
-                ban_pro = 1;
+                ban_com = 1;
             }
 
-            if (chk_emp.Checked == true)
-            {
-                ban_emp = 1;
-            }
 
             //Guarda PERSONA
             o_adm010._03(tb_cod_per.Text.Trim(), tb_raz_per.Text.Trim(), tb_nom_per.Text.Trim(), tb_nit_per.Text.Trim(), tb_dir_gen.Text.Trim(), tb_tel_gen.Text.Trim(),
-                        tb_cel_gen.Text.Trim(), tb_ema_gen.Text.Trim(), tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), decimal.TryParse(tb_cre_cli.Text,out tmp) ? tmp:0m
-                       , mon_cre, tb_cod_pag_cli.Text.Trim(), tb_cod_pag_pro.Text.Trim(), ban_cli.ToString(), ban_pro.ToString(), ban_emp.ToString());
+                        tb_cel_gen.Text.Trim(), tb_ema_gen.Text.Trim(), tb_cod_pre_cli.Text.Trim(), tb_cod_ven_cli.Text.Trim(), ban_ven.ToString(), ban_com.ToString());
 
             MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -200,21 +157,16 @@ namespace CREARSIS._2_ADM.adm010_per_
             tab_adm011 = o_adm011._05(int.Parse(vg_str_ucc.Rows[0]["va_cod_gru"].ToString()));
 
             //Valida si es CLIENTE-PROOVEDOR
-            if (vg_str_ucc.Rows[0]["va_ban_cli"].ToString() == "1")
+            if (vg_str_ucc.Rows[0]["va_ban_ven"].ToString() == "1")
             {
-                chk_cli.Checked = true;
+                chk_ven.Checked = true;
             }
 
-            if (vg_str_ucc.Rows[0]["va_ban_pro"].ToString() == "1")
+            if (vg_str_ucc.Rows[0]["va_ban_com"].ToString() == "1")
             {
-                chk_pro.Checked = true;
+                chk_com.Checked = true;
             }
-
-            if (vg_str_ucc.Rows[0]["va_ban_emp"].ToString() == "1")
-            {
-                chk_emp.Checked = true;
-            }
-
+            
             //Llena los datos
             tb_cod_gru.Text = vg_str_ucc.Rows[0]["va_cod_gru"].ToString();
             tb_nom_gru.Text = tab_adm011.Rows[0]["va_nom_gru"].ToString();
@@ -228,39 +180,23 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_cel_gen.Text = vg_str_ucc.Rows[0]["va_cel_per"].ToString();
             tb_ema_gen.Text = vg_str_ucc.Rows[0]["va_ema_per"].ToString();
 
-            //CLIENTE
-            if (chk_cli.Checked==true)
+            //VENTAS
+            if (chk_ven.Checked == true)
             {
-                tb_cod_pre_cli.Text = vg_str_ucc.Rows[0]["va_cod_lpr"].ToString();
-                tb_cod_ven_cli.Text = vg_str_ucc.Rows[0]["va_cod_ven"].ToString();
-                fu_rec_ven(tb_cod_ven_cli.Text);
-                tb_cre_cli.Text = vg_str_ucc.Rows[0]["va_lim_cre"].ToString();
-                tb_cod_pag_cli.Text = vg_str_ucc.Rows[0]["va_con_pac"].ToString();
-            }
+                if (vg_str_ucc.Rows[0]["va_cod_lpr"].ToString()!="" && vg_str_ucc.Rows[0]["va_cod_lpr"].ToString() != "0")
+                {
+                    tb_cod_pre_cli.Text = vg_str_ucc.Rows[0]["va_cod_lpr"].ToString();
+                }
 
-            if (chk_pro.Checked==true)
-            {
-                //PROOVEDOR
-                tb_cod_pag_pro.Text = vg_str_ucc.Rows[0]["va_con_pap"].ToString();
+                if (vg_str_ucc.Rows[0]["va_cod_ven"].ToString()!="" && vg_str_ucc.Rows[0]["va_cod_ven"].ToString() != "0")
+                {
+                    tb_cod_ven_cli.Text = vg_str_ucc.Rows[0]["va_cod_ven"].ToString();
+                    fu_rec_ven(tb_cod_ven_cli.Text);
+                }
             }
             
 
-            
 
-
-
-
-            
-
-            //Elige tipo de cambio
-            if (vg_str_ucc.Rows[0]["va_mon_cre"].ToString() == "B")
-            {
-                cb_tip_cam.SelectedIndex = 0;
-            }
-            else if (vg_str_ucc.Rows[0]["va_mon_cre"].ToString() == "U")
-            {
-                cb_tip_cam.SelectedIndex = 1;
-            }
 
             //Valida Estado
             if (vg_str_ucc.Rows[0]["va_est_ado"].ToString() == "H")
@@ -279,42 +215,14 @@ namespace CREARSIS._2_ADM.adm010_per_
         /// </summary>
         public string fu_ver_dat()
         {
+            //Verifica Visible en:
 
-            ////**Verifica Grupo de PErsona
-            //int tmp2;
+            if (chk_ven.Checked == false && chk_com.Checked == false)
+            {
+                chk_ven.Focus();
+                return "Debe seleccionar al menos una opción de la Visibilidad de la Persona";
+            }
 
-            //if (tb_cod_gru.Text.Trim() == "")
-            //{
-            //    tb_cod_gru.Focus();
-            //    return "Debes proporcionar el Grupo de Persona";
-            //}
-
-
-
-
-            //if (tab_adm011.Rows[0]["va_est_ado"].ToString() == "N")
-            //{
-            //    tb_cod_gru.Focus();
-            //    return "El Grupo de Persona se encuentra Deshabilitado";
-            //}
-
-            ////VERIFICA numero de Grupo
-
-            //if (string.IsNullOrWhiteSpace(tb_nro_per.Text))
-            //{
-            //    tb_nro_per.Focus();
-            //    return "Debes proporcionar el Número del Persona";
-            //}
-
-
-
-            ////**Verifica Codigo de Persona
-            //tab_adm010 = o_adm010._05(tb_cod_per.Text);
-            //if (tab_adm010.Rows.Count != 0)
-            //{
-            //    tb_cod_per.Focus();
-            //    return "El Código de Persona ya se encuentra registrado";
-            //}
 
             //**Verifica Razon Social
             if (tb_raz_per.Text.Trim() == "")
@@ -352,41 +260,6 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Debes proporcionar el Nombre Comercial de la Persona";
             }
 
-
-
-            //VERIFICA TIPOS DE PERSONA
-
-            //Verifica si Selecciona Cliente
-            if (chk_cli.Checked == true)
-            {
-
-                //Verifica Codigo de Vendedor de la Persona
-                if (tb_cod_ven_cli.Text.Trim() == "")
-                {
-                    tb_cod_ven_cli.Focus();
-                    return "Debes proporcionar el Código de Vendedor de la Persona";
-                }
-
-                tab_cmr003 = o_cmr003._05(tb_cod_ven_cli.Text);
-                if (tab_cmr003.Rows.Count == 0)
-                {
-                    tb_cod_ven_cli.Focus();
-                    return "el Código de Vendedor de la Persona NO se encuentra registrado";
-                }
-                if (tab_cmr003.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    tb_cod_ven_cli.Focus();
-                    return "el Código de Vendedor de la Persona se encuentra Deshabilitado";
-                }
-            }
-
-            //Verifica si Selecciona Proveedor
-            if (chk_pro.Checked == true)
-            {
-
-            }
-
-
             return null;
         }
 
@@ -418,35 +291,27 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_nom_ven_cli.Text = tab_cmr003.Rows[0]["va_nom_ven"].ToString();
         }
 
-        void fu_lim_cli()
+        void fu_lim_ven()
         {
             tb_cod_pre_cli.Clear();
             tb_nom_pre_cli.Clear();
             tb_cod_ven_cli.Clear();
             tb_nom_ven_cli.Clear();
-            tb_cre_cli.Clear();
-            tb_cod_pag_cli.Clear();
-            tb_nom_pag_cli.Clear();
         }
 
-        void fu_lim_pro()
-        {
-            tb_cod_pag_pro.Clear();
-            tb_nom_pag_pro.Clear();
-        }
+
+
+
+
+
+
+
+
+
+
+
 
         #endregion
-
-        
-
-
-
-
-        
-
-
-
-
 
     }
 }

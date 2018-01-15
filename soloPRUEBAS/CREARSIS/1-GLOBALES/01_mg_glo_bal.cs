@@ -435,7 +435,7 @@ namespace CREARSIS
 
             v_frm_pad = ar_frm_pad.MdiParent;
 
-            foreach (dynamic va_frm_aux in v_frm_pad.MdiChildren)
+            foreach (Form va_frm_aux in v_frm_pad.MdiChildren)
             {
                 if (va_frm_aux.Name == ar_frm_nvo.Name)
                 {
@@ -469,7 +469,7 @@ namespace CREARSIS
 
             v_frm_pad = ar_frm_pad.MdiParent;
 
-            foreach (dynamic va_frm_aux in v_frm_pad.MdiChildren)
+            foreach (Form va_frm_aux in v_frm_pad.MdiChildren)
             {
                 if (va_frm_aux.Name == ar_frm_nvo.Name)
                 {
@@ -486,10 +486,10 @@ namespace CREARSIS
                 ar_frm_nvo.Show();
                 ar_frm_nvo.Activate();
 
-                // Obtiene el usuario logueado               
-
-                string cod_usr = Program.gl_usr_usr;
-                v_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, v_frm_pad.MenuStrip1);
+                //ESTA POR DEMAS ESTO?????????????
+                // Obtiene el usuario logueado 
+                //string cod_usr = Program.gl_usr_usr;
+                //v_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, v_frm_pad.MenuStrip1);
             }
             else
             {

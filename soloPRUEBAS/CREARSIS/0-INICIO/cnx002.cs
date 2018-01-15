@@ -249,5 +249,15 @@ namespace CREARSIS
             lb_nom_usr.Text = tabla.Rows[0]["va_nom_usr"].ToString();
         }
         #endregion
+
+        private void bt_ver_pss_MouseHover(object sender, EventArgs e)
+        {
+            tb_pas_usr.UseSystemPasswordChar = false;
+        }
+
+        private void bt_ver_pss_MouseLeave(object sender, EventArgs e)
+        {
+            tb_pas_usr.UseSystemPasswordChar = true;
+        }
     }
 }

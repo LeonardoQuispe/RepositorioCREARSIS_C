@@ -64,9 +64,8 @@
             this.va_nom_com = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nit_ced = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ban_cli = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.ban_pro = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.ban_emp = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.ban_ven = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.ban_com = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -343,9 +342,8 @@
             this.va_nom_com,
             this.va_nit_ced,
             this.va_nom_gru,
-            this.ban_cli,
-            this.ban_pro,
-            this.ban_emp,
+            this.ban_ven,
+            this.ban_com,
             this.va_est_ado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -470,36 +468,27 @@
             this.va_nom_gru.HeaderText = "Nombre de Grupo";
             this.va_nom_gru.Name = "va_nom_gru";
             this.va_nom_gru.ReadOnly = true;
+            this.va_nom_gru.Width = 115;
             // 
-            // ban_cli
+            // ban_ven
             // 
-            this.ban_cli.Checked = true;
-            this.ban_cli.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.ban_cli.CheckValue = "N";
-            this.ban_cli.HeaderText = "Cli.";
-            this.ban_cli.Name = "ban_cli";
-            this.ban_cli.ReadOnly = true;
-            this.ban_cli.Width = 30;
+            this.ban_ven.Checked = true;
+            this.ban_ven.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.ban_ven.CheckValue = "N";
+            this.ban_ven.HeaderText = "Vent.";
+            this.ban_ven.Name = "ban_ven";
+            this.ban_ven.ReadOnly = true;
+            this.ban_ven.Width = 40;
             // 
-            // ban_pro
+            // ban_com
             // 
-            this.ban_pro.Checked = true;
-            this.ban_pro.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.ban_pro.CheckValue = "N";
-            this.ban_pro.HeaderText = "Prov.";
-            this.ban_pro.Name = "ban_pro";
-            this.ban_pro.ReadOnly = true;
-            this.ban_pro.Width = 35;
-            // 
-            // ban_emp
-            // 
-            this.ban_emp.Checked = true;
-            this.ban_emp.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.ban_emp.CheckValue = "N";
-            this.ban_emp.HeaderText = "Empl.";
-            this.ban_emp.Name = "ban_emp";
-            this.ban_emp.ReadOnly = true;
-            this.ban_emp.Width = 36;
+            this.ban_com.Checked = true;
+            this.ban_com.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.ban_com.CheckValue = "N";
+            this.ban_com.HeaderText = "Comp.";
+            this.ban_com.Name = "ban_com";
+            this.ban_com.ReadOnly = true;
+            this.ban_com.Width = 45;
             // 
             // va_est_ado
             // 
@@ -573,9 +562,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_com;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nit_ced;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_gru;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_cli;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_pro;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_emp;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_ven;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_com;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
     }
 }

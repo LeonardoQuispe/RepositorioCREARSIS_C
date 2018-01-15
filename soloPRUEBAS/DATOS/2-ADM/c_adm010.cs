@@ -86,17 +86,11 @@ namespace DATOS
         /// <param name="ema_per">Email de la persona</param>
         /// <param name="cod_lpr">Codigo de lista de precio</param>
         /// <param name="cod_ven">Codigo de Vendedor asociado</param>
-        /// <param name="lim_cre">Limite de credito para el cliente</param>
-        /// <param name="mon_cre">Moneda del limite de credito (B=BOlivianos, U=Dolares americanos)</param>
-        /// <param name="con_pac">Condicion de pago del cliente</param>
-        /// <param name="con_pap">Condicion de pago del proveedor</param>
-        /// <param name="ban_cli">Bandera si identifica persona como cliente</param>
-        /// <param name="ban_pro">Bandera si identifica persona como proveedor</param>
-        /// <param name="ban_emp">Bandera si identifica persona como empleado</param>
+        /// <param name="ban_ven">Bandera si identifica persona como cliente</param>
+        /// <param name="ban_com">Bandera si identifica persona como proveedor</param>
         /// <returns></returns>
         public DataTable _02(string cod_per,string nro_per,string cod_gru,string raz_soc,string nom_com,string nit_ced,string dir_per,
-                            string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,decimal lim_cre,string mon_cre,
-                            string con_pac,string con_pap,string ban_cli,string ban_pro,string ban_emp)
+                            string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,string ban_ven,string ban_com)
         {
             try
             {         
@@ -107,27 +101,16 @@ namespace DATOS
                 vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}','{4}',", nit_ced, dir_per, tel_per, cel_per, ema_per);
 
                 //Valida Bandera cliente y Manda NULO si es 0
-                if (ban_cli=="1")
+                if (ban_ven=="1")
                 {
-                    vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}','{4}',", cod_lpr, cod_ven, lim_cre, mon_cre, con_pac);
+                    vv_str_sql.AppendFormat("'{0}','{1}',", cod_lpr, cod_ven);
                 }
                 else
                 {
-                    vv_str_sql.AppendFormat("NULL,NULL,NULL,NULL,NULL,");
+                    vv_str_sql.AppendFormat("NULL,NULL,");
                 }
-
-                //Valida Bandera Proovedor y Manda NULO si es 0
-                if (ban_pro == "1")
-                {
-                    vv_str_sql.AppendFormat("'{0}',",con_pap);
-                }
-                else
-                {
-                    vv_str_sql.AppendFormat("NULL,");
-                }
-                
               
-                vv_str_sql.AppendFormat("'{0}','{1}','{2}','H')", ban_cli, ban_pro, ban_emp);
+                vv_str_sql.AppendFormat("'{0}','{1}','H')", ban_ven, ban_com);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
 
@@ -141,7 +124,9 @@ namespace DATOS
         /// <summary>
         /// actualiza "PERSONA"
         /// </summary>
-        /// <param name="cod_per">Codigo Persona (2 de Grup. Per y 5 de Persona)</param>        
+        /// <param name="cod_per">Codigo Persona (2 de Grup. Per y 5 de Persona)</param>
+        /// <param name="nro_per">Nro. de Persona (5 digitos)</param>
+        /// <param name="cod_gru">Cod Grupo Persona</param>
         /// <param name="raz_soc">Razon social de la persona</param>
         /// <param name="nom_com">Nombre comercial de la persona</param>
         /// <param name="nit_ced">Nit/Cedula de la persona</param>
@@ -151,17 +136,11 @@ namespace DATOS
         /// <param name="ema_per">Email de la persona</param>
         /// <param name="cod_lpr">Codigo de lista de precio</param>
         /// <param name="cod_ven">Codigo de Vendedor asociado</param>
-        /// <param name="lim_cre">Limite de credito para el cliente</param>
-        /// <param name="mon_cre">Moneda del limite de credito (B=BOlivianos, U=Dolares americanos)</param>
-        /// <param name="con_pac">Condicion de pago del cliente</param>
-        /// <param name="con_pap">Condicion de pago del proveedor</param>
-        /// <param name="ban_cli">Bandera si identifica persona como cliente</param>
-        /// <param name="ban_pro">Bandera si identifica persona como proveedor</param>
-        /// <param name="ban_emp">Bandera si identifica persona como empleado</param>
+        /// <param name="ban_ven">Bandera si identifica persona como cliente</param>
+        /// <param name="ban_com">Bandera si identifica persona como proveedor</param>
         /// <returns></returns>
-        public DataTable _03(string cod_per, string raz_soc, string nom_com, string nit_ced, string dir_per,
-                            string tel_per, string cel_per, string ema_per, string cod_lpr, string cod_ven, decimal lim_cre, string mon_cre,
-                            string con_pac, string con_pap, string ban_cli, string ban_pro, string ban_emp)
+        public DataTable _03(string cod_per,string raz_soc, string nom_com, string nit_ced, string dir_per,string tel_per, 
+                            string cel_per, string ema_per, string cod_lpr, string cod_ven, string ban_ven, string ban_com)
         {
             try
             {
@@ -172,27 +151,17 @@ namespace DATOS
                 vv_str_sql.AppendFormat("va_dir_per='{0}',va_tel_per='{1}',va_cel_per='{2}',va_ema_per='{3}',", dir_per, tel_per, cel_per, ema_per);
 
                 //Valida Bandera cliente y Manda NULO si es 0
-                if (ban_cli == "1")
+                if (ban_ven == "1")
                 {
-                    vv_str_sql.AppendFormat("va_cod_lpr='{0}',va_cod_ven='{1}',va_lim_cre='{2}',va_mon_cre='{3}',va_con_pac='{4}',", cod_lpr, cod_ven, lim_cre, mon_cre, con_pac);
+                    vv_str_sql.AppendFormat("va_cod_lpr='{0}',va_cod_ven='{1}',", cod_lpr, cod_ven);
                 }
                 else
                 {
-                    vv_str_sql.AppendFormat("va_cod_lpr=NULL,va_cod_ven=NULL,va_lim_cre=NULL,va_mon_cre=NULL,va_con_pac=NULL,");
+                    vv_str_sql.AppendFormat("va_cod_lpr=NULL,va_cod_ven=NULL,");
                 }
+                
 
-                //Valida Bandera Proovedor y Manda NULO si es 0
-                if (ban_pro == "1")
-                {
-                    vv_str_sql.AppendFormat("va_con_pap='{0}',", con_pap);
-                }
-                else
-                {
-                    vv_str_sql.AppendFormat("va_con_pap=NULL,");
-                }
-
-
-                vv_str_sql.AppendFormat("va_ban_cli='{0}',va_ban_pro='{1}',va_ban_emp='{2}' ", ban_cli, ban_pro, ban_emp);
+                vv_str_sql.AppendFormat("va_ban_ven='{0}',va_ban_com='{1}' ", ban_ven, ban_com);
                 vv_str_sql.AppendFormat("  WHERE va_cod_per='{0}'", cod_per);
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
@@ -249,7 +218,7 @@ namespace DATOS
         }
 
         /// <summary>
-        /// Funcion "Consulta persona por NID/CI"
+        /// Funcion "Consulta persona por NIT/CI"
         /// </summary>
         /// <param name="nit_ci">NIT/CI de persona</param>
         /// <returns></returns>
