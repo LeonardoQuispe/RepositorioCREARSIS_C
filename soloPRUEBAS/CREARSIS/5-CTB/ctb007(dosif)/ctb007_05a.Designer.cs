@@ -66,6 +66,7 @@
             this.tb_lla_ve.Border.Class = "TextBoxBorder";
             this.tb_lla_ve.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_lla_ve.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_lla_ve.Enabled = false;
             this.tb_lla_ve.ForeColor = System.Drawing.Color.Black;
             this.tb_lla_ve.Location = new System.Drawing.Point(112, 63);
             this.tb_lla_ve.MaxLength = 360;
@@ -88,7 +89,7 @@
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
             this.LabelX5.Location = new System.Drawing.Point(79, 63);
             this.LabelX5.Name = "LabelX5";
-            this.LabelX5.Size = new System.Drawing.Size(35, 18);
+            this.LabelX5.Size = new System.Drawing.Size(29, 15);
             this.LabelX5.TabIndex = 2;
             this.LabelX5.Text = "Llave";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -102,13 +103,14 @@
             this.tb_nro_dos.Border.Class = "TextBoxBorder";
             this.tb_nro_dos.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_dos.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_dos.Enabled = false;
             this.tb_nro_dos.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_dos.Location = new System.Drawing.Point(112, 19);
             this.tb_nro_dos.MaxLength = 15;
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(219, 26);
+            this.tb_nro_dos.Size = new System.Drawing.Size(219, 22);
             this.tb_nro_dos.TabIndex = 1;
             this.tb_nro_dos.Text = "0";
             // 
@@ -124,7 +126,7 @@
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
             this.LabelX1.Location = new System.Drawing.Point(22, 21);
             this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(106, 18);
+            this.LabelX1.Size = new System.Drawing.Size(86, 15);
             this.LabelX1.TabIndex = 3;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -159,7 +161,7 @@
             // 
             // ctb007_05a
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
             this.ClientSize = new System.Drawing.Size(379, 225);

@@ -98,7 +98,7 @@
             // 
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(10, 163);
+            this.LabelX4.Location = new System.Drawing.Point(17, 164);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(51, 17);
             this.LabelX4.TabIndex = 51;
@@ -133,7 +133,7 @@
             // 
             this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
-            this.LabelX6.Location = new System.Drawing.Point(10, 135);
+            this.LabelX6.Location = new System.Drawing.Point(11, 136);
             this.LabelX6.Name = "LabelX6";
             this.LabelX6.Size = new System.Drawing.Size(57, 17);
             this.LabelX6.TabIndex = 52;
@@ -233,7 +233,7 @@
             // 
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(10, 61);
+            this.LabelX1.Location = new System.Drawing.Point(29, 60);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(39, 23);
             this.LabelX1.TabIndex = 0;
@@ -247,7 +247,7 @@
             // 
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(10, 91);
+            this.LabelX2.Location = new System.Drawing.Point(23, 90);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(45, 23);
             this.LabelX2.TabIndex = 0;

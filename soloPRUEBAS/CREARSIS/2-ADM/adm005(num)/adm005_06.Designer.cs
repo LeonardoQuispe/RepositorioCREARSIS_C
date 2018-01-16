@@ -79,7 +79,7 @@
             this.GroupBox3.Controls.Add(this.bt_can_cel);
             this.GroupBox3.Controls.Add(this.bt_ace_pta);
             this.GroupBox3.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox3.Location = new System.Drawing.Point(3, 187);
+            this.GroupBox3.Location = new System.Drawing.Point(3, 196);
             this.GroupBox3.Name = "GroupBox3";
             this.GroupBox3.Size = new System.Drawing.Size(516, 44);
             this.GroupBox3.TabIndex = 6;
@@ -111,6 +111,7 @@
             this.tb_con_tad.Border.Class = "TextBoxBorder";
             this.tb_con_tad.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_con_tad.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_con_tad.Enabled = false;
             this.tb_con_tad.ForeColor = System.Drawing.Color.Black;
             this.tb_con_tad.Location = new System.Drawing.Point(77, 65);
             this.tb_con_tad.MaxLength = 6;
@@ -169,7 +170,7 @@
             this.GroupBox2.Controls.Add(this.LabelX12);
             this.GroupBox2.Location = new System.Drawing.Point(3, 82);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(516, 108);
+            this.GroupBox2.Size = new System.Drawing.Size(516, 113);
             this.GroupBox2.TabIndex = 5;
             this.GroupBox2.TabStop = false;
             // 
@@ -218,6 +219,7 @@
             this.tb_nro_fin.Border.Class = "TextBoxBorder";
             this.tb_nro_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_fin.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_fin.Enabled = false;
             this.tb_nro_fin.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_fin.Location = new System.Drawing.Point(446, 21);
             this.tb_nro_fin.MaxLength = 6;
@@ -253,6 +255,7 @@
             this.tb_nro_ini.Border.Class = "TextBoxBorder";
             this.tb_nro_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_ini.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_ini.Enabled = false;
             this.tb_nro_ini.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_ini.Location = new System.Drawing.Point(267, 21);
             this.tb_nro_ini.MaxLength = 6;
@@ -288,6 +291,7 @@
             this.tb_cod_ges.Border.Class = "TextBoxBorder";
             this.tb_cod_ges.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_ges.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_ges.Enabled = false;
             this.tb_cod_ges.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_ges.Location = new System.Drawing.Point(77, 21);
             this.tb_cod_ges.MaxLength = 4;
@@ -326,6 +330,7 @@
             this.tb_nro_tal.ButtonCustom.Symbol = "";
             this.tb_nro_tal.ButtonCustom.Visible = true;
             this.tb_nro_tal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_tal.Enabled = false;
             this.tb_nro_tal.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_tal.Location = new System.Drawing.Point(77, 52);
             this.tb_nro_tal.MaxLength = 2;
@@ -364,6 +369,7 @@
             this.tb_cod_doc.ButtonCustom.Symbol = "";
             this.tb_cod_doc.ButtonCustom.Visible = true;
             this.tb_cod_doc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_doc.Enabled = false;
             this.tb_cod_doc.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_doc.Location = new System.Drawing.Point(77, 22);
             this.tb_cod_doc.MaxLength = 3;
@@ -384,7 +390,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(13, 54);
+            this.LabelX2.Location = new System.Drawing.Point(25, 57);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(48, 17);
             this.LabelX2.TabIndex = 0;
@@ -399,6 +405,7 @@
             this.tb_nom_tal.Border.Class = "TextBoxBorder";
             this.tb_nom_tal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_tal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_tal.Enabled = false;
             this.tb_nom_tal.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_tal.Location = new System.Drawing.Point(147, 52);
             this.tb_nom_tal.MaxLength = 120;
@@ -418,6 +425,7 @@
             this.tb_nom_doc.Border.Class = "TextBoxBorder";
             this.tb_nom_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_doc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_doc.Enabled = false;
             this.tb_nom_doc.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_doc.Location = new System.Drawing.Point(147, 22);
             this.tb_nom_doc.MaxLength = 120;
@@ -450,7 +458,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(523, 233);
+            this.ClientSize = new System.Drawing.Size(523, 242);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox3);
             this.Controls.Add(this.GroupBox2);

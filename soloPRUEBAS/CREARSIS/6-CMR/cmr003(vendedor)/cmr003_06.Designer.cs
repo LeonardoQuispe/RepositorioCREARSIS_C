@@ -43,6 +43,8 @@
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_por_ven = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_ven = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(10, 135);
+            this.GroupBox2.Location = new System.Drawing.Point(10, 168);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(383, 44);
             this.GroupBox2.TabIndex = 7;
@@ -96,6 +98,8 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox1.Controls.Add(this.labelX14);
+            this.GroupBox1.Controls.Add(this.textBoxX1);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.cb_tip_com);
             this.GroupBox1.Controls.Add(this.LabelX5);
@@ -108,7 +112,7 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(10, 2);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(383, 134);
+            this.GroupBox1.Size = new System.Drawing.Size(383, 165);
             this.GroupBox1.TabIndex = 8;
             this.GroupBox1.TabStop = false;
             // 
@@ -273,13 +277,50 @@
             this.tb_nom_ven.Size = new System.Drawing.Size(297, 22);
             this.tb_nom_ven.TabIndex = 3;
             // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(21, 131);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 248;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.Enabled = false;
+            this.textBoxX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX1.Location = new System.Drawing.Point(71, 129);
+            this.textBoxX1.MaxLength = 80;
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.ReadOnly = true;
+            this.textBoxX1.Size = new System.Drawing.Size(85, 22);
+            this.textBoxX1.TabIndex = 247;
+            this.textBoxX1.TabStop = false;
+            // 
             // cmr003_06
             // 
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(403, 180);
+            this.ClientSize = new System.Drawing.Size(403, 215);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox1);
@@ -314,5 +355,7 @@
         internal DevComponents.DotNetBar.LabelX LabelX2;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_por_ven;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_ven;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
     }
 }

@@ -79,7 +79,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(13, 120);
+            this.labelX6.Location = new System.Drawing.Point(15, 120);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(58, 17);
             this.labelX6.TabIndex = 205;
@@ -95,7 +95,7 @@
             this.tb_pmx_inc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_pmx_inc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pmx_inc.ForeColor = System.Drawing.Color.Black;
-            this.tb_pmx_inc.Location = new System.Drawing.Point(393, 85);
+            this.tb_pmx_inc.Location = new System.Drawing.Point(392, 85);
             this.tb_pmx_inc.MaxLength = 5;
             this.tb_pmx_inc.Name = "tb_pmx_inc";
             this.tb_pmx_inc.PreventEnterBeep = true;
@@ -113,7 +113,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(327, 87);
+            this.labelX5.Location = new System.Drawing.Point(337, 87);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(51, 17);
             this.labelX5.TabIndex = 4;
@@ -130,6 +130,7 @@
             this.tb_cod_pro.ButtonCustom.Symbol = "";
             this.tb_cod_pro.ButtonCustom.Visible = true;
             this.tb_cod_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_pro.Enabled = false;
             this.tb_cod_pro.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_pro.Location = new System.Drawing.Point(77, 54);
             this.tb_cod_pro.MaxLength = 3;
@@ -147,6 +148,7 @@
             this.tb_nom_pro.Border.Class = "TextBoxBorder";
             this.tb_nom_pro.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_pro.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_pro.Enabled = false;
             this.tb_nom_pro.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_pro.Location = new System.Drawing.Point(211, 54);
             this.tb_nom_pro.MaxLength = 120;
@@ -185,7 +187,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(174, 87);
+            this.labelX4.Location = new System.Drawing.Point(175, 87);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(59, 17);
             this.labelX4.TabIndex = 33;
@@ -215,7 +217,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(345, 19);
+            this.bt_can_cel.Location = new System.Drawing.Point(342, 16);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -231,7 +233,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(233, 19);
+            this.bt_ace_pta.Location = new System.Drawing.Point(230, 16);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -264,7 +266,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(12, 87);
+            this.labelX3.Location = new System.Drawing.Point(41, 89);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(32, 17);
             this.labelX3.TabIndex = 31;
@@ -280,7 +282,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(13, 22);
+            this.LabelX1.Location = new System.Drawing.Point(24, 23);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(49, 17);
             this.LabelX1.TabIndex = 0;
@@ -297,6 +299,7 @@
             this.tb_cod_lis.ButtonCustom.Symbol = "";
             this.tb_cod_lis.ButtonCustom.Visible = true;
             this.tb_cod_lis.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_lis.Enabled = false;
             this.tb_cod_lis.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_lis.Location = new System.Drawing.Point(77, 22);
             this.tb_cod_lis.MaxLength = 3;
@@ -315,7 +318,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(13, 54);
+            this.LabelX2.Location = new System.Drawing.Point(26, 56);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(47, 17);
             this.LabelX2.TabIndex = 0;
@@ -330,6 +333,7 @@
             this.tb_nom_lis.Border.Class = "TextBoxBorder";
             this.tb_nom_lis.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_lis.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_lis.Enabled = false;
             this.tb_nom_lis.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_lis.Location = new System.Drawing.Point(144, 22);
             this.tb_nom_lis.MaxLength = 120;

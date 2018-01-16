@@ -35,8 +35,9 @@
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +103,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(13, 22);
+            this.LabelX1.Location = new System.Drawing.Point(36, 22);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(39, 23);
             this.LabelX1.TabIndex = 0;
@@ -118,7 +119,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(13, 58);
+            this.LabelX2.Location = new System.Drawing.Point(33, 58);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(43, 17);
             this.LabelX2.TabIndex = 0;
@@ -127,15 +128,16 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
-            this.GroupBox1.Controls.Add(this.tb_cod_gru);
+            this.GroupBox1.Controls.Add(this.labelX14);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
+            this.GroupBox1.Controls.Add(this.tb_cod_gru);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.tb_nom_gru);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(0, -8);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(345, 100);
+            this.GroupBox1.Size = new System.Drawing.Size(345, 131);
             this.GroupBox1.TabIndex = 70;
             this.GroupBox1.TabStop = false;
             // 
@@ -157,6 +159,34 @@
             this.tb_cod_gru.Size = new System.Drawing.Size(35, 22);
             this.tb_cod_gru.TabIndex = 74;
             // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.Controls.Add(this.bt_can_cel);
+            this.GroupBox2.Controls.Add(this.bt_ace_pta);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(0, 124);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(345, 44);
+            this.GroupBox2.TabIndex = 71;
+            this.GroupBox2.TabStop = false;
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(27, 96);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 179;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
             // tb_est_ado
             // 
             this.tb_est_ado.BackColor = System.Drawing.Color.White;
@@ -167,27 +197,16 @@
             this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
             this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(187, 23);
-            this.tb_est_ado.MaxLength = 15;
+            this.tb_est_ado.Location = new System.Drawing.Point(77, 94);
+            this.tb_est_ado.MaxLength = 80;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(140, 22);
-            this.tb_est_ado.TabIndex = 73;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 178;
             this.tb_est_ado.TabStop = false;
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
-            this.GroupBox2.Controls.Add(this.bt_can_cel);
-            this.GroupBox2.Controls.Add(this.bt_ace_pta);
-            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(0, 86);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(345, 44);
-            this.GroupBox2.TabIndex = 71;
-            this.GroupBox2.TabStop = false;
             // 
             // adm011_05
             // 
@@ -195,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(347, 130);
+            this.ClientSize = new System.Drawing.Size(347, 167);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
@@ -222,8 +241,9 @@
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal DevComponents.DotNetBar.LabelX LabelX2;
         internal System.Windows.Forms.GroupBox GroupBox1;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_gru;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }

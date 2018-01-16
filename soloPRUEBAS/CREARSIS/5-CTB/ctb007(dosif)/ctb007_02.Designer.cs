@@ -109,7 +109,7 @@
             this.tb_nom_ley.PreventEnterBeep = true;
             this.tb_nom_ley.ReadOnly = true;
             this.tb_nom_ley.Size = new System.Drawing.Size(278, 62);
-            this.tb_nom_ley.TabIndex = 17;
+            this.tb_nom_ley.TabIndex = 20;
             // 
             // LabelX9
             // 
@@ -124,7 +124,7 @@
             this.LabelX9.Location = new System.Drawing.Point(63, 192);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(43, 17);
-            this.LabelX9.TabIndex = 15;
+            this.LabelX9.TabIndex = 18;
             this.LabelX9.Text = "Leyenda";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -146,7 +146,7 @@
             this.tb_cod_ley.Name = "tb_cod_ley";
             this.tb_cod_ley.PreventEnterBeep = true;
             this.tb_cod_ley.Size = new System.Drawing.Size(59, 22);
-            this.tb_cod_ley.TabIndex = 16;
+            this.tb_cod_ley.TabIndex = 19;
             this.tb_cod_ley.ButtonCustomClick += new System.EventHandler(this.tb_cod_ley_ButtonCustomClick);
             this.tb_cod_ley.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_ley_KeyDown);
             this.tb_cod_ley.Validated += new System.EventHandler(this.tb_cod_ley_Validated);
@@ -163,7 +163,7 @@
             this.LabelX8.Location = new System.Drawing.Point(296, 157);
             this.LabelX8.Name = "LabelX8";
             this.LabelX8.Size = new System.Drawing.Size(73, 17);
-            this.LabelX8.TabIndex = 20;
+            this.LabelX8.TabIndex = 16;
             this.LabelX8.Text = "Limite emision";
             // 
             // tb_fec_fin
@@ -212,7 +212,7 @@
             this.tb_fec_fin.Name = "tb_fec_fin";
             this.tb_fec_fin.Size = new System.Drawing.Size(82, 22);
             this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_fin.TabIndex = 0;
+            this.tb_fec_fin.TabIndex = 17;
             this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
             this.tb_fec_fin.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
             // 
@@ -228,7 +228,7 @@
             this.LabelX7.Location = new System.Drawing.Point(334, 21);
             this.LabelX7.Name = "LabelX7";
             this.LabelX7.Size = new System.Drawing.Size(31, 17);
-            this.LabelX7.TabIndex = 18;
+            this.LabelX7.TabIndex = 14;
             this.LabelX7.Text = "Fecha";
             this.LabelX7.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -278,7 +278,7 @@
             this.tb_fec_ini.Name = "tb_fec_ini";
             this.tb_fec_ini.Size = new System.Drawing.Size(84, 22);
             this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_ini.TabIndex = 19;
+            this.tb_fec_ini.TabIndex = 15;
             this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
             this.tb_fec_ini.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
             // 
@@ -297,7 +297,7 @@
             this.tb_nro_fin.Name = "tb_nro_fin";
             this.tb_nro_fin.PreventEnterBeep = true;
             this.tb_nro_fin.Size = new System.Drawing.Size(50, 22);
-            this.tb_nro_fin.TabIndex = 14;
+            this.tb_nro_fin.TabIndex = 13;
             this.tb_nro_fin.Text = "999999";
             this.tb_nro_fin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_nro_fin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nro_fin_KeyPress);
@@ -314,7 +314,7 @@
             this.LabelX6.Location = new System.Drawing.Point(169, 157);
             this.LabelX6.Name = "LabelX6";
             this.LabelX6.Size = new System.Drawing.Size(49, 17);
-            this.LabelX6.TabIndex = 13;
+            this.LabelX6.TabIndex = 12;
             this.LabelX6.Text = "Nro. Final";
             // 
             // tb_nro_ini
@@ -332,7 +332,7 @@
             this.tb_nro_ini.Name = "tb_nro_ini";
             this.tb_nro_ini.PreventEnterBeep = true;
             this.tb_nro_ini.Size = new System.Drawing.Size(41, 22);
-            this.tb_nro_ini.TabIndex = 12;
+            this.tb_nro_ini.TabIndex = 11;
             this.tb_nro_ini.Text = "1";
             this.tb_nro_ini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -348,7 +348,7 @@
             this.LabelX5.Location = new System.Drawing.Point(53, 157);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(54, 17);
-            this.LabelX5.TabIndex = 11;
+            this.LabelX5.TabIndex = 10;
             this.LabelX5.Text = "Nro. Inicial";
             this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -368,7 +368,7 @@
             this.tb_nom_act.PreventEnterBeep = true;
             this.tb_nom_act.ReadOnly = true;
             this.tb_nom_act.Size = new System.Drawing.Size(278, 22);
-            this.tb_nom_act.TabIndex = 10;
+            this.tb_nom_act.TabIndex = 9;
             // 
             // LabelX4
             // 
@@ -383,7 +383,7 @@
             this.LabelX4.Location = new System.Drawing.Point(4, 120);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(103, 17);
-            this.LabelX4.TabIndex = 8;
+            this.LabelX4.TabIndex = 7;
             this.LabelX4.Text = "Actividad Economica";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -406,7 +406,7 @@
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);
-            this.tb_cod_act.TabIndex = 9;
+            this.tb_cod_act.TabIndex = 8;
             this.tb_cod_act.ButtonCustomClick += new System.EventHandler(this.tb_cod_act_ButtonCustomClick);
             this.tb_cod_act.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_act_KeyDown);
             this.tb_cod_act.Validated += new System.EventHandler(this.tb_cod_act_Validated);
@@ -427,7 +427,7 @@
             this.tb_nom_sucu.PreventEnterBeep = true;
             this.tb_nom_sucu.ReadOnly = true;
             this.tb_nom_sucu.Size = new System.Drawing.Size(278, 22);
-            this.tb_nom_sucu.TabIndex = 7;
+            this.tb_nom_sucu.TabIndex = 6;
             // 
             // LabelX3
             // 
@@ -442,7 +442,7 @@
             this.LabelX3.Location = new System.Drawing.Point(63, 89);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(43, 17);
-            this.LabelX3.TabIndex = 5;
+            this.LabelX3.TabIndex = 4;
             this.LabelX3.Text = "Sucursal";
             this.LabelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -459,7 +459,7 @@
             this.LabelX2.Location = new System.Drawing.Point(45, 56);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(62, 17);
-            this.LabelX2.TabIndex = 3;
+            this.LabelX2.TabIndex = 2;
             this.LabelX2.Text = "Tipo Factura";
             this.LabelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -481,7 +481,7 @@
             this.tb_cod_sucu.Name = "tb_cod_sucu";
             this.tb_cod_sucu.PreventEnterBeep = true;
             this.tb_cod_sucu.Size = new System.Drawing.Size(59, 22);
-            this.tb_cod_sucu.TabIndex = 6;
+            this.tb_cod_sucu.TabIndex = 5;
             this.tb_cod_sucu.ButtonCustomClick += new System.EventHandler(this.tb_cod_sucu_ButtonCustomClick);
             this.tb_cod_sucu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_sucu_KeyDown);
             this.tb_cod_sucu.Validated += new System.EventHandler(this.tb_cod_sucu_Validated);
@@ -503,7 +503,7 @@
             this.cb_tip_fac.Name = "cb_tip_fac";
             this.cb_tip_fac.Size = new System.Drawing.Size(343, 22);
             this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fac.TabIndex = 4;
+            this.cb_tip_fac.TabIndex = 3;
             // 
             // FC
             // 
@@ -530,7 +530,7 @@
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
-            this.tb_nro_dos.TabIndex = 2;
+            this.tb_nro_dos.TabIndex = 1;
             this.tb_nro_dos.Text = "0";
             // 
             // LabelX1
@@ -546,7 +546,7 @@
             this.LabelX1.Location = new System.Drawing.Point(22, 21);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(85, 17);
-            this.LabelX1.TabIndex = 1;
+            this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 

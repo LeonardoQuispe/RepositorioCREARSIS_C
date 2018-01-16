@@ -147,7 +147,6 @@ namespace CREARSIS._2_ADM.adm010_per_
             string va_nom_gru = "";
             bool va_ban_ven = false;
             bool va_ban_com = false;
-            bool va_ban_emp = false;
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();

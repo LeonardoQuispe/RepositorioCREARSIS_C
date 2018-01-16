@@ -49,7 +49,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(7, 5);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(464, 128);
-            this.GroupBox1.TabIndex = 184;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // LabelX5
@@ -62,10 +62,10 @@
             this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
-            this.LabelX5.Location = new System.Drawing.Point(17, 15);
+            this.LabelX5.Location = new System.Drawing.Point(39, 16);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(38, 17);
-            this.LabelX5.TabIndex = 73;
+            this.LabelX5.TabIndex = 0;
             this.LabelX5.Text = "Codigo";
             // 
             // LabelX4
@@ -78,10 +78,10 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(12, 42);
+            this.LabelX4.Location = new System.Drawing.Point(34, 43);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 74;
+            this.LabelX4.TabIndex = 2;
             this.LabelX4.Text = "Nombre";
             // 
             // tb_cod_act
@@ -99,7 +99,7 @@
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
             this.tb_cod_act.Size = new System.Drawing.Size(107, 22);
-            this.tb_cod_act.TabIndex = 10;
+            this.tb_cod_act.TabIndex = 1;
             this.tb_cod_act.TabStop = false;
             // 
             // tb_nom_act
@@ -118,7 +118,7 @@
             this.tb_nom_act.Name = "tb_nom_act";
             this.tb_nom_act.PreventEnterBeep = true;
             this.tb_nom_act.Size = new System.Drawing.Size(371, 59);
-            this.tb_nom_act.TabIndex = 20;
+            this.tb_nom_act.TabIndex = 3;
             // 
             // GroupBox2
             // 
@@ -127,7 +127,7 @@
             this.GroupBox2.Location = new System.Drawing.Point(7, 130);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(464, 50);
-            this.GroupBox2.TabIndex = 185;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
             // 
             // bt_ace_pta
@@ -143,7 +143,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 30;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -160,7 +160,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 40;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -181,6 +181,7 @@
             this.Tag = "";
             this.Text = "Nueva Actividad Eonómica";
             this.TitleText = "Nueva Actividad Eonómica";
+            this.Load += new System.EventHandler(this.adm012_02_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);

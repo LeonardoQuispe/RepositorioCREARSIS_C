@@ -354,7 +354,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(11, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -475,7 +475,7 @@
             this.ban_ven.Checked = true;
             this.ban_ven.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.ban_ven.CheckValue = "N";
-            this.ban_ven.HeaderText = "Vent.";
+            this.ban_ven.HeaderText = "Visib. Vent.";
             this.ban_ven.Name = "ban_ven";
             this.ban_ven.ReadOnly = true;
             this.ban_ven.Width = 40;
@@ -485,7 +485,7 @@
             this.ban_com.Checked = true;
             this.ban_com.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.ban_com.CheckValue = "N";
-            this.ban_com.HeaderText = "Comp.";
+            this.ban_com.HeaderText = "Visib. Comp.";
             this.ban_com.Name = "ban_com";
             this.ban_com.ReadOnly = true;
             this.ban_com.Width = 45;

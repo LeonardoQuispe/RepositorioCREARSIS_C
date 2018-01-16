@@ -37,6 +37,9 @@
             this.tb_nro_dos = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_tip_fac = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -46,9 +49,6 @@
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.FM = new DevComponents.Editors.ComboItem();
             this.FC = new DevComponents.Editors.ComboItem();
-            this.cb_tip_fac = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
@@ -178,6 +178,7 @@
             this.tb_nro_dos.Border.Class = "TextBoxBorder";
             this.tb_nro_dos.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_dos.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_dos.Enabled = false;
             this.tb_nro_dos.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_dos.Location = new System.Drawing.Point(103, 19);
             this.tb_nro_dos.MaxLength = 20;
@@ -227,6 +228,36 @@
             this.GroupBox1.TabIndex = 99;
             this.GroupBox1.TabStop = false;
             // 
+            // cb_tip_fac
+            // 
+            this.cb_tip_fac.DisplayMember = "Text";
+            this.cb_tip_fac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_fac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_fac.Enabled = false;
+            this.cb_tip_fac.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
+            this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_fac.FormattingEnabled = true;
+            this.cb_tip_fac.ItemHeight = 16;
+            this.cb_tip_fac.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2});
+            this.cb_tip_fac.Location = new System.Drawing.Point(104, 56);
+            this.cb_tip_fac.Name = "cb_tip_fac";
+            this.cb_tip_fac.Size = new System.Drawing.Size(328, 22);
+            this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_fac.TabIndex = 164;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "Facturas emitidas por computadora";
+            this.comboItem1.Value = "0";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Factura Manual";
+            this.comboItem2.Value = "1";
+            // 
             // labelX4
             // 
             this.labelX4.AutoSize = true;
@@ -253,6 +284,7 @@
             this.tb_est_ado.Border.Class = "TextBoxBorder";
             this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
             this.tb_est_ado.Location = new System.Drawing.Point(316, 19);
             this.tb_est_ado.MaxLength = 15;
@@ -419,36 +451,6 @@
             // 
             this.FC.Text = "Factura Computarizada";
             this.FC.Value = "0";
-            // 
-            // cb_tip_fac
-            // 
-            this.cb_tip_fac.DisplayMember = "Text";
-            this.cb_tip_fac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tip_fac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tip_fac.Enabled = false;
-            this.cb_tip_fac.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_tip_fac.FocusHighlightColor = System.Drawing.Color.Blue;
-            this.cb_tip_fac.ForeColor = System.Drawing.Color.Black;
-            this.cb_tip_fac.FormattingEnabled = true;
-            this.cb_tip_fac.ItemHeight = 16;
-            this.cb_tip_fac.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2});
-            this.cb_tip_fac.Location = new System.Drawing.Point(104, 56);
-            this.cb_tip_fac.Name = "cb_tip_fac";
-            this.cb_tip_fac.Size = new System.Drawing.Size(328, 22);
-            this.cb_tip_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fac.TabIndex = 164;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Facturas emitidas por computadora";
-            this.comboItem1.Value = "0";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Factura Manual";
-            this.comboItem2.Value = "1";
             // 
             // ctb007_03a
             // 

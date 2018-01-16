@@ -59,6 +59,7 @@ namespace CREARSIS
 
         private void ctb007_02_Load(object sender, EventArgs e)
         {
+            tb_nro_dos.Focus();
             this.cb_tip_fac.SelectedIndex = 0;
             tb_fec_ini.Value = System.DateTime.Now;
             tb_fec_fin.Value = tb_fec_ini.Value.AddDays(180);
@@ -104,7 +105,12 @@ namespace CREARSIS
                 tb_nro_ini.Text = "1";
                 tb_nro_fin.Text = "9999";
                 tb_cod_ley.Clear();
-                tb_nom_ley.Clear();                
+
+                tb_nro_dos.Focus();
+
+                tb_nom_ley.Clear();
+
+                
 
             }
             catch (Exception ex)

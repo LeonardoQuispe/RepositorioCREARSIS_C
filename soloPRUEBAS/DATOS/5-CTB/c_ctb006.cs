@@ -59,7 +59,7 @@ namespace DATOS
             try
             {
                 StringBuilder vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" EXECUTE ctb006_02p");
+                vv_str_sql.AppendLine(" EXECUTE ctb006_02p1");
 
                 return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
             }

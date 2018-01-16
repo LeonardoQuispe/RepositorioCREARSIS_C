@@ -114,6 +114,8 @@ namespace CREARSIS
             tb_fec_fin.Text = vg_str_ucc.Rows[0]["va_fec_fin"].ToString();
             tb_con_tad.Text = vg_str_ucc.Rows[0]["va_con_tad"].ToString();
 
+           
+
             tb_nro_ini.Focus();
 
         }

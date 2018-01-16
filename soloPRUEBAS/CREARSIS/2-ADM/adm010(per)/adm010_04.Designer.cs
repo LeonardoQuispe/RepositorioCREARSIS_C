@@ -31,16 +31,6 @@
             this.itm_bs = new DevComponents.Editors.ComboItem();
             this.itm_usd = new DevComponents.Editors.ComboItem();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_per = new System.Windows.Forms.MaskedTextBox();
-            this.tb_nro_per = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chk_com = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_ven = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -51,10 +41,18 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_raz_per = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_per = new System.Windows.Forms.MaskedTextBox();
+            this.tb_nro_per = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_cel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.tb_dir_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -72,9 +70,11 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pre_cli = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tab_ven = new DevComponents.DotNetBar.SuperTabItem();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
-            this.gb_ctr_frm.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -113,6 +113,168 @@
             this.GroupBox1.Size = new System.Drawing.Size(416, 241);
             this.GroupBox1.TabIndex = 6;
             this.GroupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chk_com);
+            this.groupBox2.Controls.Add(this.chk_ven);
+            this.groupBox2.Location = new System.Drawing.Point(113, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(279, 31);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            // 
+            // chk_com
+            // 
+            // 
+            // 
+            // 
+            this.chk_com.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_com.Enabled = false;
+            this.chk_com.Location = new System.Drawing.Point(158, 9);
+            this.chk_com.Name = "chk_com";
+            this.chk_com.Size = new System.Drawing.Size(67, 18);
+            this.chk_com.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chk_com.TabIndex = 1;
+            this.chk_com.Text = "Compras";
+            // 
+            // chk_ven
+            // 
+            // 
+            // 
+            // 
+            this.chk_ven.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_ven.Enabled = false;
+            this.chk_ven.Location = new System.Drawing.Point(46, 9);
+            this.chk_ven.Name = "chk_ven";
+            this.chk_ven.Size = new System.Drawing.Size(57, 18);
+            this.chk_ven.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chk_ven.TabIndex = 0;
+            this.chk_ven.Text = "Ventas";
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(56, 92);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(51, 17);
+            this.labelX5.TabIndex = 16;
+            this.labelX5.Text = "Visible En:";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_nom_per
+            // 
+            this.tb_nom_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_per.Border.Class = "TextBoxBorder";
+            this.tb_nom_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_per.Enabled = false;
+            this.tb_nom_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_per.Location = new System.Drawing.Point(113, 166);
+            this.tb_nom_per.MaxLength = 100;
+            this.tb_nom_per.Multiline = true;
+            this.tb_nom_per.Name = "tb_nom_per";
+            this.tb_nom_per.PreventEnterBeep = true;
+            this.tb_nom_per.Size = new System.Drawing.Size(279, 22);
+            this.tb_nom_per.TabIndex = 21;
+            // 
+            // labelX8
+            // 
+            this.labelX8.AutoSize = true;
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX8.ForeColor = System.Drawing.Color.Black;
+            this.labelX8.Location = new System.Drawing.Point(13, 168);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(94, 17);
+            this.labelX8.TabIndex = 20;
+            this.labelX8.Text = "Nombre Comercial";
+            this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_nit_per
+            // 
+            this.tb_nit_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nit_per.Border.Class = "TextBoxBorder";
+            this.tb_nit_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nit_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nit_per.Enabled = false;
+            this.tb_nit_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_nit_per.Location = new System.Drawing.Point(113, 202);
+            this.tb_nit_per.MaxLength = 13;
+            this.tb_nit_per.Multiline = true;
+            this.tb_nit_per.Name = "tb_nit_per";
+            this.tb_nit_per.PreventEnterBeep = true;
+            this.tb_nit_per.Size = new System.Drawing.Size(103, 22);
+            this.tb_nit_per.TabIndex = 23;
+            // 
+            // labelX6
+            // 
+            this.labelX6.AutoSize = true;
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
+            this.labelX6.Location = new System.Drawing.Point(74, 205);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(33, 17);
+            this.labelX6.TabIndex = 22;
+            this.labelX6.Text = "NIT/CI";
+            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_raz_per
+            // 
+            this.tb_raz_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_raz_per.Border.Class = "TextBoxBorder";
+            this.tb_raz_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_raz_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_raz_per.Enabled = false;
+            this.tb_raz_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_raz_per.Location = new System.Drawing.Point(113, 128);
+            this.tb_raz_per.MaxLength = 120;
+            this.tb_raz_per.Name = "tb_raz_per";
+            this.tb_raz_per.PreventEnterBeep = true;
+            this.tb_raz_per.Size = new System.Drawing.Size(279, 22);
+            this.tb_raz_per.TabIndex = 19;
+            // 
+            // labelX11
+            // 
+            this.labelX11.AutoSize = true;
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX11.ForeColor = System.Drawing.Color.Black;
+            this.labelX11.Location = new System.Drawing.Point(43, 130);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(64, 17);
+            this.labelX11.TabIndex = 18;
+            this.labelX11.Text = "Razón Social";
+            this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // tb_nom_gru
             // 
@@ -290,168 +452,6 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chk_com);
-            this.groupBox2.Controls.Add(this.chk_ven);
-            this.groupBox2.Location = new System.Drawing.Point(113, 82);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(279, 31);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            // 
-            // chk_com
-            // 
-            // 
-            // 
-            // 
-            this.chk_com.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_com.Enabled = false;
-            this.chk_com.Location = new System.Drawing.Point(158, 9);
-            this.chk_com.Name = "chk_com";
-            this.chk_com.Size = new System.Drawing.Size(67, 18);
-            this.chk_com.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chk_com.TabIndex = 1;
-            this.chk_com.Text = "Compras";
-            // 
-            // chk_ven
-            // 
-            // 
-            // 
-            // 
-            this.chk_ven.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_ven.Enabled = false;
-            this.chk_ven.Location = new System.Drawing.Point(46, 9);
-            this.chk_ven.Name = "chk_ven";
-            this.chk_ven.Size = new System.Drawing.Size(57, 18);
-            this.chk_ven.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chk_ven.TabIndex = 0;
-            this.chk_ven.Text = "Ventas";
-            // 
-            // labelX5
-            // 
-            this.labelX5.AutoSize = true;
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(56, 92);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(51, 17);
-            this.labelX5.TabIndex = 16;
-            this.labelX5.Text = "Visible En:";
-            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_nom_per
-            // 
-            this.tb_nom_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_per.Border.Class = "TextBoxBorder";
-            this.tb_nom_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_per.Enabled = false;
-            this.tb_nom_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_per.Location = new System.Drawing.Point(113, 166);
-            this.tb_nom_per.MaxLength = 100;
-            this.tb_nom_per.Multiline = true;
-            this.tb_nom_per.Name = "tb_nom_per";
-            this.tb_nom_per.PreventEnterBeep = true;
-            this.tb_nom_per.Size = new System.Drawing.Size(279, 22);
-            this.tb_nom_per.TabIndex = 21;
-            // 
-            // labelX8
-            // 
-            this.labelX8.AutoSize = true;
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX8.ForeColor = System.Drawing.Color.Black;
-            this.labelX8.Location = new System.Drawing.Point(13, 168);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(94, 17);
-            this.labelX8.TabIndex = 20;
-            this.labelX8.Text = "Nombre Comercial";
-            this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_nit_per
-            // 
-            this.tb_nit_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nit_per.Border.Class = "TextBoxBorder";
-            this.tb_nit_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nit_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nit_per.Enabled = false;
-            this.tb_nit_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_nit_per.Location = new System.Drawing.Point(113, 202);
-            this.tb_nit_per.MaxLength = 13;
-            this.tb_nit_per.Multiline = true;
-            this.tb_nit_per.Name = "tb_nit_per";
-            this.tb_nit_per.PreventEnterBeep = true;
-            this.tb_nit_per.Size = new System.Drawing.Size(103, 22);
-            this.tb_nit_per.TabIndex = 23;
-            // 
-            // labelX6
-            // 
-            this.labelX6.AutoSize = true;
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(74, 205);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(33, 17);
-            this.labelX6.TabIndex = 22;
-            this.labelX6.Text = "NIT/CI";
-            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_raz_per
-            // 
-            this.tb_raz_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_raz_per.Border.Class = "TextBoxBorder";
-            this.tb_raz_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_raz_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_raz_per.Enabled = false;
-            this.tb_raz_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_raz_per.Location = new System.Drawing.Point(113, 128);
-            this.tb_raz_per.MaxLength = 120;
-            this.tb_raz_per.Name = "tb_raz_per";
-            this.tb_raz_per.PreventEnterBeep = true;
-            this.tb_raz_per.Size = new System.Drawing.Size(279, 22);
-            this.tb_raz_per.TabIndex = 19;
-            // 
-            // labelX11
-            // 
-            this.labelX11.AutoSize = true;
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX11.ForeColor = System.Drawing.Color.Black;
-            this.labelX11.Location = new System.Drawing.Point(43, 130);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(64, 17);
-            this.labelX11.TabIndex = 18;
-            this.labelX11.Text = "Razón Social";
-            this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // superTabControl1
             // 
             this.superTabControl1.BackColor = System.Drawing.Color.Transparent;
@@ -505,41 +505,6 @@
             this.superTabControlPanel1.Size = new System.Drawing.Size(417, 153);
             this.superTabControlPanel1.TabIndex = 0;
             this.superTabControlPanel1.TabItem = this.tab_gen;
-            // 
-            // labelX14
-            // 
-            this.labelX14.AutoSize = true;
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(67, 116);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(37, 17);
-            this.labelX14.TabIndex = 8;
-            this.labelX14.Text = "Estado:";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(110, 114);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 9;
-            this.tb_est_ado.TabStop = false;
             // 
             // tb_cel_gen
             // 
@@ -816,6 +781,43 @@
             this.tab_ven.Text = "Ventas";
             this.tab_ven.Visible = false;
             // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(60, 118);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 173;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(110, 116);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 172;
+            this.tb_est_ado.TabStop = false;
+            // 
             // adm010_04
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -836,8 +838,8 @@
             this.Load += new System.EventHandler(this.adm010_04_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            this.gb_ctr_frm.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.gb_ctr_frm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
@@ -874,8 +876,6 @@
         internal DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.SuperTabControl superTabControl1;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
-        internal DevComponents.DotNetBar.LabelX labelX14;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cel_gen;
         internal DevComponents.DotNetBar.LabelX labelX7;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_gen;
@@ -893,5 +893,7 @@
         internal DevComponents.DotNetBar.LabelX labelX10;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_pre_cli;
         private DevComponents.DotNetBar.SuperTabItem tab_ven;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }

@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cb_tip_fap = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.matriz = new DevComponents.Editors.ComboItem();
             this.detalle = new DevComponents.Editors.ComboItem();
             this.sevicio = new DevComponents.Editors.ComboItem();
             this.combos = new DevComponents.Editors.ComboItem();
-            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_fap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.tb_cod_fap = new System.Windows.Forms.MaskedTextBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -50,11 +50,11 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.labelX14);
+            this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.tb_cod_fap);
             this.GroupBox1.Controls.Add(this.labelX3);
             this.GroupBox1.Controls.Add(this.cb_tip_fap);
-            this.GroupBox1.Controls.Add(this.LabelX4);
-            this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.tb_nom_fap);
             this.GroupBox1.Controls.Add(this.labelX2);
             this.GroupBox1.Controls.Add(this.LabelX1);
@@ -64,6 +64,24 @@
             this.GroupBox1.Size = new System.Drawing.Size(359, 123);
             this.GroupBox1.TabIndex = 195;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_cod_fap
+            // 
+            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
+            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_fap.Enabled = false;
+            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_fap.Location = new System.Drawing.Point(69, 22);
+            this.tb_cod_fap.Mask = "00-00-00";
+            this.tb_cod_fap.Name = "tb_cod_fap";
+            this.tb_cod_fap.PromptChar = ' ';
+            this.tb_cod_fap.ReadOnly = true;
+            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
+            this.tb_cod_fap.TabIndex = 196;
+            this.tb_cod_fap.TabStop = false;
+            this.tb_cod_fap.Text = "000000";
+            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // labelX3
             // 
@@ -122,40 +140,6 @@
             this.combos.Text = "Combo";
             this.combos.Value = "C";
             // 
-            // LabelX4
-            // 
-            this.LabelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(15, 80);
-            this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(45, 23);
-            this.LabelX4.TabIndex = 192;
-            this.LabelX4.Text = "Estado";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(69, 83);
-            this.tb_est_ado.MaxLength = 15;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(275, 22);
-            this.tb_est_ado.TabIndex = 191;
-            this.tb_est_ado.TabStop = false;
-            // 
             // tb_nom_fap
             // 
             this.tb_nom_fap.BackColor = System.Drawing.Color.White;
@@ -165,8 +149,9 @@
             this.tb_nom_fap.Border.Class = "TextBoxBorder";
             this.tb_nom_fap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_fap.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_fap.Enabled = false;
             this.tb_nom_fap.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_fap.Location = new System.Drawing.Point(69, 51);
+            this.tb_nom_fap.Location = new System.Drawing.Point(69, 54);
             this.tb_nom_fap.MaxLength = 25;
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
@@ -184,7 +169,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(15, 53);
+            this.labelX2.Location = new System.Drawing.Point(24, 55);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(43, 17);
             this.labelX2.TabIndex = 11;
@@ -200,7 +185,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(15, 21);
+            this.LabelX1.Location = new System.Drawing.Point(29, 24);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 1;
@@ -232,23 +217,42 @@
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
-            // tb_cod_fap
+            // labelX14
             // 
-            this.tb_cod_fap.BackColor = System.Drawing.Color.White;
-            this.tb_cod_fap.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_fap.Enabled = false;
-            this.tb_cod_fap.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_fap.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_fap.Location = new System.Drawing.Point(69, 22);
-            this.tb_cod_fap.Mask = "00-00-00";
-            this.tb_cod_fap.Name = "tb_cod_fap";
-            this.tb_cod_fap.PromptChar = ' ';
-            this.tb_cod_fap.ReadOnly = true;
-            this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
-            this.tb_cod_fap.TabIndex = 196;
-            this.tb_cod_fap.TabStop = false;
-            this.tb_cod_fap.Text = "000000";
-            this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(19, 87);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 200;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(69, 85);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 199;
+            this.tb_est_ado.TabStop = false;
             // 
             // inv001_05
             // 
@@ -283,13 +287,13 @@
         internal DevComponents.Editors.ComboItem detalle;
         internal DevComponents.Editors.ComboItem sevicio;
         internal DevComponents.Editors.ComboItem combos;
-        internal DevComponents.DotNetBar.LabelX LabelX4;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_fap;
         internal DevComponents.DotNetBar.LabelX labelX2;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal System.Windows.Forms.MaskedTextBox tb_cod_fap;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }

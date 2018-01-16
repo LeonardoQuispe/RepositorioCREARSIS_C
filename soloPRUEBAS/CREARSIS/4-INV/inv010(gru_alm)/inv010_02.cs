@@ -82,6 +82,7 @@ namespace CREARSIS
         public void fu_lim_frm()
         {
             tb_cod_sucu.Clear();
+            tb_nom_sucu.Clear();
             tb_nro_gru.Clear();
             tb_cod_gru.Clear();
             tb_nom_gru.Clear();

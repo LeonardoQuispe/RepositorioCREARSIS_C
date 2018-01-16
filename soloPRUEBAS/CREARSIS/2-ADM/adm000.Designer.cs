@@ -41,7 +41,6 @@
             this.m_pla_vrt = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_pre_cio = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pre_cio = new System.Windows.Forms.ToolStripMenuItem();
-            this.mn_det_pre = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ven_dedor = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_def_ini = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm010 = new System.Windows.Forms.ToolStripMenuItem();
@@ -184,8 +183,7 @@
             // mr_pre_cio
             // 
             this.mr_pre_cio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mn_pre_cio,
-            this.mn_det_pre});
+            this.mn_pre_cio});
             this.mr_pre_cio.Name = "mr_pre_cio";
             this.mr_pre_cio.Size = new System.Drawing.Size(223, 22);
             this.mr_pre_cio.Text = "&Precio";
@@ -196,13 +194,6 @@
             this.mn_pre_cio.Size = new System.Drawing.Size(162, 22);
             this.mn_pre_cio.Text = "Lista de precio";
             this.mn_pre_cio.Click += new System.EventHandler(this.mn_pre_cio_Click);
-            // 
-            // mn_det_pre
-            // 
-            this.mn_det_pre.Name = "mn_det_pre";
-            this.mn_det_pre.Size = new System.Drawing.Size(162, 22);
-            this.mn_det_pre.Text = "Detalle de precio";
-            this.mn_det_pre.Click += new System.EventHandler(this.mn_det_pre_Click);
             // 
             // m_ven_dedor
             // 
@@ -545,7 +536,6 @@
         internal System.Windows.Forms.ToolStripMenuItem m_pla_vrt;
         internal System.Windows.Forms.ToolStripMenuItem mr_pre_cio;
         internal System.Windows.Forms.ToolStripMenuItem mn_pre_cio;
-        internal System.Windows.Forms.ToolStripMenuItem mn_det_pre;
         internal System.Windows.Forms.ToolStripMenuItem mr_def_ini;
         internal System.Windows.Forms.ToolStripMenuItem m_adm010;
         internal System.Windows.Forms.ToolStripMenuItem mn_gru_per;

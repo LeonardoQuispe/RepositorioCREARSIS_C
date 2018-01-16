@@ -78,7 +78,7 @@
             this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
-            this.LabelX6.Location = new System.Drawing.Point(189, 97);
+            this.LabelX6.Location = new System.Drawing.Point(191, 96);
             this.LabelX6.Name = "LabelX6";
             this.LabelX6.Size = new System.Drawing.Size(54, 17);
             this.LabelX6.TabIndex = 199;
@@ -94,7 +94,7 @@
             this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
-            this.LabelX5.Location = new System.Drawing.Point(6, 96);
+            this.LabelX5.Location = new System.Drawing.Point(8, 94);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(61, 17);
             this.LabelX5.TabIndex = 200;
@@ -125,7 +125,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(203, 20);
+            this.labelX3.Location = new System.Drawing.Point(204, 20);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(44, 23);
             this.labelX3.TabIndex = 196;
@@ -188,7 +188,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(6, 55);
+            this.LabelX2.Location = new System.Drawing.Point(26, 56);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(43, 17);
             this.LabelX2.TabIndex = 42;
@@ -222,7 +222,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(6, 20);
+            this.LabelX1.Location = new System.Drawing.Point(31, 21);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 1;

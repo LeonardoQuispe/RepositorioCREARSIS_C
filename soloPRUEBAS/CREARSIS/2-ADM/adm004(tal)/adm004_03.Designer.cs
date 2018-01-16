@@ -51,6 +51,8 @@
             this.man_ual = new DevComponents.Editors.ComboItem();
             this.aut_oma = new DevComponents.Editors.ComboItem();
             this.GroupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX11 = new DevComponents.DotNetBar.LabelX();
             this.LabelX8 = new DevComponents.DotNetBar.LabelX();
             this.LabelX10 = new DevComponents.DotNetBar.LabelX();
@@ -101,6 +103,7 @@
             this.tb_nom_tal.Border.Class = "TextBoxBorder";
             this.tb_nom_tal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_tal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_tal.Enabled = false;
             this.tb_nom_tal.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_tal.Location = new System.Drawing.Point(121, 52);
             this.tb_nom_tal.MaxLength = 120;
@@ -119,6 +122,7 @@
             this.tb_nro_tal.Border.Class = "TextBoxBorder";
             this.tb_nro_tal.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_tal.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_tal.Enabled = false;
             this.tb_nro_tal.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_tal.Location = new System.Drawing.Point(77, 52);
             this.tb_nro_tal.MaxLength = 2;
@@ -156,6 +160,7 @@
             this.tb_cod_doc.ButtonCustom.Symbol = "";
             this.tb_cod_doc.ButtonCustom.Visible = true;
             this.tb_cod_doc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_doc.Enabled = false;
             this.tb_cod_doc.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_doc.Location = new System.Drawing.Point(77, 22);
             this.tb_cod_doc.MaxLength = 3;
@@ -175,7 +180,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(13, 54);
+            this.LabelX2.Location = new System.Drawing.Point(25, 56);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(48, 17);
             this.LabelX2.TabIndex = 0;
@@ -190,6 +195,7 @@
             this.tb_nom_doc.Border.Class = "TextBoxBorder";
             this.tb_nom_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_doc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_doc.Enabled = false;
             this.tb_nom_doc.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_doc.Location = new System.Drawing.Point(147, 22);
             this.tb_nom_doc.MaxLength = 120;
@@ -321,7 +327,7 @@
             this.tb_for_mat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_for_mat.DisabledBackColor = System.Drawing.Color.White;
             this.tb_for_mat.ForeColor = System.Drawing.Color.Black;
-            this.tb_for_mat.Location = new System.Drawing.Point(59, 57);
+            this.tb_for_mat.Location = new System.Drawing.Point(75, 57);
             this.tb_for_mat.MaxLength = 2;
             this.tb_for_mat.Name = "tb_for_mat";
             this.tb_for_mat.PreventEnterBeep = true;
@@ -338,7 +344,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(13, 59);
+            this.LabelX4.Location = new System.Drawing.Point(29, 59);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
             this.LabelX4.TabIndex = 65;
@@ -389,6 +395,8 @@
             // 
             // GroupBox4
             // 
+            this.GroupBox4.Controls.Add(this.labelX14);
+            this.GroupBox4.Controls.Add(this.tb_est_ado);
             this.GroupBox4.Controls.Add(this.LabelX11);
             this.GroupBox4.Controls.Add(this.LabelX8);
             this.GroupBox4.Controls.Add(this.LabelX10);
@@ -405,9 +413,46 @@
             this.GroupBox4.Controls.Add(this.line4);
             this.GroupBox4.Location = new System.Drawing.Point(7, 178);
             this.GroupBox4.Name = "GroupBox4";
-            this.GroupBox4.Size = new System.Drawing.Size(516, 122);
+            this.GroupBox4.Size = new System.Drawing.Size(516, 163);
             this.GroupBox4.TabIndex = 7;
             this.GroupBox4.TabStop = false;
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(25, 127);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 130;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(75, 125);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 129;
+            this.tb_est_ado.TabStop = false;
             // 
             // LabelX11
             // 
@@ -626,7 +671,7 @@
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(7, 298);
+            this.GroupBox2.Location = new System.Drawing.Point(7, 342);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(516, 44);
             this.GroupBox2.TabIndex = 8;
@@ -672,7 +717,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(531, 347);
+            this.ClientSize = new System.Drawing.Size(531, 389);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox3);
@@ -740,5 +785,7 @@
         private DevComponents.DotNetBar.Controls.Line line2;
         private DevComponents.DotNetBar.Controls.Line line3;
         private DevComponents.DotNetBar.Controls.Line line4;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }

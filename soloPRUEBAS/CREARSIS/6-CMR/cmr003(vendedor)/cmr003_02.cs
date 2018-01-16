@@ -32,6 +32,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
         private void cmr003_02_Load(object sender, EventArgs e)
         {
+            tb_cod_ven.Focus();
             cb_tip_com.SelectedIndex = 0;
         }
 
@@ -149,7 +150,9 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             tb_cod_ven.Clear();
             tb_nom_ven.Clear();
             tb_por_ven.Clear();            
-            cb_tip_com.SelectedIndex = 0;            
+            cb_tip_com.SelectedIndex = 0;
+
+            tb_cod_ven.Focus();
         }
 
 

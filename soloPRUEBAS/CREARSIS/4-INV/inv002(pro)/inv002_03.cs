@@ -298,6 +298,14 @@ namespace CREARSIS._4_INV.inv002_pro_
                 return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 2 números Decimales";
             }
 
+            //Valida VISIBLE EN(Compras-Ventas)
+
+            if (chk_ven.Checked == false && chk_com.Checked == false)
+            {
+                chk_ven.Focus();
+                return "Debe seleccionar al menos una opción de la Visibilidad del Producto";
+            }
+
             return null;
         }
 

@@ -261,6 +261,11 @@ namespace CREARSIS
                 return "La Dosificación no se encuentra registrada";
             }
 
+            if (tab_ctb007.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                return "La Dosificación se encuentra Deshabilitada";
+            }
+
             //Verifica estado del dato
             if (tab_ctb007.Rows[0]["va_tip_fac"].ToString() != "0")
             {

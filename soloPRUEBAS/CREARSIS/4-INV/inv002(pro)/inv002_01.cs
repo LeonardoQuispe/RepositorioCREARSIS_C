@@ -159,7 +159,10 @@ namespace CREARSIS._4_INV.inv002_pro_
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
+            bool va_ban_ven = false;
+            bool va_ban_com = false;
             string va_est_ado = "";
+
 
             dg_res_ult.Rows.Clear();
 
@@ -167,9 +170,22 @@ namespace CREARSIS._4_INV.inv002_pro_
 
             if (tab_inv002.Rows.Count != 0)
             {
-
                 foreach (DataRow row in tab_inv002.Rows)
                 {
+                    //Inicializa las bandera en falso
+                    va_ban_ven = false;
+                    va_ban_com = false;
+
+                    //Valida la visibilidad del producto(compras-Ventas) y lo muestra en un Checkbox
+                    if (row["va_ban_vta"].ToString() == "1")
+                    {
+                        va_ban_ven = true;
+                    }
+                    if (row["va_ban_cmp"].ToString() == "1")
+                    {
+                        va_ban_com = true;
+                    }
+
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -180,7 +196,8 @@ namespace CREARSIS._4_INV.inv002_pro_
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_cod_pro"], row["va_nom_pro"], row["va_des_pro"], row["va_fab_ric"], va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_pro"], row["va_nom_pro"], row["va_des_pro"], row["va_fab_ric"],
+                                        ban_ven.Checked = va_ban_ven, ban_com.Checked = va_ban_com,va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;

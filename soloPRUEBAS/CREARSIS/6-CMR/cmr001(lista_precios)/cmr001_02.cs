@@ -129,6 +129,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         {
             cb_mon_lis.SelectedIndex = 0;
             tb_fec_fin.Value = o_mg_glo_bal.fg_fec_act().AddMonths(6);
+            tb_cod_lis.Focus();
         }
     }
 }

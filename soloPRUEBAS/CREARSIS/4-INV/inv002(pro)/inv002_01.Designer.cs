@@ -35,11 +35,6 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_cod_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_des_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fab_ric = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv002_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv002_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +59,13 @@
             this.descripcion = new DevComponents.Editors.ComboItem();
             this.fabricante = new DevComponents.Editors.ComboItem();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.va_cod_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_fab_ric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ban_ven = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.ban_com = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.mn_pri_nci.SuspendLayout();
@@ -76,7 +78,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(334, 12);
+            this.bt_ace_pta.Location = new System.Drawing.Point(437, 14);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -93,9 +95,9 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(1, 268);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(9, 318);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(555, 48);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(658, 48);
             this.gb_ctr_frm.TabIndex = 76;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -105,7 +107,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(446, 12);
+            this.bt_can_cel.Location = new System.Drawing.Point(549, 14);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -137,6 +139,8 @@
             this.va_nom_pro,
             this.va_des_pro,
             this.va_fab_ric,
+            this.ban_ven,
+            this.ban_com,
             this.va_est_ado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -147,8 +151,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dg_res_ult.Location = new System.Drawing.Point(8, 12);
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.Location = new System.Drawing.Point(10, 19);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
@@ -162,46 +166,12 @@
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(541, 170);
+            this.dg_res_ult.Size = new System.Drawing.Size(644, 209);
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellDoubleClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
-            // 
-            // va_cod_pro
-            // 
-            this.va_cod_pro.HeaderText = "Codigo";
-            this.va_cod_pro.Name = "va_cod_pro";
-            this.va_cod_pro.ReadOnly = true;
-            this.va_cod_pro.Width = 60;
-            // 
-            // va_nom_pro
-            // 
-            this.va_nom_pro.HeaderText = "Nombre";
-            this.va_nom_pro.Name = "va_nom_pro";
-            this.va_nom_pro.ReadOnly = true;
-            this.va_nom_pro.Width = 150;
-            // 
-            // va_des_pro
-            // 
-            this.va_des_pro.HeaderText = "Descripcion";
-            this.va_des_pro.Name = "va_des_pro";
-            this.va_des_pro.ReadOnly = true;
-            this.va_des_pro.Width = 150;
-            // 
-            // va_fab_ric
-            // 
-            this.va_fab_ric.HeaderText = "Fabricante";
-            this.va_fab_ric.Name = "va_fab_ric";
-            this.va_fab_ric.ReadOnly = true;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 80;
             // 
             // m_atr_ass
             // 
@@ -288,7 +258,7 @@
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(1, 72);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(555, 190);
+            this.GroupBox2.Size = new System.Drawing.Size(666, 240);
             this.GroupBox2.TabIndex = 75;
             this.GroupBox2.TabStop = false;
             // 
@@ -302,7 +272,7 @@
             this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
             this.lb_sel_ecc.Location = new System.Drawing.Point(140, 14);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
-            this.lb_sel_ecc.Size = new System.Drawing.Size(384, 23);
+            this.lb_sel_ecc.Size = new System.Drawing.Size(514, 23);
             this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lb_sel_ecc.TabIndex = 1;
             // 
@@ -323,7 +293,7 @@
             this.tb_val_bus.MaxLength = 50;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(332, 22);
+            this.tb_val_bus.Size = new System.Drawing.Size(435, 22);
             this.tb_val_bus.TabIndex = 20;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
@@ -391,7 +361,7 @@
             this.todos,
             this.habilitado,
             this.deshabilitado});
-            this.cb_est_bus.Location = new System.Drawing.Point(445, 45);
+            this.cb_est_bus.Location = new System.Drawing.Point(561, 45);
             this.cb_est_bus.Name = "cb_est_bus";
             this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
             this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -420,7 +390,7 @@
             this.nombre,
             this.descripcion,
             this.fabricante});
-            this.cb_prm_bus.Location = new System.Drawing.Point(351, 45);
+            this.cb_prm_bus.Location = new System.Drawing.Point(467, 45);
             this.cb_prm_bus.Name = "cb_prm_bus";
             this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -448,9 +418,63 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(1, -9);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(555, 81);
+            this.GroupBox1.Size = new System.Drawing.Size(666, 81);
             this.GroupBox1.TabIndex = 74;
             this.GroupBox1.TabStop = false;
+            // 
+            // va_cod_pro
+            // 
+            this.va_cod_pro.HeaderText = "Codigo";
+            this.va_cod_pro.Name = "va_cod_pro";
+            this.va_cod_pro.ReadOnly = true;
+            this.va_cod_pro.Width = 60;
+            // 
+            // va_nom_pro
+            // 
+            this.va_nom_pro.HeaderText = "Nombre";
+            this.va_nom_pro.Name = "va_nom_pro";
+            this.va_nom_pro.ReadOnly = true;
+            this.va_nom_pro.Width = 150;
+            // 
+            // va_des_pro
+            // 
+            this.va_des_pro.HeaderText = "Descripcion";
+            this.va_des_pro.Name = "va_des_pro";
+            this.va_des_pro.ReadOnly = true;
+            this.va_des_pro.Width = 150;
+            // 
+            // va_fab_ric
+            // 
+            this.va_fab_ric.HeaderText = "Fabricante";
+            this.va_fab_ric.Name = "va_fab_ric";
+            this.va_fab_ric.ReadOnly = true;
+            // 
+            // ban_ven
+            // 
+            this.ban_ven.Checked = true;
+            this.ban_ven.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.ban_ven.CheckValue = "N";
+            this.ban_ven.HeaderText = "Visib. Vent.";
+            this.ban_ven.Name = "ban_ven";
+            this.ban_ven.ReadOnly = true;
+            this.ban_ven.Width = 40;
+            // 
+            // ban_com
+            // 
+            this.ban_com.Checked = true;
+            this.ban_com.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.ban_com.CheckValue = "N";
+            this.ban_com.HeaderText = "Visib. Comp.";
+            this.ban_com.Name = "ban_com";
+            this.ban_com.ReadOnly = true;
+            this.ban_com.Width = 41;
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
             // 
             // inv002_01
             // 
@@ -458,7 +482,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(562, 317);
+            this.ClientSize = new System.Drawing.Size(671, 367);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox2);
@@ -512,12 +536,14 @@
         internal DevComponents.Editors.ComboItem codigo;
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_prm_bus;
         internal System.Windows.Forms.GroupBox GroupBox1;
+        private DevComponents.Editors.ComboItem descripcion;
+        private DevComponents.Editors.ComboItem fabricante;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_des_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_fab_ric;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_ven;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_com;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
-        private DevComponents.Editors.ComboItem descripcion;
-        private DevComponents.Editors.ComboItem fabricante;
     }
 }

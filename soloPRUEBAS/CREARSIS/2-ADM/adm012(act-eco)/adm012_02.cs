@@ -40,6 +40,11 @@ namespace CREARSIS
             InitializeComponent();
         }
 
+        private void adm012_02_Load(object sender, EventArgs e)
+        {
+            tb_cod_act.Focus();
+        }
+
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             try
@@ -90,6 +95,8 @@ namespace CREARSIS
 
                 tb_cod_act.Clear();
                 tb_nom_act.Clear();
+
+                tb_cod_act.Focus();
             }
             catch (Exception ex)
             {
@@ -104,5 +111,6 @@ namespace CREARSIS
 
         #endregion
 
+        
     }
 }

@@ -355,7 +355,7 @@
             this.tb_nro_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_alm.Location = new System.Drawing.Point(123, 60);
+            this.tb_nro_alm.Location = new System.Drawing.Point(126, 60);
             this.tb_nro_alm.MaxLength = 3;
             this.tb_nro_alm.Name = "tb_nro_alm";
             this.tb_nro_alm.PreventEnterBeep = true;
@@ -480,7 +480,7 @@
             this.tb_gru_alm.ButtonCustom.Visible = true;
             this.tb_gru_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_gru_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_gru_alm.Location = new System.Drawing.Point(127, 20);
+            this.tb_gru_alm.Location = new System.Drawing.Point(126, 20);
             this.tb_gru_alm.MaxLength = 4;
             this.tb_gru_alm.Name = "tb_gru_alm";
             this.tb_gru_alm.PreventEnterBeep = true;

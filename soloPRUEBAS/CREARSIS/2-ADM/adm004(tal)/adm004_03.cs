@@ -196,6 +196,16 @@ namespace CREARSIS
             tb_fir_ma4.Text = vg_str_ucc.Rows[0]["va_fir_ma4"].ToString();
 
 
+            switch (vg_str_ucc.Rows[0]["va_est_ado"].ToString())
+            {
+                case "H":
+                    tb_est_ado.Text = "Habilitado";
+                    break;
+                case "N":
+                    tb_est_ado.Text = "Deshabilitado";
+                    break;
+            }
+
             tb_nom_tal.Focus();
 
         }

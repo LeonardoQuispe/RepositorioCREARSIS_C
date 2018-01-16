@@ -54,6 +54,9 @@ namespace CREARSIS._4_INV.inv002_pro_
         public void fu_ini_frm()
         {
             pc_img_pro.Image = pc_img_pro.ErrorImage;
+            chk_lot.Checked = true;
+            chk_ser.Checked = true;
+
 
             tb_cod_fap.Focus();
         }
@@ -80,10 +83,10 @@ namespace CREARSIS._4_INV.inv002_pro_
             tb_nom_com.Clear();
             tb_eqv_com.Clear();
 
-            chk_lot.Checked = false;
-            chk_ser.Checked = false;
+            chk_lot.Checked = true;
+            chk_ser.Checked = true;
             chk_com.Checked = false;
-            chk_lot.Checked = false;
+            chk_ven.Checked = false;
             pc_img_pro.Image = pc_img_pro.ErrorImage;
 
             tb_cod_fap.Focus();
@@ -269,6 +272,16 @@ namespace CREARSIS._4_INV.inv002_pro_
                 tb_eqv_com.Focus();
                 return "La equivalencia de  Unidad de Medida en Compras debe tener hasta 2 números Decimales";
             }
+
+
+            //Valida VISIBLE EN(Compras-Ventas)
+
+            if (chk_ven.Checked == false && chk_com.Checked == false)
+            {
+                chk_ven.Focus();
+                return "Debe seleccionar al menos una opción de la Visibilidad del Producto";
+            }
+
 
             return null;
         }

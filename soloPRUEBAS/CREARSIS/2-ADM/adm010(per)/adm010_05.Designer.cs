@@ -31,15 +31,6 @@
             this.itm_bs = new DevComponents.Editors.ComboItem();
             this.itm_usd = new DevComponents.Editors.ComboItem();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_per = new System.Windows.Forms.MaskedTextBox();
-            this.tb_nro_per = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chk_com = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.chk_ven = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -50,10 +41,17 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_raz_per = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_per = new System.Windows.Forms.MaskedTextBox();
+            this.tb_nro_per = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.tb_cod_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_cel_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.tb_dir_gen = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -71,9 +69,11 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_pre_cli = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tab_ven = new DevComponents.DotNetBar.SuperTabItem();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
-            this.gb_ctr_frm.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -112,164 +112,6 @@
             this.GroupBox1.Size = new System.Drawing.Size(416, 241);
             this.GroupBox1.TabIndex = 9;
             this.GroupBox1.TabStop = false;
-            // 
-            // tb_nom_gru
-            // 
-            this.tb_nom_gru.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_gru.Border.Class = "TextBoxBorder";
-            this.tb_nom_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_gru.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_gru.Enabled = false;
-            this.tb_nom_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_gru.Location = new System.Drawing.Point(177, 20);
-            this.tb_nom_gru.MaxLength = 40;
-            this.tb_nom_gru.Name = "tb_nom_gru";
-            this.tb_nom_gru.PreventEnterBeep = true;
-            this.tb_nom_gru.ReadOnly = true;
-            this.tb_nom_gru.Size = new System.Drawing.Size(215, 22);
-            this.tb_nom_gru.TabIndex = 10;
-            // 
-            // labelX2
-            // 
-            this.labelX2.AutoSize = true;
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(269, 54);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(66, 17);
-            this.labelX2.TabIndex = 13;
-            this.labelX2.Text = "Cod. Persona";
-            this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cod_per
-            // 
-            this.tb_cod_per.BackColor = System.Drawing.Color.White;
-            this.tb_cod_per.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.tb_cod_per.Enabled = false;
-            this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_per.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_per.Location = new System.Drawing.Point(338, 52);
-            this.tb_cod_per.Mask = "00-00000";
-            this.tb_cod_per.Name = "tb_cod_per";
-            this.tb_cod_per.PromptChar = ' ';
-            this.tb_cod_per.ReadOnly = true;
-            this.tb_cod_per.Size = new System.Drawing.Size(54, 22);
-            this.tb_cod_per.TabIndex = 14;
-            this.tb_cod_per.TabStop = false;
-            this.tb_cod_per.Text = "0000000";
-            this.tb_cod_per.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            // 
-            // tb_nro_per
-            // 
-            this.tb_nro_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nro_per.Border.Class = "TextBoxBorder";
-            this.tb_nro_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nro_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_per.Enabled = false;
-            this.tb_nro_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_per.Location = new System.Drawing.Point(113, 52);
-            this.tb_nro_per.MaxLength = 5;
-            this.tb_nro_per.Name = "tb_nro_per";
-            this.tb_nro_per.PreventEnterBeep = true;
-            this.tb_nro_per.ReadOnly = true;
-            this.tb_nro_per.Size = new System.Drawing.Size(53, 22);
-            this.tb_nro_per.TabIndex = 12;
-            this.tb_nro_per.Text = "0";
-            // 
-            // LabelX1
-            // 
-            this.LabelX1.AutoSize = true;
-            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(42, 53);
-            this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(65, 17);
-            this.LabelX1.TabIndex = 11;
-            this.LabelX1.Text = "Nro. Persona";
-            this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX12
-            // 
-            this.labelX12.AutoSize = true;
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.ForeColor = System.Drawing.Color.Black;
-            this.labelX12.Location = new System.Drawing.Point(32, 22);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(75, 17);
-            this.labelX12.TabIndex = 8;
-            this.labelX12.Text = "Grupo Persona";
-            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cod_gru
-            // 
-            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_gru.Border.Class = "TextBoxBorder";
-            this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_gru.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_gru.ButtonCustom.Symbol = "";
-            this.tb_cod_gru.ButtonCustom.Visible = true;
-            this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_gru.Enabled = false;
-            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_gru.Location = new System.Drawing.Point(113, 19);
-            this.tb_cod_gru.MaxLength = 2;
-            this.tb_cod_gru.Name = "tb_cod_gru";
-            this.tb_cod_gru.PreventEnterBeep = true;
-            this.tb_cod_gru.ReadOnly = true;
-            this.tb_cod_gru.Size = new System.Drawing.Size(53, 22);
-            this.tb_cod_gru.TabIndex = 9;
-            // 
-            // gb_ctr_frm
-            // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
-            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
-            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(9, 431);
-            this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(417, 48);
-            this.gb_ctr_frm.TabIndex = 11;
-            this.gb_ctr_frm.TabStop = false;
-            // 
-            // bt_can_cel
-            // 
-            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(302, 16);
-            this.bt_can_cel.Name = "bt_can_cel";
-            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
-            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_can_cel.Symbol = "";
-            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
-            this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 1;
-            this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // groupBox2
             // 
@@ -433,6 +275,164 @@
             this.labelX11.Text = "Razón Social";
             this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
+            // tb_nom_gru
+            // 
+            this.tb_nom_gru.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_gru.Border.Class = "TextBoxBorder";
+            this.tb_nom_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_gru.Enabled = false;
+            this.tb_nom_gru.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_gru.Location = new System.Drawing.Point(177, 20);
+            this.tb_nom_gru.MaxLength = 40;
+            this.tb_nom_gru.Name = "tb_nom_gru";
+            this.tb_nom_gru.PreventEnterBeep = true;
+            this.tb_nom_gru.ReadOnly = true;
+            this.tb_nom_gru.Size = new System.Drawing.Size(215, 22);
+            this.tb_nom_gru.TabIndex = 10;
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(269, 54);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(66, 17);
+            this.labelX2.TabIndex = 13;
+            this.labelX2.Text = "Cod. Persona";
+            this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_cod_per
+            // 
+            this.tb_cod_per.BackColor = System.Drawing.Color.White;
+            this.tb_cod_per.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_per.Enabled = false;
+            this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_per.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_per.Location = new System.Drawing.Point(338, 52);
+            this.tb_cod_per.Mask = "00-00000";
+            this.tb_cod_per.Name = "tb_cod_per";
+            this.tb_cod_per.PromptChar = ' ';
+            this.tb_cod_per.ReadOnly = true;
+            this.tb_cod_per.Size = new System.Drawing.Size(54, 22);
+            this.tb_cod_per.TabIndex = 14;
+            this.tb_cod_per.TabStop = false;
+            this.tb_cod_per.Text = "0000000";
+            this.tb_cod_per.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
+            // tb_nro_per
+            // 
+            this.tb_nro_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nro_per.Border.Class = "TextBoxBorder";
+            this.tb_nro_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nro_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_per.Enabled = false;
+            this.tb_nro_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_nro_per.Location = new System.Drawing.Point(113, 52);
+            this.tb_nro_per.MaxLength = 5;
+            this.tb_nro_per.Name = "tb_nro_per";
+            this.tb_nro_per.PreventEnterBeep = true;
+            this.tb_nro_per.ReadOnly = true;
+            this.tb_nro_per.Size = new System.Drawing.Size(53, 22);
+            this.tb_nro_per.TabIndex = 12;
+            this.tb_nro_per.Text = "0";
+            // 
+            // LabelX1
+            // 
+            this.LabelX1.AutoSize = true;
+            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelX1.ForeColor = System.Drawing.Color.Black;
+            this.LabelX1.Location = new System.Drawing.Point(42, 53);
+            this.LabelX1.Name = "LabelX1";
+            this.LabelX1.Size = new System.Drawing.Size(65, 17);
+            this.LabelX1.TabIndex = 11;
+            this.LabelX1.Text = "Nro. Persona";
+            this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX12
+            // 
+            this.labelX12.AutoSize = true;
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.ForeColor = System.Drawing.Color.Black;
+            this.labelX12.Location = new System.Drawing.Point(32, 22);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(75, 17);
+            this.labelX12.TabIndex = 8;
+            this.labelX12.Text = "Grupo Persona";
+            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_cod_gru
+            // 
+            this.tb_cod_gru.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_gru.Border.Class = "TextBoxBorder";
+            this.tb_cod_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_gru.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_gru.ButtonCustom.Symbol = "";
+            this.tb_cod_gru.ButtonCustom.Visible = true;
+            this.tb_cod_gru.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_gru.Enabled = false;
+            this.tb_cod_gru.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_gru.Location = new System.Drawing.Point(113, 19);
+            this.tb_cod_gru.MaxLength = 2;
+            this.tb_cod_gru.Name = "tb_cod_gru";
+            this.tb_cod_gru.PreventEnterBeep = true;
+            this.tb_cod_gru.ReadOnly = true;
+            this.tb_cod_gru.Size = new System.Drawing.Size(53, 22);
+            this.tb_cod_gru.TabIndex = 9;
+            // 
+            // gb_ctr_frm
+            // 
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
+            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
+            this.gb_ctr_frm.Location = new System.Drawing.Point(9, 431);
+            this.gb_ctr_frm.Name = "gb_ctr_frm";
+            this.gb_ctr_frm.Size = new System.Drawing.Size(417, 48);
+            this.gb_ctr_frm.TabIndex = 11;
+            this.gb_ctr_frm.TabStop = false;
+            // 
+            // bt_can_cel
+            // 
+            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_can_cel.Location = new System.Drawing.Point(302, 16);
+            this.bt_can_cel.Name = "bt_can_cel";
+            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
+            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_can_cel.Symbol = "";
+            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
+            this.bt_can_cel.SymbolSize = 15F;
+            this.bt_can_cel.TabIndex = 1;
+            this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
+            // 
             // superTabControl1
             // 
             this.superTabControl1.BackColor = System.Drawing.Color.Transparent;
@@ -486,41 +486,6 @@
             this.superTabControlPanel1.Size = new System.Drawing.Size(417, 153);
             this.superTabControlPanel1.TabIndex = 0;
             this.superTabControlPanel1.TabItem = this.tab_gen;
-            // 
-            // labelX14
-            // 
-            this.labelX14.AutoSize = true;
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(67, 116);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(37, 17);
-            this.labelX14.TabIndex = 8;
-            this.labelX14.Text = "Estado:";
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(110, 114);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 9;
-            this.tb_est_ado.TabStop = false;
             // 
             // tb_cel_gen
             // 
@@ -797,6 +762,43 @@
             this.tab_ven.Text = "Ventas";
             this.tab_ven.Visible = false;
             // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(60, 117);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 173;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(110, 115);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 172;
+            this.tb_est_ado.TabStop = false;
+            // 
             // adm010_05
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,8 +819,8 @@
             this.Load += new System.EventHandler(this.adm010_05_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            this.gb_ctr_frm.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.gb_ctr_frm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
@@ -854,8 +856,6 @@
         internal DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.SuperTabControl superTabControl1;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
-        internal DevComponents.DotNetBar.LabelX labelX14;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cel_gen;
         internal DevComponents.DotNetBar.LabelX labelX7;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_gen;
@@ -873,5 +873,7 @@
         internal DevComponents.DotNetBar.LabelX labelX10;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_pre_cli;
         private DevComponents.DotNetBar.SuperTabItem tab_ven;
+        internal DevComponents.DotNetBar.LabelX labelX14;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
     }
 }
