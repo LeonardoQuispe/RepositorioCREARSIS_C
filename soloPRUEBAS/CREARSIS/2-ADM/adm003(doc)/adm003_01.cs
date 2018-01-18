@@ -62,6 +62,11 @@ namespace CREARSIS
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
+            if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text)==false)
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
 
             tabla = o_adm003._05(tb_sel_ecc.Text);
             if (tabla.Rows.Count == 0)

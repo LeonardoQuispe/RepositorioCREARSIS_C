@@ -30,6 +30,7 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm003 o_adm003 = new c_adm003();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -114,6 +115,12 @@ namespace CREARSIS
             {
                 tb_cod_doc.Focus();
                 return "Debes proporcionar el codigo de documento";
+            }
+
+            if (o_mg_glo_bal.fg_val_let(tb_cod_doc.Text)==false)
+            {
+                tb_cod_doc.Focus();
+                return "Sólo se admiten letras en el código del documento";
             }
 
             if (tb_cod_doc.Text.Length<3)

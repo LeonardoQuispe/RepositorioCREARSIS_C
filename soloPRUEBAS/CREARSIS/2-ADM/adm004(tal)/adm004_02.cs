@@ -317,6 +317,13 @@ namespace CREARSIS
                 return;
             }
 
+            if (o_mg_glo_bal.fg_val_let(cod_doc) == false)
+            {
+                tb_cod_doc.Clear();
+                tb_nom_doc.Text = "** NO existe";
+                return;
+            }
+
             tab_adm003 = o_adm003._05(cod_doc);
             if (tab_adm003.Rows.Count == 0)
             {

@@ -955,6 +955,24 @@ namespace CREARSIS
             return null;
         }
 
+        /// <summary>
+        /// Funcion Global para validar Letras
+        /// </summary>
+        /// <param name="dato">Cadena a Validar</param>
+        /// <returns></returns>
+        public bool fg_val_let(string dato)
+        {
+            for (int i = 0; i < dato.Trim().Length; i++)
+            {
+                if (char.IsLetter(dato[i])==false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         #endregion
     }
 }

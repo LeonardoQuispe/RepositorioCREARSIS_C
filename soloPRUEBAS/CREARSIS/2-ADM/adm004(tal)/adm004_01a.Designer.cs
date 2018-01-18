@@ -108,6 +108,7 @@
             this.tb_cod_doc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_doc.Border.Class = "TextBoxBorder";
             this.tb_cod_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_doc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_cod_doc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_doc.Enabled = false;
             this.tb_cod_doc.ForeColor = System.Drawing.Color.Black;
@@ -176,7 +177,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 13);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";

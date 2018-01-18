@@ -115,6 +115,7 @@
             this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_sel_ecc.Border.Class = "TextBoxBorder";
             this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_sel_ecc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
             this.tb_sel_ecc.Location = new System.Drawing.Point(84, 19);
