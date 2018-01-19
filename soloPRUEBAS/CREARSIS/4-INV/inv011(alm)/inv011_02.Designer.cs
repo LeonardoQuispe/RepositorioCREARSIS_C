@@ -72,7 +72,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(12, 411);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(0, 403);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(475, 48);
             this.gb_ctr_frm.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(359, 16);
+            this.bt_can_cel.Location = new System.Drawing.Point(383, 15);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -100,7 +100,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(254, 16);
+            this.bt_ace_pta.Location = new System.Drawing.Point(278, 15);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -134,7 +134,7 @@
             this.GroupBox1.Controls.Add(this.LabelX3);
             this.GroupBox1.Controls.Add(this.tb_gru_alm);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(12, 2);
+            this.GroupBox1.Location = new System.Drawing.Point(0, -6);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(475, 279);
             this.GroupBox1.TabIndex = 0;
@@ -150,7 +150,7 @@
             this.tb_nom_gru.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_gru.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_gru.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_gru.Location = new System.Drawing.Point(214, 20);
+            this.tb_nom_gru.Location = new System.Drawing.Point(202, 12);
             this.tb_nom_gru.MaxLength = 40;
             this.tb_nom_gru.Name = "tb_nom_gru";
             this.tb_nom_gru.PreventEnterBeep = true;
@@ -170,7 +170,7 @@
             this.cb_mtd_cto.ItemHeight = 16;
             this.cb_mtd_cto.Items.AddRange(new object[] {
             this.comboItem3});
-            this.cb_mtd_cto.Location = new System.Drawing.Point(321, 242);
+            this.cb_mtd_cto.Location = new System.Drawing.Point(309, 234);
             this.cb_mtd_cto.Name = "cb_mtd_cto";
             this.cb_mtd_cto.Size = new System.Drawing.Size(131, 22);
             this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -190,7 +190,7 @@
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(237, 242);
+            this.labelX10.Location = new System.Drawing.Point(225, 234);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(78, 17);
             this.labelX10.TabIndex = 15;
@@ -210,7 +210,7 @@
             this.cb_mon_inv.Items.AddRange(new object[] {
             this.BO,
             this.USD});
-            this.cb_mon_inv.Location = new System.Drawing.Point(126, 242);
+            this.cb_mon_inv.Location = new System.Drawing.Point(114, 234);
             this.cb_mon_inv.Name = "cb_mon_inv";
             this.cb_mon_inv.Size = new System.Drawing.Size(82, 22);
             this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -234,7 +234,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(16, 242);
+            this.labelX7.Location = new System.Drawing.Point(4, 234);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(95, 17);
             this.labelX7.TabIndex = 13;
@@ -251,7 +251,7 @@
             this.tb_cta_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cta_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cta_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_cta_alm.Location = new System.Drawing.Point(126, 208);
+            this.tb_cta_alm.Location = new System.Drawing.Point(114, 200);
             this.tb_cta_alm.MaxLength = 6;
             this.tb_cta_alm.Multiline = true;
             this.tb_cta_alm.Name = "tb_cta_alm";
@@ -269,7 +269,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(27, 210);
+            this.labelX6.Location = new System.Drawing.Point(15, 202);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(84, 17);
             this.labelX6.TabIndex = 11;
@@ -286,7 +286,7 @@
             this.tb_dir_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_dir_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_dir_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_dir_alm.Location = new System.Drawing.Point(126, 171);
+            this.tb_dir_alm.Location = new System.Drawing.Point(114, 163);
             this.tb_dir_alm.MaxLength = 200;
             this.tb_dir_alm.Multiline = true;
             this.tb_dir_alm.Name = "tb_dir_alm";
@@ -304,7 +304,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(63, 173);
+            this.labelX5.Location = new System.Drawing.Point(51, 165);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(48, 17);
             this.labelX5.TabIndex = 9;
@@ -321,7 +321,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(299, 60);
+            this.labelX2.Location = new System.Drawing.Point(287, 52);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(70, 17);
             this.labelX2.TabIndex = 17;
@@ -334,7 +334,7 @@
             this.tb_cod_alm.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.tb_cod_alm.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_alm.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tb_cod_alm.Location = new System.Drawing.Point(391, 59);
+            this.tb_cod_alm.Location = new System.Drawing.Point(379, 51);
             this.tb_cod_alm.Mask = "00-00-000";
             this.tb_cod_alm.Name = "tb_cod_alm";
             this.tb_cod_alm.PromptChar = ' ';
@@ -355,7 +355,7 @@
             this.tb_nro_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_alm.Location = new System.Drawing.Point(126, 60);
+            this.tb_nro_alm.Location = new System.Drawing.Point(114, 52);
             this.tb_nro_alm.MaxLength = 3;
             this.tb_nro_alm.Name = "tb_nro_alm";
             this.tb_nro_alm.PreventEnterBeep = true;
@@ -374,7 +374,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(43, 63);
+            this.LabelX1.Location = new System.Drawing.Point(31, 55);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(68, 17);
             this.LabelX1.TabIndex = 3;
@@ -391,7 +391,7 @@
             this.tb_nom_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_alm.Location = new System.Drawing.Point(127, 99);
+            this.tb_nom_alm.Location = new System.Drawing.Point(115, 91);
             this.tb_nom_alm.MaxLength = 40;
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
@@ -408,7 +408,7 @@
             this.tb_des_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_des_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_des_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_des_alm.Location = new System.Drawing.Point(126, 133);
+            this.tb_des_alm.Location = new System.Drawing.Point(114, 125);
             this.tb_des_alm.MaxLength = 160;
             this.tb_des_alm.Multiline = true;
             this.tb_des_alm.Name = "tb_des_alm";
@@ -426,7 +426,7 @@
             this.LabelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX9.ForeColor = System.Drawing.Color.Black;
-            this.LabelX9.Location = new System.Drawing.Point(52, 136);
+            this.LabelX9.Location = new System.Drawing.Point(40, 128);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
             this.LabelX9.TabIndex = 7;
@@ -443,7 +443,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(68, 103);
+            this.LabelX4.Location = new System.Drawing.Point(56, 95);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
             this.LabelX4.TabIndex = 5;
@@ -460,7 +460,7 @@
             this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
-            this.LabelX3.Location = new System.Drawing.Point(35, 23);
+            this.LabelX3.Location = new System.Drawing.Point(23, 15);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(78, 17);
             this.LabelX3.TabIndex = 0;
@@ -480,7 +480,7 @@
             this.tb_gru_alm.ButtonCustom.Visible = true;
             this.tb_gru_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_gru_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_gru_alm.Location = new System.Drawing.Point(126, 20);
+            this.tb_gru_alm.Location = new System.Drawing.Point(114, 12);
             this.tb_gru_alm.MaxLength = 4;
             this.tb_gru_alm.Name = "tb_gru_alm";
             this.tb_gru_alm.PreventEnterBeep = true;
@@ -500,7 +500,7 @@
             this.groupBox2.Controls.Add(this.tb_nom_ecg);
             this.groupBox2.Controls.Add(this.labelX13);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 270);
+            this.groupBox2.Location = new System.Drawing.Point(0, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(475, 142);
             this.groupBox2.TabIndex = 1;
@@ -516,7 +516,7 @@
             this.tb_dir_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_dir_ecg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_dir_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_dir_ecg.Location = new System.Drawing.Point(125, 102);
+            this.tb_dir_ecg.Location = new System.Drawing.Point(113, 94);
             this.tb_dir_ecg.MaxLength = 200;
             this.tb_dir_ecg.Multiline = true;
             this.tb_dir_ecg.Name = "tb_dir_ecg";
@@ -534,7 +534,7 @@
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.ForeColor = System.Drawing.Color.Black;
-            this.labelX11.Location = new System.Drawing.Point(17, 106);
+            this.labelX11.Location = new System.Drawing.Point(5, 98);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(102, 17);
             this.labelX11.TabIndex = 4;
@@ -551,7 +551,7 @@
             this.tb_tlf_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_tlf_ecg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_tlf_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_tlf_ecg.Location = new System.Drawing.Point(125, 65);
+            this.tb_tlf_ecg.Location = new System.Drawing.Point(113, 57);
             this.tb_tlf_ecg.MaxLength = 10;
             this.tb_tlf_ecg.Multiline = true;
             this.tb_tlf_ecg.Name = "tb_tlf_ecg";
@@ -569,7 +569,7 @@
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.ForeColor = System.Drawing.Color.Black;
-            this.labelX12.Location = new System.Drawing.Point(20, 68);
+            this.labelX12.Location = new System.Drawing.Point(8, 60);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(99, 17);
             this.labelX12.TabIndex = 2;
@@ -586,7 +586,7 @@
             this.tb_nom_ecg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_ecg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_ecg.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_ecg.Location = new System.Drawing.Point(125, 27);
+            this.tb_nom_ecg.Location = new System.Drawing.Point(113, 19);
             this.tb_nom_ecg.MaxLength = 120;
             this.tb_nom_ecg.Multiline = true;
             this.tb_nom_ecg.Name = "tb_nom_ecg";
@@ -604,7 +604,7 @@
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.ForeColor = System.Drawing.Color.Black;
-            this.labelX13.Location = new System.Drawing.Point(22, 31);
+            this.labelX13.Location = new System.Drawing.Point(10, 23);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(97, 17);
             this.labelX13.TabIndex = 0;
@@ -617,7 +617,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(498, 463);
+            this.ClientSize = new System.Drawing.Size(477, 453);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.groupBox2);

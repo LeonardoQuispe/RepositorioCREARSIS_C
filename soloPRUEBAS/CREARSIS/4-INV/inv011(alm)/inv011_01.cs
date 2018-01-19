@@ -430,8 +430,19 @@ namespace CREARSIS
                 return "Ningún dato Seleccionado";
             }
         }
+
         #endregion
 
-        
+        private void m_inv011_03a_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CREARSIS._4_INV.inv011_alm_.inv011_03a obj = new CREARSIS._4_INV.inv011_alm_.inv011_03a();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_inv011);
+        }
     }
 }

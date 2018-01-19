@@ -31,59 +31,6 @@ namespace CREARSIS
 
         #endregion
 
-        #region EVENTOS
-
-        public inv011_03()
-        {
-            InitializeComponent();
-        }
-
-        private void inv011_03_Load(object sender, EventArgs e)
-        {
-            fu_ini_frm();
-        }
-
-        private void bt_ace_pta_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                err_msg = fu_ver_dat();
-                if (err_msg != null)
-                {
-                    MessageBoxEx.Show(err_msg, "Error Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-
-                DialogResult res_msg = new DialogResult();
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (res_msg == DialogResult.Cancel)
-                {
-                    return;
-                }
-
-                //ACTUALIZA datos
-                o_inv011._03(int.Parse(tb_cod_alm.Text), tb_nom_alm.Text.Trim(), tb_des_alm.Text.Trim(), tb_dir_alm.Text.Trim(), cb_mon_inv.SelectedIndex.ToString(),
-                    cb_mtd_cto.SelectedIndex.ToString(), tb_nom_ecg.Text.Trim(), tb_tlf_ecg.Text.Trim(), tb_dir_ecg.Text.Trim(), tb_cta_alm.Text.Trim());
-
-                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                vg_frm_pad.fu_sel_fila(tb_cod_alm.Text, tb_nom_alm.Text);
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBoxEx.Show(ex.Message, "Error Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        #endregion
-
         #region METODOS
 
         void fu_ini_frm()
@@ -155,5 +102,59 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
+        public inv011_03()
+        {
+            InitializeComponent();
+        }
+
+        private void inv011_03_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Actualiza Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                //ACTUALIZA datos
+                o_inv011._03(int.Parse(tb_cod_alm.Text), tb_nom_alm.Text.Trim(), tb_des_alm.Text.Trim(), tb_dir_alm.Text.Trim(), cb_mon_inv.SelectedIndex.ToString(),
+                    cb_mtd_cto.SelectedIndex.ToString(), tb_nom_ecg.Text.Trim(), tb_tlf_ecg.Text.Trim(), tb_dir_ecg.Text.Trim(), tb_cta_alm.Text.Trim());
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                vg_frm_pad.fu_sel_fila(tb_cod_alm.Text, tb_nom_alm.Text);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+    
     }
 }

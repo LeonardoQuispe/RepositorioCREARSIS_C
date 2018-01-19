@@ -160,6 +160,24 @@ namespace DATOS
             }
         }
 
+        
+        public DataTable _03(int cod_alm, DateTime fec_ctr )
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" UPDATE inv011 SET ");
+                vv_str_sql.AppendFormat(" va_fec_ctr='" + fec_ctr.ToShortDateString()+"' ");
+                vv_str_sql.AppendFormat(" WHERE  va_cod_alm ={0}", cod_alm);
+
+                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// funcion "Habilita/Deshabilita AlmacénES"
         /// </summary>
