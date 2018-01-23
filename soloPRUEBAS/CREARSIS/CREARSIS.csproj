@@ -860,6 +860,114 @@
     <Compile Include="6-CMR\cmr003%28vendedor%29\cmr003_06.Designer.cs">
       <DependentUpon>cmr003_06.cs</DependentUpon>
     </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_01.Designer.cs">
+      <DependentUpon>ecp005_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_02.Designer.cs">
+      <DependentUpon>ecp005_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_03.Designer.cs">
+      <DependentUpon>ecp005_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_04.Designer.cs">
+      <DependentUpon>ecp005_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_05.Designer.cs">
+      <DependentUpon>ecp005_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_06.Designer.cs">
+      <DependentUpon>ecp005_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_01.Designer.cs">
+      <DependentUpon>ecp006_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_02.Designer.cs">
+      <DependentUpon>ecp006_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_03.Designer.cs">
+      <DependentUpon>ecp006_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_04.Designer.cs">
+      <DependentUpon>ecp006_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_05.Designer.cs">
+      <DependentUpon>ecp006_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-ECP\ecp006%28libreta%29\ecp006_06.Designer.cs">
+      <DependentUpon>ecp006_06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_01.Designer.cs">
+      <DependentUpon>tes001_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_02.Designer.cs">
+      <DependentUpon>tes001_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_03.Designer.cs">
+      <DependentUpon>tes001_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_04.Designer.cs">
+      <DependentUpon>tes001_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_05.Designer.cs">
+      <DependentUpon>tes001_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8-TES\tes001%28caja_banco%29\tes001_06.Designer.cs">
+      <DependentUpon>tes001_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="3-SEG\seg001%28usr%29\seg001_01.cs">
@@ -1317,6 +1425,60 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6-CMR\cmr003%28vendedor%29\cmr003_06.resx">
       <DependentUpon>cmr003_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_01.resx">
+      <DependentUpon>ecp005_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_02.resx">
+      <DependentUpon>ecp005_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_03.resx">
+      <DependentUpon>ecp005_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_04.resx">
+      <DependentUpon>ecp005_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_05.resx">
+      <DependentUpon>ecp005_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp005%28plan_de_pago%29\ecp005_06.resx">
+      <DependentUpon>ecp005_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_01.resx">
+      <DependentUpon>ecp006_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_02.resx">
+      <DependentUpon>ecp006_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_03.resx">
+      <DependentUpon>ecp006_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_04.resx">
+      <DependentUpon>ecp006_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_05.resx">
+      <DependentUpon>ecp006_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-ECP\ecp006%28libreta%29\ecp006_06.resx">
+      <DependentUpon>ecp006_06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_01.resx">
+      <DependentUpon>tes001_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_02.resx">
+      <DependentUpon>tes001_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_03.resx">
+      <DependentUpon>tes001_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_04.resx">
+      <DependentUpon>tes001_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_05.resx">
+      <DependentUpon>tes001_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8-TES\tes001%28caja_banco%29\tes001_06.resx">
+      <DependentUpon>tes001_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
