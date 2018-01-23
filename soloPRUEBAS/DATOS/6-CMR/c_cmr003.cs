@@ -55,7 +55,7 @@ namespace DATOS._6_CMR
                 }
 
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace DATOS._6_CMR
         /// <param name="por_cms">Porcentaje Comisión</param>
         /// <param name="tip_cms">Tipo comisión (1=Ventas, 2=Cobranzas)</param>
         /// <returns></returns>
-        public DataTable _02(string cod_ven, string nom_per, decimal por_cms, int tip_cms)
+        public void _02(string cod_ven, string nom_per, decimal por_cms, int tip_cms)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" INSERT INTO cmr003 VALUES ");
                 vv_str_sql.AppendFormat("('{0}','{1}','{2}','{3}','H')", cod_ven, nom_per, por_cms, tip_cms);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -95,7 +95,7 @@ namespace DATOS._6_CMR
         /// <param name="por_cms">Porcentaje Comisión</param>
         /// <param name="tip_cms">Tipo comisión (1=Ventas, 2=Cobranzas)</param>
         /// <returns></returns>
-        public DataTable _03(string cod_ven, string nom_per, decimal por_cms, int tip_cms)
+        public void _03(string cod_ven, string nom_per, decimal por_cms, int tip_cms)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendFormat("va_nom_ven='{0}',va_por_cms='{1}',va_tip_cms='{2}' ", nom_per, por_cms, tip_cms);
                 vv_str_sql.AppendFormat(" WHERE va_cod_ven='{0}' ", cod_ven);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -120,7 +120,7 @@ namespace DATOS._6_CMR
         /// <param name="cod_ven">Codigo del Vendedor</param>
         /// <param name="est_ado">Estado del Vendedor</param>
         /// <returns></returns>
-        public DataTable _04(string cod_ven, string est_ado)
+        public void _04(string cod_ven, string est_ado)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_ven = '" + cod_ven + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -149,7 +149,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" SELECT * FROM cmr003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_ven = '" + cod_ven + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -162,7 +162,7 @@ namespace DATOS._6_CMR
         /// </summary>
         /// <param name="cod_ven">Codigo del Vendedor</param>
         /// <returns></returns>
-        public DataTable _06(string cod_ven)
+        public void _06(string cod_ven)
         {
             try
             {
@@ -170,7 +170,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" DELETE cmr003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_ven = '" + cod_ven + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

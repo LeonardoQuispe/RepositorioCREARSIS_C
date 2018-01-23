@@ -53,7 +53,7 @@ namespace DATOS
                     case "2": vv_str_sql.AppendLine(" AND va_est_ado ='N'"); break;
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace DATOS
         /// <param name="fec_fin">Fecha final dosificacion</param>
         /// <param name="cod_ley">Codigo de leyenda</param>
         /// <returns></returns>
-        public DataTable _02(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
+        public void _02(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(nro_ini + "," + nro_fin + ","+cod_sucu+"," + cod_act + "," + cod_ley + ",");
                 vv_str_sql.AppendLine("'','H'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -103,7 +103,7 @@ namespace DATOS
         /// <param name="fec_fin"></param>
         /// <param name="cod_ley"></param>
         /// <returns></returns>
-        public DataTable _03(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_ve)
+        public void _03(long nro_dos, int tip_fac, int cod_sucu, int cod_act, int nro_ini, int nro_fin, DateTime fec_ini, DateTime fec_fin, int cod_ley,string lla_ve)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace DATOS
                 
                 
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -134,14 +134,14 @@ namespace DATOS
         /// <param name="nro_dos">Numero de dosificacion</param>
         /// <param name="lla_vee"></param>
         /// <returns></returns>
-        public DataTable _03(long nro_dos, string lla_vee)
+        public void _03(long nro_dos, string lla_vee)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" EXECUTE ctb007_03ap1 " + "'" + nro_dos + "','" + lla_vee + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -154,7 +154,7 @@ namespace DATOS
         /// <param name="nro_dos">Codigo de dosificaion</param>
         /// <param name="est_ado">Estado de dosificaion</param>
         /// <returns></returns>
-        public DataTable _04(long nro_dos, string est_ado)
+        public void _04(long nro_dos, string est_ado)
         {
             try
             {
@@ -171,7 +171,7 @@ namespace DATOS
                     case "N": vv_str_sql.AppendLine(" EXECUTE ctb007_04p2 " + "'" + nro_dos + "'"); break;
                 }                
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -191,7 +191,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" EXECUTE "+ proc +" '"+ nro_dos + "'");
                
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -206,7 +206,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM ctb007 ");
                 vv_str_sql.AppendLine(" WHERE  va_nro_aut ='" + nro_dos + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -218,14 +218,14 @@ namespace DATOS
         /// </summary>
         /// <param name="nro_dos">codigo de Dosificacion</param>
         /// <returns></returns>
-        public DataTable _06(long nro_dos)
+        public void _06(long nro_dos)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" EXECUTE ctb007_06p1 " + "'" + nro_dos + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

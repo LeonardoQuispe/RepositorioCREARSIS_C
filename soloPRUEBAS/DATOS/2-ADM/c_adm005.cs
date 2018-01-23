@@ -8,7 +8,7 @@ namespace DATOS
 {
     /// <summary>
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-    /// lase NUMERADORES DE TALONARIOS
+    /// Clase NUMERADORES DE TALONARIOS
     /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
     /// </summary>
     public class c_adm005
@@ -37,7 +37,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" EXECUTE adm005_01p1");
                 vv_str_sql.AppendLine("  '" + val_bus + "', " + prm_bus + ", " + cod_ges + " ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace DATOS
         /// <param name="fec_fin">Fecha final para el talonario</param>
         /// <param name="con_tad">Contador del talonario</param>
         /// <returns></returns>
-        public DataTable _02(string cod_doc, int nro_tal, int cod_ges, int nro_ini,
+        public void _02(string cod_doc, int nro_tal, int cod_ges, int nro_ini,
             int nro_fin, DateTime fec_ini, DateTime fec_fin, int con_tad)
         {
             try
@@ -67,7 +67,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" " + nro_ini + ", " + nro_fin + " , '" + fec_ini.ToShortDateString() + "' ,");
                 vv_str_sql.AppendLine(" '" + fec_fin.ToShortDateString() + "' ," + con_tad + ") ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace DATOS
         /// <param name="fec_fin">Fecha final para el talonario</param>
         /// <param name="con_tad">Contador del talonario</param>
         /// <returns></returns>
-        public DataTable _03(string cod_doc, int nro_tal, int cod_ges, int nro_ini,
+        public void _03(string cod_doc, int nro_tal, int cod_ges, int nro_ini,
             int nro_fin, DateTime fec_ini, DateTime fec_fin, int con_tad)
         {
             try
@@ -98,7 +98,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_con_tad =" + con_tad);
                 vv_str_sql.AppendLine(" WHERE va_cod_doc = '" + cod_doc + "' AND va_nro_tal= " + nro_tal + " AND va_cod_ges= " + cod_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -113,7 +113,7 @@ namespace DATOS
         /// <param name="cod_ges">Codigo de la gestion</param>
         /// <param name="con_tad">Contador del talonario</param>
         /// <returns></returns>
-        public DataTable _03(string cod_doc, int nro_tal, int cod_ges, int con_tad)
+        public void _03(string cod_doc, int nro_tal, int cod_ges, int con_tad)
         {
             try
             {
@@ -122,7 +122,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" Set va_con_tad =" + con_tad);
                 vv_str_sql.AppendLine(" where va_cod_doc = '" + cod_doc + "' and va_nro_tal= " + nro_tal + " and va_cod_ges= " + cod_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -144,7 +144,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" EXECUTE adm005_05p1");
                 vv_str_sql.AppendLine("  '" + cod_doc + "', " + nro_tal + ", " + cod_ges + " ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -158,7 +158,7 @@ namespace DATOS
         /// <param name="nro_tal">Numero de talonario del documento</param>
         /// <param name="cod_ges">Codigo de la gestion</param>
         /// <returns></returns>
-        public DataTable _06(string cod_doc, int nro_tal, int cod_ges)
+        public void _06(string cod_doc, int nro_tal, int cod_ges)
         {
             try
             {
@@ -166,7 +166,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE FROM adm005 ");
                 vv_str_sql.AppendLine(" where va_cod_doc = '" + cod_doc + "' and va_nro_tal= " + nro_tal + " AND va_cod_ges=" + cod_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -180,7 +180,7 @@ namespace DATOS
         /// <param name="cod_doc">Codigo del documento</param>
         /// <param name="nro_tal">Numero de talonario del documento</param>
         /// <returns></returns>
-        public DataTable _06(string cod_doc, int nro_tal)
+        public void _06(string cod_doc, int nro_tal)
         {
             try
             {
@@ -188,7 +188,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE FROM adm005 ");
                 vv_str_sql.AppendLine(" where va_cod_doc = '" + cod_doc + "' and va_nro_tal= " + nro_tal);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

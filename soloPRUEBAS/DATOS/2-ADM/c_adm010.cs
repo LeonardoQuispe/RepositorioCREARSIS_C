@@ -63,7 +63,7 @@ namespace DATOS
                 }
 
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace DATOS
         /// <param name="ban_ven">Bandera si identifica persona como cliente</param>
         /// <param name="ban_com">Bandera si identifica persona como proveedor</param>
         /// <returns></returns>
-        public DataTable _02(string cod_per,string nro_per,string cod_gru,string raz_soc,string nom_com,string nit_ced,string dir_per,
+        public void _02(string cod_per,string nro_per,string cod_gru,string raz_soc,string nom_com,string nit_ced,string dir_per,
                             string tel_per,string cel_per,string ema_per,string cod_lpr,string cod_ven,string ban_ven,string ban_com)
         {
             try
@@ -112,7 +112,7 @@ namespace DATOS
               
                 vv_str_sql.AppendFormat("'{0}','{1}','H')", ban_ven, ban_com);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -139,7 +139,7 @@ namespace DATOS
         /// <param name="ban_ven">Bandera si identifica persona como cliente</param>
         /// <param name="ban_com">Bandera si identifica persona como proveedor</param>
         /// <returns></returns>
-        public DataTable _03(string cod_per,string raz_soc, string nom_com, string nit_ced, string dir_per,string tel_per, 
+        public void _03(string cod_per,string raz_soc, string nom_com, string nit_ced, string dir_per,string tel_per, 
                             string cel_per, string ema_per, string cod_lpr, string cod_ven, string ban_ven, string ban_com)
         {
             try
@@ -164,7 +164,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat("va_ban_ven='{0}',va_ban_com='{1}' ", ban_ven, ban_com);
                 vv_str_sql.AppendFormat("  WHERE va_cod_per='{0}'", cod_per);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -180,7 +180,7 @@ namespace DATOS
         /// <param name="cod_per">Codigo del persona</param>
         /// <param name="est_ado">Estado del persona</param>
         /// <returns></returns>
-        public DataTable _04(string cod_per, string est_ado)
+        public void _04(string cod_per, string est_ado)
         {
             try
             {
@@ -189,7 +189,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_per + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -209,7 +209,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm010 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_per + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -230,7 +230,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm010 ");
                 vv_str_sql.AppendLine(" WHERE  va_nit_ced = '" + nit_ci + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -252,7 +252,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT MAX(va_nro_per) FROM adm010   ");
                 vv_str_sql.AppendLine(" WHERE va_cod_gru ='" + cod_gru + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -265,7 +265,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_per">Codigo del persona</param>
         /// <returns></returns>
-        public DataTable _06(string cod_per)
+        public void _06(string cod_per)
         {
             try
             {
@@ -273,7 +273,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm010 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_per + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

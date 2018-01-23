@@ -38,7 +38,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" EXECUTE adm002_01p1 ");
                 vv_str_sql.AppendLine(" " + cod_ges + ",'" + val_bus + "', " + prm_bus + " ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace DATOS
         /// <param name="fec_ini">Fecha Inicial</param>
         /// <param name="fec_fin">Fecha Final</param>
         /// <returns></returns>
-        public DataTable _02(int cod_ges, int prd_ges, string nom_prd, DateTime fec_ini, DateTime fec_fin)
+        public void _02(int cod_ges, int prd_ges, string nom_prd, DateTime fec_ini, DateTime fec_fin)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO adm002 VALUES ");
                 vv_str_sql.AppendLine(" (" + cod_ges + "," + prd_ges + ", '" + nom_prd + "' , '" + fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "', 'V' )");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -81,7 +81,7 @@ namespace DATOS
         /// <param name="fec_ini">Fecha inicial</param>
         /// <param name="fec_fin">Fecha final</param>
         /// <returns></returns>
-        public DataTable _03(int cod_ges, int prd_ges, string nom_prd, DateTime fec_ini, DateTime fec_fin)
+        public void _03(int cod_ges, int prd_ges, string nom_prd, DateTime fec_ini, DateTime fec_fin)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_prd='" + nom_prd + "' , va_fec_ini= '" + fec_ini + "', va_fec_fin= '" + fec_fin + "' ");
                 vv_str_sql.AppendLine(" WHERE va_cod_ges = " + cod_ges + " AND va_prd_ges = " + prd_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace DATOS
         /// <param name="prd_ges">Periodo de la gestion (1-12)</param>
         /// <param name="est_ado">Estado, V=Valido(abierto) ; E=en proceso ; C=Cerrado ; </param>
         /// <returns></returns>
-        public DataTable _03(int cod_ges, int prd_ges, string est_ado)
+        public void _03(int cod_ges, int prd_ges, string est_ado)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace DATOS
                 vv_str_sql.AppendLine("va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE va_cod_ges = " + cod_ges + " AND va_prd_ges = " + prd_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -135,7 +135,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm002 ");
                 vv_str_sql.AppendLine(" WHERE va_cod_ges = " + cod_ges + " AND va_prd_ges = " + prd_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -157,7 +157,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm002 ");
                 vv_str_sql.AppendLine(" WHERE va_cod_ges = " + cod_ges + "");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -179,7 +179,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" GROUP BY va_cod_ges ");
                 vv_str_sql.AppendLine(" ORDER BY va_cod_ges DESC");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -194,7 +194,7 @@ namespace DATOS
         /// <param name="cod_ges">Gestion</param>
         /// <param name="prd_ges">Periodo de la gestion</param>
         /// <returns></returns>
-        public DataTable _06(int cod_ges, int prd_ges)
+        public void _06(int cod_ges, int prd_ges)
         {
             try
             {
@@ -202,7 +202,7 @@ namespace DATOS
                 vv_str_sql.AppendLine("DELETE adm002 ");
                 vv_str_sql.AppendLine(" WHERE va_cod_ges = " + cod_ges + " AND va_prd_ges = " + prd_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -221,10 +221,10 @@ namespace DATOS
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("Exec adm002_01p1_R ");
-                vv_str_sql.AppendLine(cod_ges.ToString());
+                vv_str_sql.AppendLine("SELECT * FROM adm002 ");
+                vv_str_sql.AppendLine("WHERE va_cod_ges="+cod_ges);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

@@ -70,7 +70,6 @@
     <Compile Include="6-CMR\c_cmr001.cs" />
     <Compile Include="6-CMR\c_cmr002.cs" />
     <Compile Include="6-CMR\c_cmr003.cs" />
-    <Compile Include="c_cnx001.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

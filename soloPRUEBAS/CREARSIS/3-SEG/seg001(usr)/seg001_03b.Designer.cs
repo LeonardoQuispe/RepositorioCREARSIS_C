@@ -216,6 +216,7 @@
             this.tb_nom_usr.Border.Class = "TextBoxBorder";
             this.tb_nom_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_usr.Enabled = false;
             this.tb_nom_usr.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_usr.Location = new System.Drawing.Point(74, 91);
             this.tb_nom_usr.Name = "tb_nom_usr";
@@ -262,6 +263,7 @@
             this.tb_cod_usr.Border.Class = "TextBoxBorder";
             this.tb_cod_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_cod_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_usr.Enabled = false;
             this.tb_cod_usr.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_usr.Location = new System.Drawing.Point(74, 61);
             this.tb_cod_usr.MaxLength = 15;

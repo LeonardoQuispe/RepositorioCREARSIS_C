@@ -52,7 +52,7 @@ namespace DATOS
                     vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace DATOS
         /// <param name="cod_gru">Codigo del GRUPO de persona</param>
         /// <param name="nom_gru">nombre del GRUPO de persona</param>
         /// <returns></returns>
-        public DataTable _02(int cod_gru, string nom_gru)
+        public void _02(int cod_gru, string nom_gru)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO adm011 VALUES ");
                 vv_str_sql.AppendLine(" (" + cod_gru + ", '" + nom_gru + "','H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace DATOS
         /// <param name="cod_gru">Codigo de actividad</param>
         /// <param name="nom_gru">nombre de actividad</param>
         /// <returns></returns>
-        public DataTable _03(int cod_gru, string nom_gru)
+        public void _03(int cod_gru, string nom_gru)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_gru='" + nom_gru + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_gru =" + cod_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace DATOS
         /// <param name="cod_per">Codigo de Actividad</param>
         /// <param name="est_ado">Estado de Actividad</param>
         /// <remarks></remarks>
-        public object _04(int cod_gru, string est_ado)
+        public void _04(int cod_gru, string est_ado)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_gru = '" + cod_gru + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -141,7 +141,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm011   ");
                 vv_str_sql.AppendLine(" WHERE va_cod_gru ='" + cod_gru + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -153,7 +153,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del GRUPO de persona</param>
         /// <returns></returns>
-        public DataTable _06(int cod_gru)
+        public void _06(int cod_gru)
         {
             try
             {
@@ -161,7 +161,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm011 ");
                 vv_str_sql.AppendLine(" WHERE va_cod_gru ='" + cod_gru + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

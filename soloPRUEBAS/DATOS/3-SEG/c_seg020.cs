@@ -8,22 +8,12 @@ using System.Data;
 namespace DATOS
 {
     /// <summary>
-    ///  Permiso y RESTRICCIONES DEL MENU P/USUARIO
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+    /// Clase Permisos y restricciones de menu Por Usuario
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
     /// </summary>
     public class c_seg020
     {
-        // /*--**********************************************
-        // ARCHIVO:    asd052.sql
-        // TABLA:        Tabla de permisos sobre las aplicaciones del sistema
-        // AUTOR:        CHL-CREARSIS-BABOO
-        // FECHA:        24-03-2017
-        // */--**********************************************
-        // CREATE TABLE asd003
-        // (
-        // va_cod_usr        NCHAR(15)    NOT NULL,    --Codigo de usuario
-        // va_cod_win        NCHAR(10)    NOT NULL,    --Codigo de la aplicacion
-        // CONSTRAINT pk1_asd051 PRIMARY KEY(va_cod_usr,va_cod_win)
-
         /// <summary>
         /// objeto de la clase conexion
         /// </summary>
@@ -46,7 +36,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM seg020   ");
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -60,7 +50,7 @@ namespace DATOS
         /// <param name="cod_win">Codigo de la aplicacion</param>
         /// <param name="cod_mnu"></param>
         /// <returns></returns>
-        public DataTable _02(string cod_usr, string cod_win, string cod_mnu)
+        public void _02(string cod_usr, string cod_win, string cod_mnu)
         {
             try
             {
@@ -68,7 +58,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO seg020 VALUES ");
                 vv_str_sql.AppendLine(" ('" + cod_usr + "','" + cod_win + "','" + cod_mnu + "' )");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -91,7 +81,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_win ='" + cod_win + "' ");
                 vv_str_sql.AppendLine(" AND va_cod_mnu ='" + cod_mnu + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -105,7 +95,7 @@ namespace DATOS
         /// <param name="cod_win">Codigo de la aplicacion</param>
         /// <param name="cod_mnu"></param>
         /// <returns></returns>
-        public DataTable _06(string cod_usr, string cod_win, string cod_mnu)
+        public void _06(string cod_usr, string cod_win, string cod_mnu)
         {
             try
             {
@@ -114,7 +104,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_win ='" + cod_win + "' ");
                 vv_str_sql.AppendLine(" AND va_cod_mnu ='" + cod_mnu + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

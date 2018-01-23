@@ -43,7 +43,7 @@ namespace DATOS
                 {
                     vv_str_sql.AppendLine(" where va_nom_ley like '" + val_bus + "%'");
                 }
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -54,14 +54,14 @@ namespace DATOS
         /// Elimina e Insertar Leyenda
         /// </summary>
         /// <returns></returns>
-        public DataTable _02()
+        public void _02()
         {
             try
             {
                 StringBuilder vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" EXECUTE ctb006_02p1");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -73,14 +73,14 @@ namespace DATOS
         /// Eliminar Leyenda
         /// </summary>
         /// <returns></returns>
-        public DataTable _06()
+        public void _06()
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" DELETE from ctb006");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -100,7 +100,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM ctb006 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_ley = " + cod_ley);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

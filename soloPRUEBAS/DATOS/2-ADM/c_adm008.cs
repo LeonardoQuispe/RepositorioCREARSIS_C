@@ -36,7 +36,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" EXECUTE adm003_01p1");
                 vv_str_sql.AppendLine(" 0,'" + val_bus + "', " + prm_bus + ", '" + est_bus + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

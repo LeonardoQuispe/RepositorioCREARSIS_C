@@ -44,7 +44,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" select * from adm013  ");
                 vv_str_sql.AppendLine(" where va_fec_bus BETWEEN '" + fec_ini.ToShortDateString() + "' AND '" + fec_fin.ToShortDateString() + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace DATOS
         /// <param name="fec_bus">Fecha de T.C. Bs</param>
         /// <param name="val_bus">Valor de T.C. Bs</param>
         /// <returns></returns>
-        public DataTable _02(DateTime fec_bus, string val_bus)
+        public void _02(DateTime fec_bus, string val_bus)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO adm013 VALUES ");
                 vv_str_sql.AppendLine(" ('" + fec_bus.ToShortDateString() + "', '" + val_bus + "')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace DATOS
         /// <param name="fec_fin"></param>
         /// <param name="val_bus"></param>
         /// <returns></returns>
-        public DataTable _02(DateTime fec_ini, DateTime fec_fin, string val_bus)
+        public void _02(DateTime fec_ini, DateTime fec_fin, string val_bus)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace DATOS
                     fec_aux = fec_ini.AddDays(i);
                     vv_str_sql.AppendLine(" ('" + fec_aux.ToShortDateString() + "', '" + val_bus + "')");
                 }
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ namespace DATOS
         /// <param name="fec_bus">Fecha de T.C. Bs</param>
         /// <param name="val_bus">Valor de T.C. Bs</param>
         /// <returns></returns>
-        public DataTable _03(DateTime fec_bus, decimal val_bus)
+        public void _03(DateTime fec_bus, decimal val_bus)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_val_bus='" + val_bus + "'");
                 vv_str_sql.AppendLine(" WHERE va_fec_bus ='" + fec_bus.ToShortDateString() + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -142,7 +142,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm013 ");
                 vv_str_sql.AppendLine(" WHERE  va_fec_bus ='" + fec_bus + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -154,7 +154,7 @@ namespace DATOS
         /// </summary>
         /// <param name="fec_bus">>Codigo de T.C. Bs/Us</param>
         /// <returns></returns>
-        public DataTable _06(string fec_bus)
+        public void _06(string fec_bus)
         {
             try
             {
@@ -162,7 +162,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm013 ");
                 vv_str_sql.AppendLine(" WHERE  va_fec_bus = '" + fec_bus + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -176,7 +176,7 @@ namespace DATOS
         /// <param name="fec_ini">Fecha inicial</param>
         /// <param name="fec_fin">Fecha Final</param>
         /// <returns></returns>
-        public DataTable _06(DateTime fec_ini, DateTime fec_fin)
+        public void _06(DateTime fec_ini, DateTime fec_fin)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm013 ");
                 vv_str_sql.AppendLine(" WHERE  va_fec_bus BETWEEN '" + fec_ini.ToShortDateString() + "' AND '" + fec_fin.ToShortDateString() + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

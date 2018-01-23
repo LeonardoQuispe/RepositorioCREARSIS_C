@@ -60,7 +60,7 @@ namespace DATOS
                     vv_str_sql.AppendLine(" where va_cod_umd = '" + val_bus + "' ");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace DATOS
         /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <param name="nom_umd">Nombre de la Unidad</param>
         /// <returns></returns>
-        public DataTable _02(string cod_umd, string nom_umd)
+        public void _02(string cod_umd, string nom_umd)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO inv003 VALUES");
                 vv_str_sql.AppendLine(" ('" + cod_umd + "', '" + nom_umd + "', 'H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace DATOS
         /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <param name="nom_umd">Nombre de la Unidad</param>
         /// <returns></returns>
-        public DataTable _03(string cod_umd, string nom_umd)
+        public void _03(string cod_umd, string nom_umd)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_umd='" + nom_umd + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_umd = '" + cod_umd + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace DATOS
         /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <param name="est_ado">Estado de la Unidad</param>
         /// <returns></returns>
-        public DataTable _04(string cod_umd, string est_ado)
+        public void _04(string cod_umd, string est_ado)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_umd = '" + cod_umd + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -151,7 +151,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * fROM inv003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_umd = " + "'" + cod_umd + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -165,7 +165,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_umd">Codigo de la Unidad</param>
         /// <returns></returns>
-        public DataTable _06(string cod_umd)
+        public void _06(string cod_umd)
         {
             try
             {
@@ -173,7 +173,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE inv003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_umd = '" + cod_umd + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

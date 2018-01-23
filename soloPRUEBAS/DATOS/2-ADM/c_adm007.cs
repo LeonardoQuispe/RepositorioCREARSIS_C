@@ -54,7 +54,7 @@ namespace DATOS
                     vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace DATOS
         /// <param name="ciu_suc"></param>
         /// <param name="ley_suc"></param>
         /// <returns></returns>
-        public DataTable _02(int cod_suc, string nom_suc, string enc_suc,
+        public void _02(int cod_suc, string nom_suc, string enc_suc,
             string ubi_suc, string tel_suc, string ema_suc, string ciu_suc, string ley_suc)
         {
             try
@@ -83,7 +83,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" (" + cod_suc + ", '" + nom_suc + "','" + enc_suc + "','" + ubi_suc + "','" + tel_suc);
                 vv_str_sql.AppendLine("','" + ema_suc + "','" + ciu_suc + "','" + ley_suc + "','H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -102,7 +102,7 @@ namespace DATOS
         /// <param name="ciu_suc"></param>
         /// <param name="ley_suc"></param>
         /// <returns></returns>
-        public DataTable _03(int cod_suc, string nom_suc, string enc_suc,
+        public void _03(int cod_suc, string nom_suc, string enc_suc,
             string ubi_suc, string tel_suc, string ema_suc, string ciu_suc, string ley_suc)
         {
             try
@@ -113,7 +113,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_tel_suc='" + tel_suc + "', va_ema_suc='" + ema_suc + "', va_ciu_suc='" + ciu_suc + "',");
                 vv_str_sql.AppendLine(" va_ley_suc='" + ley_suc + "' WHERE va_cod_suc =" + cod_suc);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace DATOS
         /// <param name="cod_suc"></param>
         /// <param name="est_ado"></param>
         /// <returns></returns>
-        public DataTable _04(string cod_suc, string est_ado)
+        public void _04(string cod_suc, string est_ado)
         {
             try
             {
@@ -135,7 +135,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_suc = '" + cod_suc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -155,7 +155,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm007 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_suc =" + cod_suc);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -167,7 +167,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_suc"></param>
         /// <returns></returns>
-        public DataTable _06(string cod_suc)
+        public void _06(string cod_suc)
         {
             try
             {
@@ -175,7 +175,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm007 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_suc = '" + cod_suc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

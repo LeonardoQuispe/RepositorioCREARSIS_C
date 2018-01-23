@@ -49,7 +49,7 @@ namespace DATOS
                     vv_str_sql.AppendFormat(" and va_est_ado ='{0}'",est_bus);
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace DATOS
         /// <param name="dir_ecg">Direccion del encargado</param>
         /// <param name="cta_alm">Cuenta contable del Almacén</param>
         /// <returns></returns>
-        public DataTable _02(int cod_alm, int cod_gru, int nro_alm, string nom_alm, string des_alm
+        public void _02(int cod_alm, int cod_gru, int nro_alm, string nom_alm, string des_alm
                             ,string dir_alm, DateTime fec_ctr, string mon_inv
                             ,string mtd_cto,string nom_ecg,string tlf_ecg,string dir_ecg,string cta_alm)
         {
@@ -101,7 +101,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat("'{0}','{1}','{2}','H','{3}',",dir_alm, cta_alm, fec_ctr.ToShortDateString(),mon_inv);
                 vv_str_sql.AppendFormat("'{0}','{1}','{2}','{3}')",mtd_cto,nom_ecg,tlf_ecg,dir_ecg);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -127,7 +127,7 @@ namespace DATOS
         /// <param name="dir_ecg">Direccion del encargado</param>
         /// <param name="cta_alm">Cuenta contable del Almacén</param>
         /// <returns></returns>
-        public DataTable _03(int cod_alm, string nom_alm, string des_alm,string dir_alm
+        public void _03(int cod_alm, string nom_alm, string des_alm,string dir_alm
                             , string mon_inv, string mtd_cto
                             , string nom_ecg, string tlf_ecg, string dir_ecg, string cta_alm)
         {
@@ -152,7 +152,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tlf_ecg='{1}',va_dir_ecg='{2}',va_cta_alm='{3}'",nom_ecg,tlf_ecg,dir_ecg,cta_alm);
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", cod_alm);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -161,7 +161,7 @@ namespace DATOS
         }
 
         
-        public DataTable _03(int cod_alm, DateTime fec_ctr )
+        public void _03(int cod_alm, DateTime fec_ctr )
         {
             try
             {
@@ -170,7 +170,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat(" va_fec_ctr='" + fec_ctr.ToShortDateString()+"' ");
                 vv_str_sql.AppendFormat(" WHERE  va_cod_alm ={0}", cod_alm);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -184,7 +184,7 @@ namespace DATOS
         /// <param name="cod_alm">Codigo del AlmacénES</param>
         /// <param name="est_ado">Estado del AlmacénES</param>
         /// <returns></returns>
-        public DataTable _04(int cod_alm, string est_ado)
+        public void _04(int cod_alm, string est_ado)
         {
             try
             {
@@ -194,7 +194,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat(" va_est_ado='{0}'",est_ado);
                 vv_str_sql.AppendFormat(" WHERE  va_cod_alm ={0}",cod_alm);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -216,7 +216,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * fROM inv011 ");
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}",cod_alm);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -230,7 +230,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del AlmacénES</param>
         /// <returns></returns>
-        public DataTable _06(int cod_alm)
+        public void _06(int cod_alm)
         {
             try
             {
@@ -238,7 +238,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE inv011 ");
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}",cod_alm);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

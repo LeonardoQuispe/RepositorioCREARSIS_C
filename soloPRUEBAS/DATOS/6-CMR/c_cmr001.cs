@@ -49,7 +49,7 @@ namespace DATOS._6_CMR
                     vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace DATOS._6_CMR
         /// <param name="fec_ini"></param>
         /// <param name="fec_fin"></param>
         /// <returns></returns>
-        public DataTable _02(int cod_lis,string nom_lis,string mon_lis, DateTime fec_ini, DateTime fec_fin)
+        public void _02(int cod_lis,string nom_lis,string mon_lis, DateTime fec_ini, DateTime fec_fin)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine("(" + cod_lis + ", '"+ nom_lis + "', '" + mon_lis+ "',");
                 vv_str_sql.AppendLine("'"+fec_ini.ToShortDateString() + "','" + fec_fin.ToShortDateString() + "','H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace DATOS._6_CMR
         /// <param name="fec_ini"></param>
         /// <param name="fec_fin"></param>
         /// <returns></returns>
-        public DataTable _03(int cod_lis, string nom_lis, string mon_lis, DateTime fec_ini, DateTime fec_fin)
+        public void _03(int cod_lis, string nom_lis, string mon_lis, DateTime fec_ini, DateTime fec_fin)
         {
             {
                 try
@@ -112,7 +112,7 @@ namespace DATOS._6_CMR
                     vv_str_sql.AppendLine(" va_fec_ini='" + fec_ini.ToShortDateString() + "', va_fec_fin='" + fec_fin.ToShortDateString()+"'");
                     vv_str_sql.AppendLine(" WHERE va_cod_lis = " + cod_lis );
 
-                    return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                    o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -127,7 +127,7 @@ namespace DATOS._6_CMR
         /// <param name="cod_lis"></param>
         /// <param name="est_ado"></param>
         /// <returns></returns>
-        public DataTable _04(string cod_lis, string est_ado)
+        public void _04(string cod_lis, string est_ado)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_lis = '" + cod_lis + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -156,7 +156,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" SELECT * FROM cmr001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_lis ='" + cod_lis+"' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -168,7 +168,7 @@ namespace DATOS._6_CMR
         /// </summary>
         /// <param name="cod_lis"></param>
         /// <returns></returns>
-        public DataTable _06(string cod_lis)
+        public void _06(string cod_lis)
         {
             try
             {
@@ -176,7 +176,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" DELETE cmr001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_lis = '" + cod_lis + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

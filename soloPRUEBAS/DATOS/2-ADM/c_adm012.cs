@@ -7,6 +7,11 @@ using System.Data;
 
 namespace DATOS
 {
+    /// <summary>
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+    /// Clase Actividad Económica
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+    /// </summary>
     public class c_adm012
     {
         /// <summary>
@@ -20,9 +25,9 @@ namespace DATOS
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// 
+        /// Buscar Actividad Económica
         /// </summary>
-        /// <param name="val_bus"></param>
+        /// <param name="val_bus">Valor a Buscar</param>
         /// <param name="prm_bus"></param>
         /// <param name="est_bus"></param>
         /// <returns></returns>
@@ -47,7 +52,7 @@ namespace DATOS
                     case "2": vv_str_sql.AppendLine(" and va_est_ado ='N'"); break;
                 }                
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -55,12 +60,12 @@ namespace DATOS
             }
         }
         /// <summary>
-        /// 
+        /// REegistrar Actividad Económica
         /// </summary>
-        /// <param name="cod_act"></param>
-        /// <param name="nom_act"></param>
+        /// <param name="cod_act">Código de Actividad Económica</param>
+        /// <param name="nom_act">Nombre de Actividad Económica</param>
         /// <returns></returns>
-        public DataTable _02(int cod_act, string nom_act)
+        public void _02(int cod_act, string nom_act)
         {
             try
             {
@@ -68,7 +73,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO adm012 VALUES ");
                 vv_str_sql.AppendLine(" (" + cod_act + ", '" + nom_act + "','H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -81,7 +86,7 @@ namespace DATOS
         /// <param name="cod_act">Codigo de actividad</param>
         /// <param name="nom_act">nombre de actividad</param>
         /// <returns></returns>
-        public DataTable _03(int cod_act, string nom_act)
+        public void _03(int cod_act, string nom_act)
         {
             try
             {
@@ -90,7 +95,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_act='" + nom_act + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_act =" + cod_act);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -103,7 +108,7 @@ namespace DATOS
         /// <param name="cod_per">Codigo de Actividad</param>
         /// <param name="est_ado">Estado de Actividad</param>
         /// <remarks></remarks>
-        public object _04(string cod_act, string est_ado)
+        public void _04(string cod_act, string est_ado)
         {
             try
             {
@@ -112,7 +117,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_act = '" + cod_act + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -133,7 +138,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM adm012 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_act =" + cod_act);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -145,7 +150,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_act">Codigo de Actividad</param>
         /// <returns></returns>
-        public DataTable _06(string cod_act)
+        public void _06(string cod_act)
         {
             try
             {
@@ -154,7 +159,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm012 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_act = '" + cod_act + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

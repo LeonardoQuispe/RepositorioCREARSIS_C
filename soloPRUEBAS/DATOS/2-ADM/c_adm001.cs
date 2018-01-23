@@ -36,7 +36,7 @@ namespace DATOS
                 StringBuilder vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * FROM adm001");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_tel_emp='" + tel_emp + "' , va_cel_emp='" + cel_emp + "' , va_cor_reo='" + cor_reo + "', va_dir_web ='" + dir_web + "', ");
                 vv_str_sql.AppendLine(" va_dir_fbk= '" + dir_fbk + "', va_cla_wif='" + cla_wif + "' ");
 
-                o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -87,16 +87,18 @@ namespace DATOS
         /// <param name="log_emp">logo de la empresa en exagesimal</param>
         public void _03(byte[] log_emp)
         {
-            vv_str_sql = new StringBuilder();
-            vv_str_sql.AppendLine(" UPDATE adm001 SET ");
-            vv_str_sql.AppendLine(" va_log_emp = @va_log_emp");
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" UPDATE adm001 SET ");
+                vv_str_sql.AppendLine(" va_log_emp = @va_log_emp");
 
-            SqlCommand cmd = new SqlCommand(vv_str_sql.ToString(), o_cnx000.fu_cnx_cnx());
-
-            cmd.Parameters.Add("@va_log_emp", System.Data.SqlDbType.VarBinary, log_emp.Length).Value = log_emp;
-            cmd.ExecuteNonQuery();
-
-            o_cnx000.mt_cer_cnx();
+                o_cnx000.fu_exe_sql_img(vv_str_sql.ToString(), "@va_log_emp", log_emp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

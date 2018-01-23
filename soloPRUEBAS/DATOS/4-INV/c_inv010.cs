@@ -49,7 +49,7 @@ namespace DATOS
                     vv_str_sql.AppendFormat(" and va_est_ado ='{0}'",est_bus);
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace DATOS
         /// <param name="nom_gru">Nombre del grupo</param>
         /// <param name="des_gru">Descripcion del grupo</param>
         /// <returns></returns>
-        public DataTable _02(int cod_gru,int cod_suc,int nro_gru, string nom_gru, string des_gru)
+        public void _02(int cod_gru,int cod_suc,int nro_gru, string nom_gru, string des_gru)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat(" ({0},{1},{2},", cod_suc, nro_gru, cod_gru);
                 vv_str_sql.AppendFormat(" '{0}','{1}','H')", nom_gru, des_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -92,7 +92,7 @@ namespace DATOS
         /// <param name="nom_gru">Nombre del grupo</param>
         /// <param name="des_gru">Descripcion del grupo</param>
         /// <returns></returns>
-        public DataTable _03(int cod_gru,string nom_gru, string des_gru)
+        public void _03(int cod_gru,string nom_gru, string des_gru)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat(" va_nom_gru='{0}',va_des_gru='{1}'",nom_gru,des_gru);
                 vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}", cod_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -115,7 +115,7 @@ namespace DATOS
         /// <param name="cod_gru">Codigo del Grupo de Almacénes</param>
         /// <param name="est_ado">Estado del Grupo de Almacénes</param>
         /// <returns></returns>
-        public DataTable _04(int cod_gru, string est_ado)
+        public void _04(int cod_gru, string est_ado)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace DATOS
                 vv_str_sql.AppendFormat(" va_est_ado='{0}'",est_ado);
                 vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}",cod_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -147,7 +147,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * fROM inv010 ");
                 vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}",cod_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -161,7 +161,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_gru">Codigo del Grupo de Almacénes</param>
         /// <returns></returns>
-        public DataTable _06(int cod_gru)
+        public void _06(int cod_gru)
         {
             try
             {
@@ -169,7 +169,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE inv010 ");
                 vv_str_sql.AppendFormat(" WHERE  va_cod_gru ={0}", cod_gru);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

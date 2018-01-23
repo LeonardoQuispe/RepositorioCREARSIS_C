@@ -53,7 +53,7 @@ namespace DATOS
                     vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace DATOS
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <param name="nom_mar">Nombre de la Marca</param>
         /// <returns></returns>
-        public DataTable _02(int cod_mar, string nom_mar)
+        public void _02(int cod_mar, string nom_mar)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO inv004 VALUES");
                 vv_str_sql.AppendLine(" (" + cod_mar + ", '" + nom_mar + "', 'H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());                
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());                
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace DATOS
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <param name="nom_mar">Nombre de la Marca</param>
         /// <returns></returns>
-        public DataTable _03(int cod_mar, string nom_mar)
+        public void _03(int cod_mar, string nom_mar)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_mar='" + nom_mar + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_mar =" + cod_mar);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -112,7 +112,7 @@ namespace DATOS
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <param name="est_ado">Estado de la Marca</param>
         /// <returns></returns>
-        public DataTable _04(int cod_mar, string est_ado)
+        public void _04(int cod_mar, string est_ado)
         {
             try
             {
@@ -122,7 +122,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_mar =" + cod_mar);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -144,7 +144,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * fROM inv004 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_mar = " + cod_mar);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -158,7 +158,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_mar">Codigo de la Marca</param>
         /// <returns></returns>
-        public DataTable _06(int cod_mar)
+        public void _06(int cod_mar)
         {
             try
             {
@@ -166,7 +166,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE inv004 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_mar = " + cod_mar);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

@@ -180,8 +180,11 @@ namespace CREARSIS
                 }
 
                 //Obtiene el nro de estilo del usuario para sus ventanas
-                int nro_est = Convert.ToInt32(o_seg001.seg004_01(Program.gl_usr_usr).Rows[0]["va_nro_est"]);
-                fu_est_ilo(nro_est);
+                tab_seg001 = o_seg001.seg004_01(Program.gl_usr_usr);
+                if (tab_seg001.Rows.Count!=0)
+                {                    
+                    fu_est_ilo(Convert.ToInt16(tab_seg001.Rows[0]["va_nro_est"]));
+                }
 
                 //Obtiene aplicaciones autorizadas del usuario
                 fu_ref_mnu();

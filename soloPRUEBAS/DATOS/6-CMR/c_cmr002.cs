@@ -54,7 +54,7 @@ namespace DATOS._6_CMR
                 }
 
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" and cmr002.va_cod_lis ='" + cod_lis + "'");
                 vv_str_sql.AppendLine(" and inv002.va_cod_pro like '" + cod_pro + "%' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -98,7 +98,7 @@ namespace DATOS._6_CMR
         /// <param name="pmx_inc">Porcentaje maximo de incremento permitido</param>
         /// <param name="por_cal">Porcentaje de utilidad(Ganancia) calculado</param>
         /// <returns></returns>
-        public DataTable _02(int cod_lis, string cod_pro, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
+        public void _02(int cod_lis, string cod_pro, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine("(" + cod_lis + ", '" + cod_pro + "', '" + pre_cio+ "', '" + pmx_des + "',");
                 vv_str_sql.AppendLine("'" + pmx_inc + "','" + por_cal + "')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace DATOS._6_CMR
         /// <param name="pmx_inc">Porcentaje maximo de incremento permitido</param>
         /// <param name="por_cal">Porcentaje de utilidad(Ganancia) calculado</param>
         /// <returns></returns>
-        public DataTable _03(int cod_lis, string cod_pro, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
+        public void _03(int cod_lis, string cod_pro, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
         {
             {
                 try
@@ -139,7 +139,7 @@ namespace DATOS._6_CMR
                     vv_str_sql.AppendLine(" WHERE va_cod_lis = " + cod_lis);
                     vv_str_sql.AppendLine(" and va_cod_pro= '" + cod_pro + "'");
 
-                    return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                    o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -154,7 +154,7 @@ namespace DATOS._6_CMR
         /// <param name="cod_lis">Codigo del la lista(cmr001)</param>
         /// <param name="cod_pro">Codigo de Producto(inv002)</param>
         /// <returns></returns>
-        public DataTable _06(string cod_lis,string cod_pro)
+        public void _06(string cod_lis,string cod_pro)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace DATOS._6_CMR
                 vv_str_sql.AppendLine(" WHERE  va_cod_lis = '" + cod_lis + "'");
                 vv_str_sql.AppendLine(" AND va_cod_pro='" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

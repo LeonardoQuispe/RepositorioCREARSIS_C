@@ -55,7 +55,7 @@ namespace DATOS
                     case 2: vv_str_sql.AppendLine(" AND va_est_ado = 'N'"); break;
                 }                
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace DATOS
         /// <param name="win_max">Ventanas maximas abiertas del usuario</param>
         /// <param name="pss_usr">Contraseña del usuario</param>
         /// <returns></returns>
-        public DataTable _02(int tip_usr, string cod_usr, string nom_usr, string tel_fon, string car_usr, string cor_usr, int win_max, string pss_usr)
+        public void _02(int tip_usr, string cod_usr, string nom_usr, string tel_fon, string car_usr, string cor_usr, int win_max, string pss_usr)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" (" + tip_usr + ", '" + cod_usr + "','" + nom_usr + "', '" + tel_fon + "' , ");
                 vv_str_sql.AppendLine(" '" + car_usr + "','" + cor_usr + "'," + win_max + ",  PWDENCRYPT('" + pss_usr + "'), 'H' )");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -101,7 +101,7 @@ namespace DATOS
         /// <param name="tel_fon">Telefono del usuario</param>
         /// <param name="car_usr">Cargo del usuario</param>
         /// <remarks></remarks>
-        public object _03(int tip_usr, string cod_usr, string nom_usr, string tel_fon, string car_usr, string cor_usr, int win_max)
+        public void _03(int tip_usr, string cod_usr, string nom_usr, string tel_fon, string car_usr, string cor_usr, int win_max)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_tip_usr = " + tip_usr + "");
                 vv_str_sql.AppendLine(" WHERE va_cod_usr = '" + cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -127,7 +127,7 @@ namespace DATOS
         /// <param name="cod_usr">Codigo de usuario</param>
         /// <param name="pss_usr">Contraeña del usuario</param>
         /// <remarks></remarks>
-        public object _03(int tip_usr, string cod_usr, string pss_usr)
+        public void _03(int tip_usr, string cod_usr, string pss_usr)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_pss_usr = PWDENCRYPT('" + pss_usr + "')  ");
                 vv_str_sql.AppendLine(" WHERE va_tip_usr = " + tip_usr + " and va_cod_usr = '" + cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -151,7 +151,7 @@ namespace DATOS
         /// <param name="cod_usr">Codigo del usuario</param>
         /// <param name="est_ado">Estado del usuario</param>
         /// <returns></returns>
-        public DataTable _04(string cod_usr, string est_ado)
+        public void _04(string cod_usr, string est_ado)
         {
             try
             {
@@ -160,7 +160,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_usr = '" + cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -180,7 +180,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM seg001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_usr = '" + cod_usr + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -202,7 +202,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" WHERE  va_cod_usr = '" + cod_usr + "' AND ");
                 vv_str_sql.AppendLine(" PWDCOMPARE('" + pss_usr + "', va_pss_usr) = 1 ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -214,7 +214,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_usr">Codigo del usuario</param>
         /// <returns></returns>
-        public DataTable _06(string cod_usr)
+        public void _06(string cod_usr)
         {
             try
             {
@@ -222,7 +222,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE seg001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_usr = '" + cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -243,7 +243,7 @@ namespace DATOS
                 vv_str_sql.AppendLine("EXEC seg001_01p1 ");
                 vv_str_sql.AppendLine("'"+est_ado+"'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -264,7 +264,7 @@ namespace DATOS
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine("SELECT * FROM seg004 where va_cod_usr = '" + va_cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -277,14 +277,14 @@ namespace DATOS
         /// <param name="va_cod_usr">Codigo de usuario</param>
         /// <param name="va_nro_est">Numero de estilo</param>
         /// <returns></returns>
-        public DataTable seg004_02(string va_cod_usr, int va_nro_est)
+        public void seg004_02(string va_cod_usr, int va_nro_est)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine("INSERT INTO seg004 VALUES('" + va_cod_usr + "' , " + va_nro_est + ")");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -297,7 +297,7 @@ namespace DATOS
         /// <param name="va_cod_usr">>Codigo de usuario</param>
         /// <param name="va_nro_est">Numero de estilo</param>
         /// <returns></returns>
-        public DataTable seg004_03(string va_cod_usr, int va_nro_est)
+        public void seg004_03(string va_cod_usr, int va_nro_est)
         {
             try
             {
@@ -305,7 +305,7 @@ namespace DATOS
                 vv_str_sql.AppendLine("UPDATE seg004 SET va_nro_est = " + va_nro_est);
                 vv_str_sql.AppendLine(" WHERE va_cod_usr = '" + va_cod_usr + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

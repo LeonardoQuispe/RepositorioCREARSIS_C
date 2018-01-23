@@ -9,7 +9,11 @@ namespace DATOS
 {
     public class c_cnx000
     {
-        static string gl_cnx_str;       //Variable estática string cadena de conexion
+        /// <summary>
+        /// Variable estática string cadena de conexion
+        /// </summary>
+        static string gl_cnx_str;
+
 
         /// <summary>
         /// Nombre del servidor
@@ -22,77 +26,204 @@ namespace DATOS
         /// <summary>
         /// codigo de usuario de la base de datos
         /// </summary>
-        public string va_cod_usr = "chlsql";
+        private string va_cod_usr = "chlsql";
         /// <summary>
         /// contraseña de la base de datos
         /// </summary>
-        public string va_pws_usr = "Crearsis123.";
+        private string va_pws_usr = "Crearsis123.";
 
 
-        public SqlConnection va_cnx_cnx = new SqlConnection();
-        public string va_cad_str = "";
+
+        /// <summary>
+        /// Objeto de Conexion a SQL
+        /// </summary>
+        private SqlConnection obj_sql_cnx = new SqlConnection();
+
+        /// <summary>
+        /// Objeto de Comando de SQL
+        /// </summary>
+        static private SqlCommand obj_sql_cmd;
+
 
 
         /// <summary>
         /// Funcion Conexion inicial (Al loguearse)
         /// </summary>
-        public SqlConnection fu_cnx_ini()
+        public void fu_cnx_ini()
         {
 
-            if (va_cnx_cnx.State == ConnectionState.Closed)
-            {
-                //var appSettings = ConfigurationManager.AppSettings;
-                va_cad_str = "Data Source=" + va_nom_srv + "; Initial Catalog="
-                    + va_nom_bdo + " ; user=" + va_cod_usr + "; password=" + va_pws_usr;
-                va_cnx_cnx.ConnectionString = va_cad_str;
-                gl_cnx_str = va_cad_str;
-                va_cnx_cnx.Open();
-            }
-            return va_cnx_cnx;
+            gl_cnx_str = "Data Source=" + va_nom_srv + "; Initial Catalog=" + va_nom_bdo + " ; " +
+                        "user=" + va_cod_usr + "; password=" + va_pws_usr + ";packet size=4096;Connect Timeout=300";
         }
 
         /// <summary>
         /// Funcion Conexion durante todo el sistema
         /// </summary>
-        public SqlConnection fu_cnx_cnx()
+        private void fu_abr_cnx()
         {
-            if (va_cnx_cnx.State == ConnectionState.Closed)
+            obj_sql_cnx = new SqlConnection();
+            obj_sql_cnx.ConnectionString = gl_cnx_str;
+            obj_sql_cnx.Open();
+        }
+
+
+
+
+
+        #region METODOS PARA EJECUTAR CONSULTAS A SQL
+
+        /// <summary>
+        /// Funcion que Ejecuta comando SQL SIN RETORNO
+        /// </summary>
+        /// <param name="va_cad_sql">Consulta(query) a ejecutar</param>
+        /// <returns></returns>
+        public bool fu_exe_sql_no(string va_cad_sql)
+        {
+            try
             {
-                va_cad_str = gl_cnx_str ?? "";
-                va_cnx_cnx.ConnectionString = va_cad_str;
-                va_cnx_cnx.Open();
+                int va_num_fila = 0;
+
+                //Instancia el Objeto de Comando de SQL
+                obj_sql_cmd = new SqlCommand();
+
+                //Abre la Conexion por si está cerrada
+                if (obj_sql_cnx.State == ConnectionState.Closed)
+                {
+                    fu_abr_cnx();
+                }
+
+                obj_sql_cmd.CommandText = va_cad_sql;   //Llena la Consulta al Objeto Comando de SQL
+                obj_sql_cmd.Connection = obj_sql_cnx;   //Asigna el objeto Conexion SQL al Comando
+                va_num_fila = obj_sql_cmd.ExecuteNonQuery();   //Ejecuta el Comando con la consulta a la BD
+
+                //Cierra La Conexion
+                obj_sql_cnx.Close();
+
+                //Valida si se afectaron filas en la BD
+                if (va_num_fila > 0)
+                    return true;
+                else
+                    return false;
             }
-            return va_cnx_cnx;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //Cierra La conexion depues de ejecutar comando
+                if (obj_sql_cnx.State == ConnectionState.Open)
+                {
+                    obj_sql_cnx.Close();
+                }
+            }
         }
 
 
         /// <summary>
-        /// Cerrar Conexion
+        /// Funcion que Ejecuta comando SQL CON RETORNO
         /// </summary>
-        public void mt_cer_cnx()
+        /// <param name="va_cad_sql">Consulta(query) a ejecutar</param>
+        /// <returns></returns>
+        public DataTable fu_exe_sql_si(string va_cad_sql)
         {
-            va_cnx_cnx.Close();
-            va_cad_str = null;
-        }
+            try
+            {
 
+                DataTable tab_aux = new DataTable();    //Tabla Auxiliar donde se Cargará los datos retornados           
+                obj_sql_cmd = new SqlCommand();     //Instancia el Objeto de Comando de SQL
+                SqlDataAdapter obj_sql_adp;     //Objetos Adaptador de sql (para llenar la Tabla con datos de BD)
+
+
+                //Abre la Conexion por si está cerrada
+                if (obj_sql_cnx.State == ConnectionState.Closed)
+                {
+                    fu_abr_cnx();
+                }
+
+                obj_sql_cmd.CommandText = va_cad_sql;   //Llena la Consulta al Objeto Comando de SQL
+                obj_sql_cmd.Connection = obj_sql_cnx;   //Asigna el objeto Conexion SQL al Comando
+                obj_sql_adp = new SqlDataAdapter(obj_sql_cmd);  //Asigna el Comando al Adaptador SQL
+                obj_sql_adp.Fill(tab_aux);      //Llena datos de la BD a Tabla auxiliar
+                obj_sql_cnx.Close();    //Cierra la Conexion
+
+                return tab_aux;     //Devuelve la Tabla Con los datos llenados desde la BD
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //Cierra La conexion depues de ejecutar comando
+                if (obj_sql_cnx.State == ConnectionState.Open)
+                {
+                    obj_sql_cnx.Close();
+                }
+            }
+        }
 
         /// <summary>
-        /// Funcion que Ejecuta comando SQL
+        /// Funcion que guarda imagen a Base de Datos
         /// </summary>
-        /// <param name="va_cad_sql">Cadena SQL a ser ejecutada</param>
-        public DataTable fu_exe_sql(string va_cad_sql)
+        /// <param name="va_cad_sql">Cadena de consulta a SQL</param>
+        /// <param name="va_nom_img">Nombre de Variable Temporal de Imagen</param>
+        /// <param name="va_byt_img">Byte de la Imagen a guardar</param>
+        public void fu_exe_sql_img(string va_cad_sql,string va_nom_img,byte[] va_byt_img)
         {
-            DataTable tabla = new DataTable();
-
-            if (va_cnx_cnx.State == ConnectionState.Closed)
+            try
             {
-                fu_cnx_cnx();
+                obj_sql_cmd = new SqlCommand();     //Instancia el Objeto de Comando de SQL
+
+
+                //Abre la Conexion por si está cerrada
+                if (obj_sql_cnx.State == ConnectionState.Closed)
+                {
+                    fu_abr_cnx();
+                }
+
+                obj_sql_cmd.CommandText = va_cad_sql;   //Llena la Consulta al Objeto Comando de SQL
+                obj_sql_cmd.Connection = obj_sql_cnx;   //Asigna el objeto Conexion SQL al Comando
+
+                //Agrega Parametro con la imagen
+                obj_sql_cmd.Parameters.Add(va_nom_img, SqlDbType.VarBinary, va_byt_img.Length).Value = va_byt_img;
+                obj_sql_cmd.ExecuteNonQuery();      //Ejecuta la Consulta
+
+                //Cierra la Conexion
+                obj_sql_cnx.Close();
             }
-
-            SqlDataAdapter va_ada_ptr = new SqlDataAdapter(va_cad_sql, va_cnx_cnx);
-            va_ada_ptr.Fill(tabla);
-
-            return tabla;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //Cierra La conexion depues de ejecutar comando
+                if (obj_sql_cnx.State == ConnectionState.Open)
+                {
+                    obj_sql_cnx.Close();
+                }
+            }
         }
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

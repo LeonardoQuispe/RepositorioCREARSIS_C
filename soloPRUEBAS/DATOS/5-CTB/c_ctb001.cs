@@ -46,7 +46,7 @@ namespace DATOS
                     vv_str_sql.AppendLine(" where va_nom_rgn like '" + val_bus + "%'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace DATOS
         /// <param name="cod_rgn"></param>
         /// <param name="nom_rgn"></param>
         /// <returns></returns>
-        public DataTable _02(int cod_rgn, string nom_rgn)
+        public void _02(int cod_rgn, string nom_rgn)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO ctb001 VALUES ");
                 vv_str_sql.AppendLine(" (" + cod_rgn + ", '" + nom_rgn + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace DATOS
         /// <param name="cod_rgn">Codigo de regional</param>
         /// <param name="nom_rgn">nombre de regional</param>
         /// <returns></returns>
-        public DataTable _03(int cod_rgn, string nom_rgn)
+        public void _03(int cod_rgn, string nom_rgn)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_rgn='" + nom_rgn + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_rgn =" + cod_rgn);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -109,7 +109,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM ctb001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_rgn =" + cod_rgn);
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -121,7 +121,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_rgn">Codigo de regional</param>
         /// <returns></returns>
-        public DataTable _06(string cod_rgn)
+        public void _06(string cod_rgn)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE ctb001 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_rgn = '" + cod_rgn + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {

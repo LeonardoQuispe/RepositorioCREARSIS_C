@@ -32,7 +32,7 @@ namespace DATOS._4_INV
 
                 vv_str_sql.AppendLine("where va_cod_pro = '"+ cod_pro+" '");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -51,16 +51,12 @@ namespace DATOS._4_INV
         {
             try
             {
+
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" INSERT INTO INV008 VALUES  ");
-                vv_str_sql.AppendLine("('"+cod_pro+"',"+ "@va_img_pro)");
+                vv_str_sql.AppendLine(" INSERT INTO inv008 VALUES  ");
+                vv_str_sql.AppendLine("('" + cod_pro + "'," + "@va_img_pro)");
 
-                SqlCommand cmd = new SqlCommand(vv_str_sql.ToString(), o_cnx000.fu_cnx_cnx());
-
-                cmd.Parameters.Add("@va_img_pro", System.Data.SqlDbType.VarBinary, img_pro.Length).Value = img_pro;
-                cmd.ExecuteNonQuery();
-
-                o_cnx000.mt_cer_cnx();
+                o_cnx000.fu_exe_sql_img(vv_str_sql.ToString(), "@va_img_pro", img_pro);                
             }
             catch (Exception ex)
             {
@@ -73,7 +69,7 @@ namespace DATOS._4_INV
         /// </summary>
         /// <param name="cod_pro">Codigo del producto</param>
         /// <returns></returns>
-        public DataTable _06(string cod_pro)
+        public void _06(string cod_pro)
         {
             try
             {
@@ -81,7 +77,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" DELETE inv008 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_pro = '" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

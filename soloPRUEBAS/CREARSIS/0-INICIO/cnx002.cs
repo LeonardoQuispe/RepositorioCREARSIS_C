@@ -37,7 +37,6 @@ namespace CREARSIS
         #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
-        c_cnx000 o_c_cnx000 = new c_cnx000();
         c_seg001 o_ads005 = new c_seg001();
         c_seg049 o_ads900 = new c_seg049();
 
@@ -191,7 +190,6 @@ namespace CREARSIS
                 tabla = o_ads005._05(va_usr_usr, va_pss_usr);
                 if (tabla.Rows.Count == 0)
                 {
-                    o_c_cnx000.mt_cer_cnx();
                     MessageBoxEx.Show("Error de autentificación para el usuario: " + va_usr_usr, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
@@ -215,7 +213,6 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                o_c_cnx000.mt_cer_cnx();
                 MessageBoxEx.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

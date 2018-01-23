@@ -6,6 +6,11 @@ using System.Data;
 
 namespace DATOS._4_INV
 {
+    /// <summary>
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+    /// Clase PRODUCTO
+    /// ◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+    /// </summary>
     public class c_inv002
     {
         /// <summary>
@@ -51,7 +56,7 @@ namespace DATOS._4_INV
                     vv_str_sql.AppendLine(" and va_est_ado ='" + est_bus + "'");
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -79,7 +84,7 @@ namespace DATOS._4_INV
         /// <param name="ban_cmp">Bandera identifica si el producto esta disponible para ventas COMPRAS 0=NO ; 1=SI</param>
         /// <param name="ban_lot">Bandera identifica si el producto se maneja por LOTE 1=SI ; 2=NO</param>
         /// <returns></returns>
-        public DataTable _02(string cod_pro, string cod_fam, string cod_umd,string und_cmp,string und_vta,string cod_mar,string nom_pro,string des_pro,
+        public void _02(string cod_pro, string cod_fam, string cod_umd,string und_cmp,string und_vta,string cod_mar,string nom_pro,string des_pro,
                              string cod_bar,string fab_ric,string eqv_cmp,string eqv_vta, int ban_ser,int ban_vta,int ban_cmp,int ban_lot)
         {
             try
@@ -90,7 +95,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" ('" + cod_pro + "', '" + cod_fam + "', '" + cod_umd + "', '" + und_cmp + "', '" + und_vta + "', '" + cod_mar + "', '" + nom_pro + "', '" + des_pro + "', '" );
                 vv_str_sql.AppendLine( cod_bar + "', '" + fab_ric + "', '" + eqv_cmp + "', '" + eqv_vta + "', '" + ban_ser + "', '" + ban_vta + "', '" + ban_cmp + "', '" + ban_lot +  "','H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -118,7 +123,7 @@ namespace DATOS._4_INV
         /// <param name="ban_cmp">Bandera identifica si el producto esta disponible para ventas COMPRAS 0=NO ; 1=SI</param>
         /// <param name="ban_lot">Bandera identifica si el producto se maneja por LOTE 1=SI ; 2=NO</param>
         /// <returns></returns>
-        public DataTable _03(string cod_pro, string cod_fam, string cod_umd, string und_cmp, string und_vta, string cod_mar, string nom_pro, string des_pro,
+        public void _03(string cod_pro, string cod_fam, string cod_umd, string und_cmp, string und_vta, string cod_mar, string nom_pro, string des_pro,
                              string cod_bar, string fab_ric, string eqv_cmp, string eqv_vta, int ban_ser, int ban_vta, int ban_cmp, int ban_lot)
         {
             try
@@ -130,7 +135,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" va_cod_bar='" + cod_bar + "' , va_fab_ric='" + fab_ric + "' , va_eqv_cmp='" + eqv_cmp + "' , va_eqv_vta='" + eqv_vta + "' , va_ban_ser='" + ban_ser + "' , va_ban_vta='" + ban_vta + "' , va_ban_cmp='" + ban_cmp + "' , va_ban_lot='" + ban_lot + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_pro = '" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -144,7 +149,7 @@ namespace DATOS._4_INV
         /// <param name="cod_pro">Codigo del Producto</param>
         /// <param name="est_ado">Estado del Producto</param>
         /// <returns></returns>
-        public DataTable _04(string cod_pro, string est_ado)
+        public void _04(string cod_pro, string est_ado)
         {
             try
             {
@@ -154,7 +159,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_pro = '" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -176,7 +181,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" SELECT * fROM inv002 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_pro = " + "'" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -190,7 +195,7 @@ namespace DATOS._4_INV
         /// </summary>
         /// <param name="cod_pro">Codigo del Producto</param>
         /// <returns></returns>
-        public DataTable _06(string cod_pro)
+        public void _06(string cod_pro)
         {
             try
             {
@@ -198,7 +203,7 @@ namespace DATOS._4_INV
                 vv_str_sql.AppendLine(" DELETE inv002 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_pro = '" + cod_pro + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

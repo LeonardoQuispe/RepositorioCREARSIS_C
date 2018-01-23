@@ -59,7 +59,7 @@ namespace CREARSIS
         public DateTime fg_fec_act()
         {
             string StrSql = " select CURRENT_TIMESTAMP";
-            DateTime fe_cha = Convert.ToDateTime(o_cnx000.fu_exe_sql(StrSql).Rows[0][0].ToString());
+            DateTime fe_cha = Convert.ToDateTime(o_cnx000.fu_exe_sql_si(StrSql).Rows[0][0].ToString());
             return fe_cha;
         }
 
@@ -109,7 +109,6 @@ namespace CREARSIS
                 tabla = o_seg001._05(ar_usr_usr, ar_pss_usr);
                 if (tabla.Rows.Count == 0)
                 {
-                    o_cnx000.mt_cer_cnx();
                     vc_usr_log.vs_msg_err = "Error de inicio de sesion para el usuario: " + ar_usr_usr;
 
                     return vc_usr_log;
@@ -139,7 +138,6 @@ namespace CREARSIS
 
                 if (tabla.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    o_cnx000.mt_cer_cnx();
                     vc_usr_log.vs_msg_err = "El usuaio se encuentra Deshabilitado";
                     return vc_usr_log;
                 }
@@ -148,7 +146,6 @@ namespace CREARSIS
                 tabla = o_seg049._01();
                 if (tabla.Rows.Count == 0)
                 {
-                    o_cnx000.mt_cer_cnx();
                     vc_usr_log.vs_msg_err = "Error el objeto ads900 no se encuentra registrado en la base de datos";
                     return vc_usr_log;
                 }
@@ -177,7 +174,6 @@ namespace CREARSIS
             }
             catch (Exception ex)
             {
-                o_cnx000.mt_cer_cnx();
                 vc_usr_log.vs_msg_err = "Error: " + ex.Message;
 
             }

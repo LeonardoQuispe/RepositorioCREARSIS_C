@@ -49,7 +49,7 @@ namespace DATOS
                     case 2: vv_str_sql.AppendLine(" 0,'" + val_bus + "', " + prm_bus +" , "+ " 'N' "); break;
                 }
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -65,7 +65,7 @@ namespace DATOS
         /// <param name="nom_doc">Nombre del Documento</param>
         /// <param name="des_doc">Descripcion del Documento</param>
         /// <returns></returns>
-        public DataTable _02(int cod_mod, string cod_doc, string nom_doc, string des_doc)
+        public void _02(int cod_mod, string cod_doc, string nom_doc, string des_doc)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO adm003 VALUES");
                 vv_str_sql.AppendLine(" (" + cod_mod + ", '" + cod_doc + "', '" + nom_doc + "', '" + des_doc + "', 'H')");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+               o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace DATOS
         /// <param name="nom_doc">Nombre del Documento</param>
         /// <param name="des_doc">Descripcion de Documento</param>
         /// <returns></returns>
-        public DataTable _03(int cod_mod, string cod_doc, string nom_doc, string des_doc)
+        public void _03(int cod_mod, string cod_doc, string nom_doc, string des_doc)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_nom_doc='" + nom_doc + "' , va_des_doc= '" + des_doc + "'");
                 vv_str_sql.AppendLine(" WHERE va_cod_mod = " + cod_mod + " AND va_cod_doc = '" + cod_doc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace DATOS
         /// <param name="cod_doc">Codigo del Documento</param>
         /// <param name="est_ado">Estado del Documento</param>
         /// <returns></returns>
-        public DataTable _04(string cod_doc, string est_ado)
+        public void _04(string cod_doc, string est_ado)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" va_est_ado='" + est_ado + "' ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_doc = '" + cod_doc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -142,7 +142,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * fROM adm003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_doc = '" + cod_doc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
             }
             catch (Exception ex)
@@ -155,7 +155,7 @@ namespace DATOS
         /// </summary>
         /// <param name="cod_doc">Codigo del documento</param>
         /// <returns></returns>
-        public DataTable _06(string cod_doc)
+        public void _06(string cod_doc)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE adm003 ");
                 vv_str_sql.AppendLine(" WHERE  va_cod_doc = '" + cod_doc + "'");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 
             }
             catch (Exception ex)

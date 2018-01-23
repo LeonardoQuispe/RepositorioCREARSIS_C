@@ -36,7 +36,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM seg022   ");
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace DATOS
         /// <param name="cod_usr">Codigo de usuario</param>
         /// <param name="cod_tpr">Codigo del tipo de persona</param>
         /// <returns></returns>
-        public DataTable _02(int cod_usr, string cod_tpr)
+        public void _02(int cod_usr, string cod_tpr)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" INSERT INTO seg022 VALUES ");
                 vv_str_sql.AppendLine(" ('" + cod_usr + "','" + cod_tpr + "' )");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" SELECT * FROM seg022   ");
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_tpr ='" + cod_tpr + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
@@ -91,7 +91,7 @@ namespace DATOS
         /// <param name="cod_usr">Codigo de usuario</param>
         /// <param name="cod_tpr">Codigo del tipo de persona</param>
         /// <returns></returns>
-        public DataTable _06(int cod_usr, string cod_tpr)
+        public void _06(int cod_usr, string cod_tpr)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace DATOS
                 vv_str_sql.AppendLine(" DELETE seg022 ");
                 vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_tpr ='" + cod_tpr + "' ");
 
-                return o_cnx000.fu_exe_sql(vv_str_sql.ToString());
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
             catch (Exception ex)
             {
