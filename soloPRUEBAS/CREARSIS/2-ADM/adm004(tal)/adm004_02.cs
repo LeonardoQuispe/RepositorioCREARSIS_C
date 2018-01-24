@@ -89,14 +89,14 @@ namespace CREARSIS
                     int prd_ini = 0;
 
                     //obtener periodo inicial de la gestion
-                    tab_adm002 = o_adm002._05(int.Parse(tb_cod_ges.Text), 1);
+                    tab_adm002 = o_adm002._05(int.Parse(cb_ges_tio.Text), 1);
                     prd_ini = Convert.ToDateTime(tab_adm002.Rows[0]["va_fec_ini"].ToString()).Month;
 
-                    fec_ini = Convert.ToDateTime( "01/" + prd_ini + "/" + tb_cod_ges.Text);
+                    fec_ini = Convert.ToDateTime( "01/" + prd_ini + "/" + cb_ges_tio.Text);
                     fec_fin = fec_ini.AddYears(1);
                     fec_fin = fec_fin.AddDays(-1);
 
-                    o_adm005._02(tb_cod_doc.Text,int.Parse( tb_nro_tal.Text),int.Parse( tb_cod_ges.Text), 0, 99999, fec_ini, fec_fin, 0);                    
+                    o_adm005._02(tb_cod_doc.Text,int.Parse( tb_nro_tal.Text),int.Parse(cb_ges_tio.Text), 0, 99999, fec_ini, fec_fin, 0);                    
 
                     tra_nsa.Complete();
                     tra_nsa.Dispose();
@@ -180,6 +180,15 @@ namespace CREARSIS
             //tb_nro_dos.Text = "0";
             cb_for_log.SelectedIndex = 0;
 
+
+            //Carga gestiones
+            tab_adm002 = o_adm002._05();
+            cb_ges_tio.DisplayMember = "va_cod_ges";
+            cb_ges_tio.ValueMember = "va_cod_ges";
+            cb_ges_tio.DataSource = tab_adm002;
+
+
+
             tb_cod_doc.Focus();
 
         }
@@ -193,7 +202,7 @@ namespace CREARSIS
             tb_nom_doc.Clear();
             tb_nro_tal.Clear();
             tb_nom_tal.Clear();
-            tb_cod_ges.Clear();
+            cb_ges_tio.SelectedIndex = 0;
             tb_for_mat.Text = "0";
             tb_nro_aut.Text = "0";
             tb_fir_ma1.Clear();
@@ -253,16 +262,16 @@ namespace CREARSIS
             //**-----------------------------------------------------
 
             //**Verifica que la gestion sea valida-------------------
-            if (o_mg_glo_bal.fg_val_num(tb_cod_ges.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(cb_ges_tio.Text) == false)
             {
-                tb_cod_ges.Focus();
+                cb_ges_tio.Focus();
                 return "La Gestion no es valida";
             }
 
-                tab_adm002 = o_adm002._05(int.Parse( tb_cod_ges.Text));
+                tab_adm002 = o_adm002._05(int.Parse(cb_ges_tio.Text));
             if (tab_adm002.Rows.Count == 0)
             {
-                tb_cod_ges.Focus();
+                cb_ges_tio.Focus();
                 return "La Gestión NO se encuentra registrada";
             }
             //**-----------------------------------------------------

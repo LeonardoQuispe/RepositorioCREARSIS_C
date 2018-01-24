@@ -60,6 +60,9 @@
             this.mn_ley_end = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tes_ore = new System.Windows.Forms.ToolStripMenuItem();
             this.m_caj_ass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_cob_pag = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_lib_ret = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_pla_pag = new System.Windows.Forms.ToolStripMenuItem();
             this.m_con_tab = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb001 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,9 +82,6 @@
             this.ss_nom_bdo = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_etk_vna = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_nom_vna = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mn_cob_pag = new System.Windows.Forms.ToolStripMenuItem();
-            this.mn_lib_ret = new System.Windows.Forms.ToolStripMenuItem();
-            this.mn_pla_pag = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci.SuspendLayout();
             this.StatusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -310,28 +310,28 @@
             // mn_dos_ifi
             // 
             this.mn_dos_ifi.Name = "mn_dos_ifi";
-            this.mn_dos_ifi.Size = new System.Drawing.Size(152, 22);
+            this.mn_dos_ifi.Size = new System.Drawing.Size(139, 22);
             this.mn_dos_ifi.Text = "&Dosificación";
             this.mn_dos_ifi.Click += new System.EventHandler(this.mn_dos_ifi_Click);
             // 
             // mn_suc_urs
             // 
             this.mn_suc_urs.Name = "mn_suc_urs";
-            this.mn_suc_urs.Size = new System.Drawing.Size(152, 22);
+            this.mn_suc_urs.Size = new System.Drawing.Size(139, 22);
             this.mn_suc_urs.Text = "&Sucursales";
             this.mn_suc_urs.Click += new System.EventHandler(this.mn_suc_urs_Click);
             // 
             // mn_act_ivi
             // 
             this.mn_act_ivi.Name = "mn_act_ivi";
-            this.mn_act_ivi.Size = new System.Drawing.Size(152, 22);
+            this.mn_act_ivi.Size = new System.Drawing.Size(139, 22);
             this.mn_act_ivi.Text = "&Actividades";
             this.mn_act_ivi.Click += new System.EventHandler(this.mn_act_ivi_Click);
             // 
             // mn_ley_end
             // 
             this.mn_ley_end.Name = "mn_ley_end";
-            this.mn_ley_end.Size = new System.Drawing.Size(152, 22);
+            this.mn_ley_end.Size = new System.Drawing.Size(139, 22);
             this.mn_ley_end.Text = "&Leyendas";
             this.mn_ley_end.Click += new System.EventHandler(this.mn_ley_end_Click);
             // 
@@ -346,8 +346,31 @@
             // m_caj_ass
             // 
             this.m_caj_ass.Name = "m_caj_ass";
-            this.m_caj_ass.Size = new System.Drawing.Size(152, 22);
+            this.m_caj_ass.Size = new System.Drawing.Size(97, 22);
             this.m_caj_ass.Text = "&Caja";
+            // 
+            // mn_cob_pag
+            // 
+            this.mn_cob_pag.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mn_lib_ret,
+            this.mn_pla_pag});
+            this.mn_cob_pag.Name = "mn_cob_pag";
+            this.mn_cob_pag.Size = new System.Drawing.Size(168, 22);
+            this.mn_cob_pag.Text = "P&or Cobrar/Pagar";
+            // 
+            // mn_lib_ret
+            // 
+            this.mn_lib_ret.Name = "mn_lib_ret";
+            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
+            this.mn_lib_ret.Text = "&Libreta";
+            this.mn_lib_ret.Click += new System.EventHandler(this.mn_lib_ret_Click);
+            // 
+            // mn_pla_pag
+            // 
+            this.mn_pla_pag.Name = "mn_pla_pag";
+            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
+            this.mn_pla_pag.Text = "&Plan de Pago";
+            this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
             // m_con_tab
             // 
@@ -496,28 +519,6 @@
             this.ss_nom_vna.Name = "ss_nom_vna";
             this.ss_nom_vna.Size = new System.Drawing.Size(16, 17);
             this.ss_nom_vna.Text = "...";
-            // 
-            // mn_cob_pag
-            // 
-            this.mn_cob_pag.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mn_lib_ret,
-            this.mn_pla_pag});
-            this.mn_cob_pag.Name = "mn_cob_pag";
-            this.mn_cob_pag.Size = new System.Drawing.Size(168, 22);
-            this.mn_cob_pag.Text = "Por Cobrar/Pagar";
-            // 
-            // mn_lib_ret
-            // 
-            this.mn_lib_ret.Name = "mn_lib_ret";
-            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
-            this.mn_lib_ret.Text = "&Libreta";
-            // 
-            // mn_pla_pag
-            // 
-            this.mn_pla_pag.Name = "mn_pla_pag";
-            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
-            this.mn_pla_pag.Text = "&Plan de Pago";
-            this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
             // adm000
             // 

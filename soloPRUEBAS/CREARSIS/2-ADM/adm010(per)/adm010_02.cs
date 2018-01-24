@@ -12,6 +12,7 @@ using System.Windows.Forms;
 //REFERENCIAS
 using CREARSIS._2_ADM.adm011_gru_per_;
 using CREARSIS._6_CMR.cmr003_vendedor_;
+using CREARSIS._6_CMR.cmr001_lista_precios_;
 using DATOS;
 using DATOS._6_CMR;
 using DevComponents.DotNetBar;
@@ -30,6 +31,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         DataTable tab_adm010;
         DataTable tab_adm011;
         DataTable tab_cmr003;
+        DataTable tab_cmr001;
         string tmp = "";
 
         #endregion
@@ -39,6 +41,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
         c_cmr003 o_cmr003 = new c_cmr003();
+        c_cmr001 o_cmr001 = new c_cmr001();
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
@@ -186,6 +189,28 @@ namespace CREARSIS._2_ADM.adm010_per_
             fu_rec_ven(tb_cod_ven_cli.Text.Trim());
         }
 
+        private void tb_cod_pre_cli_ButtonCustomClick(object sender, EventArgs e)
+        {
+            cmr001_01 obj = new cmr001_01();
+
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_cod_pre_cli_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                cmr001_01 obj = new cmr001_01();
+
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
+        private void tb_cod_pre_cli_Validated(object sender, EventArgs e)
+        {
+            fu_rec_lis(tb_cod_pre_cli.Text.Trim());
+        }
+
 
         #endregion
 
@@ -274,6 +299,13 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Debes proporcionar la Razón Social de la Persona";
             }
 
+            //**Verifica Nombre Comercial
+            if (tb_nom_per.Text.Trim() == "")
+            {
+                tb_nom_per.Focus();
+                return "Debes proporcionar el Nombre Comercial de la Persona";
+            }
+
             //**Verifica NIT/CI
             if (tb_nit_per.Text.Trim() == "")
             {
@@ -293,11 +325,15 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El NIT/CI ya se encuentra Registrado";
             }
 
-            //**Verifica Nombre Comercial
-            if (tb_nom_per.Text.Trim() == "")
+            //valida Lista de Precio y Vendedor antes de grabar datos
+            if (chk_ven.Checked == true)
             {
-                tb_nom_per.Focus();
-                return "Debes proporcionar el Nombre Comercial de la Persona";
+                //Valida Lista de Precio antes de Grabar datos
+                fu_rec_lis(tb_cod_pre_cli.Text);
+
+
+                //Valida Vendedor antes de Grabar datos
+                fu_rec_ven(tb_cod_ven_cli.Text);
             }
 
             
@@ -362,6 +398,44 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
         }
 
+        public void fu_rec_lis(string cod_lis)
+        {
+            if (cod_lis.Trim() == "")
+            {
+                tb_cod_pre_cli.Clear();
+                tb_nom_pre_cli.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_num(cod_lis) == false)
+            {
+                tb_cod_pre_cli.Clear();
+                tb_nom_pre_cli.Text = "** NO existe";
+                return;
+            }
+
+            tab_cmr001 = o_cmr001._05(cod_lis);
+            if (tab_cmr001.Rows.Count == 0)
+            {
+                tb_cod_pre_cli.Clear();
+                tb_nom_pre_cli.Text = "** NO existe";
+                return;
+            }
+
+            if (tab_cmr001.Rows[0]["va_est_ado"].ToString()=="N")
+            {
+                tb_cod_pre_cli.Clear();
+                tb_nom_pre_cli.Text = "** NO existe";
+
+                MessageBoxEx.Show("La Lista de Precio se encuentra Deshabilitada", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            tb_cod_pre_cli.Text = tab_cmr001.Rows[0]["va_cod_lis"].ToString();
+            tb_nom_pre_cli.Text = tab_cmr001.Rows[0]["va_nom_lis"].ToString();
+        }
+
 
         public void fu_rec_ven(string cod_ven)
         {
@@ -384,6 +458,16 @@ namespace CREARSIS._2_ADM.adm010_per_
             {
                 tb_cod_ven_cli.Clear();
                 tb_nom_ven_cli.Text = "** NO existe";
+                return;
+            }
+
+            if (tab_cmr003.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_cod_ven_cli.Clear();
+                tb_nom_ven_cli.Text = "** NO existe";
+
+                MessageBoxEx.Show("El Vendedor se encuentra Deshabilitado", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 
@@ -423,7 +507,8 @@ namespace CREARSIS._2_ADM.adm010_per_
             tb_cod_ven_cli.Clear();
             tb_nom_ven_cli.Clear();
         }
-        
+
+
 
 
 
