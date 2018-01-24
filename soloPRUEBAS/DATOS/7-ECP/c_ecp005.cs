@@ -99,7 +99,7 @@ namespace DATOS._7_ECP
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE ecp005 SET");
                 vv_str_sql.AppendLine(" va_des_plg='" + des_pgl + "', va_nro_cuo='" + nro_cuo + "',");
-                vv_str_sql.AppendLine(" va_int_dia='" + int_dia + "', va_dia_ini='" + dia_ini + "',");
+                vv_str_sql.AppendLine(" va_int_dia='" + int_dia + "', va_dia_ini='" + dia_ini + "' ");
                 vv_str_sql.AppendLine(" WHERE va_cod_plg = '" + cod_plg + "'");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());

@@ -19,6 +19,8 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
 
         public dynamic vg_frm_pad;
         DataTable tab_ecp005;
+        DataTable tabla;
+        string vv_err_msg = "";
 
         #endregion
 
@@ -136,25 +138,25 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             if (tb_sel_ecc.Text == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
+                return;
+            }
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+            {
+                tb_sel_ecc.Text = "";
                 return;
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+            tabla = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
+            if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
                 return;
             }
 
-
-            tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
-            if (tab_ecp005.Rows.Count == 0)
-            {
-                lb_sel_ecc.Text = "** NO existe";
-                return;
-            }
-
-            tb_sel_ecc.Text = tab_ecp005.Rows[0]["va_cod_plg"].ToString();
-            lb_sel_ecc.Text = tab_ecp005.Rows[0]["va_des_plg"].ToString();
+            tb_sel_ecc.Text = tabla.Rows[0]["va_cod_plg"].ToString();
+            lb_sel_ecc.Text = tabla.Rows[0]["va_des_plg"].ToString();
 
         }
 
@@ -171,11 +173,12 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
-                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
-                {
-                    return "El Código del Plan de Pago debe ser numérico";
-                }
 
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
@@ -205,9 +208,14 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             {
                 if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
                 {
-                    return "El Código del Plan de Pago debe ser numérico";
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
                 }
-
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
@@ -230,9 +238,9 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             {
                 if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
                 {
-                    return "El Código del Plan de Pago debe ser numérico";
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
                 }
-
                 ///Si aun existe
                 tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
@@ -309,6 +317,33 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
                 }
             }
         }
+        private void tb_sel_ecc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dg_res_ult.Rows.Count != 0)
+            {
+                if (e.KeyData == Keys.Down)
+                {
+                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index + 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+                //al presionar tecla para ARRIBA
+                if (e.KeyData == Keys.Up)
+                {
+                    if (dg_res_ult.CurrentRow.Index != 0)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index - 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+            }
+        }
 
         private void tb_sel_ecc_Validated(object sender, EventArgs e)
         {
@@ -347,14 +382,61 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_02 obj = new CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
+        //ACTUALIZA
+        private void m_ecp005_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp005_03 obj = new ecp005_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp005);
+        }
+        //HABILTA/DESHABILITA
+        private void m_ecp005_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp005_04 obj = new ecp005_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp005);
+        }
+        //ELIMINA
+        private void m_ecp005_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp005_06 obj = new ecp005_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp005);
+        }
+        //CONSULTA
+        private void m_ecp005_05_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Error Unidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp005_05 obj = new ecp005_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp005);
+        }
         //ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
-
         #endregion
 
-
+        
     }
 }

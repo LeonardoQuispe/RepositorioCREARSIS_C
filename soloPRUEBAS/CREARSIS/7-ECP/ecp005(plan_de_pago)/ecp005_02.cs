@@ -56,72 +56,72 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
         /// </summary>
         public string fu_ver_dat()
         {
-            //Valida Codigo de plan de pago
+            //valida codigo
             if (tb_cod_plg.Text.Trim() == "")
             {
                 tb_cod_plg.Focus();
                 return "Debes proporcionar el código del Plan de Pago";
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_cod_plg.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_cod_plg.Text) == false)
             {
                 tb_cod_plg.Focus();
-                return "El Código del Plan de Pago debe ser numérico";
+                return "El código del Plan de Pago debe ser Numerico";
             }
-
             tab_ecp005 = o_ecp005._05(int.Parse(tb_cod_plg.Text));
             if (tab_ecp005.Rows.Count != 0)
             {
                 tb_cod_plg.Focus();
-                return "El codigo del Plan de Pago ya se encuentra registrada";
+                return "El codigo del Plan de Pago ya se encuentra registrado";
             }
-
-
-            //Valida Descripcion de Plan de Pago
+            //valida descripcion
             if (tb_des_plg.Text.Trim() == "")
             {
                 tb_des_plg.Focus();
-                return "Debes proporcionar la descripción del Plan de Pago";
+                return "Debes proporcionar una Descripcion";
             }
-
-
-            //Valida Nro de Cuotas
+            //valida Nro. Cuotas
             if (tb_nro_cuo.Text.Trim() == "")
             {
                 tb_nro_cuo.Focus();
-                return "Debes proporcionar el Nro de Cuotas del Plan de Pago";
+                return "Debes proporcionar el Nro. de Cuotas";
             }
-            if(o_mg_glo_bal.fg_val_num(tb_nro_cuo.Text) == false)
+
+            if (o_mg_glo_bal.fg_val_num(tb_nro_cuo.Text) == false)
             {
                 tb_nro_cuo.Focus();
-                return "El Nro de Cuotas del Plan de Pago debe ser numérico";
+                return "El Nro. de Cuotas debe ser Numerico";
             }
-
-
-            //Valida Intervalo Dias
+            //valida Intervalo de dias
             if (tb_int_dia.Text.Trim() == "")
             {
                 tb_int_dia.Focus();
-                return "Debes proporcionar el Intervalo de Días del Plan de Pago";
+                return "Debes proporcionar el Intervalo de Dias";
             }
+
             if (o_mg_glo_bal.fg_val_num(tb_int_dia.Text) == false)
             {
                 tb_int_dia.Focus();
-                return "El Intervalo de Días del Plan de Pago debe ser numérico";
+                return "El Intervalo de Dias debe ser Numerico";
             }
-
-
-            //Valida Día Inicial
+            //valida Intervalo de dias
             if (tb_dia_ini.Text.Trim() == "")
             {
                 tb_dia_ini.Focus();
-                return "Debes proporcionar el Día Inicial del Plan de Pago";
+                return "Debes proporcionar el Dia Inicial";
             }
+
             if (o_mg_glo_bal.fg_val_num(tb_dia_ini.Text) == false)
             {
                 tb_dia_ini.Focus();
-                return "El Día Inicial del Plan de Pago debe ser numérico";
+                return "El Dia Inicial debe ser Numerico";
             }
+            if (int.Parse(tb_dia_ini.Text) > 30)
+            {
+                tb_dia_ini.Focus();
+                return "El Dia Inicial debe ser Menor a 30";
+            }
+
 
             return null;
         }
