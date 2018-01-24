@@ -99,8 +99,8 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(9, 251);
             this.superTabControl1.Name = "superTabControl1";
@@ -393,6 +393,9 @@
             this.tb_cod_pre_cli.PreventEnterBeep = true;
             this.tb_cod_pre_cli.Size = new System.Drawing.Size(73, 22);
             this.tb_cod_pre_cli.TabIndex = 1;
+            this.tb_cod_pre_cli.ButtonCustomClick += new System.EventHandler(this.tb_cod_pre_cli_ButtonCustomClick);
+            this.tb_cod_pre_cli.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_pre_cli_KeyDown);
+            this.tb_cod_pre_cli.Validated += new System.EventHandler(this.tb_cod_pre_cli_Validated);
             // 
             // tab_ven
             // 

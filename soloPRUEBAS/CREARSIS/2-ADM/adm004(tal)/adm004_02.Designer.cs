@@ -36,7 +36,6 @@
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_doc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
-            this.tb_cod_ges = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX12 = new DevComponents.DotNetBar.LabelX();
             this.LabelX7 = new DevComponents.DotNetBar.LabelX();
             this.tb_nro_aut = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -72,6 +71,7 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
+            this.cb_ges_tio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -204,7 +204,7 @@
             // 
             // GroupBox3
             // 
-            this.GroupBox3.Controls.Add(this.tb_cod_ges);
+            this.GroupBox3.Controls.Add(this.cb_ges_tio);
             this.GroupBox3.Controls.Add(this.LabelX12);
             this.GroupBox3.Controls.Add(this.LabelX7);
             this.GroupBox3.Controls.Add(this.tb_nro_aut);
@@ -219,23 +219,6 @@
             this.GroupBox3.Size = new System.Drawing.Size(516, 102);
             this.GroupBox3.TabIndex = 6;
             this.GroupBox3.TabStop = false;
-            // 
-            // tb_cod_ges
-            // 
-            this.tb_cod_ges.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_ges.Border.Class = "TextBoxBorder";
-            this.tb_cod_ges.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_ges.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_ges.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_ges.Location = new System.Drawing.Point(59, 19);
-            this.tb_cod_ges.MaxLength = 4;
-            this.tb_cod_ges.Name = "tb_cod_ges";
-            this.tb_cod_ges.PreventEnterBeep = true;
-            this.tb_cod_ges.Size = new System.Drawing.Size(54, 22);
-            this.tb_cod_ges.TabIndex = 35;
             // 
             // LabelX12
             // 
@@ -392,7 +375,7 @@
             this.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX3.ForeColor = System.Drawing.Color.Black;
-            this.LabelX3.Location = new System.Drawing.Point(147, 22);
+            this.LabelX3.Location = new System.Drawing.Point(153, 21);
             this.LabelX3.Name = "LabelX3";
             this.LabelX3.Size = new System.Drawing.Size(56, 17);
             this.LabelX3.TabIndex = 64;
@@ -409,7 +392,7 @@
             this.cb_tip_num.Items.AddRange(new object[] {
             this.man_ual,
             this.aut_oma});
-            this.cb_tip_num.Location = new System.Drawing.Point(209, 19);
+            this.cb_tip_num.Location = new System.Drawing.Point(215, 18);
             this.cb_tip_num.Name = "cb_tip_num";
             this.cb_tip_num.Size = new System.Drawing.Size(112, 22);
             this.cb_tip_num.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -704,6 +687,20 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // cb_ges_tio
+            // 
+            this.cb_ges_tio.DisplayMember = "Text";
+            this.cb_ges_tio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
+            this.cb_ges_tio.FormattingEnabled = true;
+            this.cb_ges_tio.ItemHeight = 16;
+            this.cb_ges_tio.Location = new System.Drawing.Point(59, 18);
+            this.cb_ges_tio.Name = "cb_ges_tio";
+            this.cb_ges_tio.Size = new System.Drawing.Size(81, 22);
+            this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_ges_tio.TabIndex = 92;
+            // 
             // adm004_02
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -744,7 +741,6 @@
         internal DevComponents.DotNetBar.LabelX LabelX2;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_doc;
         internal System.Windows.Forms.GroupBox GroupBox3;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_ges;
         internal DevComponents.DotNetBar.LabelX LabelX12;
         internal DevComponents.DotNetBar.LabelX LabelX7;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nro_aut;
@@ -780,5 +776,6 @@
         private DevComponents.DotNetBar.Controls.Line line2;
         private DevComponents.DotNetBar.Controls.Line line3;
         private DevComponents.DotNetBar.Controls.Line line4;
+        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_ges_tio;
     }
 }

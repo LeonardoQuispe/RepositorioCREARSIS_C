@@ -64,6 +64,9 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         {
 
             //Valida Lista de Precio
+
+            fu_rec_lis(tb_cod_lis.Text);
+
             if (tb_cod_lis.Text == "")
             {
                 tb_cod_lis.Focus();
@@ -74,7 +77,13 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 tb_cod_lis.Focus();
                 return "El Codigo de la Lista de Precios debe ser Numerico";
             }
+
+
+
+
             //Valida Producto
+            fu_rec_pro(tb_cod_pro.Text);
+
             if (tb_cod_pro.Text == "")
             {
                 tb_cod_pro.Focus();
@@ -167,6 +176,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         {
             if (cod_pro.Trim() == "")
             {
+                tb_cod_pro.Clear();
                 tb_nom_pro.Text = "** NO existe";
                 return;
             }
@@ -174,8 +184,18 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             tab_inv002 = o_inv002._05(cod_pro);
             if (tab_inv002.Rows.Count == 0)
             {
-                tb_cod_pro.Text = "";
+                tb_cod_pro.Clear();
                 tb_nom_pro.Text = "** NO existe";
+                return;
+            }
+
+            if (tab_inv002.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_cod_pro.Clear();
+                tb_nom_pro.Text = "** NO existe";
+
+                MessageBoxEx.Show("El Producto se encuentra Deshabilitado", "Nuevo Detalle Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 
@@ -187,6 +207,13 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         {
             if (cod_lis.Trim() == "")
             {
+                tb_cod_lis.Clear();
+                tb_nom_lis.Text = "** NO existe";
+                return;
+            }
+            if (o_mg_glo_bal.fg_val_num(tb_cod_lis.Text) == false)
+            {
+                tb_cod_lis.Clear();
                 tb_nom_lis.Text = "** NO existe";
                 return;
             }
@@ -194,8 +221,18 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             tab_cmr001 = o_cmr001._05(cod_lis);
             if (tab_cmr001.Rows.Count == 0)
             {
-                tb_cod_lis.Text = "";
+                tb_cod_lis.Clear();
                 tb_nom_lis.Text = "** NO existe";
+                return;
+            }
+
+            if (tab_cmr001.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                tb_cod_lis.Clear();
+                tb_nom_lis.Text = "** NO existe";
+
+                MessageBoxEx.Show("La Lista de Precio se encuentra Deshabilitada", "Nuevo Detalle Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 

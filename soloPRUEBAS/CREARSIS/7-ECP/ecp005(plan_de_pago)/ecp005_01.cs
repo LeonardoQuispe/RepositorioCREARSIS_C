@@ -19,8 +19,6 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
 
         public dynamic vg_frm_pad;
         DataTable tab_ecp005;
-        DataTable tabla;
-        string vv_err_msg = "";
 
         #endregion
 
@@ -141,16 +139,22 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
                 return;
             }
 
-
-            tabla = o_ecp005._05(tb_sel_ecc.Text);
-            if (tabla.Rows.Count == 0)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            tb_sel_ecc.Text = tabla.Rows[0]["va_cod_plg"].ToString();
-            lb_sel_ecc.Text = tabla.Rows[0]["va_des_plg"].ToString();
+
+            tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
+            if (tab_ecp005.Rows.Count == 0)
+            {
+                lb_sel_ecc.Text = "** NO existe";
+                return;
+            }
+
+            tb_sel_ecc.Text = tab_ecp005.Rows[0]["va_cod_plg"].ToString();
+            lb_sel_ecc.Text = tab_ecp005.Rows[0]["va_des_plg"].ToString();
 
         }
 
@@ -167,8 +171,13 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+                {
+                    return "El Código del Plan de Pago debe ser numérico";
+                }
+
                 //Si aun existe
-                tab_ecp005 = o_ecp005._05(tb_sel_ecc.Text);
+                tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
                 {
                     return "El Plan de Pago no se encuentra registrado";
@@ -194,8 +203,13 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "El Código del Plan de Pago debe ser numérico";
+                }
+
                 //Si aun existe
-                tab_ecp005 = o_ecp005._05(tb_sel_ecc.Text);
+                tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
                 {
                     return "El Plan de Pago no se encuentra registrado";
@@ -214,8 +228,13 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
 
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    return "El Código del Plan de Pago debe ser numérico";
+                }
+
                 ///Si aun existe
-                tab_ecp005 = o_ecp005._05(tb_sel_ecc.Text);
+                tab_ecp005 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp005.Rows.Count == 0)
                 {
                     return "El Plan de Pago no se encuentra registrado";
@@ -328,5 +347,14 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_02 obj = new CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        #endregion
+
+
     }
 }

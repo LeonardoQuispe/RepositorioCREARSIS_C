@@ -297,6 +297,7 @@ namespace CREARSIS
 
         #endregion
 
+        //[Menu TC BS/UFV]
         private void mn_bs_ufv_Click(object sender, EventArgs e)
         {
             adm014_01 obj = new adm014_01();
@@ -304,83 +305,100 @@ namespace CREARSIS
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu TC BS/USD]
         private void mn_bs_us_Click(object sender, EventArgs e)
         {
             adm013_01 obj = new adm013_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu MARCA]
         private void mn_mar_pro_Click(object sender, EventArgs e)
         {
             inv004_01 obj = new inv004_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu UNIDAD DE MEDIDA]
         private void mn_uni_med_Click(object sender, EventArgs e)
         {
             inv003_01 obj = new inv003_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu FAMILIA DE PRODUCTO]
         private void mn_fam_pro_Click(object sender, EventArgs e)
         {
             inv001_01 obj = new inv001_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[EMPRESA]
         private void m_ads002_Click(object sender, EventArgs e)
         {
             adm001_03 obj = new adm001_03();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu GRUPO DE ALMACÉN]
         private void mn_gru_alm_Click(object sender, EventArgs e)
         {
             inv010_01 obj = new inv010_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu ALMACÉN]
         private void mn_alm_ace_Click(object sender, EventArgs e)
         {
             inv011_01 obj = new inv011_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu GRUPO DE PERSONA]
         private void mn_gru_per_Click(object sender, EventArgs e)
         {
-            CREARSIS._2_ADM.adm011_gru_per_.adm011_01 obj = new CREARSIS._2_ADM.adm011_gru_per_.adm011_01();
+            _2_ADM.adm011_gru_per_.adm011_01 obj = new _2_ADM.adm011_gru_per_.adm011_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu PERSONA]
         private void m_adm010_Click(object sender, EventArgs e)
         {
-            CREARSIS._2_ADM.adm010_per_.adm010_01 obj = new CREARSIS._2_ADM.adm010_per_.adm010_01();
+            _2_ADM.adm010_per_.adm010_01 obj = new _2_ADM.adm010_per_.adm010_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
         //[Menu PRODUCTO]
         private void mn_pro_duc_Click(object sender, EventArgs e)
         {
-            CREARSIS._4_INV.inv002_pro_.inv002_01 obj = new CREARSIS._4_INV.inv002_pro_.inv002_01();
+            _4_INV.inv002_pro_.inv002_01 obj = new _4_INV.inv002_pro_.inv002_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
         //[Menu VENDEDOR]
         private void m_ven_dedor_Click(object sender, EventArgs e)
         {
-            CREARSIS._6_CMR.cmr003_vendedor_.cmr003_01 obj = new CREARSIS._6_CMR.cmr003_vendedor_.cmr003_01();
+            _6_CMR.cmr003_vendedor_.cmr003_01 obj = new _6_CMR.cmr003_vendedor_.cmr003_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
         //[Menu LISTA DE PRECIOS]
         private void mn_pre_cio_Click(object sender, EventArgs e)
         {
-            CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01 obj = new CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01();
+            _6_CMR.cmr001_lista_precios_.cmr001_01 obj = new _6_CMR.cmr001_lista_precios_.cmr001_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 
+        //[Menu PLAN DE PAGO]
         private void mn_pla_pag_Click(object sender, EventArgs e)
         {
-            CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_01 obj = new _7_ECP.ecp005_plan_de_pago_.ecp005_01();
+            _7_ECP.ecp005_plan_de_pago_.ecp005_01 obj = new _7_ECP.ecp005_plan_de_pago_.ecp005_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
+
+        //[Menu LIBRETA]
+        private void mn_lib_ret_Click(object sender, EventArgs e)
+        {
+            _7_ECP.ecp006_libreta_.ecp006_01 obj = new _7_ECP.ecp006_libreta_.ecp006_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
     }

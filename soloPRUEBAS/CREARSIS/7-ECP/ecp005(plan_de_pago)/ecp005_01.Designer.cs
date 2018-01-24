@@ -73,6 +73,7 @@
             this.m_atr_ass.Name = "m_atr_ass";
             this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_ecp005_06
             // 

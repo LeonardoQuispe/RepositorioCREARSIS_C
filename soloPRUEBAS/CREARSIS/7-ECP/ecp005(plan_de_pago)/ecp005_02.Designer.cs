@@ -176,7 +176,7 @@
             this.tb_des_plg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_des_plg.ForeColor = System.Drawing.Color.Black;
             this.tb_des_plg.Location = new System.Drawing.Point(67, 46);
-            this.tb_des_plg.MaxLength = 25;
+            this.tb_des_plg.MaxLength = 50;
             this.tb_des_plg.Name = "tb_des_plg";
             this.tb_des_plg.PreventEnterBeep = true;
             this.tb_des_plg.Size = new System.Drawing.Size(275, 22);
@@ -287,6 +287,7 @@
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ecp005_02";

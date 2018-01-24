@@ -33,7 +33,6 @@ namespace CREARSIS
 
         public void fu_ini_frm()
         {
-            int cod_tpr = 0;
             //Obtiene parametros y muestra en pantalla
             if (vg_str_ucc.Rows.Count == 0)
             {

@@ -449,6 +449,7 @@ namespace CREARSIS
             }
             else
             {
+
                 ar_frm_nvo.Activate();
             }
         }
