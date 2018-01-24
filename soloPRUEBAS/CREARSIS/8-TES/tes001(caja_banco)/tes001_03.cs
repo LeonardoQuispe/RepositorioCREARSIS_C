@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS._8_TES.tes001_caja_banco_
 {
-    public partial class tes001_03 : Form
+    public partial class tes001_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public tes001_03()
         {

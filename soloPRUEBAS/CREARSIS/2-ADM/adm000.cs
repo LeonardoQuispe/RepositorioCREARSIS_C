@@ -377,5 +377,11 @@ namespace CREARSIS
             CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01 obj = new CREARSIS._6_CMR.cmr001_lista_precios_.cmr001_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        private void mn_pla_pag_Click(object sender, EventArgs e)
+        {
+            CREARSIS._7_ECP.ecp005_plan_de_pago_.ecp005_01 obj = new _7_ECP.ecp005_plan_de_pago_.ecp005_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

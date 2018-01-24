@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS._7_ECP.ecp006_libreta_
 {
-    public partial class ecp006_02 : Form
+    public partial class ecp006_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public ecp006_02()
         {

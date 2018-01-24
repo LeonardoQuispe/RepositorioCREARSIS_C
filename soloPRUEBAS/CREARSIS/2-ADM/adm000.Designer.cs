@@ -79,6 +79,9 @@
             this.ss_nom_bdo = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_etk_vna = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_nom_vna = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mn_cob_pag = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_lib_ret = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_pla_pag = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci.SuspendLayout();
             this.StatusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -191,7 +194,7 @@
             // mn_pre_cio
             // 
             this.mn_pre_cio.Name = "mn_pre_cio";
-            this.mn_pre_cio.Size = new System.Drawing.Size(162, 22);
+            this.mn_pre_cio.Size = new System.Drawing.Size(150, 22);
             this.mn_pre_cio.Text = "Lista de precio";
             this.mn_pre_cio.Click += new System.EventHandler(this.mn_pre_cio_Click);
             // 
@@ -210,6 +213,7 @@
             this.mr_inv_ent,
             this.mr_fac_tur,
             this.m_tes_ore,
+            this.mn_cob_pag,
             this.m_con_tab,
             this.m_ads002});
             this.mr_def_ini.Name = "mr_def_ini";
@@ -306,28 +310,28 @@
             // mn_dos_ifi
             // 
             this.mn_dos_ifi.Name = "mn_dos_ifi";
-            this.mn_dos_ifi.Size = new System.Drawing.Size(139, 22);
+            this.mn_dos_ifi.Size = new System.Drawing.Size(152, 22);
             this.mn_dos_ifi.Text = "&Dosificación";
             this.mn_dos_ifi.Click += new System.EventHandler(this.mn_dos_ifi_Click);
             // 
             // mn_suc_urs
             // 
             this.mn_suc_urs.Name = "mn_suc_urs";
-            this.mn_suc_urs.Size = new System.Drawing.Size(139, 22);
+            this.mn_suc_urs.Size = new System.Drawing.Size(152, 22);
             this.mn_suc_urs.Text = "&Sucursales";
             this.mn_suc_urs.Click += new System.EventHandler(this.mn_suc_urs_Click);
             // 
             // mn_act_ivi
             // 
             this.mn_act_ivi.Name = "mn_act_ivi";
-            this.mn_act_ivi.Size = new System.Drawing.Size(139, 22);
+            this.mn_act_ivi.Size = new System.Drawing.Size(152, 22);
             this.mn_act_ivi.Text = "&Actividades";
             this.mn_act_ivi.Click += new System.EventHandler(this.mn_act_ivi_Click);
             // 
             // mn_ley_end
             // 
             this.mn_ley_end.Name = "mn_ley_end";
-            this.mn_ley_end.Size = new System.Drawing.Size(139, 22);
+            this.mn_ley_end.Size = new System.Drawing.Size(152, 22);
             this.mn_ley_end.Text = "&Leyendas";
             this.mn_ley_end.Click += new System.EventHandler(this.mn_ley_end_Click);
             // 
@@ -342,7 +346,7 @@
             // m_caj_ass
             // 
             this.m_caj_ass.Name = "m_caj_ass";
-            this.m_caj_ass.Size = new System.Drawing.Size(97, 22);
+            this.m_caj_ass.Size = new System.Drawing.Size(152, 22);
             this.m_caj_ass.Text = "&Caja";
             // 
             // m_con_tab
@@ -493,6 +497,28 @@
             this.ss_nom_vna.Size = new System.Drawing.Size(16, 17);
             this.ss_nom_vna.Text = "...";
             // 
+            // mn_cob_pag
+            // 
+            this.mn_cob_pag.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mn_lib_ret,
+            this.mn_pla_pag});
+            this.mn_cob_pag.Name = "mn_cob_pag";
+            this.mn_cob_pag.Size = new System.Drawing.Size(168, 22);
+            this.mn_cob_pag.Text = "Por Cobrar/Pagar";
+            // 
+            // mn_lib_ret
+            // 
+            this.mn_lib_ret.Name = "mn_lib_ret";
+            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
+            this.mn_lib_ret.Text = "&Libreta";
+            // 
+            // mn_pla_pag
+            // 
+            this.mn_pla_pag.Name = "mn_pla_pag";
+            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
+            this.mn_pla_pag.Text = "&Plan de Pago";
+            this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
+            // 
             // adm000
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,6 +600,9 @@
         public System.Windows.Forms.ToolStripStatusLabel ss_nom_vna;
         private System.Windows.Forms.ToolStripMenuItem mn_gru_alm;
         private System.Windows.Forms.ToolStripMenuItem m_ven_dedor;
+        private System.Windows.Forms.ToolStripMenuItem mn_cob_pag;
+        private System.Windows.Forms.ToolStripMenuItem mn_lib_ret;
+        private System.Windows.Forms.ToolStripMenuItem mn_pla_pag;
     }
 }
 
