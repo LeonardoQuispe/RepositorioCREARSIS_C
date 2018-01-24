@@ -81,7 +81,7 @@
             this.tb_dia_ini.Name = "tb_dia_ini";
             this.tb_dia_ini.PreventEnterBeep = true;
             this.tb_dia_ini.Size = new System.Drawing.Size(62, 22);
-            this.tb_dia_ini.TabIndex = 9;
+            this.tb_dia_ini.TabIndex = 4;
             // 
             // labelX5
             // 
@@ -114,7 +114,7 @@
             this.tb_int_dia.Name = "tb_int_dia";
             this.tb_int_dia.PreventEnterBeep = true;
             this.tb_int_dia.Size = new System.Drawing.Size(62, 22);
-            this.tb_int_dia.TabIndex = 7;
+            this.tb_int_dia.TabIndex = 3;
             // 
             // labelX4
             // 
@@ -147,7 +147,7 @@
             this.tb_nro_cuo.Name = "tb_nro_cuo";
             this.tb_nro_cuo.PreventEnterBeep = true;
             this.tb_nro_cuo.Size = new System.Drawing.Size(62, 22);
-            this.tb_nro_cuo.TabIndex = 5;
+            this.tb_nro_cuo.TabIndex = 2;
             // 
             // labelX3
             // 
@@ -176,11 +176,11 @@
             this.tb_des_plg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_des_plg.ForeColor = System.Drawing.Color.Black;
             this.tb_des_plg.Location = new System.Drawing.Point(67, 46);
-            this.tb_des_plg.MaxLength = 25;
+            this.tb_des_plg.MaxLength = 40;
             this.tb_des_plg.Name = "tb_des_plg";
             this.tb_des_plg.PreventEnterBeep = true;
             this.tb_des_plg.Size = new System.Drawing.Size(275, 22);
-            this.tb_des_plg.TabIndex = 3;
+            this.tb_des_plg.TabIndex = 1;
             // 
             // labelX2
             // 
@@ -213,7 +213,7 @@
             this.tb_cod_plg.Name = "tb_cod_plg";
             this.tb_cod_plg.PreventEnterBeep = true;
             this.tb_cod_plg.Size = new System.Drawing.Size(62, 22);
-            this.tb_cod_plg.TabIndex = 1;
+            this.tb_cod_plg.TabIndex = 0;
             // 
             // LabelX1
             // 

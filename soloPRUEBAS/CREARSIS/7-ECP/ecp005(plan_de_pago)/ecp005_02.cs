@@ -56,24 +56,72 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
         /// </summary>
         public string fu_ver_dat()
         {
+            //valida codigo
             if (tb_cod_plg.Text.Trim() == "")
             {
                 tb_cod_plg.Focus();
                 return "Debes proporcionar el código del Plan de Pago";
             }
-
-            tab_ecp005 = o_ecp005._05(tb_cod_plg.Text);
+            
+            if (o_mg_glo_bal.fg_val_num(tb_cod_plg.Text) == false)
+            {
+                tb_cod_plg.Focus();
+                return "El código del Plan de Pago debe ser Numerico";
+            }
+            tab_ecp005 = o_ecp005._05(int.Parse(tb_cod_plg.Text));
             if (tab_ecp005.Rows.Count != 0)
             {
                 tb_cod_plg.Focus();
-                return "El codigo del Plan de Pago ya se encuentra registrada";
+                return "El codigo del Plan de Pago ya se encuentra registrado";
+            }
+            //valida descripcion
+            if (tb_des_plg.Text.Trim() == "")
+            {
+                tb_des_plg.Focus();
+                return "Debes proporcionar una Descripcion";
+            }
+            //valida Nro. Cuotas
+            if (tb_nro_cuo.Text.Trim() == "")
+            {
+                tb_nro_cuo.Focus();
+                return "Debes proporcionar el Nro. de Cuotas";
             }
 
-            if (tb_nom_uni.Text.Trim() == "")
+            if (o_mg_glo_bal.fg_val_num(tb_nro_cuo.Text) == false)
             {
-                tb_nom_uni.Focus();
-                return "Debes proporcionar el nombre del Plan de Pago";
+                tb_nro_cuo.Focus();
+                return "El Nro. de Cuotas debe ser Numerico";
             }
+            //valida Intervalo de dias
+            if (tb_int_dia.Text.Trim() == "")
+            {
+                tb_int_dia.Focus();
+                return "Debes proporcionar el Intervalo de Dias";
+            }
+
+            if (o_mg_glo_bal.fg_val_num(tb_int_dia.Text) == false)
+            {
+                tb_int_dia.Focus();
+                return "El Intervalo de Dias debe ser Numerico";
+            }
+            //valida Intervalo de dias
+            if (tb_dia_ini.Text.Trim() == "")
+            {
+                tb_dia_ini.Focus();
+                return "Debes proporcionar el Dia Inicial";
+            }
+
+            if (o_mg_glo_bal.fg_val_num(tb_dia_ini.Text) == false)
+            {
+                tb_dia_ini.Focus();
+                return "El Dia Inicial debe ser Numerico";
+            }
+            if(int.Parse(tb_dia_ini.Text) > 30)
+            {
+                tb_dia_ini.Focus();
+                return "El Dia Inicial debe ser Menor a 30";
+            }
+
 
             return null;
         }
