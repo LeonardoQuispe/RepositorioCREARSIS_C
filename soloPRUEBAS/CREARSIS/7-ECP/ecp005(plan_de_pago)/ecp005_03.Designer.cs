@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_dia_ini = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.tb_int_dia = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -44,6 +42,8 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -70,43 +70,6 @@
             this.GroupBox1.TabIndex = 3;
             this.GroupBox1.TabStop = false;
             // 
-            // labelX14
-            // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(4, 113);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 212;
-            this.labelX14.Text = "Estado:";
-            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(67, 111);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 3;
-            this.tb_est_ado.TabStop = false;
-            // 
             // tb_dia_ini
             // 
             this.tb_dia_ini.BackColor = System.Drawing.Color.White;
@@ -118,11 +81,11 @@
             this.tb_dia_ini.DisabledBackColor = System.Drawing.Color.White;
             this.tb_dia_ini.ForeColor = System.Drawing.Color.Black;
             this.tb_dia_ini.Location = new System.Drawing.Point(280, 109);
-            this.tb_dia_ini.MaxLength = 2;
+            this.tb_dia_ini.MaxLength = 3;
             this.tb_dia_ini.Name = "tb_dia_ini";
             this.tb_dia_ini.PreventEnterBeep = true;
             this.tb_dia_ini.Size = new System.Drawing.Size(62, 22);
-            this.tb_dia_ini.TabIndex = 4;
+            this.tb_dia_ini.TabIndex = 9;
             // 
             // labelX5
             // 
@@ -151,11 +114,11 @@
             this.tb_int_dia.DisabledBackColor = System.Drawing.Color.White;
             this.tb_int_dia.ForeColor = System.Drawing.Color.Black;
             this.tb_int_dia.Location = new System.Drawing.Point(280, 77);
-            this.tb_int_dia.MaxLength = 2;
+            this.tb_int_dia.MaxLength = 3;
             this.tb_int_dia.Name = "tb_int_dia";
             this.tb_int_dia.PreventEnterBeep = true;
             this.tb_int_dia.Size = new System.Drawing.Size(62, 22);
-            this.tb_int_dia.TabIndex = 2;
+            this.tb_int_dia.TabIndex = 7;
             // 
             // labelX4
             // 
@@ -184,11 +147,11 @@
             this.tb_nro_cuo.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_cuo.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_cuo.Location = new System.Drawing.Point(67, 77);
-            this.tb_nro_cuo.MaxLength = 2;
+            this.tb_nro_cuo.MaxLength = 3;
             this.tb_nro_cuo.Name = "tb_nro_cuo";
             this.tb_nro_cuo.PreventEnterBeep = true;
             this.tb_nro_cuo.Size = new System.Drawing.Size(62, 22);
-            this.tb_nro_cuo.TabIndex = 1;
+            this.tb_nro_cuo.TabIndex = 5;
             // 
             // labelX3
             // 
@@ -217,11 +180,11 @@
             this.tb_des_plg.DisabledBackColor = System.Drawing.Color.White;
             this.tb_des_plg.ForeColor = System.Drawing.Color.Black;
             this.tb_des_plg.Location = new System.Drawing.Point(67, 46);
-            this.tb_des_plg.MaxLength = 40;
+            this.tb_des_plg.MaxLength = 25;
             this.tb_des_plg.Name = "tb_des_plg";
             this.tb_des_plg.PreventEnterBeep = true;
             this.tb_des_plg.Size = new System.Drawing.Size(275, 22);
-            this.tb_des_plg.TabIndex = 0;
+            this.tb_des_plg.TabIndex = 3;
             // 
             // labelX2
             // 
@@ -256,7 +219,7 @@
             this.tb_cod_plg.PreventEnterBeep = true;
             this.tb_cod_plg.ReadOnly = true;
             this.tb_cod_plg.Size = new System.Drawing.Size(62, 22);
-            this.tb_cod_plg.TabIndex = 0;
+            this.tb_cod_plg.TabIndex = 1;
             // 
             // LabelX1
             // 
@@ -299,7 +262,6 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
-            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // bt_can_cel
             // 
@@ -316,7 +278,43 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(4, 113);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 212;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(67, 111);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 211;
+            this.tb_est_ado.TabStop = false;
             // 
             // ecp005_03
             // 
@@ -335,7 +333,6 @@
             this.Name = "ecp005_03";
             this.Text = "Actualiza Plan de Pago";
             this.TitleText = "Actualiza Plan de Pago";
-            this.Load += new System.EventHandler(this.ecp005_03_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
