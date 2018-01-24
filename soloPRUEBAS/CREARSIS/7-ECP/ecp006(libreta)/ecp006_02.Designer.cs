@@ -86,12 +86,12 @@
             this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_cta.Location = new System.Drawing.Point(172, 120);
+            this.tb_nom_cta.Location = new System.Drawing.Point(242, 120);
             this.tb_nom_cta.MaxLength = 40;
             this.tb_nom_cta.Name = "tb_nom_cta";
             this.tb_nom_cta.PreventEnterBeep = true;
             this.tb_nom_cta.ReadOnly = true;
-            this.tb_nom_cta.Size = new System.Drawing.Size(181, 22);
+            this.tb_nom_cta.Size = new System.Drawing.Size(111, 22);
             this.tb_nom_cta.TabIndex = 8;
             // 
             // labelX12
@@ -128,7 +128,7 @@
             this.tb_cod_cta.MaxLength = 20;
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
-            this.tb_cod_cta.Size = new System.Drawing.Size(88, 22);
+            this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
             this.tb_cod_cta.TabIndex = 7;
             // 
             // tb_cod_lib
