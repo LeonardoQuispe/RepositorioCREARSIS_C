@@ -142,21 +142,21 @@
             // m_ads005
             // 
             this.m_ads005.Name = "m_ads005";
-            this.m_ads005.Size = new System.Drawing.Size(137, 22);
+            this.m_ads005.Size = new System.Drawing.Size(152, 22);
             this.m_ads005.Text = "D&ocumento";
             this.m_ads005.Click += new System.EventHandler(this.m_ads005_Click);
             // 
             // m_ads006
             // 
             this.m_ads006.Name = "m_ads006";
-            this.m_ads006.Size = new System.Drawing.Size(137, 22);
+            this.m_ads006.Size = new System.Drawing.Size(152, 22);
             this.m_ads006.Text = "&Talonario";
             this.m_ads006.Click += new System.EventHandler(this.m_ads006_Click);
             // 
             // m_ads007
             // 
             this.m_ads007.Name = "m_ads007";
-            this.m_ads007.Size = new System.Drawing.Size(137, 22);
+            this.m_ads007.Size = new System.Drawing.Size(152, 22);
             this.m_ads007.Text = "&Numerador";
             this.m_ads007.Click += new System.EventHandler(this.m_ads007_Click);
             // 
@@ -194,8 +194,8 @@
             // mn_pre_cio
             // 
             this.mn_pre_cio.Name = "mn_pre_cio";
-            this.mn_pre_cio.Size = new System.Drawing.Size(150, 22);
-            this.mn_pre_cio.Text = "Lista de precio";
+            this.mn_pre_cio.Size = new System.Drawing.Size(152, 22);
+            this.mn_pre_cio.Text = "&Lista de precio";
             this.mn_pre_cio.Click += new System.EventHandler(this.mn_pre_cio_Click);
             // 
             // m_ven_dedor
@@ -310,28 +310,28 @@
             // mn_dos_ifi
             // 
             this.mn_dos_ifi.Name = "mn_dos_ifi";
-            this.mn_dos_ifi.Size = new System.Drawing.Size(139, 22);
+            this.mn_dos_ifi.Size = new System.Drawing.Size(152, 22);
             this.mn_dos_ifi.Text = "&Dosificación";
             this.mn_dos_ifi.Click += new System.EventHandler(this.mn_dos_ifi_Click);
             // 
             // mn_suc_urs
             // 
             this.mn_suc_urs.Name = "mn_suc_urs";
-            this.mn_suc_urs.Size = new System.Drawing.Size(139, 22);
+            this.mn_suc_urs.Size = new System.Drawing.Size(152, 22);
             this.mn_suc_urs.Text = "&Sucursales";
             this.mn_suc_urs.Click += new System.EventHandler(this.mn_suc_urs_Click);
             // 
             // mn_act_ivi
             // 
             this.mn_act_ivi.Name = "mn_act_ivi";
-            this.mn_act_ivi.Size = new System.Drawing.Size(139, 22);
+            this.mn_act_ivi.Size = new System.Drawing.Size(152, 22);
             this.mn_act_ivi.Text = "&Actividades";
             this.mn_act_ivi.Click += new System.EventHandler(this.mn_act_ivi_Click);
             // 
             // mn_ley_end
             // 
             this.mn_ley_end.Name = "mn_ley_end";
-            this.mn_ley_end.Size = new System.Drawing.Size(139, 22);
+            this.mn_ley_end.Size = new System.Drawing.Size(152, 22);
             this.mn_ley_end.Text = "&Leyendas";
             this.mn_ley_end.Click += new System.EventHandler(this.mn_ley_end_Click);
             // 
@@ -346,7 +346,7 @@
             // m_caj_ass
             // 
             this.m_caj_ass.Name = "m_caj_ass";
-            this.m_caj_ass.Size = new System.Drawing.Size(97, 22);
+            this.m_caj_ass.Size = new System.Drawing.Size(152, 22);
             this.m_caj_ass.Text = "&Caja";
             // 
             // mn_cob_pag

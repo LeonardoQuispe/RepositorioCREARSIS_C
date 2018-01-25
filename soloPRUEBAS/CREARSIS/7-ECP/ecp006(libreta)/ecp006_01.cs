@@ -134,22 +134,50 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         //ACTUALIZA
         private void m_ecp006_03_Click(object sender, EventArgs e)
         {
-
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Libreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp006_03 obj = new ecp006_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp006);
         }
         //HABILITA/DESHABILITA
         private void m_ecp006_04_Click(object sender, EventArgs e)
         {
-
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Libreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp006_04 obj = new ecp006_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp006);
         }
         //ELIMINA
         private void m_ecp006_06_Click(object sender, EventArgs e)
         {
-
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Libreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp006_06 obj = new ecp006_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp006);
         }
         //CONSULTA
         private void m_ecp006_05_Click(object sender, EventArgs e)
         {
-
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Libreta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ecp006_05 obj = new ecp006_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ecp006);
         }
         //ATRAS
         private void m_atr_ass_Click(object sender, EventArgs e)
