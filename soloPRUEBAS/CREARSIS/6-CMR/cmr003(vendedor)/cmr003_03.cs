@@ -16,15 +16,23 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 {
     public partial class cmr003_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
         decimal tmp;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_cmr003 o_cmr003 = new c_cmr003();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
+        #endregion
+
+        #region EVENTOS
 
         public cmr003_03()
         {
@@ -56,7 +64,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
 
             //Guarda Vendedor
-            o_cmr003._03(tb_cod_ven.Text.Trim(), tb_nom_ven.Text.Trim(), Convert.ToDecimal(tb_por_ven.Text.Trim()), cb_tip_com.SelectedIndex+1);
+            o_cmr003._03(tb_cod_ven.Text.Trim(), tb_nom_ven.Text.Trim(), Convert.ToDecimal(tb_por_ven.Text.Trim()), cb_tip_com.SelectedIndex + 1);
 
             MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Vendedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -70,14 +78,12 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             Close();
         }
 
+        #endregion
 
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
-        {            
+        {
             //Obtiene parametros y muestra en pantalla
             if (vg_str_ucc.Rows.Count == 0)
             {
@@ -105,7 +111,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
         string fu_ver_dat()
-        {            
+        {
             //VERIFICA nombre de vendedor
 
             if (tb_nom_ven.Text.Trim() == "")
@@ -145,12 +151,6 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             return null;
         }
 
-
-
-
-
-
-
-
+        #endregion
     }
 }

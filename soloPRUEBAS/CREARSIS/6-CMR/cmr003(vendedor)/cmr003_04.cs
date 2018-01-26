@@ -15,12 +15,20 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 {
     public partial class cmr003_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
 
+        #endregion
+
+        #region INSTANCIAS
+
         c_cmr003 o_cmr003 = new c_cmr003();
-        
+
+        #endregion
+
+        #region EVENTOS
 
         public cmr003_04()
         {
@@ -73,15 +81,9 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -108,10 +110,6 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             }
         }
 
-
-
-
-
-
+        #endregion
     }
 }

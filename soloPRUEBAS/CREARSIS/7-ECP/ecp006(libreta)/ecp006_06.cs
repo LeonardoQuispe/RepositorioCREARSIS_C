@@ -17,11 +17,21 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 {
     public partial class ecp006_06 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
 
+
+        #endregion
+
+        #region INSTANCIAS
+
         c_ecp006 o_ecp006 = new c_ecp006();
 
+        #endregion
+
+        #region EVENTOS
 
         public ecp006_06()
         {
@@ -57,13 +67,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -101,8 +107,6 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
         }
 
-
-
-
+        #endregion
     }
 }

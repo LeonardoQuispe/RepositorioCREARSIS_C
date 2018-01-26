@@ -15,14 +15,23 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 {
     public partial class cmr003_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+
+        #region VARIABLES
+        
         public dynamic vg_frm_pad;
         DataTable tab_cmr003;
         string vv_err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_cmr003 o_cmr003 = new c_cmr003();
 
+        #endregion
+
+        #region EVENTOS
 
         public cmr003_01()
         {
@@ -115,8 +124,9 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             Close();
         }
 
+        #endregion
 
-
+        #region OPCIONES DE MENU
 
         //NUEVO
         private void m_adm003_02_Click(object sender, EventArgs e)
@@ -184,10 +194,9 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+        #endregion
 
-
-
-
+        #region METODOS
 
         public void fu_ini_frm()
         {
@@ -200,7 +209,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
-            int va_ind_ice = 0;            
+            int va_ind_ice = 0;
             string va_est_ado = "";
 
             dg_res_ult.Rows.Clear();
@@ -210,7 +219,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             if (tab_cmr003.Rows.Count != 0)
             {
                 foreach (DataRow row in tab_cmr003.Rows)
-                {  
+                {
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -289,7 +298,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
                 return;
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
@@ -418,11 +427,6 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             }
         }
 
-
-
-
-
-
-
+        #endregion
     }
 }

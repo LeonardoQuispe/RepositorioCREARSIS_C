@@ -17,13 +17,21 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 {
     public partial class ecp006_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
 
-                
+        #endregion
+
+        #region INSTANCIAS
+
         c_ecp006 o_ecp006 = new c_ecp006();
 
+        #endregion
+
+        #region EVENTOS
 
         public ecp006_03()
         {
@@ -54,7 +62,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
             //Guarda PERSONA
-            o_ecp006._03(int.Parse(tb_cod_lib.Text),tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
+            o_ecp006._03(int.Parse(tb_cod_lib.Text), tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
 
             MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Libreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -68,13 +76,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -85,7 +89,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
             //Valida Tipo de Libreta
-            cb_tip_lib.SelectedIndex = int.Parse(vg_str_ucc.Rows[0]["va_tip_lib"].ToString())-1;
+            cb_tip_lib.SelectedIndex = int.Parse(vg_str_ucc.Rows[0]["va_tip_lib"].ToString()) - 1;
 
             //Valida Moneda de Libreta
             switch (vg_str_ucc.Rows[0]["va_mon_lib"].ToString())
@@ -98,7 +102,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             tb_cod_lib.Text = vg_str_ucc.Rows[0]["va_cod_lib"].ToString();
             tb_des_lib.Text = vg_str_ucc.Rows[0]["va_des_lib"].ToString();
             tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
-            
+
 
             //Valida Estado
             if (vg_str_ucc.Rows[0]["va_est_ado"].ToString() == "H")
@@ -116,23 +120,18 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
         public string fu_ver_dat()
-        {            
+        {
             //**Verifica Descripcion de Libreta
             if (tb_des_lib.Text.Trim() == "")
             {
                 tb_des_lib.Focus();
                 return "Debes proporcionar la Descripción de la Libreta";
             }
-            
+
 
             return null;
         }
 
-
-
-
-
-
-
+        #endregion
     }
 }

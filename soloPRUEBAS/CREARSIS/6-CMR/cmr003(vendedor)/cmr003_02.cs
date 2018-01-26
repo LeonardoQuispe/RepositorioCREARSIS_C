@@ -16,14 +16,23 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 {
     public partial class cmr003_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         string err_msg = "";
         DataTable tab_cmr003;
         decimal tmp;
 
+        #endregion
+
+        #region INSTANCIAS
+
         c_cmr003 o_cmr003 = new c_cmr003();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
+        #endregion
+
+        #region EVENTOS
 
         public cmr003_02()
         {
@@ -53,9 +62,9 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             {
                 return;
             }
-            
+
             //Guarda PERSONA
-            o_cmr003._02(tb_cod_ven.Text.Trim(), tb_nom_ven.Text.Trim(),Convert.ToDecimal(tb_por_ven.Text.Trim()), cb_tip_com.SelectedIndex+1);
+            o_cmr003._02(tb_cod_ven.Text.Trim(), tb_nom_ven.Text.Trim(), Convert.ToDecimal(tb_por_ven.Text.Trim()), cb_tip_com.SelectedIndex + 1);
 
             MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Vendedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -70,13 +79,11 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         {
             Close();
         }
-        
 
 
+        #endregion
 
-        
-
-
+        #region METODOS
 
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
@@ -103,7 +110,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             {
                 tb_cod_ven.Focus();
                 return "El Código de Vendedor ya se encuentra Registrado";
-            }            
+            }
 
             //VERIFICA nombre de vendedor
 
@@ -135,7 +142,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
             decimal.TryParse(tb_por_ven.Text, out tmp);
 
-            if (tmp>100)
+            if (tmp > 100)
             {
                 return "El Porcentaje de Comisión no debe ser mayor a 100";
             }
@@ -149,15 +156,12 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         {
             tb_cod_ven.Clear();
             tb_nom_ven.Clear();
-            tb_por_ven.Clear();            
+            tb_por_ven.Clear();
             cb_tip_com.SelectedIndex = 0;
 
             tb_cod_ven.Focus();
         }
 
-
-
-
-
+        #endregion
     }
 }

@@ -422,6 +422,21 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
 
         #region OPCIONES DEL MENU
 
+        //BUSCA PRECIO
+        private void m_cmr002_01_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat4();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01();
+
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+        }
+
         //MENU NUEVO
         private void m_cmr001_02_Click(object sender, EventArgs e)
         {
@@ -490,18 +505,6 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         }
         #endregion
 
-        private void m_cmr002_01_Click(object sender, EventArgs e)
-        {
-            string vv_err_msg = null;
-            vv_err_msg = fu_ver_dat4();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01();
-
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
-        }
+        
     }
 }

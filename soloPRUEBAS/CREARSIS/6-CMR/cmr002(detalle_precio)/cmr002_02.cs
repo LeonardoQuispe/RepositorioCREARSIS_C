@@ -241,6 +241,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         }
         #endregion
 
+        #region EVENTOS
+
         public cmr002_02()
         {
             InitializeComponent();
@@ -270,12 +272,12 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                     return;
                 }
                 // grabar datos
-                o_cmr002._02(Convert.ToInt32(tb_cod_lis.Text), tb_cod_pro.Text.Trim().ToString(),Convert.ToDecimal(tb_pre_cio.Text), Convert.ToDecimal(tb_pmx_des.Text), Convert.ToDecimal(tb_pmx_inc.Text), Convert.ToDecimal(tb_por_cal.Text));
+                o_cmr002._02(Convert.ToInt32(tb_cod_lis.Text), tb_cod_pro.Text.Trim().ToString(), Convert.ToDecimal(tb_pre_cio.Text), Convert.ToDecimal(tb_pmx_des.Text), Convert.ToDecimal(tb_pmx_inc.Text), Convert.ToDecimal(tb_por_cal.Text));
 
                 //Actualiza la grilla de busqueda en la ventana padre
                 vg_frm_pad.fu_bus_car(tb_cod_lis.Text);
                 vg_frm_pad.fu_sel_fila(tb_cod_pro.Text, tb_nom_pro.Text);
-                
+
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Detalle de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -285,7 +287,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 tb_pre_cio.Text = "0.00";
                 tb_pmx_des.Text = "0.00";
                 tb_pmx_inc.Text = "0.00";
-                
+
                 tb_pmx_des.Text = "0.00";
 
 
@@ -340,6 +342,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             fu_rec_pro(tb_cod_pro.Text);
         }
 
-       
+        #endregion
+
     }
 }

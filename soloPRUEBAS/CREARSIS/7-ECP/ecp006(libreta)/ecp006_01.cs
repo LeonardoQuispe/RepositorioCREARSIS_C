@@ -17,15 +17,22 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 {
     public partial class ecp006_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
 
         public dynamic vg_frm_pad;
         DataTable tab_ecp006;
         string vv_err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_ecp006 o_ecp006 = new c_ecp006();
 
+        #endregion
+
+        #region EVENTOS
 
         public ecp006_01()
         {
@@ -119,11 +126,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             Close();
         }
 
+        #endregion
 
-
-
-
-
+        #region OPCIONES DE MENU
 
         //NUEVO
         private void m_ecp006_02_Click(object sender, EventArgs e)
@@ -185,12 +190,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+        #endregion
 
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -198,11 +200,11 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             cb_tip_lib.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1,cb_tip_lib.SelectedIndex+1, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_tip_lib.SelectedIndex + 1, cb_est_bus.SelectedIndex);
 
         }
 
-        public void fu_bus_car(string val_bus, int prm_bus,int tip_lib, int est_bus)
+        public void fu_bus_car(string val_bus, int prm_bus, int tip_lib, int est_bus)
         {
             int va_ind_ice = 0;
             string va_tip_lib = "";
@@ -211,7 +213,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
             dg_res_ult.Rows.Clear();
 
-            tab_ecp006 = o_ecp006._01(val_bus, prm_bus,tip_lib, est_bus.ToString());
+            tab_ecp006 = o_ecp006._01(val_bus, prm_bus, tip_lib, est_bus.ToString());
 
             if (tab_ecp006.Rows.Count != 0)
             {
@@ -220,7 +222,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                     //Se valida el tipo de Libreta
                     switch (row["va_tip_lib"].ToString())
                     {
-                        case "1": va_tip_lib = "Cta. Por Cobrar";break;
+                        case "1": va_tip_lib = "Cta. Por Cobrar"; break;
                         case "2": va_tip_lib = "Cta. Por Pagar"; break;
                     }
 
@@ -241,7 +243,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                     }
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_lib"],va_tip_lib,va_mon_lib,row["va_des_lib"],va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_lib"], va_tip_lib, va_mon_lib, row["va_des_lib"], va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -268,7 +270,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         /// </summary>
         public void fu_sel_fila(string cod_lis)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1,cb_tip_lib.SelectedIndex+1, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex + 1, cb_tip_lib.SelectedIndex + 1, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_lis;
 
@@ -305,7 +307,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 return;
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
@@ -344,7 +346,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
-                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
                 {
                     return "El Código de la Libreta debe ser Numérico";
                 }
@@ -425,5 +427,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 return "Ningún dato Seleccionado";
             }
         }
+
+        #endregion
     }
 }

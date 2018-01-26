@@ -15,12 +15,20 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 {
     public partial class tes001_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_tes001 o_tes001 = new c_tes001();
 
+        #endregion
+
+        #region EVENTOS
 
         public tes001_04()
         {
@@ -73,8 +81,9 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             Close();
         }
 
+        #endregion
 
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -113,8 +122,6 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 
         }
 
-
-
-
+        #endregion
     }
 }

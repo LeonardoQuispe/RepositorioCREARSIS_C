@@ -393,6 +393,8 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
         }
         #endregion
 
+        #region EVENTOS
+
         public cmr002_01()
         {
             InitializeComponent();
@@ -403,21 +405,48 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             fu_ini_frm();
         }
 
-        private void m_cmr002_02_Click(object sender, EventArgs e)
-        {
-            CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02();
-            
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
-        }
-
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void m_atr_ass_Click(object sender, EventArgs e)
+        private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            o_mg_glo_bal.mg_ads000_04(this, 2);
+            fu_fil_act();
+        }
+
+        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
+        {
+            fu_fil_act();
+        }
+
+        private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dg_res_ult.Rows.Count != 0)
+            {
+                if (e.KeyData == Keys.Down)
+                {
+                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index + 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+
+                //al presionar tecla para ARRIBA
+                if (e.KeyData == Keys.Up)
+                {
+                    if (dg_res_ult.CurrentRow.Index != 0)
+                    {
+                        int fila = dg_res_ult.CurrentRow.Index - 1;
+                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                        fu_fil_act();
+
+                    }
+                }
+            }
         }
 
         private void tb_sel_ecc2_ButtonCustomClick(object sender, EventArgs e)
@@ -482,13 +511,26 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
 
         private void tb_sel_ecc_Validated(object sender, EventArgs e)
         {
-                fu_con_sel();
+            fu_con_sel();
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
         }
+
+        #endregion
+
+        #region OPCIONES DEL MENU
+
+        //NUEVO
+        private void m_cmr002_02_Click(object sender, EventArgs e)
+        {
+            CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_02();
+
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+        }
+
         //ACTUALIZA
         private void m_cmr002_03_Click(object sender, EventArgs e)
         {
@@ -532,43 +574,13 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr002);
         }
 
-        private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
         {
-            fu_fil_act();
+            o_mg_glo_bal.mg_ads000_04(this, 2);
         }
 
-        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
-        {
-            fu_fil_act();
-        }
-
-        private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (dg_res_ult.Rows.Count != 0)
-            {
-                if (e.KeyData == Keys.Down)
-                {
-                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index + 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
-                }
-
-                //al presionar tecla para ARRIBA
-                if (e.KeyData == Keys.Up)
-                {
-                    if (dg_res_ult.CurrentRow.Index != 0)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index - 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
-                }
-            }
-        }
+        #endregion
+        
     }
 }

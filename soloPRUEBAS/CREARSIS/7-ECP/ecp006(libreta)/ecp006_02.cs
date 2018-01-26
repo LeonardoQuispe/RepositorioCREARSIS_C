@@ -17,14 +17,22 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 {
     public partial class ecp006_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_ecp006;
         string err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_ecp006 o_ecp006 = new c_ecp006();
 
+        #endregion
+
+        #region EVENTOS
 
         public ecp006_02()
         {
@@ -69,7 +77,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
                 string va_mon_lis = "";
 
-                if (cb_mon_lib.SelectedIndex==0)
+                if (cb_mon_lib.SelectedIndex == 0)
                 {
                     va_mon_lis = "B";
                 }
@@ -80,7 +88,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
                 //Graba datos
                 o_ecp006._02(int.Parse(tb_cod_lib.Text.Trim()), cb_tip_lib.SelectedIndex + 1,
-                            va_mon_lis,tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
+                            va_mon_lis, tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Libreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -99,11 +107,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             Close();
         }
 
+        #endregion
 
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -143,19 +149,19 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 tb_nro_lib.Focus();
                 return "Debes proporcionar el Nro de la Libreta";
             }
-            if (o_mg_glo_bal.fg_val_num(tb_nro_lib.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_nro_lib.Text) == false)
             {
                 tb_nro_lib.Focus();
                 return "El Nro de la Libreta debe ser numérico";
             }
-            if (int.Parse(tb_nro_lib.Text.Trim())<=0)
+            if (int.Parse(tb_nro_lib.Text.Trim()) <= 0)
             {
                 tb_nro_lib.Focus();
                 return "El Nro de la Libreta debe ser mayor a 0";
             }
 
             //Valida Codigo de Libreta
-            if (tb_cod_lib.Text.Trim()=="")
+            if (tb_cod_lib.Text.Trim() == "")
             {
                 tb_cod_lib.Focus();
                 return "Debes proporcionar el Código de la Libreta";
@@ -169,12 +175,12 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
             //Valida Descripcion de Libreta
-            if (tb_des_lib.Text.Trim()=="")
+            if (tb_des_lib.Text.Trim() == "")
             {
                 tb_des_lib.Focus();
                 return "Debes proporcionar la Descripción de la Libreta";
             }
-            
+
 
             return null;
         }
@@ -227,7 +233,6 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             tb_nro_lib.Text = nro_sug.ToString();
         }
 
-
-
+        #endregion
     }
 }

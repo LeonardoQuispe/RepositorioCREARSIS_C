@@ -17,14 +17,22 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 {
     public partial class tes001_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_tes001;
         string vv_err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_tes001 o_tes001 = new c_tes001();
 
+        #endregion
+
+        #region EVENTOS
 
         public tes001_01()
         {
@@ -117,12 +125,78 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             Close();
         }
 
+        #endregion
 
+        #region OPCIONES DE MENU
 
+        //NUEVO
+        private void m_tes001_02_Click(object sender, EventArgs e)
+        {
+            tes001_02 obj = new tes001_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
 
+        //ACTUALIZA
+        private void m_tes001_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            tes001_03 obj = new tes001_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
+        }
 
+        //HABILITA/DESHABILITA
+        private void m_tes001_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            tes001_04 obj = new tes001_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
+        }
 
+        //ELIMINA
+        private void m_tes001_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            tes001_06 obj = new tes001_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
+        }
 
+        //CONSULTA
+        private void m_tes001_05_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            tes001_05 obj = new tes001_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
+        }
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+        #endregion
+
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -130,11 +204,11 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             cb_tip_cjb.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
 
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_tip_cjb.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_tip_cjb.SelectedIndex, cb_est_bus.SelectedIndex);
 
         }
 
-        public void fu_bus_car(string val_bus, int prm_bus,int tip_cjb, int est_bus)
+        public void fu_bus_car(string val_bus, int prm_bus, int tip_cjb, int est_bus)
         {
             int va_ind_ice = 0;
             string va_tip_cjb = "";
@@ -143,7 +217,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 
             dg_res_ult.Rows.Clear();
 
-            tab_tes001 = o_tes001._01(val_bus, prm_bus,tip_cjb, est_bus.ToString());
+            tab_tes001 = o_tes001._01(val_bus, prm_bus, tip_cjb, est_bus.ToString());
 
             if (tab_tes001.Rows.Count != 0)
             {
@@ -152,7 +226,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
                     //Se valida el tipo de Caja/Banco
                     switch (row["va_tip_cjb"].ToString())
                     {
-                        case "1": va_tip_cjb = "Caja";break;
+                        case "1": va_tip_cjb = "Caja"; break;
                         case "2": va_tip_cjb = "Banco"; break;
                     }
 
@@ -173,7 +247,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
                     }
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_cjb"],va_tip_cjb,va_mon_cjb,row["va_nom_cjb"],
+                    dg_res_ult.Rows.Add(row["va_cod_cjb"], va_tip_cjb, va_mon_cjb, row["va_nom_cjb"],
                                         row["va_sal_cjb"], va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
@@ -201,7 +275,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         /// </summary>
         public void fu_sel_fila(string cod_cjb)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_tip_cjb.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_tip_cjb.SelectedIndex, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_cjb;
 
@@ -238,7 +312,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
                 return;
             }
 
-            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
@@ -277,7 +351,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
-                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text)==false)
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
                 {
                     return "El Código de la Caja/Banco debe ser Numérico";
                 }
@@ -359,85 +433,6 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             }
         }
 
-
-
-
-
-
-
-
-
-
-        //NUEVO
-        private void m_tes001_02_Click(object sender, EventArgs e)
-        {
-            tes001_02 obj = new tes001_02();
-            o_mg_glo_bal.mg_ads000_02(obj, this);
-        }
-
-        //ACTUALIZA
-        private void m_tes001_03_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tes001_03 obj = new tes001_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
-        }
-
-        //HABILITA/DESHABILITA
-        private void m_tes001_04_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tes001_04 obj = new tes001_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
-        }
-
-        //ELIMINA
-        private void m_tes001_06_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat3();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tes001_06 obj = new tes001_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
-        }
-        
-        //CONSULTA
-        private void m_tes001_05_Click(object sender, EventArgs e)
-        {
-            vv_err_msg = fu_ver_dat2();
-            if (vv_err_msg != null)
-            {
-                MessageBoxEx.Show(vv_err_msg, "Busca Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tes001_05 obj = new tes001_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_tes001);
-        }
-
-        //ATRAS
-        private void m_atr_ass_Click(object sender, EventArgs e)
-        {
-            o_mg_glo_bal.mg_ads000_04(this, 1);
-        }
-
-
-        
-
-
-
-
+        #endregion
     }
 }

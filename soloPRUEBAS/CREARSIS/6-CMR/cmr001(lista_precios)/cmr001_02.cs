@@ -74,6 +74,8 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
         }
         #endregion
 
+        #region EVENTOS
+
         public cmr001_02()
         {
             InitializeComponent();
@@ -131,5 +133,8 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             tb_fec_fin.Value = o_mg_glo_bal.fg_fec_act().AddMonths(6);
             tb_cod_lis.Focus();
         }
+
+        #endregion
+
     }
 }

@@ -15,14 +15,22 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 {
     public partial class tes001_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_tes001;
         string err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_tes001 o_tes001 = new c_tes001();
 
+        #endregion
+
+        #region EVENTOS
 
         public tes001_02()
         {
@@ -37,9 +45,9 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         private void cb_tip_cjb_SelectedIndexChanged(object sender, EventArgs e)
         {
             fu_sug_nro();
-            fu_cod_cjb();            
+            fu_cod_cjb();
         }
-        
+
         private void tb_nro_cjb_Validated(object sender, EventArgs e)
         {
             fu_cod_cjb();
@@ -77,8 +85,8 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
                 }
 
                 //Graba datos
-                o_tes001._02(int.Parse(tb_cod_cjb.Text.Trim()), cb_tip_cjb.SelectedIndex + 1,va_mon_cjb,
-                            tb_nom_cjb.Text.Trim(),tb_nro_cta.Text.Trim(),0m,tb_cod_cta.Text.Trim());
+                o_tes001._02(int.Parse(tb_cod_cjb.Text.Trim()), cb_tip_cjb.SelectedIndex + 1, va_mon_cjb,
+                            tb_nom_cjb.Text.Trim(), tb_nro_cta.Text.Trim(), 0m, tb_cod_cta.Text.Trim());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Caja/Banco", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -97,12 +105,9 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -110,7 +115,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             cb_mon_cjb.SelectedIndex = 0;
 
             fu_sug_nro();
-            fu_cod_cjb();            
+            fu_cod_cjb();
 
             tb_nro_cjb.Focus();
         }
@@ -132,7 +137,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 
             fu_sug_nro();
             fu_cod_cjb();
-            
+
         }
 
         string fu_ver_dat()
@@ -183,7 +188,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
                 tb_nro_cta.Focus();
                 return "Debes proporcionar el Nro. de Cuenta de la Caja/Banco";
             }
-            
+
             return null;
         }
 
@@ -196,11 +201,11 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             {
                 tb_nro_cjb.Clear();
 
-                tb_cod_cjb.Text =  (cb_tip_cjb.SelectedIndex+1).ToString()+(cb_mon_cjb.SelectedIndex+1).ToString() + "000";
+                tb_cod_cjb.Text = (cb_tip_cjb.SelectedIndex + 1).ToString() + (cb_mon_cjb.SelectedIndex + 1).ToString() + "000";
             }
             else
             {
-                tb_cod_cjb.Text = (cb_tip_cjb.SelectedIndex + 1).ToString() + (cb_mon_cjb.SelectedIndex + 1).ToString() + tb_nro_cjb.Text.Trim().PadLeft(3,'0');
+                tb_cod_cjb.Text = (cb_tip_cjb.SelectedIndex + 1).ToString() + (cb_mon_cjb.SelectedIndex + 1).ToString() + tb_nro_cjb.Text.Trim().PadLeft(3, '0');
             }
         }
 
@@ -208,7 +213,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         /// FUnción que sugiere el último numero usado, según el Tipo y Moneda de la Caja/Banco
         /// </summary>
         void fu_sug_nro()
-        {            
+        {
             int tip_cjb;
             int mon_cjb;
             string nro;
@@ -223,21 +228,17 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             //Realiza Consulta a BD con el numero conformado
             tab_tes001 = o_tes001._05a(nro);
 
-            if (tab_tes001.Rows[0][0].ToString()=="")
+            if (tab_tes001.Rows[0][0].ToString() == "")
             {
                 tb_nro_cjb.Text = "1";
                 return;
             }
 
-            nro_sug = int.Parse(tab_tes001.Rows[0][0].ToString().Substring(2, 3))+1;
+            nro_sug = int.Parse(tab_tes001.Rows[0][0].ToString().Substring(2, 3)) + 1;
 
             tb_nro_cjb.Text = nro_sug.ToString();
         }
 
-
-
-
-
-
+        #endregion
     }
 }
