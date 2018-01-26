@@ -233,13 +233,16 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         /// FUnción que sugiere el último numero usado, según el Tipo y Moneda de la Caja/Banco
         /// </summary>
         void fu_sug_nro()
-        {
+        {            
+            int tip_cjb;
+            int mon_cjb;
+            string nro;
             int nro_sug;
 
-            int tip_cjb = cb_tip_cjb.SelectedIndex + 1;
-            int mon_cjb = cb_mon_cjb.SelectedIndex + 1;
+            tip_cjb = cb_tip_cjb.SelectedIndex + 1;
+            mon_cjb = cb_mon_cjb.SelectedIndex + 1;
 
-            string nro = tip_cjb.ToString() + mon_cjb.ToString();
+            nro = tip_cjb.ToString() + mon_cjb.ToString();
 
             tab_tes001 = o_tes001._05a(nro);
 
@@ -247,7 +250,6 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             {
                 return;
             }
-
 
             nro_sug = int.Parse(tab_tes001.Rows[0][0].ToString().Substring(2, 3))+1;
 
