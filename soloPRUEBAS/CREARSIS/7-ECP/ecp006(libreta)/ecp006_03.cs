@@ -53,20 +53,8 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 return;
             }
 
-            string va_mon_lis = "";
-
-            if (cb_mon_lib.SelectedIndex == 0)
-            {
-                va_mon_lis = "B";
-            }
-            else if (cb_mon_lib.SelectedIndex == 1)
-            {
-                va_mon_lis = "U";
-            }
-
             //Guarda PERSONA
-            o_ecp006._03(int.Parse(tb_cod_lib.Text), cb_tip_lib.SelectedIndex + 1, va_mon_lis,
-                        int.Parse(tb_nro_lib.Text), tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
+            o_ecp006._03(int.Parse(tb_cod_lib.Text),tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
 
             MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Libreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -107,7 +95,6 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
             //Llena los datos
-            tb_nro_lib.Text = vg_str_ucc.Rows[0]["va_nro_lib"].ToString();
             tb_cod_lib.Text = vg_str_ucc.Rows[0]["va_cod_lib"].ToString();
             tb_des_lib.Text = vg_str_ucc.Rows[0]["va_des_lib"].ToString();
             tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
@@ -136,13 +123,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 tb_des_lib.Focus();
                 return "Debes proporcionar la Descripción de la Libreta";
             }
-
-            //Valida Cuenta Contabe
-            if (tb_cod_cta.Text.Trim() == "")
-            {
-                tb_cod_cta.Focus();
-                return "Debes proporcionar la Cuenta Contable de la Libreta";
-            }
+            
 
             return null;
         }

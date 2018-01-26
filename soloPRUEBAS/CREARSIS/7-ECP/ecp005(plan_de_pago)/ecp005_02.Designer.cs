@@ -93,7 +93,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(7, 110);
+            this.labelX5.Location = new System.Drawing.Point(17, 110);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(49, 17);
             this.labelX5.TabIndex = 8;
@@ -225,7 +225,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(7, 19);
+            this.LabelX1.Location = new System.Drawing.Point(26, 17);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 0;
@@ -287,7 +287,6 @@
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ecp005_02";

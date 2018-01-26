@@ -85,6 +85,7 @@
             this.tb_nom_cta.Border.Class = "TextBoxBorder";
             this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_cta.Enabled = false;
             this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_cta.Location = new System.Drawing.Point(242, 120);
             this.tb_nom_cta.MaxLength = 40;
@@ -102,7 +103,7 @@
             // 
             // 
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.ForeColor = System.Drawing.Color.Black;
             this.labelX12.Location = new System.Drawing.Point(6, 121);
             this.labelX12.Name = "labelX12";
@@ -123,6 +124,7 @@
             this.tb_cod_cta.ButtonCustom.Symbol = "";
             this.tb_cod_cta.ButtonCustom.Visible = true;
             this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_cta.Enabled = false;
             this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cta.Location = new System.Drawing.Point(78, 120);
             this.tb_cod_cta.MaxLength = 20;

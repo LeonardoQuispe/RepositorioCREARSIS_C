@@ -78,7 +78,7 @@
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(4, 113);
+            this.labelX14.Location = new System.Drawing.Point(20, 112);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(45, 17);
             this.labelX14.TabIndex = 212;
@@ -97,7 +97,7 @@
             this.tb_est_ado.Enabled = false;
             this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(67, 111);
+            this.tb_est_ado.Location = new System.Drawing.Point(67, 109);
             this.tb_est_ado.MaxLength = 80;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
@@ -115,6 +115,7 @@
             this.tb_dia_ini.Border.Class = "TextBoxBorder";
             this.tb_dia_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_dia_ini.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_dia_ini.Enabled = false;
             this.tb_dia_ini.ForeColor = System.Drawing.Color.Black;
             this.tb_dia_ini.Location = new System.Drawing.Point(280, 109);
             this.tb_dia_ini.MaxLength = 3;
@@ -149,6 +150,7 @@
             this.tb_int_dia.Border.Class = "TextBoxBorder";
             this.tb_int_dia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_int_dia.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_int_dia.Enabled = false;
             this.tb_int_dia.ForeColor = System.Drawing.Color.Black;
             this.tb_int_dia.Location = new System.Drawing.Point(280, 77);
             this.tb_int_dia.MaxLength = 3;
@@ -183,6 +185,7 @@
             this.tb_nro_cuo.Border.Class = "TextBoxBorder";
             this.tb_nro_cuo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nro_cuo.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_cuo.Enabled = false;
             this.tb_nro_cuo.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_cuo.Location = new System.Drawing.Point(67, 77);
             this.tb_nro_cuo.MaxLength = 3;
@@ -217,6 +220,7 @@
             this.tb_des_plg.Border.Class = "TextBoxBorder";
             this.tb_des_plg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_des_plg.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_des_plg.Enabled = false;
             this.tb_des_plg.ForeColor = System.Drawing.Color.Black;
             this.tb_des_plg.Location = new System.Drawing.Point(67, 46);
             this.tb_des_plg.MaxLength = 25;
@@ -271,7 +275,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline);
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(5, 19);
+            this.LabelX1.Location = new System.Drawing.Point(27, 19);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(38, 17);
             this.LabelX1.TabIndex = 0;

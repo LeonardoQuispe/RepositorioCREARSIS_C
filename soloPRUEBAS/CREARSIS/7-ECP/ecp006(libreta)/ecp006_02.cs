@@ -121,8 +121,8 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 }
 
                 //Graba datos
-                o_ecp006._02(int.Parse(tb_cod_lib.Text.Trim()), cb_tip_lib.SelectedIndex + 1, va_mon_lis,
-                            int.Parse(tb_nro_lib.Text.Trim()), tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
+                o_ecp006._02(int.Parse(tb_cod_lib.Text.Trim()), cb_tip_lib.SelectedIndex + 1,
+                            va_mon_lis,tb_des_lib.Text.Trim(), tb_cod_cta.Text.Trim());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Libreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -177,6 +177,16 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 tb_nro_lib.Focus();
                 return "Debes proporcionar el Nro de la Libreta";
             }
+            if (o_mg_glo_bal.fg_val_num(tb_nro_lib.Text)==false)
+            {
+                tb_nro_lib.Focus();
+                return "El Nro de la Libreta debe ser numérico";
+            }
+            if (int.Parse(tb_nro_lib.Text.Trim())<=0)
+            {
+                tb_nro_lib.Focus();
+                return "El Nro de la Libreta debe ser mayor a 0";
+            }
 
             //Valida Codigo de Libreta
             if (tb_cod_lib.Text.Trim()=="")
@@ -188,7 +198,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             tab_ecp006 = o_ecp006._05(int.Parse(tb_cod_lib.Text));
             if (tab_ecp006.Rows.Count != 0)
             {
-                tb_cod_lib.Focus();
+                tb_nro_lib.Focus();
                 return "El Código de la Libreta ya se encuentra registrado";
             }
 
@@ -198,13 +208,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 tb_des_lib.Focus();
                 return "Debes proporcionar la Descripción de la Libreta";
             }
-
-            //Valida Cuenta Contabe
-            if (tb_cod_cta.Text.Trim()=="")
-            {
-                tb_cod_cta.Focus();
-                return "Debes proporcionar la Cuenta Contable de la Libreta";
-            }
+            
 
             return null;
         }

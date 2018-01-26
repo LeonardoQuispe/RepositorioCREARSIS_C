@@ -401,5 +401,12 @@ namespace CREARSIS
             _7_ECP.ecp006_libreta_.ecp006_01 obj = new _7_ECP.ecp006_libreta_.ecp006_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        //[Menu CAJA/BANCO]
+        private void m_caj_ass_Click(object sender, EventArgs e)
+        {
+            _8_TES.tes001_caja_banco_.tes001_01 obj = new _8_TES.tes001_caja_banco_.tes001_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

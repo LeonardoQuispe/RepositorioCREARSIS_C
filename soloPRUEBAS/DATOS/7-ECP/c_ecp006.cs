@@ -82,14 +82,14 @@ namespace DATOS._7_ECP
         /// <param name="nro_lib">Nro Correlativo de Libreta (3 Numeros)</param>
         /// <param name="des_lib">Descripcion de la Libreta</param>
         /// <param name="cod_cta">Cod. Cuenta Contable</param>
-        public void _02(int cod_lib, int tip_lib, string mon_lib, int nro_lib, string des_lib,string cod_cta)
+        public void _02(int cod_lib, int tip_lib, string mon_lib, string des_lib,string cod_cta)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ecp006 VALUES");
                 vv_str_sql.AppendFormat(" ({0},{1},'{2}',",cod_lib,tip_lib,mon_lib);
-                vv_str_sql.AppendFormat("{0},'{1}','{2}','H')", nro_lib, des_lib, cod_cta);
+                vv_str_sql.AppendFormat("'{0}','{1}','H')", des_lib, cod_cta);
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
@@ -112,13 +112,12 @@ namespace DATOS._7_ECP
         /// <param name="nro_lib">Nro Correlativo de Libreta (3 Numeros)</param>
         /// <param name="des_lib">Descripcion de la Libreta</param>
         /// <param name="cod_cta">Cod. Cuenta Contable</param>
-        public void _03(int cod_lib, int tip_lib, string mon_lib, int nro_lib, string des_lib, string cod_cta)
+        public void _03(int cod_lib, string des_lib, string cod_cta)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE ecp006 SET");
-                vv_str_sql.AppendFormat(" va_tip_lib={0},va_mon_lib='{1}',va_nro_lib={2},",tip_lib,mon_lib,nro_lib);
                 vv_str_sql.AppendFormat(" va_des_lib='{0}',va_cod_cta='{1}'",des_lib,cod_cta);
                 vv_str_sql.AppendFormat(" WHERE va_cod_lib ={0}",cod_lib);
 

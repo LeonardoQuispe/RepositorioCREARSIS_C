@@ -192,7 +192,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
 
 
-        public void fu_ini_frm()
+        void fu_ini_frm()
         {
             cb_prm_bus.SelectedIndex = 0;
             cb_tip_lib.SelectedIndex = 0;
@@ -241,8 +241,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                     }
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_lib"],va_tip_lib,va_mon_lib,row["va_nro_lib"],
-                                        row["va_des_lib"],va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_lib"],va_tip_lib,va_mon_lib,row["va_des_lib"],va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -296,7 +295,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 }
             }
         }
-        public void fu_con_sel()
+        void fu_con_sel()
         {
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
@@ -322,7 +321,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 return;
             }
 
-            tb_sel_ecc.Text = tab_ecp006.Rows[0]["va_cod_lib"].ToString().PadLeft(7, '0');
+            tb_sel_ecc.Text = tab_ecp006.Rows[0]["va_cod_lib"].ToString();
             lb_sel_ecc.Text = tab_ecp006.Rows[0]["va_des_lib"].ToString();
 
             if (lb_sel_ecc.Text != "** NO existe")
@@ -337,11 +336,11 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             if (dg_res_ult.SelectedRows.Count != 0)
             {
                 tb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[0].Value.ToString();
-                lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[4].Value.ToString();
+                lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells[3].Value.ToString();
             }
 
         }
-        public string fu_ver_dat()
+        string fu_ver_dat()
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
@@ -373,7 +372,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         /// <summary>
         /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
         /// </summary>
-        public string fu_ver_dat2()
+        string fu_ver_dat2()
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
@@ -397,7 +396,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
         }
-        public string fu_ver_dat3()
+        string fu_ver_dat3()
         {
 
             if (tb_sel_ecc.Text.Trim() != "")

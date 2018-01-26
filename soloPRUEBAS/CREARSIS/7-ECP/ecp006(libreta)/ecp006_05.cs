@@ -61,7 +61,6 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             }
 
             //Llena los datos
-            tb_nro_lib.Text = vg_str_ucc.Rows[0]["va_nro_lib"].ToString();
             tb_cod_lib.Text = vg_str_ucc.Rows[0]["va_cod_lib"].ToString();
             tb_des_lib.Text = vg_str_ucc.Rows[0]["va_des_lib"].ToString();
             tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
