@@ -18,7 +18,6 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         public dynamic vg_frm_pad;
         DataTable tab_tes001;
         string err_msg = "";
-        string tmp_cod_cjb = "";
 
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
@@ -37,59 +36,13 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 
         private void cb_tip_cjb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tmp_cod_cjb = tb_cod_cjb.Text;
-
-            if (cb_tip_cjb.SelectedIndex == 0)
-            {
-                tb_cod_cjb.Text = "1" + tmp_cod_cjb[1].ToString() + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-            else if (cb_tip_cjb.SelectedIndex == 1)
-            {
-                tb_cod_cjb.Text = "2" + tmp_cod_cjb[1].ToString() + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-            else
-            {
-                tb_cod_cjb.Text = "0" + tmp_cod_cjb[1].ToString() + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-
             fu_sug_nro();
+            fu_cod_cjb();            
         }
-
-        private void cb_mon_cjb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tmp_cod_cjb = tb_cod_cjb.Text;
-
-            if (cb_mon_cjb.SelectedIndex == 0)
-            {
-                tb_cod_cjb.Text = tmp_cod_cjb[0].ToString() + "1" + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-            else if (cb_mon_cjb.SelectedIndex == 1)
-            {
-                tb_cod_cjb.Text = tmp_cod_cjb[0].ToString() + "2" + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-            else
-            {
-                tb_cod_cjb.Text = tmp_cod_cjb[0].ToString() + "0" + tmp_cod_cjb[2].ToString() + tmp_cod_cjb[3].ToString() + tmp_cod_cjb[4].ToString();
-            }
-
-            fu_sug_nro();
-        }
-
+        
         private void tb_nro_cjb_Validated(object sender, EventArgs e)
         {
-            tmp_cod_cjb = tb_cod_cjb.Text;
-
-            if (tb_nro_cjb.Text.Trim() == "" || o_mg_glo_bal.fg_val_num(tb_nro_cjb.Text.Trim()) == false)
-            {
-                tb_nro_cjb.Clear();
-
-                tb_cod_cjb.Text = tmp_cod_cjb[0].ToString() + tmp_cod_cjb[1].ToString() + "000";
-            }
-            else
-            {
-                tb_cod_cjb.Text = tmp_cod_cjb[0].ToString() + tmp_cod_cjb[1].ToString() + tb_nro_cjb.Text.PadLeft(3, '0');
-            }
-
+            fu_cod_cjb();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -157,6 +110,7 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             cb_mon_cjb.SelectedIndex = 0;
 
             fu_sug_nro();
+            fu_cod_cjb();            
 
             tb_nro_cjb.Focus();
         }
@@ -177,10 +131,14 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             tb_nom_cta.Clear();
 
             fu_sug_nro();
+            fu_cod_cjb();
+            
         }
 
         string fu_ver_dat()
         {
+            fu_cod_cjb();
+
             //Valida Nro de Caja/Banco
             if (tb_nro_cjb.Text.Trim() == "")
             {
@@ -230,6 +188,23 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
         }
 
         /// <summary>
+        /// Función que arma el código compuesto de Caja/Banco
+        /// </summary>
+        void fu_cod_cjb()
+        {
+            if (tb_nro_cjb.Text.Trim() == "" || o_mg_glo_bal.fg_val_num(tb_nro_cjb.Text.Trim()) == false)
+            {
+                tb_nro_cjb.Clear();
+
+                tb_cod_cjb.Text =  (cb_tip_cjb.SelectedIndex+1).ToString()+(cb_mon_cjb.SelectedIndex+1).ToString() + "000";
+            }
+            else
+            {
+                tb_cod_cjb.Text = (cb_tip_cjb.SelectedIndex + 1).ToString() + (cb_mon_cjb.SelectedIndex + 1).ToString() + tb_nro_cjb.Text.Trim().PadLeft(3,'0');
+            }
+        }
+
+        /// <summary>
         /// FUnción que sugiere el último numero usado, según el Tipo y Moneda de la Caja/Banco
         /// </summary>
         void fu_sug_nro()
@@ -242,12 +217,15 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             tip_cjb = cb_tip_cjb.SelectedIndex + 1;
             mon_cjb = cb_mon_cjb.SelectedIndex + 1;
 
+            //Numero Conformado
             nro = tip_cjb.ToString() + mon_cjb.ToString();
 
+            //Realiza Consulta a BD con el numero conformado
             tab_tes001 = o_tes001._05a(nro);
 
             if (tab_tes001.Rows[0][0].ToString()=="")
             {
+                tb_nro_cjb.Text = "1";
                 return;
             }
 

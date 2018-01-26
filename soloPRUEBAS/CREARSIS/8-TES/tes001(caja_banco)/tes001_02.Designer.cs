@@ -261,7 +261,7 @@
             this.cb_mon_cjb.Size = new System.Drawing.Size(98, 22);
             this.cb_mon_cjb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_mon_cjb.TabIndex = 16;
-            this.cb_mon_cjb.SelectedIndexChanged += new System.EventHandler(this.cb_mon_cjb_SelectedIndexChanged);
+            this.cb_mon_cjb.SelectedIndexChanged += new System.EventHandler(this.cb_tip_cjb_SelectedIndexChanged);
             // 
             // bolivianos
             // 

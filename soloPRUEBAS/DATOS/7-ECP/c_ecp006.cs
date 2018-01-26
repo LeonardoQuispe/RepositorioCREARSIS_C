@@ -177,6 +177,28 @@ namespace DATOS._7_ECP
         }
 
         /// <summary>
+        /// Funcion Sugerir Nro de Libreta
+        /// </summary>
+        /// <param name="cod_lib">Números Iniciales de Código</param>
+        /// <returns></returns>
+        public DataTable _05a(string cod_lib)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" SELECT MAX(va_cod_lib) fROM ecp006 ");
+                vv_str_sql.AppendFormat(" WHERE  va_cod_lib like '{0}%'", cod_lib);
+
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// funcion "Elimina Libreta"
         /// </summary>
         /// <param name="cod_lib">Codigo del Libreta</param>

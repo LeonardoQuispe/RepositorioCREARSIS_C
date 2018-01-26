@@ -323,7 +323,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(59, 17);
             this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "Descripcion";
+            this.labelX2.Text = "Descripción";
             // 
             // GroupBox2
             // 

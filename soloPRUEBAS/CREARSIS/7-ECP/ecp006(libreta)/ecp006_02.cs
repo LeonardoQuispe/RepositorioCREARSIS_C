@@ -20,7 +20,6 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
         public dynamic vg_frm_pad;
         DataTable tab_ecp006;
         string err_msg = "";
-        string tmp_cod_lib = "";
 
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
@@ -39,54 +38,13 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
         private void cb_tip_lib_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tmp_cod_lib = tb_cod_lib.Text;
-
-            if (cb_tip_lib.SelectedIndex == 0)
-            {
-                tb_cod_lib.Text = "1" + tmp_cod_lib[1].ToString() + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
-            else if (cb_tip_lib.SelectedIndex == 1)
-            {
-                tb_cod_lib.Text = "2" + tmp_cod_lib[1].ToString() + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
-            else
-            {
-                tb_cod_lib.Text = "0" + tmp_cod_lib[1].ToString() + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
-        }
-
-        private void cb_mon_lib_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tmp_cod_lib = tb_cod_lib.Text;
-
-            if (cb_mon_lib.SelectedIndex == 0)
-            {
-                tb_cod_lib.Text = tmp_cod_lib[0].ToString() + "1" + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
-            else if (cb_mon_lib.SelectedIndex == 1)
-            {
-                tb_cod_lib.Text = tmp_cod_lib[0].ToString() + "2" + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
-            else
-            {
-                tb_cod_lib.Text = tmp_cod_lib[0].ToString() + "0" + tmp_cod_lib[2].ToString() + tmp_cod_lib[3].ToString() + tmp_cod_lib[4].ToString();
-            }
+            fu_sug_nro();
+            fu_cod_lib();
         }
 
         private void tb_nro_lib_Validated(object sender, EventArgs e)
         {
-            tmp_cod_lib = tb_cod_lib.Text;
-
-            if (tb_nro_lib.Text.Trim() == "" || o_mg_glo_bal.fg_val_num(tb_nro_lib.Text.Trim()) == false)
-            {
-                tb_nro_lib.Clear();
-
-                tb_cod_lib.Text = tmp_cod_lib[0].ToString() + tmp_cod_lib[1].ToString() + "000";
-            }
-            else
-            {
-                tb_cod_lib.Text = tmp_cod_lib[0].ToString() + tmp_cod_lib[1].ToString() + tb_nro_lib.Text.PadLeft(3, '0');
-            }
+            fu_cod_lib();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -152,6 +110,9 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             cb_tip_lib.SelectedIndex = 0;
             cb_mon_lib.SelectedIndex = 0;
 
+            fu_sug_nro();
+            fu_cod_lib();
+
             tb_nro_lib.Focus();
         }
 
@@ -167,10 +128,15 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             tb_nro_lib.Focus();
 
             tb_nom_cta.Clear();
+
+            fu_sug_nro();
+            fu_cod_lib();
         }
 
         string fu_ver_dat()
         {
+            fu_cod_lib();
+
             //Valida Nro de Libreta
             if (tb_nro_lib.Text.Trim() == "")
             {
@@ -213,7 +179,54 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             return null;
         }
 
-        
+
+        /// <summary>
+        /// Función que arma el código compuesto de Libreta
+        /// </summary>
+        void fu_cod_lib()
+        {
+            if (tb_nro_lib.Text.Trim() == "" || o_mg_glo_bal.fg_val_num(tb_nro_lib.Text.Trim()) == false)
+            {
+                tb_nro_lib.Clear();
+
+                tb_cod_lib.Text = (cb_tip_lib.SelectedIndex + 1).ToString() + (cb_mon_lib.SelectedIndex + 1).ToString() + "000";
+            }
+            else
+            {
+                tb_cod_lib.Text = (cb_tip_lib.SelectedIndex + 1).ToString() + (cb_mon_lib.SelectedIndex + 1).ToString() + tb_nro_lib.Text.Trim().PadLeft(3, '0');
+            }
+        }
+
+        /// <summary>
+        /// FUnción que sugiere el último numero usado, según el Tipo y Moneda de la Libreta
+        /// </summary>
+        void fu_sug_nro()
+        {
+            int tip_lib;
+            int mon_lib;
+            string nro;
+            int nro_sug;
+
+            tip_lib = cb_tip_lib.SelectedIndex + 1;
+            mon_lib = cb_mon_lib.SelectedIndex + 1;
+
+            //Numero Conformado
+            nro = tip_lib.ToString() + mon_lib.ToString();
+
+            //Realiza Consulta a BD con el numero conformado
+            tab_ecp006 = o_ecp006._05a(nro);
+
+            if (tab_ecp006.Rows[0][0].ToString() == "")
+            {
+                tb_nro_lib.Text = "1";
+                return;
+            }
+
+            nro_sug = int.Parse(tab_ecp006.Rows[0][0].ToString().Substring(2, 3)) + 1;
+
+            tb_nro_lib.Text = nro_sug.ToString();
+        }
+
 
 
     }

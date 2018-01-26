@@ -56,7 +56,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         private void adm010_02_Load(object sender, EventArgs e)
         {
-            fu_ini_frm();
+
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -79,9 +79,7 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
             int ban_ven = 0;
-            int ban_com = 0;
-            int ban_emp = 0;
-           
+            int ban_com = 0;           
 
             if (chk_ven.Checked == true)
             {
@@ -146,23 +144,17 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
             fu_rec_gru(tb_cod_gru.Text.Trim());
 
+            fu_cod_per();
         }
 
         private void tb_nro_per_Validated(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tb_nro_per.Text) != true)
+            if (tb_nro_per.Text.Trim()=="" || o_mg_glo_bal.fg_val_num(tb_nro_per.Text)==false)
             {
-                if (o_mg_glo_bal.fg_val_num(tb_nro_per.Text) != false)
-                {
-                    tmp = tb_nro_per.Text.PadLeft(5, '0');
-
-                    tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + tmp[0].ToString() + tmp[1].ToString() + tmp[2].ToString() + tmp[3].ToString() + tmp[4].ToString();
-                    return;
-                }
+                tb_nro_per.Clear();
             }
 
-            tb_nro_per.Clear();
-            tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + "00000";
+            fu_cod_per();
 
         }
         
@@ -215,11 +207,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         #endregion
 
         #region METODOS
-
-        void fu_ini_frm()
-        {
-
-        }
+        
 
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
@@ -228,30 +216,13 @@ namespace CREARSIS._2_ADM.adm010_per_
         {
 
             //**Verifica Grupo de PErsona
+            fu_rec_gru(tb_cod_gru.Text.Trim());
+            fu_cod_per();
 
-            if (tb_cod_gru.Text.Trim() == "")
+            if (tb_cod_gru.Text.Trim()=="")
             {
                 tb_cod_gru.Focus();
                 return "Debes proporcionar el Grupo de Persona";
-            }
-
-            if (o_mg_glo_bal.fg_val_num(tb_cod_gru.Text) == false)
-            {
-                tb_cod_gru.Focus();
-                return "El Codigo del Grupo de Persona NO es valido";
-            }
-
-            tab_adm011 = o_adm011._05(int.Parse(tb_cod_gru.Text));
-            if (tab_adm011.Rows.Count == 0)
-            {
-                tb_cod_gru.Focus();
-                return "El Grupo de Persona NO se encuentra registrado";
-            }
-
-            if (tab_adm011.Rows[0]["va_est_ado"].ToString() == "N")
-            {
-                tb_cod_gru.Focus();
-                return "El Grupo de Persona se encuentra Deshabilitado";
             }
 
             //VERIFICA numero de Persona
@@ -343,59 +314,43 @@ namespace CREARSIS._2_ADM.adm010_per_
 
         public void fu_rec_gru(string cod_gru)
         {
-
-            if (o_mg_glo_bal.fg_val_num(cod_gru) == false)
+            if (cod_gru.Trim() == "")
             {
-                tb_cod_gru.Text = "";
-                tb_nom_gru.Text = "** NO existe";
-                tb_cod_per.Text = "00" + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
+                tb_cod_gru.Clear();
+                tb_nom_gru.Text = "** NO existe";                
                 return;
             }
 
-            if (cod_gru.Trim() == "")
+            if (o_mg_glo_bal.fg_val_num(cod_gru) == false)
             {
-                tb_cod_gru.Text = "";
+                tb_cod_gru.Clear();
                 tb_nom_gru.Text = "** NO existe";
-                tb_cod_per.Text = "00" + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
                 return;
             }
 
             tab_adm011 = o_adm011._05(int.Parse(cod_gru));
             if (tab_adm011.Rows.Count == 0)
             {
-                tb_cod_gru.Text = "";
+                tb_cod_gru.Clear();
                 tb_nom_gru.Text = "** NO existe";
-                tb_cod_per.Text = "00" + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
+                return;
+            }
+
+            if (tab_adm011.Rows[0]["va_est_ado"].ToString()=="N")
+            {
+                tb_cod_gru.Clear();
+                tb_nom_gru.Text = "** NO existe";
+
+                MessageBoxEx.Show("El Grupo de Persona se encuentra Deshabilitado", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 
             tb_cod_gru.Text = cod_gru;
             tb_nom_gru.Text = tab_adm011.Rows[0]["va_nom_gru"].ToString();
 
-            tmp = tb_cod_gru.Text.PadLeft(2, '0');
-
-            tb_cod_per.Text = tmp[0].ToString() + tmp[1].ToString() + tb_cod_per.Text[2].ToString() + tb_cod_per.Text[3].ToString() + tb_cod_per.Text[4].ToString() + tb_cod_per.Text[5].ToString() + tb_cod_per.Text[6].ToString();
-
-
-            //Funcion que sugiere un numero de persona de acuerdo al grupo de persona
-            tab_adm010 = o_adm010._05b(int.Parse(cod_gru));
-
-            if (tab_adm010.Rows[0][0].ToString() != "")
-            {
-                int va_sug_nro_per = (Convert.ToInt32(tab_adm010.Rows[0][0].ToString()) + 1);
-
-                if (va_sug_nro_per <= 99999)
-                {
-                    tb_nro_per.Text = va_sug_nro_per.ToString();
-
-                    tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + va_sug_nro_per.ToString().PadLeft(5, '0');
-                }
-            }
-            else
-            {
-                tb_nro_per.Text = "0";
-                tb_cod_per.Text = tb_cod_per.Text[0].ToString() + tb_cod_per.Text[1].ToString() + "00000";
-            }
+            fu_sug_nro();
+            fu_cod_per();
         }
 
         public void fu_rec_lis(string cod_lis)
@@ -510,21 +465,59 @@ namespace CREARSIS._2_ADM.adm010_per_
 
 
 
+        /// <summary>
+        /// Función que arma el código compuesto de Persona
+        /// </summary>
+        void fu_cod_per()
+        {
+            string cod_gru = "00";
+            string nro_per = "00000";
 
+            if (tb_cod_gru.Text.Trim()!="" && tb_nom_gru.Text!= "** NO existe")
+            {
+                cod_gru = tb_cod_gru.Text.Trim().PadLeft(2,'0');
+            }
 
+            if (tb_nro_per.Text.Trim()!="" && o_mg_glo_bal.fg_val_num(tb_nro_per.Text)==true)
+            {
+                nro_per = tb_nro_per.Text.Trim().PadLeft(5,'0');
+            }
 
+            
+            tb_cod_per.Text = cod_gru + nro_per;
 
+        }
 
+        /// <summary>
+        /// Función que sugiere el último numero usado, según el Grupo de Persona
+        /// </summary>
+        void fu_sug_nro()
+        {
+            int nro_sug;
 
+            if (tb_cod_gru.Text==null || o_mg_glo_bal.fg_val_num(tb_cod_gru.Text)==false)
+            {
+                return;
+            }
 
+            //Realiza Consulta a BD
+            tab_adm010 = o_adm010._05b(int.Parse(tb_cod_gru.Text.Trim()));
 
+            if (tab_adm010.Rows[0][0].ToString() == "")
+            {
+                tb_nro_per.Text = "1";
+                return;
+            }
 
+            //Numero sugerido
+            nro_sug = int.Parse(tab_adm010.Rows[0][0].ToString()) + 1;
 
+            tb_nro_per.Text = nro_sug.ToString();
 
-
+        }
 
         #endregion
 
-        
+
     }
 }

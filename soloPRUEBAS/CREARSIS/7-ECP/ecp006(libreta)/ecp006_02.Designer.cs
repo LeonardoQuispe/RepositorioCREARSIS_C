@@ -184,7 +184,7 @@
             this.cb_mon_lib.Size = new System.Drawing.Size(98, 22);
             this.cb_mon_lib.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_mon_lib.TabIndex = 12;
-            this.cb_mon_lib.SelectedIndexChanged += new System.EventHandler(this.cb_mon_lib_SelectedIndexChanged);
+            this.cb_mon_lib.SelectedIndexChanged += new System.EventHandler(this.cb_tip_lib_SelectedIndexChanged);
             // 
             // bolivianos
             // 
@@ -286,7 +286,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(59, 17);
             this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "Descripcion";
+            this.labelX2.Text = "Descripción";
             // 
             // tb_nro_lib
             // 
