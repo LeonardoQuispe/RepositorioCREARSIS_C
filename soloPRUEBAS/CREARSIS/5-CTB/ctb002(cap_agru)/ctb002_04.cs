@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS._5_CTB.ctb002_cap_agru_
 {
-    public partial class ctb002_04 : Form
+    public partial class ctb002_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public ctb002_04()
         {

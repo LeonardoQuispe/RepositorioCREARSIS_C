@@ -65,7 +65,7 @@
             this.mn_pla_pag = new System.Windows.Forms.ToolStripMenuItem();
             this.m_con_tab = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb001 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_ctb002a = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_cen_cost = new System.Windows.Forms.ToolStripMenuItem();
             this.PlanDeFlujoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ads002 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +82,7 @@
             this.ss_nom_bdo = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_etk_vna = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_nom_vna = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci.SuspendLayout();
             this.StatusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -346,7 +347,7 @@
             // m_caj_ass
             // 
             this.m_caj_ass.Name = "m_caj_ass";
-            this.m_caj_ass.Size = new System.Drawing.Size(135, 22);
+            this.m_caj_ass.Size = new System.Drawing.Size(152, 22);
             this.m_caj_ass.Text = "&Caja/Banco";
             this.m_caj_ass.Click += new System.EventHandler(this.m_caj_ass_Click);
             // 
@@ -362,14 +363,14 @@
             // mn_lib_ret
             // 
             this.mn_lib_ret.Name = "mn_lib_ret";
-            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
+            this.mn_lib_ret.Size = new System.Drawing.Size(143, 22);
             this.mn_lib_ret.Text = "&Libreta";
             this.mn_lib_ret.Click += new System.EventHandler(this.mn_lib_ret_Click);
             // 
             // mn_pla_pag
             // 
             this.mn_pla_pag.Name = "mn_pla_pag";
-            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
+            this.mn_pla_pag.Size = new System.Drawing.Size(143, 22);
             this.mn_pla_pag.Text = "&Plan de Pago";
             this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
@@ -377,6 +378,7 @@
             // 
             this.m_con_tab.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mn_ctb001,
+            this.mn_ctb002a,
             this.mn_ctb002,
             this.mn_cen_cost,
             this.PlanDeFlujoToolStripMenuItem});
@@ -387,26 +389,26 @@
             // mn_ctb001
             // 
             this.mn_ctb001.Name = "mn_ctb001";
-            this.mn_ctb001.Size = new System.Drawing.Size(163, 22);
+            this.mn_ctb001.Size = new System.Drawing.Size(180, 22);
             this.mn_ctb001.Text = "&Regional";
             // 
-            // mn_ctb002
+            // mn_ctb002a
             // 
-            this.mn_ctb002.Name = "mn_ctb002";
-            this.mn_ctb002.Size = new System.Drawing.Size(163, 22);
-            this.mn_ctb002.Text = "&Plan de cuentas";
+            this.mn_ctb002a.Name = "mn_ctb002a";
+            this.mn_ctb002a.Size = new System.Drawing.Size(180, 22);
+            this.mn_ctb002a.Text = "&Plan de cuentas";
             // 
             // mn_cen_cost
             // 
             this.mn_cen_cost.Name = "mn_cen_cost";
-            this.mn_cen_cost.Size = new System.Drawing.Size(163, 22);
+            this.mn_cen_cost.Size = new System.Drawing.Size(180, 22);
             this.mn_cen_cost.Text = "&Centro de costos";
             this.mn_cen_cost.Click += new System.EventHandler(this.mn_cen_cost_Click);
             // 
             // PlanDeFlujoToolStripMenuItem
             // 
             this.PlanDeFlujoToolStripMenuItem.Name = "PlanDeFlujoToolStripMenuItem";
-            this.PlanDeFlujoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.PlanDeFlujoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PlanDeFlujoToolStripMenuItem.Text = "Plan de &flujo";
             // 
             // m_ads002
@@ -522,6 +524,13 @@
             this.ss_nom_vna.Size = new System.Drawing.Size(16, 17);
             this.ss_nom_vna.Text = "...";
             // 
+            // mn_ctb002
+            // 
+            this.mn_ctb002.Name = "mn_ctb002";
+            this.mn_ctb002.Size = new System.Drawing.Size(180, 22);
+            this.mn_ctb002.Text = "Capitulos Contables";
+            this.mn_ctb002.Click += new System.EventHandler(this.mn_ctb002_Click);
+            // 
             // adm000
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,7 +593,7 @@
         internal System.Windows.Forms.ToolStripMenuItem m_caj_ass;
         internal System.Windows.Forms.ToolStripMenuItem m_con_tab;
         internal System.Windows.Forms.ToolStripMenuItem mn_ctb001;
-        internal System.Windows.Forms.ToolStripMenuItem mn_ctb002;
+        internal System.Windows.Forms.ToolStripMenuItem mn_ctb002a;
         internal System.Windows.Forms.ToolStripMenuItem mn_cen_cost;
         internal System.Windows.Forms.ToolStripMenuItem PlanDeFlujoToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem m_ads002;
@@ -606,6 +615,7 @@
         private System.Windows.Forms.ToolStripMenuItem mn_cob_pag;
         private System.Windows.Forms.ToolStripMenuItem mn_lib_ret;
         private System.Windows.Forms.ToolStripMenuItem mn_pla_pag;
+        private System.Windows.Forms.ToolStripMenuItem mn_ctb002;
     }
 }
 

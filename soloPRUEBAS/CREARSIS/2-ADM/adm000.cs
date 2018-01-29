@@ -415,5 +415,11 @@ namespace CREARSIS
             _5_CTB.ctb003_centr_cost_.ctb003_01 obj = new _5_CTB.ctb003_centr_cost_.ctb003_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+        //[Menu CAPITULO CONTABLE]
+        private void mn_ctb002_Click(object sender, EventArgs e)
+        {
+            CREARSIS._5_CTB.ctb003_centr_cost_.ctb003_01 obj = new CREARSIS._5_CTB.ctb003_centr_cost_.ctb003_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }
