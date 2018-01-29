@@ -518,6 +518,42 @@
     <Compile Include="4-INV\inv011%28alm%29\inv011_03a.Designer.cs">
       <DependentUpon>inv011_03a.cs</DependentUpon>
     </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_01.Designer.cs">
+      <DependentUpon>ctb002_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_02.Designer.cs">
+      <DependentUpon>ctb002_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_03.Designer.cs">
+      <DependentUpon>ctb002_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_04.Designer.cs">
+      <DependentUpon>ctb002_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_05.Designer.cs">
+      <DependentUpon>ctb002_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_06.Designer.cs">
+      <DependentUpon>ctb002_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1290,6 +1326,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv011%28alm%29\inv011_03a.resx">
       <DependentUpon>inv011_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_01.resx">
+      <DependentUpon>ctb002_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_02.resx">
+      <DependentUpon>ctb002_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_03.resx">
+      <DependentUpon>ctb002_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_04.resx">
+      <DependentUpon>ctb002_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_05.resx">
+      <DependentUpon>ctb002_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_06.resx">
+      <DependentUpon>ctb002_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_01.resx">
       <DependentUpon>ctb003_01.cs</DependentUpon>
