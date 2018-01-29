@@ -68,13 +68,13 @@ namespace DATOS._5_CTB
         /// <param name="cod_cct">Codigo del centro de Costos (3 numeros)</param>
         /// <param name="nom_cct">Nombre del centro de Costos</param>
         /// <param name="tip_cct">Tipo del centro de Costos (M=Matriz; A=Analitica)</param>
-        public void _02(int cod_cct, string nom_cct,int tip_cct)
+        public void _02(int cod_cct, string nom_cct,string tip_cct)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb003 VALUES");
-                vv_str_sql.AppendFormat(" ({0},'{1}',{2},'H')", cod_cct, nom_cct, tip_cct);
+                vv_str_sql.AppendFormat(" ({0},'{1}','{2}','H')", cod_cct, nom_cct, tip_cct);
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }

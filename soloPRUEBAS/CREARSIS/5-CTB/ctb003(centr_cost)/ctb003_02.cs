@@ -38,7 +38,48 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            try
+            {
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Nuevo Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Centro de Costos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                string va_tip_cct = "";
+
+                if (int.Parse(tb_cod_cct.Text.Trim()) % 100 == 0)
+                {
+                    va_tip_cct = "M";
+                }
+                else
+                {
+                    va_tip_cct = "A";
+                }
+
+                //Graba datos
+                o_ctb003._02(int.Parse(tb_cod_cct.Text.Trim()),tb_nom_cct.Text.Trim(),va_tip_cct);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                vg_frm_pad.fu_sel_fila(tb_cod_cct.Text.Trim());
+
+                fu_lim_frm();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message, "Error Nuevo Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -75,7 +116,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             if (int.Parse(tb_cod_cct.Text.Trim()) <= 0)
             {
                 tb_cod_cct.Focus();
-                return "El Nro de la Centro de Costos debe ser mayor a 0";
+                return "El Código del Centro de Costos debe ser mayor a 0";
             }
             
 

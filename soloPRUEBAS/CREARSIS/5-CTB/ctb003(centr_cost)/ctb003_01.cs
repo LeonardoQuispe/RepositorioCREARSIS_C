@@ -121,6 +121,78 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
 
 
+        //NUEVO
+        private void m_ctb003_02_Click(object sender, EventArgs e)
+        {
+            ctb003_02 obj = new ctb003_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+
+        //ACTUALIZA
+        private void m_ctb003_03_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb003_03 obj = new ctb003_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
+        }
+
+        //HABILITA/DESHABILITA
+        private void m_ctb003_04_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb003_03 obj = new ctb003_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
+        }
+
+        //ELIMINA
+        private void m_ctb003_06_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb003_03 obj = new ctb003_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
+        }
+
+        //CONSULTA
+        private void m_ctb003_05_Click(object sender, EventArgs e)
+        {
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb003_03 obj = new ctb003_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
+        }
+
+        //ATRAS
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
+        }
+
+
+
+
+
+
+
+
 
         void fu_ini_frm()
         {
@@ -350,11 +422,6 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         }
 
 
-
-
-
-
-
-
+        
     }
 }
