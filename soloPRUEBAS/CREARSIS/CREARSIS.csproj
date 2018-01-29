@@ -518,6 +518,42 @@
     <Compile Include="4-INV\inv011%28alm%29\inv011_03a.Designer.cs">
       <DependentUpon>inv011_03a.cs</DependentUpon>
     </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_01.Designer.cs">
+      <DependentUpon>ctb003_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_02.Designer.cs">
+      <DependentUpon>ctb003_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_03.Designer.cs">
+      <DependentUpon>ctb003_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_04.Designer.cs">
+      <DependentUpon>ctb003_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_05.Designer.cs">
+      <DependentUpon>ctb003_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_06.Designer.cs">
+      <DependentUpon>ctb003_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="5-CTB\ctb006%28ley%29\ctb006_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1254,6 +1290,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv011%28alm%29\inv011_03a.resx">
       <DependentUpon>inv011_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_01.resx">
+      <DependentUpon>ctb003_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_02.resx">
+      <DependentUpon>ctb003_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_03.resx">
+      <DependentUpon>ctb003_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_04.resx">
+      <DependentUpon>ctb003_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_05.resx">
+      <DependentUpon>ctb003_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_06.resx">
+      <DependentUpon>ctb003_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5-CTB\ctb006%28ley%29\ctb006_01.resx">
       <DependentUpon>ctb006_01.cs</DependentUpon>
