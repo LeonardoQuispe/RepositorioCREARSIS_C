@@ -408,5 +408,12 @@ namespace CREARSIS
             _8_TES.tes001_caja_banco_.tes001_01 obj = new _8_TES.tes001_caja_banco_.tes001_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+
+        //[Menu CENTRO DE COSTOS]
+        private void mn_cen_cost_Click(object sender, EventArgs e)
+        {
+            _5_CTB.ctb003_centr_cost_.ctb003_01 obj = new _5_CTB.ctb003_centr_cost_.ctb003_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

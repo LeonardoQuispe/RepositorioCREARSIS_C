@@ -66,7 +66,7 @@
             this.m_con_tab = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb001 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
-            this.CentroDeCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_cen_cost = new System.Windows.Forms.ToolStripMenuItem();
             this.PlanDeFlujoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ads002 = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_tip_cam = new System.Windows.Forms.ToolStripMenuItem();
@@ -310,28 +310,28 @@
             // mn_dos_ifi
             // 
             this.mn_dos_ifi.Name = "mn_dos_ifi";
-            this.mn_dos_ifi.Size = new System.Drawing.Size(139, 22);
+            this.mn_dos_ifi.Size = new System.Drawing.Size(152, 22);
             this.mn_dos_ifi.Text = "&Dosificación";
             this.mn_dos_ifi.Click += new System.EventHandler(this.mn_dos_ifi_Click);
             // 
             // mn_suc_urs
             // 
             this.mn_suc_urs.Name = "mn_suc_urs";
-            this.mn_suc_urs.Size = new System.Drawing.Size(139, 22);
+            this.mn_suc_urs.Size = new System.Drawing.Size(152, 22);
             this.mn_suc_urs.Text = "&Sucursales";
             this.mn_suc_urs.Click += new System.EventHandler(this.mn_suc_urs_Click);
             // 
             // mn_act_ivi
             // 
             this.mn_act_ivi.Name = "mn_act_ivi";
-            this.mn_act_ivi.Size = new System.Drawing.Size(139, 22);
+            this.mn_act_ivi.Size = new System.Drawing.Size(152, 22);
             this.mn_act_ivi.Text = "&Actividades";
             this.mn_act_ivi.Click += new System.EventHandler(this.mn_act_ivi_Click);
             // 
             // mn_ley_end
             // 
             this.mn_ley_end.Name = "mn_ley_end";
-            this.mn_ley_end.Size = new System.Drawing.Size(139, 22);
+            this.mn_ley_end.Size = new System.Drawing.Size(152, 22);
             this.mn_ley_end.Text = "&Leyendas";
             this.mn_ley_end.Click += new System.EventHandler(this.mn_ley_end_Click);
             // 
@@ -346,7 +346,7 @@
             // m_caj_ass
             // 
             this.m_caj_ass.Name = "m_caj_ass";
-            this.m_caj_ass.Size = new System.Drawing.Size(152, 22);
+            this.m_caj_ass.Size = new System.Drawing.Size(135, 22);
             this.m_caj_ass.Text = "&Caja/Banco";
             this.m_caj_ass.Click += new System.EventHandler(this.m_caj_ass_Click);
             // 
@@ -362,14 +362,14 @@
             // mn_lib_ret
             // 
             this.mn_lib_ret.Name = "mn_lib_ret";
-            this.mn_lib_ret.Size = new System.Drawing.Size(143, 22);
+            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
             this.mn_lib_ret.Text = "&Libreta";
             this.mn_lib_ret.Click += new System.EventHandler(this.mn_lib_ret_Click);
             // 
             // mn_pla_pag
             // 
             this.mn_pla_pag.Name = "mn_pla_pag";
-            this.mn_pla_pag.Size = new System.Drawing.Size(143, 22);
+            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
             this.mn_pla_pag.Text = "&Plan de Pago";
             this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
@@ -378,7 +378,7 @@
             this.m_con_tab.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mn_ctb001,
             this.mn_ctb002,
-            this.CentroDeCostosToolStripMenuItem,
+            this.mn_cen_cost,
             this.PlanDeFlujoToolStripMenuItem});
             this.m_con_tab.Name = "m_con_tab";
             this.m_con_tab.Size = new System.Drawing.Size(168, 22);
@@ -396,11 +396,12 @@
             this.mn_ctb002.Size = new System.Drawing.Size(163, 22);
             this.mn_ctb002.Text = "&Plan de cuentas";
             // 
-            // CentroDeCostosToolStripMenuItem
+            // mn_cen_cost
             // 
-            this.CentroDeCostosToolStripMenuItem.Name = "CentroDeCostosToolStripMenuItem";
-            this.CentroDeCostosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.CentroDeCostosToolStripMenuItem.Text = "&Centro de costos";
+            this.mn_cen_cost.Name = "mn_cen_cost";
+            this.mn_cen_cost.Size = new System.Drawing.Size(163, 22);
+            this.mn_cen_cost.Text = "&Centro de costos";
+            this.mn_cen_cost.Click += new System.EventHandler(this.mn_cen_cost_Click);
             // 
             // PlanDeFlujoToolStripMenuItem
             // 
@@ -584,7 +585,7 @@
         internal System.Windows.Forms.ToolStripMenuItem m_con_tab;
         internal System.Windows.Forms.ToolStripMenuItem mn_ctb001;
         internal System.Windows.Forms.ToolStripMenuItem mn_ctb002;
-        internal System.Windows.Forms.ToolStripMenuItem CentroDeCostosToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem mn_cen_cost;
         internal System.Windows.Forms.ToolStripMenuItem PlanDeFlujoToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem m_ads002;
         internal System.Windows.Forms.ToolStripMenuItem mr_tip_cam;

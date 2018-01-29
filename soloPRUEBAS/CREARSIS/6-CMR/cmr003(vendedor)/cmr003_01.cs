@@ -198,7 +198,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
         #region METODOS
 
-        public void fu_ini_frm()
+        void fu_ini_frm()
         {
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
@@ -288,7 +288,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
                 }
             }
         }
-        public void fu_con_sel()
+        void fu_con_sel()
         {
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
@@ -334,7 +334,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
 
         }
 
-        public string fu_ver_dat()
+        string fu_ver_dat()
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
@@ -368,7 +368,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         /// <summary>
         /// -> Verifica datos Antes de mostrar en otra pantalla   (Consistencia de datos)
         /// </summary>
-        public string fu_ver_dat2()
+        string fu_ver_dat2()
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
@@ -394,7 +394,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
             }
 
         }
-        public string fu_ver_dat3()
+        string fu_ver_dat3()
         {
 
             if (tb_sel_ecc.Text.Trim() != "")
