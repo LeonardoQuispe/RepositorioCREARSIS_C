@@ -35,11 +35,11 @@
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_doc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX8 = new DevComponents.DotNetBar.LabelX();
             this.tb_des_doc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -149,7 +149,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox1.BackColor = System.Drawing.Color.White;
             this.GroupBox1.Controls.Add(this.labelX14);
             this.GroupBox1.Controls.Add(this.tb_est_ado);
             this.GroupBox1.Controls.Add(this.LabelX8);
@@ -164,52 +164,6 @@
             this.GroupBox1.Size = new System.Drawing.Size(430, 159);
             this.GroupBox1.TabIndex = 64;
             this.GroupBox1.TabStop = false;
-            // 
-            // LabelX8
-            // 
-            this.LabelX8.AutoSize = true;
-            this.LabelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX8.ForeColor = System.Drawing.Color.Black;
-            this.LabelX8.Location = new System.Drawing.Point(13, 87);
-            this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(59, 17);
-            this.LabelX8.TabIndex = 51;
-            this.LabelX8.Text = "Descripción";
-            // 
-            // tb_des_doc
-            // 
-            this.tb_des_doc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_des_doc.Border.Class = "TextBoxBorder";
-            this.tb_des_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_des_doc.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_des_doc.Enabled = false;
-            this.tb_des_doc.ForeColor = System.Drawing.Color.Black;
-            this.tb_des_doc.Location = new System.Drawing.Point(77, 85);
-            this.tb_des_doc.MaxLength = 120;
-            this.tb_des_doc.Name = "tb_des_doc";
-            this.tb_des_doc.PreventEnterBeep = true;
-            this.tb_des_doc.ReadOnly = true;
-            this.tb_des_doc.Size = new System.Drawing.Size(323, 22);
-            this.tb_des_doc.TabIndex = 60;
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.GroupBox2.Controls.Add(this.bt_can_cel);
-            this.GroupBox2.Controls.Add(this.bt_ace_pta);
-            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(9, 167);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(430, 44);
-            this.GroupBox2.TabIndex = 65;
-            this.GroupBox2.TabStop = false;
             // 
             // labelX14
             // 
@@ -247,6 +201,52 @@
             this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
             this.tb_est_ado.TabIndex = 77;
             this.tb_est_ado.TabStop = false;
+            // 
+            // LabelX8
+            // 
+            this.LabelX8.AutoSize = true;
+            this.LabelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX8.ForeColor = System.Drawing.Color.Black;
+            this.LabelX8.Location = new System.Drawing.Point(13, 87);
+            this.LabelX8.Name = "LabelX8";
+            this.LabelX8.Size = new System.Drawing.Size(59, 17);
+            this.LabelX8.TabIndex = 51;
+            this.LabelX8.Text = "Descripción";
+            // 
+            // tb_des_doc
+            // 
+            this.tb_des_doc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_des_doc.Border.Class = "TextBoxBorder";
+            this.tb_des_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_des_doc.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_des_doc.Enabled = false;
+            this.tb_des_doc.ForeColor = System.Drawing.Color.Black;
+            this.tb_des_doc.Location = new System.Drawing.Point(77, 85);
+            this.tb_des_doc.MaxLength = 120;
+            this.tb_des_doc.Name = "tb_des_doc";
+            this.tb_des_doc.PreventEnterBeep = true;
+            this.tb_des_doc.ReadOnly = true;
+            this.tb_des_doc.Size = new System.Drawing.Size(323, 22);
+            this.tb_des_doc.TabIndex = 60;
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.Controls.Add(this.bt_can_cel);
+            this.GroupBox2.Controls.Add(this.bt_ace_pta);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(9, 167);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(430, 44);
+            this.GroupBox2.TabIndex = 65;
+            this.GroupBox2.TabStop = false;
             // 
             // adm003_06
             // 

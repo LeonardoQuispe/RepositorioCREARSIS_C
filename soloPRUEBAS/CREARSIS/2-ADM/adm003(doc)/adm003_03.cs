@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 //REFERENCIAS
-using System.Windows.Forms;
 using DATOS;
 using DevComponents.DotNetBar;
 
@@ -30,6 +30,67 @@ namespace CREARSIS
 
         c_adm003 o_adm003 = new c_adm003();
         DataTable tab_adm003;
+
+        #endregion
+
+        #region METODOS
+        /// <summary>
+        /// Metodo que inicializa el formulario
+        /// </summary>
+        public void fu_ini_frm()
+        {
+            tb_cod_doc.Text = vg_str_ucc.Rows[0]["va_cod_doc"].ToString();
+            tb_nom_doc.Text = vg_str_ucc.Rows[0]["va_nom_doc"].ToString();
+            tb_des_doc.Text = vg_str_ucc.Rows[0]["va_des_doc"].ToString();
+
+            switch (vg_str_ucc.Rows[0]["va_est_ado"].ToString())
+            {
+                case "H": tb_est_ado.Text = "Habilitado"; break;
+
+                case "N": tb_est_ado.Text = "Deshabilitado"; break;
+            }
+
+            tb_nom_doc.Focus();
+        }
+
+        /// <summary>
+        /// Metodo que limpia el formulario
+        /// </summary>
+        public void fu_lim_frm()
+        {
+            tb_cod_doc.Clear();
+            tb_nom_doc.Clear();
+            tb_des_doc.Clear();
+
+            tb_cod_doc.Focus();
+        }
+
+
+        /// <summary>
+        /// Funcion que verifica los datos antes de grabar
+        /// </summary>
+        public string fu_ver_dat()
+        {
+
+            if (tb_nom_doc.Text.Trim() == "")
+            {
+                tb_nom_doc.Focus();
+                return "Debes proporcionar el nombre de Grupo de Persona";
+            }
+
+            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
+            if (tab_adm003.Rows.Count == 0)
+            {
+                return "Los datos han cambiado desde su ultima lectura; El Grupo de Persona ya NO se encuentra registrado";
+            }
+
+            if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
+            {
+                return "El Grupo de Persona se encuentra Deshabilitado";
+            }
+
+            return null;
+        }
 
         #endregion
 
@@ -85,66 +146,6 @@ namespace CREARSIS
         }
 
         #endregion
-
-        #region METODOS
-        /// <summary>
-        /// Metodo que inicializa el formulario
-        /// </summary>
-        public void fu_ini_frm()
-        {
-            tb_cod_doc.Text = vg_str_ucc.Rows[0]["va_cod_doc"].ToString();
-            tb_nom_doc.Text = vg_str_ucc.Rows[0]["va_nom_doc"].ToString();
-            tb_des_doc.Text = vg_str_ucc.Rows[0]["va_des_doc"].ToString();
-
-            switch (vg_str_ucc.Rows[0]["va_est_ado"].ToString())
-            {
-                case "H": tb_est_ado.Text = "Habilitado"; break;
-
-                case "N": tb_est_ado.Text = "Deshabilitado"; break;
-            }
-
-            tb_nom_doc.Focus();
-        }
-
-        /// <summary>
-        /// Metodo que limpia el formulario
-        /// </summary>
-        public void fu_lim_frm()
-        {
-            tb_cod_doc.Clear();
-            tb_nom_doc.Clear();
-            tb_des_doc.Clear();
-
-            tb_cod_doc.Focus();
-        }
-
         
-        /// <summary>
-        /// Funcion que verifica los datos antes de grabar
-        /// </summary>
-        public string fu_ver_dat()
-        {
-
-            if (tb_nom_doc.Text.Trim() == "")
-            {
-                tb_nom_doc.Focus();
-                return "Debes proporcionar el nombre de Grupo de Persona";
-            }
-
-            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
-            if (tab_adm003.Rows.Count == 0)
-            {
-                return "Los datos han cambiado desde su ultima lectura; El Grupo de Persona ya NO se encuentra registrado";
-            }
-
-            if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
-            {
-                return "El Grupo de Persona se encuentra Deshabilitado";
-            }
-
-            return null;
-        }
-
-        #endregion
     }
 }

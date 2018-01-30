@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 //REFENCIAS
-using System.Windows.Forms;
 using DATOS;
 using DevComponents.DotNetBar;
 
@@ -32,6 +32,61 @@ namespace CREARSIS
 
         c_adm003 o_adm003 = new c_adm003();
         c_adm004 o_adm004 = new c_adm004();
+
+        #endregion
+
+        #region METODOS
+
+        /// <summary>
+        /// Metodo que inicializa el formulario
+        /// </summary>
+        public void fu_ini_frm()
+        {
+            tb_cod_doc.Text = vg_str_ucc.Rows[0]["va_cod_doc"].ToString();
+            tb_nom_doc.Text = vg_str_ucc.Rows[0]["va_nom_doc"].ToString();
+            tb_des_doc.Text = vg_str_ucc.Rows[0]["va_des_doc"].ToString();
+
+            switch (vg_str_ucc.Rows[0]["va_est_ado"].ToString())
+            {
+                case "H":
+                    tb_est_ado.Text = "Habilitado";
+                    break;
+                case "N":
+                    tb_est_ado.Text = "Deshabilitado";
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que limpia el formulario
+        /// </summary>
+        public void fu_lim_frm()
+        {
+            tb_cod_doc.Clear();
+            tb_nom_doc.Clear();
+            tb_des_doc.Clear();
+
+            tb_cod_doc.Focus();
+        }
+
+
+        public string fu_ver_dat()
+        {
+            //Si aun existe el dato
+            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
+            if (tab_adm003.Rows.Count == 0)
+            {
+                return "El Documento no se encuentra registrado";
+            }
+
+            //Verifica que no tenga talonarios ni siquiera deshabilitado
+            tab_adm004 = o_adm004._05(tb_cod_doc.Text);
+            if (tab_adm004.Rows.Count != 0)
+            {
+                return "El Documento tiene talonarios";
+            }
+            return null;
+        }
 
         #endregion
 
@@ -86,59 +141,5 @@ namespace CREARSIS
 
         #endregion
 
-        #region METODOS
-
-        /// <summary>
-        /// Metodo que inicializa el formulario
-        /// </summary>
-        public void fu_ini_frm()
-        {
-            tb_cod_doc.Text = vg_str_ucc.Rows[0]["va_cod_doc"].ToString();
-            tb_nom_doc.Text = vg_str_ucc.Rows[0]["va_nom_doc"].ToString();
-            tb_des_doc.Text = vg_str_ucc.Rows[0]["va_des_doc"].ToString();
-
-            switch (vg_str_ucc.Rows[0]["va_est_ado"].ToString())
-            {
-                case "H":
-                    tb_est_ado.Text = "Habilitado";
-                    break;
-                case "N":
-                    tb_est_ado.Text = "Deshabilitado";
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Metodo que limpia el formulario
-        /// </summary>
-        public void fu_lim_frm()
-        {
-            tb_cod_doc.Clear();
-            tb_nom_doc.Clear();
-            tb_des_doc.Clear();
-
-            tb_cod_doc.Focus();
-        }
-
-       
-        public string fu_ver_dat()
-        {
-            //Si aun existe el dato
-            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
-            if (tab_adm003.Rows.Count == 0)
-            {
-                return "El Documento no se encuentra registrado";
-            }
-
-            //Verifica que no tenga talonarios ni siquiera deshabilitado
-            tab_adm004 = o_adm004._05(tb_cod_doc.Text);
-            if (tab_adm004.Rows.Count!=0)
-            {
-                return "El Documento tiene talonarios";
-            }
-            return null;
-        }
-
-        #endregion
     }
 }

@@ -144,6 +144,7 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
             if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 tb_sel_ecc.Text = "";
+                lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 

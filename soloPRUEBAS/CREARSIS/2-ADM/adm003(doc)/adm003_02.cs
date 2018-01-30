@@ -5,11 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 //REFERENCIAS
-using System.Windows.Forms;
 using DATOS;
-
 using DevComponents.DotNetBar;
 
 namespace CREARSIS
@@ -32,6 +31,65 @@ namespace CREARSIS
         c_adm003 o_adm003 = new c_adm003();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
+        #endregion
+
+        #region METODOS
+
+        void fu_ini_frm()
+        {
+            tb_cod_doc.Focus();
+        }
+
+        /// <summary>
+        /// Metodo que limpia el formulario
+        /// </summary>
+        public void fu_lim_frm()
+        {
+            tb_cod_doc.Clear();
+            tb_nom_doc.Clear();
+            tb_des_doc.Clear();
+
+            tb_cod_doc.Focus();
+        }
+
+        /// <summary>
+        /// Funcion que verifica los datos antes de grabar
+        /// </summary>
+        public string fu_ver_dat()
+        {
+            if (tb_cod_doc.Text.Trim() == "")
+            {
+                tb_cod_doc.Focus();
+                return "Debes proporcionar el codigo de documento";
+            }
+
+            if (o_mg_glo_bal.fg_val_let(tb_cod_doc.Text) == false)
+            {
+                tb_cod_doc.Focus();
+                return "Sólo se admiten letras en el código del documento";
+            }
+
+            if (tb_cod_doc.Text.Length < 3)
+            {
+                tb_cod_doc.Focus();
+                return "El código del documento debe tener 3 letras";
+            }
+
+            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
+            if (tab_adm003.Rows.Count != 0)
+            {
+                tb_cod_doc.Focus();
+                return "El codigo del documento ya se encuentra registrado";
+            }
+
+            if (tb_nom_doc.Text.Trim() == "")
+            {
+                tb_nom_doc.Focus();
+                return "Debes proporcionar el nombre de documento";
+            }
+
+            return null;
+        }
         #endregion
 
         #region EVENTOS
@@ -87,63 +145,6 @@ namespace CREARSIS
 
         #endregion
 
-        #region METODOS
-
-        void fu_ini_frm()
-        {
-            tb_cod_doc.Focus();
-        }
-
-        /// <summary>
-        /// Metodo que limpia el formulario
-        /// </summary>
-        public void fu_lim_frm()
-        {
-            tb_cod_doc.Clear();
-            tb_nom_doc.Clear();
-            tb_des_doc.Clear();
-
-            tb_cod_doc.Focus();
-        }
-
-        /// <summary>
-        /// Funcion que verifica los datos antes de grabar
-        /// </summary>
-        public string fu_ver_dat()
-        {
-            if (tb_cod_doc.Text.Trim() == "")
-            {
-                tb_cod_doc.Focus();
-                return "Debes proporcionar el codigo de documento";
-            }
-
-            if (o_mg_glo_bal.fg_val_let(tb_cod_doc.Text)==false)
-            {
-                tb_cod_doc.Focus();
-                return "Sólo se admiten letras en el código del documento";
-            }
-
-            if (tb_cod_doc.Text.Length<3)
-            {
-                tb_cod_doc.Focus();
-                return "El código del documento debe tener 3 letras";
-            }
-
-            tab_adm003 = o_adm003._05(tb_cod_doc.Text);
-            if (tab_adm003.Rows.Count!=0)
-            {
-                tb_cod_doc.Focus();
-                return "El codigo del documento ya se encuentra registrado";
-            }
-
-            if (tb_nom_doc.Text.Trim() == "")
-            {
-                tb_nom_doc.Focus();
-                return "Debes proporcionar el nombre de documento";
-            }
-
-            return null;
-        }
-        #endregion
+        
     }
 }

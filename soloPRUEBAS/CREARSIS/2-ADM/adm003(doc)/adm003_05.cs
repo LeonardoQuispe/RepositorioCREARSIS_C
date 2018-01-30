@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 //REFERENCIAS
-using System.Windows.Forms;
 using DATOS;
 using DevComponents.DotNetBar;
 
@@ -30,24 +30,6 @@ namespace CREARSIS
         #region INSTANCIAS
 
         c_adm003 o_adm003 = new c_adm003();
-
-        #endregion
-
-        #region EVENTOS
-
-        public adm003_05()
-        {
-            InitializeComponent();
-        }
-        private void adm003_05_Load(object sender, EventArgs e)
-        {
-            fu_ini_frm();
-        }
-
-        private void bt_can_cel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         #endregion
 
@@ -86,5 +68,24 @@ namespace CREARSIS
         }
 
         #endregion
+
+        #region EVENTOS
+
+        public adm003_05()
+        {
+            InitializeComponent();
+        }
+        private void adm003_05_Load(object sender, EventArgs e)
+        {
+            fu_ini_frm();
+        }
+
+        private void bt_can_cel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
+
     }
 }

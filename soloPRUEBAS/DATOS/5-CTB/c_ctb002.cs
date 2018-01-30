@@ -75,6 +75,13 @@ namespace DATOS._5_CTB
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ctb002 VALUES");
+
+                switch (tra_cap)
+                {
+                    case "0": tra_cap = "D"; break;
+                    case "1": tra_cap = "A"; break;
+                }
+
                 vv_str_sql.AppendLine(" (" + cod_cap + ", '" + nom_cap + "', '" + tra_cap + "', '" + cen_cto + "', 'H')");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
@@ -93,14 +100,21 @@ namespace DATOS._5_CTB
         /// <param name="tra_cap">Tratamiento (D=Deudor ; A=Acreedor) </param>
         /// <param name="cen_cto">Usa Centro de Costo(0=No ; 1=Si Usa)</param>
         /// <returns></returns>
-        public void _03(int cod_cap, string nom_cap, string tra_cap, string cen_cto)
+        public void _03(int cod_cap, string nom_cap, string tra_cap, int cen_cto)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" UPDATE ctb002 SET");
-                vv_str_sql.AppendLine(" va_nom_cap='" + nom_cap + "' , va_tra_cap= '" + tra_cap + "'");
-                vv_str_sql.AppendLine(" va_cen_cto='" + nom_cap + "' ");
+
+                switch (tra_cap)
+                {
+                    case "0": tra_cap = "D"; break;
+                    case "1": tra_cap = "A"; break;
+                }
+
+                vv_str_sql.AppendLine(" va_nom_cap='" + nom_cap + "' , va_tra_cap= '" + tra_cap + "' ,");
+                vv_str_sql.AppendLine(" va_cen_cto='" + cen_cto + "' ");
 
                 vv_str_sql.AppendLine(" WHERE va_cod_cap = " + cod_cap );
 

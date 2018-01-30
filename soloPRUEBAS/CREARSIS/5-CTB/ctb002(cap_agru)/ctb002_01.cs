@@ -57,8 +57,10 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
-            if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text) == false)
+
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
+                tb_sel_ecc.Text = "";
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
@@ -67,6 +69,7 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
                 return;
             }
 
@@ -81,6 +84,11 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_ctb002 = o_ctb002._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ctb002.Rows.Count == 0)
@@ -103,6 +111,11 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_ctb002 = o_ctb002._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ctb002.Rows.Count == 0)
@@ -133,6 +146,11 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
 
             if (tb_sel_ecc.Text.Trim() != "")
             {
+                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
+                {
+                    tb_sel_ecc.Focus();
+                    return "Datos Incorrectos";
+                }
                 //Si aun existe
                 tab_ctb002 = o_ctb002._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ctb002.Rows.Count == 0)
@@ -165,6 +183,7 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
         {
             int va_ind_ice = 0;
             string va_est_ado = "";
+            string va_tra_cap = "";
 
             dg_res_ult.Rows.Clear();
 
@@ -185,7 +204,17 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_cod_cap"], row["va_nom_cap"], row["va_tra_cap"], va_est_ado);
+                    switch (row["va_tra_cap"].ToString())
+                    {
+                        case "D":
+                            va_tra_cap = "Deudor";
+                            break;
+                        case "A":
+                            va_tra_cap = "Acreedor";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_cod_cap"], row["va_nom_cap"], va_tra_cap, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -374,6 +403,72 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                 vg_frm_pad.Enabled = true;
                 Close();
             }
+        }
+        #endregion
+
+        #region OPCIONES DE MENU
+        //[MENU- Nuevo]
+        private void m_ctb002_02_Click(object sender, EventArgs e)
+        {
+            ctb002_02 obj = new ctb002_02();
+            o_mg_glo_bal.mg_ads000_02(obj, this);
+        }
+        //[MENU: Actualiza]
+        private void m_ctb002_03_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Capitulo/Agrupador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb002_03 obj = new ctb002_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb002);
+        }
+        //[MENU: Habilita/Deshabilita]
+        private void m_ctb002_04_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Capitulo/Agrupador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb002_04 obj = new ctb002_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb002);
+        }
+        //[MENU: Elimina]
+        private void m_ctb002_06_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat3();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Capitulo/Agrupador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb002_06 obj = new ctb002_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb002);
+        }
+        //[MENU: Consulta]
+        private void m_ctb002_05_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Capitulo/Agrupador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ctb002_05 obj = new ctb002_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb002);
+        }
+        //[MENU - Atras]
+        private void m_atr_ass_Click(object sender, EventArgs e)
+        {
+            o_mg_glo_bal.mg_ads000_04(this, 1);
         }
         #endregion
     }
