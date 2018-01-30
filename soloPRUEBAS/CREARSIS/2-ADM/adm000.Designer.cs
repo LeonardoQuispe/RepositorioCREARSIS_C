@@ -66,6 +66,7 @@
             this.m_con_tab = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb001 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_ctb002a = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_cen_cost = new System.Windows.Forms.ToolStripMenuItem();
             this.PlanDeFlujoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ads002 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,6 @@
             this.ss_nom_bdo = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_etk_vna = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss_nom_vna = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mn_ctb002 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_pri_nci.SuspendLayout();
             this.StatusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -143,21 +143,21 @@
             // m_ads005
             // 
             this.m_ads005.Name = "m_ads005";
-            this.m_ads005.Size = new System.Drawing.Size(137, 22);
+            this.m_ads005.Size = new System.Drawing.Size(152, 22);
             this.m_ads005.Text = "D&ocumento";
             this.m_ads005.Click += new System.EventHandler(this.m_ads005_Click);
             // 
             // m_ads006
             // 
             this.m_ads006.Name = "m_ads006";
-            this.m_ads006.Size = new System.Drawing.Size(137, 22);
+            this.m_ads006.Size = new System.Drawing.Size(152, 22);
             this.m_ads006.Text = "&Talonario";
             this.m_ads006.Click += new System.EventHandler(this.m_ads006_Click);
             // 
             // m_ads007
             // 
             this.m_ads007.Name = "m_ads007";
-            this.m_ads007.Size = new System.Drawing.Size(137, 22);
+            this.m_ads007.Size = new System.Drawing.Size(152, 22);
             this.m_ads007.Text = "&Numerador";
             this.m_ads007.Click += new System.EventHandler(this.m_ads007_Click);
             // 
@@ -195,7 +195,7 @@
             // mn_pre_cio
             // 
             this.mn_pre_cio.Name = "mn_pre_cio";
-            this.mn_pre_cio.Size = new System.Drawing.Size(150, 22);
+            this.mn_pre_cio.Size = new System.Drawing.Size(152, 22);
             this.mn_pre_cio.Text = "&Lista de precio";
             this.mn_pre_cio.Click += new System.EventHandler(this.mn_pre_cio_Click);
             // 
@@ -363,14 +363,14 @@
             // mn_lib_ret
             // 
             this.mn_lib_ret.Name = "mn_lib_ret";
-            this.mn_lib_ret.Size = new System.Drawing.Size(143, 22);
+            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
             this.mn_lib_ret.Text = "&Libreta";
             this.mn_lib_ret.Click += new System.EventHandler(this.mn_lib_ret_Click);
             // 
             // mn_pla_pag
             // 
             this.mn_pla_pag.Name = "mn_pla_pag";
-            this.mn_pla_pag.Size = new System.Drawing.Size(143, 22);
+            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
             this.mn_pla_pag.Text = "&Plan de Pago";
             this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
@@ -397,6 +397,13 @@
             this.mn_ctb002a.Name = "mn_ctb002a";
             this.mn_ctb002a.Size = new System.Drawing.Size(180, 22);
             this.mn_ctb002a.Text = "&Plan de cuentas";
+            // 
+            // mn_ctb002
+            // 
+            this.mn_ctb002.Name = "mn_ctb002";
+            this.mn_ctb002.Size = new System.Drawing.Size(180, 22);
+            this.mn_ctb002.Text = "&Capitulos Contables";
+            this.mn_ctb002.Click += new System.EventHandler(this.mn_ctb002_Click);
             // 
             // mn_cen_cost
             // 
@@ -430,14 +437,14 @@
             // mn_bs_us
             // 
             this.mn_bs_us.Name = "mn_bs_us";
-            this.mn_bs_us.Size = new System.Drawing.Size(137, 22);
+            this.mn_bs_us.Size = new System.Drawing.Size(152, 22);
             this.mn_bs_us.Text = "T.C. Bs/U&SD";
             this.mn_bs_us.Click += new System.EventHandler(this.mn_bs_us_Click);
             // 
             // mn_bs_ufv
             // 
             this.mn_bs_ufv.Name = "mn_bs_ufv";
-            this.mn_bs_ufv.Size = new System.Drawing.Size(137, 22);
+            this.mn_bs_ufv.Size = new System.Drawing.Size(152, 22);
             this.mn_bs_ufv.Text = "T.C. Bs/U&fv";
             this.mn_bs_ufv.Click += new System.EventHandler(this.mn_bs_ufv_Click);
             // 
@@ -523,13 +530,6 @@
             this.ss_nom_vna.Name = "ss_nom_vna";
             this.ss_nom_vna.Size = new System.Drawing.Size(16, 17);
             this.ss_nom_vna.Text = "...";
-            // 
-            // mn_ctb002
-            // 
-            this.mn_ctb002.Name = "mn_ctb002";
-            this.mn_ctb002.Size = new System.Drawing.Size(180, 22);
-            this.mn_ctb002.Text = "Capitulos Contables";
-            this.mn_ctb002.Click += new System.EventHandler(this.mn_ctb002_Click);
             // 
             // adm000
             // 

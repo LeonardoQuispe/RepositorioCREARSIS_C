@@ -285,25 +285,40 @@ namespace CREARSIS
 
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Down)
+            if (dg_res_ult.Rows.Count != 0)
             {
-                if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                try
                 {
-                    int fila = dg_res_ult.CurrentRow.Index + 1;
-                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                    fu_fil_act();
+                    //al presionar tecla para ABAJO
+                    if (e.KeyData == Keys.Down)
+                    {
+                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
 
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
+                    //al presionar tecla para ARRIBA
+                    else if (e.KeyData == Keys.Up)
+                    {
+                        if (dg_res_ult.CurrentRow.Index != 0)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
                 }
-            }
-            //al presionar tecla para ARRIBA
-            if (e.KeyData == Keys.Up)
-            {
-                if (dg_res_ult.CurrentRow.Index != 0)
+                catch (Exception ex)
                 {
-                    int fila = dg_res_ult.CurrentRow.Index - 1;
-                    dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                    fu_fil_act();
-
+                    MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

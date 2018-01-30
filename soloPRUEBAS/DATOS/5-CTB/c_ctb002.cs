@@ -34,7 +34,7 @@ namespace DATOS._5_CTB
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" select * from ctb002  ");
-
+                
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendLine(" where va_cod_cap like '" + val_bus + "%' "); break;

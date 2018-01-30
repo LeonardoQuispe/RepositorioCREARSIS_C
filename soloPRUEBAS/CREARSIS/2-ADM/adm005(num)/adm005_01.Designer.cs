@@ -170,6 +170,7 @@
             this.tb_nro_tal.PreventEnterBeep = true;
             this.tb_nro_tal.Size = new System.Drawing.Size(28, 22);
             this.tb_nro_tal.TabIndex = 10;
+            this.tb_nro_tal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_nro_tal.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
             // 
             // GroupBox1

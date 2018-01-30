@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_tip_cct = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_cct = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_cct = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -36,7 +38,6 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_tip_cct);
             this.GroupBox1.Controls.Add(this.labelX3);
             this.GroupBox1.Controls.Add(this.tb_nom_cct);
             this.GroupBox1.Controls.Add(this.labelX2);
@@ -55,6 +57,40 @@
             this.GroupBox1.Size = new System.Drawing.Size(355, 116);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_tip_cct
+            // 
+            this.tb_tip_cct.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_tip_cct.Border.Class = "TextBoxBorder";
+            this.tb_tip_cct.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_tip_cct.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_tip_cct.Enabled = false;
+            this.tb_tip_cct.ForeColor = System.Drawing.Color.Black;
+            this.tb_tip_cct.Location = new System.Drawing.Point(273, 29);
+            this.tb_tip_cct.MaxLength = 50;
+            this.tb_tip_cct.Name = "tb_tip_cct";
+            this.tb_tip_cct.PreventEnterBeep = true;
+            this.tb_tip_cct.Size = new System.Drawing.Size(66, 22);
+            this.tb_tip_cct.TabIndex = 3;
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(247, 32);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(24, 17);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Tipo";
             // 
             // tb_nom_cct
             // 
@@ -71,7 +107,7 @@
             this.tb_nom_cct.Name = "tb_nom_cct";
             this.tb_nom_cct.PreventEnterBeep = true;
             this.tb_nom_cct.Size = new System.Drawing.Size(279, 22);
-            this.tb_nom_cct.TabIndex = 4;
+            this.tb_nom_cct.TabIndex = 5;
             // 
             // labelX2
             // 
@@ -86,7 +122,7 @@
             this.labelX2.Location = new System.Drawing.Point(13, 71);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(43, 17);
-            this.labelX2.TabIndex = 3;
+            this.labelX2.TabIndex = 4;
             this.labelX2.Text = "Nombre";
             // 
             // tb_cod_cct
@@ -105,6 +141,7 @@
             this.tb_cod_cct.PreventEnterBeep = true;
             this.tb_cod_cct.Size = new System.Drawing.Size(41, 22);
             this.tb_cod_cct.TabIndex = 1;
+            this.tb_cod_cct.Validated += new System.EventHandler(this.tb_cod_cct_Validated);
             // 
             // LabelX1
             // 
@@ -166,29 +203,13 @@
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(107, 31);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(206, 17);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "(Códigos múltiplos de 100 serán Matrices)";
-            // 
             // ctb003_02
             // 
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(369, 170);
+            this.ClientSize = new System.Drawing.Size(369, 169);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
@@ -199,7 +220,6 @@
             this.Name = "ctb003_02";
             this.Text = "Nuevo Centro de Costos";
             this.TitleText = "Nuevo Centro de Costos";
-            this.Load += new System.EventHandler(this.ctb003_02_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
@@ -217,6 +237,7 @@
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_tip_cct;
         internal DevComponents.DotNetBar.LabelX labelX3;
     }
 }

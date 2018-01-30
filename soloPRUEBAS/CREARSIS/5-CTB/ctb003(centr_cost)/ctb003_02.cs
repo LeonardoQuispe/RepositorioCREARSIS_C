@@ -31,9 +31,28 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             InitializeComponent();
         }
 
-        private void ctb003_02_Load(object sender, EventArgs e)
+        private void tb_cod_cct_Validated(object sender, EventArgs e)
         {
+            if (tb_cod_cct.Text.Trim() == "")
+            {
+                tb_tip_cct.Clear();
+                return;
+            }
+            if (o_mg_glo_bal.fg_val_num(tb_cod_cct.Text) == false)
+            {
+                tb_tip_cct.Clear();
+                return;
+            }
 
+
+            if (int.Parse(tb_cod_cct.Text.Trim()) % 100 == 0)
+            {
+                tb_tip_cct.Text = "Matriz";
+            }
+            else
+            {
+                tb_tip_cct.Text = "Analítica";
+            }
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -96,6 +115,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         {
             tb_cod_cct.Clear();
             tb_nom_cct.Clear();
+            tb_tip_cct.Clear();
 
             tb_cod_cct.Focus();
         }
@@ -131,9 +151,6 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             return null;
         }
 
-
-
-
-
+        
     }
 }

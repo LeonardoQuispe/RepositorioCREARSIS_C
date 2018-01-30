@@ -56,20 +56,23 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     {
                         if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
                         {
-                            int fila = dg_res_ult.CurrentRow.Index + 1;
-                            dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
 
                         }
                     }
-
                     //al presionar tecla para ARRIBA
-                    if (e.KeyData == Keys.Up)
+                    else if (e.KeyData == Keys.Up)
                     {
                         if (dg_res_ult.CurrentRow.Index != 0)
                         {
-                            int fila = dg_res_ult.CurrentRow.Index - 1;
-                            dg_res_ult.CurrentCell = dg_res_ult[0, fila];
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
 
                         }
@@ -150,7 +153,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ctb003_03 obj = new ctb003_03();
+            ctb003_04 obj = new ctb003_04();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
         }
 
@@ -163,7 +166,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ctb003_03 obj = new ctb003_03();
+            ctb003_06 obj = new ctb003_06();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
         }
 
@@ -176,7 +179,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 MessageBoxEx.Show(vv_err_msg, "Busca Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ctb003_03 obj = new ctb003_03();
+            ctb003_05 obj = new ctb003_05();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb003);
         }
 
@@ -206,6 +209,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
+            string va_nom_cct = "";
             string va_tip_cct = "";
             string va_est_ado = "";
 
@@ -220,8 +224,8 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     //Se valida el tipo de Centro de Costos
                     switch (row["va_tip_cct"].ToString())
                     {
-                        case "M": va_tip_cct = "Matriz"; break;
-                        case "A": va_tip_cct = "Analítica"; break;
+                        case "M": va_tip_cct = "Matriz"; va_nom_cct = row["va_nom_cct"].ToString(); break;
+                        case "A": va_tip_cct = "Analítica"; va_nom_cct = "---" + row["va_nom_cct"].ToString(); break;
                     }
 
                     
@@ -236,7 +240,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     }
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_cct"],row["va_nom_cct"],va_tip_cct, va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_cct"],va_nom_cct,va_tip_cct, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
