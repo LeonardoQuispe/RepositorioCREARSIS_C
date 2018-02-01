@@ -32,6 +32,16 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.LabelX7 = new DevComponents.DotNetBar.LabelX();
+            this.tb_fec_ini = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.tb_nro_fin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX6 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nro_ini = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LabelX5 = new DevComponents.DotNetBar.LabelX();
+            this.LabelX8 = new DevComponents.DotNetBar.LabelX();
+            this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.bt_lla_vee = new DevComponents.DotNetBar.ButtonX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_ley = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -49,20 +59,10 @@
             this.FM = new DevComponents.Editors.ComboItem();
             this.tb_nro_dos = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_nro_fin = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX6 = new DevComponents.DotNetBar.LabelX();
-            this.tb_nro_ini = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.LabelX5 = new DevComponents.DotNetBar.LabelX();
-            this.LabelX8 = new DevComponents.DotNetBar.LabelX();
-            this.tb_fec_fin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.LabelX7 = new DevComponents.DotNetBar.LabelX();
-            this.tb_fec_ini = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_ctr_frm
@@ -145,6 +145,247 @@
             this.GroupBox1.Size = new System.Drawing.Size(479, 349);
             this.GroupBox1.TabIndex = 78;
             this.GroupBox1.TabStop = false;
+            // 
+            // LabelX7
+            // 
+            this.LabelX7.AutoSize = true;
+            this.LabelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX7.ForeColor = System.Drawing.Color.Black;
+            this.LabelX7.Location = new System.Drawing.Point(333, 20);
+            this.LabelX7.Name = "LabelX7";
+            this.LabelX7.Size = new System.Drawing.Size(31, 17);
+            this.LabelX7.TabIndex = 252;
+            this.LabelX7.Text = "Fecha";
+            this.LabelX7.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_fec_ini
+            // 
+            // 
+            // 
+            // 
+            this.tb_fec_ini.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.tb_fec_ini.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_ini.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.tb_fec_ini.ButtonDropDown.Visible = true;
+            this.tb_fec_ini.Enabled = false;
+            this.tb_fec_ini.IsPopupCalendarOpen = false;
+            this.tb_fec_ini.Location = new System.Drawing.Point(368, 19);
+            // 
+            // 
+            // 
+            this.tb_fec_ini.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_ini.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_ini.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.tb_fec_ini.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_ini.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
+            this.tb_fec_ini.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.tb_fec_ini.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
+            this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.tb_fec_ini.Name = "tb_fec_ini";
+            this.tb_fec_ini.Size = new System.Drawing.Size(87, 22);
+            this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.tb_fec_ini.TabIndex = 251;
+            this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
+            this.tb_fec_ini.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
+            // 
+            // tb_nro_fin
+            // 
+            this.tb_nro_fin.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nro_fin.Border.Class = "TextBoxBorder";
+            this.tb_nro_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nro_fin.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_fin.Enabled = false;
+            this.tb_nro_fin.ForeColor = System.Drawing.Color.Black;
+            this.tb_nro_fin.Location = new System.Drawing.Point(219, 153);
+            this.tb_nro_fin.MaxLength = 6;
+            this.tb_nro_fin.Name = "tb_nro_fin";
+            this.tb_nro_fin.PreventEnterBeep = true;
+            this.tb_nro_fin.Size = new System.Drawing.Size(50, 22);
+            this.tb_nro_fin.TabIndex = 250;
+            this.tb_nro_fin.Text = "999999";
+            this.tb_nro_fin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // LabelX6
+            // 
+            this.LabelX6.AutoSize = true;
+            this.LabelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX6.ForeColor = System.Drawing.Color.Black;
+            this.LabelX6.Location = new System.Drawing.Point(168, 157);
+            this.LabelX6.Name = "LabelX6";
+            this.LabelX6.Size = new System.Drawing.Size(49, 17);
+            this.LabelX6.TabIndex = 249;
+            this.LabelX6.Text = "Nro. Final";
+            // 
+            // tb_nro_ini
+            // 
+            this.tb_nro_ini.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nro_ini.Border.Class = "TextBoxBorder";
+            this.tb_nro_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nro_ini.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_ini.Enabled = false;
+            this.tb_nro_ini.ForeColor = System.Drawing.Color.Black;
+            this.tb_nro_ini.Location = new System.Drawing.Point(112, 153);
+            this.tb_nro_ini.MaxLength = 6;
+            this.tb_nro_ini.Name = "tb_nro_ini";
+            this.tb_nro_ini.PreventEnterBeep = true;
+            this.tb_nro_ini.Size = new System.Drawing.Size(41, 22);
+            this.tb_nro_ini.TabIndex = 248;
+            this.tb_nro_ini.Text = "1";
+            this.tb_nro_ini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // LabelX5
+            // 
+            this.LabelX5.AutoSize = true;
+            this.LabelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX5.ForeColor = System.Drawing.Color.Black;
+            this.LabelX5.Location = new System.Drawing.Point(52, 157);
+            this.LabelX5.Name = "LabelX5";
+            this.LabelX5.Size = new System.Drawing.Size(54, 17);
+            this.LabelX5.TabIndex = 247;
+            this.LabelX5.Text = "Nro. Inicial";
+            this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // LabelX8
+            // 
+            this.LabelX8.AutoSize = true;
+            this.LabelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX8.ForeColor = System.Drawing.Color.Black;
+            this.LabelX8.Location = new System.Drawing.Point(279, 156);
+            this.LabelX8.Name = "LabelX8";
+            this.LabelX8.Size = new System.Drawing.Size(88, 17);
+            this.LabelX8.TabIndex = 246;
+            this.LabelX8.Text = "Limite de emision";
+            // 
+            // tb_fec_fin
+            // 
+            // 
+            // 
+            // 
+            this.tb_fec_fin.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.tb_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.tb_fec_fin.ButtonDropDown.Visible = true;
+            this.tb_fec_fin.Enabled = false;
+            this.tb_fec_fin.IsPopupCalendarOpen = false;
+            this.tb_fec_fin.Location = new System.Drawing.Point(371, 153);
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.tb_fec_fin.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
+            this.tb_fec_fin.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.tb_fec_fin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
+            this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.tb_fec_fin.Name = "tb_fec_fin";
+            this.tb_fec_fin.Size = new System.Drawing.Size(84, 22);
+            this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.tb_fec_fin.TabIndex = 245;
+            this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
+            this.tb_fec_fin.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(63, 312);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 242;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(113, 310);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 241;
+            this.tb_est_ado.TabStop = false;
             // 
             // bt_lla_vee
             // 
@@ -413,7 +654,7 @@
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(202, 22);
+            this.tb_nro_dos.Size = new System.Drawing.Size(105, 22);
             this.tb_nro_dos.TabIndex = 10;
             this.tb_nro_dos.Text = "0";
             // 
@@ -433,247 +674,6 @@
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Nro. Dosificación";
             this.LabelX1.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX14
-            // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(63, 312);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 242;
-            this.labelX14.Text = "Estado:";
-            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(113, 310);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 241;
-            this.tb_est_ado.TabStop = false;
-            // 
-            // tb_nro_fin
-            // 
-            this.tb_nro_fin.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nro_fin.Border.Class = "TextBoxBorder";
-            this.tb_nro_fin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nro_fin.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_fin.Enabled = false;
-            this.tb_nro_fin.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_fin.Location = new System.Drawing.Point(219, 153);
-            this.tb_nro_fin.MaxLength = 6;
-            this.tb_nro_fin.Name = "tb_nro_fin";
-            this.tb_nro_fin.PreventEnterBeep = true;
-            this.tb_nro_fin.Size = new System.Drawing.Size(50, 22);
-            this.tb_nro_fin.TabIndex = 250;
-            this.tb_nro_fin.Text = "999999";
-            this.tb_nro_fin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // LabelX6
-            // 
-            this.LabelX6.AutoSize = true;
-            this.LabelX6.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX6.ForeColor = System.Drawing.Color.Black;
-            this.LabelX6.Location = new System.Drawing.Point(168, 157);
-            this.LabelX6.Name = "LabelX6";
-            this.LabelX6.Size = new System.Drawing.Size(49, 17);
-            this.LabelX6.TabIndex = 249;
-            this.LabelX6.Text = "Nro. Final";
-            // 
-            // tb_nro_ini
-            // 
-            this.tb_nro_ini.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nro_ini.Border.Class = "TextBoxBorder";
-            this.tb_nro_ini.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nro_ini.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_ini.Enabled = false;
-            this.tb_nro_ini.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_ini.Location = new System.Drawing.Point(112, 153);
-            this.tb_nro_ini.MaxLength = 6;
-            this.tb_nro_ini.Name = "tb_nro_ini";
-            this.tb_nro_ini.PreventEnterBeep = true;
-            this.tb_nro_ini.Size = new System.Drawing.Size(41, 22);
-            this.tb_nro_ini.TabIndex = 248;
-            this.tb_nro_ini.Text = "1";
-            this.tb_nro_ini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // LabelX5
-            // 
-            this.LabelX5.AutoSize = true;
-            this.LabelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX5.ForeColor = System.Drawing.Color.Black;
-            this.LabelX5.Location = new System.Drawing.Point(52, 157);
-            this.LabelX5.Name = "LabelX5";
-            this.LabelX5.Size = new System.Drawing.Size(54, 17);
-            this.LabelX5.TabIndex = 247;
-            this.LabelX5.Text = "Nro. Inicial";
-            this.LabelX5.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // LabelX8
-            // 
-            this.LabelX8.AutoSize = true;
-            this.LabelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX8.ForeColor = System.Drawing.Color.Black;
-            this.LabelX8.Location = new System.Drawing.Point(279, 156);
-            this.LabelX8.Name = "LabelX8";
-            this.LabelX8.Size = new System.Drawing.Size(88, 17);
-            this.LabelX8.TabIndex = 246;
-            this.LabelX8.Text = "Limite de emision";
-            // 
-            // tb_fec_fin
-            // 
-            // 
-            // 
-            // 
-            this.tb_fec_fin.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.tb_fec_fin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.tb_fec_fin.ButtonDropDown.Visible = true;
-            this.tb_fec_fin.Enabled = false;
-            this.tb_fec_fin.IsPopupCalendarOpen = false;
-            this.tb_fec_fin.Location = new System.Drawing.Point(371, 153);
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.tb_fec_fin.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.tb_fec_fin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
-            this.tb_fec_fin.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.tb_fec_fin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.tb_fec_fin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_fin.MonthCalendar.TodayButtonVisible = true;
-            this.tb_fec_fin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.tb_fec_fin.Name = "tb_fec_fin";
-            this.tb_fec_fin.Size = new System.Drawing.Size(84, 22);
-            this.tb_fec_fin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_fin.TabIndex = 245;
-            this.tb_fec_fin.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
-            this.tb_fec_fin.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
-            // 
-            // LabelX7
-            // 
-            this.LabelX7.AutoSize = true;
-            this.LabelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX7.ForeColor = System.Drawing.Color.Black;
-            this.LabelX7.Location = new System.Drawing.Point(333, 20);
-            this.LabelX7.Name = "LabelX7";
-            this.LabelX7.Size = new System.Drawing.Size(31, 17);
-            this.LabelX7.TabIndex = 252;
-            this.LabelX7.Text = "Fecha";
-            this.LabelX7.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_fec_ini
-            // 
-            // 
-            // 
-            // 
-            this.tb_fec_ini.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.tb_fec_ini.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_ini.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.tb_fec_ini.ButtonDropDown.Visible = true;
-            this.tb_fec_ini.Enabled = false;
-            this.tb_fec_ini.IsPopupCalendarOpen = false;
-            this.tb_fec_ini.Location = new System.Drawing.Point(368, 19);
-            // 
-            // 
-            // 
-            this.tb_fec_ini.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_ini.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_ini.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.tb_fec_ini.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.tb_fec_ini.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_ini.MonthCalendar.DisplayMonth = new System.DateTime(2017, 5, 1, 0, 0, 0, 0);
-            this.tb_fec_ini.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.tb_fec_ini.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.tb_fec_ini.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_ini.MonthCalendar.TodayButtonVisible = true;
-            this.tb_fec_ini.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.tb_fec_ini.Name = "tb_fec_ini";
-            this.tb_fec_ini.Size = new System.Drawing.Size(87, 22);
-            this.tb_fec_ini.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.tb_fec_ini.TabIndex = 251;
-            this.tb_fec_ini.TimeSelectorType = DevComponents.Editors.DateTimeAdv.eTimeSelectorType.TouchStyle;
-            this.tb_fec_ini.Value = new System.DateTime(2017, 5, 27, 0, 0, 0, 0);
             // 
             // ctb007_06
             // 
@@ -695,8 +695,8 @@
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fec_ini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_fec_fin)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -88,7 +88,7 @@
             this.tb_fec_fac.ButtonDropDown.Visible = true;
             this.tb_fec_fac.ForeColor = System.Drawing.Color.Black;
             this.tb_fec_fac.IsPopupCalendarOpen = false;
-            this.tb_fec_fac.Location = new System.Drawing.Point(226, 102);
+            this.tb_fec_fac.Location = new System.Drawing.Point(108, 102);
             // 
             // 
             // 
@@ -123,7 +123,7 @@
             this.tb_fec_fac.MonthCalendar.TodayButtonVisible = true;
             this.tb_fec_fac.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tb_fec_fac.Name = "tb_fec_fac";
-            this.tb_fec_fac.Size = new System.Drawing.Size(102, 22);
+            this.tb_fec_fac.Size = new System.Drawing.Size(107, 22);
             this.tb_fec_fac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tb_fec_fac.TabIndex = 91;
             // 
@@ -211,7 +211,6 @@
             // 
             // 
             this.tb_cod_con.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_cod_con.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_cod_con.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_cod_con.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_cod_con.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -282,7 +281,6 @@
             // 
             // 
             this.tb_lla_vee.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_lla_vee.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_lla_vee.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_vee.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_lla_vee.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -305,7 +303,6 @@
             // 
             // 
             this.tb_mto_fac.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_mto_fac.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_mto_fac.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_mto_fac.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_mto_fac.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -328,7 +325,6 @@
             // 
             // 
             this.tb_nit_cli.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_nit_cli.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nit_cli.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nit_cli.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nit_cli.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -350,7 +346,6 @@
             // 
             // 
             this.tb_nro_fac.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_nro_fac.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_fac.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_fac.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_fac.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -372,7 +367,6 @@
             // 
             // 
             this.tb_nro_aut.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.tb_nro_aut.Border.BorderColor = System.Drawing.Color.Black;
             this.tb_nro_aut.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_aut.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_nro_aut.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -381,6 +375,7 @@
             this.tb_nro_aut.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_aut.ForeColor = System.Drawing.Color.Black;
             this.tb_nro_aut.Location = new System.Drawing.Point(108, 18);
+            this.tb_nro_aut.MaxLength = 15;
             this.tb_nro_aut.Name = "tb_nro_aut";
             this.tb_nro_aut.PreventEnterBeep = true;
             this.tb_nro_aut.Size = new System.Drawing.Size(220, 22);

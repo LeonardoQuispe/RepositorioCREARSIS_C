@@ -428,6 +428,7 @@
             this.va_cod_fam.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.va_cod_fam.Text = "--------";
             this.va_cod_fam.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.va_cod_fam.Width = 80;
             // 
             // va_nom_fam
             // 
@@ -508,9 +509,9 @@
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
         internal System.Windows.Forms.MaskedTextBox tb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
-        internal DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn va_cod_fam;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn va_nom_fam;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn va_tip_fam;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn va_cod_fam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_fam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_tip_fam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
     }
 }

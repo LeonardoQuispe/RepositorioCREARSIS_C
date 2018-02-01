@@ -17,13 +17,21 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_03 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_ctb003 o_ctb003 = new c_ctb003();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_03()
         {
@@ -68,13 +76,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -82,12 +86,12 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             if (vg_str_ucc.Rows.Count == 0)
             {
                 return;
-            }            
+            }
 
             //Valida Moneda de Centro de Costos
             switch (vg_str_ucc.Rows[0]["va_tip_cct"].ToString())
             {
-                case "M": tb_tip_cct.Text="Matriz"; break;
+                case "M": tb_tip_cct.Text = "Matriz"; break;
                 case "A": tb_tip_cct.Text = "Analítica"; break;
             }
 
@@ -123,11 +127,6 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             return null;
         }
 
-
-
-
-
-
-
+        #endregion
     }
 }

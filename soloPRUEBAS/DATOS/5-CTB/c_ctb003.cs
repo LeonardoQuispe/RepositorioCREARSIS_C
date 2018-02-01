@@ -26,7 +26,7 @@ namespace DATOS._5_CTB
         /// Funcion "Buscar Centro de Costos"
         /// </summary>
         /// <param name="val_bus">Valor del busqueda</param>
-        /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
+        /// <param name="prm_bus">Parametro de Busqueda (0=codigo ; 1=Nombre )</param>
         /// <param name="est_bus">Estado de la Búsqueda (T=Todos; H=Habilitado; N=Deshabilitado)</param>
         /// <returns></returns>
         public DataTable _01(string val_bus, int prm_bus, string est_bus)

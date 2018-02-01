@@ -71,6 +71,7 @@ namespace CREARSIS._4_INV.inv002_pro_
             tb_nom_fap.Clear();
             tb_nom_pro.Clear();
             tb_des_pro.Clear();
+            tb_cod_bar.Clear();
             tb_fab_ric.Clear();
             tb_cod_mar.Clear();
             tb_nom_mar.Clear();

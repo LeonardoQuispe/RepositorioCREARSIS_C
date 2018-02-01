@@ -15,12 +15,22 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_ctb003;
+        string err_msg = null;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_ctb003 o_ctb003 = new c_ctb003();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_04()
         {
@@ -34,6 +44,13 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            err_msg = fu_ver_dat();
+            if (err_msg != null)
+            {
+                MessageBoxEx.Show(err_msg, "Error Habilita/Deshabilita Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult res_msg = new DialogResult();
             if (tb_est_ado.Text == "Habilitado")
             {
@@ -73,12 +90,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -112,8 +126,45 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         }
 
 
+        string fu_ver_dat()
+        {
+
+            if (tb_est_ado.Text == "Habilitado")
+            {
+                //Valida en caso de que sea Matriz
+                if (tb_tip_cct.Text == "Matriz")
+                {
+                    //Valida que la Matriz no tenga Analíticas Habilitadas
+                    tab_ctb003 = o_ctb003._01(tb_cod_cct.Text[0].ToString(), 0, "T");
 
 
+                    for (int i = 1; i <= tab_ctb003.Rows.Count - 1; i++)
+                    {
+                        if (tab_ctb003.Rows[i]["va_est_ado"].ToString() == "H")
+                        {
+                            return "Primero debe Deshabilitar las Análíticas registradas en esta Matriz";
+                        }
+                    }
+                }
+            }
+            else if (tb_est_ado.Text == "Deshabilitado")
+            {
+                //Valida en caso de que sea Analítica
+                if (tb_tip_cct.Text == "Analítica")
+                {
+                    //Valida que la Matriz esté Habilitada
+                    tab_ctb003 = o_ctb003._05((int.Parse(tb_cod_cct.Text.Trim()) / 100) * 100);
 
+                    if (tab_ctb003.Rows[0]["va_est_ado"].ToString() == "N")
+                    {
+                        return "Primero debe Habilitar la Matriz";
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        #endregion
     }
 }

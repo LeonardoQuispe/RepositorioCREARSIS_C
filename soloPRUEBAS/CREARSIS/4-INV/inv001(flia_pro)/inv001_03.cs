@@ -254,7 +254,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim());
+                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim());
                 Close();
             }
             catch (Exception ex)

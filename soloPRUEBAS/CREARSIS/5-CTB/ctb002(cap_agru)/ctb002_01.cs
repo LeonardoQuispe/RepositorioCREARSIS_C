@@ -182,8 +182,10 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
-            string va_est_ado = "";
             string va_tra_cap = "";
+            bool va_cen_cto = false;
+            string va_est_ado = "";
+            
 
             dg_res_ult.Rows.Clear();
 
@@ -191,19 +193,9 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
 
             if (tab_ctb002.Rows.Count != 0)
             {
-
                 foreach (DataRow row in tab_ctb002.Rows)
                 {
-                    switch (row["va_est_ado"].ToString())
-                    {
-                        case "H":
-                            va_est_ado = "Habilitado";
-                            break;
-                        case "N":
-                            va_est_ado = "Deshabilitado";
-                            break;
-                    }
-
+                    //Valida Tratamiento
                     switch (row["va_tra_cap"].ToString())
                     {
                         case "D":
@@ -214,7 +206,26 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_cod_cap"], row["va_nom_cap"], va_tra_cap, va_est_ado);
+                    //Valida si usa Centro de Costo
+                    switch (row["va_cen_cto"].ToString())
+                    {
+                        case "0": va_cen_cto = false; break;
+                        case "1": va_cen_cto = true; break;
+                    }
+
+
+                    switch (row["va_est_ado"].ToString())
+                    {
+                        case "H":
+                            va_est_ado = "Habilitado";
+                            break;
+                        case "N":
+                            va_est_ado = "Deshabilitado";
+                            break;
+                    }
+
+                    dg_res_ult.Rows.Add(row["va_cod_cap"], row["va_nom_cap"], va_tra_cap,
+                                        chk_cen_cto.Checked=va_cen_cto, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -331,10 +342,10 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
-                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -344,10 +355,10 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
-                        if (dg_res_ult.CurrentRow.Index != 0)
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -361,36 +372,7 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                 }
             }
         }
-
-        private void tb_sel_ecc_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (dg_res_ult.Rows.Count != 0)
-            {
-                if (e.KeyData == Keys.Down)
-                {
-                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index + 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
-                }
-
-                //al presionar tecla para ARRIBA
-                if (e.KeyData == Keys.Up)
-                {
-                    if (dg_res_ult.CurrentRow.Index != 0)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index - 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
-                }
-            }
-        }
-
+        
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);

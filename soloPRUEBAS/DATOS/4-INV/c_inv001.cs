@@ -27,6 +27,7 @@ namespace DATOS
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
+        /// <param name="est_bus">Estado de la Búsqueda (T=Todos; H=Habilitado; N=Deshabilitado)</param>
         /// <returns></returns>
         public DataTable _01(string val_bus, int prm_bus, string est_bus,int tipo =1)
          {

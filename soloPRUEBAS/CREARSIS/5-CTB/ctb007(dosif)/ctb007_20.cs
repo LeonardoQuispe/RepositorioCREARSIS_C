@@ -84,41 +84,85 @@ namespace CREARSIS
             DateTime tmp2;
             decimal tmp3;
 
+
+            //Valida Nro de Autorizacion
+            if (tb_nro_aut.Text.Trim()=="")
+            {
+                va_msg_err = "Debe proporcionar un número de Autorización";
+                tb_nro_aut.Focus();
+                return va_msg_err;
+            }
             if (o_mg_glo_bal.fg_val_num(tb_nro_aut.Text) == false)
             {
-                va_msg_err = "Debe proporcionar un numero de autorizacion valido, solo numerico";
+                va_msg_err = "Debe proporcionar un número de Autorización válido, solo numérico";
                 tb_nro_aut.Focus();
                 return va_msg_err;
             }
 
+            //ValidaNro de Factura
+            if (tb_nro_fac.Text.Trim() == "")
+            {
+                va_msg_err = "Debe proporcionar un número de Factura";
+                tb_nro_fac.Focus();
+                return va_msg_err;
+            }
             if (o_mg_glo_bal.fg_val_num(tb_nro_fac.Text) == false)
             {
-                va_msg_err = "Debe proporcionar un numero de factura valido, solo numerico";
+                va_msg_err = "Debe proporcionar un número de Factura válido, solo numérico";
                 tb_nro_fac.Focus();
                 return va_msg_err;
             }
 
+            //Valida NIT
+            if (tb_nit_cli.Text.Trim() == "")
+            {
+                va_msg_err = "Debe proporcionar un NIT del Cliente";
+                tb_nit_cli.Focus();
+                return va_msg_err;
+            }
             if (o_mg_glo_bal.fg_val_num(tb_nit_cli.Text) == false)
             {
-                va_msg_err = "Debe proporcionar un nit valido, solo numerico";
+                va_msg_err = "Debe proporcionar un NIT del Cliente válido, solo numérico";
                 tb_nit_cli.Focus();
                 return va_msg_err;
             }
 
+            //Valida Fecha
+            if (tb_fec_fac.Text.Trim() == "")
+            {
+                va_msg_err = "Debe proporcionar una Fecha";
+                tb_fec_fac.Focus();
+                return va_msg_err;
+            }
             if (DateTime.TryParse(tb_fec_fac.Text.Trim(), out tmp2) == false)
             {
-                va_msg_err = "Debe proporcionar una fecha valida";
+                va_msg_err = "Debe proporcionar una Fecha valida";
                 tb_fec_fac.Focus();
                 return va_msg_err;
             }
 
-            if (decimal.TryParse(tb_mto_fac.Text.Trim(), out tmp3) == false)
+            //Valida Monto
+            if (tb_mto_fac.Text.Trim() == "")
             {
-                va_msg_err = "Debe proporcionar un monto valido, solo numerico";
+                va_msg_err = "Debe proporcionar un Monto";
                 tb_mto_fac.Focus();
                 return va_msg_err;
             }
 
+            va_msg_err=o_mg_glo_bal.fg_val_dec(tb_mto_fac.Text.Trim(), 10, 4);
+
+            if (va_msg_err == null)
+            {
+                va_msg_err = "El Monto debe ser Numerico";
+                tb_mto_fac.Focus();
+                return va_msg_err;
+            }
+
+            tb_mto_fac.Text = Convert.ToDecimal(tb_mto_fac.Text.Trim()).ToString();
+
+
+
+            //Valida Llave
             if (tb_lla_vee.Text.Trim() == "")
             {
                 va_msg_err = "Debe proporcionar la llave";
@@ -126,23 +170,8 @@ namespace CREARSIS
                 tb_lla_vee.Focus();
                 return va_msg_err;
             }
-            tmp = 0;
-            for (int i = 0; i < tb_mto_fac.Text.Count(); i++)
-            {
-                if (tb_mto_fac.Text[i] == '.')
-                {
-                    tmp++;
-                }
-                if (tmp >= 2)
-                {
-                    va_msg_err = "No puede poner mas de 1 punto en el Monto";
 
-                    tb_mto_fac.Focus();
-                    return va_msg_err;
-                }
-
-            }
-
+            va_msg_err = null;
 
             return va_msg_err;
         }

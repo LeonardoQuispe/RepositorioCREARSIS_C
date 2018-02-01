@@ -49,7 +49,7 @@
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(12, 3);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(355, 163);
+            this.GroupBox1.Size = new System.Drawing.Size(323, 163);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
@@ -68,13 +68,13 @@
             this.tb_lla_ve.DisabledBackColor = System.Drawing.Color.White;
             this.tb_lla_ve.Enabled = false;
             this.tb_lla_ve.ForeColor = System.Drawing.Color.Black;
-            this.tb_lla_ve.Location = new System.Drawing.Point(112, 63);
+            this.tb_lla_ve.Location = new System.Drawing.Point(112, 66);
             this.tb_lla_ve.MaxLength = 360;
             this.tb_lla_ve.Multiline = true;
             this.tb_lla_ve.Name = "tb_lla_ve";
             this.tb_lla_ve.PreventEnterBeep = true;
             this.tb_lla_ve.ReadOnly = true;
-            this.tb_lla_ve.Size = new System.Drawing.Size(219, 76);
+            this.tb_lla_ve.Size = new System.Drawing.Size(184, 76);
             this.tb_lla_ve.TabIndex = 0;
             // 
             // LabelX5
@@ -87,7 +87,7 @@
             this.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX5.ForeColor = System.Drawing.Color.Black;
-            this.LabelX5.Location = new System.Drawing.Point(79, 63);
+            this.LabelX5.Location = new System.Drawing.Point(79, 66);
             this.LabelX5.Name = "LabelX5";
             this.LabelX5.Size = new System.Drawing.Size(29, 15);
             this.LabelX5.TabIndex = 2;
@@ -105,12 +105,12 @@
             this.tb_nro_dos.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nro_dos.Enabled = false;
             this.tb_nro_dos.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_dos.Location = new System.Drawing.Point(112, 19);
+            this.tb_nro_dos.Location = new System.Drawing.Point(112, 22);
             this.tb_nro_dos.MaxLength = 15;
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
             this.tb_nro_dos.ReadOnly = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(219, 22);
+            this.tb_nro_dos.Size = new System.Drawing.Size(184, 22);
             this.tb_nro_dos.TabIndex = 1;
             this.tb_nro_dos.Text = "0";
             // 
@@ -124,7 +124,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(22, 21);
+            this.LabelX1.Location = new System.Drawing.Point(22, 24);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(86, 15);
             this.LabelX1.TabIndex = 3;
@@ -138,7 +138,7 @@
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(12, 172);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(355, 48);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(323, 48);
             this.gb_ctr_frm.TabIndex = 1;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -148,7 +148,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(247, 15);
+            this.bt_can_cel.Location = new System.Drawing.Point(212, 15);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(379, 225);
+            this.ClientSize = new System.Drawing.Size(347, 225);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);

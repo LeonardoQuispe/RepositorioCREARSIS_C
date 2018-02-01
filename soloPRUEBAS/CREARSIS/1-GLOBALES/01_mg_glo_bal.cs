@@ -20,7 +20,6 @@ namespace CREARSIS
     {
         dynamic tmp_frm_aux;
         decimal va_tmp_dec;
-        long va_tmp_num;
 
         #region Metodos/Funciones de Autenticación
 
@@ -907,13 +906,21 @@ namespace CREARSIS
         /// <returns></returns>
         public bool fg_val_num(string num)
         {
-            if (long.TryParse(num.Trim(), out va_tmp_num)==true)
+            for (int i = 0; i < num.Trim().Length; i++)
             {
-                if (va_tmp_num>=0)
+                if (char.IsNumber(num[i])==false)
+                {
+                    return false;
+                }
+            }
+
+            if (num.Trim()!="")
+            {
+                if (int.Parse(num.Trim()) >= 0)
                 {
                     return true;
                 }
-            }
+            }                        
 
             return false;          
         }

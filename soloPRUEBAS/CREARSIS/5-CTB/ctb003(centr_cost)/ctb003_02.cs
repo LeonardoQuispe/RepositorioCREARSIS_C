@@ -17,14 +17,22 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_ctb003;
         string err_msg = "";
-        
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_ctb003 o_ctb003 = new c_ctb003();
+
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_02()
         {
@@ -39,6 +47,11 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 return;
             }
             if (o_mg_glo_bal.fg_val_num(tb_cod_cct.Text) == false)
+            {
+                tb_tip_cct.Clear();
+                return;
+            }
+            if (int.Parse(tb_cod_cct.Text.Trim()) < 100)
             {
                 tb_tip_cct.Clear();
                 return;
@@ -87,7 +100,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 }
 
                 //Graba datos
-                o_ctb003._02(int.Parse(tb_cod_cct.Text.Trim()),tb_nom_cct.Text.Trim(),va_tip_cct);
+                o_ctb003._02(int.Parse(tb_cod_cct.Text.Trim()), tb_nom_cct.Text.Trim(), va_tip_cct);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -106,10 +119,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             Close();
         }
 
+        #endregion
 
-
-        
-
+        #region METODOS
 
         void fu_lim_frm()
         {
@@ -122,6 +134,8 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
         string fu_ver_dat()
         {
+            int va_aux_cod;
+
             //Valida Código de Centro de Costos
             if (tb_cod_cct.Text.Trim() == "")
             {
@@ -133,12 +147,35 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 tb_cod_cct.Focus();
                 return "El Código del Centro de Costos debe ser numérico";
             }
-            if (int.Parse(tb_cod_cct.Text.Trim()) <= 0)
+            if (int.Parse(tb_cod_cct.Text.Trim()) < 100)
             {
                 tb_cod_cct.Focus();
-                return "El Código del Centro de Costos debe ser mayor a 0";
+                return "El Código del Centro de Costos debe ser mayor a 100";
             }
-            
+
+            tab_ctb003 = o_ctb003._05(int.Parse(tb_cod_cct.Text.Trim()));
+            if (tab_ctb003.Rows.Count != 0)
+            {
+                tb_cod_cct.Focus();
+                return "El Código del Centro de Costos ya se encuentra registrado";
+            }
+
+
+            //Valida que se haya ingresado la matriz de cada Analitica     
+            if (int.Parse(tb_cod_cct.Text.Trim()) % 100 != 0)
+            {
+                va_aux_cod = (int.Parse(tb_cod_cct.Text.Trim()) / 100) * 100;
+
+                tab_ctb003 = o_ctb003._01(va_aux_cod.ToString(), 0, "T");
+
+                if (tab_ctb003.Rows.Count == 0)
+                {
+                    tb_cod_cct.Focus();
+                    return "Primero debe existir la Matriz con Código " + va_aux_cod.ToString();
+                }
+
+            }
+
 
             //Valida Nombre de Centro de Costos
             if (tb_nom_cct.Text.Trim() == "")
@@ -146,11 +183,11 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                 tb_nom_cct.Focus();
                 return "Debes proporcionar el Nombre del Centro de Costos";
             }
-            
+
 
             return null;
         }
 
-        
+        #endregion
     }
 }

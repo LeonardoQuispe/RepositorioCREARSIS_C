@@ -20,7 +20,9 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_inv001;
         string err_msg = "";
+        string[] va_aux_cod; 
 
         #endregion
 
@@ -70,17 +72,48 @@ namespace CREARSIS
         }
         public string fu_ver_dat()
         {
-            if (tb_cod_fap.Text.Trim() == "")
+            va_aux_cod = new string[3];
+            int va_aux_niv = 0;
+
+
+            va_aux_cod[0] = tb_cod_fap.Text.Substring(0, 2);
+            va_aux_cod[1] = tb_cod_fap.Text.Substring(2, 2);
+            va_aux_cod[2] = tb_cod_fap.Text.Substring(4, 2);
+
+
+            //Identifica el nuvel de la familia de producto
+            for (int i = 0; i < va_aux_cod.Length; i++)
             {
-                tb_cod_fap.Focus();
-                return "Debes proporcionar el código de las Familia de producto";
+                if (int.Parse(va_aux_cod[i]) > 0)
+                {
+                    va_aux_niv++;
+                }
             }
 
 
-            if (tb_nom_fap.Text.Trim() == "")
+            switch (va_aux_niv)
             {
-                tb_nom_fap.Focus();
-                return "Debes proporcionar el nombre de la Familia de producto";
+                //Verifica si quiere elminar una FAM PROD de primer nivel
+                case 1:
+                    tab_inv001 = o_inv001._01(va_aux_cod[0], 1, "T");
+
+                    if (tab_inv001.Rows.Count > 1)
+                    {
+                        return "Primero debe eliminar las Sub-familias que tiene registrada \n\r" +
+                                "           esta Familia de Productos de primer nivel";
+                    }
+                    break;
+
+                //Verifica si quiere elminar una FAM PROD de segundo nivel
+                case 2:
+                    tab_inv001 = o_inv001._01(va_aux_cod[0].ToString() + va_aux_cod[1].ToString(), 1, "T");
+
+                    if (tab_inv001.Rows.Count > 1)
+                    {
+                        return "Primero debe eliminar las Sub-familias que tiene registrada \n\r" +
+                                "           esta Familia de Productos de segundo nivel";
+                    }
+                    break;
             }
 
             return null;

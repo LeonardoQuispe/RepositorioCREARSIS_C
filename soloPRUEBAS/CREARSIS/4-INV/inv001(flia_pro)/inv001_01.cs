@@ -144,24 +144,22 @@ namespace CREARSIS
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
-        public void fu_sel_fila(string cod_doc, string nom_doc)
+        public void fu_sel_fila(string cod_fap)
         {
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex+1, cb_est_bus.SelectedIndex);
 
-            tb_sel_ecc.Text = cod_doc;
-            lb_sel_ecc.Text = nom_doc;
+            tb_sel_ecc.Text = cod_fap;
 
-            if (cod_doc != null)
+            if (cod_fap != null)
             {
                 try
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_doc.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == nom_doc.ToUpper())
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_fap.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
-                            dg_res_ult.FirstDisplayedScrollingRowIndex = i;
-
+                            dg_res_ult.FirstDisplayedScrollingRowIndex = i;                            
                             return;
                         }
                     }
@@ -314,10 +312,10 @@ namespace CREARSIS
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
-                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -327,10 +325,10 @@ namespace CREARSIS
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
-                        if (dg_res_ult.CurrentRow.Index != 0)
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -350,7 +348,7 @@ namespace CREARSIS
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
-                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+                fu_sel_fila(tb_sel_ecc.Text);
             }
         }
 

@@ -16,14 +16,22 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         DataTable tab_ctb003;
         string vv_err_msg = "";
 
+        #endregion
+
+        #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_ctb003 o_ctb003 = new c_ctb003();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_01()
         {
@@ -54,10 +62,10 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
-                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -67,10 +75,10 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
-                        if (dg_res_ult.CurrentRow.Index != 0)
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -88,7 +96,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fu_fil_act();
-        }        
+        }
 
         private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
         {
@@ -119,10 +127,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             Close();
         }
 
+        #endregion
 
-
-
-
+        #region OPCIONES DE MENU
 
         //NUEVO
         private void m_ctb003_02_Click(object sender, EventArgs e)
@@ -189,13 +196,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -225,10 +228,10 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     switch (row["va_tip_cct"].ToString())
                     {
                         case "M": va_tip_cct = "Matriz"; va_nom_cct = row["va_nom_cct"].ToString(); break;
-                        case "A": va_tip_cct = "Analítica"; va_nom_cct = "---" + row["va_nom_cct"].ToString(); break;
+                        case "A": va_tip_cct = "Analítica"; va_nom_cct = "-- " + row["va_nom_cct"].ToString(); break;
                     }
 
-                    
+
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -240,7 +243,7 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     }
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_cct"],va_nom_cct,va_tip_cct, va_est_ado);
+                    dg_res_ult.Rows.Add(row["va_cod_cct"], va_nom_cct, va_tip_cct, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -425,7 +428,6 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             }
         }
 
-
-        
+        #endregion
     }
 }

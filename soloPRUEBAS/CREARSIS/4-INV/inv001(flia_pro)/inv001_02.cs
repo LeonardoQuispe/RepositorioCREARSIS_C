@@ -89,26 +89,27 @@ namespace CREARSIS
             codigo = (tb_cod_fap.Text.Substring(0, 2) + ("-" + (tb_cod_fap.Text.Substring(2, 2) + ("-" + tb_cod_fap.Text.Substring(4, 2)))));
             va_mat_cod = codigo.Split('-');
             // 
-            if (va_mat_cod[0] == "0")
+            if (va_mat_cod[0] == "00")
             {
-                err_msg = "Debe proporcionar un codigo valido para la familia de producto";
+                tb_cod_fap.Focus();
+                err_msg = "La Familia de Producto a primer nivel debe ser diferente de \"00\"";
                 return err_msg;
             }
 
-            if ((va_mat_cod[1] == "0") && (int.Parse(va_mat_cod[2]) > 0))
+            if ((va_mat_cod[1] == "00") && (int.Parse(va_mat_cod[2]) > 0))
             {
-                err_msg = "Debe proporcionar un codigo valido para la familia de producto";
+                tb_cod_fap.Focus();
+                err_msg = "La Familia de Producto a segundo nivel no puede ser \"00\"";
                 return err_msg;
             }
 
             // identificar el nivel de la familia de productos a crear'
             for (int i = 0; (i<= (va_mat_cod.Length - 1)); i++)
             {
-                if (int.Parse( va_mat_cod[i] )> 0)
+                if (int.Parse(va_mat_cod[i])> 0)
                 {
-                    va_niv_lin = (va_niv_lin + 1);
+                    va_niv_lin++;
                 }
-
             }
 
             //  Identifica el nivel de la familia
@@ -229,7 +230,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nueva Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim());
+                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim());
                 fu_lim_frm();
             }
             catch (Exception ex)

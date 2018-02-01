@@ -529,9 +529,8 @@
             this.tb_nro_dos.MaxLength = 15;
             this.tb_nro_dos.Name = "tb_nro_dos";
             this.tb_nro_dos.PreventEnterBeep = true;
-            this.tb_nro_dos.Size = new System.Drawing.Size(187, 22);
+            this.tb_nro_dos.Size = new System.Drawing.Size(105, 22);
             this.tb_nro_dos.TabIndex = 1;
-            this.tb_nro_dos.Text = "0";
             // 
             // LabelX1
             // 

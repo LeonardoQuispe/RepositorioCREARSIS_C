@@ -17,8 +17,14 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_05 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_05()
         {
@@ -36,8 +42,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         }
 
 
+        #endregion
 
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -70,8 +77,6 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
         }
 
-
-
-
+        #endregion
     }
 }

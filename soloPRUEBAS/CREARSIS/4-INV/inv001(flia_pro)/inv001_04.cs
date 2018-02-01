@@ -20,6 +20,8 @@ namespace CREARSIS
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_inv001;
+        string[] va_aux_cod;
         string err_msg = "";
 
         #endregion
@@ -67,19 +69,90 @@ namespace CREARSIS
                 tb_est_ado.Text = "Deshabilitado";
             }
         }
-        public string fu_ver_dat()
+
+        string fu_ver_dat()
         {
-            if (tb_cod_fap.Text.Trim() == "")
+            va_aux_cod = new string[3];
+            int va_aux_niv = 0;
+
+            va_aux_cod[0] = tb_cod_fap.Text.Substring(0, 2);
+            va_aux_cod[1] = tb_cod_fap.Text.Substring(2, 2);
+            va_aux_cod[2] = tb_cod_fap.Text.Substring(4, 2);
+
+
+            //Identifica el nuvel de la familia de producto
+            for (int i = 0; i < va_aux_cod.Length; i++)
             {
-                tb_cod_fap.Focus();
-                return "Debes proporcionar el código de la Familia de producto";
+                if (int.Parse(va_aux_cod[i]) > 0)
+                {
+                    va_aux_niv++;
+                }
             }
 
 
-            if (tb_nom_fap.Text.Trim() == "")
+
+            if (tb_est_ado.Text == "Habilitado")
             {
-                tb_nom_fap.Focus();
-                return "Debes proporcionar el nombre de la Familia de producto";
+                switch (va_aux_niv)
+                {
+                    //Verifica si quiere Deshabilitar una FAM PROD de primer nivel
+                    case 1:
+                        //Valida que la Familia de Producto no tenga Sub-familias Habilitadas
+                        tab_inv001 = o_inv001._01(va_aux_cod[0], 1, "T");
+
+                        for (int i = 1; i <= tab_inv001.Rows.Count - 1; i++)
+                        {
+                            if (tab_inv001.Rows[i]["va_est_ado"].ToString() == "H")
+                            {
+                                return "Primero debe deshabilitar las Sub-familias que tiene registrada \n\r" +
+                                    "               esta Familia de Productos de primer nivel";
+                            }
+                        }
+                        break;
+
+                    //Verifica si quiere Deshabilitar una FAM PROD de segundo nivel nivel
+                    case 2:
+                        //Valida que la Familia de Producto no tenga Sub-familias Habilitadas
+                        tab_inv001 = o_inv001._01(va_aux_cod[0].ToString() + va_aux_cod[1].ToString(), 1, "T");
+
+                        for (int i = 1; i <= tab_inv001.Rows.Count - 1; i++)
+                        {
+                            if (tab_inv001.Rows[i]["va_est_ado"].ToString() == "H")
+                            {
+                                return "Primero debe deshabilitar las Sub-familias que tiene registrada \n\r" +
+                                    "               esta Familia de Productos de segundo nivel";
+                            }
+                        }
+                        break;
+                }
+                
+            }
+            else if (tb_est_ado.Text == "Deshabilitado")
+            {
+                switch (va_aux_niv)
+                {
+                    //Verifica si quiere Habilitar una FAM PROD de segundo nivel nivel
+                    case 2:
+                        //Valida que la Familia de Producto de segundo nivel esté Habilitada
+                        tab_inv001 = o_inv001._05(va_aux_cod[0].ToString() + "0000");
+
+                        if (tab_inv001.Rows[0]["va_est_ado"].ToString() == "N")
+                        {
+                            return "Primero debe habilitar la familia de productos de primer nivel de esta Sub-familia";
+                        }
+                        break;
+
+                    //Verifica si quiere Habilitar una FAM PROD de tercer nivel
+                    case 3:
+                        //Valida que la Familia de Producto de tercer nivel esté Habilitada
+                        tab_inv001 = o_inv001._05(va_aux_cod[0].ToString() + va_aux_cod[1].ToString() + "00");
+
+                        if (tab_inv001.Rows[0]["va_est_ado"].ToString() == "N")
+                        {
+                            return "Primero debe habilitar la familia de productos de segundo nivel de esta Sub-familia";
+                        }
+                        break;
+                }          
             }
 
             return null;
@@ -143,7 +216,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Familia de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim(), tb_nom_fap.Text.Trim());
+                vg_frm_pad.fu_sel_fila(tb_cod_fap.Text.Trim());
                 Close();
             }
             catch (Exception ex)

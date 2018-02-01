@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using DATOS;
+using DATOS._4_INV;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS._4_INV.inv002_pro_
@@ -18,6 +18,7 @@ namespace CREARSIS._4_INV.inv002_pro_
         #region VARIABLES
 
         public dynamic vg_frm_pad;
+        DataTable tab_inv001;
         DataTable tab_inv002;
         DataTable tabla;
 
@@ -26,7 +27,8 @@ namespace CREARSIS._4_INV.inv002_pro_
         #region INSTANCIAS
 
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
-        DATOS._4_INV.c_inv002 o_inv002 = new DATOS._4_INV.c_inv002();
+        DATOS.c_inv001 o_inv001 = new DATOS.c_inv001();
+        c_inv002 o_inv002 = new c_inv002();
 
         #endregion
 
@@ -159,6 +161,8 @@ namespace CREARSIS._4_INV.inv002_pro_
         public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
         {
             int va_ind_ice = 0;
+            string va_cod_fam;
+            string va_nom_fam;
             bool va_ban_ven = false;
             bool va_ban_com = false;
             string va_est_ado = "";
@@ -172,6 +176,13 @@ namespace CREARSIS._4_INV.inv002_pro_
             {
                 foreach (DataRow row in tab_inv002.Rows)
                 {
+                    //Recupera Codigo y nombre de Familia de Producto
+                    tab_inv001 = o_inv001._05(row["va_cod_fam"].ToString());
+
+                    va_cod_fam = tab_inv001.Rows[0]["va_cod_fam"].ToString();
+                    va_nom_fam = tab_inv001.Rows[0]["va_nom_fam"].ToString();
+
+
                     //Inicializa las bandera en falso
                     va_ban_ven = false;
                     va_ban_com = false;
@@ -197,7 +208,8 @@ namespace CREARSIS._4_INV.inv002_pro_
                     }
 
                     dg_res_ult.Rows.Add(row["va_cod_pro"], row["va_nom_pro"], row["va_des_pro"], row["va_fab_ric"],
-                                        ban_ven.Checked = va_ban_ven, ban_com.Checked = va_ban_com,va_est_ado);
+                                        va_cod_fam, va_nom_fam, ban_ven.Checked = va_ban_ven, 
+                                        ban_com.Checked = va_ban_com,va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -312,10 +324,10 @@ namespace CREARSIS._4_INV.inv002_pro_
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
-                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -325,10 +337,10 @@ namespace CREARSIS._4_INV.inv002_pro_
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
-                        if (dg_res_ult.CurrentRow.Index != 0)
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -339,35 +351,6 @@ namespace CREARSIS._4_INV.inv002_pro_
                 catch (Exception ex)
                 {
                     MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void tb_sel_ecc_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (dg_res_ult.Rows.Count != 0)
-            {
-                if (e.KeyData == Keys.Down)
-                {
-                    if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index + 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
-                }
-
-                //al presionar tecla para ARRIBA
-                if (e.KeyData == Keys.Up)
-                {
-                    if (dg_res_ult.CurrentRow.Index != 0)
-                    {
-                        int fila = dg_res_ult.CurrentRow.Index - 1;
-                        dg_res_ult.CurrentCell = dg_res_ult[0, fila];
-                        fu_fil_act();
-
-                    }
                 }
             }
         }

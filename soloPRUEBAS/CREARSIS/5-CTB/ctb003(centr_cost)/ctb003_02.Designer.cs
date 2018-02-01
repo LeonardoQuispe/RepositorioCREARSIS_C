@@ -38,6 +38,7 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.labelX4);
             this.GroupBox1.Controls.Add(this.tb_tip_cct);
             this.GroupBox1.Controls.Add(this.labelX3);
             this.GroupBox1.Controls.Add(this.tb_nom_cct);
@@ -203,6 +205,22 @@
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(105, 22);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(110, 32);
+            this.labelX4.TabIndex = 6;
+            this.labelX4.Text = "(Códigos múltiplos de\r\n 100 serán Matrices)";
+            // 
             // ctb003_02
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -239,5 +257,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_tip_cct;
         internal DevComponents.DotNetBar.LabelX labelX3;
+        internal DevComponents.DotNetBar.LabelX labelX4;
     }
 }

@@ -17,12 +17,22 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 {
     public partial class ctb003_06 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_ctb003;
+        string err_msg = null;
 
+        #endregion
+
+        #region INSTANCIAS
 
         c_ctb003 o_ctb003 = new c_ctb003();
 
+        #endregion
+
+        #region EVENTOS
 
         public ctb003_06()
         {
@@ -36,6 +46,13 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            err_msg = fu_ver_dat();
+            if (err_msg != null)
+            {
+                MessageBoxEx.Show(err_msg, "Error Elimina Centro de Costos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult res_msg = new DialogResult();
             res_msg = MessageBoxEx.Show("¿Estas seguro de Eliminar el Centro de Costos?", "Elimina Centro de Costos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res_msg == DialogResult.Cancel)
@@ -58,11 +75,9 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
             Close();
         }
 
+        #endregion
 
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -96,8 +111,23 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
         }
 
 
+        string fu_ver_dat()
+        {
+            //Valida en caso de que sea Matriz
+            if (tb_tip_cct.Text == "Matriz")
+            {
+                //Valida que la Matriz n tenga Analíticas registradas antes de eliminar
+                tab_ctb003 = o_ctb003._01(tb_cod_cct.Text[0].ToString(), 0, "T");
 
+                if (tab_ctb003.Rows.Count >= 2)
+                {
+                    return "Primero debe Eliminar las Análíticas registradas en esta Matriz";
+                }
+            }
 
+            return null;
+        }
 
+        #endregion
     }
 }

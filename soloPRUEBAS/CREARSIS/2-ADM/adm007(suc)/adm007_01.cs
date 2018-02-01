@@ -295,10 +295,10 @@ namespace CREARSIS
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
-                        if (dg_res_ult.CurrentRow.Index != dg_res_ult.Rows.Count - 1)
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index + 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
@@ -308,10 +308,10 @@ namespace CREARSIS
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
-                        if (dg_res_ult.CurrentRow.Index != 0)
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid
-                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.CurrentRow.Index - 1];
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
                             fu_fil_act();
