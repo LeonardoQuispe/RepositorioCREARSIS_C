@@ -56,6 +56,7 @@
     <Compile Include="5-CTB\c_ctb001.cs" />
     <Compile Include="5-CTB\c_ctb002.cs" />
     <Compile Include="5-CTB\c_ctb003.cs" />
+    <Compile Include="5-CTB\c_ctb004.cs" />
     <Compile Include="5-CTB\c_ctb006.cs" />
     <Compile Include="5-CTB\c_ctb007.cs" />
     <Compile Include="4-INV\c_inv001.cs" />
