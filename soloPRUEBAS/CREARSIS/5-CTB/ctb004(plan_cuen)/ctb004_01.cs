@@ -7,28 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
 //REFERENCIAS
 using DATOS;
 using DevComponents.DotNetBar;
 
-namespace CREARSIS
+namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 {
-    
-    public partial class adm003_01 : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class ctb004_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
         #region VARIABLES
 
         public dynamic vg_frm_pad;
-        DataTable tab_adm003;
+        DataTable tab_ctb004;
         DataTable tabla;
 
         #endregion
 
         #region INSTANCIAS
 
-        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();        
-        c_adm003 o_adm003 = new c_adm003();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
 
         #endregion
 
@@ -59,21 +57,21 @@ namespace CREARSIS
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
-            if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text)==false)
+            if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            tabla = o_adm003._05(tb_sel_ecc.Text);
+            tabla = o_ctb004._05(tb_sel_ecc.Text);
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
-            tb_sel_ecc.Text = tabla.Rows[0]["va_cod_doc"].ToString();
-            lb_sel_ecc.Text = tabla.Rows[0]["va_nom_doc"].ToString();
+            tb_sel_ecc.Text = tabla.Rows[0]["va_cod_cta"].ToString();
+            lb_sel_ecc.Text = tabla.Rows[0]["va_nom_cta"].ToString();
 
         }
         /// <summary>
@@ -84,10 +82,10 @@ namespace CREARSIS
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-                if (tab_adm003.Rows.Count == 0)
+                tab_ctb004 = o_ctb004._05(tb_sel_ecc.Text);
+                if (tab_ctb004.Rows.Count == 0)
                 {
-                    return "El Documento no se encuentra registrado";
+                    return "El Plan de Cuentas no se encuentra registrado";
                 }
 
                 return null;
@@ -106,16 +104,16 @@ namespace CREARSIS
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-                if (tab_adm003.Rows.Count == 0)
+                tab_ctb004 = o_ctb004._05(tb_sel_ecc.Text);
+                if (tab_ctb004.Rows.Count == 0)
                 {
-                    return "El Documento no se encuentra registrado";
+                    return "El Plan de Cuentas no se encuentra registrado";
                 }
 
                 //Verifica estado del dato
-                if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "N")
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "N")
                 {
-                    return "El Documento se encuentra Deshabilitado";
+                    return "El Plan de Cuentas se encuentra Deshabilitado";
                 }
 
                 return null;
@@ -136,16 +134,16 @@ namespace CREARSIS
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 //Si aun existe
-                tab_adm003 = o_adm003._05(tb_sel_ecc.Text);
-                if (tab_adm003.Rows.Count == 0)
+                tab_ctb004 = o_ctb004._05(tb_sel_ecc.Text);
+                if (tab_ctb004.Rows.Count == 0)
                 {
-                    return "El Documento no se encuentra registrado";
+                    return "El Plan de Cuentas no se encuentra registrado";
                 }
 
                 //Verifica estado del dato
-                if (tab_adm003.Rows[0]["va_est_ado"].ToString() == "H")
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "H")
                 {
-                    return "El Documento se encuentra Habilitado";
+                    return "El Plan de Cuentas se encuentra Habilitado";
                 }
 
                 return null;
@@ -167,16 +165,50 @@ namespace CREARSIS
         {
             int va_ind_ice = 0;
             string va_est_ado = "";
+            string va_tip_cta = "";
+            string va_uso_cta = "";
+            string va_mon_cta = "";
 
             dg_res_ult.Rows.Clear();
 
-            tab_adm003 = o_adm003._01(val_bus, prm_bus + 1, est_bus);
+            tab_ctb004 = o_ctb004._01(val_bus, prm_bus + 1, est_bus.ToString());
 
-            if (tab_adm003.Rows.Count != 0)
+            if (tab_ctb004.Rows.Count != 0)
             {
 
-                foreach (DataRow row in tab_adm003.Rows)
+                foreach (DataRow row in tab_ctb004.Rows)
                 {
+                    //Tipo
+                    switch (row["va_tip_cta"].ToString())
+                    {
+                        case "M":
+                            va_tip_cta = "Matriz";
+                            break;
+                        case "A":
+                            va_tip_cta = "Analitica";
+                            break;
+                    }
+                    //Uso
+                    switch (row["va_uso_cta"].ToString())
+                    {
+                        case "M":
+                            va_uso_cta = "Modular";
+                            break;
+                        case "N":
+                            va_uso_cta = "Normal";
+                            break;
+                    }
+                    //Moneda
+                    switch (row["va_mon_cta"].ToString())
+                    {
+                        case "B":
+                            va_mon_cta = "Bolivianos";
+                            break;
+                        case "U":
+                            va_mon_cta = "Dolares";
+                            break;
+                    }
+                    //Estado
                     switch (row["va_est_ado"].ToString())
                     {
                         case "H":
@@ -187,7 +219,8 @@ namespace CREARSIS
                             break;
                     }
 
-                    dg_res_ult.Rows.Add(row["va_cod_doc"], row["va_nom_doc"], row["va_des_doc"], va_est_ado);
+
+                    dg_res_ult.Rows.Add(row["va_cod_cta"], row["va_nom_cta"], va_tip_cta,va_uso_cta,va_mon_cta, va_est_ado);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -203,10 +236,10 @@ namespace CREARSIS
 
             if (va_ind_ice > 0)
             {
-                tb_sel_ecc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString();
-                lb_sel_ecc.Text = tab_adm003.Rows[0]["va_nom_doc"].ToString();
+                tb_sel_ecc.Text = tab_ctb004.Rows[0]["va_cod_cta"].ToString();
+                lb_sel_ecc.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
             }
-            
+
 
             tb_val_bus.Focus();
 
@@ -260,11 +293,12 @@ namespace CREARSIS
 
         #region EVENTOS
 
-        public adm003_01()
+        public ctb004_01()
         {
             InitializeComponent();
         }
-        private void adm003_01_Load(object sender, EventArgs e)
+
+        private void ctb004_01_Load(object sender, EventArgs e)
         {
             fu_ini_frm();
         }
@@ -274,7 +308,7 @@ namespace CREARSIS
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
         }
 
-        private void tb_sel_ecc_Validating(object sender, CancelEventArgs e)
+        private void tb_sel_ecc_Validated(object sender, EventArgs e)
         {
             fu_con_sel();
 
@@ -282,11 +316,6 @@ namespace CREARSIS
             {
                 fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
             }
-        }       
-
-        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
-        {
-            fu_fil_act();
         }
 
         private void dg_res_ult_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -294,7 +323,53 @@ namespace CREARSIS
             fu_fil_act();
         }
 
+        private void dg_res_ult_SelectionChanged(object sender, EventArgs e)
+        {
+            fu_fil_act();
+        }
+        
+
         private void tb_val_bus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dg_res_ult.Rows.Count != 0)
+            {
+                try
+                {
+                    //al presionar tecla para ABAJO
+                    if (e.KeyData == Keys.Down)
+                    {
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
+                    //al presionar tecla para ARRIBA
+                    else if (e.KeyData == Keys.Up)
+                    {
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tb_sel_ecc_KeyDown(object sender, KeyEventArgs e)
         {
             if (dg_res_ult.Rows.Count != 0)
             {
@@ -344,14 +419,13 @@ namespace CREARSIS
 
         private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (gb_ctr_frm.Enabled==true)
+            if (gb_ctr_frm.Enabled == true)
             {
                 vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);
 
                 vg_frm_pad.Enabled = true;
                 Close();
             }
-            
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -359,83 +433,75 @@ namespace CREARSIS
             vg_frm_pad.Enabled = true;
             Close();
         }
-
         #endregion
 
         #region OPCIONES DE MENU
         //[MENU- Nuevo]
-        private void m_adm003_02_Click(object sender, EventArgs e)
+        private void m_ctb004_02_Click(object sender, EventArgs e)
         {
-            adm003_02 obj = new adm003_02();
+            ctb004_02 obj = new ctb004_02();
             o_mg_glo_bal.mg_ads000_02(obj, this);
         }
         //[MENU: Actualiza]
-        private void m_adm003_03_Click(object sender, EventArgs e)
+        private void m_ctb004_03_Click(object sender, EventArgs e)
         {
             string vv_err_msg;
             vv_err_msg = fu_ver_dat2();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            adm003_03 obj = new adm003_03();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm003);
+            ctb004_03 obj = new ctb004_03();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb004);
         }
         //[MENU: Habilita/Deshabilita]
-        private void m_adm003_04_Click(object sender, EventArgs e)
+        private void m_ctb004_04_Click(object sender, EventArgs e)
         {
 
             string vv_err_msg;
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            adm003_04 obj = new adm003_04();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm003);
+            ctb004_04 obj = new ctb004_04();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb004);
         }
         //[MENU: Elimina]
-        private void m_adm003_06_Click(object sender, EventArgs e)
+        private void m_ctb004_06_Click(object sender, EventArgs e)
         {
-
             string vv_err_msg;
             vv_err_msg = fu_ver_dat3();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            adm003_06 obj = new adm003_06();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm003);
+            ctb004_06 obj = new ctb004_06();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb004);
         }
         //[MENU: Consulta]
-        private void m_adm003_05_Click(object sender, EventArgs e)
+        private void m_ctb004_05_Click(object sender, EventArgs e)
         {
-
             string vv_err_msg;
             vv_err_msg = fu_ver_dat();
             if (vv_err_msg != null)
             {
-                MessageBoxEx.Show(vv_err_msg, "Documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show(vv_err_msg, "Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            adm003_05 obj = new adm003_05();
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_adm003);
-        }
-        //[MENU - Informe "Listado de Documento"]
-        private void m_adm003_p01_Click(object sender, EventArgs e)
-        {
-            //adm003_01wp obj = new adm003_01wp();
-            //o_mg_glo_bal.mg_ads000_02(obj,this)
+            ctb004_05 obj = new ctb004_05();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_ctb004);
         }
         //[MENU - Atras]
         private void m_atr_ass_Click(object sender, EventArgs e)
         {
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
+        #endregion
 
-        #endregion  
+        
     }
 }

@@ -590,40 +590,40 @@
     <Compile Include="5-CTB\ctb003%28centr_cost%29\ctb003_06.Designer.cs">
       <DependentUpon>ctb003_06.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_01.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_01.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_01.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_01.Designer.cs">
       <DependentUpon>ctb004_01.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_02.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_02.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_02.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_02.Designer.cs">
       <DependentUpon>ctb004_02.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_03.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_03.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_03.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_03.Designer.cs">
       <DependentUpon>ctb004_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_04.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_04.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_04.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_04.Designer.cs">
       <DependentUpon>ctb004_04.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_05.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_05.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_05.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_05.Designer.cs">
       <DependentUpon>ctb004_05.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_06.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_06.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-CTB\ctb004%28cuen_con%29\ctb004_06.Designer.cs">
+    <Compile Include="5-CTB\ctb004%28plan_cuen%29\ctb004_06.Designer.cs">
       <DependentUpon>ctb004_06.cs</DependentUpon>
     </Compile>
     <Compile Include="5-CTB\ctb006%28ley%29\ctb006_01.cs">
@@ -1399,22 +1399,22 @@
     <EmbeddedResource Include="5-CTB\ctb003%28centr_cost%29\ctb003_06.resx">
       <DependentUpon>ctb003_06.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_01.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_01.resx">
       <DependentUpon>ctb004_01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_02.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_02.resx">
       <DependentUpon>ctb004_02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_03.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_03.resx">
       <DependentUpon>ctb004_03.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_04.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_04.resx">
       <DependentUpon>ctb004_04.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_05.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_05.resx">
       <DependentUpon>ctb004_05.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-CTB\ctb004%28cuen_con%29\ctb004_06.resx">
+    <EmbeddedResource Include="5-CTB\ctb004%28plan_cuen%29\ctb004_06.resx">
       <DependentUpon>ctb004_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5-CTB\ctb006%28ley%29\ctb006_01.resx">

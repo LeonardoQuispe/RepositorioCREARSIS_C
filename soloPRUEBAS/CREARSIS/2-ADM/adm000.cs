@@ -421,5 +421,11 @@ namespace CREARSIS
             CREARSIS._5_CTB.ctb002_cap_agru_.ctb002_01 obj = new CREARSIS._5_CTB.ctb002_cap_agru_.ctb002_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
+        //[Menu PLAN DE CUENTAS]
+        private void mn_ctb002a_Click(object sender, EventArgs e)
+        {
+            CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+            o_mg_glo_bal.mg_ads000_01(obj, this, 1);
+        }
     }
 }

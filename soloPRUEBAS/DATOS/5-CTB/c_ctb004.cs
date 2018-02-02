@@ -92,7 +92,7 @@ namespace DATOS._5_CTB
                     case "1": mon_cta = "U"; break;
                 }
 
-                vv_str_sql.AppendLine(" (" + cod_cta + ", '" + nom_cta + "', '" + tip_cta + "', '" + uso_cta + "', '" + mon_cta + "', 'H')");
+                vv_str_sql.AppendLine(" ('" + cod_cta + "', '" + nom_cta + "', '" + tip_cta + "', '" + uso_cta + "', '" + mon_cta + "', 'H')");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 

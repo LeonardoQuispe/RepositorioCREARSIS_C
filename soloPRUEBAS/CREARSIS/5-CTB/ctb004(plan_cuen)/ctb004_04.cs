@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CREARSIS._5_CTB.ctb004_cuen_con_
+namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 {
-    public partial class ctb004_06 : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class ctb004_04 : DevComponents.DotNetBar.Metro.MetroForm
     {
-        public ctb004_06()
+        public ctb004_04()
         {
             InitializeComponent();
         }

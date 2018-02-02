@@ -1,6 +1,6 @@
-﻿namespace CREARSIS._5_CTB.ctb004_cuen_con_
+﻿namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 {
-    partial class ctb004_03
+    partial class ctb004_04
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // ctb004_03
+            // ctb004_04
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Name = "ctb004_03";
-            this.Text = "ctb004_03";
+            this.Name = "ctb004_04";
+            this.Text = "ctb004_04";
             this.ResumeLayout(false);
 
         }
