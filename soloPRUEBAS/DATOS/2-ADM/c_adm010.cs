@@ -37,11 +37,7 @@ namespace DATOS
                 vv_str_sql = new StringBuilder();
 
                 vv_str_sql.AppendLine(" select * from adm010  ");
-
-                if (true)
-                {
-
-                }
+                
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendFormat(" where va_cod_per like '{0}%'", val_bus); break;

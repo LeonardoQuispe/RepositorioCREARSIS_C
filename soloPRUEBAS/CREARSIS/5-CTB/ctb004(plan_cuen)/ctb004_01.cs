@@ -218,9 +218,15 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                             va_est_ado = "Deshabilitado";
                             break;
                     }
-
-
+                    
                     dg_res_ult.Rows.Add(row["va_cod_cta"], row["va_nom_cta"], va_tip_cta,va_uso_cta,va_mon_cta, va_est_ado);
+
+                    //Cambia color de letra de fila si es de Uso Modular
+                    if (va_uso_cta=="Modular" && va_tip_cta== "Analitica")
+                    {
+                        dg_res_ult.Rows[va_ind_ice].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
