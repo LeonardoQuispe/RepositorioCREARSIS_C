@@ -461,8 +461,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm003_01";
-            this.Text = "Busca documento";
-            this.TitleText = "Busca documento";
+            this.Text = "Busca Documento";
+            this.TitleText = "Busca Documento";
             this.Load += new System.EventHandler(this.adm003_01_Load);
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();

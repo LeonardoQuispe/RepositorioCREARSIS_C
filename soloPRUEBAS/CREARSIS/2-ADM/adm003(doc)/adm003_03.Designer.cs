@@ -87,7 +87,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(33, 20);
+            this.LabelX1.Location = new System.Drawing.Point(13, 19);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(39, 23);
             this.LabelX1.TabIndex = 0;
@@ -122,7 +122,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(27, 51);
+            this.LabelX2.Location = new System.Drawing.Point(13, 51);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(45, 23);
             this.LabelX2.TabIndex = 0;
@@ -157,9 +157,9 @@
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.tb_nom_doc);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(9, 4);
+            this.GroupBox1.Location = new System.Drawing.Point(1, -7);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(430, 155);
+            this.GroupBox1.Size = new System.Drawing.Size(412, 146);
             this.GroupBox1.TabIndex = 64;
             this.GroupBox1.TabStop = false;
             // 
@@ -172,7 +172,7 @@
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(27, 119);
+            this.labelX14.Location = new System.Drawing.Point(7, 116);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(45, 17);
             this.labelX14.TabIndex = 76;
@@ -191,7 +191,7 @@
             this.tb_est_ado.Enabled = false;
             this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(77, 117);
+            this.tb_est_ado.Location = new System.Drawing.Point(77, 114);
             this.tb_est_ado.MaxLength = 80;
             this.tb_est_ado.Name = "tb_est_ado";
             this.tb_est_ado.PreventEnterBeep = true;
@@ -238,9 +238,9 @@
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(9, 158);
+            this.GroupBox2.Location = new System.Drawing.Point(1, 135);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(430, 44);
+            this.GroupBox2.Size = new System.Drawing.Size(412, 44);
             this.GroupBox2.TabIndex = 65;
             this.GroupBox2.TabStop = false;
             // 
@@ -251,7 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(449, 208);
+            this.ClientSize = new System.Drawing.Size(415, 179);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
@@ -262,8 +262,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm003_03";
-            this.Text = "Modifica documento";
-            this.TitleText = "Modifica documento";
+            this.Text = "Actualiza Documento";
+            this.TitleText = "Actualiza Documento";
             this.Load += new System.EventHandler(this.adm003_03_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

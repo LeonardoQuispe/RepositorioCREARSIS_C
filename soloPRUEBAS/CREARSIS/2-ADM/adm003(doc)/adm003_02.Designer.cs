@@ -51,7 +51,7 @@
             this.tb_nom_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_doc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_doc.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_doc.Location = new System.Drawing.Point(127, 22);
+            this.tb_nom_doc.Location = new System.Drawing.Point(127, 21);
             this.tb_nom_doc.MaxLength = 80;
             this.tb_nom_doc.Name = "tb_nom_doc";
             this.tb_nom_doc.PreventEnterBeep = true;
@@ -64,7 +64,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(316, 14);
+            this.bt_can_cel.Location = new System.Drawing.Point(302, 15);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -81,7 +81,7 @@
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(202, 14);
+            this.bt_ace_pta.Location = new System.Drawing.Point(188, 15);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -101,7 +101,7 @@
             this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(13, 22);
+            this.LabelX1.Location = new System.Drawing.Point(13, 21);
             this.LabelX1.Name = "LabelX1";
             this.LabelX1.Size = new System.Drawing.Size(39, 23);
             this.LabelX1.TabIndex = 0;
@@ -118,7 +118,7 @@
             this.tb_cod_doc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_cod_doc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_doc.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_doc.Location = new System.Drawing.Point(77, 22);
+            this.tb_cod_doc.Location = new System.Drawing.Point(77, 21);
             this.tb_cod_doc.MaxLength = 3;
             this.tb_cod_doc.Name = "tb_cod_doc";
             this.tb_cod_doc.PreventEnterBeep = true;
@@ -135,7 +135,7 @@
             this.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX2.ForeColor = System.Drawing.Color.Black;
-            this.LabelX2.Location = new System.Drawing.Point(13, 51);
+            this.LabelX2.Location = new System.Drawing.Point(13, 50);
             this.LabelX2.Name = "LabelX2";
             this.LabelX2.Size = new System.Drawing.Size(59, 17);
             this.LabelX2.TabIndex = 0;
@@ -150,9 +150,9 @@
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.tb_nom_doc);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox1.Location = new System.Drawing.Point(9, 6);
+            this.GroupBox1.Location = new System.Drawing.Point(1, -7);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(430, 110);
+            this.GroupBox1.Size = new System.Drawing.Size(413, 91);
             this.GroupBox1.TabIndex = 64;
             this.GroupBox1.TabStop = false;
             // 
@@ -166,7 +166,7 @@
             this.tb_des_doc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_des_doc.DisabledBackColor = System.Drawing.Color.White;
             this.tb_des_doc.ForeColor = System.Drawing.Color.Black;
-            this.tb_des_doc.Location = new System.Drawing.Point(77, 50);
+            this.tb_des_doc.Location = new System.Drawing.Point(77, 49);
             this.tb_des_doc.MaxLength = 120;
             this.tb_des_doc.Name = "tb_des_doc";
             this.tb_des_doc.PreventEnterBeep = true;
@@ -179,9 +179,9 @@
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(9, 113);
+            this.GroupBox2.Location = new System.Drawing.Point(1, 82);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(430, 44);
+            this.GroupBox2.Size = new System.Drawing.Size(413, 44);
             this.GroupBox2.TabIndex = 65;
             this.GroupBox2.TabStop = false;
             // 
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(449, 163);
+            this.ClientSize = new System.Drawing.Size(415, 126);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
@@ -202,8 +202,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "adm003_02";
-            this.Text = "Nuevo documento";
-            this.TitleText = "Nuevo documento";
+            this.Text = "Nuevo Documento";
+            this.TitleText = "Nuevo Documento";
             this.Load += new System.EventHandler(this.adm003_02_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

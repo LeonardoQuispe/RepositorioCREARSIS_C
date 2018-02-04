@@ -119,14 +119,24 @@ namespace DATOS._5_CTB
 
                 switch (tip_cta)
                 {
-                    case "0": tip_cta = "D"; break;
+                    case "0": tip_cta = "M"; break;
                     case "1": tip_cta = "A"; break;
+                }
+                switch (uso_cta)
+                {
+                    case "0": uso_cta = "M"; break;
+                    case "1": uso_cta = "N"; break;
+                }
+                switch (mon_cta)
+                {
+                    case "0": mon_cta = "B"; break;
+                    case "1": mon_cta = "U"; break;
                 }
 
                 vv_str_sql.AppendLine(" va_nom_cta='" + nom_cta + "' , va_tip_cta= '" + tip_cta + "' ,");
                 vv_str_sql.AppendLine(" va_uso_cta='" + uso_cta + "' " + " , va_mon_cta= '" + mon_cta + "' ");
 
-                vv_str_sql.AppendLine(" WHERE va_cod_cta = " + cod_cta);
+                vv_str_sql.AppendLine(" WHERE va_cod_cta = '" + cod_cta+"' ");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }

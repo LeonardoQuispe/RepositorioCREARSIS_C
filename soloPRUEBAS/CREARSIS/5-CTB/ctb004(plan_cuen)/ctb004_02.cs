@@ -66,13 +66,6 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                 return "Debes proporcionar el codigo de Plan de Cuentas";
             }
 
-            if (o_mg_glo_bal.fg_val_let(tb_cod_cta.Text) == false)
-            {
-                tb_cod_cta.Focus();
-                return "Sólo se admiten letras en el código del Plan de Cuentas";
-            }
-            
-
             tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
             if (tab_ctb004.Rows.Count != 0)
             {

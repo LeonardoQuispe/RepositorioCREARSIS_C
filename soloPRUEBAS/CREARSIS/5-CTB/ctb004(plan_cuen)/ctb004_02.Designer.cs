@@ -65,7 +65,7 @@
             this.bt_can_cel.Symbol = "";
             this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
             this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
@@ -82,7 +82,7 @@
             this.bt_ace_pta.Symbol = "";
             this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
+            this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
@@ -117,7 +117,7 @@
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(103, 22);
-            this.tb_cod_cta.TabIndex = 10;
+            this.tb_cod_cta.TabIndex = 0;
             // 
             // GroupBox1
             // 
@@ -169,7 +169,7 @@
             this.cb_uso_cta.Name = "cb_uso_cta";
             this.cb_uso_cta.Size = new System.Drawing.Size(85, 22);
             this.cb_uso_cta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_uso_cta.TabIndex = 74;
+            this.cb_uso_cta.TabIndex = 3;
             // 
             // Modular
             // 
@@ -211,7 +211,7 @@
             this.cb_mon_cta.Name = "cb_mon_cta";
             this.cb_mon_cta.Size = new System.Drawing.Size(85, 22);
             this.cb_mon_cta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mon_cta.TabIndex = 72;
+            this.cb_mon_cta.TabIndex = 4;
             // 
             // Bolivianos
             // 
@@ -253,7 +253,7 @@
             this.cb_tip_cta.Name = "cb_tip_cta";
             this.cb_tip_cta.Size = new System.Drawing.Size(86, 22);
             this.cb_tip_cta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_cta.TabIndex = 68;
+            this.cb_tip_cta.TabIndex = 2;
             // 
             // Matriz
             // 
@@ -296,7 +296,7 @@
             this.tb_nom_cta.Name = "tb_nom_cta";
             this.tb_nom_cta.PreventEnterBeep = true;
             this.tb_nom_cta.Size = new System.Drawing.Size(168, 22);
-            this.tb_nom_cta.TabIndex = 63;
+            this.tb_nom_cta.TabIndex = 1;
             // 
             // GroupBox2
             // 
