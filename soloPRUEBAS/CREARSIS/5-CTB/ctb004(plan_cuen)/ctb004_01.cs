@@ -59,7 +59,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                 tb_sel_ecc.Text = "";
                 return;
             }
-            if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text) == false)
+            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
                 tb_sel_ecc.Text = "";
