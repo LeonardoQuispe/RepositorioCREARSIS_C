@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.tb_tip_cct = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_cct = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -38,7 +39,6 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,22 @@
             this.GroupBox1.Size = new System.Drawing.Size(355, 116);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(105, 22);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(110, 32);
+            this.labelX4.TabIndex = 6;
+            this.labelX4.Text = "(Códigos múltiplos de\r\n 100 serán Matrices)";
             // 
             // tb_tip_cct
             // 
@@ -138,7 +154,7 @@
             this.tb_cod_cct.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_cct.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cct.Location = new System.Drawing.Point(60, 29);
-            this.tb_cod_cct.MaxLength = 3;
+            this.tb_cod_cct.MaxLength = 4;
             this.tb_cod_cct.Name = "tb_cod_cct";
             this.tb_cod_cct.PreventEnterBeep = true;
             this.tb_cod_cct.Size = new System.Drawing.Size(41, 22);
@@ -204,22 +220,6 @@
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
             this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
-            // labelX4
-            // 
-            this.labelX4.AutoSize = true;
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(105, 22);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(110, 32);
-            this.labelX4.TabIndex = 6;
-            this.labelX4.Text = "(Códigos múltiplos de\r\n 100 serán Matrices)";
             // 
             // ctb003_02
             // 

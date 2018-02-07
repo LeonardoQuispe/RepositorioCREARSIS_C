@@ -54,22 +54,23 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
             //Verifica que los datos en pantallas sean correctos
             if (tb_sel_ecc.Text.Trim() == "")
             {
+                tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
             if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
             {
-                tb_sel_ecc.Text = "";
+                tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
                 return;
             }
 
             tabla = o_ctb002._05(int.Parse(tb_sel_ecc.Text));
             if (tabla.Rows.Count == 0)
-            {
+            {                
+                tb_sel_ecc.Clear();
                 lb_sel_ecc.Text = "** NO existe";
-                tb_sel_ecc.Text = "";
                 return;
             }
 

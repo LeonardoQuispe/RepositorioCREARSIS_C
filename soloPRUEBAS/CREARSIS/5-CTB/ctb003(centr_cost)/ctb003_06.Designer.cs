@@ -179,7 +179,7 @@
             this.tb_cod_cct.Enabled = false;
             this.tb_cod_cct.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cct.Location = new System.Drawing.Point(60, 29);
-            this.tb_cod_cct.MaxLength = 3;
+            this.tb_cod_cct.MaxLength = 4;
             this.tb_cod_cct.Name = "tb_cod_cct";
             this.tb_cod_cct.PreventEnterBeep = true;
             this.tb_cod_cct.Size = new System.Drawing.Size(41, 22);
