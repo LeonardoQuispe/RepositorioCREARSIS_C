@@ -37,7 +37,6 @@
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.LabelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_cta_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_dir_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_alm = new System.Windows.Forms.MaskedTextBox();
@@ -52,6 +51,8 @@
             this.USD = new DevComponents.Editors.ComboItem();
             this.tb_gru_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_dir_ecg = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.tb_tlf_ecg = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -61,8 +62,8 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_nom_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -71,6 +72,8 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_nom_cta);
+            this.GroupBox1.Controls.Add(this.tb_cod_cta);
             this.GroupBox1.Controls.Add(this.labelX7);
             this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -79,7 +82,6 @@
             this.GroupBox1.Controls.Add(this.LabelX4);
             this.GroupBox1.Controls.Add(this.LabelX3);
             this.GroupBox1.Controls.Add(this.tb_nom_gru);
-            this.GroupBox1.Controls.Add(this.tb_cta_alm);
             this.GroupBox1.Controls.Add(this.tb_dir_alm);
             this.GroupBox1.Controls.Add(this.labelX2);
             this.GroupBox1.Controls.Add(this.tb_cod_alm);
@@ -234,25 +236,6 @@
             this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(266, 22);
             this.tb_nom_gru.TabIndex = 36;
-            // 
-            // tb_cta_alm
-            // 
-            this.tb_cta_alm.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cta_alm.Border.Class = "TextBoxBorder";
-            this.tb_cta_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cta_alm.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cta_alm.Enabled = false;
-            this.tb_cta_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_cta_alm.Location = new System.Drawing.Point(124, 205);
-            this.tb_cta_alm.MaxLength = 6;
-            this.tb_cta_alm.Multiline = true;
-            this.tb_cta_alm.Name = "tb_cta_alm";
-            this.tb_cta_alm.PreventEnterBeep = true;
-            this.tb_cta_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_cta_alm.TabIndex = 32;
             // 
             // tb_dir_alm
             // 
@@ -473,6 +456,43 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(75, 142);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 234;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(125, 140);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 233;
+            this.tb_est_ado.TabStop = false;
+            // 
             // tb_dir_ecg
             // 
             this.tb_dir_ecg.BackColor = System.Drawing.Color.White;
@@ -629,42 +649,45 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // labelX14
+            // tb_nom_cta
             // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(75, 142);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 234;
-            this.labelX14.Text = "Estado:";
-            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            this.tb_nom_cta.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(125, 140);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 233;
-            this.tb_est_ado.TabStop = false;
+            this.tb_nom_cta.Border.Class = "TextBoxBorder";
+            this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_cta.Enabled = false;
+            this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_cta.Location = new System.Drawing.Point(290, 206);
+            this.tb_nom_cta.MaxLength = 40;
+            this.tb_nom_cta.Name = "tb_nom_cta";
+            this.tb_nom_cta.PreventEnterBeep = true;
+            this.tb_nom_cta.ReadOnly = true;
+            this.tb_nom_cta.Size = new System.Drawing.Size(190, 22);
+            this.tb_nom_cta.TabIndex = 45;
+            // 
+            // tb_cod_cta
+            // 
+            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_cta.Border.Class = "TextBoxBorder";
+            this.tb_cod_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_cta.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_cta.ButtonCustom.Symbol = "";
+            this.tb_cod_cta.ButtonCustom.Visible = true;
+            this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_cta.Enabled = false;
+            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_cta.Location = new System.Drawing.Point(126, 206);
+            this.tb_cod_cta.MaxLength = 20;
+            this.tb_cod_cta.Name = "tb_cod_cta";
+            this.tb_cod_cta.PreventEnterBeep = true;
+            this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
+            this.tb_cod_cta.TabIndex = 44;
             // 
             // inv011_06
             // 
@@ -713,7 +736,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_gru;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cta_alm;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_alm;
         internal DevComponents.DotNetBar.LabelX labelX2;
         internal System.Windows.Forms.MaskedTextBox tb_cod_alm;
@@ -729,5 +751,7 @@
         internal DevComponents.DotNetBar.LabelX LabelX3;
         internal DevComponents.DotNetBar.LabelX labelX14;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_est_ado;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_cta;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_cta;
     }
 }

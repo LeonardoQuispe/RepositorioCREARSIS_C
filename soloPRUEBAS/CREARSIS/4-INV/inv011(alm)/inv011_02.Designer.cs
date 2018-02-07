@@ -40,7 +40,6 @@
             this.BO = new DevComponents.Editors.ComboItem();
             this.USD = new DevComponents.Editors.ComboItem();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cta_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.tb_dir_alm = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -61,6 +60,8 @@
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_ecg = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nom_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.gb_ctr_frm.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,12 +115,13 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_nom_cta);
+            this.GroupBox1.Controls.Add(this.tb_cod_cta);
             this.GroupBox1.Controls.Add(this.tb_nom_gru);
             this.GroupBox1.Controls.Add(this.cb_mtd_cto);
             this.GroupBox1.Controls.Add(this.labelX10);
             this.GroupBox1.Controls.Add(this.cb_mon_inv);
             this.GroupBox1.Controls.Add(this.labelX7);
-            this.GroupBox1.Controls.Add(this.tb_cta_alm);
             this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.tb_dir_alm);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -240,24 +242,6 @@
             this.labelX7.TabIndex = 13;
             this.labelX7.Text = "Moneda Inventario";
             this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cta_alm
-            // 
-            this.tb_cta_alm.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cta_alm.Border.Class = "TextBoxBorder";
-            this.tb_cta_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cta_alm.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cta_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_cta_alm.Location = new System.Drawing.Point(114, 200);
-            this.tb_cta_alm.MaxLength = 6;
-            this.tb_cta_alm.Multiline = true;
-            this.tb_cta_alm.Name = "tb_cta_alm";
-            this.tb_cta_alm.PreventEnterBeep = true;
-            this.tb_cta_alm.Size = new System.Drawing.Size(328, 22);
-            this.tb_cta_alm.TabIndex = 12;
             // 
             // labelX6
             // 
@@ -611,6 +595,46 @@
             this.labelX13.Text = "Nombre Encargado";
             this.labelX13.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
+            // tb_nom_cta
+            // 
+            this.tb_nom_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_cta.Border.Class = "TextBoxBorder";
+            this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_cta.Location = new System.Drawing.Point(277, 197);
+            this.tb_nom_cta.MaxLength = 40;
+            this.tb_nom_cta.Name = "tb_nom_cta";
+            this.tb_nom_cta.PreventEnterBeep = true;
+            this.tb_nom_cta.ReadOnly = true;
+            this.tb_nom_cta.Size = new System.Drawing.Size(163, 22);
+            this.tb_nom_cta.TabIndex = 20;
+            // 
+            // tb_cod_cta
+            // 
+            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_cta.Border.Class = "TextBoxBorder";
+            this.tb_cod_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_cta.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_cta.ButtonCustom.Symbol = "";
+            this.tb_cod_cta.ButtonCustom.Visible = true;
+            this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_cta.Location = new System.Drawing.Point(113, 197);
+            this.tb_cod_cta.MaxLength = 20;
+            this.tb_cod_cta.Name = "tb_cod_cta";
+            this.tb_cod_cta.PreventEnterBeep = true;
+            this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
+            this.tb_cod_cta.TabIndex = 19;
+            this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
+            this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
+            // 
             // inv011_02
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -656,7 +680,6 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_gru_alm;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_dir_alm;
         internal DevComponents.DotNetBar.LabelX labelX5;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cta_alm;
         internal DevComponents.DotNetBar.LabelX labelX6;
         internal DevComponents.DotNetBar.LabelX labelX7;
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_mtd_cto;
@@ -673,5 +696,7 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_ecg;
         internal DevComponents.DotNetBar.LabelX labelX13;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_gru;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_cta;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_cta;
     }
 }

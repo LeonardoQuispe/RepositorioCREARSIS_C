@@ -40,6 +40,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         {
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
+            cb_tip_pla.SelectedIndex = 0;
 
             fu_bus_car("", 1, 0);
 
@@ -55,11 +56,13 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             if (tb_sel_ecc.Text.Trim() == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
                 return;
             }
             if (o_mg_glo_bal.fg_val_let(tb_sel_ecc.Text) == false)
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
                 return;
             }
 
@@ -67,6 +70,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
+                tb_sel_ecc.Text = "";
                 return;
             }
 
@@ -171,7 +175,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
             dg_res_ult.Rows.Clear();
 
-            tab_ctb004 = o_ctb004._01(val_bus, prm_bus + 1, est_bus.ToString());
+            tab_ctb004 = o_ctb004._01(val_bus, prm_bus + 1, cb_tip_pla.SelectedIndex, est_bus.ToString());
 
             if (tab_ctb004.Rows.Count != 0)
             {
@@ -417,7 +421,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);
+            vg_frm_pad.fu_rec_cta(tb_sel_ecc.Text);
 
             vg_frm_pad.Enabled = true;
             Close();
@@ -427,7 +431,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         {
             if (gb_ctr_frm.Enabled == true)
             {
-                vg_frm_pad.fu_rec_doc(tb_sel_ecc.Text);
+                vg_frm_pad.fu_rec_cta(tb_sel_ecc.Text);
 
                 vg_frm_pad.Enabled = true;
                 Close();

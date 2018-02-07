@@ -28,7 +28,7 @@ namespace DATOS._5_CTB
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
         /// <returns></returns>
-        public DataTable _01(string val_bus, int prm_bus, string est_bus)
+        public DataTable _01(string val_bus, int prm_bus,int tip_pla, string est_bus)
         {
             try
             {
@@ -39,6 +39,12 @@ namespace DATOS._5_CTB
                 {
                     case 1: vv_str_sql.AppendLine(" where va_cod_cta like '" + val_bus + "%' "); break;
                     case 2: vv_str_sql.AppendLine(" where va_nom_cta like '" + val_bus + "%' "); break;
+                }
+
+                switch (tip_pla)
+                {
+                    case 1: vv_str_sql.AppendLine(" and va_tip_cta='M'"); break;
+                    case 2: vv_str_sql.AppendLine(" and va_tip_cta='A'"); break;
                 }
 
                 switch (est_bus)

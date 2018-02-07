@@ -22,6 +22,7 @@ namespace CREARSIS
         string err_msg = "";
         DataTable tab_inv010;
         DataTable tab_inv011;
+        DataTable tab_ctb004;
 
         #endregion
 
@@ -29,6 +30,7 @@ namespace CREARSIS
 
         c_inv010 o_inv010 = new c_inv010();
         c_inv011 o_inv011 = new c_inv011();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
@@ -49,6 +51,7 @@ namespace CREARSIS
         {
             inv010_01 obj = new inv010_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
+
         }
 
         private void tb_gru_alm_KeyDown(object sender, KeyEventArgs e)
@@ -110,7 +113,7 @@ namespace CREARSIS
                 //Graba datos Almacén
                 o_inv011._02(int.Parse(tb_cod_alm.Text),int.Parse(tb_gru_alm.Text),int.Parse(tb_nro_alm.Text),tb_nom_alm.Text.Trim(),tb_des_alm.Text.Trim(),
                             tb_dir_alm.Text.Trim(),DateTime.Parse("01/01/1900"),cb_mon_inv.SelectedIndex.ToString(),cb_mon_inv.SelectedIndex.ToString(),tb_nom_ecg.Text.Trim(),
-                            tb_tlf_ecg.Text.Trim(),tb_dir_ecg.Text.Trim(),tb_cta_alm.Text.Trim());
+                            tb_tlf_ecg.Text.Trim(),tb_dir_ecg.Text.Trim(),tb_cod_cta.Text.Trim());
 
                 vg_frm_pad.fu_sel_fila(tb_cod_alm.Text, tb_nom_alm.Text);
 
@@ -172,6 +175,35 @@ namespace CREARSIS
 
         }
 
+        public void fu_rec_cta(string cod_cta)
+        {
+            if (cod_cta.Trim() == "")
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_let(cod_cta) == false)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tab_ctb004 = o_ctb004._05(cod_cta);
+            if (tab_ctb004.Rows.Count == 0)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_cta.Text = tab_ctb004.Rows[0]["va_cod_cta"].ToString();
+            tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+
+        }
+
 
         /// <summary>
         /// Metodo que limpia el formulario
@@ -185,7 +217,7 @@ namespace CREARSIS
             tb_nom_alm.Clear();
             tb_des_alm.Clear();
             tb_dir_alm.Clear();
-            tb_cta_alm.Clear();
+            tb_cod_cta.Clear();
             cb_mon_inv.SelectedIndex = 0;
             cb_mtd_cto.SelectedIndex = 0;
 
@@ -262,5 +294,21 @@ namespace CREARSIS
             return null;
         }
         #endregion
+
+        private void tb_cod_cta_ButtonCustomClick(object sender, EventArgs e)
+        {
+            CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+
+        }
+
+        private void tb_cod_cta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
     }
 }

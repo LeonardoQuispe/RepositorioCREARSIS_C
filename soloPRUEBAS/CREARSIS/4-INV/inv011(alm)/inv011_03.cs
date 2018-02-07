@@ -20,6 +20,7 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_inv010;
+        DataTable tab_ctb004;
         string err_msg = "";
 
         #endregion
@@ -28,6 +29,8 @@ namespace CREARSIS
 
         c_inv011 o_inv011 = new c_inv011();
         c_inv010 o_inv010 = new c_inv010();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
 
         #endregion
 
@@ -47,12 +50,21 @@ namespace CREARSIS
             tb_nom_alm.Text = vg_str_ucc.Rows[0]["va_nom_alm"].ToString();
             tb_des_alm.Text = vg_str_ucc.Rows[0]["va_des_alm"].ToString();
             tb_dir_alm.Text = vg_str_ucc.Rows[0]["va_dir_alm"].ToString();
-            tb_cta_alm.Text = vg_str_ucc.Rows[0]["va_cta_alm"].ToString();
+
+            //lenar tbx de Plan de Cuentas
+            tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
+            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
+            if (tab_ctb004.Rows.Count != 0)
+            {
+                tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+            }
+
             tb_nom_ecg.Text = vg_str_ucc.Rows[0]["va_nom_ecg"].ToString();
             tb_tlf_ecg.Text = vg_str_ucc.Rows[0]["va_tlf_ecg"].ToString();
             tb_dir_ecg.Text = vg_str_ucc.Rows[0]["va_dir_ecg"].ToString();
 
             fu_rec_gru(vg_str_ucc.Rows[0]["va_cod_gru"].ToString());
+            fu_rec_cta(vg_str_ucc.Rows[0]["va_cod_cta"].ToString());
 
 
             switch (vg_str_ucc.Rows[0]["va_mon_inv"].ToString())
@@ -86,6 +98,35 @@ namespace CREARSIS
             tb_nom_gru.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
         }
 
+        public void fu_rec_cta(string cod_cta)
+        {
+            if (cod_cta.Trim() == "")
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_let(cod_cta) == false)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tab_ctb004 = o_ctb004._05(cod_cta);
+            if (tab_ctb004.Rows.Count == 0)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_cta.Text = tab_ctb004.Rows[0]["va_cod_cta"].ToString();
+            tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+
+        }
+
 
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
@@ -115,6 +156,23 @@ namespace CREARSIS
             fu_ini_frm();
         }
 
+
+        private void tb_cod_cta_ButtonCustomClick(object sender, EventArgs e)
+        {
+            CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+
+        }
+
+        private void tb_cod_cta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
+
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             try
@@ -137,7 +195,7 @@ namespace CREARSIS
 
                 //ACTUALIZA datos
                 o_inv011._03(int.Parse(tb_cod_alm.Text), tb_nom_alm.Text.Trim(), tb_des_alm.Text.Trim(), tb_dir_alm.Text.Trim(), cb_mon_inv.SelectedIndex.ToString(),
-                    cb_mtd_cto.SelectedIndex.ToString(), tb_nom_ecg.Text.Trim(), tb_tlf_ecg.Text.Trim(), tb_dir_ecg.Text.Trim(), tb_cta_alm.Text.Trim());
+                    cb_mtd_cto.SelectedIndex.ToString(), tb_nom_ecg.Text.Trim(), tb_tlf_ecg.Text.Trim(), tb_dir_ecg.Text.Trim(), tb_cod_cta.Text.Trim());
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Almacén", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -155,6 +213,7 @@ namespace CREARSIS
             Close();
         }
         #endregion
-    
+
+        
     }
 }

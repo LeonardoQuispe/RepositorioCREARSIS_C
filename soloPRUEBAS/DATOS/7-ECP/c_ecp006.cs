@@ -88,8 +88,8 @@ namespace DATOS._7_ECP
             {
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO ecp006 VALUES");
-                vv_str_sql.AppendFormat(" ({0},{1},'{2}',",cod_lib,tip_lib,mon_lib);
-                vv_str_sql.AppendFormat("'{0}','{1}','H')", des_lib, cod_cta);
+                vv_str_sql.AppendFormat(" ({0},'{1}','{2}',",cod_lib,des_lib,cod_cta);
+                vv_str_sql.AppendFormat("{0},'{1}','H')", tip_lib, mon_lib);
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }

@@ -20,6 +20,8 @@ namespace CREARSIS
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_inv010;
+        DataTable tab_ctb004;
+        string err_msg = "";
 
         #endregion
 
@@ -27,6 +29,8 @@ namespace CREARSIS
 
         c_inv011 o_inv011 = new c_inv011();
         c_inv010 o_inv010 = new c_inv010();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
 
         #endregion
 
@@ -107,7 +111,15 @@ namespace CREARSIS
             tb_nom_alm.Text = vg_str_ucc.Rows[0]["va_nom_alm"].ToString();
             tb_des_alm.Text = vg_str_ucc.Rows[0]["va_des_alm"].ToString();
             tb_dir_alm.Text = vg_str_ucc.Rows[0]["va_dir_alm"].ToString();
-            tb_cta_alm.Text = vg_str_ucc.Rows[0]["va_cta_alm"].ToString();
+
+            //lenar tbx de Plan de Cuentas
+            tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
+            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
+            if (tab_ctb004.Rows.Count != 0)
+            {
+                tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+            }
+
             tb_nom_ecg.Text = vg_str_ucc.Rows[0]["va_nom_ecg"].ToString();
             tb_tlf_ecg.Text = vg_str_ucc.Rows[0]["va_tlf_ecg"].ToString();
             tb_dir_ecg.Text = vg_str_ucc.Rows[0]["va_dir_ecg"].ToString();

@@ -149,7 +149,7 @@ namespace DATOS
 
                 vv_str_sql.AppendFormat(" va_nom_alm='{0}',va_des_alm='{1}',va_dir_alm='{2}',",nom_alm, des_alm,dir_alm);
                 vv_str_sql.AppendFormat("va_mon_inv='{0}',va_mtd_cto='{1}',",mon_inv,mtd_cto);
-                vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tlf_ecg='{1}',va_dir_ecg='{2}',va_cta_alm='{3}'",nom_ecg,tlf_ecg,dir_ecg,cta_alm);
+                vv_str_sql.AppendFormat("va_nom_ecg='{0}',va_tlf_ecg='{1}',va_dir_ecg='{2}',va_cod_cta='{3}'", nom_ecg,tlf_ecg,dir_ecg,cta_alm);
                 vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", cod_alm);
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());

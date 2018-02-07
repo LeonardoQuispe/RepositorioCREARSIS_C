@@ -66,7 +66,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                 return "Debes proporcionar el codigo de Plan de Cuentas";
             }
 
-            if (int.Parse(tb_cod_cta.Text) <= 0)
+            if (tb_cod_cta.Text == "0")
             {
                 tb_cod_cta.Focus();
                 return "El codigo de Plan de Cuentas debe ser mayor a cero";

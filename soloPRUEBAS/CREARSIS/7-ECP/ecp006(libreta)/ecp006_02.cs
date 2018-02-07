@@ -21,13 +21,15 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
         public dynamic vg_frm_pad;
         DataTable tab_ecp006;
+        DataTable tab_ctb004;
         string err_msg = "";
 
         #endregion
 
         #region INSTANCIAS
-
+        
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
         c_ecp006 o_ecp006 = new c_ecp006();
 
         #endregion
@@ -44,6 +46,20 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
             fu_ini_frm();
         }
 
+        private void tb_cod_cta_ButtonCustomClick(object sender, EventArgs e)
+        {
+            CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+            o_mg_glo_bal.mg_ads000_03(obj, this);
+        }
+
+        private void tb_cod_cta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up)
+            {
+                CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
+        }
         private void cb_tip_lib_SelectedIndexChanged(object sender, EventArgs e)
         {
             fu_sug_nro();
@@ -232,7 +248,39 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
 
             tb_nro_lib.Text = nro_sug.ToString();
         }
+        
+
+        public void fu_rec_cta(string cod_cta)
+        {
+            if (cod_cta.Trim() == "")
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            if (o_mg_glo_bal.fg_val_let(cod_cta) == false)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tab_ctb004 = o_ctb004._05(cod_cta);
+            if (tab_ctb004.Rows.Count == 0)
+            {
+                tb_cod_cta.Clear();
+                tb_nom_cta.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_cta.Text = tab_ctb004.Rows[0]["va_cod_cta"].ToString();
+            tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+
+        }
 
         #endregion
+
+
     }
 }
