@@ -67,6 +67,12 @@ namespace CREARSIS._5_CTB.ctb002_cap_agru_
                 return "El codigo de Capitulo/Agrupador debe ser Numerico";
             }
 
+            if (int.Parse(tb_cod_cap.Text) <= 0)
+            {
+                tb_cod_cap.Focus();
+                return "El Codigo de Capitulo/Agrupador debe ser mayor a cero";
+            }
+
             tab_ctb002 = o_ctb002._05(int.Parse(tb_cod_cap.Text));
             if (tab_ctb002.Rows.Count != 0)
             {
