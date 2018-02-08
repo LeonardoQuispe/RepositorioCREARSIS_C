@@ -916,7 +916,7 @@ namespace CREARSIS
 
             if (num.Trim()!="")
             {
-                if (int.Parse(num.Trim()) >= 0)
+                if (long.Parse(num.Trim()) >= 0)
                 {
                     return true;
                 }
