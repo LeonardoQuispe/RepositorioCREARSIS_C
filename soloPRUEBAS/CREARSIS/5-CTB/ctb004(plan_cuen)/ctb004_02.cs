@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 //REFERENCIAS
-using DATOS;
+using DATOS._5_CTB;
 using DevComponents.DotNetBar;
 
 namespace CREARSIS._5_CTB.ctb004_plan_cuen_
@@ -19,13 +19,15 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
         public dynamic vg_frm_pad;
         DataTable tab_ctb004;
+        DataTable tab_ctb002;
         string err_msg = "";
 
         #endregion
 
         #region INSTANCIAS
 
-        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
+        c_ctb004 o_ctb004 = new c_ctb004();
+        c_ctb002 o_ctb002 = new c_ctb002();
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
@@ -34,10 +36,13 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
         void fu_ini_frm()
         {
-            tb_cod_cta.Focus();
+            
             cb_tip_cta.SelectedIndex = 0;
             cb_uso_cta.SelectedIndex = 0;
             cb_mon_cta.SelectedIndex = 0;
+            tb_cod_cta.SelectionStart = 0;
+            tb_cod_cta.Focus();
+            //tb_cod_cta.Focus();
         }
 
         /// <summary>
@@ -70,12 +75,21 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             {
                 tb_cod_cta.Focus();
                 return "El codigo de Plan de Cuentas debe ser mayor a cero";
-            }
+            }            
             tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
             if (tab_ctb004.Rows.Count != 0)
             {
                 tb_cod_cta.Focus();
                 return "El codigo del Plan de Cuentas ya se encuentra registrado";
+            }
+
+            tab_ctb002 = o_ctb002._05(int.Parse(tb_cod_cta.Text[0].ToString()));
+            //Valida que el primer numero del codigo exista en un capitulo agrupador
+            if (tab_ctb002.Rows.Count==0)
+            {
+                tb_cod_cta.Focus();
+                return "El primer número del codigo del Plan de Cuentas debe estar  \n\r" +
+                    "        registrado en el código de un Capítulo Agrupador ";
             }
 
             if (tb_nom_cta.Text.Trim() == "")

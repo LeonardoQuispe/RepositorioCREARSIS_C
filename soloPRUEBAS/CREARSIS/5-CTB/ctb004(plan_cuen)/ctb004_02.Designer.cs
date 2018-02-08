@@ -31,8 +31,8 @@
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_cod_cta = new System.Windows.Forms.MaskedTextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.cb_uso_cta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.Modular = new DevComponents.Editors.ComboItem();
@@ -101,27 +101,10 @@
             this.LabelX1.TabIndex = 0;
             this.LabelX1.Text = "Codigo";
             // 
-            // tb_cod_cta
-            // 
-            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_cta.Border.Class = "TextBoxBorder";
-            this.tb_cod_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_cta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_cta.Location = new System.Drawing.Point(56, 22);
-            this.tb_cod_cta.MaxLength = 12;
-            this.tb_cod_cta.Name = "tb_cod_cta";
-            this.tb_cod_cta.PreventEnterBeep = true;
-            this.tb_cod_cta.Size = new System.Drawing.Size(141, 22);
-            this.tb_cod_cta.TabIndex = 1;
-            // 
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_cod_cta);
             this.GroupBox1.Controls.Add(this.labelX2);
             this.GroupBox1.Controls.Add(this.cb_uso_cta);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -131,13 +114,22 @@
             this.GroupBox1.Controls.Add(this.labelX3);
             this.GroupBox1.Controls.Add(this.tb_nom_cta);
             this.GroupBox1.Controls.Add(this.LabelX1);
-            this.GroupBox1.Controls.Add(this.tb_cod_cta);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(0, -6);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(389, 180);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_cod_cta
+            // 
+            this.tb_cod_cta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_cod_cta.Location = new System.Drawing.Point(56, 24);
+            this.tb_cod_cta.Mask = "0.0.0.00.000";
+            this.tb_cod_cta.Name = "tb_cod_cta";
+            this.tb_cod_cta.Size = new System.Drawing.Size(85, 22);
+            this.tb_cod_cta.TabIndex = 1;
+            this.tb_cod_cta.Text = "00000000";
             // 
             // labelX2
             // 
@@ -329,6 +321,7 @@
             this.TitleText = "Nuevo Plan de Cuentas";
             this.Load += new System.EventHandler(this.ctb004_02_Load);
             this.GroupBox1.ResumeLayout(false);
+            this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -339,7 +332,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         internal DevComponents.DotNetBar.LabelX LabelX1;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_cta;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal DevComponents.DotNetBar.LabelX labelX3;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_cta;
@@ -356,5 +348,6 @@
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_cta;
         internal DevComponents.Editors.ComboItem Matriz;
         internal DevComponents.Editors.ComboItem Analitica;
+        private System.Windows.Forms.MaskedTextBox tb_cod_cta;
     }
 }

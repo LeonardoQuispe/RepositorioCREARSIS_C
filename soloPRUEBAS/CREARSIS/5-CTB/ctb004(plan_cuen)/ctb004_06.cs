@@ -127,7 +127,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                 //Graba datos
                 o_ctb004._06(tb_cod_cta.Text.Trim());
 
-                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1, vg_frm_pad.cb_est_bus.SelectedIndex);
+                vg_frm_pad.fu_bus_car(vg_frm_pad.tb_val_bus.Text, vg_frm_pad.cb_prm_bus.SelectedIndex + 1,vg_frm_pad.cb_tip_pla.SelectedIndex, vg_frm_pad.cb_est_bus.SelectedIndex);
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Elimina Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
