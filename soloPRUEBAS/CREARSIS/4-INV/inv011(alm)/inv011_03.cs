@@ -107,12 +107,7 @@ namespace CREARSIS
                 return;
             }
 
-            if (o_mg_glo_bal.fg_val_let(cod_cta) == false)
-            {
-                tb_cod_cta.Clear();
-                tb_nom_cta.Text = "** NO existe";
-                return;
-            }
+            
 
             tab_ctb004 = o_ctb004._05(cod_cta);
             if (tab_ctb004.Rows.Count == 0)
@@ -138,6 +133,14 @@ namespace CREARSIS
                 tb_nom_alm.Focus();
                 return "Debes proporcionar el nombre del Almacén";
             }
+            
+            //**Verifica que el Codigo de Plan de Cuentas Sea ANALITICA
+            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
+            if (tab_ctb004.Rows[0]["va_tip_cta"].ToString() != "A")
+            {
+                tb_cod_cta.Focus();
+                return "La Cuenta Contable debe ser ANALITICA";
+            }
 
             return null;
         }
@@ -160,6 +163,7 @@ namespace CREARSIS
         private void tb_cod_cta_ButtonCustomClick(object sender, EventArgs e)
         {
             CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+            obj.va_axu_tip = 1;
             o_mg_glo_bal.mg_ads000_03(obj, this);
 
         }
@@ -169,8 +173,14 @@ namespace CREARSIS
             if (e.KeyData == Keys.Up)
             {
                 CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+                obj.va_axu_tip = 1;
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
+        }
+
+        private void tb_cod_cta_Validated(object sender, EventArgs e)
+        {
+            fu_rec_cta(tb_cod_cta.Text);
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
@@ -212,8 +222,8 @@ namespace CREARSIS
         {
             Close();
         }
+
         #endregion
 
-        
     }
 }

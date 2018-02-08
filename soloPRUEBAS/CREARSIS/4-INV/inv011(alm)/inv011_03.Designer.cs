@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_nom_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_nom_gru = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cb_mtd_cto = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
@@ -62,8 +64,6 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.tb_nom_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -98,6 +98,47 @@
             this.GroupBox1.Size = new System.Drawing.Size(493, 279);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_nom_cta
+            // 
+            this.tb_nom_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_cta.Border.Class = "TextBoxBorder";
+            this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_cta.Location = new System.Drawing.Point(278, 196);
+            this.tb_nom_cta.MaxLength = 40;
+            this.tb_nom_cta.Name = "tb_nom_cta";
+            this.tb_nom_cta.PreventEnterBeep = true;
+            this.tb_nom_cta.ReadOnly = true;
+            this.tb_nom_cta.Size = new System.Drawing.Size(190, 22);
+            this.tb_nom_cta.TabIndex = 22;
+            // 
+            // tb_cod_cta
+            // 
+            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_cta.Border.Class = "TextBoxBorder";
+            this.tb_cod_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_cta.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_cta.ButtonCustom.Symbol = "";
+            this.tb_cod_cta.ButtonCustom.Visible = true;
+            this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_cta.Location = new System.Drawing.Point(114, 196);
+            this.tb_cod_cta.MaxLength = 12;
+            this.tb_cod_cta.Name = "tb_cod_cta";
+            this.tb_cod_cta.PreventEnterBeep = true;
+            this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
+            this.tb_cod_cta.TabIndex = 21;
+            this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
+            this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
+            this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
             // 
             // tb_nom_gru
             // 
@@ -637,46 +678,6 @@
             this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // tb_nom_cta
-            // 
-            this.tb_nom_cta.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_cta.Border.Class = "TextBoxBorder";
-            this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_cta.Location = new System.Drawing.Point(278, 196);
-            this.tb_nom_cta.MaxLength = 40;
-            this.tb_nom_cta.Name = "tb_nom_cta";
-            this.tb_nom_cta.PreventEnterBeep = true;
-            this.tb_nom_cta.ReadOnly = true;
-            this.tb_nom_cta.Size = new System.Drawing.Size(190, 22);
-            this.tb_nom_cta.TabIndex = 22;
-            // 
-            // tb_cod_cta
-            // 
-            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_cta.Border.Class = "TextBoxBorder";
-            this.tb_cod_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_cta.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_cta.ButtonCustom.Symbol = "";
-            this.tb_cod_cta.ButtonCustom.Visible = true;
-            this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_cta.Location = new System.Drawing.Point(114, 196);
-            this.tb_cod_cta.MaxLength = 20;
-            this.tb_cod_cta.Name = "tb_cod_cta";
-            this.tb_cod_cta.PreventEnterBeep = true;
-            this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
-            this.tb_cod_cta.TabIndex = 21;
-            this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
-            this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
             // 
             // inv011_03
             // 

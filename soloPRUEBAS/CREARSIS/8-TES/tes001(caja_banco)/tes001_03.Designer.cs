@@ -239,13 +239,14 @@
             this.tb_cod_cta.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cta.Location = new System.Drawing.Point(94, 157);
-            this.tb_cod_cta.MaxLength = 20;
+            this.tb_cod_cta.MaxLength = 12;
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(158, 22);
             this.tb_cod_cta.TabIndex = 11;
             this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
             this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
+            this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
             // 
             // tb_cod_cjb
             // 

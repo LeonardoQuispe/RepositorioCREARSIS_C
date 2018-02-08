@@ -42,14 +42,14 @@
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.cb_mon_cta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.cb_tip_cta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_est_ado = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.tb_cod_cta = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.cb_tip_cta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -217,76 +217,6 @@
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
-            // labelX14
-            // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(0, 169);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 10;
-            this.labelX14.Text = "Estado:";
-            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_est_ado
-            // 
-            this.tb_est_ado.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_est_ado.Border.Class = "TextBoxBorder";
-            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_est_ado.Enabled = false;
-            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
-            this.tb_est_ado.Location = new System.Drawing.Point(56, 167);
-            this.tb_est_ado.MaxLength = 80;
-            this.tb_est_ado.Name = "tb_est_ado";
-            this.tb_est_ado.PreventEnterBeep = true;
-            this.tb_est_ado.ReadOnly = true;
-            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 11;
-            this.tb_est_ado.TabStop = false;
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(29, 91);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(23, 23);
-            this.labelX4.TabIndex = 4;
-            this.labelX4.Text = "Tipo";
-            // 
-            // cb_tip_cta
-            // 
-            this.cb_tip_cta.DisplayMember = "Text";
-            this.cb_tip_cta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tip_cta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tip_cta.Enabled = false;
-            this.cb_tip_cta.ForeColor = System.Drawing.Color.Black;
-            this.cb_tip_cta.FormattingEnabled = true;
-            this.cb_tip_cta.ItemHeight = 16;
-            this.cb_tip_cta.Items.AddRange(new object[] {
-            this.Matriz,
-            this.Analitica});
-            this.cb_tip_cta.Location = new System.Drawing.Point(56, 92);
-            this.cb_tip_cta.Name = "cb_tip_cta";
-            this.cb_tip_cta.Size = new System.Drawing.Size(86, 22);
-            this.cb_tip_cta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_cta.TabIndex = 5;
-            // 
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
@@ -320,6 +250,43 @@
             this.tb_nom_cta.Size = new System.Drawing.Size(320, 22);
             this.tb_nom_cta.TabIndex = 3;
             // 
+            // tb_est_ado
+            // 
+            this.tb_est_ado.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_est_ado.Border.Class = "TextBoxBorder";
+            this.tb_est_ado.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_est_ado.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_est_ado.Enabled = false;
+            this.tb_est_ado.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tb_est_ado.ForeColor = System.Drawing.Color.Black;
+            this.tb_est_ado.Location = new System.Drawing.Point(56, 167);
+            this.tb_est_ado.MaxLength = 80;
+            this.tb_est_ado.Name = "tb_est_ado";
+            this.tb_est_ado.PreventEnterBeep = true;
+            this.tb_est_ado.ReadOnly = true;
+            this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
+            this.tb_est_ado.TabIndex = 11;
+            this.tb_est_ado.TabStop = false;
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(0, 169);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(45, 17);
+            this.labelX14.TabIndex = 10;
+            this.labelX14.Text = "Estado:";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
             // LabelX1
             // 
             this.LabelX1.BackColor = System.Drawing.Color.Transparent;
@@ -348,11 +315,44 @@
             this.tb_cod_cta.Enabled = false;
             this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cta.Location = new System.Drawing.Point(56, 18);
-            this.tb_cod_cta.MaxLength = 20;
+            this.tb_cod_cta.MaxLength = 12;
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(141, 22);
             this.tb_cod_cta.TabIndex = 1;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(29, 91);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(23, 23);
+            this.labelX4.TabIndex = 4;
+            this.labelX4.Text = "Tipo";
+            // 
+            // cb_tip_cta
+            // 
+            this.cb_tip_cta.DisplayMember = "Text";
+            this.cb_tip_cta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_cta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_cta.Enabled = false;
+            this.cb_tip_cta.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_cta.FormattingEnabled = true;
+            this.cb_tip_cta.ItemHeight = 16;
+            this.cb_tip_cta.Items.AddRange(new object[] {
+            this.Matriz,
+            this.Analitica});
+            this.cb_tip_cta.Location = new System.Drawing.Point(56, 92);
+            this.cb_tip_cta.Name = "cb_tip_cta";
+            this.cb_tip_cta.Size = new System.Drawing.Size(86, 22);
+            this.cb_tip_cta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_cta.TabIndex = 5;
             // 
             // ctb004_03
             // 
