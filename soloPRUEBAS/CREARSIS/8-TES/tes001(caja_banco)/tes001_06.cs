@@ -21,12 +21,14 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
 
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
+        DataTable tab_ctb004;
 
         #endregion
 
         #region INSTANCIAS
 
         c_tes001 o_tes001 = new c_tes001();
+        DATOS._5_CTB.c_ctb004 o_ctb004 = new DATOS._5_CTB.c_ctb004();
 
         #endregion
 
@@ -93,6 +95,14 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             tb_nom_cjb.Text = vg_str_ucc.Rows[0]["va_nom_cjb"].ToString();
             tb_nro_cta.Text = vg_str_ucc.Rows[0]["va_nro_cta"].ToString();
             tb_sal_cjb.Text = vg_str_ucc.Rows[0]["va_sal_cjb"].ToString();
+
+            //lenar tbx de Plan de Cuentas
+            tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
+            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
+            if (tab_ctb004.Rows.Count != 0)
+            {
+                tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+            }
 
 
             //Valida Estado

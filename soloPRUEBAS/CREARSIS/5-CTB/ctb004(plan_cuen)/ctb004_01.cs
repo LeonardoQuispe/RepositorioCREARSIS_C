@@ -18,6 +18,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         #region VARIABLES
 
         public dynamic vg_frm_pad;
+        public int va_axu_tip = 0;
         DataTable tab_ctb004;
         DataTable tabla;
 
@@ -36,13 +37,23 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         /// -> Metodo que inicializa el formulario
         /// </summary>
 
-        public void fu_ini_frm(int va_tip_frm = 0)
+        public void fu_ini_frm()
         {
             cb_prm_bus.SelectedIndex = 0;
             cb_est_bus.SelectedIndex = 0;
             cb_tip_pla.SelectedIndex = 0;
 
-            fu_bus_car("", 1, 0);
+            if (va_axu_tip==1)
+            {
+                cb_tip_pla.SelectedIndex = 2;
+                fu_bus_car("", 1,2, 0); //buscar solo por analiticas
+            }
+            else
+            {
+                fu_bus_car("", 1,0, 0);
+            }
+
+            
 
             tb_val_bus.Focus();
         }
@@ -165,7 +176,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         /// <param name="prm_bus">parametro por el cual se buscará (1=codigo;2=nombre)</param>
         /// <param name="est_bus">Estado por el cual se buscará</param>
 
-        public void fu_bus_car(string val_bus, int prm_bus, int est_bus)
+        public void fu_bus_car(string val_bus, int prm_bus, int tip_pla, int est_bus)
         {
             int va_ind_ice = 0;
             string va_est_ado = "";
@@ -175,7 +186,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
             dg_res_ult.Rows.Clear();
 
-            tab_ctb004 = o_ctb004._01(val_bus, prm_bus + 1, cb_tip_pla.SelectedIndex, est_bus.ToString());
+            tab_ctb004 = o_ctb004._01(val_bus, prm_bus + 1, tip_pla, est_bus.ToString());
 
             if (tab_ctb004.Rows.Count != 0)
             {
@@ -259,7 +270,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         /// </summary>
         public void fu_sel_fila(string cod_doc, string nom_doc)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_tip_pla.SelectedIndex, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_doc;
             lb_sel_ecc.Text = nom_doc;
@@ -315,7 +326,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
         private void tb_val_bus_ButtonCustomClick(object sender, EventArgs e)
         {
-            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
+            fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_tip_pla.SelectedIndex, cb_est_bus.SelectedIndex);
         }
 
         private void tb_sel_ecc_Validated(object sender, EventArgs e)

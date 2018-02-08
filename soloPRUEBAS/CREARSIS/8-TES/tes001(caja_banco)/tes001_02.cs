@@ -66,7 +66,9 @@ namespace CREARSIS._8_TES.tes001_caja_banco_
             if (e.KeyData == Keys.Up)
             {
                 CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01 obj = new CREARSIS._5_CTB.ctb004_plan_cuen_.ctb004_01();
+                obj.va_axu_tip = 1;
                 o_mg_glo_bal.mg_ads000_03(obj, this);
+               
             }
         }
 
