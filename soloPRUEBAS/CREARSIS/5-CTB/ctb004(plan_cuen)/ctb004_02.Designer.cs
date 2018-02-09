@@ -123,13 +123,19 @@
             // 
             // tb_cod_cta
             // 
+            this.tb_cod_cta.BackColor = System.Drawing.Color.White;
+            this.tb_cod_cta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_cta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.tb_cod_cta.Location = new System.Drawing.Point(56, 24);
             this.tb_cod_cta.Mask = "0.0.0.00.000";
             this.tb_cod_cta.Name = "tb_cod_cta";
+            this.tb_cod_cta.PromptChar = ' ';
             this.tb_cod_cta.Size = new System.Drawing.Size(85, 22);
             this.tb_cod_cta.TabIndex = 1;
             this.tb_cod_cta.Text = "00000000";
+            this.tb_cod_cta.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_cod_cta.ValidatingType = typeof(int);
             this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
             // 
             // labelX2
@@ -282,7 +288,6 @@
             // 
             this.tb_nom_cta.Border.Class = "TextBoxBorder";
             this.tb_nom_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_cta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_nom_cta.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_cta.ForeColor = System.Drawing.Color.Black;
             this.tb_nom_cta.Location = new System.Drawing.Point(56, 59);
@@ -350,6 +355,6 @@
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_cta;
         internal DevComponents.Editors.ComboItem Matriz;
         internal DevComponents.Editors.ComboItem Analitica;
-        private System.Windows.Forms.MaskedTextBox tb_cod_cta;
+        internal System.Windows.Forms.MaskedTextBox tb_cod_cta;
     }
 }

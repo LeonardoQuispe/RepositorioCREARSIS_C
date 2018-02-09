@@ -89,6 +89,13 @@
             this.nombre = new DevComponents.Editors.ComboItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -103,10 +110,12 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.cb_tip_cmp = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.IVA = new DevComponents.Editors.ComboItem();
             this.EXENTO = new DevComponents.Editors.ComboItem();
+            this.RetencionesBienes = new DevComponents.Editors.ComboItem();
+            this.RetencionesServicios = new DevComponents.Editors.ComboItem();
+            this.IVAporRecuperar = new DevComponents.Editors.ComboItem();
             this.tb_fec_cha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -130,15 +139,6 @@
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.m_tes001_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.RetencionesBienes = new DevComponents.Editors.ComboItem();
-            this.RetencionesServicios = new DevComponents.Editors.ComboItem();
-            this.IVAporRecuperar = new DevComponents.Editors.ComboItem();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
-            this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -158,11 +158,11 @@
             this.textBoxX25.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX25.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX25.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX25.Location = new System.Drawing.Point(87, 193);
+            this.textBoxX25.Location = new System.Drawing.Point(114, 193);
             this.textBoxX25.MaxLength = 20;
             this.textBoxX25.Name = "textBoxX25";
             this.textBoxX25.PreventEnterBeep = true;
-            this.textBoxX25.Size = new System.Drawing.Size(180, 22);
+            this.textBoxX25.Size = new System.Drawing.Size(152, 27);
             this.textBoxX25.TabIndex = 76;
             // 
             // labelX26
@@ -174,9 +174,9 @@
             // 
             this.labelX26.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX26.ForeColor = System.Drawing.Color.Black;
-            this.labelX26.Location = new System.Drawing.Point(26, 198);
+            this.labelX26.Location = new System.Drawing.Point(18, 198);
             this.labelX26.Name = "labelX26";
-            this.labelX26.Size = new System.Drawing.Size(54, 17);
+            this.labelX26.Size = new System.Drawing.Size(69, 22);
             this.labelX26.TabIndex = 75;
             this.labelX26.Text = "Total Neto";
             // 
@@ -190,11 +190,11 @@
             this.textBoxX20.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX20.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX20.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX20.Location = new System.Drawing.Point(88, 161);
+            this.textBoxX20.Location = new System.Drawing.Point(114, 157);
             this.textBoxX20.MaxLength = 20;
             this.textBoxX20.Name = "textBoxX20";
             this.textBoxX20.PreventEnterBeep = true;
-            this.textBoxX20.Size = new System.Drawing.Size(180, 22);
+            this.textBoxX20.Size = new System.Drawing.Size(152, 27);
             this.textBoxX20.TabIndex = 74;
             // 
             // labelX21
@@ -206,9 +206,9 @@
             // 
             this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX21.ForeColor = System.Drawing.Color.Black;
-            this.labelX21.Location = new System.Drawing.Point(18, 164);
+            this.labelX21.Location = new System.Drawing.Point(19, 162);
             this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(43, 17);
+            this.labelX21.Size = new System.Drawing.Size(56, 22);
             this.labelX21.TabIndex = 73;
             this.labelX21.Text = "IVA 13%";
             // 
@@ -222,11 +222,11 @@
             this.textBoxX21.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX21.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX21.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX21.Location = new System.Drawing.Point(111, 124);
+            this.textBoxX21.Location = new System.Drawing.Point(114, 120);
             this.textBoxX21.MaxLength = 20;
             this.textBoxX21.Name = "textBoxX21";
             this.textBoxX21.PreventEnterBeep = true;
-            this.textBoxX21.Size = new System.Drawing.Size(158, 22);
+            this.textBoxX21.Size = new System.Drawing.Size(154, 27);
             this.textBoxX21.TabIndex = 72;
             // 
             // labelX22
@@ -240,7 +240,7 @@
             this.labelX22.ForeColor = System.Drawing.Color.Black;
             this.labelX22.Location = new System.Drawing.Point(18, 129);
             this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(82, 17);
+            this.labelX22.Size = new System.Drawing.Size(106, 22);
             this.labelX22.TabIndex = 71;
             this.labelX22.Text = "Sujeto Impuesto";
             // 
@@ -254,11 +254,11 @@
             this.textBoxX22.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX22.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX22.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX22.Location = new System.Drawing.Point(61, 88);
+            this.textBoxX22.Location = new System.Drawing.Point(114, 87);
             this.textBoxX22.MaxLength = 20;
             this.textBoxX22.Name = "textBoxX22";
             this.textBoxX22.PreventEnterBeep = true;
-            this.textBoxX22.Size = new System.Drawing.Size(208, 22);
+            this.textBoxX22.Size = new System.Drawing.Size(154, 27);
             this.textBoxX22.TabIndex = 70;
             // 
             // labelX23
@@ -272,7 +272,7 @@
             this.labelX23.ForeColor = System.Drawing.Color.Black;
             this.labelX23.Location = new System.Drawing.Point(18, 92);
             this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(35, 17);
+            this.labelX23.Size = new System.Drawing.Size(45, 22);
             this.labelX23.TabIndex = 69;
             this.labelX23.Text = "Exento";
             // 
@@ -287,13 +287,13 @@
             this.labelX24.ForeColor = System.Drawing.Color.Black;
             this.labelX24.Location = new System.Drawing.Point(18, 58);
             this.labelX24.Name = "labelX24";
-            this.labelX24.Size = new System.Drawing.Size(54, 17);
+            this.labelX24.Size = new System.Drawing.Size(70, 22);
             this.labelX24.TabIndex = 67;
             this.labelX24.Text = "Descuento";
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.groupBox3.Controls.Add(this.textBoxX25);
             this.groupBox3.Controls.Add(this.labelX26);
             this.groupBox3.Controls.Add(this.textBoxX20);
@@ -309,7 +309,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(703, 190);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(279, 235);
+            this.groupBox3.Size = new System.Drawing.Size(277, 235);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             // 
@@ -323,11 +323,11 @@
             this.textBoxX23.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX23.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX23.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX23.Location = new System.Drawing.Point(79, 53);
+            this.textBoxX23.Location = new System.Drawing.Point(114, 53);
             this.textBoxX23.MaxLength = 20;
             this.textBoxX23.Name = "textBoxX23";
             this.textBoxX23.PreventEnterBeep = true;
-            this.textBoxX23.Size = new System.Drawing.Size(190, 22);
+            this.textBoxX23.Size = new System.Drawing.Size(154, 27);
             this.textBoxX23.TabIndex = 68;
             // 
             // textBoxX24
@@ -340,11 +340,11 @@
             this.textBoxX24.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX24.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX24.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX24.Location = new System.Drawing.Point(88, 19);
+            this.textBoxX24.Location = new System.Drawing.Point(114, 20);
             this.textBoxX24.MaxLength = 20;
             this.textBoxX24.Name = "textBoxX24";
             this.textBoxX24.PreventEnterBeep = true;
-            this.textBoxX24.Size = new System.Drawing.Size(180, 22);
+            this.textBoxX24.Size = new System.Drawing.Size(152, 27);
             this.textBoxX24.TabIndex = 66;
             // 
             // labelX25
@@ -358,7 +358,7 @@
             this.labelX25.ForeColor = System.Drawing.Color.Black;
             this.labelX25.Location = new System.Drawing.Point(19, 22);
             this.labelX25.Name = "labelX25";
-            this.labelX25.Size = new System.Drawing.Size(65, 17);
+            this.labelX25.Size = new System.Drawing.Size(84, 22);
             this.labelX25.TabIndex = 65;
             this.labelX25.Text = "Total Factura";
             // 
@@ -372,11 +372,11 @@
             this.textBoxX19.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX19.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX19.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX19.Location = new System.Drawing.Point(89, 153);
+            this.textBoxX19.Location = new System.Drawing.Point(114, 156);
             this.textBoxX19.MaxLength = 20;
             this.textBoxX19.Name = "textBoxX19";
             this.textBoxX19.PreventEnterBeep = true;
-            this.textBoxX19.Size = new System.Drawing.Size(180, 22);
+            this.textBoxX19.Size = new System.Drawing.Size(152, 27);
             this.textBoxX19.TabIndex = 74;
             // 
             // labelX20
@@ -390,7 +390,7 @@
             this.labelX20.ForeColor = System.Drawing.Color.Black;
             this.labelX20.Location = new System.Drawing.Point(19, 156);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(64, 17);
+            this.labelX20.Size = new System.Drawing.Size(82, 22);
             this.labelX20.TabIndex = 73;
             this.labelX20.Text = "Cod. Control";
             // 
@@ -404,11 +404,11 @@
             this.textBoxX18.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX18.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX18.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX18.Location = new System.Drawing.Point(112, 120);
+            this.textBoxX18.Location = new System.Drawing.Point(114, 120);
             this.textBoxX18.MaxLength = 20;
             this.textBoxX18.Name = "textBoxX18";
             this.textBoxX18.PreventEnterBeep = true;
-            this.textBoxX18.Size = new System.Drawing.Size(157, 22);
+            this.textBoxX18.Size = new System.Drawing.Size(152, 27);
             this.textBoxX18.TabIndex = 72;
             // 
             // labelX19
@@ -422,7 +422,7 @@
             this.labelX19.ForeColor = System.Drawing.Color.Black;
             this.labelX19.Location = new System.Drawing.Point(19, 125);
             this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(87, 17);
+            this.labelX19.Size = new System.Drawing.Size(113, 22);
             this.labelX19.TabIndex = 71;
             this.labelX19.Text = "Nro. Autorizacion";
             // 
@@ -436,11 +436,11 @@
             this.textBoxX17.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX17.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX17.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX17.Location = new System.Drawing.Point(78, 87);
+            this.textBoxX17.Location = new System.Drawing.Point(114, 84);
             this.textBoxX17.MaxLength = 20;
             this.textBoxX17.Name = "textBoxX17";
             this.textBoxX17.PreventEnterBeep = true;
-            this.textBoxX17.Size = new System.Drawing.Size(189, 22);
+            this.textBoxX17.Size = new System.Drawing.Size(152, 27);
             this.textBoxX17.TabIndex = 70;
             // 
             // labelX18
@@ -454,7 +454,7 @@
             this.labelX18.ForeColor = System.Drawing.Color.Black;
             this.labelX18.Location = new System.Drawing.Point(19, 90);
             this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(48, 17);
+            this.labelX18.Size = new System.Drawing.Size(62, 22);
             this.labelX18.TabIndex = 69;
             this.labelX18.Text = "Ra. Social";
             // 
@@ -468,11 +468,11 @@
             this.textBoxX16.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX16.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX16.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX16.Location = new System.Drawing.Point(45, 54);
+            this.textBoxX16.Location = new System.Drawing.Point(114, 51);
             this.textBoxX16.MaxLength = 20;
             this.textBoxX16.Name = "textBoxX16";
             this.textBoxX16.PreventEnterBeep = true;
-            this.textBoxX16.Size = new System.Drawing.Size(222, 22);
+            this.textBoxX16.Size = new System.Drawing.Size(152, 27);
             this.textBoxX16.TabIndex = 68;
             // 
             // labelX17
@@ -486,7 +486,7 @@
             this.labelX17.ForeColor = System.Drawing.Color.Black;
             this.labelX17.Location = new System.Drawing.Point(19, 59);
             this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(19, 17);
+            this.labelX17.Size = new System.Drawing.Size(25, 22);
             this.labelX17.TabIndex = 67;
             this.labelX17.Text = "NIT";
             // 
@@ -500,11 +500,11 @@
             this.textBoxX15.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX15.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX15.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX15.Location = new System.Drawing.Point(88, 19);
+            this.textBoxX15.Location = new System.Drawing.Point(114, 17);
             this.textBoxX15.MaxLength = 20;
             this.textBoxX15.Name = "textBoxX15";
             this.textBoxX15.PreventEnterBeep = true;
-            this.textBoxX15.Size = new System.Drawing.Size(180, 22);
+            this.textBoxX15.Size = new System.Drawing.Size(152, 27);
             this.textBoxX15.TabIndex = 66;
             // 
             // labelX16
@@ -518,7 +518,7 @@
             this.labelX16.ForeColor = System.Drawing.Color.Black;
             this.labelX16.Location = new System.Drawing.Point(19, 22);
             this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(62, 17);
+            this.labelX16.Size = new System.Drawing.Size(80, 22);
             this.labelX16.TabIndex = 65;
             this.labelX16.Text = "Nro. Factura";
             // 
@@ -532,9 +532,9 @@
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX15.ForeColor = System.Drawing.Color.Black;
-            this.labelX15.Location = new System.Drawing.Point(315, 209);
+            this.labelX15.Location = new System.Drawing.Point(390, 210);
             this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(81, 17);
+            this.labelX15.Size = new System.Drawing.Size(104, 22);
             this.labelX15.TabIndex = 101;
             this.labelX15.Text = "Tipo de Compra";
             this.labelX15.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -550,7 +550,7 @@
             this.labelX13.ForeColor = System.Drawing.Color.Black;
             this.labelX13.Location = new System.Drawing.Point(236, 210);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(27, 17);
+            this.labelX13.Size = new System.Drawing.Size(34, 22);
             this.labelX13.TabIndex = 98;
             this.labelX13.Text = "Total";
             // 
@@ -571,7 +571,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.groupBox4.Controls.Add(this.bt_can_cel);
             this.groupBox4.Controls.Add(this.bt_ace_pta);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
@@ -609,6 +609,7 @@
             this.bt_add_itm.Symbol = "";
             this.bt_add_itm.TabIndex = 161;
             this.bt_add_itm.Tooltip = "Adicionar Item";
+            this.bt_add_itm.Click += new System.EventHandler(this.bt_add_itm_Click);
             // 
             // bt_can_itm
             // 
@@ -632,13 +633,14 @@
             this.tb_nom_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.tb_nom_alm.DisabledBackColor = System.Drawing.Color.White;
             this.tb_nom_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_alm.Location = new System.Drawing.Point(575, 21);
+            this.tb_nom_alm.Location = new System.Drawing.Point(119, 90);
             this.tb_nom_alm.MaxLength = 40;
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
             this.tb_nom_alm.ReadOnly = true;
-            this.tb_nom_alm.Size = new System.Drawing.Size(111, 22);
+            this.tb_nom_alm.Size = new System.Drawing.Size(135, 27);
             this.tb_nom_alm.TabIndex = 108;
+            this.tb_nom_alm.TextChanged += new System.EventHandler(this.tb_nom_alm_TextChanged);
             // 
             // Almacen
             // 
@@ -689,7 +691,7 @@
             this.textBoxX13.MaxLength = 20;
             this.textBoxX13.Name = "textBoxX13";
             this.textBoxX13.PreventEnterBeep = true;
-            this.textBoxX13.Size = new System.Drawing.Size(48, 22);
+            this.textBoxX13.Size = new System.Drawing.Size(120, 27);
             this.textBoxX13.TabIndex = 99;
             // 
             // va_nom_cjb
@@ -733,11 +735,11 @@
             this.textBoxX26.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX26.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX26.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX26.Location = new System.Drawing.Point(637, 169);
+            this.textBoxX26.Location = new System.Drawing.Point(567, 172);
             this.textBoxX26.MaxLength = 20;
             this.textBoxX26.Name = "textBoxX26";
             this.textBoxX26.PreventEnterBeep = true;
-            this.textBoxX26.Size = new System.Drawing.Size(48, 22);
+            this.textBoxX26.Size = new System.Drawing.Size(48, 27);
             this.textBoxX26.TabIndex = 107;
             // 
             // labelX28
@@ -749,9 +751,9 @@
             // 
             this.labelX28.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX28.ForeColor = System.Drawing.Color.Black;
-            this.labelX28.Location = new System.Drawing.Point(567, 171);
+            this.labelX28.Location = new System.Drawing.Point(486, 174);
             this.labelX28.Name = "labelX28";
-            this.labelX28.Size = new System.Drawing.Size(63, 17);
+            this.labelX28.Size = new System.Drawing.Size(81, 22);
             this.labelX28.TabIndex = 106;
             this.labelX28.Text = "Uni. Compra";
             // 
@@ -770,7 +772,7 @@
             this.textBoxX11.Name = "textBoxX11";
             this.textBoxX11.PreventEnterBeep = true;
             this.textBoxX11.ReadOnly = true;
-            this.textBoxX11.Size = new System.Drawing.Size(37, 22);
+            this.textBoxX11.Size = new System.Drawing.Size(37, 27);
             this.textBoxX11.TabIndex = 105;
             // 
             // textBoxX9
@@ -783,12 +785,12 @@
             this.textBoxX9.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.textBoxX9.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX9.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX9.Location = new System.Drawing.Point(163, 170);
+            this.textBoxX9.Location = new System.Drawing.Point(192, 172);
             this.textBoxX9.MaxLength = 40;
             this.textBoxX9.Name = "textBoxX9";
             this.textBoxX9.PreventEnterBeep = true;
             this.textBoxX9.ReadOnly = true;
-            this.textBoxX9.Size = new System.Drawing.Size(111, 22);
+            this.textBoxX9.Size = new System.Drawing.Size(263, 27);
             this.textBoxX9.TabIndex = 104;
             // 
             // labelX27
@@ -803,7 +805,7 @@
             this.labelX27.ForeColor = System.Drawing.Color.Black;
             this.labelX27.Location = new System.Drawing.Point(6, 171);
             this.labelX27.Name = "labelX27";
-            this.labelX27.Size = new System.Drawing.Size(24, 17);
+            this.labelX27.Size = new System.Drawing.Size(31, 22);
             this.labelX27.TabIndex = 102;
             this.labelX27.Text = "Item";
             this.labelX27.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -821,11 +823,11 @@
             this.textBoxX10.ButtonCustom.Visible = true;
             this.textBoxX10.DisabledBackColor = System.Drawing.Color.White;
             this.textBoxX10.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX10.Location = new System.Drawing.Point(84, 170);
+            this.textBoxX10.Location = new System.Drawing.Point(83, 172);
             this.textBoxX10.MaxLength = 12;
             this.textBoxX10.Name = "textBoxX10";
             this.textBoxX10.PreventEnterBeep = true;
-            this.textBoxX10.Size = new System.Drawing.Size(74, 22);
+            this.textBoxX10.Size = new System.Drawing.Size(103, 27);
             this.textBoxX10.TabIndex = 103;
             // 
             // va_mon_lib
@@ -849,12 +851,12 @@
             this.textBoxX14.MaxLength = 20;
             this.textBoxX14.Name = "textBoxX14";
             this.textBoxX14.PreventEnterBeep = true;
-            this.textBoxX14.Size = new System.Drawing.Size(76, 22);
+            this.textBoxX14.Size = new System.Drawing.Size(76, 27);
             this.textBoxX14.TabIndex = 97;
             // 
             // gb_ctr_frm
             // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gb_ctr_frm.Controls.Add(this.textBoxX19);
             this.gb_ctr_frm.Controls.Add(this.labelX20);
             this.gb_ctr_frm.Controls.Add(this.textBoxX18);
@@ -868,7 +870,7 @@
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(703, -2);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(279, 186);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(277, 193);
             this.gb_ctr_frm.TabIndex = 79;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -903,7 +905,7 @@
             this.dg_res_ult.AllowUserToDeleteRows = false;
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
-            this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
+            this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -925,7 +927,7 @@
             this.Serie,
             this.Almacen});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -954,7 +956,8 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.comboBoxEx1);
             this.GroupBox1.Controls.Add(this.bt_add_itm);
             this.GroupBox1.Controls.Add(this.bt_can_itm);
@@ -981,7 +984,6 @@
             this.GroupBox1.Controls.Add(this.labelX7);
             this.GroupBox1.Controls.Add(this.textBoxX6);
             this.GroupBox1.Controls.Add(this.labelX8);
-            this.GroupBox1.Controls.Add(this.labelX6);
             this.GroupBox1.Controls.Add(this.cb_tip_cmp);
             this.GroupBox1.Controls.Add(this.tb_fec_cha);
             this.GroupBox1.Controls.Add(this.labelX5);
@@ -1003,215 +1005,6 @@
             this.GroupBox1.TabIndex = 77;
             this.GroupBox1.TabStop = false;
             // 
-            // labelX14
-            // 
-            this.labelX14.AutoSize = true;
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.ForeColor = System.Drawing.Color.Black;
-            this.labelX14.Location = new System.Drawing.Point(97, 211);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(54, 17);
-            this.labelX14.TabIndex = 96;
-            this.labelX14.Text = "Precio Uni.";
-            // 
-            // textBoxX12
-            // 
-            this.textBoxX12.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX12.Border.Class = "TextBoxBorder";
-            this.textBoxX12.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX12.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX12.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX12.Location = new System.Drawing.Point(40, 208);
-            this.textBoxX12.MaxLength = 20;
-            this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.PreventEnterBeep = true;
-            this.textBoxX12.Size = new System.Drawing.Size(48, 22);
-            this.textBoxX12.TabIndex = 95;
-            // 
-            // labelX11
-            // 
-            this.labelX11.AutoSize = true;
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.ForeColor = System.Drawing.Color.Black;
-            this.labelX11.Location = new System.Drawing.Point(12, 211);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(27, 17);
-            this.labelX11.TabIndex = 94;
-            this.labelX11.Text = "Cant.";
-            // 
-            // textBoxX7
-            // 
-            this.textBoxX7.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX7.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX7.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX7.Location = new System.Drawing.Point(573, 132);
-            this.textBoxX7.MaxLength = 40;
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.PreventEnterBeep = true;
-            this.textBoxX7.ReadOnly = true;
-            this.textBoxX7.Size = new System.Drawing.Size(111, 22);
-            this.textBoxX7.TabIndex = 89;
-            // 
-            // textBoxX8
-            // 
-            this.textBoxX8.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX8.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.textBoxX8.ButtonCustom.Symbol = "";
-            this.textBoxX8.ButtonCustom.Visible = true;
-            this.textBoxX8.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX8.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX8.Location = new System.Drawing.Point(494, 132);
-            this.textBoxX8.MaxLength = 12;
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.PreventEnterBeep = true;
-            this.textBoxX8.Size = new System.Drawing.Size(74, 22);
-            this.textBoxX8.TabIndex = 88;
-            // 
-            // labelX10
-            // 
-            this.labelX10.AutoSize = true;
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(438, 133);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(51, 17);
-            this.labelX10.TabIndex = 87;
-            this.labelX10.Text = "Plan Pago";
-            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX9
-            // 
-            this.labelX9.AutoSize = true;
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.ForeColor = System.Drawing.Color.Black;
-            this.labelX9.Location = new System.Drawing.Point(7, 130);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(61, 17);
-            this.labelX9.TabIndex = 85;
-            this.labelX9.Text = "Forma pago";
-            this.labelX9.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // comboBoxEx2
-            // 
-            this.comboBoxEx2.DisplayMember = "Text";
-            this.comboBoxEx2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEx2.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxEx2.FormattingEnabled = true;
-            this.comboBoxEx2.ItemHeight = 16;
-            this.comboBoxEx2.Items.AddRange(new object[] {
-            this.comboItem6,
-            this.comboItem7});
-            this.comboBoxEx2.Location = new System.Drawing.Point(73, 128);
-            this.comboBoxEx2.Name = "comboBoxEx2";
-            this.comboBoxEx2.Size = new System.Drawing.Size(90, 22);
-            this.comboBoxEx2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx2.TabIndex = 84;
-            // 
-            // comboItem6
-            // 
-            this.comboItem6.Text = "Código";
-            this.comboItem6.Value = "1";
-            // 
-            // comboItem7
-            // 
-            this.comboItem7.Text = "Nombre";
-            // 
-            // textBoxX5
-            // 
-            this.textBoxX5.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX5.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX5.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX5.Location = new System.Drawing.Point(637, 93);
-            this.textBoxX5.MaxLength = 20;
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(48, 22);
-            this.textBoxX5.TabIndex = 83;
-            // 
-            // labelX7
-            // 
-            this.labelX7.AutoSize = true;
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(608, 95);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(20, 17);
-            this.labelX7.TabIndex = 82;
-            this.labelX7.Text = "T.C.";
-            // 
-            // textBoxX6
-            // 
-            this.textBoxX6.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX6.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX6.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX6.Location = new System.Drawing.Point(521, 93);
-            this.textBoxX6.MaxLength = 20;
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.PreventEnterBeep = true;
-            this.textBoxX6.Size = new System.Drawing.Size(76, 22);
-            this.textBoxX6.TabIndex = 81;
-            // 
-            // labelX8
-            // 
-            this.labelX8.AutoSize = true;
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.ForeColor = System.Drawing.Color.Black;
-            this.labelX8.Location = new System.Drawing.Point(476, 95);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(43, 17);
-            this.labelX8.TabIndex = 80;
-            this.labelX8.Text = "Moneda";
-            // 
             // labelX6
             // 
             this.labelX6.AutoSize = true;
@@ -1220,358 +1013,12 @@
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(6, 94);
+            this.labelX6.Location = new System.Drawing.Point(486, 56);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(81, 17);
-            this.labelX6.TabIndex = 79;
+            this.labelX6.Size = new System.Drawing.Size(104, 22);
+            this.labelX6.TabIndex = 164;
             this.labelX6.Text = "Tipo de Compra";
-            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // cb_tip_cmp
-            // 
-            this.cb_tip_cmp.DisplayMember = "Text";
-            this.cb_tip_cmp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_tip_cmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tip_cmp.ForeColor = System.Drawing.Color.Black;
-            this.cb_tip_cmp.FormattingEnabled = true;
-            this.cb_tip_cmp.ItemHeight = 16;
-            this.cb_tip_cmp.Items.AddRange(new object[] {
-            this.IVA,
-            this.EXENTO,
-            this.RetencionesBienes,
-            this.RetencionesServicios,
-            this.IVAporRecuperar});
-            this.cb_tip_cmp.Location = new System.Drawing.Point(92, 91);
-            this.cb_tip_cmp.Name = "cb_tip_cmp";
-            this.cb_tip_cmp.Size = new System.Drawing.Size(90, 22);
-            this.cb_tip_cmp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_cmp.TabIndex = 78;
-            // 
-            // IVA
-            // 
-            this.IVA.Text = "IVA";
-            this.IVA.Value = "1";
-            // 
-            // EXENTO
-            // 
-            this.EXENTO.Text = "Nombre";
-            // 
-            // tb_fec_cha
-            // 
-            this.tb_fec_cha.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_fec_cha.Border.Class = "TextBoxBorder";
-            this.tb_fec_cha.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_fec_cha.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_fec_cha.ForeColor = System.Drawing.Color.Black;
-            this.tb_fec_cha.Location = new System.Drawing.Point(610, 55);
-            this.tb_fec_cha.MaxLength = 20;
-            this.tb_fec_cha.Name = "tb_fec_cha";
-            this.tb_fec_cha.PreventEnterBeep = true;
-            this.tb_fec_cha.Size = new System.Drawing.Size(76, 22);
-            this.tb_fec_cha.TabIndex = 77;
-            // 
-            // labelX5
-            // 
-            this.labelX5.AutoSize = true;
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(571, 58);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(31, 17);
-            this.labelX5.TabIndex = 76;
-            this.labelX5.Text = "Fecha";
-            // 
-            // textBoxX3
-            // 
-            this.textBoxX3.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX3.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX3.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX3.Location = new System.Drawing.Point(265, 18);
-            this.textBoxX3.MaxLength = 20;
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(79, 22);
-            this.textBoxX3.TabIndex = 75;
-            // 
-            // labelX4
-            // 
-            this.labelX4.AutoSize = true;
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(238, 21);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(23, 17);
-            this.labelX4.TabIndex = 74;
-            this.labelX4.Text = "Nro.";
-            // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(465, 21);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(24, 17);
-            this.labelX3.TabIndex = 72;
-            this.labelX3.Text = "Alm.";
-            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cod_alm
-            // 
-            this.tb_cod_alm.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_alm.Border.Class = "TextBoxBorder";
-            this.tb_cod_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_alm.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_alm.ButtonCustom.Symbol = "";
-            this.tb_cod_alm.ButtonCustom.Visible = true;
-            this.tb_cod_alm.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_alm.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_alm.Location = new System.Drawing.Point(495, 21);
-            this.tb_cod_alm.MaxLength = 12;
-            this.tb_cod_alm.Name = "tb_cod_alm";
-            this.tb_cod_alm.PreventEnterBeep = true;
-            this.tb_cod_alm.Size = new System.Drawing.Size(74, 22);
-            this.tb_cod_alm.TabIndex = 73;
-            // 
-            // tb_nom_per
-            // 
-            this.tb_nom_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nom_per.Border.Class = "TextBoxBorder";
-            this.tb_nom_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nom_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nom_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_nom_per.Location = new System.Drawing.Point(119, 55);
-            this.tb_nom_per.MaxLength = 40;
-            this.tb_nom_per.Name = "tb_nom_per";
-            this.tb_nom_per.PreventEnterBeep = true;
-            this.tb_nom_per.ReadOnly = true;
-            this.tb_nom_per.Size = new System.Drawing.Size(160, 22);
-            this.tb_nom_per.TabIndex = 71;
-            // 
-            // labelX12
-            // 
-            this.labelX12.AutoSize = true;
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.ForeColor = System.Drawing.Color.Black;
-            this.labelX12.Location = new System.Drawing.Point(7, 56);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(27, 17);
-            this.labelX12.TabIndex = 69;
-            this.labelX12.Text = "Prov.";
-            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // tb_cod_per
-            // 
-            this.tb_cod_per.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_cod_per.Border.Class = "TextBoxBorder";
-            this.tb_cod_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_cod_per.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_cod_per.ButtonCustom.Symbol = "";
-            this.tb_cod_per.ButtonCustom.Visible = true;
-            this.tb_cod_per.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
-            this.tb_cod_per.Location = new System.Drawing.Point(40, 55);
-            this.tb_cod_per.MaxLength = 12;
-            this.tb_cod_per.Name = "tb_cod_per";
-            this.tb_cod_per.PreventEnterBeep = true;
-            this.tb_cod_per.Size = new System.Drawing.Size(74, 22);
-            this.tb_cod_per.TabIndex = 70;
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(155, 18);
-            this.textBoxX1.MaxLength = 20;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(76, 22);
-            this.textBoxX1.TabIndex = 66;
-            // 
-            // labelX2
-            // 
-            this.labelX2.AutoSize = true;
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(129, 21);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(19, 17);
-            this.labelX2.TabIndex = 65;
-            this.labelX2.Text = "Tal.";
-            // 
-            // tb_nro_cta
-            // 
-            this.tb_nro_cta.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_nro_cta.Border.Class = "TextBoxBorder";
-            this.tb_nro_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_nro_cta.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_nro_cta.ForeColor = System.Drawing.Color.Black;
-            this.tb_nro_cta.Location = new System.Drawing.Point(38, 18);
-            this.tb_nro_cta.MaxLength = 20;
-            this.tb_nro_cta.Name = "tb_nro_cta";
-            this.tb_nro_cta.PreventEnterBeep = true;
-            this.tb_nro_cta.Size = new System.Drawing.Size(76, 22);
-            this.tb_nro_cta.TabIndex = 64;
-            // 
-            // LabelX1
-            // 
-            this.LabelX1.AutoSize = true;
-            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX1.ForeColor = System.Drawing.Color.Black;
-            this.LabelX1.Location = new System.Drawing.Point(10, 21);
-            this.LabelX1.Name = "LabelX1";
-            this.LabelX1.Size = new System.Drawing.Size(24, 17);
-            this.LabelX1.TabIndex = 1;
-            this.LabelX1.Text = "Doc.";
-            // 
-            // m_atr_ass
-            // 
-            this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
-            this.m_atr_ass.Text = "&Atras";
-            // 
-            // m_tes001_05
-            // 
-            this.m_tes001_05.Name = "m_tes001_05";
-            this.m_tes001_05.Size = new System.Drawing.Size(66, 20);
-            this.m_tes001_05.Text = "&Consulta";
-            // 
-            // m_tes001_06
-            // 
-            this.m_tes001_06.Name = "m_tes001_06";
-            this.m_tes001_06.Size = new System.Drawing.Size(178, 22);
-            this.m_tes001_06.Text = "&Elimina";
-            // 
-            // m_tes001_04
-            // 
-            this.m_tes001_04.Name = "m_tes001_04";
-            this.m_tes001_04.Size = new System.Drawing.Size(178, 22);
-            this.m_tes001_04.Text = "&Habilita/Deshabiltia";
-            // 
-            // m_tes001_03
-            // 
-            this.m_tes001_03.Name = "m_tes001_03";
-            this.m_tes001_03.Size = new System.Drawing.Size(178, 22);
-            this.m_tes001_03.Text = "&Actualiza";
-            // 
-            // mr_mod_ifi
-            // 
-            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_tes001_03,
-            this.m_tes001_04,
-            this.m_tes001_06});
-            this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
-            this.mr_mod_ifi.Text = "&Modifica";
-            // 
-            // m_tes001_02
-            // 
-            this.m_tes001_02.Name = "m_tes001_02";
-            this.m_tes001_02.Size = new System.Drawing.Size(54, 20);
-            this.m_tes001_02.Text = "&Nuevo";
-            // 
-            // mn_pri_nci
-            // 
-            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
-            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
-            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
-            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_tes001_02,
-            this.mr_mod_ifi,
-            this.m_tes001_05,
-            this.m_tes001_p00,
-            this.m_atr_ass});
-            this.mn_pri_nci.Location = new System.Drawing.Point(73, 102);
-            this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
-            this.mn_pri_nci.TabIndex = 85;
-            this.mn_pri_nci.Text = "MenuStrip1";
-            this.mn_pri_nci.Visible = false;
-            // 
-            // m_tes001_p00
-            // 
-            this.m_tes001_p00.Name = "m_tes001_p00";
-            this.m_tes001_p00.Size = new System.Drawing.Size(61, 20);
-            this.m_tes001_p00.Text = "&Informe";
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
-            this.GroupBox2.Controls.Add(this.mn_pri_nci);
-            this.GroupBox2.Controls.Add(this.dg_res_ult);
-            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.GroupBox2.Location = new System.Drawing.Point(2, 234);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(693, 241);
-            this.GroupBox2.TabIndex = 78;
-            this.GroupBox2.TabStop = false;
-            // 
-            // RetencionesBienes
-            // 
-            this.RetencionesBienes.Text = "Retenciones Bienes";
-            // 
-            // RetencionesServicios
-            // 
-            this.RetencionesServicios.Text = "Retenciones Servicios";
-            // 
-            // IVAporRecuperar
-            // 
-            this.IVAporRecuperar.Text = "IVA por Recuperar";
             // 
             // comboBoxEx1
             // 
@@ -1580,16 +1027,16 @@
             this.comboBoxEx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 16;
+            this.comboBoxEx1.ItemHeight = 21;
             this.comboBoxEx1.Items.AddRange(new object[] {
             this.comboItem1,
             this.comboItem2,
             this.comboItem3,
             this.comboItem4,
             this.comboItem5});
-            this.comboBoxEx1.Location = new System.Drawing.Point(402, 207);
+            this.comboBoxEx1.Location = new System.Drawing.Point(486, 206);
             this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(90, 22);
+            this.comboBoxEx1.Size = new System.Drawing.Size(90, 27);
             this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx1.TabIndex = 163;
             // 
@@ -1614,12 +1061,566 @@
             // 
             this.comboItem5.Text = "IVA por Recuperar";
             // 
+            // labelX14
+            // 
+            this.labelX14.AutoSize = true;
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.ForeColor = System.Drawing.Color.Black;
+            this.labelX14.Location = new System.Drawing.Point(97, 211);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(70, 22);
+            this.labelX14.TabIndex = 96;
+            this.labelX14.Text = "Precio Uni.";
+            // 
+            // textBoxX12
+            // 
+            this.textBoxX12.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX12.Border.Class = "TextBoxBorder";
+            this.textBoxX12.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX12.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX12.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX12.Location = new System.Drawing.Point(40, 208);
+            this.textBoxX12.MaxLength = 20;
+            this.textBoxX12.Name = "textBoxX12";
+            this.textBoxX12.PreventEnterBeep = true;
+            this.textBoxX12.Size = new System.Drawing.Size(48, 27);
+            this.textBoxX12.TabIndex = 95;
+            // 
+            // labelX11
+            // 
+            this.labelX11.AutoSize = true;
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.ForeColor = System.Drawing.Color.Black;
+            this.labelX11.Location = new System.Drawing.Point(12, 211);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(35, 22);
+            this.labelX11.TabIndex = 94;
+            this.labelX11.Text = "Cant.";
+            // 
+            // textBoxX7
+            // 
+            this.textBoxX7.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX7.Border.Class = "TextBoxBorder";
+            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX7.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX7.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX7.Location = new System.Drawing.Point(344, 128);
+            this.textBoxX7.MaxLength = 40;
+            this.textBoxX7.Name = "textBoxX7";
+            this.textBoxX7.PreventEnterBeep = true;
+            this.textBoxX7.ReadOnly = true;
+            this.textBoxX7.Size = new System.Drawing.Size(111, 27);
+            this.textBoxX7.TabIndex = 89;
+            // 
+            // textBoxX8
+            // 
+            this.textBoxX8.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX8.Border.Class = "TextBoxBorder";
+            this.textBoxX8.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX8.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.textBoxX8.ButtonCustom.Symbol = "";
+            this.textBoxX8.ButtonCustom.Visible = true;
+            this.textBoxX8.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX8.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX8.Location = new System.Drawing.Point(264, 128);
+            this.textBoxX8.MaxLength = 12;
+            this.textBoxX8.Name = "textBoxX8";
+            this.textBoxX8.PreventEnterBeep = true;
+            this.textBoxX8.Size = new System.Drawing.Size(74, 27);
+            this.textBoxX8.TabIndex = 88;
+            // 
+            // labelX10
+            // 
+            this.labelX10.AutoSize = true;
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.ForeColor = System.Drawing.Color.Black;
+            this.labelX10.Location = new System.Drawing.Point(205, 130);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(65, 22);
+            this.labelX10.TabIndex = 87;
+            this.labelX10.Text = "Plan Pago";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX9
+            // 
+            this.labelX9.AutoSize = true;
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.ForeColor = System.Drawing.Color.Black;
+            this.labelX9.Location = new System.Drawing.Point(7, 130);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(79, 22);
+            this.labelX9.TabIndex = 85;
+            this.labelX9.Text = "Forma pago";
+            this.labelX9.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // comboBoxEx2
+            // 
+            this.comboBoxEx2.DisplayMember = "Text";
+            this.comboBoxEx2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEx2.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEx2.FormattingEnabled = true;
+            this.comboBoxEx2.ItemHeight = 21;
+            this.comboBoxEx2.Items.AddRange(new object[] {
+            this.comboItem6,
+            this.comboItem7});
+            this.comboBoxEx2.Location = new System.Drawing.Point(73, 128);
+            this.comboBoxEx2.Name = "comboBoxEx2";
+            this.comboBoxEx2.Size = new System.Drawing.Size(90, 27);
+            this.comboBoxEx2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx2.TabIndex = 84;
+            // 
+            // comboItem6
+            // 
+            this.comboItem6.Text = "Código";
+            this.comboItem6.Value = "1";
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "Nombre";
+            // 
+            // textBoxX5
+            // 
+            this.textBoxX5.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX5.Border.Class = "TextBoxBorder";
+            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX5.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX5.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX5.Location = new System.Drawing.Point(567, 128);
+            this.textBoxX5.MaxLength = 20;
+            this.textBoxX5.Name = "textBoxX5";
+            this.textBoxX5.PreventEnterBeep = true;
+            this.textBoxX5.Size = new System.Drawing.Size(48, 27);
+            this.textBoxX5.TabIndex = 83;
+            // 
+            // labelX7
+            // 
+            this.labelX7.AutoSize = true;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.ForeColor = System.Drawing.Color.Black;
+            this.labelX7.Location = new System.Drawing.Point(486, 130);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(103, 22);
+            this.labelX7.TabIndex = 82;
+            this.labelX7.Text = "Tipo de Cambio";
+            // 
+            // textBoxX6
+            // 
+            this.textBoxX6.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX6.Border.Class = "TextBoxBorder";
+            this.textBoxX6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX6.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX6.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX6.Location = new System.Drawing.Point(567, 90);
+            this.textBoxX6.MaxLength = 20;
+            this.textBoxX6.Name = "textBoxX6";
+            this.textBoxX6.PreventEnterBeep = true;
+            this.textBoxX6.Size = new System.Drawing.Size(76, 27);
+            this.textBoxX6.TabIndex = 81;
+            // 
+            // labelX8
+            // 
+            this.labelX8.AutoSize = true;
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.ForeColor = System.Drawing.Color.Black;
+            this.labelX8.Location = new System.Drawing.Point(486, 89);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(55, 22);
+            this.labelX8.TabIndex = 80;
+            this.labelX8.Text = "Moneda";
+            // 
+            // cb_tip_cmp
+            // 
+            this.cb_tip_cmp.DisplayMember = "Text";
+            this.cb_tip_cmp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_tip_cmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_cmp.ForeColor = System.Drawing.Color.Black;
+            this.cb_tip_cmp.FormattingEnabled = true;
+            this.cb_tip_cmp.ItemHeight = 21;
+            this.cb_tip_cmp.Items.AddRange(new object[] {
+            this.IVA,
+            this.EXENTO,
+            this.RetencionesBienes,
+            this.RetencionesServicios,
+            this.IVAporRecuperar});
+            this.cb_tip_cmp.Location = new System.Drawing.Point(567, 51);
+            this.cb_tip_cmp.Name = "cb_tip_cmp";
+            this.cb_tip_cmp.Size = new System.Drawing.Size(90, 27);
+            this.cb_tip_cmp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_tip_cmp.TabIndex = 78;
+            this.cb_tip_cmp.SelectedIndexChanged += new System.EventHandler(this.cb_tip_cmp_SelectedIndexChanged);
+            // 
+            // IVA
+            // 
+            this.IVA.Text = "IVA";
+            this.IVA.Value = "1";
+            // 
+            // EXENTO
+            // 
+            this.EXENTO.Text = "Nombre";
+            // 
+            // RetencionesBienes
+            // 
+            this.RetencionesBienes.Text = "Retenciones Bienes";
+            // 
+            // RetencionesServicios
+            // 
+            this.RetencionesServicios.Text = "Retenciones Servicios";
+            // 
+            // IVAporRecuperar
+            // 
+            this.IVAporRecuperar.Text = "IVA por Recuperar";
+            // 
+            // tb_fec_cha
+            // 
+            this.tb_fec_cha.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_fec_cha.Border.Class = "TextBoxBorder";
+            this.tb_fec_cha.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_fec_cha.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_fec_cha.ForeColor = System.Drawing.Color.Black;
+            this.tb_fec_cha.Location = new System.Drawing.Point(567, 18);
+            this.tb_fec_cha.MaxLength = 20;
+            this.tb_fec_cha.Name = "tb_fec_cha";
+            this.tb_fec_cha.PreventEnterBeep = true;
+            this.tb_fec_cha.Size = new System.Drawing.Size(76, 27);
+            this.tb_fec_cha.TabIndex = 77;
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(486, 18);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(39, 22);
+            this.labelX5.TabIndex = 76;
+            this.labelX5.Text = "Fecha";
+            // 
+            // textBoxX3
+            // 
+            this.textBoxX3.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX3.Border.Class = "TextBoxBorder";
+            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX3.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX3.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX3.Location = new System.Drawing.Point(265, 18);
+            this.textBoxX3.MaxLength = 20;
+            this.textBoxX3.Name = "textBoxX3";
+            this.textBoxX3.PreventEnterBeep = true;
+            this.textBoxX3.Size = new System.Drawing.Size(79, 27);
+            this.textBoxX3.TabIndex = 75;
+            // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(238, 21);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(30, 22);
+            this.labelX4.TabIndex = 74;
+            this.labelX4.Text = "Nro.";
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(9, 90);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(31, 22);
+            this.labelX3.TabIndex = 72;
+            this.labelX3.Text = "Alm.";
+            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_cod_alm
+            // 
+            this.tb_cod_alm.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_alm.Border.Class = "TextBoxBorder";
+            this.tb_cod_alm.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_alm.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_alm.ButtonCustom.Symbol = "";
+            this.tb_cod_alm.ButtonCustom.Visible = true;
+            this.tb_cod_alm.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_alm.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_alm.Location = new System.Drawing.Point(39, 90);
+            this.tb_cod_alm.MaxLength = 12;
+            this.tb_cod_alm.Name = "tb_cod_alm";
+            this.tb_cod_alm.PreventEnterBeep = true;
+            this.tb_cod_alm.Size = new System.Drawing.Size(74, 27);
+            this.tb_cod_alm.TabIndex = 73;
+            // 
+            // tb_nom_per
+            // 
+            this.tb_nom_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_per.Border.Class = "TextBoxBorder";
+            this.tb_nom_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_per.Location = new System.Drawing.Point(119, 55);
+            this.tb_nom_per.MaxLength = 40;
+            this.tb_nom_per.Name = "tb_nom_per";
+            this.tb_nom_per.PreventEnterBeep = true;
+            this.tb_nom_per.ReadOnly = true;
+            this.tb_nom_per.Size = new System.Drawing.Size(225, 27);
+            this.tb_nom_per.TabIndex = 71;
+            // 
+            // labelX12
+            // 
+            this.labelX12.AutoSize = true;
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.ForeColor = System.Drawing.Color.Black;
+            this.labelX12.Location = new System.Drawing.Point(7, 56);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(34, 22);
+            this.labelX12.TabIndex = 69;
+            this.labelX12.Text = "Prov.";
+            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // tb_cod_per
+            // 
+            this.tb_cod_per.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_per.Border.Class = "TextBoxBorder";
+            this.tb_cod_per.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_per.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_cod_per.ButtonCustom.Symbol = "";
+            this.tb_cod_per.ButtonCustom.Visible = true;
+            this.tb_cod_per.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_per.Location = new System.Drawing.Point(40, 55);
+            this.tb_cod_per.MaxLength = 12;
+            this.tb_cod_per.Name = "tb_cod_per";
+            this.tb_cod_per.PreventEnterBeep = true;
+            this.tb_cod_per.Size = new System.Drawing.Size(74, 27);
+            this.tb_cod_per.TabIndex = 70;
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX1.Location = new System.Drawing.Point(155, 18);
+            this.textBoxX1.MaxLength = 20;
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(76, 27);
+            this.textBoxX1.TabIndex = 66;
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(129, 21);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(24, 22);
+            this.labelX2.TabIndex = 65;
+            this.labelX2.Text = "Tal.";
+            // 
+            // tb_nro_cta
+            // 
+            this.tb_nro_cta.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nro_cta.Border.Class = "TextBoxBorder";
+            this.tb_nro_cta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nro_cta.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nro_cta.ForeColor = System.Drawing.Color.Black;
+            this.tb_nro_cta.Location = new System.Drawing.Point(38, 18);
+            this.tb_nro_cta.MaxLength = 20;
+            this.tb_nro_cta.Name = "tb_nro_cta";
+            this.tb_nro_cta.PreventEnterBeep = true;
+            this.tb_nro_cta.Size = new System.Drawing.Size(76, 27);
+            this.tb_nro_cta.TabIndex = 64;
+            // 
+            // LabelX1
+            // 
+            this.LabelX1.AutoSize = true;
+            this.LabelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LabelX1.ForeColor = System.Drawing.Color.Black;
+            this.LabelX1.Location = new System.Drawing.Point(10, 21);
+            this.LabelX1.Name = "LabelX1";
+            this.LabelX1.Size = new System.Drawing.Size(31, 22);
+            this.LabelX1.TabIndex = 1;
+            this.LabelX1.Text = "Doc.";
+            // 
+            // m_atr_ass
+            // 
+            this.m_atr_ass.Name = "m_atr_ass";
+            this.m_atr_ass.Size = new System.Drawing.Size(58, 25);
+            this.m_atr_ass.Text = "&Atras";
+            // 
+            // m_tes001_05
+            // 
+            this.m_tes001_05.Name = "m_tes001_05";
+            this.m_tes001_05.Size = new System.Drawing.Size(83, 25);
+            this.m_tes001_05.Text = "&Consulta";
+            // 
+            // m_tes001_06
+            // 
+            this.m_tes001_06.Name = "m_tes001_06";
+            this.m_tes001_06.Size = new System.Drawing.Size(223, 28);
+            this.m_tes001_06.Text = "&Elimina";
+            // 
+            // m_tes001_04
+            // 
+            this.m_tes001_04.Name = "m_tes001_04";
+            this.m_tes001_04.Size = new System.Drawing.Size(223, 28);
+            this.m_tes001_04.Text = "&Habilita/Deshabiltia";
+            // 
+            // m_tes001_03
+            // 
+            this.m_tes001_03.Name = "m_tes001_03";
+            this.m_tes001_03.Size = new System.Drawing.Size(223, 28);
+            this.m_tes001_03.Text = "&Actualiza";
+            // 
+            // mr_mod_ifi
+            // 
+            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_tes001_03,
+            this.m_tes001_04,
+            this.m_tes001_06});
+            this.mr_mod_ifi.Name = "mr_mod_ifi";
+            this.mr_mod_ifi.Size = new System.Drawing.Size(82, 25);
+            this.mr_mod_ifi.Text = "&Modifica";
+            // 
+            // m_tes001_02
+            // 
+            this.m_tes001_02.Name = "m_tes001_02";
+            this.m_tes001_02.Size = new System.Drawing.Size(68, 25);
+            this.m_tes001_02.Text = "&Nuevo";
+            // 
+            // mn_pri_nci
+            // 
+            this.mn_pri_nci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
+            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
+            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_tes001_02,
+            this.mr_mod_ifi,
+            this.m_tes001_05,
+            this.m_tes001_p00,
+            this.m_atr_ass});
+            this.mn_pri_nci.Location = new System.Drawing.Point(73, 102);
+            this.mn_pri_nci.Name = "mn_pri_nci";
+            this.mn_pri_nci.Size = new System.Drawing.Size(376, 29);
+            this.mn_pri_nci.TabIndex = 85;
+            this.mn_pri_nci.Text = "MenuStrip1";
+            this.mn_pri_nci.Visible = false;
+            // 
+            // m_tes001_p00
+            // 
+            this.m_tes001_p00.Name = "m_tes001_p00";
+            this.m_tes001_p00.Size = new System.Drawing.Size(77, 25);
+            this.m_tes001_p00.Text = "&Informe";
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.GroupBox2.Controls.Add(this.mn_pri_nci);
+            this.GroupBox2.Controls.Add(this.dg_res_ult);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(2, 234);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(693, 241);
+            this.GroupBox2.TabIndex = 78;
+            this.GroupBox2.TabStop = false;
+            // 
             // inv016_02
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(982, 521);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(988, 521);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.gb_ctr_frm);
@@ -1627,10 +1628,12 @@
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "inv016_02";
             this.Text = "Nueva Compra";
             this.TitleText = "Nueva Compra";
+            this.Load += new System.EventHandler(this.inv016_02_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1720,7 +1723,6 @@
         internal DevComponents.DotNetBar.LabelX labelX7;
         internal DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
         internal DevComponents.DotNetBar.LabelX labelX8;
-        internal DevComponents.DotNetBar.LabelX labelX6;
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_cmp;
         internal DevComponents.Editors.ComboItem IVA;
         private DevComponents.Editors.ComboItem EXENTO;
@@ -1756,5 +1758,6 @@
         private DevComponents.Editors.ComboItem RetencionesBienes;
         private DevComponents.Editors.ComboItem RetencionesServicios;
         private DevComponents.Editors.ComboItem IVAporRecuperar;
+        internal DevComponents.DotNetBar.LabelX labelX6;
     }
 }

@@ -67,21 +67,14 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             if (tb_sel_ecc.Text.Trim() == "")
             {
                 lb_sel_ecc.Text = "** NO existe";
-                tb_sel_ecc.Text = "";
+                tb_sel_ecc.Text = "00000000";
                 return;
             }
-            if (o_mg_glo_bal.fg_val_num(tb_sel_ecc.Text) == false)
-            {
-                lb_sel_ecc.Text = "** NO existe";
-                tb_sel_ecc.Text = "";
-                return;
-            }
-
             tabla = o_ctb004._05(tb_sel_ecc.Text);
             if (tabla.Rows.Count == 0)
             {
                 lb_sel_ecc.Text = "** NO existe";
-                tb_sel_ecc.Text = "";
+                tb_sel_ecc.Text = "00000000";
                 return;
             }
 
@@ -180,6 +173,11 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         {
             int va_ind_ice = 0;
             string va_est_ado = "";
+            string va_nom_cta = "";
+            string va_aux_cod = "";
+            string va_aux_nom = "";
+            string[] va_mat_cod;
+            int va_niv_lin = 0;
             string va_tip_cta = "";
             string va_uso_cta = "";
             string va_mon_cta = "";
@@ -193,6 +191,50 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
                 foreach (DataRow row in tab_ctb004.Rows)
                 {
+                    va_mat_cod = new string[5];
+                    va_niv_lin = 0;
+
+                    va_aux_cod = row["va_cod_cta"].ToString();
+                    va_aux_nom = row["va_nom_cta"].ToString();
+
+                    //Nombre
+                    va_mat_cod[0] = va_aux_cod.Substring(0, 1);    //1er Nivel
+                    va_mat_cod[1] = va_aux_cod.Substring(2, 1);    //2do Nivel
+                    va_mat_cod[2] = va_aux_cod.Substring(4, 1);    //3er Nivel
+                    va_mat_cod[3] = va_aux_cod.Substring(6, 2);    //4to Nivel
+                    va_mat_cod[4] = va_aux_cod.Substring(9, 3);    //5to Nivel
+
+                    for (int i = 0; i < va_mat_cod.Length; i++)
+                    {
+                        if (int.Parse(va_mat_cod[i]) > 0)
+                        {
+                            va_niv_lin++;
+                        }
+                    }
+
+                    switch (va_niv_lin)
+                    {
+                        case 1:
+                            va_nom_cta = va_aux_nom;
+                            break;
+                        case 2:
+                            va_nom_cta = "--." + va_aux_nom;
+                            break;
+                        case 3:
+                            va_nom_cta = "--.--." + va_aux_nom;
+                            break;
+                        case 4:
+                            va_nom_cta = "--.--.--." + va_aux_nom;
+                            break;
+                        case 5:
+                            va_nom_cta = "--.--.--.--." + va_aux_nom;
+                            break;
+                    }
+
+
+
+
+
                     //Tipo
                     switch (row["va_tip_cta"].ToString())
                     {
@@ -234,7 +276,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                             break;
                     }
                     
-                    dg_res_ult.Rows.Add(row["va_cod_cta"], row["va_nom_cta"], va_tip_cta,va_uso_cta,va_mon_cta, va_est_ado);
+                    dg_res_ult.Rows.Add(va_aux_cod, va_nom_cta, va_tip_cta,va_uso_cta,va_mon_cta, va_est_ado);
 
                     //Cambia color de letra de fila si es de Uso Modular
                     if (va_uso_cta=="Modular" && va_tip_cta== "Analitica")
@@ -251,7 +293,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
             if (va_ind_ice == 0)
             {
-                tb_sel_ecc.Text = "";
+                tb_sel_ecc.Text = "00000000";
                 lb_sel_ecc.Text = "** NO existe";
             }
 
@@ -268,12 +310,11 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
-        public void fu_sel_fila(string cod_doc, string nom_doc)
+        public void fu_sel_fila(string cod_doc)
         {
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex,cb_tip_pla.SelectedIndex, cb_est_bus.SelectedIndex);
 
             tb_sel_ecc.Text = cod_doc;
-            lb_sel_ecc.Text = nom_doc;
 
             if (cod_doc != null)
             {
@@ -281,7 +322,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_doc.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == nom_doc.ToUpper())
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_doc.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -335,7 +376,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
-                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+                fu_sel_fila(tb_sel_ecc.Text);
             }
         }
 

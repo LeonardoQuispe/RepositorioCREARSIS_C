@@ -74,7 +74,6 @@
             this.tb_cod_fap.PromptChar = ' ';
             this.tb_cod_fap.Size = new System.Drawing.Size(62, 22);
             this.tb_cod_fap.TabIndex = 1;
-            this.tb_cod_fap.TabStop = false;
             this.tb_cod_fap.Text = "000000";
             this.tb_cod_fap.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
@@ -89,7 +88,7 @@
             this.labelX3.Location = new System.Drawing.Point(214, 21);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(30, 23);
-            this.labelX3.TabIndex = 4;
+            this.labelX3.TabIndex = 2;
             this.labelX3.Text = "Tipo";
             // 
             // cb_tip_fap
@@ -111,7 +110,7 @@
             this.cb_tip_fap.Name = "cb_tip_fap";
             this.cb_tip_fap.Size = new System.Drawing.Size(93, 22);
             this.cb_tip_fap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_fap.TabIndex = 5;
+            this.cb_tip_fap.TabIndex = 3;
             // 
             // matriz
             // 
@@ -148,7 +147,7 @@
             this.tb_nom_fap.Name = "tb_nom_fap";
             this.tb_nom_fap.PreventEnterBeep = true;
             this.tb_nom_fap.Size = new System.Drawing.Size(275, 22);
-            this.tb_nom_fap.TabIndex = 3;
+            this.tb_nom_fap.TabIndex = 5;
             // 
             // labelX2
             // 
@@ -163,7 +162,7 @@
             this.labelX2.Location = new System.Drawing.Point(23, 52);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(43, 17);
-            this.labelX2.TabIndex = 2;
+            this.labelX2.TabIndex = 4;
             this.labelX2.Text = "Nombre";
             // 
             // LabelX1
