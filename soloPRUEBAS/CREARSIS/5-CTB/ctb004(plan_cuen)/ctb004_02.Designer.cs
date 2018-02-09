@@ -130,6 +130,7 @@
             this.tb_cod_cta.Size = new System.Drawing.Size(85, 22);
             this.tb_cod_cta.TabIndex = 1;
             this.tb_cod_cta.Text = "00000000";
+            this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
             // 
             // labelX2
             // 
@@ -235,6 +236,7 @@
             this.cb_tip_cta.DisplayMember = "Text";
             this.cb_tip_cta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_tip_cta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tip_cta.Enabled = false;
             this.cb_tip_cta.ForeColor = System.Drawing.Color.Black;
             this.cb_tip_cta.FormattingEnabled = true;
             this.cb_tip_cta.ItemHeight = 16;

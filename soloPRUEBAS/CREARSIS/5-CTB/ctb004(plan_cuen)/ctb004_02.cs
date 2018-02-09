@@ -41,8 +41,8 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             cb_uso_cta.SelectedIndex = 0;
             cb_mon_cta.SelectedIndex = 0;
             tb_cod_cta.SelectionStart = 0;
+
             tb_cod_cta.Focus();
-            //tb_cod_cta.Focus();
         }
 
         /// <summary>
@@ -152,5 +152,32 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
             Close();
         }
         #endregion
+
+
+
+        private void tb_cod_cta_Validated(object sender, EventArgs e)
+        {
+            fu_val_cod();
+        }
+
+        void fu_val_cod()
+        {
+            if (tb_cod_cta.Text.Trim()!="")
+            {
+                if (tb_cod_cta.Text.Length!=12)
+                {
+                    if (int.Parse(tb_cod_cta.Text.Substring(9,3))>0)
+                    {
+                        cb_tip_cta.SelectedIndex = 1;
+                    }
+                    else
+                    {
+                        cb_tip_cta.SelectedIndex = 0;
+                    }
+                }
+            }
+
+            cb_tip_cta.SelectedItem = null;
+        }
     }
 }
