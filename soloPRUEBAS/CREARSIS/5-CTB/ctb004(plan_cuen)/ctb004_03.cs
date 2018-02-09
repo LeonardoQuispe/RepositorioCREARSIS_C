@@ -134,7 +134,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_cta.Text, tb_nom_cta.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_cta.Text);
 
                 Close();
             }

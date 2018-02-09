@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxX25 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX26 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX20 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -89,6 +89,12 @@
             this.nombre = new DevComponents.Editors.ComboItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -107,6 +113,9 @@
             this.cb_tip_cmp = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.IVA = new DevComponents.Editors.ComboItem();
             this.EXENTO = new DevComponents.Editors.ComboItem();
+            this.RetencionesBienes = new DevComponents.Editors.ComboItem();
+            this.RetencionesServicios = new DevComponents.Editors.ComboItem();
+            this.IVAporRecuperar = new DevComponents.Editors.ComboItem();
             this.tb_fec_cha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -130,15 +139,6 @@
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.m_tes001_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.RetencionesBienes = new DevComponents.Editors.ComboItem();
-            this.RetencionesServicios = new DevComponents.Editors.ComboItem();
-            this.IVAporRecuperar = new DevComponents.Editors.ComboItem();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
-            this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
@@ -708,8 +708,8 @@
             // 
             // va_cod_lib
             // 
-            dataGridViewCellStyle1.NullValue = null;
-            this.va_cod_lib.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.NullValue = null;
+            this.va_cod_lib.DefaultCellStyle = dataGridViewCellStyle9;
             this.va_cod_lib.HeaderText = "Codigo";
             this.va_cod_lib.Name = "va_cod_lib";
             this.va_cod_lib.ReadOnly = true;
@@ -904,14 +904,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
@@ -924,28 +924,28 @@
             this.Lote,
             this.Serie,
             this.Almacen});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle11;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(6, 11);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(680, 221);
@@ -1002,6 +1002,47 @@
             this.GroupBox1.Size = new System.Drawing.Size(693, 237);
             this.GroupBox1.TabIndex = 77;
             this.GroupBox1.TabStop = false;
+            // 
+            // comboBoxEx1
+            // 
+            this.comboBoxEx1.DisplayMember = "Text";
+            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEx1.FormattingEnabled = true;
+            this.comboBoxEx1.ItemHeight = 16;
+            this.comboBoxEx1.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2,
+            this.comboItem3,
+            this.comboItem4,
+            this.comboItem5});
+            this.comboBoxEx1.Location = new System.Drawing.Point(402, 207);
+            this.comboBoxEx1.Name = "comboBoxEx1";
+            this.comboBoxEx1.Size = new System.Drawing.Size(90, 22);
+            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx1.TabIndex = 163;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "IVA";
+            this.comboItem1.Value = "1";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Nombre";
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "Retenciones Bienes";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "Retenciones Servicios";
+            // 
+            // comboItem5
+            // 
+            this.comboItem5.Text = "IVA por Recuperar";
             // 
             // labelX14
             // 
@@ -1248,6 +1289,7 @@
             this.cb_tip_cmp.Size = new System.Drawing.Size(90, 22);
             this.cb_tip_cmp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cb_tip_cmp.TabIndex = 78;
+            this.cb_tip_cmp.SelectedIndexChanged += new System.EventHandler(this.cb_tip_cmp_SelectedIndexChanged);
             // 
             // IVA
             // 
@@ -1257,6 +1299,18 @@
             // EXENTO
             // 
             this.EXENTO.Text = "Nombre";
+            // 
+            // RetencionesBienes
+            // 
+            this.RetencionesBienes.Text = "Retenciones Bienes";
+            // 
+            // RetencionesServicios
+            // 
+            this.RetencionesServicios.Text = "Retenciones Servicios";
+            // 
+            // IVAporRecuperar
+            // 
+            this.IVAporRecuperar.Text = "IVA por Recuperar";
             // 
             // tb_fec_cha
             // 
@@ -1561,65 +1615,12 @@
             this.GroupBox2.TabIndex = 78;
             this.GroupBox2.TabStop = false;
             // 
-            // RetencionesBienes
-            // 
-            this.RetencionesBienes.Text = "Retenciones Bienes";
-            // 
-            // RetencionesServicios
-            // 
-            this.RetencionesServicios.Text = "Retenciones Servicios";
-            // 
-            // IVAporRecuperar
-            // 
-            this.IVAporRecuperar.Text = "IVA por Recuperar";
-            // 
-            // comboBoxEx1
-            // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 16;
-            this.comboBoxEx1.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3,
-            this.comboItem4,
-            this.comboItem5});
-            this.comboBoxEx1.Location = new System.Drawing.Point(402, 207);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(90, 22);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 163;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "IVA";
-            this.comboItem1.Value = "1";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Nombre";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Retenciones Bienes";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "Retenciones Servicios";
-            // 
-            // comboItem5
-            // 
-            this.comboItem5.Text = "IVA por Recuperar";
-            // 
             // inv016_02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(982, 521);
+            this.ClientSize = new System.Drawing.Size(698, 521);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.gb_ctr_frm);

@@ -142,7 +142,7 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Plan de Cuentas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_cta.Text.Trim(), tb_nom_cta.Text.Trim());
+                vg_frm_pad.fu_sel_fila(tb_cod_cta.Text.Trim());
                 Close();
             }
             catch (Exception ex)

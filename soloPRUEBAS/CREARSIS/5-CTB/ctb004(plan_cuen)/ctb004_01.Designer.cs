@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_sel_ecc = new System.Windows.Forms.MaskedTextBox();
             this.cb_tip_pla = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.Todo = new DevComponents.Editors.ComboItem();
             this.Matriz = new DevComponents.Editors.ComboItem();
@@ -48,7 +49,6 @@
             this.deshabilitado = new DevComponents.Editors.ComboItem();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.va_cod_cta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@
             this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(496, 15);
+            this.bt_ace_pta.Location = new System.Drawing.Point(512, 15);
             this.bt_ace_pta.Name = "bt_ace_pta";
             this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
             this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -96,9 +96,9 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(4, 266);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(4, 352);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(712, 48);
+            this.gb_ctr_frm.Size = new System.Drawing.Size(743, 48);
             this.gb_ctr_frm.TabIndex = 67;
             this.gb_ctr_frm.TabStop = false;
             // 
@@ -108,7 +108,7 @@
             this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(608, 15);
+            this.bt_can_cel.Location = new System.Drawing.Point(624, 15);
             this.bt_can_cel.Name = "bt_can_cel";
             this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
             this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -122,19 +122,36 @@
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.cb_tip_pla);
             this.GroupBox1.Controls.Add(this.cb_prm_bus);
             this.GroupBox1.Controls.Add(this.cb_est_bus);
             this.GroupBox1.Controls.Add(this.lb_sel_ecc);
             this.GroupBox1.Controls.Add(this.tb_val_bus);
-            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(4, -2);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(712, 81);
+            this.GroupBox1.Size = new System.Drawing.Size(743, 81);
             this.GroupBox1.TabIndex = 65;
             this.GroupBox1.TabStop = false;
+            // 
+            // tb_sel_ecc
+            // 
+            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
+            this.tb_sel_ecc.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
+            this.tb_sel_ecc.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.tb_sel_ecc.Location = new System.Drawing.Point(101, 16);
+            this.tb_sel_ecc.Mask = "0.0.0.00.000";
+            this.tb_sel_ecc.Name = "tb_sel_ecc";
+            this.tb_sel_ecc.PromptChar = ' ';
+            this.tb_sel_ecc.Size = new System.Drawing.Size(86, 22);
+            this.tb_sel_ecc.TabIndex = 42;
+            this.tb_sel_ecc.Text = "00000000";
+            this.tb_sel_ecc.ValidatingType = typeof(int);
+            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
+            this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
             // cb_tip_pla
             // 
@@ -150,7 +167,7 @@
             this.Todo,
             this.Matriz,
             this.Analitica});
-            this.cb_tip_pla.Location = new System.Drawing.Point(509, 50);
+            this.cb_tip_pla.Location = new System.Drawing.Point(537, 50);
             this.cb_tip_pla.Name = "cb_tip_pla";
             this.cb_tip_pla.Size = new System.Drawing.Size(93, 22);
             this.cb_tip_pla.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -182,7 +199,7 @@
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo,
             this.nombre});
-            this.cb_prm_bus.Location = new System.Drawing.Point(415, 50);
+            this.cb_prm_bus.Location = new System.Drawing.Point(443, 50);
             this.cb_prm_bus.Name = "cb_prm_bus";
             this.cb_prm_bus.Size = new System.Drawing.Size(86, 22);
             this.cb_prm_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -212,7 +229,7 @@
             this.todos,
             this.habilitado,
             this.deshabilitado});
-            this.cb_est_bus.Location = new System.Drawing.Point(608, 50);
+            this.cb_est_bus.Location = new System.Drawing.Point(636, 50);
             this.cb_est_bus.Name = "cb_est_bus";
             this.cb_est_bus.Size = new System.Drawing.Size(93, 22);
             this.cb_est_bus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -241,9 +258,9 @@
             // 
             this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(247, 19);
+            this.lb_sel_ecc.Location = new System.Drawing.Point(193, 16);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
-            this.lb_sel_ecc.Size = new System.Drawing.Size(355, 23);
+            this.lb_sel_ecc.Size = new System.Drawing.Size(536, 23);
             this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lb_sel_ecc.TabIndex = 1;
             // 
@@ -265,31 +282,10 @@
             this.tb_val_bus.MaxLength = 50;
             this.tb_val_bus.Name = "tb_val_bus";
             this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(384, 22);
+            this.tb_val_bus.Size = new System.Drawing.Size(409, 22);
             this.tb_val_bus.TabIndex = 20;
             this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
             this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
-            // 
-            // tb_sel_ecc
-            // 
-            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Border.Class = "TextBoxBorder";
-            this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_sel_ecc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Location = new System.Drawing.Point(101, 19);
-            this.tb_sel_ecc.MaxLength = 3;
-            this.tb_sel_ecc.Name = "tb_sel_ecc";
-            this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(140, 22);
-            this.tb_sel_ecc.TabIndex = 10;
-            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sel_ecc_KeyDown);
-            this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
             // LabelX1
             // 
@@ -313,14 +309,14 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_cod_cta,
@@ -329,31 +325,31 @@
             this.va_uso_cta,
             this.va_mon_cta,
             this.va_est_ado});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
-            this.dg_res_ult.Location = new System.Drawing.Point(11, 14);
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.Location = new System.Drawing.Point(11, 16);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_res_ult.Size = new System.Drawing.Size(690, 170);
+            this.dg_res_ult.Size = new System.Drawing.Size(720, 245);
             this.dg_res_ult.TabIndex = 0;
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
@@ -365,14 +361,13 @@
             this.va_cod_cta.HeaderText = "Codigo";
             this.va_cod_cta.Name = "va_cod_cta";
             this.va_cod_cta.ReadOnly = true;
-            this.va_cod_cta.Width = 140;
             // 
             // va_nom_cta
             // 
             this.va_nom_cta.HeaderText = "Nombre";
             this.va_nom_cta.Name = "va_nom_cta";
             this.va_nom_cta.ReadOnly = true;
-            this.va_nom_cta.Width = 180;
+            this.va_nom_cta.Width = 240;
             // 
             // va_tip_cta
             // 
@@ -468,7 +463,7 @@
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.GroupBox2.Location = new System.Drawing.Point(4, 77);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(712, 190);
+            this.GroupBox2.Size = new System.Drawing.Size(743, 274);
             this.GroupBox2.TabIndex = 66;
             this.GroupBox2.TabStop = false;
             // 
@@ -498,13 +493,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(721, 316);
+            this.ClientSize = new System.Drawing.Size(753, 404);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ctb004_01";
@@ -538,7 +534,6 @@
         internal DevComponents.Editors.ComboItem deshabilitado;
         internal DevComponents.DotNetBar.LabelX lb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_bus;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
@@ -554,12 +549,13 @@
         internal DevComponents.Editors.ComboItem Todo;
         internal DevComponents.Editors.ComboItem Matriz;
         internal DevComponents.Editors.ComboItem Analitica;
+        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_pla;
+        internal System.Windows.Forms.MaskedTextBox tb_sel_ecc;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_cta;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_cta;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_tip_cta;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_uso_cta;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_mon_cta;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
-        internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_tip_pla;
     }
 }

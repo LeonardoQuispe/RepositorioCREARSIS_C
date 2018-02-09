@@ -129,6 +129,8 @@ namespace CREARSIS
                 tb_ema_suc.Clear();
                 tb_ciu_suc.Clear();
                 tb_ley_suc.Clear();
+
+                tb_cod_suc.Focus();
             }
             catch (Exception ex)
             {

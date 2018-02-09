@@ -40,5 +40,17 @@ namespace CREARSIS._4_INV.inv016_com_pra_
         {
             InitializeComponent();
         }
+
+        private void cb_tip_cmp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cb_tip_cmp.SelectedIndex==0)
+            {
+                this.Width = 998;
+            }
+            else
+            {
+                this.Width = 704;
+            }
+        }
     }
 }

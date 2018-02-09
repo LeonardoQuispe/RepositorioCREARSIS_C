@@ -171,7 +171,9 @@
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "cmp000";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cmp000";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cmp000_FormClosing);
             this.Load += new System.EventHandler(this.cmp000_Load);
             this.MdiChildActivate += new System.EventHandler(this.cmp000_MdiChildActivate);
