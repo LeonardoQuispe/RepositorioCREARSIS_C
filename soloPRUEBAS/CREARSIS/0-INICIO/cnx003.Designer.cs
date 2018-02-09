@@ -36,6 +36,7 @@
             this.lb_nom_usr = new DevComponents.DotNetBar.LabelX();
             this.mt_ads000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.ItemContainer1 = new DevComponents.DotNetBar.ItemContainer();
+            this.mt_cmp000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.mt_inv_pro = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.mt_ven_tas = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.mt_res_tau = new DevComponents.DotNetBar.Metro.MetroTileItem();
@@ -168,6 +169,7 @@
             this.ItemContainer1.Name = "ItemContainer1";
             this.ItemContainer1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mt_ads000,
+            this.mt_cmp000,
             this.mt_inv_pro,
             this.mt_ven_tas,
             this.mt_res_tau,
@@ -180,6 +182,24 @@
             this.ItemContainer1.TitleStyle.Class = "MetroTileGroupTitle";
             this.ItemContainer1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ItemContainer1.TitleText = "Menú Principal";
+            // 
+            // mt_cmp000
+            // 
+            this.mt_cmp000.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mt_cmp000.KeyTips = "I";
+            this.mt_cmp000.Name = "mt_cmp000";
+            this.mt_cmp000.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlI);
+            this.mt_cmp000.Symbol = "";
+            this.mt_cmp000.SymbolColor = System.Drawing.Color.Empty;
+            this.mt_cmp000.SymbolSize = 50F;
+            this.mt_cmp000.Text = "COMPRAS/\r\nADQUISICIONES";
+            this.mt_cmp000.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.RedViolet;
+            // 
+            // 
+            // 
+            this.mt_cmp000.TileStyle.BackColorGradientAngle = 115;
+            this.mt_cmp000.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.mt_cmp000.Click += new System.EventHandler(this.mt_cmp000_Click);
             // 
             // mt_inv_pro
             // 
@@ -375,6 +395,7 @@
             this.MetroTilePanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.MetroTilePanel1.ContainerControlProcessDialogKey = true;
             this.MetroTilePanel1.Controls.Add(this.bt_ref_mnu);
+            this.MetroTilePanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MetroTilePanel1.DragDropSupport = true;
             this.MetroTilePanel1.ForeColor = System.Drawing.Color.Black;
             this.MetroTilePanel1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -397,7 +418,6 @@
             this.Controls.Add(this.MetroTilePanel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -440,5 +460,6 @@
         public DevComponents.DotNetBar.ButtonX bt_ref_mnu;
         internal DevComponents.DotNetBar.Metro.MetroTilePanel MetroTilePanel1;
         private System.Windows.Forms.PictureBox pc_log_emp;
+        internal DevComponents.DotNetBar.Metro.MetroTileItem mt_cmp000;
     }
 }

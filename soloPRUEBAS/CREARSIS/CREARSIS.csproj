@@ -481,6 +481,12 @@
     <Compile Include="2-ADM\adm000.Designer.cs">
       <DependentUpon>adm000.cs</DependentUpon>
     </Compile>
+    <Compile Include="4-INV\cmp000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4-INV\cmp000.Designer.cs">
+      <DependentUpon>cmp000.cs</DependentUpon>
+    </Compile>
     <Compile Include="4-INV\inv002%28pro%29\inv002_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,12 @@
     </Compile>
     <Compile Include="4-INV\inv011%28alm%29\inv011_03a.Designer.cs">
       <DependentUpon>inv011_03a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4-INV\inv016%28com_pra%29\inv016_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4-INV\inv016%28com_pra%29\inv016_02.Designer.cs">
+      <DependentUpon>inv016_02.cs</DependentUpon>
     </Compile>
     <Compile Include="5-CTB\ctb002%28cap_agru%29\ctb002_01.cs">
       <SubType>Form</SubType>
@@ -1347,6 +1359,9 @@
     <EmbeddedResource Include="2-ADM\adm000.resx">
       <DependentUpon>adm000.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="4-INV\cmp000.resx">
+      <DependentUpon>cmp000.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv002%28pro%29\inv002_01.resx">
       <DependentUpon>inv002_01.cs</DependentUpon>
     </EmbeddedResource>
@@ -1367,6 +1382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="4-INV\inv011%28alm%29\inv011_03a.resx">
       <DependentUpon>inv011_03a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4-INV\inv016%28com_pra%29\inv016_02.resx">
+      <DependentUpon>inv016_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5-CTB\ctb002%28cap_agru%29\ctb002_01.resx">
       <DependentUpon>ctb002_01.cs</DependentUpon>

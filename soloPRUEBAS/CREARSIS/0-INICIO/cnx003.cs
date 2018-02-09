@@ -297,9 +297,9 @@ namespace CREARSIS
 
             fh_ads000();
         }
-        //procedimiento para que la aplicación arranque desde aquí
-        [STAThread()]
 
+        //procedimiento para que la aplicación arranque desde aquí(adm000)
+        [STAThread()]
         public static void fh_ads000()
         {
             //Crea el hilo del menu administrador
@@ -310,8 +310,20 @@ namespace CREARSIS
             h_ads000.Start();
 
         }
+        //procedimiento para que la aplicación arranque desde aquí(cmp00)
+        [STAThread()]
+        public static void fh_cmp000()
+        {
+            //Crea el hilo del menu administrador
+            Thread h_ads000 = new Thread(fu_run_cmp00);
+            h_ads000.SetApartmentState(ApartmentState.STA);
 
-        //ESTA ES EL METODO AL QUE LLAMA EL HILO PARA ABRIR LA VENTANA 
+            //Inicia el hilo
+            h_ads000.Start();
+
+        }
+
+        //ESTA ES EL METODO AL QUE LLAMA EL HILO PARA ABRIR LA VENTANA (adm000)
         public static void fu_run_ads000()
         {
             try
@@ -323,7 +335,32 @@ namespace CREARSIS
                 MessageBoxEx.Show("Ah ocurrido un error: " + Convert.ToChar(10) + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //ESTA ES EL METODO AL QUE LLAMA EL HILO PARA ABRIR LA VENTANA  (cmp000)
+        public static void fu_run_cmp00()
+        {
+            try
+            {
+                Application.Run(new CREARSIS._4_INV.cmp000());
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show("Ah ocurrido un error: " + Convert.ToChar(10) + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         #endregion
+
+        private void mt_cmp000_Click(object sender, EventArgs e)
+        {
+            tab_seg001 = o_seg001._05(Program.gl_usr_usr);
+            if (Convert.ToInt32(tab_seg001.Rows[0]["va_win_max"]) <= Program.gl_nro_win)
+            {
+                MessageBoxEx.Show("El usuario ya tiene abierta sus: " + Program.gl_nro_win + " ventanas abiertas permitidas ", "Crearsis", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+            fh_cmp000();
+        }
     }
 }
