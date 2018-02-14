@@ -59,7 +59,7 @@ namespace DATOS
         /// <summary>
         /// Funcion Conexion durante todo el sistema
         /// </summary>
-        private void fu_abr_cnx()
+        public void fu_abr_cnx()
         {
             obj_sql_cnx = new SqlConnection();
             obj_sql_cnx.ConnectionString = gl_cnx_str;
@@ -119,6 +119,50 @@ namespace DATOS
             }
         }
 
+        /// <summary>
+        /// Funcion que Ejecuta comando SQL, Retornando el ID de la Fila afectada.
+        /// Por lo general se la usa, para devolver el Identity al momento de realizar un Insert
+        /// </summary>
+        /// <param name="va_cad_sql">Consulta(query) a ejecutar</param>
+        /// <returns></returns>
+        public Int32 fu_exe_sql_id(string va_cad_sql)
+        {
+            try
+            {
+                int va_num_fila = 0;
+
+                //Instancia el Objeto de Comando de SQL
+                obj_sql_cmd = new SqlCommand();
+
+                //Abre la Conexion por si está cerrada
+                if (obj_sql_cnx.State == ConnectionState.Closed)
+                {
+                    fu_abr_cnx();
+                }
+
+                obj_sql_cmd.CommandText = va_cad_sql + "; SELECT SCOPE_IDENTITY() ";   //Llena la Consulta al Objeto Comando de SQL
+                obj_sql_cmd.Connection = obj_sql_cnx;   //Asigna el objeto Conexion SQL al Comando
+                va_num_fila = Convert.ToInt32(obj_sql_cmd.ExecuteScalar());   //Ejecuta el Comando con la consulta a la BD
+
+                //Cierra La Conexion
+                obj_sql_cnx.Close();
+
+                //Retorna 
+                return va_num_fila;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //Cierra La conexion depues de ejecutar comando
+                if (obj_sql_cnx.State == ConnectionState.Open)
+                {
+                    obj_sql_cnx.Close();
+                }
+            }
+        }
 
         /// <summary>
         /// Funcion que Ejecuta comando SQL CON RETORNO

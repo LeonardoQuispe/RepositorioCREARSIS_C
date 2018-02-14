@@ -53,6 +53,10 @@
     <Compile Include="2-ADM\c_adm014.cs" />
     <Compile Include="4-INV\c_inv002.cs" />
     <Compile Include="4-INV\c_inv008.cs" />
+    <Compile Include="4-INV\c_inv100.cs" />
+    <Compile Include="4-INV\c_inv101.cs" />
+    <Compile Include="4-INV\c_inv102.cs" />
+    <Compile Include="4-INV\c_inv103.cs" />
     <Compile Include="5-CTB\c_ctb001.cs" />
     <Compile Include="5-CTB\c_ctb002.cs" />
     <Compile Include="5-CTB\c_ctb003.cs" />

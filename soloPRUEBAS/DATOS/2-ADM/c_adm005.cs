@@ -45,6 +45,29 @@ namespace DATOS
             }
         }
         /// <summary>
+        /// Funcion "Buscar el Correlativo del TALONARIO de la Gestion"
+        /// </summary>
+        /// <param name="cod_ges">Codigo de la Gestion</param>
+        /// <param name="nro_tal">Nro. del Talonario</param>
+        /// <param name="cod_doc">Codigo del Documento</param>
+        /// <returns></returns>
+        public DataTable _01(int cod_ges, int nro_tal, string cod_doc)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" Select * from adm005 ");
+                vv_str_sql.AppendLine(" Where va_cod_ges='" + cod_ges + "' and va_cod_doc='" + cod_doc + "' and va_nro_tal=" + nro_tal.ToString());
+
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Nueva NUMERACION
         /// </summary>
         /// <param name="cod_doc">Codigo del documento</param>

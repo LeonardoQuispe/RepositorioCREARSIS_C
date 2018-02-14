@@ -63,6 +63,37 @@ namespace DATOS
 
         }
         /// <summary>
+        /// Funcion "Buscar los Talonarios de un respectivo Modulo"
+        /// </summary>
+        /// <param name="val_doc">Codigo del Documento</param>
+        /// <param name="est_bus">Estado del Talonario (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )</param>
+        /// <returns></returns>
+        public DataTable _01( string val_doc, string est_bus)
+        {
+            try
+            {
+               
+                switch (est_bus)
+                {
+                    case "0": est_bus = "T"; break;
+                    case "1": est_bus = "H"; break;
+                    case "2": est_bus = "N"; break;
+                }
+
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" Select * from adm004 ");
+                vv_str_sql.AppendLine(" Where va_cod_doc='" + val_doc  + "' and va_est_ado='" + est_bus + "'");
+
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        /// <summary>
         /// Funcion "Registrar TALONARIO"
         /// </summary>
         /// <param name="cod_doc">Codigo del documento<</param>

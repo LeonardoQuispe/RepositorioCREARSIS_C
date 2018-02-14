@@ -96,14 +96,14 @@ namespace CREARSIS
             par_ame_tro[0] = new ReportParameter("cod_usr", "(" + Program.gl_usr_usr + ")");
             par_ame_tro[1] = new ReportParameter("nom_emp", "(" + Program.gl_nom_emp + ")");
 
-            switch (vg_frm_pad.cb_est_bus.SelectedIndex)
-            {
-                case 0: par_ame_tro[2] = new ReportParameter("est_prm", "(Todos)"); break;
+            //switch (vg_frm_pad.cb_est_bus.SelectedIndex)
+            //{
+            //    case 0: par_ame_tro[2] = new ReportParameter("est_prm", "(Todos)"); break;
 
-                case 1: par_ame_tro[2] = new ReportParameter("est_prm", "(Habilitados)"); break;
+            //    case 1: par_ame_tro[2] = new ReportParameter("est_prm", "(Habilitados)"); break;
 
-                case 2: par_ame_tro[2] = new ReportParameter("est_prm", "(Deshabilitados)"); break;
-            }
+            //    case 2: par_ame_tro[2] = new ReportParameter("est_prm", "(Deshabilitados)"); break;
+            //}
             //Obtiene Fecha y hora del servidor para pasar al reporte
             par_ame_tro[3]= new ReportParameter("fec_act", o_mg_glo_bal.fg_fec_act().ToString());
 

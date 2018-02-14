@@ -117,7 +117,7 @@ namespace CREARSIS
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
-
+            vg_frm_pad.fu_Sel_Alm(tb_sel_ecc.Text,lb_sel_ecc.Text );
             vg_frm_pad.Enabled = true;
             Close();
         }
@@ -127,7 +127,7 @@ namespace CREARSIS
             if (gb_ctr_frm.Enabled == true)
             {
                 //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
-
+                vg_frm_pad.fu_Sel_Alm(tb_sel_ecc.Text, lb_sel_ecc.Text);
                 vg_frm_pad.Enabled = true;
                 Close();
             }

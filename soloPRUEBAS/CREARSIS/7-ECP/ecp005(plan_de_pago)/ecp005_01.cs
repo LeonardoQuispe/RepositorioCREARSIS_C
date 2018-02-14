@@ -343,14 +343,14 @@ namespace CREARSIS._7_ECP.ecp005_plan_de_pago_
 
         private void dg_res_ult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            vg_frm_pad.fu_rec_uni(tb_sel_ecc.Text);
+            vg_frm_pad.fu_sel_pla(tb_sel_ecc.Text,lb_sel_ecc.Text );
             vg_frm_pad.Enabled = true;
             Close();
         }
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
-            vg_frm_pad.fu_rec_uni(tb_sel_ecc.Text);
+            vg_frm_pad.fu_sel_pla(tb_sel_ecc.Text, lb_sel_ecc.Text);
             vg_frm_pad.Enabled = true;
             Close();
         }
