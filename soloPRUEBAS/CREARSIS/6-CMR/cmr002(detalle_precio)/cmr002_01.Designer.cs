@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.m_cmr002_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.codigo = new DevComponents.Editors.ComboItem();
             this.nombre = new DevComponents.Editors.ComboItem();
@@ -44,14 +43,7 @@
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.m_cmr002_03 = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
-            this.mr_mod_ifi = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cmr002_06 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cmr002_05 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cmr002_p00 = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.va_cod_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_pro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,20 +56,21 @@
             this.tb_sel_ecc2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lb_sel_ecc2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
+            this.m_cmr002_02 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mr_mod_ifi = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_cmr002_03 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_cmr002_06 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_cmr002_05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_cmr002_p00 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
-            this.mn_pri_nci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
             this.gb_ctr_frm.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.mn_pri_nci.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_cmr002_02
-            // 
-            this.m_cmr002_02.Name = "m_cmr002_02";
-            this.m_cmr002_02.Size = new System.Drawing.Size(54, 20);
-            this.m_cmr002_02.Text = "&Nuevo";
-            this.m_cmr002_02.Click += new System.EventHandler(this.m_cmr002_02_Click);
             // 
             // cb_prm_bus
             // 
@@ -143,7 +136,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.White;
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.cb_prm_bus);
             this.GroupBox1.Controls.Add(this.cb_est_bus);
             this.GroupBox1.Controls.Add(this.lb_sel_ecc);
@@ -229,16 +222,9 @@
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Producto";
             // 
-            // m_cmr002_03
-            // 
-            this.m_cmr002_03.Name = "m_cmr002_03";
-            this.m_cmr002_03.Size = new System.Drawing.Size(122, 22);
-            this.m_cmr002_03.Text = "&Actualiza";
-            this.m_cmr002_03.Click += new System.EventHandler(this.m_cmr002_03_Click);
-            // 
             // GroupBox2
             // 
-            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.mn_pri_nci);
             this.GroupBox2.Controls.Add(this.dg_res_ult);
             this.GroupBox2.ForeColor = System.Drawing.Color.Black;
@@ -248,68 +234,13 @@
             this.GroupBox2.TabIndex = 83;
             this.GroupBox2.TabStop = false;
             // 
-            // mn_pri_nci
-            // 
-            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
-            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
-            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
-            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_cmr002_02,
-            this.mr_mod_ifi,
-            this.m_cmr002_05,
-            this.m_cmr002_p00,
-            this.m_atr_ass});
-            this.mn_pri_nci.Location = new System.Drawing.Point(57, 92);
-            this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
-            this.mn_pri_nci.TabIndex = 5;
-            this.mn_pri_nci.Text = "MenuStrip1";
-            this.mn_pri_nci.Visible = false;
-            // 
-            // mr_mod_ifi
-            // 
-            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_cmr002_03,
-            this.m_cmr002_06});
-            this.mr_mod_ifi.Name = "mr_mod_ifi";
-            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
-            this.mr_mod_ifi.Text = "&Modifica";
-            // 
-            // m_cmr002_06
-            // 
-            this.m_cmr002_06.Name = "m_cmr002_06";
-            this.m_cmr002_06.Size = new System.Drawing.Size(122, 22);
-            this.m_cmr002_06.Text = "&Elimina";
-            this.m_cmr002_06.Click += new System.EventHandler(this.m_cmr002_06_Click);
-            // 
-            // m_cmr002_05
-            // 
-            this.m_cmr002_05.Name = "m_cmr002_05";
-            this.m_cmr002_05.Size = new System.Drawing.Size(66, 20);
-            this.m_cmr002_05.Text = "&Consulta";
-            this.m_cmr002_05.Click += new System.EventHandler(this.m_cmr002_05_Click);
-            // 
-            // m_cmr002_p00
-            // 
-            this.m_cmr002_p00.Name = "m_cmr002_p00";
-            this.m_cmr002_p00.Size = new System.Drawing.Size(61, 20);
-            this.m_cmr002_p00.Text = "&Informe";
-            // 
-            // m_atr_ass
-            // 
-            this.m_atr_ass.Name = "m_atr_ass";
-            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
-            this.m_atr_ass.Text = "&Atras";
-            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
-            // 
             // dg_res_ult
             // 
             this.dg_res_ult.AllowUserToAddRows = false;
             this.dg_res_ult.AllowUserToDeleteRows = false;
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
-            this.dg_res_ult.BackgroundColor = System.Drawing.Color.White;
+            this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -325,7 +256,7 @@
             this.va_pre_cio,
             this.va_est_ado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -333,7 +264,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -383,10 +314,9 @@
             // 
             // gb_ctr_frm
             // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
-            this.gb_ctr_frm.Enabled = false;
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
             this.gb_ctr_frm.Location = new System.Drawing.Point(2, 307);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
@@ -428,7 +358,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.groupBox3.Controls.Add(this.tb_sel_ecc2);
             this.groupBox3.Controls.Add(this.lb_sel_ecc2);
             this.groupBox3.Controls.Add(this.labelX3);
@@ -490,6 +420,75 @@
             this.labelX3.TabIndex = 45;
             this.labelX3.Text = "Lista de Precios";
             // 
+            // mn_pri_nci
+            // 
+            this.mn_pri_nci.BackColor = System.Drawing.Color.White;
+            this.mn_pri_nci.Dock = System.Windows.Forms.DockStyle.None;
+            this.mn_pri_nci.ForeColor = System.Drawing.Color.Black;
+            this.mn_pri_nci.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mn_pri_nci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_cmr002_02,
+            this.mr_mod_ifi,
+            this.m_cmr002_05,
+            this.m_cmr002_p00,
+            this.m_atr_ass});
+            this.mn_pri_nci.Location = new System.Drawing.Point(67, 83);
+            this.mn_pri_nci.Name = "mn_pri_nci";
+            this.mn_pri_nci.Size = new System.Drawing.Size(393, 24);
+            this.mn_pri_nci.TabIndex = 51;
+            this.mn_pri_nci.Text = "MenuStrip1";
+            this.mn_pri_nci.Visible = false;
+            // 
+            // m_cmr002_02
+            // 
+            this.m_cmr002_02.Name = "m_cmr002_02";
+            this.m_cmr002_02.Size = new System.Drawing.Size(54, 20);
+            this.m_cmr002_02.Text = "&Nuevo";
+            this.m_cmr002_02.Click += new System.EventHandler(this.m_cmr002_02_Click);
+            // 
+            // mr_mod_ifi
+            // 
+            this.mr_mod_ifi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_cmr002_03,
+            this.m_cmr002_06});
+            this.mr_mod_ifi.Name = "mr_mod_ifi";
+            this.mr_mod_ifi.Size = new System.Drawing.Size(66, 20);
+            this.mr_mod_ifi.Text = "&Modifica";
+            // 
+            // m_cmr002_03
+            // 
+            this.m_cmr002_03.Name = "m_cmr002_03";
+            this.m_cmr002_03.Size = new System.Drawing.Size(152, 22);
+            this.m_cmr002_03.Text = "&Actualiza";
+            this.m_cmr002_03.Click += new System.EventHandler(this.m_cmr002_03_Click);
+            // 
+            // m_cmr002_06
+            // 
+            this.m_cmr002_06.Name = "m_cmr002_06";
+            this.m_cmr002_06.Size = new System.Drawing.Size(152, 22);
+            this.m_cmr002_06.Text = "&Elimina";
+            this.m_cmr002_06.Click += new System.EventHandler(this.m_cmr002_06_Click);
+            // 
+            // m_cmr002_05
+            // 
+            this.m_cmr002_05.Name = "m_cmr002_05";
+            this.m_cmr002_05.Size = new System.Drawing.Size(66, 20);
+            this.m_cmr002_05.Text = "&Consulta";
+            this.m_cmr002_05.Click += new System.EventHandler(this.m_cmr002_05_Click);
+            // 
+            // m_cmr002_p00
+            // 
+            this.m_cmr002_p00.Name = "m_cmr002_p00";
+            this.m_cmr002_p00.Size = new System.Drawing.Size(61, 20);
+            this.m_cmr002_p00.Text = "&Informe";
+            // 
+            // m_atr_ass
+            // 
+            this.m_atr_ass.Name = "m_atr_ass";
+            this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
+            this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
+            // 
             // cmr002_01
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -504,7 +503,6 @@
             this.Controls.Add(this.groupBox3);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "cmr002_01";
@@ -514,19 +512,17 @@
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();
-            this.mn_pri_nci.ResumeLayout(false);
-            this.mn_pri_nci.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).EndInit();
             this.gb_ctr_frm.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.mn_pri_nci.ResumeLayout(false);
+            this.mn_pri_nci.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_02;
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_prm_bus;
         internal DevComponents.Editors.ComboItem codigo;
         internal DevComponents.Editors.ComboItem nombre;
@@ -539,14 +535,7 @@
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_bus;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
         internal DevComponents.DotNetBar.LabelX LabelX1;
-        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_03;
         internal System.Windows.Forms.GroupBox GroupBox2;
-        internal System.Windows.Forms.MenuStrip mn_pri_nci;
-        internal System.Windows.Forms.ToolStripMenuItem mr_mod_ifi;
-        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_06;
-        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_05;
-        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_p00;
-        internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
@@ -559,5 +548,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_pro;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_pre_cio;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        internal System.Windows.Forms.MenuStrip mn_pri_nci;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_02;
+        internal System.Windows.Forms.ToolStripMenuItem mr_mod_ifi;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_03;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_06;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_05;
+        internal System.Windows.Forms.ToolStripMenuItem m_cmr002_p00;
+        internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
     }
 }

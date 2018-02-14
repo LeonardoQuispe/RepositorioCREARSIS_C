@@ -416,7 +416,7 @@ namespace CREARSIS._6_CMR.cmr001_lista_precios_
             }
             CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01 obj = new CREARSIS._6_CMR.cmr002_detalle_precio_.cmr002_01();
 
-            o_mg_glo_bal.mg_ads000_02(obj, this, tab_cmr001);
+            o_mg_glo_bal.mg_ads000_01(obj, this,2, tab_cmr001);
         }
 
         //MENU NUEVO
