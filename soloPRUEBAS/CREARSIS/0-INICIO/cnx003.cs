@@ -224,9 +224,9 @@ namespace CREARSIS
             if (tab_seg021.Rows.Count != 0)
             {
                     for (int i = 0; i < tab_seg021.Rows.Count; i++)
-                    {                       
+                    {
 
-                        switch (tab_seg021.Rows[i][1].ToString())
+                        switch (tab_seg021.Rows[i][1].ToString().Trim())
                         {
                             case "ads000":
                                 mt_ads000.Visible = true; break;
