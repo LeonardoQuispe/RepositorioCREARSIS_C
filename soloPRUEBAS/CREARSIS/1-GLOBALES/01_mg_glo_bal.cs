@@ -499,10 +499,12 @@ namespace CREARSIS
             }
 
             //Actualiza nombre en el formulario MDI
-            //fg_mue_nap(ar_frm_nvo);
+            fg_mue_nap(ar_frm_nvo);
 
             ar_frm_nvo.ShowDialog();
-            ar_frm_nvo.Activate();
+
+            //Actualiza nombre en el formulario MDI
+            fg_mue_nap(ar_frm_pad);
         }
 
         /// <summary>
