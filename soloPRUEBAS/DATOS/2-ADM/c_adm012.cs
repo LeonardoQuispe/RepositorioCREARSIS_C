@@ -65,7 +65,7 @@ namespace DATOS
         /// <param name="cod_act">Código de Actividad Económica</param>
         /// <param name="nom_act">Nombre de Actividad Económica</param>
         /// <returns></returns>
-        public void _02(int cod_act, string nom_act)
+        public void _02(string cod_act, string nom_act)
         {
             try
             {

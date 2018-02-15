@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv010_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_inv010_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +43,6 @@
             this.mn_pri_nci = new System.Windows.Forms.MenuStrip();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.va_cod_gru = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this.va_nom_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_des_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_suc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
@@ -62,6 +58,11 @@
             this.nombre = new DevComponents.Editors.ComboItem();
             this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
+            this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_suc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_gru = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_cod_gru = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
             this.mn_pri_nci.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -203,6 +204,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_res_ult.RowHeadersVisible = false;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dg_res_ult.RowTemplate.Height = 32;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(538, 247);
             this.dg_res_ult.TabIndex = 6;
@@ -210,55 +214,6 @@
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellDoubleClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
-            // 
-            // va_cod_gru
-            // 
-            this.va_cod_gru.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.va_cod_gru.BackgroundStyle.Class = "DataGridViewBorder";
-            this.va_cod_gru.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.va_cod_gru.Culture = new System.Globalization.CultureInfo("es-MX");
-            this.va_cod_gru.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.va_cod_gru.HeaderText = "Cod. Grupo";
-            this.va_cod_gru.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.va_cod_gru.Mask = "00-00";
-            this.va_cod_gru.Name = "va_cod_gru";
-            this.va_cod_gru.PasswordChar = '\0';
-            this.va_cod_gru.ReadOnly = true;
-            this.va_cod_gru.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.va_cod_gru.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.va_cod_gru.Text = "  -";
-            this.va_cod_gru.Width = 50;
-            // 
-            // va_nom_gru
-            // 
-            this.va_nom_gru.HeaderText = "Nombre";
-            this.va_nom_gru.Name = "va_nom_gru";
-            this.va_nom_gru.ReadOnly = true;
-            this.va_nom_gru.Width = 130;
-            // 
-            // va_des_gru
-            // 
-            this.va_des_gru.HeaderText = "Descripcion";
-            this.va_des_gru.Name = "va_des_gru";
-            this.va_des_gru.ReadOnly = true;
-            this.va_des_gru.Width = 130;
-            // 
-            // va_nom_suc
-            // 
-            this.va_nom_suc.HeaderText = "Nombre Sucursal";
-            this.va_nom_suc.Name = "va_nom_suc";
-            this.va_nom_suc.ReadOnly = true;
-            this.va_nom_suc.Width = 130;
-            // 
-            // va_est_ado
-            // 
-            this.va_est_ado.HeaderText = "Estado";
-            this.va_est_ado.Name = "va_est_ado";
-            this.va_est_ado.ReadOnly = true;
-            this.va_est_ado.Width = 80;
             // 
             // lb_sel_ecc
             // 
@@ -453,6 +408,55 @@
             this.LabelX1.Size = new System.Drawing.Size(93, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Grupo de Almacén";
+            // 
+            // va_est_ado
+            // 
+            this.va_est_ado.HeaderText = "Estado";
+            this.va_est_ado.Name = "va_est_ado";
+            this.va_est_ado.ReadOnly = true;
+            this.va_est_ado.Width = 80;
+            // 
+            // va_nom_suc
+            // 
+            this.va_nom_suc.HeaderText = "Nombre Sucursal";
+            this.va_nom_suc.Name = "va_nom_suc";
+            this.va_nom_suc.ReadOnly = true;
+            this.va_nom_suc.Width = 130;
+            // 
+            // va_des_gru
+            // 
+            this.va_des_gru.HeaderText = "Descripcion";
+            this.va_des_gru.Name = "va_des_gru";
+            this.va_des_gru.ReadOnly = true;
+            this.va_des_gru.Width = 120;
+            // 
+            // va_nom_gru
+            // 
+            this.va_nom_gru.HeaderText = "Nombre";
+            this.va_nom_gru.Name = "va_nom_gru";
+            this.va_nom_gru.ReadOnly = true;
+            this.va_nom_gru.Width = 130;
+            // 
+            // va_cod_gru
+            // 
+            this.va_cod_gru.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.va_cod_gru.BackgroundStyle.Class = "DataGridViewBorder";
+            this.va_cod_gru.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.va_cod_gru.Culture = new System.Globalization.CultureInfo("es-MX");
+            this.va_cod_gru.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.va_cod_gru.HeaderText = "Cod. Grupo";
+            this.va_cod_gru.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.va_cod_gru.Mask = "00-00";
+            this.va_cod_gru.Name = "va_cod_gru";
+            this.va_cod_gru.PasswordChar = '\0';
+            this.va_cod_gru.ReadOnly = true;
+            this.va_cod_gru.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.va_cod_gru.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.va_cod_gru.Text = "  -";
+            this.va_cod_gru.Width = 50;
             // 
             // inv010_01
             // 

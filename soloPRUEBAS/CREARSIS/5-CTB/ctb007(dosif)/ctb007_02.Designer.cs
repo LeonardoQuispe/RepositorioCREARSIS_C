@@ -402,7 +402,7 @@
             this.tb_cod_act.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_act.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_act.Location = new System.Drawing.Point(112, 118);
-            this.tb_cod_act.MaxLength = 15;
+            this.tb_cod_act.MaxLength = 1;
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
             this.tb_cod_act.Size = new System.Drawing.Size(59, 22);

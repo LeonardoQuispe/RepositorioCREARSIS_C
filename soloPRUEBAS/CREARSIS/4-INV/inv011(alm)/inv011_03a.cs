@@ -28,6 +28,7 @@ namespace CREARSIS._4_INV.inv011_alm_
 
         c_inv011 o_inv011 = new c_inv011();
         c_inv010 o_inv010 = new c_inv010();
+        _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
 
         #endregion
 
@@ -55,7 +56,7 @@ namespace CREARSIS._4_INV.inv011_alm_
             tb_nom_ecg.Text = vg_str_ucc.Rows[0]["va_nom_ecg"].ToString();
 
             tb_ult_fec.Text = vg_str_ucc.Rows[0]["va_fec_ctr"].ToString();
-
+            tb_fec_ctr.Value = o_mg_glo_bal.fg_fec_act();
         }
         
 

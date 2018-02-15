@@ -98,7 +98,7 @@
             this.tb_cod_act.MaxLength = 15;
             this.tb_cod_act.Name = "tb_cod_act";
             this.tb_cod_act.PreventEnterBeep = true;
-            this.tb_cod_act.Size = new System.Drawing.Size(107, 22);
+            this.tb_cod_act.Size = new System.Drawing.Size(40, 22);
             this.tb_cod_act.TabIndex = 1;
             this.tb_cod_act.TabStop = false;
             // 

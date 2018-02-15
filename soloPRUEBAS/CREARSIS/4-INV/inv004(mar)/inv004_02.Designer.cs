@@ -98,7 +98,7 @@
             this.tb_cod_mar.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_mar.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_mar.Location = new System.Drawing.Point(69, 19);
-            this.tb_cod_mar.MaxLength = 10;
+            this.tb_cod_mar.MaxLength = 3;
             this.tb_cod_mar.Name = "tb_cod_mar";
             this.tb_cod_mar.PreventEnterBeep = true;
             this.tb_cod_mar.Size = new System.Drawing.Size(62, 22);

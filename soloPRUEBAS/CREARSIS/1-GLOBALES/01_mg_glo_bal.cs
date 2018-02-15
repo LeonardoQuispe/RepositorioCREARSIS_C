@@ -385,18 +385,16 @@ namespace CREARSIS
                     if (ar_str_ucc != null)
                     {
                         ar_frm_nvo.vg_str_ucc = ar_str_ucc;
-                    }
-
-                    // Obtiene el usuario logueado
-                    string cod_usr = Program.gl_usr_usr;
-                    ar_frm_nvo.mn_pri_nci = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, ar_frm_nvo.mn_pri_nci);
+                    }                    
 
                     // Abre y activa formulario
                     ar_frm_nvo.Show();
                     ar_frm_nvo.Activate();
 
+                    // Obtiene el usuario logueado
+                    string cod_usr = Program.gl_usr_usr;
+                    ar_frm_pad.MenuStrip1 = fg_ver_mnu(cod_usr, ar_frm_nvo.Name, ar_frm_pad.MenuStrip1);
 
-                   
                 }
 
                 if (ar_tip_nvl == 2)
@@ -559,37 +557,61 @@ namespace CREARSIS
 
         public void fg_mue_nap(dynamic ar_win_act)
         {
-            if (ar_win_act.IsMdiContainer == true)
-            {
-                ar_win_act.ss_nom_vna.Text = ar_win_act.Name;
-                return;
-            }
+            bool va_aux_ban = false;
+            dynamic va_aux_pad = ar_win_act;
 
-            if (ar_win_act.IsMdiChild == true)
+            while (va_aux_ban==false)
             {
-                ar_win_act.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
-            }
-            else
-            {
-                if (ar_win_act.vg_frm_pad.IsMdiContainer == true)
+                //Identifica si es un Contenedor MDI
+                if (va_aux_pad.IsMdiContainer==true)
                 {
-                    //asigna valor a la etiqueta de nombre de la aplicacion
-                    ar_win_act.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
+                    va_aux_ban = true;
+                    va_aux_pad.ss_nom_vna.Text = ar_win_act.Name;
                 }
                 else
                 {
-                    if (ar_win_act.vg_frm_pad.MdiParent != null)
-                    {
-                        //asigna valor a la etiqueta nombre de la aplicacion
-                        ar_win_act.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
-                    }
-                    else
-                    {
-                        //asigna valor a la etiqueta de nombre de la aplicacion
-                        ar_win_act.vg_frm_pad.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
-                    }
+                    va_aux_pad = va_aux_pad.vg_frm_pad;
                 }
             }
+
+            //if (ar_win_act.IsMdiContainer == true)
+            //{
+            //    ar_win_act.ss_nom_vna.Text = ar_win_act.Name;
+            //    return;
+            //}
+
+            //if (ar_win_act.IsMdiChild == true)
+            //{
+            //    ar_win_act.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
+            //}
+            //else
+            //{
+            //    if (ar_win_act.vg_frm_pad.IsMdiContainer == true)
+            //    {
+            //        //asigna valor a la etiqueta de nombre de la aplicacion
+            //        ar_win_act.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
+            //    }
+            //    else
+            //    {
+            //        //En caso que se abra l=del login de personalizar menu
+            //        if (ar_win_act.vg_frm_pad.vg_frm_pad.Name == "adm000")
+            //        {
+            //            ar_win_act.vg_frm_pad.vg_frm_pad.ss_nom_vna.Text = ar_win_act.Name;
+            //            return;
+            //        }
+
+            //        if (ar_win_act.vg_frm_pad.MdiParent != null)
+            //        {
+            //            //asigna valor a la etiqueta nombre de la aplicacion
+            //            ar_win_act.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
+            //        }
+            //        else
+            //        {
+            //            //asigna valor a la etiqueta de nombre de la aplicacion
+            //            ar_win_act.vg_frm_pad.vg_frm_pad.MdiParent.ss_nom_vna.Text = ar_win_act.Name;
+            //        }
+            //    }
+            //}
 
         }
         /// <summary>

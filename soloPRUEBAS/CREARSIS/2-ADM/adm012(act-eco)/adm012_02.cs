@@ -87,7 +87,7 @@ namespace CREARSIS
                 }
 
                 //grabar datos
-                o_adm012._02(int.Parse(tb_cod_act.Text), tb_nom_act.Text);
+                o_adm012._02(tb_cod_act.Text, tb_nom_act.Text);
 
                 vg_frm_pad.fu_sel_fila(tb_cod_act.Text, tb_nom_act.Text);
 

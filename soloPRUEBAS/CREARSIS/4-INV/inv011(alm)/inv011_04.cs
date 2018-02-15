@@ -54,11 +54,11 @@ namespace CREARSIS
                 DialogResult res_msg = new DialogResult();
                 if (tb_est_ado.Text == "Habilitado")
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar Almacén?", "Deshabilita Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Deshabilitar el Almacén?", "Deshabilita Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar a la Grupo de Almacén?", "Habilita Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    res_msg = MessageBoxEx.Show("¿Estas seguro de Habilitar el Almacén?", "Habilita Almacén", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
 

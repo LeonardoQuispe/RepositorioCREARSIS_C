@@ -209,8 +209,8 @@
             // mr_def_ini
             // 
             this.mr_def_ini.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_adm010,
             this.mn_gru_per,
+            this.m_adm010,
             this.mr_inv_ent,
             this.mr_fac_tur,
             this.m_tes_ore,
@@ -363,14 +363,14 @@
             // mn_lib_ret
             // 
             this.mn_lib_ret.Name = "mn_lib_ret";
-            this.mn_lib_ret.Size = new System.Drawing.Size(152, 22);
+            this.mn_lib_ret.Size = new System.Drawing.Size(143, 22);
             this.mn_lib_ret.Text = "&Libreta";
             this.mn_lib_ret.Click += new System.EventHandler(this.mn_lib_ret_Click);
             // 
             // mn_pla_pag
             // 
             this.mn_pla_pag.Name = "mn_pla_pag";
-            this.mn_pla_pag.Size = new System.Drawing.Size(152, 22);
+            this.mn_pla_pag.Size = new System.Drawing.Size(143, 22);
             this.mn_pla_pag.Text = "&Plan de Pago";
             this.mn_pla_pag.Click += new System.EventHandler(this.mn_pla_pag_Click);
             // 
@@ -438,14 +438,14 @@
             // mn_bs_us
             // 
             this.mn_bs_us.Name = "mn_bs_us";
-            this.mn_bs_us.Size = new System.Drawing.Size(137, 22);
+            this.mn_bs_us.Size = new System.Drawing.Size(152, 22);
             this.mn_bs_us.Text = "T.C. Bs/U&SD";
             this.mn_bs_us.Click += new System.EventHandler(this.mn_bs_us_Click);
             // 
             // mn_bs_ufv
             // 
             this.mn_bs_ufv.Name = "mn_bs_ufv";
-            this.mn_bs_ufv.Size = new System.Drawing.Size(137, 22);
+            this.mn_bs_ufv.Size = new System.Drawing.Size(152, 22);
             this.mn_bs_ufv.Text = "T.C. Bs/U&fv";
             this.mn_bs_ufv.Click += new System.EventHandler(this.mn_bs_ufv_Click);
             // 

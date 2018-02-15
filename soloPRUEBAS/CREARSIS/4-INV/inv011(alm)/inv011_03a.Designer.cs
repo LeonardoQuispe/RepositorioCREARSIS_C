@@ -99,7 +99,6 @@
             // 
             // tb_fec_ctr
             // 
-            this.tb_fec_ctr.Enabled = false;
             this.tb_fec_ctr.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tb_fec_ctr.Location = new System.Drawing.Point(188, 127);
             this.tb_fec_ctr.Name = "tb_fec_ctr";
@@ -292,7 +291,6 @@
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "inv011_03a";

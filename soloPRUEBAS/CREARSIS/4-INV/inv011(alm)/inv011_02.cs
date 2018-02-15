@@ -177,6 +177,15 @@ namespace CREARSIS
                 tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
+            if (o_mg_glo_bal.fg_val_num(cod_alm)==false)
+            {
+                tb_gru_alm.Text = "";
+                tb_nom_gru.Text = "** NO existe";
+                tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
+                return;
+            }
+
+
 
             tab_inv010 = o_inv010._05(int.Parse(cod_alm));
             if (tab_inv010.Rows.Count == 0)
