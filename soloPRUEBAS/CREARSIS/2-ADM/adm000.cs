@@ -371,7 +371,7 @@ namespace CREARSIS
         //[Menu PRODUCTO]
         private void mn_pro_duc_Click(object sender, EventArgs e)
         {
-            _4_INV.inv002_pro_.inv002_01 obj = new _4_INV.inv002_pro_.inv002_01();
+            _9_CMP.inv002_pro_.inv002_01 obj = new _9_CMP.inv002_pro_.inv002_01();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
 

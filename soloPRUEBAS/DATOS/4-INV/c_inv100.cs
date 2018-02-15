@@ -107,6 +107,11 @@ namespace DATOS
         /// Tipo de Cambio de la Transaccion
         /// </summary>
         public double va_tas_cam;
+        /// <summary>
+        /// COdigo del Talonario
+        /// </summary>
+        public int va_nro_tal;
+       
         #endregion
 
 
@@ -129,9 +134,9 @@ namespace DATOS
                 {
                     StringBuilder vv_str_sql = new StringBuilder();
                     vv_str_sql.AppendLine(" Insert into inv103( ");
-                    vv_str_sql.AppendLine("va_emp_cod,va_cod_suc,va_gst_cod,va_fec_pro,va_tip_tra,va_mod_org,va_tra_org,");
+                    vv_str_sql.AppendLine("va_emp_cod,va_cod_suc,va_gst_cod,va_fec_pro,va_tip_tra,va_cod_doc,va_tra_org,");
                     vv_str_sql.AppendLine("va_fec_tra,va_ref_doc,va_mon_tra,va_tra_glo,va_cod_pro,va_can_pro,va_cos_uni,");
-                    vv_str_sql.AppendLine("va_imp_tot,va_alm_mov,va_lot_cod,va_fec_ven,va_tra_fac,va_tra_ret,va_tas_cam)");
+                    vv_str_sql.AppendLine("va_imp_tot,va_alm_mov,va_lot_cod,va_fec_ven,va_tra_fac,va_tra_ret,va_tas_cam,va_nro_tal)");
                     vv_str_sql.AppendFormat(" values(va_emp_cod ={0}, ", va_emp_cod);
                     vv_str_sql.AppendFormat("  va_cod_suc ={1}, ", va_cod_suc);
                     vv_str_sql.AppendFormat("  va_gst_cod ='{2}', ", va_gst_cod);
@@ -152,7 +157,7 @@ namespace DATOS
                     vv_str_sql.AppendFormat("  va_tra_fac ='{17}', ", va_tra_fac);
                     vv_str_sql.AppendFormat("  va_tra_ret ='{18}', ", va_tra_ret);
                     vv_str_sql.AppendFormat("  va_tas_cam ={19}), ", va_tas_cam);
-
+                    vv_str_sql.AppendFormat("  va_nro_tal ={20}) ", va_nro_tal);
                     if (!_cnx000.fu_exe_sql_no(vv_str_sql.ToString()))
                     {
                         Exception ex = new Exception("No se pudo Registrar el Movimiento del Producto: " + va_cod_pro);
@@ -169,7 +174,15 @@ namespace DATOS
                         o_inv101.va_emp_cod = va_emp_cod;
                         o_inv101.va_fec_ven = va_fec_ven;
                         o_inv101.va_nro_lote = va_lot_cod;
+                        o_inv101.va_ult_cbs = va_cos_uni;
+                        o_inv101.va_ult_cus = o_inv101.va_cos_uus;
+                        o_inv101.va_est_ado = "H";
 
+                        if (!o_inv101.fu_ing_art(_cnx000))
+                        {
+                            Exception ex = new Exception("No se pudo Registrar el Movimiento del Producto: " + va_cod_pro);
+                            throw ex;
+                        }
                     }
 
                 }

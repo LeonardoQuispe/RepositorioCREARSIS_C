@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DevComponents.DotNetBar;
 
-namespace CREARSIS._4_INV
+namespace CREARSIS._9_CMP
 {
     public partial class cmp000 : DevComponents.DotNetBar.Metro.MetroForm
     {
@@ -222,7 +222,8 @@ namespace CREARSIS._4_INV
 
         private void m_inv016_Click(object sender, EventArgs e)
         {
-            CREARSIS._4_INV.inv016_com_pra_.inv016_02 obj = new CREARSIS._4_INV.inv016_com_pra_.inv016_02();
+           
+            CREARSIS._9_CMP.cmp001_com_pra_.cmp001_02 obj = new CREARSIS._9_CMP.cmp001_com_pra_.cmp001_02();
             o_mg_glo_bal.mg_ads000_01(obj, this, 1);
         }
     }

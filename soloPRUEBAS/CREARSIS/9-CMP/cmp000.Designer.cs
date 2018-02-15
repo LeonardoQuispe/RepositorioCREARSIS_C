@@ -1,4 +1,4 @@
-﻿namespace CREARSIS._4_INV
+﻿namespace CREARSIS._9_CMP
 {
     partial class cmp000
     {

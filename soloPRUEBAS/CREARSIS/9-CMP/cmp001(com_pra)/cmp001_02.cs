@@ -12,9 +12,9 @@ using DATOS;
 using CREARSIS._2_ADM.adm010_per_;
 using DevComponents.DotNetBar;
 
-namespace CREARSIS._4_INV.inv016_com_pra_
+namespace CREARSIS._9_CMP.cmp001_com_pra_
 {
-    public partial class inv016_02 : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class cmp001_02 : DevComponents.DotNetBar.Metro.MetroForm
     {
         #region VARIABLES
 
@@ -252,7 +252,7 @@ namespace CREARSIS._4_INV.inv016_com_pra_
                 tb_tot_net.Text = String.Format("{0:#,0.00}",(Convert.ToDecimal(tb_tot_bru.Text) - Convert.ToDecimal(tb_tot_des.Text)));
             }
         #endregion
-        public inv016_02()
+        public cmp001_02()
         {
             InitializeComponent();
         }
@@ -352,14 +352,14 @@ namespace CREARSIS._4_INV.inv016_com_pra_
         {
             if (e.KeyData == Keys.Up)
             {
-                _4_INV.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
+                _9_CMP.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
                 o_mg_glo_bal.mg_ads000_03(objPro, this);
             }
         }
 
         private void textBoxX10_ButtonCustomClick(object sender, EventArgs e)
         {
-            _4_INV.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
+            _9_CMP.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
             o_mg_glo_bal.mg_ads000_03(objPro, this);
         }
 

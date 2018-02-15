@@ -1,6 +1,6 @@
-﻿namespace CREARSIS._4_INV.inv016_com_pra_
+﻿namespace CREARSIS._9_CMP.cmp001_com_pra_
 {
-    partial class inv016_02
+    partial class cmp001_02
     {
         /// <summary>
         /// Required designer variable.

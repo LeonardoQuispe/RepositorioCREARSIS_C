@@ -340,7 +340,7 @@ namespace CREARSIS
         {
             try
             {
-                Application.Run(new CREARSIS._4_INV.cmp000());
+                Application.Run(new CREARSIS._9_CMP.cmp000());
             }
             catch (Exception ex)
             {
