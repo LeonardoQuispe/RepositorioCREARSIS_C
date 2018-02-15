@@ -348,18 +348,18 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
             o_mg_glo_bal.mg_ads000_03(objPla, this);
         }
 
-        private void textBoxX10_KeyDown(object sender, KeyEventArgs e)
+        private void tb_cod_pro_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
             {
-                _9_CMP.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
+                _4_INV.inv002_pro_.inv002_01 objPro = new _4_INV.inv002_pro_.inv002_01();
                 o_mg_glo_bal.mg_ads000_03(objPro, this);
             }
         }
 
-        private void textBoxX10_ButtonCustomClick(object sender, EventArgs e)
+        private void tb_cod_pro_ButtonCustomClick(object sender, EventArgs e)
         {
-            _9_CMP.inv002_pro_.inv002_01 objPro = new inv002_pro_.inv002_01();
+            _4_INV.inv002_pro_.inv002_01 objPro = new _4_INV.inv002_pro_.inv002_01();
             o_mg_glo_bal.mg_ads000_03(objPro, this);
         }
 
