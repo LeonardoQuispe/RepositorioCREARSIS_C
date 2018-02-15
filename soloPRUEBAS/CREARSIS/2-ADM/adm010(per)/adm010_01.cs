@@ -22,6 +22,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         public dynamic vg_frm_pad;
         DataTable tab_adm010;
         DataTable tab_adm011;
+        DataTable tab_ecp007;
         string vv_err_msg = "";
 
         #endregion
@@ -31,6 +32,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         _01_mg_glo_bal o_mg_glo_bal = new _01_mg_glo_bal();
         c_adm010 o_adm010 = new c_adm010();
         c_adm011 o_adm011 = new c_adm011();
+        DATOS._7_ECP.c_ecp007 o_ecp007 = new DATOS._7_ECP.c_ecp007();
 
         #endregion
 
@@ -120,7 +122,7 @@ namespace CREARSIS._2_ADM.adm010_per_
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             //vg_frm_pad.fu_rec_tal(tb_cod_gru.Text, tb_nro_tal.Text);
-            vg_frm_pad.fu_Sel_Per(tb_sel_ecc.Text,lb_sel_ecc.Text );
+            vg_frm_pad.fu_rec_Per(tb_sel_ecc.Text,lb_sel_ecc.Text );
             vg_frm_pad.Enabled = true;
             Close();
         }
@@ -362,6 +364,34 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "Ningún dato Seleccionado";
             }
         }
+        public string fu_ver_dat4()
+        {
+
+            if (tb_sel_ecc.Text.Trim() != "")
+            {
+                ///Si aun existe
+                tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
+                if (tab_adm010.Rows.Count == 0)
+                {
+                    return "La Persona no se encuentra registrada";
+                }
+
+                //Verifica estado del dato
+                if (tab_adm010.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    return "La Persona se encuentra Deshabilitada";
+                }
+
+                tab_adm010 = o_adm010._05(tb_sel_ecc.Text);
+
+
+                return null;
+            }
+            else
+            {
+                return "Ningún dato Seleccionado";
+            }
+        }
 
         #endregion
 
@@ -433,8 +463,21 @@ namespace CREARSIS._2_ADM.adm010_per_
             o_mg_glo_bal.mg_ads000_04(this, 1);
         }
 
+
         #endregion
 
-        
+        private void m_ecp007_01_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg = null;
+            vv_err_msg = fu_ver_dat4();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Lista de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CREARSIS._7_ECP.ecp007_linea_de_credito__.ecp007_01 obj = new _7_ECP.ecp007_linea_de_credito__.ecp007_01();
+
+            o_mg_glo_bal.mg_ads000_01(obj, this, 2, tab_ecp007);
+        }
     }
 }

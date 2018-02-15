@@ -55,10 +55,8 @@
             this.m_adm003_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_ecp007_01 = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
-            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.va_cod_suc = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
             this.va_raz_soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_com = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +65,9 @@
             this.ban_ven = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.ban_com = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.va_est_ado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
+            this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
+            this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.mn_pri_nci.SuspendLayout();
@@ -253,11 +254,12 @@
             this.m_adm003_02,
             this.mr_mod_ifi,
             this.m_adm003_05,
+            this.m_ecp007_01,
             this.m_adm003_p00,
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(59, 92);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(406, 24);
             this.mn_pri_nci.TabIndex = 5;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -320,6 +322,13 @@
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
+            // m_ecp007_01
+            // 
+            this.m_ecp007_01.Name = "m_ecp007_01";
+            this.m_ecp007_01.Size = new System.Drawing.Size(105, 20);
+            this.m_ecp007_01.Text = "Linea de Credito";
+            this.m_ecp007_01.Click += new System.EventHandler(this.m_ecp007_01_Click);
+            // 
             // dg_res_ult
             // 
             this.dg_res_ult.AllowUserToAddRows = false;
@@ -375,51 +384,6 @@
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellDoubleClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
-            // 
-            // gb_ctr_frm
-            // 
-            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
-            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
-            this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
-            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(1, 330);
-            this.gb_ctr_frm.Name = "gb_ctr_frm";
-            this.gb_ctr_frm.Size = new System.Drawing.Size(710, 48);
-            this.gb_ctr_frm.TabIndex = 73;
-            this.gb_ctr_frm.TabStop = false;
-            // 
-            // bt_can_cel
-            // 
-            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_can_cel.Location = new System.Drawing.Point(583, 16);
-            this.bt_can_cel.Name = "bt_can_cel";
-            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
-            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_can_cel.Symbol = "";
-            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
-            this.bt_can_cel.SymbolSize = 15F;
-            this.bt_can_cel.TabIndex = 70;
-            this.bt_can_cel.Text = "Cancelar";
-            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
-            // 
-            // bt_ace_pta
-            // 
-            this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ace_pta.Location = new System.Drawing.Point(471, 16);
-            this.bt_ace_pta.Name = "bt_ace_pta";
-            this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
-            this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_ace_pta.Symbol = "";
-            this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bt_ace_pta.SymbolSize = 15F;
-            this.bt_ace_pta.TabIndex = 60;
-            this.bt_ace_pta.Text = "Aceptar";
-            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // va_cod_suc
             // 
@@ -497,6 +461,51 @@
             this.va_est_ado.ReadOnly = true;
             this.va_est_ado.Width = 80;
             // 
+            // gb_ctr_frm
+            // 
+            this.gb_ctr_frm.BackColor = System.Drawing.Color.White;
+            this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
+            this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
+            this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
+            this.gb_ctr_frm.Location = new System.Drawing.Point(1, 330);
+            this.gb_ctr_frm.Name = "gb_ctr_frm";
+            this.gb_ctr_frm.Size = new System.Drawing.Size(710, 48);
+            this.gb_ctr_frm.TabIndex = 73;
+            this.gb_ctr_frm.TabStop = false;
+            // 
+            // bt_can_cel
+            // 
+            this.bt_can_cel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_can_cel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_can_cel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bt_can_cel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_can_cel.Location = new System.Drawing.Point(583, 16);
+            this.bt_can_cel.Name = "bt_can_cel";
+            this.bt_can_cel.Size = new System.Drawing.Size(84, 23);
+            this.bt_can_cel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_can_cel.Symbol = "";
+            this.bt_can_cel.SymbolColor = System.Drawing.Color.Maroon;
+            this.bt_can_cel.SymbolSize = 15F;
+            this.bt_can_cel.TabIndex = 70;
+            this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
+            // 
+            // bt_ace_pta
+            // 
+            this.bt_ace_pta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_ace_pta.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ace_pta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ace_pta.Location = new System.Drawing.Point(471, 16);
+            this.bt_ace_pta.Name = "bt_ace_pta";
+            this.bt_ace_pta.Size = new System.Drawing.Size(83, 23);
+            this.bt_ace_pta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_ace_pta.Symbol = "";
+            this.bt_ace_pta.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bt_ace_pta.SymbolSize = 15F;
+            this.bt_ace_pta.TabIndex = 60;
+            this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
+            // 
             // adm010_01
             // 
             this.AcceptButton = this.bt_ace_pta;
@@ -565,5 +574,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_ven;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn ban_com;
         private System.Windows.Forms.DataGridViewTextBoxColumn va_est_ado;
+        private System.Windows.Forms.ToolStripMenuItem m_ecp007_01;
     }
 }
