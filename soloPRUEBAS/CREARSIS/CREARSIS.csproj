@@ -481,40 +481,40 @@
     <Compile Include="2-ADM\adm000.Designer.cs">
       <DependentUpon>adm000.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_01.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_01.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_01.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_01.Designer.cs">
       <DependentUpon>ecp007_01.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_02.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_02.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_02.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_02.Designer.cs">
       <DependentUpon>ecp007_02.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_03.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_03.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_03.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_03.Designer.cs">
       <DependentUpon>ecp007_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_04.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_04.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.Designer.cs">
       <DependentUpon>ecp007_04.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_05.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_05.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_05.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_05.Designer.cs">
       <DependentUpon>ecp007_05.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_06.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_06.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_06.Designer.cs">
+    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_06.Designer.cs">
       <DependentUpon>ecp007_06.cs</DependentUpon>
     </Compile>
     <Compile Include="9-CMP\cmp000.cs">
@@ -1395,22 +1395,22 @@
     <EmbeddedResource Include="2-ADM\adm000.resx">
       <DependentUpon>adm000.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_01.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_01.resx">
       <DependentUpon>ecp007_01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_02.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_02.resx">
       <DependentUpon>ecp007_02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_03.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_03.resx">
       <DependentUpon>ecp007_03.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_04.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.resx">
       <DependentUpon>ecp007_04.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_05.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_05.resx">
       <DependentUpon>ecp007_05.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29%29\ecp007_06.resx">
+    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_06.resx">
       <DependentUpon>ecp007_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="9-CMP\cmp000.resx">

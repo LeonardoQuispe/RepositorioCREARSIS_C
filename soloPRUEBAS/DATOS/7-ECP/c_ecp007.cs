@@ -27,12 +27,12 @@ namespace DATOS._7_ECP
         /// <param name="est_bus">Estado de la Actividad (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )</param>
         /// <returns></returns>
         /// <returns></returns>
-        public DataTable _01(int cod_per, string val_bus, int prm_bus, string est_bus)
+        public DataTable _01(int cod_per, string val_bus, int prm_bus)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_mon_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010");
+                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010");
                 vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
                 vv_str_sql.AppendLine(" and va_cod_per =' " + cod_per + " '");
 
@@ -65,10 +65,10 @@ namespace DATOS._7_ECP
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT cmr001.va_cod_per,va_nom_lis,ecp007.va_cod_lib,va_nom_lib,va_pre_cio,va_pmx_des,va_pmx_inc,va_por_cal,ecp007.va_est_ado FROM cmr001,cmr002,ecp007 "); 
-                vv_str_sql.AppendLine(" and ecp007.va_cod_plg=ecp005.va_cod_plg ");
-                vv_str_sql.AppendLine(" and cmr002.va_cod_per ='" + cod_per + "'");
-                vv_str_sql.AppendLine(" and ecp007.va_cod_lib like '" + cod_lib + "%' ");
+                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
+                vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
+                vv_str_sql.AppendLine(" and adm010.va_cod_per='" + cod_per + "'");
+                vv_str_sql.AppendLine(" and ecp006.va_cod_lib like '" + cod_lib + "%' ");
 
                 return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 

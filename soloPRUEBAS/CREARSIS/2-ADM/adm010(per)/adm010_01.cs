@@ -477,7 +477,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             }
             CREARSIS._7_ECP.ecp007_linea_de_credito__.ecp007_01 obj = new _7_ECP.ecp007_linea_de_credito__.ecp007_01();
 
-            o_mg_glo_bal.mg_ads000_01(obj, this, 2, tab_ecp007);
+            o_mg_glo_bal.mg_ads000_01(obj, this, 2, tab_adm010);
         }
     }
 }

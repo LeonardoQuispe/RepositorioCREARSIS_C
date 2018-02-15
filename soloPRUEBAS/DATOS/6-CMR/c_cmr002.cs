@@ -31,11 +31,10 @@ namespace DATOS._6_CMR
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" select ecp006.va_cod_lib,va_mon_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp from ecp006,ecp007,ecp005,adm010 ");
-                vv_str_sql.AppendLine(" where ecp007.va_cod_lib=ecp006.va_cod_lib");
-                vv_str_sql.AppendLine(" and ecp007.va_cod_plg=ecp005.va_cod_plg");
+                vv_str_sql.AppendLine(" SELECT inv002.va_cod_pro,va_nom_pro,va_pre_cio,va_est_ado,va_cod_lis FROM cmr002,inv002 ");
+                vv_str_sql.AppendLine(" WHERE cmr002.va_cod_pro=inv002.va_cod_pro ");
                 vv_str_sql.AppendLine(" and va_cod_lis =' " + cod_lis + " '");
-                
+
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendLine(" and inv002.va_cod_pro like '" + val_bus + "%' "); break;
@@ -69,7 +68,7 @@ namespace DATOS._6_CMR
         /// </summary>
         /// <param name="cod_lis">Codigo del Detalle</param>
         /// <returns></returns>
-        public DataTable _01(string cod_lis,string cod_pro="")
+        public DataTable _01(string cod_lis, string cod_pro = "")
         {
             try
             {
@@ -106,7 +105,7 @@ namespace DATOS._6_CMR
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" INSERT INTO cmr002 VALUES ");
 
-                vv_str_sql.AppendLine("(" + cod_lis + ", '" + cod_pro + "', '" + pre_cio+ "', '" + pmx_des + "',");
+                vv_str_sql.AppendLine("(" + cod_lis + ", '" + cod_pro + "', '" + pre_cio + "', '" + pmx_des + "',");
                 vv_str_sql.AppendLine("'" + pmx_inc + "','" + por_cal + "')");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
@@ -134,7 +133,7 @@ namespace DATOS._6_CMR
                 {
                     vv_str_sql = new StringBuilder();
                     vv_str_sql.AppendLine(" UPDATE cmr002 SET ");
-                   
+
                     vv_str_sql.AppendLine(" va_pre_cio='" + pre_cio + "', va_pmx_des='" + pmx_des + "',");
                     vv_str_sql.AppendLine(" va_por_cal='" + por_cal + "'");
                     vv_str_sql.AppendLine(" WHERE va_cod_lis = " + cod_lis);
@@ -155,7 +154,7 @@ namespace DATOS._6_CMR
         /// <param name="cod_lis">Codigo del la lista(cmr001)</param>
         /// <param name="cod_pro">Codigo de Producto(inv002)</param>
         /// <returns></returns>
-        public void _06(string cod_lis,string cod_pro)
+        public void _06(string cod_lis, string cod_pro)
         {
             try
             {

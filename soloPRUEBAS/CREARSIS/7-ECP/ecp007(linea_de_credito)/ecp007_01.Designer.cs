@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tb_sel_ecc2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -40,7 +40,7 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.va_cod_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_cod_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_mto_lim = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +88,11 @@
             this.tb_sel_ecc2.MaxLength = 3;
             this.tb_sel_ecc2.Name = "tb_sel_ecc2";
             this.tb_sel_ecc2.PreventEnterBeep = true;
-            this.tb_sel_ecc2.Size = new System.Drawing.Size(63, 22);
+            this.tb_sel_ecc2.Size = new System.Drawing.Size(83, 22);
             this.tb_sel_ecc2.TabIndex = 0;
+            this.tb_sel_ecc2.ButtonCustomClick += new System.EventHandler(this.tb_sel_ecc2_ButtonCustomClick);
+            this.tb_sel_ecc2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_sel_ecc2_KeyDown);
+            this.tb_sel_ecc2.Validated += new System.EventHandler(this.tb_sel_ecc2_Validated);
             // 
             // labelX3
             // 
@@ -127,9 +130,9 @@
             // 
             this.lb_sel_ecc2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_sel_ecc2.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc2.Location = new System.Drawing.Point(133, 16);
+            this.lb_sel_ecc2.Location = new System.Drawing.Point(153, 16);
             this.lb_sel_ecc2.Name = "lb_sel_ecc2";
-            this.lb_sel_ecc2.Size = new System.Drawing.Size(343, 23);
+            this.lb_sel_ecc2.Size = new System.Drawing.Size(323, 23);
             this.lb_sel_ecc2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lb_sel_ecc2.TabIndex = 44;
             // 
@@ -183,49 +186,51 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_cod_lib,
-            this.va_nom_lib,
+            this.va_des_lib,
             this.va_cod_per,
             this.va_nom_per,
             this.va_mto_lim,
             this.va_fec_exp});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle35;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(466, 170);
             this.dg_res_ult.TabIndex = 50;
             this.dg_res_ult.TabStop = false;
+            this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
+            this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
             // 
             // va_cod_lib
             // 
@@ -234,12 +239,12 @@
             this.va_cod_lib.ReadOnly = true;
             this.va_cod_lib.Width = 80;
             // 
-            // va_nom_lib
+            // va_des_lib
             // 
-            this.va_nom_lib.HeaderText = "Nombre Libreta";
-            this.va_nom_lib.Name = "va_nom_lib";
-            this.va_nom_lib.ReadOnly = true;
-            this.va_nom_lib.Width = 85;
+            this.va_des_lib.HeaderText = "Descripcion Libreta";
+            this.va_des_lib.Name = "va_des_lib";
+            this.va_des_lib.ReadOnly = true;
+            this.va_des_lib.Width = 85;
             // 
             // va_cod_per
             // 
@@ -274,6 +279,7 @@
             this.m_atr_ass.Name = "m_atr_ass";
             this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
+            this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
             // 
             // m_cmr002_p00
             // 
@@ -286,24 +292,28 @@
             this.m_eco007_05.Name = "m_eco007_05";
             this.m_eco007_05.Size = new System.Drawing.Size(66, 20);
             this.m_eco007_05.Text = "&Consulta";
+            this.m_eco007_05.Click += new System.EventHandler(this.m_eco007_05_Click);
             // 
             // m_eco007_06
             // 
             this.m_eco007_06.Name = "m_eco007_06";
             this.m_eco007_06.Size = new System.Drawing.Size(152, 22);
             this.m_eco007_06.Text = "&Elimina";
+            this.m_eco007_06.Click += new System.EventHandler(this.m_eco007_06_Click);
             // 
             // m_eco007_03
             // 
             this.m_eco007_03.Name = "m_eco007_03";
             this.m_eco007_03.Size = new System.Drawing.Size(152, 22);
             this.m_eco007_03.Text = "&Actualiza";
+            this.m_eco007_03.Click += new System.EventHandler(this.m_eco007_03_Click);
             // 
             // m_eco007_02
             // 
             this.m_eco007_02.Name = "m_eco007_02";
             this.m_eco007_02.Size = new System.Drawing.Size(54, 20);
             this.m_eco007_02.Text = "&Nuevo";
+            this.m_eco007_02.Click += new System.EventHandler(this.m_eco007_02_Click);
             // 
             // mn_pri_nci
             // 
@@ -365,6 +375,8 @@
             this.tb_val_bus.PreventEnterBeep = true;
             this.tb_val_bus.Size = new System.Drawing.Size(341, 22);
             this.tb_val_bus.TabIndex = 1;
+            this.tb_val_bus.ButtonCustomClick += new System.EventHandler(this.tb_val_bus_ButtonCustomClick);
+            this.tb_val_bus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             // 
             // GroupBox1
             // 
@@ -426,9 +438,9 @@
             // 
             this.lb_sel_ecc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.lb_sel_ecc.Location = new System.Drawing.Point(132, 13);
+            this.lb_sel_ecc.Location = new System.Drawing.Point(153, 13);
             this.lb_sel_ecc.Name = "lb_sel_ecc";
-            this.lb_sel_ecc.Size = new System.Drawing.Size(345, 23);
+            this.lb_sel_ecc.Size = new System.Drawing.Size(324, 23);
             this.lb_sel_ecc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lb_sel_ecc.TabIndex = 1;
             // 
@@ -447,8 +459,9 @@
             this.tb_sel_ecc.MaxLength = 2;
             this.tb_sel_ecc.Name = "tb_sel_ecc";
             this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(62, 22);
+            this.tb_sel_ecc.Size = new System.Drawing.Size(82, 22);
             this.tb_sel_ecc.TabIndex = 0;
+            this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
             // LabelX1
             // 
@@ -508,12 +521,6 @@
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         public System.Windows.Forms.GroupBox gb_ctr_frm;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_lib;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_lib;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_per;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_per;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_mto_lim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_exp;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
         internal System.Windows.Forms.ToolStripMenuItem m_cmr002_p00;
         internal System.Windows.Forms.ToolStripMenuItem m_eco007_05;
@@ -533,5 +540,11 @@
         internal DevComponents.DotNetBar.LabelX lb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
         internal DevComponents.DotNetBar.LabelX LabelX1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_lib;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_des_lib;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_cod_per;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_nom_per;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_mto_lim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn va_fec_exp;
     }
 }
