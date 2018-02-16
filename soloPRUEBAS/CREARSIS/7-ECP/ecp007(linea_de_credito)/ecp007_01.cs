@@ -63,7 +63,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 foreach (DataRow row in tab_ecp007.Rows)
                 {
 
-                    dg_res_ult.Rows.Add(row["va_cod_lib"], row["va_des_lib"], row["va_cod_per"], row["va_nom_com"], row["va_mto_lim"], row["va_fec_exp"]);
+                    dg_res_ult.Rows.Add(row["va_cod_lib"], row["va_des_lib"], row["va_cod_per"], row["va_nom_com"], row["va_cod_plg"], row["va_des_plg"], row["va_mto_lim"], row["va_fec_exp"]);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -114,7 +114,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 {
 
 
-                    dg_res_ult.Rows.Add(row["va_cod_lib"], row["va_des_lib"], row["va_cod_per"], row["va_nom_com"], row["va_mto_lim"], row["va_fec_exp"]);
+                    dg_res_ult.Rows.Add(row["va_cod_lib"], row["va_des_lib"], row["va_cod_per"], row["va_nom_com"], row["va_cod_plg"], row["va_des_plg"], row["va_mto_lim"], row["va_fec_exp"]);
 
                     dg_res_ult.Rows[va_ind_ice].Tag = row;
                     va_ind_ice = va_ind_ice + 1;
@@ -164,14 +164,14 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
-        public void fu_sel_fila(string cod_lib, string nom_lib)
+        public void fu_sel_fila(string cod_lib, string des_lib)
         {
             if (tb_sel_ecc.Text.Trim() != "")
             {
                 fu_bus_car(tb_sel_ecc2.Text);
             }
             tb_sel_ecc.Text = cod_lib;
-            lb_sel_ecc.Text = nom_lib;
+            lb_sel_ecc.Text = des_lib;
 
 
             if (cod_lib != null)
@@ -180,7 +180,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_lib.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == nom_lib.ToUpper())
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_lib.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == des_lib.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -257,8 +257,9 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 {
                     return "Datos Incorrectos";
                 }
+                string cod_plg= dg_res_ult.SelectedRows[0].Cells[4].Value.ToString();
                 //Si aun existe
-                tab_ecp007 = o_ecp007._01(tb_sel_ecc2.Text,tb_sel_ecc.Text);
+                tab_ecp007 = o_ecp007._05(tb_sel_ecc2.Text,tb_sel_ecc.Text,int.Parse(cod_plg));
                 if (tab_ecp007.Rows.Count == 0)
                 {
                     return "Datos Incorrectos";

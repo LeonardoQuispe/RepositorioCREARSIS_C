@@ -302,10 +302,12 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 }
                 // grabar datos
                 o_ecp007._02(int.Parse(tb_cod_lib.Text), tb_cod_per.Text, int.Parse(tb_cod_plg.Text), (decimal.TryParse(tb_mto_lim.Text, out tmp) ? tmp : 0m),0m,tb_max_cuo.Text,tb_fec_exp.Value);
-                fu_lim_frm();
-
+                
                 //Actualiza la grilla de busqueda en la ventana padre
+                vg_frm_pad.fu_bus_car(tb_cod_per.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_lib.Text, tb_des_lib.Text);
 
+                fu_lim_frm();
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

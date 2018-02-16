@@ -32,8 +32,10 @@ namespace DATOS._7_ECP
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010");
+                vv_str_sql.AppendLine("SELECT ecp005.va_cod_plg,va_des_plg,ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_max_cuo,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
                 vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_per=adm010.va_cod_per ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_lib=ecp006.va_cod_lib ");
                 vv_str_sql.AppendLine(" and adm010.va_cod_per ='" + cod_per + "'");
 
                 switch (prm_bus)
@@ -63,8 +65,10 @@ namespace DATOS._7_ECP
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("SELECT ecp005.va_cod_plg,ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_max_cuo,va_fec_exp FROM ecp006,ecp007,ecp005,adm010  ");
+                vv_str_sql.AppendLine("SELECT ecp005.va_cod_plg,va_des_plg,ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_max_cuo,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
                 vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_per=adm010.va_cod_per ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_lib=ecp006.va_cod_lib ");
                 vv_str_sql.AppendLine(" and adm010.va_cod_per='" + cod_per + "'");
                 vv_str_sql.AppendLine(" and ecp006.va_cod_lib like '" + cod_lib + "%' ");
 
@@ -148,8 +152,11 @@ namespace DATOS._7_ECP
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
-                vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg='" + cod_plg+"'");
+                vv_str_sql.AppendLine("SELECT ecp005.va_cod_plg,va_des_plg,ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_max_cuo,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
+                vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_per=adm010.va_cod_per ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_lib=ecp006.va_cod_lib ");
+                vv_str_sql.AppendLine(" and ecp007.va_cod_plg='" + cod_plg+"'");
                 vv_str_sql.AppendLine(" and adm010.va_cod_per='" + cod_per + "'");
                 vv_str_sql.AppendLine(" and ecp006.va_cod_lib like '" + cod_lib + "%' ");
 
