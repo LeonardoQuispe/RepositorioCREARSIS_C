@@ -45,6 +45,27 @@ namespace CREARSIS
         {
             fu_ini_frm();
         }
+
+        private void bt_ver_pss_MouseHover(object sender, EventArgs e)
+        {
+            tb_pss_usr.UseSystemPasswordChar = false;
+        }
+
+        private void bt_ver_pss_MouseLeave(object sender, EventArgs e)
+        {
+            tb_pss_usr.UseSystemPasswordChar = true;
+        }
+
+        private void bt_ver_con_MouseHover(object sender, EventArgs e)
+        {
+            tb_pss_con.UseSystemPasswordChar = false;
+        }
+
+        private void bt_ver_con_MouseLeave(object sender, EventArgs e)
+        {
+            tb_pss_con.UseSystemPasswordChar = true;
+        }
+
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
             try
@@ -116,6 +137,19 @@ namespace CREARSIS
                 return "El usuario se encuentra Deshabilitado";
             }
 
+            //Valida Contraseña
+            if (tb_pss_usr.Text.Trim()=="")
+            {
+                tb_pss_usr.Focus();
+                return "Debe ingresar una Contraseña";
+
+            }
+            if (tb_pss_con.Text.Trim() == "")
+            {
+                tb_pss_usr.Focus();
+                return "Debe Confirmar la Contraseña";
+
+            }
             if (tb_pss_usr.Text != tb_pss_con.Text)
             {
                 return "La contraseña no coincide con la confirmación de la misma";

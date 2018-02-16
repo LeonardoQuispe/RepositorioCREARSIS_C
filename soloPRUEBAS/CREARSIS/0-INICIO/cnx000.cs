@@ -114,7 +114,8 @@ namespace CREARSIS
                 tabla = o_ads005._05(tb_usr_usr.Text);
 
                 seg001_03b obj = new seg001_03b();
-                o_mg_glo_bal.mg_ads000_03(obj, this, tabla);
+                obj.vg_str_ucc = tabla;
+                obj.ShowDialog();
 
             }
             catch (Exception ex)
