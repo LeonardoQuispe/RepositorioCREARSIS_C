@@ -89,97 +89,44 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
 
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
-        ///// </summary>
-        //public string fu_ver_dat()
-        //{
-        //    if (tb_cod_lib.Text == "")
-        //    {
-        //        tb_cod_lib.Focus();
-        //        return "Debes proporcionar el codigo de la Lista de Precio";
-        //    }
-        //    if (o_mg_glo_bal.fg_val_num(tb_cod_lib.Text) == false)
-        //    {
-        //        tb_cod_lib.Focus();
-        //        return "El Codigo de la Lista de Precios debe ser Numerico";
-        //    }
-        //    if (tb_cod_plg.Text == "")
-        //    {
-        //        tb_cod_lib.Focus();
-        //        return "Debes proporcionar el codigo del Producto";
-        //    }
+        /// </summary>
+        public string fu_ver_dat()
+        {
+            //valida Monto limite
+            if (tb_mto_lim.Text == "")
+            {
+                tb_mto_lim.Focus();
+                return "Debes proporcionar el Monto Limite de Credito";
+            }
 
-        //    //valida PRECIO
-        //    if (tb_pre_cio.Text == "")
-        //    {
-        //        tb_pre_cio.Focus();
-        //        return "Debes proporcionar el Precio";
-        //    }
-        //    err_msg = o_mg_glo_bal.fg_val_dec(tb_pre_cio.Text, 5, 5);
+            err_msg = o_mg_glo_bal.fg_val_dec(tb_mto_lim.Text, 12, 2);
 
-        //    if (err_msg == null)
-        //    {
-        //        tb_pre_cio.Focus();
-        //        return "El Precio debe ser Numerico";
-        //    }
-        //    if (err_msg == "ent")
-        //    {
-        //        tb_pre_cio.Focus();
-        //        return "El Precio debe tener hasta 5 numeros Enteros";
-        //    }
-        //    if (err_msg == "dec")
-        //    {
-        //        tb_pre_cio.Focus();
-        //        return "El Precio debe tener hasta 5 números Decimales";
-        //    }
-        //    //valida Porcentaje Maximo de descuento
-        //    if (tb_pmx_des.Text == "")
-        //    {
-        //        tb_pmx_des.Focus();
-        //        return "Debes proporcionar el Porcentaje Maximo de Descuento";
-        //    }
-        //    err_msg = o_mg_glo_bal.fg_val_dec(tb_pmx_des.Text, 2, 2);
+            if (err_msg == null)
+            {
+                tb_mto_lim.Focus();
+                return "El Monto Limite de Credito debe ser Numerico";
+            }
+            if (err_msg == "ent")
+            {
+                tb_mto_lim.Focus();
+                return "El Monto Limite de Credito debe tener hasta 12 numeros Enteros";
+            }
+            if (err_msg == "dec")
+            {
+                tb_mto_lim.Focus();
+                return "El Monto Limite debe tener hasta 2 números Decimales";
+            }
 
-        //    if (err_msg == null)
-        //    {
-        //        tb_pmx_des.Focus();
-        //        return "El Porcentaje Maximo de Descuento debe ser Numerico";
-        //    }
-        //    if (err_msg == "ent")
-        //    {
-        //        tb_pmx_des.Focus();
-        //        return "El Porcentaje Maximo de Descuento debe tener hasta 2 numeros Enteros";
-        //    }
-        //    if (err_msg == "dec")
-        //    {
-        //        tb_pmx_des.Focus();
-        //        return "El Porcentaje Maximo de Descuento debe tener hasta 2 números Decimales";
-        //    }
-        //    //valida Porcentaje Maximo de Incremento
-        //    if (tb_pmx_inc.Text == "")
-        //    {
-        //        tb_pmx_inc.Focus();
-        //        return "Debes proporcionar el Porcentaje Maximo de Incremento";
-        //    }
-        //    err_msg = o_mg_glo_bal.fg_val_dec(tb_pmx_inc.Text, 2, 2);
-
-        //    if (err_msg == null)
-        //    {
-        //        tb_pmx_inc.Focus();
-        //        return "El Porcentaje Maximo de Incremento debe ser Numerico";
-        //    }
-        //    if (err_msg == "ent")
-        //    {
-        //        tb_pmx_inc.Focus();
-        //        return "El Porcentaje Maximo de Incremento debe tener hasta 2 numeros Enteros";
-        //    }
-        //    if (err_msg == "dec")
-        //    {
-        //        tb_pmx_inc.Focus();
-        //        return "El Porcentaje Maximo de Incremento debe tener hasta 2 números Decimales";
-        //    }
-
-        //    return null;
-        //}
+            if (tb_max_cuo.Text != "")
+            {
+                if (o_mg_glo_bal.fg_val_num(tb_max_cuo.Text) == false)
+                {
+                    tb_max_cuo.Focus();
+                    return "El Maximo de Cuotas debe ser Numerico"; ;
+                }
+            }
+            return null;
+        }
 
 
         #endregion
@@ -193,7 +140,39 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
+            try
+            {
+                decimal tmp;
+                err_msg = fu_ver_dat();
+                if (err_msg != null)
+                {
+                    MessageBoxEx.Show(err_msg, "Error Actualiza Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("¿Estas seguro de grabar los datos?", "Actualiza Linea de Credito", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                // grabar datos
+                o_ecp007._03(int.Parse(tb_cod_lib.Text), tb_cod_per.Text, int.Parse(tb_cod_plg.Text), (decimal.TryParse(tb_mto_lim.Text, out tmp) ? tmp : 0m), 0m, tb_max_cuo.Text, tb_fec_exp.Value);
+
+                MessageBoxEx.Show("Operación completada exitosamente", "Actualiza Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //Actualiza la grilla de busqueda en la ventana padre
+                vg_frm_pad.fu_bus_car(tb_cod_lib.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_lib.Text, tb_des_lib.Text);
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message);
+            }
         }
 
         private void ecp007_03_Load(object sender, EventArgs e)

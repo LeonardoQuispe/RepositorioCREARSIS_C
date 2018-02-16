@@ -34,14 +34,12 @@ namespace DATOS._7_ECP
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010");
                 vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg=ecp005.va_cod_plg ");
-                vv_str_sql.AppendLine(" and va_cod_per =' " + cod_per + " '");
+                vv_str_sql.AppendLine(" and adm010.va_cod_per ='" + cod_per + "'");
 
                 switch (prm_bus)
                 {
                     case 1: vv_str_sql.AppendLine(" and ecp007.va_cod_lib like '" + val_bus + "%' "); break;
-                    case 2: vv_str_sql.AppendLine(" and va_nom_lib like '" + val_bus + "%' "); break;
-                    case 3: vv_str_sql.AppendLine(" and va_cod_per like '" + val_bus + "%' "); break;
-                    case 4: vv_str_sql.AppendLine(" and va_nom_com like '" + val_bus + "%' "); break;
+                    case 2: vv_str_sql.AppendLine(" and va_des_lib like '" + val_bus + "%' "); break;
 
                 }
 
@@ -79,8 +77,17 @@ namespace DATOS._7_ECP
             }
         }
 
-        
-        public void _02(int cod_lib, string cod_per, int cod_plg, Decimal mto_lim, Decimal sal_act, int max_cuo,DateTime fec_exp)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cod_lib"></param>
+        /// <param name="cod_per"></param>
+        /// <param name="cod_plg"></param>
+        /// <param name="mto_lim"></param>
+        /// <param name="sal_act"></param>
+        /// <param name="max_cuo"></param>
+        /// <param name="fec_exp"></param>
+        public void _02(int cod_lib, string cod_per, int cod_plg, Decimal mto_lim, Decimal sal_act, string max_cuo,DateTime fec_exp)
         {
             try
             {
@@ -99,27 +106,28 @@ namespace DATOS._7_ECP
         }
 
         /// <summary>
-        /// Funcion Actualiza Detalle de Precios
+        /// 
         /// </summary>
-        /// <param name="cod_per">Codigo del la lista(cmr001)</param>
-        /// <param name="cod_lib">Codigo de Producto(ecp007)</param>
-        /// <param name="pre_cio">Precio del Producto</param>
-        /// <param name="pmx_des">Porcentaje maximo de descuento permitido</param>
-        /// <param name="pmx_inc">Porcentaje maximo de incremento permitido</param>
-        /// <param name="por_cal">Porcentaje de utilidad(Ganancia) calculado</param>
-        /// <returns></returns>
-        public void _03(int cod_per, string cod_lib, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
+        /// <param name="cod_lib"></param>
+        /// <param name="cod_per"></param>
+        /// <param name="cod_plg"></param>
+        /// <param name="mto_lim"></param>
+        /// <param name="sal_act"></param>
+        /// <param name="max_cuo"></param>
+        /// <param name="fec_exp"></param>
+        public void _03(int cod_lib, string cod_per, int cod_plg, Decimal mto_lim, Decimal sal_act, string max_cuo, DateTime fec_exp)
         {
             {
                 try
                 {
                     vv_str_sql = new StringBuilder();
-                    vv_str_sql.AppendLine(" UPDATE cmr002 SET ");
+                    vv_str_sql.AppendLine(" UPDATE ecp007 SET ");
 
-                    vv_str_sql.AppendLine(" va_pre_cio='" + pre_cio + "', va_pmx_des='" + pmx_des + "',");
-                    vv_str_sql.AppendLine(" va_por_cal='" + por_cal + "'");
-                    vv_str_sql.AppendLine(" WHERE va_cod_per = " + cod_per);
-                    vv_str_sql.AppendLine(" and va_cod_lib= '" + cod_lib + "'");
+                    vv_str_sql.AppendLine(" va_mto_lim='" + mto_lim + "', va_max_cuo='" + max_cuo + "',");
+                    vv_str_sql.AppendLine(" va_fec_exp='" + fec_exp.ToShortDateString() + "'");
+                    vv_str_sql.AppendLine(" WHERE va_cod_lib = " + cod_lib);
+                    vv_str_sql.AppendLine(" and va_cod_per= '" + cod_per + "'");
+                    vv_str_sql.AppendLine(" and va_cod_plg= " + cod_plg);
 
                     o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
                 }
@@ -159,14 +167,15 @@ namespace DATOS._7_ECP
         /// <param name="cod_per">Codigo del la lista(cmr001)</param>
         /// <param name="cod_lib">Codigo de Producto(ecp007)</param>
         /// <returns></returns>
-        public void _06(string cod_per, string cod_lib)
+        public void _06(string cod_lib, string cod_per,string cod_plg)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" DELETE cmr002 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_per = '" + cod_per + "'");
-                vv_str_sql.AppendLine(" AND va_cod_lib='" + cod_lib + "'");
+                vv_str_sql.AppendLine(" DELETE ecp007 ");
+                vv_str_sql.AppendLine(" WHERE  va_cod_lib = '" + cod_lib + "'");
+                vv_str_sql.AppendLine(" AND va_cod_per='" + cod_per + "'");
+                vv_str_sql.AppendLine(" AND va_cod_plg='" + cod_plg + "'");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }

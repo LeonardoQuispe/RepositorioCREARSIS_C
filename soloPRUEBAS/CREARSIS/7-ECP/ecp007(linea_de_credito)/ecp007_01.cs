@@ -258,13 +258,13 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                     return "Datos Incorrectos";
                 }
                 //Si aun existe
-                tab_ecp007 = o_ecp007._01(tb_sel_ecc2.Text);
+                tab_ecp007 = o_ecp007._01(tb_sel_ecc2.Text,tb_sel_ecc.Text);
                 if (tab_ecp007.Rows.Count == 0)
                 {
                     return "Datos Incorrectos";
                 }
                 //Si aun existe
-                tab_ecp006 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
+                tab_ecp006 = o_ecp006._05(int.Parse(tb_sel_ecc.Text));
                 if (tab_ecp006.Rows.Count == 0)
                 {
                     return "La Libreta no se encuentra registrada";

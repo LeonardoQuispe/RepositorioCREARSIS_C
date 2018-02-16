@@ -456,6 +456,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // ecp007_05
             // 
@@ -472,6 +473,7 @@
             this.Name = "ecp007_05";
             this.Text = "Consulta Linea de Credito";
             this.TitleText = "Consulta Linea de Credito";
+            this.Load += new System.EventHandler(this.ecp007_05_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);

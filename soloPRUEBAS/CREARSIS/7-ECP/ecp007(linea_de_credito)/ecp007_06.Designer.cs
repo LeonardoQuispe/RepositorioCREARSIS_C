@@ -70,6 +70,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // GroupBox1
             // 
@@ -473,6 +474,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // ecp007_06
             // 
@@ -491,6 +493,7 @@
             this.Name = "ecp007_06";
             this.Text = "Elimina Linea de Credito";
             this.TitleText = "Elimina Linea de Credito";
+            this.Load += new System.EventHandler(this.ecp007_06_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.gb_ctr_frm.ResumeLayout(false);

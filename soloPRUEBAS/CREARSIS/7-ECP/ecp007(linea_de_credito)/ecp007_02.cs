@@ -120,6 +120,15 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 tb_cod_plg.Focus();
                 return "Debes proporcionar el codigo del plan de pago";
             }
+            if(tb_max_cuo.Text!="")
+            {
+                if (o_mg_glo_bal.fg_val_num(tb_max_cuo.Text) == false)
+                {
+                    tb_max_cuo.Focus();
+                    return "El Maximo de Cuotas debe ser Numerico"; ;
+                }
+            }
+            
 
             //Si aun existe
             tab_ecp007 = o_ecp007._05(tb_cod_per.Text, tb_cod_lib.Text,int.Parse(tb_cod_plg.Text));
@@ -160,7 +169,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 tb_cod_lib.Clear();
                 tb_des_lib.Text = "** NO existe";
 
-                MessageBoxEx.Show("El Producto se encuentra Deshabilitado", "Nuevo Detalle Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show("La Libreta se encuentra Deshabilitada", "Nuevo Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
@@ -197,7 +206,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 tb_cod_plg.Clear();
                 tb_des_plg.Text = "** NO existe";
 
-                MessageBoxEx.Show("La Lista de Precio se encuentra Deshabilitada", "Nuevo Detalle Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show("El plan de Pago se encuentra Deshabilitado", "Nuevo Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
@@ -281,24 +290,24 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
-                    MessageBoxEx.Show(err_msg, "Error Nuevo Detalle de Precios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxEx.Show(err_msg, "Error Nuevo Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 DialogResult res_msg;
-                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Detalle de Precios", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo Linea de Credito", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res_msg == DialogResult.Cancel)
                 {
                     return;
                 }
                 // grabar datos
-                o_ecp007._02(int.Parse(tb_cod_lib.Text), tb_cod_per.Text, int.Parse(tb_cod_plg.Text), (decimal.TryParse(tb_mto_lim.Text, out tmp) ? tmp : 0m),0m,int.Parse(tb_max_cuo.Text),tb_fec_exp.Value);
+                o_ecp007._02(int.Parse(tb_cod_lib.Text), tb_cod_per.Text, int.Parse(tb_cod_plg.Text), (decimal.TryParse(tb_mto_lim.Text, out tmp) ? tmp : 0m),0m,tb_max_cuo.Text,tb_fec_exp.Value);
                 fu_lim_frm();
 
                 //Actualiza la grilla de busqueda en la ventana padre
 
 
-                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Detalle de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Linea de Credito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 
             }

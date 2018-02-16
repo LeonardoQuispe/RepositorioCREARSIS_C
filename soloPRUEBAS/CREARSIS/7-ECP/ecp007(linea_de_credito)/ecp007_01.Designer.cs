@@ -59,8 +59,6 @@
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.codigo1 = new DevComponents.Editors.ComboItem();
             this.nombre1 = new DevComponents.Editors.ComboItem();
-            this.codigo2 = new DevComponents.Editors.ComboItem();
-            this.nombre2 = new DevComponents.Editors.ComboItem();
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
@@ -297,14 +295,14 @@
             // m_eco007_06
             // 
             this.m_eco007_06.Name = "m_eco007_06";
-            this.m_eco007_06.Size = new System.Drawing.Size(122, 22);
+            this.m_eco007_06.Size = new System.Drawing.Size(152, 22);
             this.m_eco007_06.Text = "&Elimina";
             this.m_eco007_06.Click += new System.EventHandler(this.m_eco007_06_Click);
             // 
             // m_eco007_03
             // 
             this.m_eco007_03.Name = "m_eco007_03";
-            this.m_eco007_03.Size = new System.Drawing.Size(122, 22);
+            this.m_eco007_03.Size = new System.Drawing.Size(152, 22);
             this.m_eco007_03.Text = "&Actualiza";
             this.m_eco007_03.Click += new System.EventHandler(this.m_eco007_03_Click);
             // 
@@ -403,9 +401,7 @@
             this.cb_prm_bus.ItemHeight = 16;
             this.cb_prm_bus.Items.AddRange(new object[] {
             this.codigo1,
-            this.nombre1,
-            this.codigo2,
-            this.nombre2});
+            this.nombre1});
             this.cb_prm_bus.Location = new System.Drawing.Point(363, 45);
             this.cb_prm_bus.Name = "cb_prm_bus";
             this.cb_prm_bus.Size = new System.Drawing.Size(113, 22);
@@ -421,14 +417,6 @@
             // 
             this.nombre1.Text = "Des. Libreta";
             this.nombre1.Value = "2";
-            // 
-            // codigo2
-            // 
-            this.codigo2.Text = "Cod. Persona";
-            // 
-            // nombre2
-            // 
-            this.nombre2.Text = "Nom. Persona";
             // 
             // lb_sel_ecc
             // 
@@ -535,8 +523,6 @@
         internal DevComponents.DotNetBar.Controls.ComboBoxEx cb_prm_bus;
         internal DevComponents.Editors.ComboItem codigo1;
         internal DevComponents.Editors.ComboItem nombre1;
-        private DevComponents.Editors.ComboItem codigo2;
-        private DevComponents.Editors.ComboItem nombre2;
         internal DevComponents.DotNetBar.LabelX lb_sel_ecc;
         internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
         internal DevComponents.DotNetBar.LabelX LabelX1;
