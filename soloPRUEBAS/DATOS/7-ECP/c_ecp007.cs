@@ -40,7 +40,7 @@ namespace DATOS._7_ECP
                 {
                     case 1: vv_str_sql.AppendLine(" and ecp007.va_cod_lib like '" + val_bus + "%' "); break;
                     case 2: vv_str_sql.AppendLine(" and va_nom_lib like '" + val_bus + "%' "); break;
-                    case 3: vv_str_sql.AppendLine(" and adm010.va_cod_per like '" + val_bus + "%' "); break;
+                    case 3: vv_str_sql.AppendLine(" and va_cod_per like '" + val_bus + "%' "); break;
                     case 4: vv_str_sql.AppendLine(" and va_nom_com like '" + val_bus + "%' "); break;
 
                 }
@@ -79,25 +79,16 @@ namespace DATOS._7_ECP
             }
         }
 
-        /// <summary>
-        /// Funcion Inserta Detalle de Precios
-        /// </summary>
-        /// <param name="cod_per">Codigo del la lista(cmr001)</param>
-        /// <param name="cod_lib">Codigo de Producto(ecp007)</param>
-        /// <param name="pre_cio">Precio del Producto</param>
-        /// <param name="pmx_des">Porcentaje maximo de descuento permitido</param>
-        /// <param name="pmx_inc">Porcentaje maximo de incremento permitido</param>
-        /// <param name="por_cal">Porcentaje de utilidad(Ganancia) calculado</param>
-        /// <returns></returns>
-        public void _02(int cod_per, string cod_lib, decimal pre_cio, decimal pmx_des, decimal pmx_inc, decimal por_cal)
+        
+        public void _02(int cod_lib, string cod_per, int cod_plg, Decimal mto_lim, Decimal sal_act, int max_cuo,DateTime fec_exp)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" INSERT INTO cmr002 VALUES ");
+                vv_str_sql.AppendLine(" INSERT INTO ecp007 VALUES ");
 
-                vv_str_sql.AppendLine("(" + cod_per + ", '" + cod_lib + "', '" + pre_cio + "', '" + pmx_des + "',");
-                vv_str_sql.AppendLine("'" + pmx_inc + "','" + por_cal + "')");
+                vv_str_sql.AppendLine("(" + cod_lib + ", '" + cod_per + "', '" + cod_plg + "', '" + mto_lim + "',");
+                vv_str_sql.AppendLine("'" + sal_act + "','" + max_cuo +  "','" + fec_exp.ToShortDateString() + "')");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
@@ -138,6 +129,29 @@ namespace DATOS._7_ECP
                 }
             }
 
+        }
+        /// <summary>
+        /// funcion "Consulta Detalle"
+        /// </summary>
+        /// <param name="cod_per">Codigo del Detalle</param>
+        /// <returns></returns>
+        public DataTable _05(string cod_per, string cod_lib,int cod_plg)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine("SELECT ecp006.va_cod_lib,va_des_lib,adm010.va_cod_per,va_nom_com,va_mto_lim,va_fec_exp FROM ecp006,ecp007,ecp005,adm010 ");
+                vv_str_sql.AppendLine(" WHERE ecp007.va_cod_plg='" + cod_plg+"'");
+                vv_str_sql.AppendLine(" and adm010.va_cod_per='" + cod_per + "'");
+                vv_str_sql.AppendLine(" and ecp006.va_cod_lib like '" + cod_lib + "%' ");
+
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         /// <summary>
         /// Funcion Elimina Producto de Detalle

@@ -77,10 +77,7 @@ namespace CREARSIS._6_CMR.cmr002_detalle_precio_
                 tb_cod_lis.Focus();
                 return "El Codigo de la Lista de Precios debe ser Numerico";
             }
-
-
-
-
+            
             //Valida Producto
             fu_rec_pro(tb_cod_pro.Text);
 

@@ -72,7 +72,7 @@
             this.tb_nom_per.PreventEnterBeep = true;
             this.tb_nom_per.ReadOnly = true;
             this.tb_nom_per.Size = new System.Drawing.Size(233, 22);
-            this.tb_nom_per.TabIndex = 210;
+            this.tb_nom_per.TabIndex = 1;
             this.tb_nom_per.TabStop = false;
             // 
             // tb_cod_per
@@ -86,12 +86,12 @@
             this.tb_cod_per.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_per.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_per.Location = new System.Drawing.Point(57, 19);
-            this.tb_cod_per.MaxLength = 120;
+            this.tb_cod_per.MaxLength = 7;
             this.tb_cod_per.Name = "tb_cod_per";
             this.tb_cod_per.PreventEnterBeep = true;
             this.tb_cod_per.ReadOnly = true;
             this.tb_cod_per.Size = new System.Drawing.Size(97, 22);
-            this.tb_cod_per.TabIndex = 209;
+            this.tb_cod_per.TabIndex = 0;
             this.tb_cod_per.TabStop = false;
             // 
             // labelX1
@@ -122,11 +122,11 @@
             this.tb_cod_lib.DisabledBackColor = System.Drawing.Color.White;
             this.tb_cod_lib.ForeColor = System.Drawing.Color.Black;
             this.tb_cod_lib.Location = new System.Drawing.Point(57, 51);
-            this.tb_cod_lib.MaxLength = 3;
+            this.tb_cod_lib.MaxLength = 5;
             this.tb_cod_lib.Name = "tb_cod_lib";
             this.tb_cod_lib.PreventEnterBeep = true;
             this.tb_cod_lib.Size = new System.Drawing.Size(97, 22);
-            this.tb_cod_lib.TabIndex = 0;
+            this.tb_cod_lib.TabIndex = 2;
             this.tb_cod_lib.ButtonCustomClick += new System.EventHandler(this.tb_cod_lib_ButtonCustomClick);
             this.tb_cod_lib.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_lib_KeyDown);
             this.tb_cod_lib.Validated += new System.EventHandler(this.tb_cod_lib_Validated);
@@ -147,7 +147,7 @@
             this.tb_des_lib.PreventEnterBeep = true;
             this.tb_des_lib.ReadOnly = true;
             this.tb_des_lib.Size = new System.Drawing.Size(233, 22);
-            this.tb_des_lib.TabIndex = 38;
+            this.tb_des_lib.TabIndex = 3;
             this.tb_des_lib.TabStop = false;
             // 
             // bt_can_cel
@@ -165,6 +165,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 1;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -180,6 +181,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 0;
             this.bt_ace_pta.Text = "Aceptar";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // gb_ctr_frm
             // 
@@ -187,7 +189,7 @@
             this.gb_ctr_frm.Controls.Add(this.bt_can_cel);
             this.gb_ctr_frm.Controls.Add(this.bt_ace_pta);
             this.gb_ctr_frm.ForeColor = System.Drawing.Color.Black;
-            this.gb_ctr_frm.Location = new System.Drawing.Point(0, 186);
+            this.gb_ctr_frm.Location = new System.Drawing.Point(0, 184);
             this.gb_ctr_frm.Name = "gb_ctr_frm";
             this.gb_ctr_frm.Size = new System.Drawing.Size(405, 48);
             this.gb_ctr_frm.TabIndex = 82;
@@ -220,11 +222,11 @@
             this.tb_mto_lim.DisabledBackColor = System.Drawing.Color.White;
             this.tb_mto_lim.ForeColor = System.Drawing.Color.Black;
             this.tb_mto_lim.Location = new System.Drawing.Point(95, 87);
-            this.tb_mto_lim.MaxLength = 11;
+            this.tb_mto_lim.MaxLength = 13;
             this.tb_mto_lim.Name = "tb_mto_lim";
             this.tb_mto_lim.PreventEnterBeep = true;
             this.tb_mto_lim.Size = new System.Drawing.Size(93, 22);
-            this.tb_mto_lim.TabIndex = 1;
+            this.tb_mto_lim.TabIndex = 4;
             // 
             // GroupBox1
             // 
@@ -267,12 +269,11 @@
             this.tb_max_cuo.DisabledBackColor = System.Drawing.Color.White;
             this.tb_max_cuo.ForeColor = System.Drawing.Color.Black;
             this.tb_max_cuo.Location = new System.Drawing.Point(359, 157);
-            this.tb_max_cuo.MaxLength = 120;
+            this.tb_max_cuo.MaxLength = 2;
             this.tb_max_cuo.Name = "tb_max_cuo";
             this.tb_max_cuo.PreventEnterBeep = true;
-            this.tb_max_cuo.ReadOnly = true;
             this.tb_max_cuo.Size = new System.Drawing.Size(34, 22);
-            this.tb_max_cuo.TabIndex = 221;
+            this.tb_max_cuo.TabIndex = 10;
             this.tb_max_cuo.TabStop = false;
             // 
             // labelX9
@@ -321,7 +322,7 @@
             this.tb_int_dia.PreventEnterBeep = true;
             this.tb_int_dia.ReadOnly = true;
             this.tb_int_dia.Size = new System.Drawing.Size(34, 22);
-            this.tb_int_dia.TabIndex = 218;
+            this.tb_int_dia.TabIndex = 9;
             this.tb_int_dia.TabStop = false;
             // 
             // labelX7
@@ -355,7 +356,7 @@
             this.tb_nro_cuo.PreventEnterBeep = true;
             this.tb_nro_cuo.ReadOnly = true;
             this.tb_nro_cuo.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_cuo.TabIndex = 216;
+            this.tb_nro_cuo.TabIndex = 8;
             this.tb_nro_cuo.TabStop = false;
             // 
             // labelX6
@@ -390,7 +391,7 @@
             this.tb_cod_plg.Name = "tb_cod_plg";
             this.tb_cod_plg.PreventEnterBeep = true;
             this.tb_cod_plg.Size = new System.Drawing.Size(76, 22);
-            this.tb_cod_plg.TabIndex = 212;
+            this.tb_cod_plg.TabIndex = 6;
             this.tb_cod_plg.ButtonCustomClick += new System.EventHandler(this.tb_cod_plg_ButtonCustomClick);
             this.tb_cod_plg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_plg_KeyDown);
             this.tb_cod_plg.Validated += new System.EventHandler(this.tb_cod_plg_Validated);
@@ -411,7 +412,7 @@
             this.tb_des_plg.PreventEnterBeep = true;
             this.tb_des_plg.ReadOnly = true;
             this.tb_des_plg.Size = new System.Drawing.Size(216, 22);
-            this.tb_des_plg.TabIndex = 214;
+            this.tb_des_plg.TabIndex = 7;
             this.tb_des_plg.TabStop = false;
             // 
             // labelX5
@@ -436,7 +437,7 @@
             this.tb_fec_exp.Location = new System.Drawing.Point(296, 87);
             this.tb_fec_exp.Name = "tb_fec_exp";
             this.tb_fec_exp.Size = new System.Drawing.Size(97, 22);
-            this.tb_fec_exp.TabIndex = 211;
+            this.tb_fec_exp.TabIndex = 5;
             // 
             // labelX3
             // 
@@ -486,7 +487,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ecp007_02";
-            this.Text = "Busca Linea de Credito";
+            this.Text = "Nueva Linea de Credito";
             this.Load += new System.EventHandler(this.ecp007_02_Load);
             this.gb_ctr_frm.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
