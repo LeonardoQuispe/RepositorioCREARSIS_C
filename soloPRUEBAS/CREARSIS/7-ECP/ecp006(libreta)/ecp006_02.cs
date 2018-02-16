@@ -203,13 +203,29 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                 return "Debes proporcionar la Descripción de la Libreta";
             }
 
-            //**Verifica que el Codigo de Plan de Cuentas Sea ANALITICA
-            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
-            if (tab_ctb004.Rows[0]["va_tip_cta"].ToString() != "A")
+            //Valida Cuenta Contable
+            if (tb_cod_cta.Text.Trim()!="")
             {
-                tb_cod_cta.Focus();
-                return "La Cuenta Contable debe ser ANALITICA";
+                
+                tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
+                if (tab_ctb004.Rows.Count==0)
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable no Existe";
+                }
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() != "N")
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable se encuentra Deshabilitada";
+                }
+                //**Verifica que el Codigo de Plan de Cuentas Sea ANALITICA
+                if (tab_ctb004.Rows[0]["va_tip_cta"].ToString() != "A")
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable debe ser ANALITICA";
+                }
             }
+            
 
 
             return null;
