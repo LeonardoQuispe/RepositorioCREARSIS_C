@@ -289,12 +289,15 @@ namespace CREARSIS._2_ADM.adm010_per_
                 return "El NIT/CI debe ser numérico";
             }
 
-            tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
-            if (tab_adm010.Rows.Count != 0)
+            if (int.Parse(tb_nit_per.Text.Trim())!=0)
             {
-                tb_nit_per.Focus();
-                return "El NIT/CI ya se encuentra Registrado";
-            }
+                tab_adm010 = o_adm010._05a(tb_nit_per.Text.Trim());
+                if (tab_adm010.Rows.Count != 0)
+                {
+                    tb_nit_per.Focus();
+                    return "El NIT/CI ya se encuentra Registrado";
+                }
+            }            
 
             //valida Lista de Precio y Vendedor antes de grabar datos
             if (chk_ven.Checked == true)
@@ -440,7 +443,7 @@ namespace CREARSIS._2_ADM.adm010_per_
             chk_ven.Checked = false;
             chk_com.Checked = false;
             tb_raz_per.Clear();
-            tb_nit_per.Clear();
+            tb_nit_per.Text = "0";
             tb_nom_per.Clear();
             tb_dir_gen.Clear();
             tb_tel_gen.Clear();

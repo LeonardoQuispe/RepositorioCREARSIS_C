@@ -565,6 +565,7 @@
             this.tb_nit_per.PreventEnterBeep = true;
             this.tb_nit_per.Size = new System.Drawing.Size(103, 22);
             this.tb_nit_per.TabIndex = 14;
+            this.tb_nit_per.Text = "0";
             // 
             // labelX6
             // 

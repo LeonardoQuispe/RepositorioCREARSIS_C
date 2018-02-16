@@ -210,7 +210,8 @@ namespace CREARSIS
         public void fu_ref_mnu()
         {
             // Verifica la app permitidas para el usuario
-            mt_ads000.Visible = false;
+            mt_adm000.Visible = false;
+            mt_cmp000.Visible = false;
             mt_alq_uil.Visible = false;
             mt_con_tab.Visible = false;
             mt_inv_pro.Visible = false;
@@ -226,13 +227,16 @@ namespace CREARSIS
                     for (int i = 0; i < tab_seg021.Rows.Count; i++)
                     {
 
-                        switch (tab_seg021.Rows[i][1].ToString().Trim())
+                        switch (tab_seg021.Rows[i]["va_cod_app"].ToString())
                         {
-                            case "ads000":
-                                mt_ads000.Visible = true; break;
+                            case "adm000":
+                                mt_adm000.Visible = true; break;
+
+                            case "cmp000":
+                                mt_cmp000.Visible = true; break;
 
                             case "app_alq_uil":
-                                mt_alq_uil.Visible = true; break;
+                                    mt_alq_uil.Visible = true; break;
 
                             case "app_invent":
                                 mt_inv_pro.Visible = true; break;
@@ -248,10 +252,6 @@ namespace CREARSIS
 
                             case "app_contab":
                                 mt_con_tab.Visible = true; break;
-
-                            default:
-
-                                break;
                         }
                     }
             }

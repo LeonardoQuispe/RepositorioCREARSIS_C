@@ -43,8 +43,8 @@
             this.mn_pre_cio = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ven_dedor = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_def_ini = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_adm010 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_gru_per = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_adm010 = new System.Windows.Forms.ToolStripMenuItem();
             this.mr_inv_ent = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_gru_alm = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_alm_ace = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,19 +221,19 @@
             this.mr_def_ini.Size = new System.Drawing.Size(84, 20);
             this.mr_def_ini.Text = "&Definiciones";
             // 
+            // mn_gru_per
+            // 
+            this.mn_gru_per.Name = "mn_gru_per";
+            this.mn_gru_per.Size = new System.Drawing.Size(168, 22);
+            this.mn_gru_per.Text = "&Grupo de persona";
+            this.mn_gru_per.Click += new System.EventHandler(this.mn_gru_per_Click);
+            // 
             // m_adm010
             // 
             this.m_adm010.Name = "m_adm010";
             this.m_adm010.Size = new System.Drawing.Size(168, 22);
             this.m_adm010.Text = "&Persona";
             this.m_adm010.Click += new System.EventHandler(this.m_adm010_Click);
-            // 
-            // mn_gru_per
-            // 
-            this.mn_gru_per.Name = "mn_gru_per";
-            this.mn_gru_per.Size = new System.Drawing.Size(168, 22);
-            this.mn_gru_per.Text = "G&rupo de persona";
-            this.mn_gru_per.Click += new System.EventHandler(this.mn_gru_per_Click);
             // 
             // mr_inv_ent
             // 
@@ -438,14 +438,14 @@
             // mn_bs_us
             // 
             this.mn_bs_us.Name = "mn_bs_us";
-            this.mn_bs_us.Size = new System.Drawing.Size(152, 22);
+            this.mn_bs_us.Size = new System.Drawing.Size(137, 22);
             this.mn_bs_us.Text = "T.C. Bs/U&SD";
             this.mn_bs_us.Click += new System.EventHandler(this.mn_bs_us_Click);
             // 
             // mn_bs_ufv
             // 
             this.mn_bs_ufv.Name = "mn_bs_ufv";
-            this.mn_bs_ufv.Size = new System.Drawing.Size(152, 22);
+            this.mn_bs_ufv.Size = new System.Drawing.Size(137, 22);
             this.mn_bs_ufv.Text = "T.C. Bs/U&fv";
             this.mn_bs_ufv.Click += new System.EventHandler(this.mn_bs_ufv_Click);
             // 

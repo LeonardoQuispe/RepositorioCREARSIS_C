@@ -34,7 +34,7 @@
             this.lb_nom_emp = new DevComponents.DotNetBar.LabelX();
             this.lb_usr_usr = new DevComponents.DotNetBar.LabelX();
             this.lb_nom_usr = new DevComponents.DotNetBar.LabelX();
-            this.mt_ads000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
+            this.mt_adm000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.ItemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.mt_cmp000 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.mt_inv_pro = new DevComponents.DotNetBar.Metro.MetroTileItem();
@@ -139,25 +139,25 @@
             this.lb_nom_usr.Text = "(Nombre Usuario)";
             this.lb_nom_usr.TextLineAlignment = System.Drawing.StringAlignment.Near;
             // 
-            // mt_ads000
+            // mt_adm000
             // 
-            this.mt_ads000.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mt_ads000.KeyTips = "A";
-            this.mt_ads000.Name = "mt_ads000";
-            this.mt_ads000.NotificationMarkColor = System.Drawing.Color.Red;
-            this.mt_ads000.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlA);
-            this.mt_ads000.Symbol = "";
-            this.mt_ads000.SymbolColor = System.Drawing.Color.Empty;
-            this.mt_ads000.SymbolSize = 50F;
-            this.mt_ads000.Text = "ADMINISTRADOR";
-            this.mt_ads000.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green;
+            this.mt_adm000.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mt_adm000.KeyTips = "A";
+            this.mt_adm000.Name = "mt_adm000";
+            this.mt_adm000.NotificationMarkColor = System.Drawing.Color.Red;
+            this.mt_adm000.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlA);
+            this.mt_adm000.Symbol = "";
+            this.mt_adm000.SymbolColor = System.Drawing.Color.Empty;
+            this.mt_adm000.SymbolSize = 50F;
+            this.mt_adm000.Text = "ADMINISTRADOR";
+            this.mt_adm000.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green;
             // 
             // 
             // 
-            this.mt_ads000.TileStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.mt_ads000.TileStyle.BackColorGradientAngle = 115;
-            this.mt_ads000.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.mt_ads000.Click += new System.EventHandler(this.mt_ads000_Click);
+            this.mt_adm000.TileStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.mt_adm000.TileStyle.BackColorGradientAngle = 115;
+            this.mt_adm000.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.mt_adm000.Click += new System.EventHandler(this.mt_ads000_Click);
             // 
             // ItemContainer1
             // 
@@ -168,7 +168,7 @@
             this.ItemContainer1.MultiLine = true;
             this.ItemContainer1.Name = "ItemContainer1";
             this.ItemContainer1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.mt_ads000,
+            this.mt_adm000,
             this.mt_cmp000,
             this.mt_inv_pro,
             this.mt_ven_tas,
@@ -320,6 +320,7 @@
             this.bt_est_ilo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_est_ilo.AutoExpandOnClick = true;
             this.bt_est_ilo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_est_ilo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_est_ilo.Location = new System.Drawing.Point(649, 491);
             this.bt_est_ilo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bt_est_ilo.Name = "bt_est_ilo";
@@ -395,7 +396,7 @@
             this.MetroTilePanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.MetroTilePanel1.ContainerControlProcessDialogKey = true;
             this.MetroTilePanel1.Controls.Add(this.bt_ref_mnu);
-            this.MetroTilePanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MetroTilePanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.MetroTilePanel1.DragDropSupport = true;
             this.MetroTilePanel1.ForeColor = System.Drawing.Color.Black;
             this.MetroTilePanel1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -442,7 +443,7 @@
         public DevComponents.DotNetBar.LabelX lb_nom_emp;
         public DevComponents.DotNetBar.LabelX lb_usr_usr;
         public DevComponents.DotNetBar.LabelX lb_nom_usr;
-        internal DevComponents.DotNetBar.Metro.MetroTileItem mt_ads000;
+        internal DevComponents.DotNetBar.Metro.MetroTileItem mt_adm000;
         public DevComponents.DotNetBar.ItemContainer ItemContainer1;
         internal DevComponents.DotNetBar.Metro.MetroTileItem mt_inv_pro;
         internal DevComponents.DotNetBar.Metro.MetroTileItem mt_ven_tas;

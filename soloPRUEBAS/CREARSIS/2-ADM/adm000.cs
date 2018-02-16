@@ -22,7 +22,6 @@ namespace CREARSIS
         #region VARIABLES
 
         private MdiClient mdiClient = null;
-        private int childFormNumber = 0;
         private const int SB_BOTH = 3;
         private const int WM_NCCALCSIZE = 0x83;
         //[DllImport("User32.dll")]

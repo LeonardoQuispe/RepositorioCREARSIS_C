@@ -53,18 +53,18 @@ namespace CREARSIS
 
             //lenar tbx de Plan de Cuentas
             tb_cod_cta.Text = vg_str_ucc.Rows[0]["va_cod_cta"].ToString();
-            tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
-            if (tab_ctb004.Rows.Count != 0)
+            if (tb_cod_cta.Text.Trim()!="")
             {
-                tb_nom_cta.Text = tab_ctb004.Rows[0]["va_nom_cta"].ToString();
+                fu_rec_cta(tb_cod_cta.Text.Trim());
             }
+            
 
             tb_nom_ecg.Text = vg_str_ucc.Rows[0]["va_nom_ecg"].ToString();
             tb_tlf_ecg.Text = vg_str_ucc.Rows[0]["va_tlf_ecg"].ToString();
             tb_dir_ecg.Text = vg_str_ucc.Rows[0]["va_dir_ecg"].ToString();
 
             fu_rec_gru(vg_str_ucc.Rows[0]["va_cod_gru"].ToString());
-            fu_rec_cta(vg_str_ucc.Rows[0]["va_cod_cta"].ToString());
+            
 
 
             switch (vg_str_ucc.Rows[0]["va_mon_inv"].ToString())
@@ -134,8 +134,20 @@ namespace CREARSIS
                 return "Debes proporcionar el nombre del Almacén";
             }
 
+            //Verifica Codigo de Plan de Cuentas
             if (tb_cod_cta.Text.Trim() != "")
             {
+                tab_ctb004 = o_ctb004._05(tb_cod_cta.Text.Trim());
+                if (tab_ctb004.Rows.Count == 0)
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable no Existe";
+                }
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "N")
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable se encuentra Deshabilitada";
+                }
                 //**Verifica que el Codigo de Plan de Cuentas Sea ANALITICA
                 tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
                 if (tab_ctb004.Rows[0]["va_tip_cta"].ToString() != "A")

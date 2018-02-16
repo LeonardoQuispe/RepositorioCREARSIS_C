@@ -317,8 +317,20 @@ namespace CREARSIS
                 return "Debes proporcionar el nombre del Almacén";
             }
 
+            //Verifica Codigo de Plan de Cuentas
             if (tb_cod_cta.Text.Trim()!="")
             {
+                tab_ctb004 = o_ctb004._05(tb_cod_cta.Text.Trim());
+                if (tab_ctb004.Rows.Count == 0)
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable no Existe";
+                }
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString()=="N")
+                {
+                    tb_cod_cta.Focus();
+                    return "La Cuenta Contable se encuentra Deshabilitada";
+                }
                 //**Verifica que el Codigo de Plan de Cuentas Sea ANALITICA
                 tab_ctb004 = o_ctb004._05(tb_cod_cta.Text);
                 if (tab_ctb004.Rows[0]["va_tip_cta"].ToString() != "A")
