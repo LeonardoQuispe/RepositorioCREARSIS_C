@@ -126,7 +126,7 @@
             this.tb_cod_lib.Name = "tb_cod_lib";
             this.tb_cod_lib.PreventEnterBeep = true;
             this.tb_cod_lib.Size = new System.Drawing.Size(97, 22);
-            this.tb_cod_lib.TabIndex = 2;
+            this.tb_cod_lib.TabIndex = 0;
             this.tb_cod_lib.ButtonCustomClick += new System.EventHandler(this.tb_cod_lib_ButtonCustomClick);
             this.tb_cod_lib.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_lib_KeyDown);
             this.tb_cod_lib.Validated += new System.EventHandler(this.tb_cod_lib_Validated);
@@ -147,7 +147,7 @@
             this.tb_des_lib.PreventEnterBeep = true;
             this.tb_des_lib.ReadOnly = true;
             this.tb_des_lib.Size = new System.Drawing.Size(233, 22);
-            this.tb_des_lib.TabIndex = 3;
+            this.tb_des_lib.TabIndex = 1;
             this.tb_des_lib.TabStop = false;
             // 
             // bt_can_cel
@@ -226,7 +226,7 @@
             this.tb_mto_lim.Name = "tb_mto_lim";
             this.tb_mto_lim.PreventEnterBeep = true;
             this.tb_mto_lim.Size = new System.Drawing.Size(93, 22);
-            this.tb_mto_lim.TabIndex = 4;
+            this.tb_mto_lim.TabIndex = 2;
             // 
             // GroupBox1
             // 
@@ -273,7 +273,7 @@
             this.tb_max_cuo.Name = "tb_max_cuo";
             this.tb_max_cuo.PreventEnterBeep = true;
             this.tb_max_cuo.Size = new System.Drawing.Size(34, 22);
-            this.tb_max_cuo.TabIndex = 10;
+            this.tb_max_cuo.TabIndex = 8;
             this.tb_max_cuo.TabStop = false;
             // 
             // labelX9
@@ -322,7 +322,7 @@
             this.tb_int_dia.PreventEnterBeep = true;
             this.tb_int_dia.ReadOnly = true;
             this.tb_int_dia.Size = new System.Drawing.Size(34, 22);
-            this.tb_int_dia.TabIndex = 9;
+            this.tb_int_dia.TabIndex = 7;
             this.tb_int_dia.TabStop = false;
             // 
             // labelX7
@@ -356,7 +356,7 @@
             this.tb_nro_cuo.PreventEnterBeep = true;
             this.tb_nro_cuo.ReadOnly = true;
             this.tb_nro_cuo.Size = new System.Drawing.Size(34, 22);
-            this.tb_nro_cuo.TabIndex = 8;
+            this.tb_nro_cuo.TabIndex = 6;
             this.tb_nro_cuo.TabStop = false;
             // 
             // labelX6
@@ -391,7 +391,7 @@
             this.tb_cod_plg.Name = "tb_cod_plg";
             this.tb_cod_plg.PreventEnterBeep = true;
             this.tb_cod_plg.Size = new System.Drawing.Size(76, 22);
-            this.tb_cod_plg.TabIndex = 6;
+            this.tb_cod_plg.TabIndex = 4;
             this.tb_cod_plg.ButtonCustomClick += new System.EventHandler(this.tb_cod_plg_ButtonCustomClick);
             this.tb_cod_plg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_plg_KeyDown);
             this.tb_cod_plg.Validated += new System.EventHandler(this.tb_cod_plg_Validated);
@@ -412,7 +412,7 @@
             this.tb_des_plg.PreventEnterBeep = true;
             this.tb_des_plg.ReadOnly = true;
             this.tb_des_plg.Size = new System.Drawing.Size(216, 22);
-            this.tb_des_plg.TabIndex = 7;
+            this.tb_des_plg.TabIndex = 5;
             this.tb_des_plg.TabStop = false;
             // 
             // labelX5
@@ -437,7 +437,7 @@
             this.tb_fec_exp.Location = new System.Drawing.Point(296, 87);
             this.tb_fec_exp.Name = "tb_fec_exp";
             this.tb_fec_exp.Size = new System.Drawing.Size(97, 22);
-            this.tb_fec_exp.TabIndex = 5;
+            this.tb_fec_exp.TabIndex = 3;
             // 
             // labelX3
             // 
@@ -478,7 +478,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(402, 232);
+            this.ClientSize = new System.Drawing.Size(405, 232);
             this.ControlBox = false;
             this.Controls.Add(this.gb_ctr_frm);
             this.Controls.Add(this.GroupBox1);

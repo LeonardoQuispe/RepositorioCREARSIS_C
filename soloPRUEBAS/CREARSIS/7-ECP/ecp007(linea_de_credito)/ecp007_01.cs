@@ -285,27 +285,12 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
         {
             if (tb_sel_ecc2.Text.Trim() != "")
             {
-                if (o_mg_glo_bal.fg_val_num(tb_sel_ecc2.Text) == false)
-                {
-                    return "Datos Incorrectos";
-                }
+                
                 //Si aun existe
                 tab_ecp007 = o_ecp007._01(tb_sel_ecc2.Text, tb_sel_ecc.Text);
                 if (tab_ecp007.Rows.Count == 0)
                 {
                     return "Datos Incorrectos";
-                }
-                //Si aun existe
-                tab_ecp006 = o_ecp005._05(int.Parse(tb_sel_ecc.Text));
-                if (tab_ecp006.Rows.Count == 0)
-                {
-                    return "La Libreta no se encuentra registrada";
-                }
-
-                //Verifica estado del dato
-                if (tab_ecp006.Rows[0]["va_est_ado"].ToString() == "N")
-                {
-                    return "La Libreta se encuentra Deshabilitada";
                 }
 
                 return null;

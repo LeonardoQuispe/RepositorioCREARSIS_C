@@ -63,6 +63,22 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
             tb_cod_lib.Focus();
         }
         /// <summary>
+        /// Metodo que limpia el formulario
+        /// </summary>
+        public void fu_lim_frm()
+        {
+            tb_cod_lib.Clear();
+            tb_des_lib.Clear();
+            tb_mto_lim.Clear();
+            tb_cod_plg.Clear();
+            tb_des_plg.Clear();
+            tb_nro_cuo.Clear();
+            tb_int_dia.Clear();
+            tb_max_cuo.Clear();
+
+            tb_cod_lib.Focus();
+        }
+        /// <summary>
         /// /// Funcion que verifica los datos antes de grabar
         /// /// </summary>
         public string fu_ver_dat()
@@ -261,6 +277,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
         {
             try
             {
+                decimal tmp;
                 err_msg = fu_ver_dat();
                 if (err_msg != null)
                 {
@@ -274,10 +291,9 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                 {
                     return;
                 }
-                Decimal sal_act = Decimal.Parse("0.0");
-
                 // grabar datos
-                o_ecp007._02(int.Parse(tb_cod_lib.Text),tb_cod_per.Text,int.Parse(tb_cod_plg.Text),Convert.ToDecimal( tb_mto_lim.Text),Convert.ToDecimal( sal_act),int.Parse( tb_max_cuo.Text),tb_fec_exp.Value);
+                o_ecp007._02(int.Parse(tb_cod_lib.Text), tb_cod_per.Text, int.Parse(tb_cod_plg.Text), (decimal.TryParse(tb_mto_lim.Text, out tmp) ? tmp : 0m),0m,int.Parse(tb_max_cuo.Text),tb_fec_exp.Value);
+                fu_lim_frm();
 
                 //Actualiza la grilla de busqueda en la ventana padre
 

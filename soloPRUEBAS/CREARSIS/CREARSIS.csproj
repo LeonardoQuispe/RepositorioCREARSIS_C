@@ -499,12 +499,6 @@
     <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_03.Designer.cs">
       <DependentUpon>ecp007_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.Designer.cs">
-      <DependentUpon>ecp007_04.cs</DependentUpon>
-    </Compile>
     <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_05.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1403,9 +1397,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_03.resx">
       <DependentUpon>ecp007_03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_04.resx">
-      <DependentUpon>ecp007_04.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_05.resx">
       <DependentUpon>ecp007_05.cs</DependentUpon>
