@@ -228,7 +228,7 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
             else
             {
                 tb_sel_ecc.Text = "";
-                lb_sel_ecc.Text = "** Ninguna Libreta Seleccionada";
+                lb_sel_ecc.Text = "** Ninguna Persona Seleccionada";
                 return;
             }
 
@@ -427,8 +427,11 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
 
         private void tb_sel_ecc2_KeyDown(object sender, KeyEventArgs e)
         {
-            CREARSIS._2_ADM.adm010_per_.adm010_01 obj = new _2_ADM.adm010_per_.adm010_01();
-            o_mg_glo_bal.mg_ads000_03(obj, this);
+            if (e.KeyData == Keys.Up)
+            {
+                CREARSIS._2_ADM.adm010_per_.adm010_01 obj = new _2_ADM.adm010_per_.adm010_01();
+                o_mg_glo_bal.mg_ads000_03(obj, this);
+            }
         }
 
         private void tb_sel_ecc2_Validated(object sender, EventArgs e)

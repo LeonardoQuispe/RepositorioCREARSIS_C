@@ -85,7 +85,7 @@
             this.tb_sel_ecc2.DisabledBackColor = System.Drawing.Color.White;
             this.tb_sel_ecc2.ForeColor = System.Drawing.Color.Black;
             this.tb_sel_ecc2.Location = new System.Drawing.Point(64, 16);
-            this.tb_sel_ecc2.MaxLength = 3;
+            this.tb_sel_ecc2.MaxLength = 7;
             this.tb_sel_ecc2.Name = "tb_sel_ecc2";
             this.tb_sel_ecc2.PreventEnterBeep = true;
             this.tb_sel_ecc2.Size = new System.Drawing.Size(83, 22);
@@ -289,7 +289,7 @@
             this.m_atr_ass});
             this.mn_pri_nci.Location = new System.Drawing.Point(67, 83);
             this.mn_pri_nci.Name = "mn_pri_nci";
-            this.mn_pri_nci.Size = new System.Drawing.Size(393, 24);
+            this.mn_pri_nci.Size = new System.Drawing.Size(301, 24);
             this.mn_pri_nci.TabIndex = 51;
             this.mn_pri_nci.Text = "MenuStrip1";
             this.mn_pri_nci.Visible = false;
@@ -437,10 +437,10 @@
             // 
             // va_des_lib
             // 
-            this.va_des_lib.HeaderText = "Descripcion Libreta";
+            this.va_des_lib.HeaderText = "Des. Libreta";
             this.va_des_lib.Name = "va_des_lib";
             this.va_des_lib.ReadOnly = true;
-            this.va_des_lib.Width = 80;
+            this.va_des_lib.Width = 70;
             // 
             // va_cod_per
             // 
@@ -482,7 +482,7 @@
             this.va_fec_exp.HeaderText = "Fecha Expiracion";
             this.va_fec_exp.Name = "va_fec_exp";
             this.va_fec_exp.ReadOnly = true;
-            this.va_fec_exp.Width = 68;
+            this.va_fec_exp.Width = 75;
             // 
             // ecp007_01
             // 
