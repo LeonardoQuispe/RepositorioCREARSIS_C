@@ -212,7 +212,7 @@ namespace CREARSIS._7_ECP.ecp006_libreta_
                     tb_cod_cta.Focus();
                     return "La Cuenta Contable no Existe";
                 }
-                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "H")
+                if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "N")
                 {
                     tb_cod_cta.Focus();
                     return "La Cuenta Contable se encuentra Deshabilitada";

@@ -53,9 +53,9 @@
             this.m_adm003_04 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_06 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_ecp007_01 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_adm003_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_ecp007_01 = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.va_cod_suc = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
             this.va_raz_soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -309,6 +309,13 @@
             this.m_adm003_05.Text = "&Consulta";
             this.m_adm003_05.Click += new System.EventHandler(this.m_adm003_05_Click);
             // 
+            // m_ecp007_01
+            // 
+            this.m_ecp007_01.Name = "m_ecp007_01";
+            this.m_ecp007_01.Size = new System.Drawing.Size(105, 20);
+            this.m_ecp007_01.Text = "&Linea de Credito";
+            this.m_ecp007_01.Click += new System.EventHandler(this.m_ecp007_01_Click);
+            // 
             // m_adm003_p00
             // 
             this.m_adm003_p00.Name = "m_adm003_p00";
@@ -321,13 +328,6 @@
             this.m_atr_ass.Size = new System.Drawing.Size(46, 20);
             this.m_atr_ass.Text = "&Atras";
             this.m_atr_ass.Click += new System.EventHandler(this.m_atr_ass_Click);
-            // 
-            // m_ecp007_01
-            // 
-            this.m_ecp007_01.Name = "m_ecp007_01";
-            this.m_ecp007_01.Size = new System.Drawing.Size(105, 20);
-            this.m_ecp007_01.Text = "Linea de Credito";
-            this.m_ecp007_01.Click += new System.EventHandler(this.m_ecp007_01_Click);
             // 
             // dg_res_ult
             // 
