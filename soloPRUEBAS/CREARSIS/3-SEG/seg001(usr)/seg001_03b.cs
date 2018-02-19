@@ -77,6 +77,15 @@ namespace CREARSIS
                     return;
                 }
 
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Modifica contraseña", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+
                 o_ads005._03(cb_tip_usr.SelectedIndex + 1, tb_cod_usr.Text, tb_pss_usr.Text);
 
                 MessageBoxEx.Show("La contraseña se Actualizó satisfactoriamente", "Modifica contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);

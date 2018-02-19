@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_ver_con = new DevComponents.DotNetBar.ButtonX();
+            this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
+            this.tb_pss_con = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.bt_ver_pss = new DevComponents.DotNetBar.ButtonX();
+            this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
+            this.tb_pss_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.LabelX6 = new DevComponents.DotNetBar.LabelX();
             this.cb_tip_usr = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -43,18 +49,13 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.bt_ver_pss = new DevComponents.DotNetBar.ButtonX();
-            this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
-            this.tb_pss_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.bt_ver_con = new DevComponents.DotNetBar.ButtonX();
-            this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
-            this.tb_pss_con = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
+            this.GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox1.Controls.Add(this.bt_ver_con);
             this.GroupBox1.Controls.Add(this.tb_pss_con);
             this.GroupBox1.Controls.Add(this.bt_ver_pss);
@@ -67,11 +68,122 @@
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.Controls.Add(this.LabelX2);
             this.GroupBox1.Controls.Add(this.tb_cod_usr);
+            this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(8, -6);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(345, 160);
+            this.GroupBox1.Size = new System.Drawing.Size(345, 190);
             this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
+            // 
+            // bt_ver_con
+            // 
+            this.bt_ver_con.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_ver_con.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ver_con.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ver_con.Location = new System.Drawing.Point(298, 152);
+            this.bt_ver_con.Margin = new System.Windows.Forms.Padding(0);
+            this.bt_ver_con.Name = "bt_ver_con";
+            this.bt_ver_con.ShowSubItems = false;
+            this.bt_ver_con.Size = new System.Drawing.Size(25, 18);
+            this.bt_ver_con.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_ver_con.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.itemContainer2});
+            this.bt_ver_con.SubItemsExpandWidth = 0;
+            this.bt_ver_con.Symbol = "";
+            this.bt_ver_con.SymbolSize = 14F;
+            this.bt_ver_con.TabIndex = 12;
+            this.bt_ver_con.TabStop = false;
+            this.bt_ver_con.MouseLeave += new System.EventHandler(this.bt_ver_con_MouseLeave);
+            this.bt_ver_con.MouseHover += new System.EventHandler(this.bt_ver_con_MouseHover);
+            // 
+            // itemContainer2
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer2.Name = "itemContainer2";
+            // 
+            // 
+            // 
+            this.itemContainer2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // tb_pss_con
+            // 
+            this.tb_pss_con.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_pss_con.Border.Class = "TextBoxBorder";
+            this.tb_pss_con.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_pss_con.ButtonCustom.Symbol = "";
+            this.tb_pss_con.ButtonCustom2.Symbol = "";
+            this.tb_pss_con.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_pss_con.ForeColor = System.Drawing.Color.Black;
+            this.tb_pss_con.Location = new System.Drawing.Point(74, 150);
+            this.tb_pss_con.MaxLength = 30;
+            this.tb_pss_con.Name = "tb_pss_con";
+            this.tb_pss_con.PreventEnterBeep = true;
+            this.tb_pss_con.Size = new System.Drawing.Size(251, 22);
+            this.tb_pss_con.TabIndex = 11;
+            this.tb_pss_con.UseSystemPasswordChar = true;
+            this.tb_pss_con.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_pss_con.WatermarkText = "**********";
+            // 
+            // bt_ver_pss
+            // 
+            this.bt_ver_pss.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.bt_ver_pss.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.bt_ver_pss.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ver_pss.Location = new System.Drawing.Point(298, 113);
+            this.bt_ver_pss.Margin = new System.Windows.Forms.Padding(0);
+            this.bt_ver_pss.Name = "bt_ver_pss";
+            this.bt_ver_pss.ShowSubItems = false;
+            this.bt_ver_pss.Size = new System.Drawing.Size(25, 18);
+            this.bt_ver_pss.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_ver_pss.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.itemContainer1});
+            this.bt_ver_pss.SubItemsExpandWidth = 0;
+            this.bt_ver_pss.Symbol = "";
+            this.bt_ver_pss.SymbolSize = 14F;
+            this.bt_ver_pss.TabIndex = 9;
+            this.bt_ver_pss.TabStop = false;
+            this.bt_ver_pss.MouseLeave += new System.EventHandler(this.bt_ver_pss_MouseLeave);
+            this.bt_ver_pss.MouseHover += new System.EventHandler(this.bt_ver_pss_MouseHover);
+            // 
+            // itemContainer1
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer1.Name = "itemContainer1";
+            // 
+            // 
+            // 
+            this.itemContainer1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // tb_pss_usr
+            // 
+            this.tb_pss_usr.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_pss_usr.Border.Class = "TextBoxBorder";
+            this.tb_pss_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_pss_usr.ButtonCustom.Symbol = "";
+            this.tb_pss_usr.ButtonCustom2.Symbol = "";
+            this.tb_pss_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_pss_usr.ForeColor = System.Drawing.Color.Black;
+            this.tb_pss_usr.Location = new System.Drawing.Point(74, 111);
+            this.tb_pss_usr.MaxLength = 30;
+            this.tb_pss_usr.Name = "tb_pss_usr";
+            this.tb_pss_usr.PreventEnterBeep = true;
+            this.tb_pss_usr.Size = new System.Drawing.Size(251, 22);
+            this.tb_pss_usr.TabIndex = 8;
+            this.tb_pss_usr.UseSystemPasswordChar = true;
+            this.tb_pss_usr.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_pss_usr.WatermarkText = "**********";
             // 
             // LabelX4
             // 
@@ -82,7 +194,7 @@
             // 
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(17, 124);
+            this.LabelX4.Location = new System.Drawing.Point(20, 152);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(51, 17);
             this.LabelX4.TabIndex = 10;
@@ -97,11 +209,12 @@
             // 
             this.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX6.ForeColor = System.Drawing.Color.Black;
-            this.LabelX6.Location = new System.Drawing.Point(11, 96);
+            this.LabelX6.Location = new System.Drawing.Point(16, 103);
             this.LabelX6.Name = "LabelX6";
-            this.LabelX6.Size = new System.Drawing.Size(57, 17);
+            this.LabelX6.Size = new System.Drawing.Size(57, 32);
             this.LabelX6.TabIndex = 7;
-            this.LabelX6.Text = "Contraseña";
+            this.LabelX6.Text = "Nueva\r\nContraseña";
+            this.LabelX6.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // cb_tip_usr
             // 
@@ -221,9 +334,11 @@
             // 
             // GroupBox2
             // 
+            this.GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox2.Controls.Add(this.bt_can_cel);
             this.GroupBox2.Controls.Add(this.bt_ace_pta);
-            this.GroupBox2.Location = new System.Drawing.Point(8, 155);
+            this.GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.GroupBox2.Location = new System.Drawing.Point(8, 186);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(345, 44);
             this.GroupBox2.TabIndex = 1;
@@ -262,123 +377,13 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // bt_ver_pss
-            // 
-            this.bt_ver_pss.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_ver_pss.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_ver_pss.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ver_pss.Location = new System.Drawing.Point(298, 93);
-            this.bt_ver_pss.Margin = new System.Windows.Forms.Padding(0);
-            this.bt_ver_pss.Name = "bt_ver_pss";
-            this.bt_ver_pss.ShowSubItems = false;
-            this.bt_ver_pss.Size = new System.Drawing.Size(25, 18);
-            this.bt_ver_pss.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_ver_pss.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.itemContainer1});
-            this.bt_ver_pss.SubItemsExpandWidth = 0;
-            this.bt_ver_pss.Symbol = "";
-            this.bt_ver_pss.SymbolSize = 14F;
-            this.bt_ver_pss.TabIndex = 9;
-            this.bt_ver_pss.TabStop = false;
-            this.bt_ver_pss.MouseLeave += new System.EventHandler(this.bt_ver_pss_MouseLeave);
-            this.bt_ver_pss.MouseHover += new System.EventHandler(this.bt_ver_pss_MouseHover);
-            // 
-            // itemContainer1
-            // 
-            // 
-            // 
-            // 
-            this.itemContainer1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemContainer1.Name = "itemContainer1";
-            // 
-            // 
-            // 
-            this.itemContainer1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // tb_pss_usr
-            // 
-            this.tb_pss_usr.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_pss_usr.Border.Class = "TextBoxBorder";
-            this.tb_pss_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_pss_usr.ButtonCustom.Symbol = "";
-            this.tb_pss_usr.ButtonCustom2.Symbol = "";
-            this.tb_pss_usr.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_pss_usr.ForeColor = System.Drawing.Color.Black;
-            this.tb_pss_usr.Location = new System.Drawing.Point(74, 96);
-            this.tb_pss_usr.MaxLength = 30;
-            this.tb_pss_usr.Name = "tb_pss_usr";
-            this.tb_pss_usr.PreventEnterBeep = true;
-            this.tb_pss_usr.Size = new System.Drawing.Size(251, 22);
-            this.tb_pss_usr.TabIndex = 8;
-            this.tb_pss_usr.UseSystemPasswordChar = true;
-            this.tb_pss_usr.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_pss_usr.WatermarkText = "**********";
-            // 
-            // bt_ver_con
-            // 
-            this.bt_ver_con.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_ver_con.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_ver_con.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ver_con.Location = new System.Drawing.Point(298, 121);
-            this.bt_ver_con.Margin = new System.Windows.Forms.Padding(0);
-            this.bt_ver_con.Name = "bt_ver_con";
-            this.bt_ver_con.ShowSubItems = false;
-            this.bt_ver_con.Size = new System.Drawing.Size(25, 18);
-            this.bt_ver_con.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bt_ver_con.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.itemContainer2});
-            this.bt_ver_con.SubItemsExpandWidth = 0;
-            this.bt_ver_con.Symbol = "";
-            this.bt_ver_con.SymbolSize = 14F;
-            this.bt_ver_con.TabIndex = 12;
-            this.bt_ver_con.TabStop = false;
-            this.bt_ver_con.MouseLeave += new System.EventHandler(this.bt_ver_con_MouseLeave);
-            this.bt_ver_con.MouseHover += new System.EventHandler(this.bt_ver_con_MouseHover);
-            // 
-            // itemContainer2
-            // 
-            // 
-            // 
-            // 
-            this.itemContainer2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemContainer2.Name = "itemContainer2";
-            // 
-            // 
-            // 
-            this.itemContainer2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // tb_pss_con
-            // 
-            this.tb_pss_con.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_pss_con.Border.Class = "TextBoxBorder";
-            this.tb_pss_con.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_pss_con.ButtonCustom.Symbol = "";
-            this.tb_pss_con.ButtonCustom2.Symbol = "";
-            this.tb_pss_con.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_pss_con.ForeColor = System.Drawing.Color.Black;
-            this.tb_pss_con.Location = new System.Drawing.Point(74, 124);
-            this.tb_pss_con.MaxLength = 30;
-            this.tb_pss_con.Name = "tb_pss_con";
-            this.tb_pss_con.PreventEnterBeep = true;
-            this.tb_pss_con.Size = new System.Drawing.Size(251, 22);
-            this.tb_pss_con.TabIndex = 11;
-            this.tb_pss_con.UseSystemPasswordChar = true;
-            this.tb_pss_con.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_pss_con.WatermarkText = "**********";
-            // 
             // seg001_03b
             // 
             this.AcceptButton = this.bt_ace_pta;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_can_cel;
-            this.ClientSize = new System.Drawing.Size(361, 204);
+            this.ClientSize = new System.Drawing.Size(361, 233);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);

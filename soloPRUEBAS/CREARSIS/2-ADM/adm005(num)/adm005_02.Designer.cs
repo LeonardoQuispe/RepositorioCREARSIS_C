@@ -73,7 +73,7 @@
             // 
             // GroupBox3
             // 
-            this.GroupBox3.BackColor = System.Drawing.Color.White;
+            this.GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GroupBox3.Controls.Add(this.bt_can_cel);
             this.GroupBox3.Controls.Add(this.bt_ace_pta);
             this.GroupBox3.ForeColor = System.Drawing.Color.Black;
@@ -282,7 +282,7 @@
             this.tb_nro_tal.TabIndex = 20;
             this.tb_nro_tal.ButtonCustomClick += new System.EventHandler(this.tb_nro_tal_ButtonCustomClick);
             this.tb_nro_tal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_nro_tal_KeyDown);
-            this.tb_nro_tal.Validating += new System.ComponentModel.CancelEventHandler(this.tb_nro_tal_Validating);
+            this.tb_nro_tal.Validated += new System.EventHandler(this.tb_nro_tal_Validated);
             // 
             // LabelX1
             // 

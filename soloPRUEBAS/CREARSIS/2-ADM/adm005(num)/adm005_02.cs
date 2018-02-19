@@ -28,7 +28,6 @@ namespace CREARSIS
         DataTable tab_adm005;
         DataTable vg_str_ucc;
         string err_msg = "";
-        string cod_doc_aux = "";
 
         #endregion
 
@@ -51,7 +50,6 @@ namespace CREARSIS
 
         private void adm005_02_Load(object sender, EventArgs e)
         {
-            tb_cod_doc.GotFocus += tb_cod_doc_GotFocus;
             fu_ini_frm();
         }
 
@@ -105,37 +103,37 @@ namespace CREARSIS
         private void tb_nro_tal_ButtonCustomClick(object sender, EventArgs e)
         {
             //Verifca que haya un documento seleccionado
-                        
-                if (tb_cod_doc.Text.Trim() == "")
-                {
-                    return;
-                }
-
+            fu_rec_doc(tb_cod_doc.Text);
+            if (tb_nom_doc.Text != "** NO existe")
+            {
                 fu_tab_aux();
                 adm004_01a obj = new adm004_01a();
                 o_mg_glo_bal.mg_ads000_03(obj, this, vg_str_ucc);
+            }
+            else
+            {
+                MessageBoxEx.Show("Primero debe seleccionar un documento válido", "Nueva Numeración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }               
             
         }
 
         private void tb_nro_tal_KeyDown(object sender, KeyEventArgs e)
         {
             //Verifca que haya un documento seleccionado
-
-            if (e.KeyData == Keys.Up)
+            fu_rec_doc(tb_cod_doc.Text);
+            if (tb_nom_doc.Text != "** NO existe")
             {
                 fu_tab_aux();
                 adm004_01a obj = new adm004_01a();
                 o_mg_glo_bal.mg_ads000_03(obj, this, vg_str_ucc);
             }
+            else
+            {
+                MessageBoxEx.Show("Primero debe seleccionar un documento válido", "Nueva Numeración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }          
 
         }
-
-        private void tb_cod_doc_GotFocus(Object sender, EventArgs e)
-        {
-
-            cod_doc_aux = tb_cod_doc.Text;
-        }
-
+        
         private void tb_cod_doc_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -154,13 +152,21 @@ namespace CREARSIS
             fu_rec_doc(tb_cod_doc.Text);
         }
 
-        private void tb_nro_tal_Validating(object sender, CancelEventArgs e)
+        private void tb_nro_tal_Validated(object sender, EventArgs e)
         {
-            //busca el valor digitado y obtiene nombre
-            fu_rec_tal(tb_cod_doc.Text, tb_nro_tal.Text);
+            fu_rec_doc(tb_cod_doc.Text);
+            if (tb_nom_doc.Text != "** NO existe")
+            {
+                //busca el valor digitado y obtiene nombre
+                fu_rec_tal(tb_cod_doc.Text, tb_nro_tal.Text);
+            }
+            else
+            {
+                MessageBoxEx.Show("Primero debe seleccionar un documento válido", "Nueva Numeración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
-        
+
         #region METODOS
 
         public void fu_ini_frm()
@@ -351,17 +357,9 @@ namespace CREARSIS
 
         public void fu_rec_doc(string cod_doc)
         {
-            
-            if (cod_doc_aux == cod_doc)
-            {
-                return;
-            }
-
-            tb_nro_tal.Clear();
-            tb_nom_tal.Clear();
-
             if (cod_doc.Trim()=="")
             {
+                tb_cod_doc.Clear();
                 tb_nom_doc.Text = "** NO existe";
 
                 return;
@@ -369,6 +367,7 @@ namespace CREARSIS
 
             if (o_mg_glo_bal.fg_val_let(cod_doc)==false)
             {
+                tb_cod_doc.Clear();
                 tb_nom_doc.Text = "** NO existe";
 
                 return;
@@ -377,12 +376,13 @@ namespace CREARSIS
             tab_adm003 = o_adm003._05(cod_doc);
             if (tab_adm003.Rows.Count == 0)
             {
+                tb_cod_doc.Clear();
                 tb_nom_doc.Text = "** NO existe";
 
                 return;
             }
             
-            tb_cod_doc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString(); ;
+            tb_cod_doc.Text = tab_adm003.Rows[0]["va_cod_doc"].ToString();
             tb_nom_doc.Text = tab_adm003.Rows[0]["va_nom_doc"].ToString();
         }
 
@@ -412,6 +412,7 @@ namespace CREARSIS
         }
 
         #endregion
+
         
     }
 }
