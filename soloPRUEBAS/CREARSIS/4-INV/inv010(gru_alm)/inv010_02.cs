@@ -36,40 +36,29 @@ namespace CREARSIS
         #region METODOS
         public void fu_rec_suc(string cod_suc)
         {
-            string tmp = "";
-
             if (cod_suc.Trim() == "")
             {
-                tb_cod_sucu.Text = "";
+                tb_cod_sucu.Clear();
                 tb_nom_sucu.Text= "** NO existe";
-                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
             if (o_mg_glo_bal.fg_val_num(cod_suc)==false)
             {
-                tb_cod_sucu.Text = "";
+                tb_cod_sucu.Clear();
                 tb_nom_sucu.Text = "** NO existe";
-                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
 
             tab_adm007 = o_adm007._05(cod_suc);
             if (tab_adm007.Rows.Count == 0)
             {
-                tb_cod_sucu.Text = "";
+                tb_cod_sucu.Clear();
                 tb_nom_sucu.Text = "** NO existe";
-                tb_cod_gru.Text = "00" + tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
                 return;
             }
 
             tb_cod_sucu.Text = cod_suc;
-            tb_nom_sucu.Text = tab_adm007.Rows[0]["va_nom_suc"].ToString();
-
-            tmp = tb_cod_sucu.Text.PadLeft(2, '0');
-
-            tb_cod_gru.Text =  tmp[0].ToString() + tmp[1].ToString() +tb_cod_gru.Text[2].ToString() + tb_cod_gru.Text[3].ToString();
-            
-
+            tb_nom_sucu.Text = tab_adm007.Rows[0]["va_nom_suc"].ToString();    
         }
         void fu_ini_frm()
         {
@@ -97,10 +86,10 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
-            
-            //**Verifica Codigo de la Sucursal-----------------------------------
-            
+            fu_rec_suc(tb_cod_sucu.Text);
+            fu_cod_alm();
 
+            //**Verifica Codigo de la Sucursal-----------------------------------  
             if (tb_cod_sucu.Text.Trim() == "")
             {
                 tb_cod_sucu.Focus();
@@ -163,6 +152,17 @@ namespace CREARSIS
             
             return null;
         }
+
+
+        /// <summary>
+        /// Función que arma el código compuesto de Grupo de Almacén
+        /// </summary>
+        void fu_cod_alm()
+        {
+            tb_cod_gru.Text = (tb_cod_sucu.Text!=""?tb_cod_sucu.Text.PadLeft(2, '0'):"00") + 
+                            (tb_nro_gru.Text != "" && o_mg_glo_bal.fg_val_num(tb_nro_gru.Text)==true ? tb_nro_gru.Text.PadLeft(2,'0') : "00");
+        }
+
         #endregion
 
         #region EVENTOS
@@ -217,6 +217,8 @@ namespace CREARSIS
         {
             adm007_01 obj = new adm007_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
+
+            fu_cod_alm();
         }
 
         private void bt_can_cel_Click(object sender, EventArgs e)
@@ -230,32 +232,27 @@ namespace CREARSIS
             {
                 adm007_01 obj = new adm007_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
+
+                fu_cod_alm();
             }
         }
 
         private void tb_cod_sucu_Validated(object sender, EventArgs e)
-
         {
             fu_rec_suc(tb_cod_sucu.Text);
+            fu_cod_alm();
         }
 
         private void tb_nro_gru_Validated(object sender, EventArgs e)
         {
-            string tmp = "";
-
-            if (string.IsNullOrWhiteSpace(tb_nro_gru.Text) != true)
+            if (tb_nro_gru.Text.Trim()!="" && o_mg_glo_bal.fg_val_num(tb_nro_gru.Text)==true)
             {
-                if (o_mg_glo_bal.fg_val_num(tb_nro_gru.Text) != false)
-                {
-                    tmp = tb_nro_gru.Text.PadLeft(2, '0');
-
-                    tb_cod_gru.Text = tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString() + tmp[0].ToString() + tmp[1].ToString();
-                    return;
-                }
+                fu_rec_suc(tb_cod_sucu.Text);
+                fu_cod_alm();
+                return;
             }
 
             tb_nro_gru.Clear();
-            tb_cod_gru.Text = tb_cod_gru.Text[0].ToString() + tb_cod_gru.Text[1].ToString() + "00";
         }
         #endregion
     }

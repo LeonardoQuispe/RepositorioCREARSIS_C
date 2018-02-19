@@ -149,6 +149,12 @@ namespace CREARSIS
                         return err_msg;
                     }
 
+                    if (tabla.Rows[0]["va_est_ado"].ToString()=="N")
+                    {
+                        err_msg = "La familia de producto a primer nivel se encuentra Deshabilitada.";
+                        return err_msg;
+                    }
+
                     // verifica que la familia al segundo nivel no existe
                     tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "T", 1);
                     if (tabla.Rows.Count!=0)
@@ -173,12 +179,22 @@ namespace CREARSIS
                         err_msg = "La familia de producto a primer nivel no se encuentra registrada.";
                         return err_msg;
                     }
+                    if (tabla.Rows[0]["va_est_ado"].ToString() == "N")
+                    {
+                        err_msg = "La familia de producto a primer nivel se encuentra Deshabilitada.";
+                        return err_msg;
+                    }
 
                     // verifica que la familia al segundo nivel si existe
                     tabla = o_inv001._01((va_mat_cod[0] + va_mat_cod[1]), 1, "T", 1);
                     if (tabla.Rows.Count == 0)
                     {
                         err_msg = "La familia de producto al segundo nivel no se encuentra registrada.";
+                        return err_msg;
+                    }
+                    if (tabla.Rows[0]["va_est_ado"].ToString() == "N")
+                    {
+                        err_msg = "La familia de producto a segundo nivel se encuentra Deshabilitada.";
                         return err_msg;
                     }
 

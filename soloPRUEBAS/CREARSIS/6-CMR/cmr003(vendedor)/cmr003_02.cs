@@ -21,7 +21,6 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         public dynamic vg_frm_pad;
         string err_msg = "";
         DataTable tab_cmr003;
-        decimal tmp;
 
         #endregion
 
@@ -88,7 +87,7 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
-        public string fu_ver_dat()
+        string fu_ver_dat()
         {
 
             //**Verifica codigo de Vendedor
@@ -139,10 +138,8 @@ namespace CREARSIS._6_CMR.cmr003_vendedor_
                 tb_por_ven.Focus();
                 return "El Porcentaje de Comisión debe tener hasta 2 números Decimales";
             }
-
-            decimal.TryParse(tb_por_ven.Text, out tmp);
-
-            if (tmp > 100)
+            
+            if (decimal.Parse(tb_por_ven.Text) > 100)
             {
                 return "El Porcentaje de Comisión no debe ser mayor a 100";
             }

@@ -52,6 +52,7 @@ namespace CREARSIS
             inv010_01 obj = new inv010_01();
             o_mg_glo_bal.mg_ads000_03(obj, this);
 
+            fu_cod_alm();
         }
 
         private void tb_gru_alm_KeyDown(object sender, KeyEventArgs e)
@@ -60,6 +61,8 @@ namespace CREARSIS
             {
                 inv010_01 obj = new inv010_01();
                 o_mg_glo_bal.mg_ads000_03(obj, this);
+
+                fu_cod_alm();
             }
         }
 
@@ -68,26 +71,19 @@ namespace CREARSIS
         private void tb_gru_alm_Validated(object sender, EventArgs e)
         {
             fu_rec_gru(tb_gru_alm.Text);
+            fu_cod_alm();
         }
 
         private void tb_nro_alm_Validated(object sender, EventArgs e)
         {
-            string tmp = "";
-
-            if (string.IsNullOrWhiteSpace(tb_nro_alm.Text) != true)
+            if (tb_nro_alm.Text.Trim() != "" && o_mg_glo_bal.fg_val_num(tb_nro_alm.Text) == true)
             {
-                if (o_mg_glo_bal.fg_val_num(tb_nro_alm.Text)==true)
-                {
-                    tmp = tb_nro_alm.Text.PadLeft(3, '0');
-
-                    tb_cod_alm.Text = tb_cod_alm.Text[0].ToString() + tb_cod_alm.Text[1].ToString() + tb_cod_alm.Text[2].ToString() + tb_cod_alm.Text[3].ToString() + tmp[0].ToString() + tmp[1].ToString() + tmp[2].ToString();
-                    return;
-                }     
+                fu_rec_gru(tb_gru_alm.Text);
+                fu_cod_alm();
+                return;
             }
 
-            tb_cod_alm.Text = tb_cod_alm.Text[0].ToString() + tb_cod_alm.Text[1].ToString() + tb_cod_alm.Text[2].ToString() + tb_cod_alm.Text[3].ToString() + "000";
             tb_nro_alm.Clear();
-
         }
         private void tb_cod_cta_ButtonCustomClick(object sender, EventArgs e)
         {
@@ -168,42 +164,29 @@ namespace CREARSIS
 
         public void fu_rec_gru(string cod_alm)
         {
-            string tmp = "";
-
             if (cod_alm.Trim() == "")
             {
-                tb_gru_alm.Text = "";
+                tb_gru_alm.Clear();
                 tb_nom_gru.Text = "** NO existe";
-                tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
             if (o_mg_glo_bal.fg_val_num(cod_alm)==false)
             {
-                tb_gru_alm.Text = "";
+                tb_gru_alm.Clear();
                 tb_nom_gru.Text = "** NO existe";
-                tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
-
-
 
             tab_inv010 = o_inv010._05(int.Parse(cod_alm));
             if (tab_inv010.Rows.Count == 0)
             {
-                tb_gru_alm.Text = "";
+                tb_gru_alm.Clear();
                 tb_nom_gru.Text = "** NO existe";
-                tb_cod_alm.Text = "0000" + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
                 return;
             }
 
             tb_gru_alm.Text = cod_alm;
             tb_nom_gru.Text = tab_inv010.Rows[0]["va_nom_gru"].ToString();
-
-            tmp = tb_gru_alm.Text.PadLeft(4, '0');
-
-            tb_cod_alm.Text = tmp[0].ToString() + tmp[1].ToString()+ tmp[2].ToString() + tmp[3].ToString() + tb_cod_alm.Text[4].ToString() + tb_cod_alm.Text[5].ToString() + tb_cod_alm.Text[6].ToString();
-
-
         }
 
         public void fu_rec_cta(string cod_cta)
@@ -260,9 +243,10 @@ namespace CREARSIS
         /// </summary>
         public string fu_ver_dat()
         {
+            fu_rec_gru(tb_gru_alm.Text);
+            fu_cod_alm();
 
             //**Verifica Grupo de Almacén
-
             if (tb_gru_alm.Text.Trim() == "")
             {
                 tb_gru_alm.Focus();
@@ -343,8 +327,17 @@ namespace CREARSIS
 
             return null;
         }
+
+        /// <summary>
+        /// Función que arma el código compuesto de Almacén
+        /// </summary>
+        void fu_cod_alm()
+        {
+            tb_cod_alm.Text = (tb_gru_alm.Text != "" ? tb_gru_alm.Text.PadLeft(4, '0') : "0000") +
+                            (tb_nro_alm.Text != "" && o_mg_glo_bal.fg_val_num(tb_nro_alm.Text) == true ? tb_nro_alm.Text.PadLeft(3, '0') : "000");
+        }
         #endregion
 
-       
+
     }
 }

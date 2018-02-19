@@ -158,7 +158,8 @@
             this.tb_nom_cta.PreventEnterBeep = true;
             this.tb_nom_cta.ReadOnly = true;
             this.tb_nom_cta.Size = new System.Drawing.Size(224, 22);
-            this.tb_nom_cta.TabIndex = 20;
+            this.tb_nom_cta.TabIndex = 15;
+            this.tb_nom_cta.TabStop = false;
             // 
             // tb_cod_cta
             // 
@@ -178,7 +179,7 @@
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(95, 22);
-            this.tb_cod_cta.TabIndex = 19;
+            this.tb_cod_cta.TabIndex = 14;
             this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
             this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
             this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
@@ -200,6 +201,7 @@
             this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(240, 22);
             this.tb_nom_gru.TabIndex = 2;
+            this.tb_nom_gru.TabStop = false;
             // 
             // cb_mtd_cto
             // 
@@ -217,7 +219,7 @@
             this.cb_mtd_cto.Name = "cb_mtd_cto";
             this.cb_mtd_cto.Size = new System.Drawing.Size(131, 22);
             this.cb_mtd_cto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mtd_cto.TabIndex = 16;
+            this.cb_mtd_cto.TabIndex = 19;
             // 
             // comboItem3
             // 
@@ -236,7 +238,7 @@
             this.labelX10.Location = new System.Drawing.Point(225, 234);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(78, 17);
-            this.labelX10.TabIndex = 15;
+            this.labelX10.TabIndex = 18;
             this.labelX10.Text = "Método Costeo";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -257,7 +259,7 @@
             this.cb_mon_inv.Name = "cb_mon_inv";
             this.cb_mon_inv.Size = new System.Drawing.Size(82, 22);
             this.cb_mon_inv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mon_inv.TabIndex = 14;
+            this.cb_mon_inv.TabIndex = 17;
             // 
             // BO
             // 
@@ -280,7 +282,7 @@
             this.labelX7.Location = new System.Drawing.Point(4, 234);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(95, 17);
-            this.labelX7.TabIndex = 13;
+            this.labelX7.TabIndex = 16;
             this.labelX7.Text = "Moneda Inventario";
             this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -297,7 +299,7 @@
             this.labelX6.Location = new System.Drawing.Point(15, 202);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(84, 17);
-            this.labelX6.TabIndex = 11;
+            this.labelX6.TabIndex = 13;
             this.labelX6.Text = "Cuenta Contable";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -317,7 +319,7 @@
             this.tb_dir_alm.Name = "tb_dir_alm";
             this.tb_dir_alm.PreventEnterBeep = true;
             this.tb_dir_alm.Size = new System.Drawing.Size(328, 22);
-            this.tb_dir_alm.TabIndex = 10;
+            this.tb_dir_alm.TabIndex = 12;
             // 
             // labelX5
             // 
@@ -332,7 +334,7 @@
             this.labelX5.Location = new System.Drawing.Point(51, 165);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(48, 17);
-            this.labelX5.TabIndex = 9;
+            this.labelX5.TabIndex = 11;
             this.labelX5.Text = "Dirección";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -349,7 +351,7 @@
             this.labelX2.Location = new System.Drawing.Point(287, 52);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(70, 17);
-            this.labelX2.TabIndex = 17;
+            this.labelX2.TabIndex = 5;
             this.labelX2.Text = "Cod. Almacén";
             this.labelX2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -365,7 +367,7 @@
             this.tb_cod_alm.PromptChar = ' ';
             this.tb_cod_alm.ReadOnly = true;
             this.tb_cod_alm.Size = new System.Drawing.Size(63, 22);
-            this.tb_cod_alm.TabIndex = 18;
+            this.tb_cod_alm.TabIndex = 6;
             this.tb_cod_alm.TabStop = false;
             this.tb_cod_alm.Text = "0000000";
             this.tb_cod_alm.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -421,7 +423,7 @@
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
             this.tb_nom_alm.Size = new System.Drawing.Size(327, 22);
-            this.tb_nom_alm.TabIndex = 6;
+            this.tb_nom_alm.TabIndex = 8;
             // 
             // tb_des_alm
             // 
@@ -439,7 +441,7 @@
             this.tb_des_alm.Name = "tb_des_alm";
             this.tb_des_alm.PreventEnterBeep = true;
             this.tb_des_alm.Size = new System.Drawing.Size(328, 22);
-            this.tb_des_alm.TabIndex = 8;
+            this.tb_des_alm.TabIndex = 10;
             // 
             // LabelX9
             // 
@@ -454,7 +456,7 @@
             this.LabelX9.Location = new System.Drawing.Point(40, 128);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 7;
+            this.LabelX9.TabIndex = 9;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -471,7 +473,7 @@
             this.LabelX4.Location = new System.Drawing.Point(56, 95);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 5;
+            this.LabelX4.TabIndex = 7;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 

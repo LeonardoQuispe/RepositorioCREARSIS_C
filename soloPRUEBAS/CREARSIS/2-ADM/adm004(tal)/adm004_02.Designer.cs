@@ -36,6 +36,7 @@
             this.LabelX2 = new DevComponents.DotNetBar.LabelX();
             this.tb_nom_doc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.cb_ges_tio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.LabelX12 = new DevComponents.DotNetBar.LabelX();
             this.LabelX7 = new DevComponents.DotNetBar.LabelX();
             this.tb_nro_aut = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -71,7 +72,6 @@
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.cb_ges_tio = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox4.SuspendLayout();
@@ -219,6 +219,20 @@
             this.GroupBox3.Size = new System.Drawing.Size(516, 102);
             this.GroupBox3.TabIndex = 6;
             this.GroupBox3.TabStop = false;
+            // 
+            // cb_ges_tio
+            // 
+            this.cb_ges_tio.DisplayMember = "Text";
+            this.cb_ges_tio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
+            this.cb_ges_tio.FormattingEnabled = true;
+            this.cb_ges_tio.ItemHeight = 16;
+            this.cb_ges_tio.Location = new System.Drawing.Point(59, 18);
+            this.cb_ges_tio.Name = "cb_ges_tio";
+            this.cb_ges_tio.Size = new System.Drawing.Size(81, 22);
+            this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_ges_tio.TabIndex = 92;
             // 
             // LabelX12
             // 
@@ -686,20 +700,6 @@
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
-            // 
-            // cb_ges_tio
-            // 
-            this.cb_ges_tio.DisplayMember = "Text";
-            this.cb_ges_tio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_ges_tio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_ges_tio.ForeColor = System.Drawing.Color.Black;
-            this.cb_ges_tio.FormattingEnabled = true;
-            this.cb_ges_tio.ItemHeight = 16;
-            this.cb_ges_tio.Location = new System.Drawing.Point(59, 18);
-            this.cb_ges_tio.Name = "cb_ges_tio";
-            this.cb_ges_tio.Size = new System.Drawing.Size(81, 22);
-            this.cb_ges_tio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_ges_tio.TabIndex = 92;
             // 
             // adm004_02
             // 

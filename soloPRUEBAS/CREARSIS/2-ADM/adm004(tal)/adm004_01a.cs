@@ -55,6 +55,50 @@ namespace CREARSIS
         {
             fu_fil_act();
         }
+        private void tb_nro_tal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dg_res_ult.Rows.Count != 0)
+            {
+                try
+                {
+                    //al presionar tecla para ABAJO
+                    if (e.KeyData == Keys.Down)
+                    {
+                        dg_res_ult.Show();
+
+                        if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
+                    //al presionar tecla para ARRIBA
+                    else if (e.KeyData == Keys.Up)
+                    {
+                        dg_res_ult.Show();
+
+                        if (dg_res_ult.SelectedRows[0].Index != 0)
+                        {
+                            //Establece el foco en el Datagrid
+                            dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index - 1];
+
+                            //Llama a función que actualiza datos en Textbox de Selección
+                            fu_fil_act();
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DevComponents.DotNetBar.MessageBoxEx.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void bt_ace_pta_Click(object sender, EventArgs e)
         {
@@ -227,6 +271,7 @@ namespace CREARSIS
                 lb_sel_ecc.Text = dg_res_ult.SelectedRows[0].Cells["va_nom_tal"].Value.ToString();
             }  
         }
+
 
 
         #endregion

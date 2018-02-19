@@ -174,6 +174,12 @@ namespace CREARSIS._5_CTB.ctb003_centr_cost_
                     return "Primero debe existir la Matriz con Código " + va_aux_cod.ToString();
                 }
 
+                if (tab_ctb003.Rows[0]["va_est_ado"].ToString()=="N")
+                {
+                    tb_cod_cct.Focus();
+                    return "La Matriz con código " + va_aux_cod.ToString() +" se encuentra Deshabilitada";
+                }
+
             }
 
 

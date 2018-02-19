@@ -39,6 +39,14 @@
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.va_cod_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_cod_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_cod_plg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_des_plg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_mto_lim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_fec_exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
             this.m_cmr002_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_eco007_05 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +64,6 @@
             this.lb_sel_ecc = new DevComponents.DotNetBar.LabelX();
             this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
-            this.va_cod_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_des_lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_cod_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_nom_per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_cod_plg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_des_plg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_mto_lim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.va_fec_exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.gb_ctr_frm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -213,7 +213,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
-            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 14);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
@@ -233,6 +233,62 @@
             this.dg_res_ult.TabStop = false;
             this.dg_res_ult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_res_ult_CellClick);
             this.dg_res_ult.SelectionChanged += new System.EventHandler(this.dg_res_ult_SelectionChanged);
+            // 
+            // va_cod_lib
+            // 
+            this.va_cod_lib.HeaderText = "Codigo Libreta";
+            this.va_cod_lib.Name = "va_cod_lib";
+            this.va_cod_lib.ReadOnly = true;
+            this.va_cod_lib.Width = 70;
+            // 
+            // va_des_lib
+            // 
+            this.va_des_lib.HeaderText = "Des. Libreta";
+            this.va_des_lib.Name = "va_des_lib";
+            this.va_des_lib.ReadOnly = true;
+            this.va_des_lib.Width = 70;
+            // 
+            // va_cod_per
+            // 
+            this.va_cod_per.HeaderText = "Codigo Persona";
+            this.va_cod_per.Name = "va_cod_per";
+            this.va_cod_per.ReadOnly = true;
+            this.va_cod_per.Width = 67;
+            // 
+            // va_nom_per
+            // 
+            this.va_nom_per.HeaderText = "Nombre Persona";
+            this.va_nom_per.Name = "va_nom_per";
+            this.va_nom_per.ReadOnly = true;
+            this.va_nom_per.Width = 75;
+            // 
+            // va_cod_plg
+            // 
+            this.va_cod_plg.HeaderText = "Cod. Plan de Pago";
+            this.va_cod_plg.Name = "va_cod_plg";
+            this.va_cod_plg.ReadOnly = true;
+            this.va_cod_plg.Width = 83;
+            // 
+            // va_des_plg
+            // 
+            this.va_des_plg.HeaderText = "Des. Plan de Pago";
+            this.va_des_plg.Name = "va_des_plg";
+            this.va_des_plg.ReadOnly = true;
+            this.va_des_plg.Width = 80;
+            // 
+            // va_mto_lim
+            // 
+            this.va_mto_lim.HeaderText = "Monto Limite";
+            this.va_mto_lim.Name = "va_mto_lim";
+            this.va_mto_lim.ReadOnly = true;
+            this.va_mto_lim.Width = 45;
+            // 
+            // va_fec_exp
+            // 
+            this.va_fec_exp.HeaderText = "Fecha Expiracion";
+            this.va_fec_exp.Name = "va_fec_exp";
+            this.va_fec_exp.ReadOnly = true;
+            this.va_fec_exp.Width = 75;
             // 
             // m_atr_ass
             // 
@@ -411,6 +467,7 @@
             this.tb_sel_ecc.PreventEnterBeep = true;
             this.tb_sel_ecc.Size = new System.Drawing.Size(82, 22);
             this.tb_sel_ecc.TabIndex = 0;
+            this.tb_sel_ecc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_val_bus_KeyDown);
             this.tb_sel_ecc.Validated += new System.EventHandler(this.tb_sel_ecc_Validated);
             // 
             // LabelX1
@@ -427,62 +484,6 @@
             this.LabelX1.Size = new System.Drawing.Size(36, 17);
             this.LabelX1.TabIndex = 1;
             this.LabelX1.Text = "Libreta";
-            // 
-            // va_cod_lib
-            // 
-            this.va_cod_lib.HeaderText = "Codigo Libreta";
-            this.va_cod_lib.Name = "va_cod_lib";
-            this.va_cod_lib.ReadOnly = true;
-            this.va_cod_lib.Width = 70;
-            // 
-            // va_des_lib
-            // 
-            this.va_des_lib.HeaderText = "Des. Libreta";
-            this.va_des_lib.Name = "va_des_lib";
-            this.va_des_lib.ReadOnly = true;
-            this.va_des_lib.Width = 70;
-            // 
-            // va_cod_per
-            // 
-            this.va_cod_per.HeaderText = "Codigo Persona";
-            this.va_cod_per.Name = "va_cod_per";
-            this.va_cod_per.ReadOnly = true;
-            this.va_cod_per.Width = 67;
-            // 
-            // va_nom_per
-            // 
-            this.va_nom_per.HeaderText = "Nombre Persona";
-            this.va_nom_per.Name = "va_nom_per";
-            this.va_nom_per.ReadOnly = true;
-            this.va_nom_per.Width = 75;
-            // 
-            // va_cod_plg
-            // 
-            this.va_cod_plg.HeaderText = "Cod. Plan de Pago";
-            this.va_cod_plg.Name = "va_cod_plg";
-            this.va_cod_plg.ReadOnly = true;
-            this.va_cod_plg.Width = 83;
-            // 
-            // va_des_plg
-            // 
-            this.va_des_plg.HeaderText = "Des. Plan de Pago";
-            this.va_des_plg.Name = "va_des_plg";
-            this.va_des_plg.ReadOnly = true;
-            this.va_des_plg.Width = 80;
-            // 
-            // va_mto_lim
-            // 
-            this.va_mto_lim.HeaderText = "Monto Limite";
-            this.va_mto_lim.Name = "va_mto_lim";
-            this.va_mto_lim.ReadOnly = true;
-            this.va_mto_lim.Width = 45;
-            // 
-            // va_fec_exp
-            // 
-            this.va_fec_exp.HeaderText = "Fecha Expiracion";
-            this.va_fec_exp.Name = "va_fec_exp";
-            this.va_fec_exp.ReadOnly = true;
-            this.va_fec_exp.Width = 75;
             // 
             // ecp007_01
             // 

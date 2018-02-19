@@ -115,7 +115,8 @@
             this.tb_nom_cta.PreventEnterBeep = true;
             this.tb_nom_cta.ReadOnly = true;
             this.tb_nom_cta.Size = new System.Drawing.Size(253, 22);
-            this.tb_nom_cta.TabIndex = 22;
+            this.tb_nom_cta.TabIndex = 15;
+            this.tb_nom_cta.TabStop = false;
             // 
             // tb_cod_cta
             // 
@@ -135,7 +136,7 @@
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(95, 22);
-            this.tb_cod_cta.TabIndex = 21;
+            this.tb_cod_cta.TabIndex = 14;
             this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
             this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
             this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
@@ -158,6 +159,7 @@
             this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(266, 22);
             this.tb_nom_gru.TabIndex = 2;
+            this.tb_nom_gru.TabStop = false;
             // 
             // cb_mtd_cto
             // 
@@ -255,7 +257,7 @@
             this.labelX6.Location = new System.Drawing.Point(25, 201);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(84, 17);
-            this.labelX6.TabIndex = 14;
+            this.labelX6.TabIndex = 13;
             this.labelX6.Text = "Cuenta Contable";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -275,7 +277,7 @@
             this.tb_dir_alm.Name = "tb_dir_alm";
             this.tb_dir_alm.PreventEnterBeep = true;
             this.tb_dir_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_dir_alm.TabIndex = 13;
+            this.tb_dir_alm.TabIndex = 12;
             // 
             // labelX5
             // 
@@ -290,7 +292,7 @@
             this.labelX5.Location = new System.Drawing.Point(61, 161);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(48, 17);
-            this.labelX5.TabIndex = 12;
+            this.labelX5.TabIndex = 11;
             this.labelX5.Text = "Dirección";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -381,7 +383,7 @@
             this.tb_nom_alm.Name = "tb_nom_alm";
             this.tb_nom_alm.PreventEnterBeep = true;
             this.tb_nom_alm.Size = new System.Drawing.Size(353, 22);
-            this.tb_nom_alm.TabIndex = 9;
+            this.tb_nom_alm.TabIndex = 8;
             // 
             // tb_des_alm
             // 
@@ -399,7 +401,7 @@
             this.tb_des_alm.Name = "tb_des_alm";
             this.tb_des_alm.PreventEnterBeep = true;
             this.tb_des_alm.Size = new System.Drawing.Size(354, 22);
-            this.tb_des_alm.TabIndex = 11;
+            this.tb_des_alm.TabIndex = 10;
             // 
             // LabelX9
             // 
@@ -414,7 +416,7 @@
             this.LabelX9.Location = new System.Drawing.Point(50, 126);
             this.LabelX9.Name = "LabelX9";
             this.LabelX9.Size = new System.Drawing.Size(59, 17);
-            this.LabelX9.TabIndex = 10;
+            this.LabelX9.TabIndex = 9;
             this.LabelX9.Text = "Descripcion";
             this.LabelX9.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -431,7 +433,7 @@
             this.LabelX4.Location = new System.Drawing.Point(66, 85);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(43, 17);
-            this.LabelX4.TabIndex = 8;
+            this.LabelX4.TabIndex = 7;
             this.LabelX4.Text = "Nombre";
             this.LabelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -504,7 +506,7 @@
             this.labelX14.Location = new System.Drawing.Point(64, 133);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 228;
+            this.labelX14.TabIndex = 6;
             this.labelX14.Text = "Estado:";
             this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -526,7 +528,7 @@
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 227;
+            this.tb_est_ado.TabIndex = 7;
             this.tb_est_ado.TabStop = false;
             // 
             // tb_dir_ecg

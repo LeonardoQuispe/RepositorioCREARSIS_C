@@ -314,6 +314,8 @@ namespace CREARSIS
                     {
                         if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
+                            dg_res_ult.Show();
+
                             //Establece el foco en el Datagrid
                             dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
@@ -325,6 +327,8 @@ namespace CREARSIS
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
+                        dg_res_ult.Show();
+
                         if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid

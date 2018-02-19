@@ -127,6 +127,7 @@
             this.tb_nom_sucu.ReadOnly = true;
             this.tb_nom_sucu.Size = new System.Drawing.Size(230, 22);
             this.tb_nom_sucu.TabIndex = 2;
+            this.tb_nom_sucu.TabStop = false;
             // 
             // labelX2
             // 

@@ -73,7 +73,7 @@
             this.GroupBox1.Location = new System.Drawing.Point(2, 0);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(369, 190);
-            this.GroupBox1.TabIndex = 2;
+            this.GroupBox1.TabIndex = 0;
             this.GroupBox1.TabStop = false;
             // 
             // labelX14
@@ -88,7 +88,7 @@
             this.labelX14.Location = new System.Drawing.Point(28, 157);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(45, 17);
-            this.labelX14.TabIndex = 175;
+            this.labelX14.TabIndex = 11;
             this.labelX14.Text = "Estado:";
             this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -110,7 +110,7 @@
             this.tb_est_ado.PreventEnterBeep = true;
             this.tb_est_ado.ReadOnly = true;
             this.tb_est_ado.Size = new System.Drawing.Size(85, 22);
-            this.tb_est_ado.TabIndex = 174;
+            this.tb_est_ado.TabIndex = 12;
             this.tb_est_ado.TabStop = false;
             // 
             // tb_nom_cta
@@ -129,7 +129,8 @@
             this.tb_nom_cta.PreventEnterBeep = true;
             this.tb_nom_cta.ReadOnly = true;
             this.tb_nom_cta.Size = new System.Drawing.Size(174, 22);
-            this.tb_nom_cta.TabIndex = 8;
+            this.tb_nom_cta.TabIndex = 10;
+            this.tb_nom_cta.TabStop = false;
             // 
             // labelX12
             // 
@@ -144,7 +145,7 @@
             this.labelX12.Location = new System.Drawing.Point(6, 121);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(68, 17);
-            this.labelX12.TabIndex = 6;
+            this.labelX12.TabIndex = 8;
             this.labelX12.Text = "Cta. Contable";
             this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
@@ -166,7 +167,7 @@
             this.tb_cod_cta.Name = "tb_cod_cta";
             this.tb_cod_cta.PreventEnterBeep = true;
             this.tb_cod_cta.Size = new System.Drawing.Size(95, 22);
-            this.tb_cod_cta.TabIndex = 7;
+            this.tb_cod_cta.TabIndex = 9;
             this.tb_cod_cta.ButtonCustomClick += new System.EventHandler(this.tb_cod_cta_ButtonCustomClick);
             this.tb_cod_cta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cod_cta_KeyDown);
             this.tb_cod_cta.Validated += new System.EventHandler(this.tb_cod_cta_Validated);
@@ -187,7 +188,7 @@
             this.tb_cod_lib.Name = "tb_cod_lib";
             this.tb_cod_lib.PreventEnterBeep = true;
             this.tb_cod_lib.Size = new System.Drawing.Size(57, 22);
-            this.tb_cod_lib.TabIndex = 3;
+            this.tb_cod_lib.TabIndex = 5;
             this.tb_cod_lib.Text = "00000";
             // 
             // labelX6
@@ -203,7 +204,7 @@
             this.labelX6.Location = new System.Drawing.Point(36, 53);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(38, 17);
-            this.labelX6.TabIndex = 2;
+            this.labelX6.TabIndex = 4;
             this.labelX6.Text = "Código";
             // 
             // cb_mon_lib
@@ -222,7 +223,7 @@
             this.cb_mon_lib.Name = "cb_mon_lib";
             this.cb_mon_lib.Size = new System.Drawing.Size(98, 22);
             this.cb_mon_lib.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_mon_lib.TabIndex = 12;
+            this.cb_mon_lib.TabIndex = 3;
             // 
             // bolivianos
             // 
@@ -250,7 +251,7 @@
             this.cb_tip_lib.Name = "cb_tip_lib";
             this.cb_tip_lib.Size = new System.Drawing.Size(112, 22);
             this.cb_tip_lib.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cb_tip_lib.TabIndex = 10;
+            this.cb_tip_lib.TabIndex = 1;
             // 
             // CXC
             // 
@@ -274,7 +275,7 @@
             this.labelX4.Location = new System.Drawing.Point(208, 20);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(43, 17);
-            this.labelX4.TabIndex = 11;
+            this.labelX4.TabIndex = 2;
             this.labelX4.Text = "Moneda";
             // 
             // labelX3
@@ -290,7 +291,7 @@
             this.labelX3.Location = new System.Drawing.Point(50, 18);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(24, 17);
-            this.labelX3.TabIndex = 9;
+            this.labelX3.TabIndex = 0;
             this.labelX3.Text = "Tipo";
             // 
             // tb_des_lib
@@ -308,7 +309,7 @@
             this.tb_des_lib.Name = "tb_des_lib";
             this.tb_des_lib.PreventEnterBeep = true;
             this.tb_des_lib.Size = new System.Drawing.Size(275, 22);
-            this.tb_des_lib.TabIndex = 5;
+            this.tb_des_lib.TabIndex = 7;
             // 
             // labelX2
             // 
@@ -323,7 +324,7 @@
             this.labelX2.Location = new System.Drawing.Point(15, 87);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(59, 17);
-            this.labelX2.TabIndex = 4;
+            this.labelX2.TabIndex = 6;
             this.labelX2.Text = "Descripción";
             // 
             // GroupBox2
@@ -333,7 +334,7 @@
             this.GroupBox2.Location = new System.Drawing.Point(2, 191);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(369, 50);
-            this.GroupBox2.TabIndex = 3;
+            this.GroupBox2.TabIndex = 1;
             this.GroupBox2.TabStop = false;
             // 
             // bt_ace_pta

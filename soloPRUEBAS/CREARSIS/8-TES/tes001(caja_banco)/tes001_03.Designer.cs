@@ -207,6 +207,7 @@
             this.tb_nom_cta.ReadOnly = true;
             this.tb_nom_cta.Size = new System.Drawing.Size(174, 22);
             this.tb_nom_cta.TabIndex = 12;
+            this.tb_nom_cta.TabStop = false;
             // 
             // labelX12
             // 

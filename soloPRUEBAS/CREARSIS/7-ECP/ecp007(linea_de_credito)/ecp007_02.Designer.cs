@@ -73,7 +73,6 @@
             this.tb_nom_per.ReadOnly = true;
             this.tb_nom_per.Size = new System.Drawing.Size(233, 22);
             this.tb_nom_per.TabIndex = 1;
-            this.tb_nom_per.TabStop = false;
             // 
             // tb_cod_per
             // 
@@ -148,7 +147,6 @@
             this.tb_des_lib.ReadOnly = true;
             this.tb_des_lib.Size = new System.Drawing.Size(233, 22);
             this.tb_des_lib.TabIndex = 1;
-            this.tb_des_lib.TabStop = false;
             // 
             // bt_can_cel
             // 
@@ -413,7 +411,6 @@
             this.tb_des_plg.ReadOnly = true;
             this.tb_des_plg.Size = new System.Drawing.Size(216, 22);
             this.tb_des_plg.TabIndex = 5;
-            this.tb_des_plg.TabStop = false;
             // 
             // labelX5
             // 

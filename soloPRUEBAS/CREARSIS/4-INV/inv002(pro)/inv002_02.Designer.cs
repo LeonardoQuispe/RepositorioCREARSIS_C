@@ -178,6 +178,7 @@
             this.tb_nom_inv.ReadOnly = true;
             this.tb_nom_inv.Size = new System.Drawing.Size(78, 22);
             this.tb_nom_inv.TabIndex = 18;
+            this.tb_nom_inv.TabStop = false;
             // 
             // labelX16
             // 
@@ -254,6 +255,7 @@
             this.tb_nom_mar.ReadOnly = true;
             this.tb_nom_mar.Size = new System.Drawing.Size(106, 22);
             this.tb_nom_mar.TabIndex = 15;
+            this.tb_nom_mar.TabStop = false;
             // 
             // labelX6
             // 
@@ -398,6 +400,7 @@
             this.tb_nom_fap.ReadOnly = true;
             this.tb_nom_fap.Size = new System.Drawing.Size(146, 22);
             this.tb_nom_fap.TabIndex = 2;
+            this.tb_nom_fap.TabStop = false;
             // 
             // labelX2
             // 
@@ -613,6 +616,7 @@
             this.tb_nom_ven.ReadOnly = true;
             this.tb_nom_ven.Size = new System.Drawing.Size(151, 22);
             this.tb_nom_ven.TabIndex = 2;
+            this.tb_nom_ven.TabStop = false;
             // 
             // tb_uni_ven
             // 
@@ -705,6 +709,7 @@
             this.tb_nom_com.ReadOnly = true;
             this.tb_nom_com.Size = new System.Drawing.Size(149, 22);
             this.tb_nom_com.TabIndex = 7;
+            this.tb_nom_com.TabStop = false;
             // 
             // labelX3
             // 

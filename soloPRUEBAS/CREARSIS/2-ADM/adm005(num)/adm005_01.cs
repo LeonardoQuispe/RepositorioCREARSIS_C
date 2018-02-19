@@ -285,6 +285,8 @@ namespace CREARSIS
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
+                        dg_res_ult.Show();
+
                         if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
                             //Establece el foco en el Datagrid
@@ -298,6 +300,8 @@ namespace CREARSIS
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
+                        dg_res_ult.Show();
+
                         if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid

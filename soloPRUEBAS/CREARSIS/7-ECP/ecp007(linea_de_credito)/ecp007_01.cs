@@ -388,9 +388,11 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                     //al presionar tecla para ABAJO
                     if (e.KeyData == Keys.Down)
                     {
+                        dg_res_ult.Show();
+
                         if (dg_res_ult.SelectedRows[0].Index != dg_res_ult.Rows.Count - 1)
                         {
-                            //Establece el foco en el Datagrid
+                            //Establece el foco en el Datagrids
                             dg_res_ult.CurrentCell = dg_res_ult[0, dg_res_ult.SelectedRows[0].Index + 1];
 
                             //Llama a función que actualiza datos en Textbox de Selección
@@ -401,6 +403,8 @@ namespace CREARSIS._7_ECP.ecp007_linea_de_credito__
                     //al presionar tecla para ARRIBA
                     else if (e.KeyData == Keys.Up)
                     {
+                        dg_res_ult.Show();
+
                         if (dg_res_ult.SelectedRows[0].Index != 0)
                         {
                             //Establece el foco en el Datagrid

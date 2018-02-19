@@ -99,8 +99,8 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(9, 251);
             this.superTabControl1.Name = "superTabControl1";
@@ -298,6 +298,7 @@
             this.tb_nom_ven_cli.ReadOnly = true;
             this.tb_nom_ven_cli.Size = new System.Drawing.Size(199, 22);
             this.tb_nom_ven_cli.TabIndex = 5;
+            this.tb_nom_ven_cli.TabStop = false;
             // 
             // labelX13
             // 
@@ -356,6 +357,7 @@
             this.tb_nom_pre_cli.ReadOnly = true;
             this.tb_nom_pre_cli.Size = new System.Drawing.Size(199, 22);
             this.tb_nom_pre_cli.TabIndex = 2;
+            this.tb_nom_pre_cli.TabStop = false;
             // 
             // labelX10
             // 
@@ -618,6 +620,7 @@
             this.tb_nom_gru.ReadOnly = true;
             this.tb_nom_gru.Size = new System.Drawing.Size(215, 22);
             this.tb_nom_gru.TabIndex = 2;
+            this.tb_nom_gru.TabStop = false;
             // 
             // labelX2
             // 

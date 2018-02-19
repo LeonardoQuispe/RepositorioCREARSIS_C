@@ -185,6 +185,7 @@
             this.tb_nom_ley.ReadOnly = true;
             this.tb_nom_ley.Size = new System.Drawing.Size(278, 62);
             this.tb_nom_ley.TabIndex = 16;
+            this.tb_nom_ley.TabStop = false;
             // 
             // LabelX9
             // 
@@ -449,6 +450,7 @@
             this.tb_nom_act.ReadOnly = true;
             this.tb_nom_act.Size = new System.Drawing.Size(278, 22);
             this.tb_nom_act.TabIndex = 9;
+            this.tb_nom_act.TabStop = false;
             // 
             // LabelX4
             // 
@@ -510,6 +512,7 @@
             this.tb_nom_sucu.ReadOnly = true;
             this.tb_nom_sucu.Size = new System.Drawing.Size(278, 22);
             this.tb_nom_sucu.TabIndex = 6;
+            this.tb_nom_sucu.TabStop = false;
             // 
             // LabelX3
             // 
