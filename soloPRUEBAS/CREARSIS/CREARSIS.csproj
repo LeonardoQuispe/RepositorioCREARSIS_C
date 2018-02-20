@@ -481,11 +481,41 @@
     <Compile Include="2-ADM\adm000.Designer.cs">
       <DependentUpon>adm000.cs</DependentUpon>
     </Compile>
-    <Compile Include="3-SEG\seg002%28mod_sis%29\seg022_01.cs">
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_01.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3-SEG\seg002%28mod_sis%29\seg022_01.Designer.cs">
-      <DependentUpon>seg022_01.cs</DependentUpon>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_01.Designer.cs">
+      <DependentUpon>seg002_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_02.Designer.cs">
+      <DependentUpon>seg002_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_03.Designer.cs">
+      <DependentUpon>seg002_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_04.Designer.cs">
+      <DependentUpon>seg002_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_05.Designer.cs">
+      <DependentUpon>seg002_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg002_06.Designer.cs">
+      <DependentUpon>seg002_06.cs</DependentUpon>
     </Compile>
     <Compile Include="3-SEG\seg022%28per_gru.pers%29\seg022_01.cs">
       <SubType>Form</SubType>
@@ -1413,8 +1443,23 @@
     <EmbeddedResource Include="2-ADM\adm000.resx">
       <DependentUpon>adm000.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg022_01.resx">
-      <DependentUpon>seg022_01.cs</DependentUpon>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_01.resx">
+      <DependentUpon>seg002_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_02.resx">
+      <DependentUpon>seg002_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_03.resx">
+      <DependentUpon>seg002_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_04.resx">
+      <DependentUpon>seg002_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_05.resx">
+      <DependentUpon>seg002_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg002_06.resx">
+      <DependentUpon>seg002_06.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3-SEG\seg022%28per_gru.pers%29\seg022_01.resx">
       <DependentUpon>seg022_01.cs</DependentUpon>
