@@ -51,6 +51,11 @@
     <Compile Include="2-ADM\c_adm012.cs" />
     <Compile Include="2-ADM\c_adm013.cs" />
     <Compile Include="2-ADM\c_adm014.cs" />
+    <Compile Include="3-SEG\c_seg002.cs" />
+    <Compile Include="3-SEG\c_seg023.cs" />
+    <Compile Include="3-SEG\c_seg024.cs" />
+    <Compile Include="3-SEG\c_seg025.cs" />
+    <Compile Include="3-SEG\c_seg026.cs" />
     <Compile Include="4-INV\c_inv002.cs" />
     <Compile Include="4-INV\c_inv008.cs" />
     <Compile Include="4-INV\c_inv100.cs" />

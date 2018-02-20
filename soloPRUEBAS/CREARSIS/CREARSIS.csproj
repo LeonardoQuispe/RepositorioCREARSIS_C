@@ -481,6 +481,24 @@
     <Compile Include="2-ADM\adm000.Designer.cs">
       <DependentUpon>adm000.cs</DependentUpon>
     </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg022_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg002%28mod_sis%29\seg022_01.Designer.cs">
+      <DependentUpon>seg022_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg022%28per_gru.pers%29\seg022_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg022%28per_gru.pers%29\seg022_01.Designer.cs">
+      <DependentUpon>seg022_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg023%28per_mod%29\seg023_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg023%28per_mod%29\seg023_01.Designer.cs">
+      <DependentUpon>seg023_01.cs</DependentUpon>
+    </Compile>
     <Compile Include="3-SEG\seg024%28per_ven%29\seg024_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1395,6 +1413,15 @@
     <EmbeddedResource Include="2-ADM\adm000.resx">
       <DependentUpon>adm000.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg002%28mod_sis%29\seg022_01.resx">
+      <DependentUpon>seg022_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg022%28per_gru.pers%29\seg022_01.resx">
+      <DependentUpon>seg022_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg023%28per_mod%29\seg023_01.resx">
+      <DependentUpon>seg023_01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="3-SEG\seg024%28per_ven%29\seg024_01.resx">
       <DependentUpon>seg024_01.cs</DependentUpon>
     </EmbeddedResource>
@@ -1816,6 +1843,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="3-SEG\seg025%28per_gru.alm%29\" />
+    <Folder Include="3-SEG\seg026%28per_alm%29\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
