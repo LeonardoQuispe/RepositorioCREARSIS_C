@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CREARSIS._3_SEG.seg024_per_ven_
 {
-    public partial class seg024_01 : Form
+    public partial class seg024_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
         public seg024_01()
         {
