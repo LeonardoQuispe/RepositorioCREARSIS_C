@@ -70,7 +70,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text, tb_nom_usr.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text);
 
                 fu_lim_frm();
             }

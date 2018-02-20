@@ -60,7 +60,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("La contraseña se inicializo satisfactoriamente", "Inicializa contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text, tb_nom_usr.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text);
 
                 Close();
 

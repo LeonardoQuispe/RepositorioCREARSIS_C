@@ -80,7 +80,7 @@ namespace CREARSIS
 
             if (lb_sel_ecc.Text != "** NO existe")
             {
-                fu_sel_fila(tb_sel_ecc.Text, lb_sel_ecc.Text);
+                fu_sel_fila(tb_sel_ecc.Text);
             }            
         }
 
@@ -423,12 +423,10 @@ namespace CREARSIS
         /// <summary>
         /// - > Función que selecciona la fila en el Datagrid que el Usuario Modificó
         /// </summary>
-        public void fu_sel_fila(string cod_usr,string nom_usr)
+        public void fu_sel_fila(string cod_usr)
         {
             fu_bus_car(tb_val_bus.Text, cb_prm_bus.SelectedIndex, cb_est_bus.SelectedIndex);
-
-            tb_sel_ecc.Text = cod_usr;
-            lb_sel_ecc.Text = nom_usr;
+            
 
             if (cod_usr != null)
             {          
@@ -436,7 +434,7 @@ namespace CREARSIS
                 {
                     for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                     {
-                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_usr.ToUpper() && dg_res_ult.Rows[i].Cells[1].Value.ToString().ToUpper() == nom_usr.ToUpper())
+                        if (dg_res_ult.Rows[i].Cells[0].Value.ToString().ToUpper() == cod_usr.ToUpper())
                         {
                             dg_res_ult.Rows[i].Selected = true;
                             dg_res_ult.FirstDisplayedScrollingRowIndex = i;
@@ -457,8 +455,22 @@ namespace CREARSIS
 
         }
 
+
         #endregion
 
-        
+        private void m_per_ven_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _3_SEG.seg024_per_ven_.seg024_01 obj = new _3_SEG.seg024_per_ven_.seg024_01();
+            o_mg_glo_bal.mg_ads000_02(obj, this,tab_seg001);
+
+        }
     }
 }

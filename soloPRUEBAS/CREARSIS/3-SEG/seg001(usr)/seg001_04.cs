@@ -79,7 +79,7 @@ namespace CREARSIS
 
                 MessageBoxEx.Show("Operación completada exitosamente", "Habilita/Deshabilita Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text, tb_nom_usr.Text);
+                vg_frm_pad.fu_sel_fila(tb_cod_usr.Text);
 
                 Close();
             }

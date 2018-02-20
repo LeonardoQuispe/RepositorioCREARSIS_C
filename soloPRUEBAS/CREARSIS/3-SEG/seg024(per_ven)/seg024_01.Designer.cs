@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_val_bus = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tb_sel_ecc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.tb_nom_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tb_cod_usr = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.LabelX1 = new DevComponents.DotNetBar.LabelX();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.dg_res_ult = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.va_cod_ven = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_nom_ven = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_chk_per = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
@@ -54,8 +54,8 @@
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.White;
             this.GroupBox1.Controls.Add(this.labelX2);
-            this.GroupBox1.Controls.Add(this.tb_val_bus);
-            this.GroupBox1.Controls.Add(this.tb_sel_ecc);
+            this.GroupBox1.Controls.Add(this.tb_nom_usr);
+            this.GroupBox1.Controls.Add(this.tb_cod_usr);
             this.GroupBox1.Controls.Add(this.LabelX1);
             this.GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.GroupBox1.Location = new System.Drawing.Point(6, 4);
@@ -64,45 +64,60 @@
             this.GroupBox1.TabIndex = 74;
             this.GroupBox1.TabStop = false;
             // 
-            // tb_val_bus
+            // labelX2
             // 
-            this.tb_val_bus.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.tb_val_bus.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_val_bus.Border.Class = "TextBoxBorder";
-            this.tb_val_bus.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_val_bus.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
-            this.tb_val_bus.ButtonCustom.Symbol = "";
-            this.tb_val_bus.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_val_bus.Enabled = false;
-            this.tb_val_bus.ForeColor = System.Drawing.Color.Black;
-            this.tb_val_bus.Location = new System.Drawing.Point(60, 59);
-            this.tb_val_bus.MaxLength = 120;
-            this.tb_val_bus.Name = "tb_val_bus";
-            this.tb_val_bus.PreventEnterBeep = true;
-            this.tb_val_bus.Size = new System.Drawing.Size(326, 22);
-            this.tb_val_bus.TabIndex = 20;
-            // 
-            // tb_sel_ecc
-            // 
-            this.tb_sel_ecc.BackColor = System.Drawing.Color.White;
+            this.labelX2.AutoSize = true;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.tb_sel_ecc.Border.BorderColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Border.Class = "TextBoxBorder";
-            this.tb_sel_ecc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tb_sel_ecc.DisabledBackColor = System.Drawing.Color.White;
-            this.tb_sel_ecc.Enabled = false;
-            this.tb_sel_ecc.ForeColor = System.Drawing.Color.Black;
-            this.tb_sel_ecc.Location = new System.Drawing.Point(60, 24);
-            this.tb_sel_ecc.MaxLength = 15;
-            this.tb_sel_ecc.Name = "tb_sel_ecc";
-            this.tb_sel_ecc.PreventEnterBeep = true;
-            this.tb_sel_ecc.Size = new System.Drawing.Size(140, 22);
-            this.tb_sel_ecc.TabIndex = 10;
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(13, 61);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(43, 17);
+            this.labelX2.TabIndex = 21;
+            this.labelX2.Text = "Nombre";
+            // 
+            // tb_nom_usr
+            // 
+            this.tb_nom_usr.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_nom_usr.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_nom_usr.Border.Class = "TextBoxBorder";
+            this.tb_nom_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_nom_usr.ButtonCustom.Shortcut = DevComponents.DotNetBar.eShortcut.CtrlB;
+            this.tb_nom_usr.ButtonCustom.Symbol = "";
+            this.tb_nom_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_nom_usr.Enabled = false;
+            this.tb_nom_usr.ForeColor = System.Drawing.Color.Black;
+            this.tb_nom_usr.Location = new System.Drawing.Point(60, 59);
+            this.tb_nom_usr.MaxLength = 120;
+            this.tb_nom_usr.Name = "tb_nom_usr";
+            this.tb_nom_usr.PreventEnterBeep = true;
+            this.tb_nom_usr.Size = new System.Drawing.Size(326, 22);
+            this.tb_nom_usr.TabIndex = 20;
+            // 
+            // tb_cod_usr
+            // 
+            this.tb_cod_usr.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tb_cod_usr.Border.BorderColor = System.Drawing.Color.Black;
+            this.tb_cod_usr.Border.Class = "TextBoxBorder";
+            this.tb_cod_usr.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_cod_usr.DisabledBackColor = System.Drawing.Color.White;
+            this.tb_cod_usr.Enabled = false;
+            this.tb_cod_usr.ForeColor = System.Drawing.Color.Black;
+            this.tb_cod_usr.Location = new System.Drawing.Point(60, 24);
+            this.tb_cod_usr.MaxLength = 15;
+            this.tb_cod_usr.Name = "tb_cod_usr";
+            this.tb_cod_usr.PreventEnterBeep = true;
+            this.tb_cod_usr.Size = new System.Drawing.Size(140, 22);
+            this.tb_cod_usr.TabIndex = 10;
             // 
             // LabelX1
             // 
@@ -163,7 +178,6 @@
             this.dg_res_ult.Location = new System.Drawing.Point(10, 12);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
-            this.dg_res_ult.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -205,6 +219,7 @@
             this.bt_can_cel.SymbolSize = 15F;
             this.bt_can_cel.TabIndex = 70;
             this.bt_can_cel.Text = "Cancelar";
+            this.bt_can_cel.Click += new System.EventHandler(this.bt_can_cel_Click);
             // 
             // bt_ace_pta
             // 
@@ -221,21 +236,7 @@
             this.bt_ace_pta.SymbolSize = 15F;
             this.bt_ace_pta.TabIndex = 60;
             this.bt_ace_pta.Text = "Aceptar";
-            // 
-            // labelX2
-            // 
-            this.labelX2.AutoSize = true;
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(13, 61);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(43, 17);
-            this.labelX2.TabIndex = 21;
-            this.labelX2.Text = "Nombre";
+            this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
             // va_cod_ven
             // 
@@ -258,7 +259,6 @@
             this.va_chk_per.CheckValue = "N";
             this.va_chk_per.HeaderText = "Permiso";
             this.va_chk_per.Name = "va_chk_per";
-            this.va_chk_per.ReadOnly = true;
             this.va_chk_per.Width = 50;
             // 
             // seg024_01
@@ -274,11 +274,13 @@
             this.Controls.Add(this.gb_ctr_frm);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "seg024_01";
             this.Text = "Permiso Usuario sobre Vendedor";
             this.TitleText = "Permiso Usuario sobre Vendedor";
+            this.Load += new System.EventHandler(this.seg024_01_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
@@ -291,8 +293,8 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox GroupBox1;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_val_bus;
-        internal DevComponents.DotNetBar.Controls.TextBoxX tb_sel_ecc;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_nom_usr;
+        internal DevComponents.DotNetBar.Controls.TextBoxX tb_cod_usr;
         internal DevComponents.DotNetBar.LabelX LabelX1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal DevComponents.DotNetBar.Controls.DataGridViewX dg_res_ult;
