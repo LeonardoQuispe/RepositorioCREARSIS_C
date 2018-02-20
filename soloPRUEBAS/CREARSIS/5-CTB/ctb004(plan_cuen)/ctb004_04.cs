@@ -20,6 +20,8 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         string err_msg = "";
+        string[] va_mat_cod;
+        int va_niv_lin = 0;
 
         #endregion
 
@@ -84,8 +86,103 @@ namespace CREARSIS._5_CTB.ctb004_plan_cuen_
         /// <summary>
         /// Funcion que verifica los datos antes de grabar
         /// </summary>
-        public string fu_ver_dat()
+        string fu_ver_dat()
         {
+            va_mat_cod = new string[5];
+            va_niv_lin = 0;
+
+            //Recupera los niveles del código
+            va_mat_cod[0] = tb_cod_cta.Text.Substring(0, 1);    //1er Nivel
+            va_mat_cod[1] = tb_cod_cta.Text.Substring(2, 1);    //2do Nivel
+            va_mat_cod[2] = tb_cod_cta.Text.Substring(4, 1);    //3er Nivel
+            va_mat_cod[3] = tb_cod_cta.Text.Substring(6, 2);    //4to Nivel
+            va_mat_cod[4] = tb_cod_cta.Text.Substring(9, 3);    //5to Nivel
+
+            for (int i = 0; i < va_mat_cod.Length; i++)
+            {
+                if (int.Parse(va_mat_cod[i]) > 0)
+                {
+                    va_niv_lin++;
+                }
+            }
+
+
+
+            if (tb_est_ado.Text == "Habilitado")
+            {
+                switch (va_niv_lin)
+                {
+                    //Verifica si quiere Deshabilitar un PLAN DE CUENTAS de primer nivel
+                    case 1:
+                        tab_ctb004 = o_ctb004._01(va_mat_cod[0].ToString(), 1,0, "T");
+                        break;
+
+                    //Verifica si quiere Deshabilitar un PLAN DE CUENTAS de segundo nivel
+                    case 2:
+                        tab_ctb004 = o_ctb004._01(va_mat_cod[0].ToString() + "." + va_mat_cod[1], 1, 0, "T");
+                        break;
+
+                    //Verifica si quiere Deshabilitar un PLAN DE CUENTAS de tercer nivel
+                    case 3:
+                        tab_ctb004 = o_ctb004._01(va_mat_cod[0].ToString() + "." + va_mat_cod[1].ToString() + "." + va_mat_cod[2], 1, 0, "T");
+                        break;
+
+                    //Verifica si quiere Deshabilitar un PLAN DE CUENTAS de cuarto nivel
+                    case 4:                        
+                        tab_ctb004 = o_ctb004._01(va_mat_cod[0].ToString() + "." + va_mat_cod[1].ToString() + "." + va_mat_cod[2].ToString() + "." + va_mat_cod[3], 1, 0, "T");
+                        break;
+                }
+
+                if (va_niv_lin!=5)
+                {
+                    //Valida que el PLAN DE CUENTAS no tenga Sub-familias Habilitadas
+                    for (int i = 1; i <= tab_ctb004.Rows.Count - 1; i++)
+                    {
+                        if (tab_ctb004.Rows[i]["va_est_ado"].ToString() == "H")
+                        {
+                            return "Primero debe deshabilitar las Sub-familias que tiene registrada \n\r" +
+                                "               este Plan de Cuentas de nivel " + va_niv_lin.ToString();
+                        }
+                    }
+                }
+                
+
+            }
+            else if (tb_est_ado.Text == "Deshabilitado")
+            {
+                switch (va_niv_lin)
+                {
+                    //Verifica si quiere Habilitar un PLAN DE CUENTAS de segundo nivel
+                    case 2:
+                        tab_ctb004 = o_ctb004._05(va_mat_cod[0] + ".0.0.00.000");
+                        break;
+
+                    //Verifica si quiere Habilitar un PLAN DE CUENTAS de tercer nivel
+                    case 3:
+                        tab_ctb004 = o_ctb004._05(va_mat_cod[0].ToString()+"."+ va_mat_cod[1].ToString() + ".0.00.000");
+                        break;
+
+                    //Verifica si quiere Habilitar un PLAN DE CUENTAS de cuarto nivel
+                    case 4:
+                        tab_ctb004 = o_ctb004._05(va_mat_cod[0].ToString() + "." + va_mat_cod[1].ToString() + "." + va_mat_cod[2].ToString() + ".00.000");
+                        break;
+
+                    //Verifica si quiere Habilitar un PLAN DE CUENTAS de quinto nivel
+                    case 5:
+                        tab_ctb004 = o_ctb004._05(va_mat_cod[0].ToString() + "." + va_mat_cod[1].ToString() + "." + va_mat_cod[2].ToString() + "." + va_mat_cod[3].ToString() + ".000");
+                        break;
+                }
+
+                if (va_niv_lin!=1)
+                {
+                    //Valida que el PLAN DE CUENTAS Padre esté Habilitado
+                    if (tab_ctb004.Rows[0]["va_est_ado"].ToString() == "N")
+                    {
+                        return "Primero debe habilitar la familia de productos de nivel " + (va_niv_lin-1).ToString() + " de esta Sub-familia";
+                    }
+                }
+                
+            }
 
             return null;
         }
