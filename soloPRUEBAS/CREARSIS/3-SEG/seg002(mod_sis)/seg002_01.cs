@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CREARSIS._3_SEG.seg002_mod_sis_
 {
-    public partial class seg022_01 : Form
+    public partial class seg002_01 : Form
     {
-        public seg022_01()
+        public seg002_01()
         {
             InitializeComponent();
         }

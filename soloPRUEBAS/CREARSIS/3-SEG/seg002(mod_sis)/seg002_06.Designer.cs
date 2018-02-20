@@ -1,6 +1,6 @@
 ﻿namespace CREARSIS._3_SEG.seg002_mod_sis_
 {
-    partial class seg022_01
+    partial class seg002_06
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // seg022_01
+            // seg002_06
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Name = "seg022_01";
-            this.Text = "seg022_01";
+            this.Name = "seg002_06";
+            this.Text = "seg002_06";
             this.ResumeLayout(false);
 
         }
