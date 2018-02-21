@@ -458,6 +458,7 @@ namespace CREARSIS
 
         #endregion
 
+        //[MENU- Permiso de Usuario Sobre Vendedor]
         private void m_per_ven_Click(object sender, EventArgs e)
         {
             string vv_err_msg;
@@ -471,6 +472,34 @@ namespace CREARSIS
             _3_SEG.seg024_per_ven_.seg024_01 obj = new _3_SEG.seg024_per_ven_.seg024_01();
             o_mg_glo_bal.mg_ads000_02(obj, this,tab_seg001);
 
+        }
+        //[MENU- Permiso de Usuario Sobre Grupo de Almacén]
+        private void m_per_gru_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            _3_SEG.seg025_per_gru.alm_.seg025_01 obj = new _3_SEG.seg025_per_gru.alm_.seg025_01();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
+        }
+        //[MENU- Permiso de Usuario Sobre Almacén]
+        private void m_per_alm_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _3_SEG.seg026_per_alm_.seg026_01 obj = new _3_SEG.seg026_per_alm_.seg026_01();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
         }
     }
 }
