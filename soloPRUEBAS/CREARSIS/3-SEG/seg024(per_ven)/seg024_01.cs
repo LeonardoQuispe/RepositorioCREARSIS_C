@@ -129,7 +129,5 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
             }
 
         }
-
-        
     }
 }
