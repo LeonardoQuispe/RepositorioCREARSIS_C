@@ -535,6 +535,18 @@
     <Compile Include="3-SEG\seg024%28per_ven%29\seg024_01.Designer.cs">
       <DependentUpon>seg024_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="3-SEG\seg025%28per_gru.alm%29\seg025_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg025%28per_gru.alm%29\seg025_01.Designer.cs">
+      <DependentUpon>seg025_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-SEG\seg026%28per_alm%29\seg026_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-SEG\seg026%28per_alm%29\seg026_01.Designer.cs">
+      <DependentUpon>seg026_01.cs</DependentUpon>
+    </Compile>
     <Compile Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1470,6 +1482,12 @@
     <EmbeddedResource Include="3-SEG\seg024%28per_ven%29\seg024_01.resx">
       <DependentUpon>seg024_01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg025%28per_gru.alm%29\seg025_01.resx">
+      <DependentUpon>seg025_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-SEG\seg026%28per_alm%29\seg026_01.resx">
+      <DependentUpon>seg026_01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="7-ECP\ecp007%28linea_de_credito%29\ecp007_01.resx">
       <DependentUpon>ecp007_01.cs</DependentUpon>
     </EmbeddedResource>
@@ -1888,9 +1906,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="3-SEG\seg025%28per_gru.alm%29\" />
-    <Folder Include="3-SEG\seg026%28per_alm%29\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
