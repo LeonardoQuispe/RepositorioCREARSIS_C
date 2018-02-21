@@ -11,21 +11,29 @@ using System.Windows.Forms;
 using DATOS._3_SEG;
 using DATOS._6_CMR;
 using DevComponents.DotNetBar;
+using System.Transactions;
 
 namespace CREARSIS._3_SEG.seg024_per_ven_
 {
     public partial class seg024_01 : DevComponents.DotNetBar.Metro.MetroForm
     {
+        #region VARIABLES
+
         public dynamic vg_frm_pad;
         public DataTable vg_str_ucc;
         DataTable tab_seg024;
         DataTable tab_cmr003;
-        string err_msg = "";
 
+        #endregion
 
+        #region INSTANCIAS
 
         c_seg024 o_seg024 = new c_seg024();
         c_cmr003 o_cmr003 = new c_cmr003();
+
+        #endregion
+
+        #region EVENTOS
 
         public seg024_01()
         {
@@ -47,18 +55,26 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
                 return;
             }
 
-            //Elimina Permisos del Usuario
-            o_seg024._06(tb_cod_usr.Text.Trim());
-
-            //Guarda PERMISOS
-            for (int i = 0; i < dg_res_ult.Rows.Count; i++)
+            //Iniciando Transacción
+            using (TransactionScope tra_nsa = new TransactionScope())
             {
-                if (va_chk_per.Checked==true)
+                //Elimina Permisos del Usuario
+                o_seg024._06(tb_cod_usr.Text.Trim());
+
+                //Guarda PERMISOS
+                for (int i = 0; i < dg_res_ult.Rows.Count; i++)
                 {
-                    o_seg024._02(tb_cod_usr.Text.Trim(), Convert.ToInt32(dg_res_ult.Rows[i].Cells["va_cod_ven"].Value));
+                    if (Convert.ToBoolean(dg_res_ult.Rows[i].Cells["va_chk_per"].Value) == true)
+                    {
+                        o_seg024._02(tb_cod_usr.Text.Trim(), Convert.ToInt32(dg_res_ult.Rows[i].Cells["va_cod_ven"].Value));
+                    }
                 }
+
+                tra_nsa.Complete();
+                tra_nsa.Dispose();
             }
-            
+
+
 
             MessageBoxEx.Show("Operación completada exitosamente", "Permiso Usuario sobre Vendedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -72,13 +88,9 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
             Close();
         }
 
+        #endregion
 
-
-
-
-
-
-
+        #region METODOS
 
         void fu_ini_frm()
         {
@@ -98,7 +110,7 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
 
 
             //CARGA DATAGRID con todos los vendedores
-            tab_cmr003 = o_cmr003._01("", 1,"0");
+            tab_cmr003 = o_cmr003._01("", 1, "0");
             if (tab_cmr003.Rows.Count == 0)
             {
                 return;
@@ -106,7 +118,7 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
 
             //Recupera todos los vendedores sobre los que tiene permiso el USUARIO
             tab_seg024 = o_seg024._05(tb_cod_usr.Text.Trim());
-            
+
             //recorre todos los vendedores
             foreach (DataRow row in tab_cmr003.Rows)
             {
@@ -115,19 +127,21 @@ namespace CREARSIS._3_SEG.seg024_per_ven_
                 //valida los vendedores a los que tiene permiso el usuario
                 foreach (DataRow row2 in tab_seg024.Rows)
                 {
-                    if (row["va_cod_ven"].ToString()==row2["va_cod_ven"].ToString())
+                    if (row["va_cod_ven"].ToString() == row2["va_cod_ven"].ToString())
                     {
                         va_ban_aux = true;
                     }
                 }
-                
 
-                dg_res_ult.Rows.Add(row["va_cod_ven"], row["va_nom_ven"], va_chk_per.Checked=va_ban_aux);
+
+                dg_res_ult.Rows.Add(row["va_cod_ven"], row["va_nom_ven"], va_chk_per.Checked = va_ban_aux);
 
                 dg_res_ult.Rows[va_ind_ice].Tag = row;
                 va_ind_ice = va_ind_ice + 1;
             }
 
         }
+
+        #endregion
     }
 }
