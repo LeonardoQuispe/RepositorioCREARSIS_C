@@ -65,6 +65,44 @@ namespace DATOS._4_INV
         }
 
         /// <summary>
+        /// Funcion "Buscar Producto"
+        /// </summary>
+        /// <param name="val_bus">Valor del busqueda</param>
+        /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre ; 3=Descripcion ; 4=Fabricante )</param>
+        /// <param name="lventa">Bandera que inidica si muestra o no las personas visibles para Ventas</param>
+        /// <param name="lcompra">Bandera que inidica si muestra o no las personas visibles para Compras</param>
+        /// <returns></returns>
+        public DataTable _01a(string val_bus, int prm_bus, Boolean lventa, Boolean lcompra)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" select * from inv002  ");
+
+                switch (prm_bus)
+                {
+                    case 1: vv_str_sql.AppendLine(" where va_cod_pro like '" + val_bus + "%' "); break;
+                    case 2: vv_str_sql.AppendLine(" where va_nom_pro like '" + val_bus + "%' "); break;
+                    case 3: vv_str_sql.AppendLine(" where va_des_pro like '" + val_bus + "%' "); break;
+                    case 4: vv_str_sql.AppendLine(" where va_fab_ric like '" + val_bus + "%' "); break;
+                }
+
+                vv_str_sql.AppendLine(" and va_est_ado ='H'");
+                
+                if (lventa)
+                    vv_str_sql.AppendFormat(" and va_ban_vta = 1 ");
+                
+                if (lcompra)
+                    vv_str_sql.AppendFormat(" and va_ban_cmp = 1 ");
+                
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
         /// funcion "Registrar Producto"
         /// </summary>
         /// <param name="cod_pro">Codigo del producto </param>

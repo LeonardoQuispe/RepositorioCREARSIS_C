@@ -45,23 +45,23 @@ namespace DATOS
         /// <summary>
         /// Stock total x almacén
         /// </summary>
-	    public double va_sal_can;
+	    public decimal va_sal_can;
         /// <summary>
         /// Costo Unitario - cálculo = promedio ponderado en Bs
         /// </summary>
-	    public double va_cos_ubs;
+	    public decimal va_cos_ubs;
         /// <summary>
         /// Costo Unitario - cálculo = promedio ponderado en USD
         /// </summary>
-	    public double va_cos_uus;
+	    public decimal va_cos_uus;
         /// <summary>
         /// Último Costo de Ingreso en Bs
         /// </summary>
-	    public double va_ult_cbs;
+	    public decimal va_ult_cbs;
         /// <summary>
         /// Último Costo de Ingreso en USD
         /// </summary>
-        public double va_ult_cus;
+        public decimal va_ult_cus;
         /// <summary>
         /// Estado del Producto x Almacen H:Habilidato, D:Desabilidato
         /// </summary>
@@ -100,9 +100,9 @@ namespace DATOS
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv101 ");
                 vv_str_sql.AppendFormat(" WHERE va_emp_cod={0}", cod_emp);
-                vv_str_sql.AppendFormat(" AND va_cod_suc={1}", cod_suc);
-                vv_str_sql.AppendFormat(" AND va_cod_alm={2}", cod_alm);
-                vv_str_sql.AppendFormat(" AND va_cod_pro='{3}'", cod_pro);
+                vv_str_sql.AppendFormat(" AND va_cod_suc={0}", cod_suc);
+                vv_str_sql.AppendFormat(" AND va_cod_alm={0}", cod_alm);
+                vv_str_sql.AppendFormat(" AND va_cod_pro='{0}'", cod_pro);
 
                 DataTable dt_pro_alm = o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
@@ -114,11 +114,11 @@ namespace DATOS
                     va_cod_suc = Convert.ToInt32(row["va_cod_suc"]);
                     va_cod_alm = Convert.ToInt32(row["va_cod_alm"]);
                     va_cod_pro = row["va_cod_pro"].ToString();
-                    va_sal_can = Convert.ToDouble(row["va_sal_can"]);
-                    va_cos_ubs = Convert.ToDouble(row["va_cos_ubs"]);
-                    va_cos_uus = Convert.ToDouble(row["va_cos_uus"]);
-                    va_ult_cbs = Convert.ToDouble(row["va_ult_cbs"]);
-                    va_ult_cus = Convert.ToDouble(row["va_ult_cus"]);
+                    va_sal_can = Convert.ToDecimal(row["va_sal_can"]);
+                    va_cos_ubs = Convert.ToDecimal(row["va_cos_ubs"]);
+                    va_cos_uus = Convert.ToDecimal(row["va_cos_uus"]);
+                    va_ult_cbs = Convert.ToDecimal(row["va_ult_cbs"]);
+                    va_ult_cus = Convert.ToDecimal(row["va_ult_cus"]);
                     return true;
                 }
                 else
@@ -142,9 +142,9 @@ namespace DATOS
               // StockTrans < cant Solo cuando se recibe mas de lo pedido en O/C
               // ItemDetalle = Registro de detalle con producto y cantidad
               // Ajuste = Variable de ajuste por diferencia de costos, se retorna el valor de ajuste
-            double dbl_Stock;  // Stock
-            double dbl_CostoBs; // Costo total Bs
-            double dbl_CostoUsd; // Costo total USD
+            decimal dbl_Stock;  // Stock
+            decimal dbl_CostoBs; // Costo total Bs
+            decimal dbl_CostoUsd; // Costo total USD
             string sSQL;
             bool lSerie = false;
             bool lLote = false;
@@ -226,15 +226,15 @@ namespace DATOS
                 StringBuilder vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" update inv101 ");
                 vv_str_sql.AppendFormat(" set va_sal_can ={0}, ", va_sal_can);
-                vv_str_sql.AppendFormat("  va_cos_ubs ={1}, ", va_cos_ubs);
-                vv_str_sql.AppendFormat("  va_cos_uus ={2}, ", va_cos_uus);
-                vv_str_sql.AppendFormat("  va_ult_cbs ={3}, ", va_ult_cbs);
-                vv_str_sql.AppendFormat("  va_ult_cus ={4}, ", va_ult_cus);
+                vv_str_sql.AppendFormat("  va_cos_ubs ={0}, ", va_cos_ubs);
+                vv_str_sql.AppendFormat("  va_cos_uus ={0}, ", va_cos_uus);
+                vv_str_sql.AppendFormat("  va_ult_cbs ={0}, ", va_ult_cbs);
+                vv_str_sql.AppendFormat("  va_ult_cus ={0} ", va_ult_cus);
 
-                vv_str_sql.AppendFormat(" WHERE va_cod_alm={5}", va_cod_alm);
-                vv_str_sql.AppendFormat(" and va_cod_pro='{6}'", va_cod_pro);
-                vv_str_sql.AppendFormat(" and va_emp_cod={7}", va_emp_cod);
-                vv_str_sql.AppendFormat(" and va_cod_suc={8}", va_cod_suc);
+                vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", va_cod_alm);
+                vv_str_sql.AppendFormat(" and va_cod_pro='{0}'", va_cod_pro);
+                vv_str_sql.AppendFormat(" and va_emp_cod={0}", va_emp_cod);
+                vv_str_sql.AppendFormat(" and va_cod_suc={0}", va_cod_suc);
 
                 return o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 

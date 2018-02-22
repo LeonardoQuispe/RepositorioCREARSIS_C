@@ -42,7 +42,7 @@ namespace DATOS
         /// <summary>
         /// Stock por Lote y Producto X Almacen
         /// </summary>
-        public double va_sal_can;
+        public decimal va_sal_can;
         /// <summary>
         /// Codigo del Lote, hace referencia al Identiy de la tabla inv103
         /// </summary>
@@ -80,10 +80,10 @@ namespace DATOS
                 vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" SELECT * fROM inv102 ");
                 vv_str_sql.AppendFormat(" WHERE va_emp_cod={0}", _cod_emp);
-                vv_str_sql.AppendFormat(" AND va_cod_suc={1}", _cod_suc);
-                vv_str_sql.AppendFormat(" AND va_cod_alm={2}", _cod_alm);
-                vv_str_sql.AppendFormat(" AND va_cod_pro='{3}'", _cod_pro);
-                vv_str_sql.AppendFormat(" AND va_lot_cod={4}", _cod_lot);
+                vv_str_sql.AppendFormat(" AND va_cod_suc={0}", _cod_suc);
+                vv_str_sql.AppendFormat(" AND va_cod_alm={0}", _cod_alm);
+                vv_str_sql.AppendFormat(" AND va_cod_pro='{0}'", _cod_pro);
+                vv_str_sql.AppendFormat(" AND va_lot_cod={0}", _cod_lot);
 
                 DataTable dt_pro_alm = _cnx000.fu_exe_sql_si(vv_str_sql.ToString());
 
@@ -95,7 +95,7 @@ namespace DATOS
                     va_cod_suc = Convert.ToInt32(row["va_cod_suc"]);
                     va_cod_alm = Convert.ToInt32(row["va_cod_alm"]);
                     va_cod_pro = row["va_cod_pro"].ToString();
-                    va_sal_can = Convert.ToDouble(row["va_sal_can"]);
+                    va_sal_can = Convert.ToDecimal(row["va_sal_can"]);
 
                     return true;
                 }
@@ -154,11 +154,11 @@ namespace DATOS
                 StringBuilder vv_str_sql = new StringBuilder();
                 vv_str_sql.AppendLine(" update inv102 ");
                 vv_str_sql.AppendFormat(" set va_sal_can ={0}, ", va_sal_can);
-                vv_str_sql.AppendFormat(" WHERE va_cod_alm={1}", va_cod_alm);
-                vv_str_sql.AppendFormat(" and va_cod_pro='{2}'", va_cod_pro);
-                vv_str_sql.AppendFormat(" and va_emp_cod={3}", va_emp_cod);
-                vv_str_sql.AppendFormat(" and va_cod_suc={4}", va_cod_suc);
-                vv_str_sql.AppendFormat(" and va_lot_cod={5}", va_lot_cod);
+                vv_str_sql.AppendFormat(" WHERE va_cod_alm={0}", va_cod_alm);
+                vv_str_sql.AppendFormat(" and va_cod_pro='{0}'", va_cod_pro);
+                vv_str_sql.AppendFormat(" and va_emp_cod={0}", va_emp_cod);
+                vv_str_sql.AppendFormat(" and va_cod_suc={0}", va_cod_suc);
+                vv_str_sql.AppendFormat(" and va_lot_cod={0}", va_lot_cod);
 
                 return _cnx000.fu_exe_sql_no(vv_str_sql.ToString());
 

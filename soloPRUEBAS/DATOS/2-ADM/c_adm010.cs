@@ -67,6 +67,49 @@ namespace DATOS
             }
 
         }
+
+        /// <summary>
+        /// Funcion "Buscar PERSONAS"
+        /// </summary>
+        /// <param name="val_bus">Valor de la busqued</param>
+        /// <param name="prm_bus">Parametro de busqueda (1=codigo ; 2=Raz Soc;3=nombre Comercial; 4=NIT/CI )</param>
+        /// <param name="est_bus">Estado del persona (0=todos ; 1=Valido/habilitado ; 2=Nulo/Deshabilitado )(</param>
+        /// <param name="con_bus">Condición de Búsqueda 0=LIKE(%); 1=IGUAL(=)</param>
+        /// <param name="lventa">Bandera que inidica si muestra o no las personas visibles para Ventas</param>
+        /// <param name="lcompra">Bandera que inidica si muestra o no las personas visibles para Compras</param>
+        /// <returns></returns>
+        public DataTable _01a(string val_bus, int prm_bus, Boolean lventa, Boolean lcompra)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+
+                vv_str_sql.AppendLine(" select * from adm010  ");
+
+                switch (prm_bus)
+                {
+                    case 1: vv_str_sql.AppendFormat(" where va_cod_per like '{0}%'", val_bus); break;
+                    case 2: vv_str_sql.AppendFormat(" where va_raz_soc like '{0}%'", val_bus); break;
+                    case 3: vv_str_sql.AppendFormat(" where va_nom_com like '{0}%'", val_bus); break;
+                    case 4: vv_str_sql.AppendFormat(" where va_nit_ced like '{0}%'", val_bus); break;
+                }
+
+                
+                 vv_str_sql.AppendFormat(" and va_est_ado ='H' ");
+                if(lventa)
+                    vv_str_sql.AppendFormat(" and va_ban_ven = 1 ");
+
+                if (lcompra )
+                    vv_str_sql.AppendFormat(" and va_ban_com = 1 ");
+
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         /// <summary>
         /// Registrar "PERSONA"
         /// </summary>
