@@ -501,5 +501,33 @@ namespace CREARSIS
             _3_SEG.seg026_per_alm_.seg026_01 obj = new _3_SEG.seg026_per_alm_.seg026_01();
             o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
         }
+        //[MENU- Permiso de Usuario Sobre Grupo de Persona]
+        private void m_per_grp_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CREARSIS._3_SEG.seg022_per_gru.pers_.seg022_01 obj = new CREARSIS._3_SEG.seg022_per_gru.pers_.seg022_01();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
+        }
+        //[MENU- Permiso de Usuario Sobre Modulos del Sistema]
+        private void m_per_mod_Click(object sender, EventArgs e)
+        {
+            string vv_err_msg;
+            vv_err_msg = fu_ver_dat2();
+            if (vv_err_msg != null)
+            {
+                MessageBoxEx.Show(vv_err_msg, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CREARSIS._3_SEG.seg023_per_mod_.seg023_01 obj = new CREARSIS._3_SEG.seg023_per_mod_.seg023_01();
+            o_mg_glo_bal.mg_ads000_02(obj, this, tab_seg001);
+        }
     }
 }

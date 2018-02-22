@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_prm_bus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.codigo = new DevComponents.Editors.ComboItem();
@@ -54,6 +54,8 @@
             this.m_seg001_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_per_mis = new System.Windows.Forms.ToolStripMenuItem();
             this.m_per_ven = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_gru = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_alm = new System.Windows.Forms.ToolStripMenuItem();
             this.m_seg001_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_seg001_p01 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +67,8 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.m_per_gru = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_per_alm = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_grp = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_mod = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.mn_pri_nci.SuspendLayout();
@@ -313,7 +315,9 @@
             this.m_per_mis.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_per_ven,
             this.m_per_gru,
-            this.m_per_alm});
+            this.m_per_alm,
+            this.m_per_grp,
+            this.m_per_mod});
             this.m_per_mis.Name = "m_per_mis";
             this.m_per_mis.Size = new System.Drawing.Size(67, 20);
             this.m_per_mis.Text = "&Permisos";
@@ -321,9 +325,23 @@
             // m_per_ven
             // 
             this.m_per_ven.Name = "m_per_ven";
-            this.m_per_ven.Size = new System.Drawing.Size(206, 22);
+            this.m_per_ven.Size = new System.Drawing.Size(217, 22);
             this.m_per_ven.Text = "Sobre &Vendedor";
             this.m_per_ven.Click += new System.EventHandler(this.m_per_ven_Click);
+            // 
+            // m_per_gru
+            // 
+            this.m_per_gru.Name = "m_per_gru";
+            this.m_per_gru.Size = new System.Drawing.Size(217, 22);
+            this.m_per_gru.Text = "Sobre &Grupo de Almacén";
+            this.m_per_gru.Click += new System.EventHandler(this.m_per_gru_Click);
+            // 
+            // m_per_alm
+            // 
+            this.m_per_alm.Name = "m_per_alm";
+            this.m_per_alm.Size = new System.Drawing.Size(217, 22);
+            this.m_per_alm.Text = "Sobre &Almacén";
+            this.m_per_alm.Click += new System.EventHandler(this.m_per_alm_Click);
             // 
             // m_seg001_p00
             // 
@@ -354,42 +372,42 @@
             this.dg_res_ult.AllowUserToOrderColumns = true;
             this.dg_res_ult.AllowUserToResizeRows = false;
             this.dg_res_ult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_res_ult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_res_ult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.va_cod_usr,
             this.va_nom_usr,
             this.va_tip_usr,
             this.va_est_ado});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_res_ult.DefaultCellStyle = dataGridViewCellStyle5;
             this.dg_res_ult.EnableHeadersVisualStyles = false;
             this.dg_res_ult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dg_res_ult.Location = new System.Drawing.Point(10, 13);
             this.dg_res_ult.MultiSelect = false;
             this.dg_res_ult.Name = "dg_res_ult";
             this.dg_res_ult.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_res_ult.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dg_res_ult.RowHeadersVisible = false;
             this.dg_res_ult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_res_ult.Size = new System.Drawing.Size(532, 170);
@@ -470,19 +488,19 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // m_per_gru
+            // m_per_grp
             // 
-            this.m_per_gru.Name = "m_per_gru";
-            this.m_per_gru.Size = new System.Drawing.Size(206, 22);
-            this.m_per_gru.Text = "Sobre &Grupo de Almacén";
-            this.m_per_gru.Click += new System.EventHandler(this.m_per_gru_Click);
+            this.m_per_grp.Name = "m_per_grp";
+            this.m_per_grp.Size = new System.Drawing.Size(217, 22);
+            this.m_per_grp.Text = "Sobre Grupo de Persona";
+            this.m_per_grp.Click += new System.EventHandler(this.m_per_grp_Click);
             // 
-            // m_per_alm
+            // m_per_mod
             // 
-            this.m_per_alm.Name = "m_per_alm";
-            this.m_per_alm.Size = new System.Drawing.Size(206, 22);
-            this.m_per_alm.Text = "Sobre &Almacén";
-            this.m_per_alm.Click += new System.EventHandler(this.m_per_alm_Click);
+            this.m_per_mod.Name = "m_per_mod";
+            this.m_per_mod.Size = new System.Drawing.Size(217, 22);
+            this.m_per_mod.Text = "Sobre Modulos del Sistema";
+            this.m_per_mod.Click += new System.EventHandler(this.m_per_mod_Click);
             // 
             // seg001_01
             // 
@@ -553,5 +571,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_per_ven;
         private System.Windows.Forms.ToolStripMenuItem m_per_gru;
         private System.Windows.Forms.ToolStripMenuItem m_per_alm;
+        private System.Windows.Forms.ToolStripMenuItem m_per_grp;
+        private System.Windows.Forms.ToolStripMenuItem m_per_mod;
     }
 }
