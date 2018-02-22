@@ -18,7 +18,7 @@ namespace DATOS._3_SEG
         StringBuilder vv_str_sql = new StringBuilder();
 
         /// <summary>
-        /// Funcion "Buscar Modulos del Sistema"
+        /// Funcion "Buscar Modulos de sistema"
         /// </summary>
         /// <param name="val_bus">Valor de la busqueda</param>
         /// <param name="prm_bus">Parametro de Busqueda (1=codigo ; 2=Nombre )</param>
@@ -57,9 +57,9 @@ namespace DATOS._3_SEG
         }
 
         /// <summary>
-        /// funcion "Registrar Modulos del Sistema"
-        /// <param name="cod_mod">Codigo de la Modulos del Sistema</param>
-        /// <param name="nom_mar">Nombre de la Modulos del Sistema</param>
+        /// funcion "Registrar Modulos de sistema"
+        /// <param name="cod_mod">Codigo de la Modulos de sistema</param>
+        /// <param name="nom_mar">Nombre de la Modulos de sistema</param>
         /// <param name="des_mod">Descripcion</param>
         /// <returns></returns>
         public void _02(int cod_mod, string nom_mod,string des_mod)
@@ -79,10 +79,10 @@ namespace DATOS._3_SEG
         }
 
         /// <summary>
-        /// funcion "Modifica Modulos del Sistema"
+        /// funcion "Modifica Modulos de sistema"
         /// </summary>
-        /// <param name="cod_mod">Codigo de la Modulos del Sistema</param>
-        /// <param name="nom_mar">Nombre de la Modulos del Sistema</param>
+        /// <param name="cod_mod">Codigo de la Modulos de sistema</param>
+        /// <param name="nom_mar">Nombre de la Modulos de sistema</param>
         /// <param name="des_mod">Descripcion</param>
         public void _03(int cod_mod, string nom_mod, string des_mod)
         {
@@ -102,10 +102,10 @@ namespace DATOS._3_SEG
         }
 
         /// <summary>
-        /// funcion "Habilita/Deshabilita Modulos del Sistema"
+        /// funcion "Habilita/Deshabilita Modulos de sistema"
         /// </summary>
-        /// <param name="cod_mod">Codigo de la Modulos del Sistema</param>
-        /// <param name="est_ado">Estado de la Modulos del Sistema</param>
+        /// <param name="cod_mod">Codigo de la Modulos de sistema</param>
+        /// <param name="est_ado">Estado de la Modulos de sistema</param>
         /// <returns></returns>
         public void _04(int cod_mod, string est_ado)
         {
@@ -127,9 +127,9 @@ namespace DATOS._3_SEG
         }
 
         /// <summary>
-        /// funcion "Consulta Modulos del Sistema"
+        /// funcion "Consulta Modulos de sistema"
         /// </summary>
-        /// <param name="cod_mod">Codigo de la Modulos del Sistema</param>
+        /// <param name="cod_mod">Codigo de la Modulos de sistema</param>
         /// <returns></returns>
         public DataTable _05(int cod_mod)
         {
@@ -149,9 +149,9 @@ namespace DATOS._3_SEG
         }
 
         /// <summary>
-        /// funcion "Elimina Modulos del Sistema"
+        /// funcion "Elimina Modulos de sistema"
         /// </summary>
-        /// <param name="cod_mod">Codigo de la Modulos del Sistema</param>
+        /// <param name="cod_mod">Codigo de la Modulos de sistema</param>
         /// <returns></returns>
         public void _06(int cod_mod)
         {

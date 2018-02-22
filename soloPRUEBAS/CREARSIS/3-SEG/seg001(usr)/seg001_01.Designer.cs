@@ -53,9 +53,10 @@
             this.m_seg001_06 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_seg001_05 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_per_mis = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_per_ven = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_per_gru = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_per_alm = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_caj = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_plan = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_rest = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_app = new System.Windows.Forms.ToolStripMenuItem();
             this.m_seg001_p00 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_seg001_p01 = new System.Windows.Forms.ToolStripMenuItem();
             this.m_atr_ass = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +68,7 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.m_per_grp = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_per_mod = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_per_ven = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.mn_pri_nci.SuspendLayout();
@@ -313,35 +313,38 @@
             // m_per_mis
             // 
             this.m_per_mis.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_per_ven,
-            this.m_per_gru,
-            this.m_per_alm,
-            this.m_per_grp,
-            this.m_per_mod});
+            this.m_per_caj,
+            this.m_per_plan,
+            this.m_per_rest,
+            this.m_per_app,
+            this.m_per_ven});
             this.m_per_mis.Name = "m_per_mis";
             this.m_per_mis.Size = new System.Drawing.Size(67, 20);
             this.m_per_mis.Text = "&Permisos";
             // 
-            // m_per_ven
+            // m_per_caj
             // 
-            this.m_per_ven.Name = "m_per_ven";
-            this.m_per_ven.Size = new System.Drawing.Size(217, 22);
-            this.m_per_ven.Text = "Sobre &Vendedor";
-            this.m_per_ven.Click += new System.EventHandler(this.m_per_ven_Click);
+            this.m_per_caj.Name = "m_per_caj";
+            this.m_per_caj.Size = new System.Drawing.Size(240, 22);
+            this.m_per_caj.Text = "Sobre &caja";
             // 
-            // m_per_gru
+            // m_per_plan
             // 
-            this.m_per_gru.Name = "m_per_gru";
-            this.m_per_gru.Size = new System.Drawing.Size(217, 22);
-            this.m_per_gru.Text = "Sobre &Grupo de Almacén";
-            this.m_per_gru.Click += new System.EventHandler(this.m_per_gru_Click);
+            this.m_per_plan.Name = "m_per_plan";
+            this.m_per_plan.Size = new System.Drawing.Size(240, 22);
+            this.m_per_plan.Text = "Sobre Plantilla de &venta";
             // 
-            // m_per_alm
+            // m_per_rest
             // 
-            this.m_per_alm.Name = "m_per_alm";
-            this.m_per_alm.Size = new System.Drawing.Size(217, 22);
-            this.m_per_alm.Text = "Sobre &Almacén";
-            this.m_per_alm.Click += new System.EventHandler(this.m_per_alm_Click);
+            this.m_per_rest.Name = "m_per_rest";
+            this.m_per_rest.Size = new System.Drawing.Size(240, 22);
+            this.m_per_rest.Text = "Sobre Plantilla venta &Restaurant";
+            // 
+            // m_per_app
+            // 
+            this.m_per_app.Name = "m_per_app";
+            this.m_per_app.Size = new System.Drawing.Size(240, 22);
+            this.m_per_app.Text = "Sobre &Apps";
             // 
             // m_seg001_p00
             // 
@@ -488,19 +491,12 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
-            // m_per_grp
+            // m_per_ven
             // 
-            this.m_per_grp.Name = "m_per_grp";
-            this.m_per_grp.Size = new System.Drawing.Size(217, 22);
-            this.m_per_grp.Text = "Sobre Grupo de Persona";
-            this.m_per_grp.Click += new System.EventHandler(this.m_per_grp_Click);
-            // 
-            // m_per_mod
-            // 
-            this.m_per_mod.Name = "m_per_mod";
-            this.m_per_mod.Size = new System.Drawing.Size(217, 22);
-            this.m_per_mod.Text = "Sobre Modulos del Sistema";
-            this.m_per_mod.Click += new System.EventHandler(this.m_per_mod_Click);
+            this.m_per_ven.Name = "m_per_ven";
+            this.m_per_ven.Size = new System.Drawing.Size(240, 22);
+            this.m_per_ven.Text = "Sobre &Vendedor";
+            this.m_per_ven.Click += new System.EventHandler(this.m_per_ven_Click);
             // 
             // seg001_01
             // 
@@ -557,6 +553,10 @@
         internal System.Windows.Forms.ToolStripMenuItem m_seg001_06;
         internal System.Windows.Forms.ToolStripMenuItem m_seg001_05;
         internal System.Windows.Forms.ToolStripMenuItem m_per_mis;
+        internal System.Windows.Forms.ToolStripMenuItem m_per_caj;
+        internal System.Windows.Forms.ToolStripMenuItem m_per_plan;
+        internal System.Windows.Forms.ToolStripMenuItem m_per_rest;
+        internal System.Windows.Forms.ToolStripMenuItem m_per_app;
         internal System.Windows.Forms.ToolStripMenuItem m_seg001_p00;
         internal System.Windows.Forms.ToolStripMenuItem m_seg001_p01;
         internal System.Windows.Forms.ToolStripMenuItem m_atr_ass;
@@ -569,9 +569,5 @@
         internal DevComponents.DotNetBar.ButtonX bt_can_cel;
         internal DevComponents.DotNetBar.ButtonX bt_ace_pta;
         private System.Windows.Forms.ToolStripMenuItem m_per_ven;
-        private System.Windows.Forms.ToolStripMenuItem m_per_gru;
-        private System.Windows.Forms.ToolStripMenuItem m_per_alm;
-        private System.Windows.Forms.ToolStripMenuItem m_per_grp;
-        private System.Windows.Forms.ToolStripMenuItem m_per_mod;
     }
 }

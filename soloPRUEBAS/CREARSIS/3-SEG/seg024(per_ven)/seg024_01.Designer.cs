@@ -42,9 +42,9 @@
             this.gb_ctr_frm = new System.Windows.Forms.GroupBox();
             this.bt_can_cel = new DevComponents.DotNetBar.ButtonX();
             this.bt_ace_pta = new DevComponents.DotNetBar.ButtonX();
-            this.va_chk_per = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.va_nom_ven = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.va_cod_ven = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_nom_ven = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.va_chk_per = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_res_ult)).BeginInit();
@@ -239,6 +239,20 @@
             this.bt_ace_pta.Text = "Aceptar";
             this.bt_ace_pta.Click += new System.EventHandler(this.bt_ace_pta_Click);
             // 
+            // va_cod_ven
+            // 
+            this.va_cod_ven.HeaderText = "Codigo";
+            this.va_cod_ven.Name = "va_cod_ven";
+            this.va_cod_ven.ReadOnly = true;
+            this.va_cod_ven.Width = 60;
+            // 
+            // va_nom_ven
+            // 
+            this.va_nom_ven.HeaderText = "Nombre";
+            this.va_nom_ven.Name = "va_nom_ven";
+            this.va_nom_ven.ReadOnly = true;
+            this.va_nom_ven.Width = 255;
+            // 
             // va_chk_per
             // 
             this.va_chk_per.Checked = true;
@@ -249,20 +263,6 @@
             this.va_chk_per.HeaderText = "Permiso";
             this.va_chk_per.Name = "va_chk_per";
             this.va_chk_per.Width = 50;
-            // 
-            // va_nom_ven
-            // 
-            this.va_nom_ven.HeaderText = "Nombre Vendedor";
-            this.va_nom_ven.Name = "va_nom_ven";
-            this.va_nom_ven.ReadOnly = true;
-            this.va_nom_ven.Width = 255;
-            // 
-            // va_cod_ven
-            // 
-            this.va_cod_ven.HeaderText = "Codigo";
-            this.va_cod_ven.Name = "va_cod_ven";
-            this.va_cod_ven.ReadOnly = true;
-            this.va_cod_ven.Width = 60;
             // 
             // seg024_01
             // 
@@ -277,6 +277,7 @@
             this.Controls.Add(this.gb_ctr_frm);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "seg024_01";

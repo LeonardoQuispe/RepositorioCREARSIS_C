@@ -23,41 +23,18 @@ namespace DATOS
         /// </summary>
         StringBuilder vv_str_sql = new StringBuilder();
 
-
-
         /// <summary>
-        /// Funcion "Guarda Permisos"
+        ///  Funcion "BUSCAR TIPO DE PERSONA autorizadas"
         /// </summary>
-        /// <param name="cod_usr">Codigo del usuario</param>
-        /// <param name="cod_gru">Codigo del Grupo</param>
+        /// <param name="cod_usr">Codigo de usuario</param>
         /// <returns></returns>
-        public void _02(string cod_usr, int cod_gru)
+        public DataTable _01(string cod_usr)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" INSERT INTO seg022 values  ");
-                vv_str_sql.AppendFormat(" ('{0}',{1})", cod_usr, cod_gru);
-
-                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        /// <summary>
-        /// Funcion "Consulta Permisos de Usuario sobre Grupo"
-        /// </summary>
-        /// <param name="cod_usr">Codigo del usuario</param>
-        /// <returns></returns>
-        public DataTable _05(string cod_usr)
-        {
-            try
-            {
-                vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendLine(" SELECT va_cod_gru FROM seg022 ");
-                vv_str_sql.AppendLine(" WHERE  va_cod_usr = '" + cod_usr + "' ");
+                vv_str_sql.AppendLine(" SELECT * FROM seg022   ");
+                vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' ");
 
                 return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
             }
@@ -66,18 +43,19 @@ namespace DATOS
                 throw ex;
             }
         }
-
         /// <summary>
-        ///  Funcion "Elimina Permisos de Usuario sobre Grupo"
+        /// Funcion "Registrar TIPO DE PERSONADEL"
         /// </summary>
-        /// <param name="cod_usr">Codigo del usuario</param>
+        /// <param name="cod_usr">Codigo de usuario</param>
+        /// <param name="cod_tpr">Codigo del tipo de persona</param>
         /// <returns></returns>
-        public void _06(string cod_usr)
+        public void _02(int cod_usr, string cod_tpr)
         {
             try
             {
                 vv_str_sql = new StringBuilder();
-                vv_str_sql.AppendFormat(" DELETE FROM seg022 WHERE va_cod_usr='{0}'", cod_usr);
+                vv_str_sql.AppendLine(" INSERT INTO seg022 VALUES ");
+                vv_str_sql.AppendLine(" ('" + cod_usr + "','" + cod_tpr + "' )");
 
                 o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
             }
@@ -85,7 +63,48 @@ namespace DATOS
             {
                 throw ex;
             }
+        }
+        /// <summary>
+        ///  Funcion consultar "TIPO DE PERSONA" autorizada
+        /// </summary>
+        /// <param name="cod_usr">Codigo de usuario</param>
+        /// <param name="cod_tpr">codigo del tipo de persona</param>
+        /// <returns></returns>
+        public DataTable _05(string cod_usr, string cod_tpr)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" SELECT * FROM seg022   ");
+                vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_tpr ='" + cod_tpr + "' ");
 
+                return o_cnx000.fu_exe_sql_si(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
+        ///  Funcion "Elimina TIPO DE PERSONADEL SISTEMA"
+        /// </summary>
+        /// <param name="cod_usr">Codigo de usuario</param>
+        /// <param name="cod_tpr">Codigo del tipo de persona</param>
+        /// <returns></returns>
+        public void _06(int cod_usr, string cod_tpr)
+        {
+            try
+            {
+                vv_str_sql = new StringBuilder();
+                vv_str_sql.AppendLine(" DELETE seg022 ");
+                vv_str_sql.AppendLine(" WHERE va_cod_usr ='" + cod_usr + "' AND va_cod_tpr ='" + cod_tpr + "' ");
+
+                o_cnx000.fu_exe_sql_no(vv_str_sql.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
