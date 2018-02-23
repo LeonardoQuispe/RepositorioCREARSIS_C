@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF8C8891-4678-4CDC-B0FF-3500D5E25BF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DATOS</RootNamespace>
+    <AssemblyName>DATOS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2-ADM\c_adm001.cs" />
+    <Compile Include="2-ADM\c_adm002.cs" />
+    <Compile Include="2-ADM\c_adm003.cs" />
+    <Compile Include="2-ADM\c_adm004.cs" />
+    <Compile Include="2-ADM\c_adm005.cs" />
+    <Compile Include="2-ADM\c_adm007.cs" />
+    <Compile Include="2-ADM\c_adm008.cs" />
+    <Compile Include="2-ADM\c_adm010.cs" />
+    <Compile Include="2-ADM\c_adm011.cs" />
+    <Compile Include="2-ADM\c_adm012.cs" />
+    <Compile Include="2-ADM\c_adm013.cs" />
+    <Compile Include="2-ADM\c_adm014.cs" />
+    <Compile Include="3-SEG\c_seg002.cs" />
+    <Compile Include="3-SEG\c_seg023.cs" />
+    <Compile Include="3-SEG\c_seg024.cs" />
+    <Compile Include="3-SEG\c_seg025.cs" />
+    <Compile Include="3-SEG\c_seg026.cs" />
+    <Compile Include="4-INV\c_inv002.cs" />
+    <Compile Include="4-INV\c_inv008.cs" />
+    <Compile Include="4-INV\c_inv100.cs" />
+    <Compile Include="4-INV\c_inv101.cs" />
+    <Compile Include="4-INV\c_inv102.cs" />
+    <Compile Include="4-INV\c_inv103.cs" />
+    <Compile Include="5-CTB\c_ctb001.cs" />
+    <Compile Include="5-CTB\c_ctb002.cs" />
+    <Compile Include="5-CTB\c_ctb003.cs" />
+    <Compile Include="5-CTB\c_ctb004.cs" />
+    <Compile Include="5-CTB\c_ctb006.cs" />
+    <Compile Include="5-CTB\c_ctb007.cs" />
+    <Compile Include="4-INV\c_inv001.cs" />
+    <Compile Include="4-INV\c_inv003.cs" />
+    <Compile Include="4-INV\c_inv004.cs" />
+    <Compile Include="3-SEG\c_seg001.cs" />
+    <Compile Include="3-SEG\c_seg020.cs" />
+    <Compile Include="3-SEG\c_seg021.cs" />
+    <Compile Include="3-SEG\c_seg022.cs" />
+    <Compile Include="3-SEG\c_seg049.cs" />
+    <Compile Include="0-INICIO\c_cnx000.cs" />
+    <Compile Include="4-INV\c_inv010.cs" />
+    <Compile Include="4-INV\c_inv011.cs" />
+    <Compile Include="6-CMR\c_cmr001.cs" />
+    <Compile Include="6-CMR\c_cmr002.cs" />
+    <Compile Include="6-CMR\c_cmr003.cs" />
+    <Compile Include="7-ECP\c_ecp005.cs" />
+    <Compile Include="7-ECP\c_ecp006.cs" />
+    <Compile Include="7-ECP\c_ecp007.cs" />
+    <Compile Include="8-TES\c_tes001.cs" />
+    <Compile Include="9-CMP\c_cmp001.cs" />
+    <Compile Include="9-CMP\c_cmp001a.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
