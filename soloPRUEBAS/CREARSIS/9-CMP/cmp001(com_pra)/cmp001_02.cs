@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DATOS;
 using CREARSIS._2_ADM.adm010_per_;
 using DevComponents.DotNetBar;
+using DATOS._9_CMP;
 
 namespace CREARSIS._9_CMP.cmp001_com_pra_
 {
@@ -41,16 +42,29 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
         #endregion
 
         #region METODOS
-            //Selecciona Proveedor
-            public void fu_Sel_Per(string _tb_cod_per,string _tb_nom_per)
+        //Selecciona Proveedor
+        public void fu_rec_per(string cod_per)
+        {
+
+            if (cod_per.Trim() == "")
             {
-                if (_tb_cod_per.Trim() != "")
-                { tb_cod_per.Text = _tb_cod_per;
-                    tb_nom_per.Text = _tb_nom_per;
-                }
+                tb_cod_per.Text = "** NO existe";
+                return;
             }
-            //Selecciona Almacen
-            public void fu_Sel_Alm(string _tb_cod_alm, string _tb_nom_alm)
+
+            tab_adm010 = o_adm010._05(cod_per);
+            if (tab_adm010.Rows.Count == 0)
+            {
+                tb_cod_per.Text = "";
+                tb_nom_per.Text = "** NO existe";
+                return;
+            }
+
+            tb_cod_per.Text = tab_adm010.Rows[0]["va_cod_per"].ToString();
+            tb_nom_per.Text = tab_adm010.Rows[0]["va_nom_com"].ToString();
+        }
+        //Selecciona Almacen
+        public void fu_Sel_Alm(string _tb_cod_alm, string _tb_nom_alm)
             {
                 if (_tb_cod_alm.Trim() != "")
                 {
@@ -119,8 +133,24 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                     throw ex;
                 }
             }
-            //Selecciona el Nro. del Documento
-            public void fu_car_nro()
+            //Selecciona todas las sucursales
+            public void fu_car_suc()
+            {
+                try
+                {
+                    c_adm007 objSuc = new c_adm007();
+                    DataTable dt_suc = objSuc._01("%",1,"1");
+                    cb_suc_urs.DataSource = dt_suc;
+                    cb_suc_urs.DisplayMember = "va_nom_suc";
+                    cb_suc_urs.ValueMember = "va_cod_suc";
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        //Selecciona el Nro. del Documento
+        public void fu_car_nro()
             {
                 try
                 {
@@ -201,11 +231,11 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                     dg_res_ult["va_tip_com", fila].Value = cb_tip_com.SelectedItem.ToString();
 
                 if (lLote)
-                {
-                    dg_res_ult["va_lot_pro", fila].Value = tb_lot_pro.Text;
+                {                   
                     dg_res_ult["va_fec_ven", fila].Value = tb_fec_ven.Text;
                 }
-            }
+                dg_res_ult["va_lot_pro", fila].Value = tb_lot_pro.Text;
+        }
             //Carga un Item al GridView
             private void fu_car_gri()
             {
@@ -251,6 +281,92 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
 
                 tb_tot_net.Text = String.Format("{0:#,0.00}",(Convert.ToDecimal(tb_tot_bru.Text) - Convert.ToDecimal(tb_tot_des.Text)));
             }
+
+        private bool fu_gra_bar()
+        {
+            try
+            {
+                c_cmp001 oCmp001 = new c_cmp001();
+                
+                oCmp001.va_cod_alm = Convert.ToInt32(tb_cod_alm.Text);
+                oCmp001.va_cod_ctr = tb_cod_con.Text;
+                oCmp001.va_cod_doc = tb_cod_doc.Text;
+
+                oCmp001.va_cod_ges = tb_fec_cha.Value.Year;
+                oCmp001.va_cod_prv = tb_cod_per.Text;
+                oCmp001.va_cod_suc = Convert.ToInt16(cb_suc_urs.SelectedValue);
+                oCmp001.va_des_cmp = Convert.ToDecimal(tb_tot_des.Text);
+                oCmp001.va_emp_cod = 0;
+                oCmp001.va_est_ado = "H";
+                oCmp001.va_fec_cmp = DateTime.Now;
+                oCmp001.va_fec_emi = tb_fec_cha.Value;
+                oCmp001.va_fom_pag = (cb_for_pag.SelectedIndex +1).ToString();
+                if(cb_mon_eda.SelectedIndex==0)
+                    oCmp001.va_mon_eda = "B" ;
+                else
+                    oCmp001.va_mon_eda = "D";
+                oCmp001.va_nit_fac = Convert.ToInt16(tb_nit_prv.Text);
+                oCmp001.va_nro_aut = tb_nro_aut.Text;
+                oCmp001.va_nro_doc = Convert.ToInt16(tb_nro_doc.Text);
+                oCmp001.va_nro_fac = Convert.ToInt16(tb_nro_fac.Text);
+                oCmp001.va_nro_tal = Convert.ToInt16(cb_num_tal.SelectedValue);
+                oCmp001.va_obs_cmp = tb_com_ent.Text;
+                if(tb_cod_pla.Text =="")
+                    oCmp001.va_pla_pag = 0;
+                else 
+                    oCmp001.va_pla_pag = Convert.ToInt16(tb_cod_pla.Text);
+                oCmp001.va_raz_fac = tb_raz_soc.Text;
+                if (cb_tip_cmp.SelectedIndex  ==2 || cb_tip_cmp.SelectedIndex == 3)
+                {
+                    oCmp001.va_rie_alq = 0;
+                    oCmp001.va_rim_itr = 0;
+                    oCmp001.va_riu_bie = 0;
+                    oCmp001.va_riu_ser = 0;
+                }
+                else
+                {
+                    oCmp001.va_rie_alq = 0;
+                    oCmp001.va_rim_itr = 0;
+                    oCmp001.va_riu_bie = 0;
+                    oCmp001.va_riu_ser = 0;
+                }
+                oCmp001.va_tip_cam = Convert.ToDecimal(tb_tip_cam.Text);
+                oCmp001.va_tip_cmp = ((DevComponents.Editors.ComboItem) cb_tip_cmp.SelectedItem).Value.ToString();
+                oCmp001.va_tot_bru = Convert.ToDecimal(tb_tot_bru.Text);
+                oCmp001.va_tot_exe = Convert.ToDecimal(tb_tot_exe.Text);
+                oCmp001.va_tot_imp = Convert.ToDecimal(tb_tot_imp.Text);
+                oCmp001.va_tot_net = Convert.ToDecimal(tb_tot_net.Text);
+                oCmp001.va_tot_suj = Convert.ToDecimal(tb_tot_suj.Text);
+
+                int nroFila;
+                for (nroFila = 0; nroFila <= dg_res_ult.RowCount - 1; nroFila++)
+                {
+                    c_cmp001a item = new c_cmp001a();
+                    item.va_can_pro = Convert.ToDecimal( dg_res_ult["va_can_pro", nroFila].Value);
+                    item.va_cod_alm = Convert.ToInt32(dg_res_ult["va_alm_pro", nroFila].Value);
+                    item.va_cod_pro = dg_res_ult["va_cod_pro", nroFila].Value.ToString();
+                    item.va_cod_uni = dg_res_ult["va_cod_uni", nroFila].Value.ToString();
+                    item.va_lot_cod = dg_res_ult["va_lot_pro", nroFila].Value.ToString();
+                    if (item.va_lot_cod =="")
+                        item.va_fec_ven = Convert.ToDateTime("01/01/1900");
+                    else
+                        item.va_fec_ven = Convert.ToDateTime( dg_res_ult["va_fec_ven", nroFila].Value);
+                    item.va_imp_tot = Convert.ToDecimal(dg_res_ult["va_tot_pro", nroFila].Value);
+                    item.va_nom_pro = dg_res_ult["va_des_pro", nroFila].Value.ToString();
+                    item.va_nro_itm = Convert.ToInt16(dg_res_ult["va_ite_pro", nroFila].Value);
+                    item.va_pre_uni = Convert.ToDecimal(dg_res_ult["va_pre_pro", nroFila].Value);
+                    item.va_tip_cmp = dg_res_ult["va_tip_com", nroFila].Value.ToString();
+                    oCmp001.lisItem.Add(item);
+                }
+
+                if (!oCmp001.fu_reg_cmp())
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
         #endregion
         public cmp001_02()
         {
@@ -271,6 +387,8 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                 lb_tip_com.Visible = false ;
                 cb_tip_com.Visible = false;
                 this.Width = 910;
+                tb_nro_fac.Text = "0";
+                tb_nit_prv.Text = "0";
             }
         }
 
@@ -281,6 +399,7 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                 this.Width = 910;
                 fu_car_tal();
                 fu_car_nro();
+                fu_car_suc();
             }
             catch (Exception ex)
             {
@@ -306,15 +425,15 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
         private void tb_cod_per_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
-            {         
-                adm010_01 obj = new adm010_01();
+            {
+                adm010_01a obj = new adm010_01a(false,true);
                 o_mg_glo_bal.mg_ads000_03(obj, this);
             }
         }
 
         private void tb_cod_per_ButtonCustomClick(object sender, EventArgs e)
         {
-            adm010_01 obj = new adm010_01();
+            adm010_01a obj = new adm010_01a(false,true);
             o_mg_glo_bal.mg_ads000_03(obj, this);
         }
 
@@ -352,14 +471,14 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
         {
             if (e.KeyData == Keys.Up)
             {
-                _4_INV.inv002_pro_.inv002_01 objPro = new _4_INV.inv002_pro_.inv002_01();
+                _4_INV.inv002_pro_.inv002_01a objPro = new _4_INV.inv002_pro_.inv002_01a(false,true);
                 o_mg_glo_bal.mg_ads000_03(objPro, this);
             }
         }
 
         private void tb_cod_pro_ButtonCustomClick(object sender, EventArgs e)
         {
-            _4_INV.inv002_pro_.inv002_01 objPro = new _4_INV.inv002_pro_.inv002_01();
+            _4_INV.inv002_pro_.inv002_01a objPro = new _4_INV.inv002_pro_.inv002_01a(false,true);
             o_mg_glo_bal.mg_ads000_03(objPro, this);
         }
 
@@ -483,10 +602,14 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                 tb_tot_pro.Text = String.Format("{0:#,0.00}", Convert.ToDecimal(dg_res_ult["va_tot_pro", e.RowIndex].Value ));
                 cb_tip_cmp.SelectedItem = dg_res_ult["va_tip_com", e.RowIndex].Value;
 
-                if (dg_res_ult["va_lot_pro", e.RowIndex].Value != null)
+                if (dg_res_ult["va_lot_pro", e.RowIndex].Value != null && dg_res_ult["va_lot_pro", e.RowIndex].Value.ToString()!="")
                 {
                     tb_lot_pro.Text = dg_res_ult["va_lot_pro", e.RowIndex].Value.ToString();
-                    tb_fec_ven.Text = dg_res_ult["va_fec_ven", e.RowIndex].Value.ToString();
+                    if (dg_res_ult["va_fec_ven", e.RowIndex].Value == null)
+                        tb_fec_ven.Value = DateTime.Now;
+                    else
+                        tb_fec_ven.Value = Convert.ToDateTime(dg_res_ult["va_fec_ven", e.RowIndex].Value.ToString());
+                    
                     lLote = true;
                 }
                 else {
@@ -504,6 +627,29 @@ namespace CREARSIS._9_CMP.cmp001_com_pra_
                 fu_lim_pro();
                 dg_res_ult.Rows.RemoveAt(Sel_Fila);
             }
+        }
+
+        private void bt_ace_pta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult res_msg = new DialogResult();
+                res_msg = MessageBoxEx.Show("Estas seguro de grabar los datos ?", "Nuevo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (res_msg == DialogResult.Cancel)
+                {
+                    return;
+                }
+                    
+                
+                if(fu_gra_bar())
+                    MessageBoxEx.Show("Operación completada exitosamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message );
+            }
+       
         }
     }
 }
